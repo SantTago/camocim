@@ -1,0 +1,1556 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Qureah';
+    src: url(../fontes/Qureah.otf) format('opentype');
+}
+@font-face {
+    font-family: 'GABRWFFR';
+    src: url(../fontes/GABRWFFR.TTF) format('opentype');
+}
+
+@font-face {
+    font-family: 'KGRedHands';
+    src: url(../fontes/KGRedHands.ttf) format('opentype'); 
+}
+@media (max-width: 950px) {
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .hotel-bloco {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .hotel-bloco1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .hotel-bloco2 {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .hotel-bloco3 {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .hotel-bloco4 {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .beleza-bloco {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .roupa-bloco {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
+
+    .gasolina-bloco1 {
+        display: none;
+        
+    }
+
+    .bloco0 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bloco1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bloco {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .mercado-bloco {
+        display: flex;
+    }
+
+    .construçao-bloco {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
+    .prefeitura {
+        display: flex;
+        justify-content: center;
+    }
+    .prefeita-prefeito {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .prefeitura-artigo p{
+        margin: 0px auto 0px auto;
+        text-align: center;
+    }
+
+
+    .pre-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .prefeita-prefeito > div {
+        height: auto;
+        margin: 1px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
+    }
+    
+    .prefeitura-artigo > h3 {
+        max-width: 320px;
+       
+     }
+
+    .prefeitura-artigo > p {
+        max-width: 310px;
+       
+     }
+
+    .prefeita-prefeito img {
+        max-width: 300px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+    .publicidade {
+        display: flex;
+        background-color: #00425c;
+        padding: 10px;
+        flex-direction: row;
+        align-content: stretch;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+
+
+    .praias {
+        display: flex;
+        padding-bottom: 15px;
+        flex-direction: column-reverse;
+    }
+
+    .praias {
+        margin: 0px auto 0px auto;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+    }
+    
+    .praias img{
+        margin: 0px auto 0px auto;
+        padding-bottom: 15px;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0px;
+    }
+
+    .praias p {
+        display: contents;
+        
+    }
+    .praias2 {
+        display: flex;
+        padding-bottom: 15px;
+        flex-direction: column-reverse;
+    }
+
+    .praias2 {
+        margin: 0px auto 0px auto;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+    }
+    
+    .praias2 img{
+        margin: 0px auto 0px auto;
+        padding-bottom: 15px;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0px;
+    }
+
+    .praias2 p {
+        display: contents;
+        
+    }
+
+
+    
+    .publicidade div {
+        width: 100%;
+        
+        
+    }
+
+}
+
+
+:root {
+    --cor1: #042940;
+    --cor2: #005C53;
+    --cor3: #9FC131;
+    --cor4: #DBF227;
+    --cor5: #D6D58E;
+    --cor6: #0077ff;
+    --cor7: #8bd6f1;
+    --cor8: #00425c;
+
+
+    --normal: "Qureah", Verdana, Helvetica,sans-serif ;
+    --principal: 'GABRWFFR', Verdana, Helvetica,sans-serif ;
+    --destaque: 'KGRedHands', Verdana, Helvetica,sans-serif ;
+}
+
+@keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+
+header {
+    background-image: linear-gradient(to top, var(--cor6), var(--cor7));
+    height: 170px;
+}
+
+header > h1 {
+    text-align: center;
+    padding-top: 38px;
+    font-family: var(--principal);
+    color: white;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+
+}
+
+header p {
+    font-family: var(--normal);
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+}
+
+header nav {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 35px;
+}
+
+header a {
+    text-decoration: none;
+    font-family: var(--normal);
+    margin: 10px;
+    transition-duration: 0.5s;
+    padding: 5px;
+    border-radius: 10px;
+    color: aliceblue;
+
+    
+
+}
+
+header a:hover {
+    background-color: rgba(255, 255, 255, 0.616);
+    color: var(--cor1);
+}
+
+
+.publicidade {
+    display: flex;
+    max-height: 600px;
+    background-color: var(--cor1);
+    padding: 10px;
+    
+}
+
+.publicidade div {
+    width: 30%; /* Ajuste a largura conforme necessário */
+    height: 100px; /* Ajuste a altura conforme necessário */
+    background-color: #ccc; /* Ajuste a cor de fundo conforme necessário */
+    margin: 5px; /* Adicione margens conforme necessário */
+    border-radius: 5px;
+}
+
+.publicidade > div img {
+    /* width: 95%; */
+    width: 100%;
+    height: 100%;
+
+    background-color: #ccc;
+    /* margin: 5px; */
+    border-radius: 5px;
+}
+
+.publicidade > div img:hover {
+    width: 102%;
+    height: 102px;
+    border-radius: 5px;
+    background-color: #0077ff;
+}
+
+article {
+    width: 70%;
+    height: 70%;
+    text-align: center;
+    margin: auto;
+}
+
+article h1 {
+    font-family: var(--normal);
+    padding-top: 30px;
+}
+
+article h2 {
+    font-family: var(--normal);
+    max-height: 600px;
+    padding: 30px;
+}
+
+article h2:hover {
+    color: var(--cor2);
+}
+
+article p {
+    font-weight: bold;
+}
+
+article img {
+    width: 50%;
+    height: 50%;
+}
+main {
+    max-width: 80%;
+    margin: auto;
+    padding-bottom: 30px;
+    text-align: center;
+     
+ }
+
+ main p {
+    max-width: 50%;
+ }
+
+.sub1 {
+    background-image: linear-gradient(to left, var(--cor6), white);
+    padding-top: 1px;
+    padding-bottom: 1%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    padding-top: 8px;
+ }
+
+
+
+ .sub2 {
+    background-image: linear-gradient(to right, var(--cor6), white);
+    padding-top: 1px;
+    padding-bottom: 1%;
+    border-top: 10px;
+    border-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding-top: 8px;
+ }
+
+ main > h2 {
+    max-width: 600px;
+    margin: 0px auto 0px auto;
+    
+ }
+
+
+
+ .praias {
+    display: flex;
+    padding-bottom: 15px;
+    
+
+}
+
+.praias p {
+    max-height: 20%;
+    max-width: 30%;
+    padding-top: 8%;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-weight: 800;
+}
+
+.praias img {
+    height: 20%;
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: -9px 7px 20px 0px rgba(0, 0, 0, 0.342);
+}
+
+.praias2 {
+    display: flex;
+    padding-bottom: 15px;
+    flex-direction: row-reverse;
+    
+ }
+
+ 
+
+.praias2 p {
+    max-height: 20%;
+    max-width: 30%;
+    padding-top: 7%;
+    padding-right: 15px;
+    margin: 3px;
+    font-weight: 800;
+}
+
+.praias2 img {
+    max-height: 20%;
+    max-width: 50%;
+    border-radius: 20px;
+    box-shadow: -9px 7px 20px 0px rgba(0, 0, 0, 0.226);
+ }
+
+
+main .torta {
+    max-height: 20%;
+    max-width: 56%;
+ }
+
+
+ .noticias {
+    display: flex;
+    flex-direction: row; /* Inverte a ordem dos elementos dentro do flex container */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    
+    max-width: 99%;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    
+}
+
+.noticias_img {
+    margin-left: 20px; /* Adicione margem à esquerda para separar a imagem do texto */
+}
+
+.noticias_img > img {
+
+    display: flex;
+    max-height: 150px;
+     
+}
+
+.noticias_img > p {
+    
+    background-color: #9FC131;
+}
+
+.sub3 {
+    text-align: center;
+    background-image: linear-gradient(to left, var(--cor6), white);
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+hr {
+    max-width: 70%;
+}
+
+.destaque {
+    color: red;
+    font-weight: 900;
+    font-family: var(--destaque);
+    margin: 10px 0px 10px 10px;
+    
+}
+
+.noticias  p {
+    padding:  10px;
+}
+
+.achar {
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+
+
+.hoteis-cor {
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.hoteis-cor1 {
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor7);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.hoteis-cor:hover{
+    background-color: var(--cor7);
+}
+
+
+.beleza-cor1 {
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+    
+    
+}
+
+
+
+
+.beleza-cor1 .beleza-icon > img{
+    width: 31px;
+    height: 35px;
+    border-radius: 50px;
+    margin: 8px;
+    margin-left: 10px;
+    
+    
+}
+
+.beleza-cor{
+    width: 50px;
+    height: 50px;
+    background-color: palevioletred;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.beleza-cor1:hover {
+    background-color: palevioletred;
+}
+
+
+
+.roupas-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.roupas-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 51, 0);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.roupas-cor:hover {
+    background-color: rgb(255, 51, 0);
+}
+
+.roupas-cor .roupas-icon  img {
+    width: 31px;
+    height: 35px;
+    border-radius: 50px;
+    margin: 8px;
+    margin-left: 10px;
+     
+}
+
+
+
+.gasolina-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.gasolina-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor3);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.gasolina-cor:hover {
+    background-color: var(--cor3);
+}
+
+.gasolina-cor .gasolina-icon  img {
+    width: 31px;
+    height: 35px;
+    border-radius: 50px;
+    margin: 8px;
+    margin-left: 10px;
+     
+}
+
+
+.mercadinho-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.mercadinho-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.mercadinho-cor:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.mercadinho-cor .mercadinho-icon  img {
+    width: 31px;
+    height: 35px;
+    border-radius: 50px;
+    margin: 8px;
+    margin-left: 10px;
+     
+}
+
+
+
+.grafica-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.grafica-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 153, 0);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.grafica-cor:hover {
+    background-color: rgb(255, 153, 0);
+}
+
+.grafica-cor .mercadinho-icon  img {
+    width: 31px;
+    height: 35px;
+    border-radius: 50px;
+    margin: 8px;
+    margin-left: 10px;
+     
+}
+
+
+.construçao-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.construçao-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(1, 129, 91);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.construçao-cor:hover {
+    background-color: rgb(1, 129, 91);
+}
+
+.construçao-cor .construçao-icon  img {
+    width: 31px;
+    height: 31px;
+    border-radius: 50px;
+    margin: 7px;
+    margin-left: 8px;
+     
+}
+
+
+.prefeitura-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.prefeitura-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(1, 46, 129);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.prefeitura-cor:hover {
+    background-color: rgb(1, 46, 129);
+}
+
+.prefeitura-cor .prefeitura-icon  img {
+    width: 31px;
+    height: 31px;
+    border-radius: 50px;
+    margin: 7px;
+    margin-left: 8px;
+     
+}
+
+
+.restaurante-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.restaurante-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: #FF8B55;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.restaurante-cor:hover {
+    background-color: #FF8B55;
+}
+
+.restaurante-cor .restaurante-icon  img {
+    width: 31px;
+    height: 31px;
+    border-radius: 50px;
+    margin: 7px;
+    margin-left: 8px;
+     
+}
+
+
+.sorveteria-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.sorveteria-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: #9A26A8;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.sorveteria-cor:hover {
+    background-color: #9A26A8;
+}
+
+.sorveteria-cor .sorveteria-icon  img {
+    width: 31px;
+    height: 31px;
+    border-radius: 50px;
+    margin: 7px;
+    margin-left: 8px;
+     
+}
+
+
+
+.farmacia-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.farmacia-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: #F62C27;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.farmacia-cor:hover {
+    background-color: #F62C27;
+}
+
+.farmacia-cor .farmacia-icon  img {
+    width: 31px;
+    height: 31px;
+    border-radius: 50px;
+    margin: 7px;
+    margin-left: 8px;
+     
+}
+
+
+.banco-cor{
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1);
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.banco-cor1{
+    width: 50px;
+    height: 50px;
+    background-color: #27f66c;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.banco-cor:hover {
+    background-color: #27f66c;
+}
+
+.banco-cor .banco-icon  img {
+    width: 31px;
+    height: 31px;
+    border-radius: 50px;
+    margin: 7px;
+    margin-left: 8px;
+     
+}
+
+
+
+.achar {
+    margin: 10px;
+    transition-duration: 0.5s;
+}
+
+.achar:hover{
+    background-color: var(--cor7);
+}
+
+
+.icon img {
+    width: 30px;
+    height: 30px;
+    columns: auto;
+    margin: 10px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.icon > div {
+    padding: 5px;
+    text-align: center;
+    border-radius: 50%; 
+}
+
+
+
+.hotel-bloco {
+    display: flex;
+    justify-content: center;
+}
+
+.hotel-bloco > div{
+    width: 450px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+
+}
+
+.hotel-bloco img:hover{
+    width: 453px;
+    height: 103px;
+ 
+}
+
+.hotel-bloco1 {
+    display: flex;
+    justify-content: center;
+}
+
+.hotel-bloco1 > div{
+    width: 450px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+
+}
+.hotel-bloco1 img:hover{
+    width: 453px;
+    height: 103px;
+ 
+}
+
+
+
+
+.hotel-bloco2 {
+    display: flex;
+    justify-content: center;
+}
+
+.hotel-bloco2 > div{
+    width: 450px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+
+}
+.hotel-bloco2 img:hover{
+    width: 453px;
+    height: 103px;
+ 
+}
+
+
+
+.hotel-bloco3 {
+    display: flex;
+    justify-content: center;
+}
+
+.hotel-bloco3 > div{
+    width: 450px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+
+}
+.hotel-bloco3 img:hover{
+    width: 453px;
+    height: 103px;
+ 
+}
+
+
+
+
+.hotel-bloco4 {
+    display: flex;
+    justify-content: center;
+}
+
+.hotel-bloco4 > div{
+    width: 450px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+
+}
+
+.hotel-bloco4 img:hover{
+    width: 453px;
+    height: 103px;
+ 
+}
+
+
+
+
+.beleza-bloco {
+    display: flex;
+    justify-content: center;
+}
+
+.beleza-bloco > div{
+    width: 200px;
+    height: 350px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+
+}
+
+.beleza-bloco img:hover{
+    width: 205px;
+    height: 355px;
+ 
+}
+
+
+
+
+.roupa-bloco {
+    display: flex;
+    justify-content: center;
+}
+
+.roupa-bloco > div{
+    width: 200px;
+    height: 350px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+
+}
+
+.roupa-bloco img:hover{
+    width: 205px;
+    height: 355px;
+ 
+}
+
+
+
+
+
+.bloco {
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.gasolina-bloco > div img {
+    width: 110px;
+    height: 200px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.37);
+    transition-duration: 0.2s;
+    
+}
+
+.gasolina-bloco > div img:hover {
+    width: 120px;
+    height: 200px;
+    border: 4px solid #9FC131;
+    border-radius: 10px;
+  }
+
+
+
+.gasolina-bloco1 {
+    position: relative; 
+    
+  }
+
+  .gasolina-bloco1 img {
+    width: 800px;
+    height: 200px;
+    display: flex; 
+  }
+
+  
+
+  .gasolina-bloco2 {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center;
+    font-weight: 800;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.575);
+  }
+
+  .gasolina-bloco2 > h2 {
+    border-bottom: 20px;
+  }
+
+
+
+
+  .mercado-bloco > div {
+    width: 150px;
+    height: 150px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.575);
+    margin: 5px;
+    margin: 15px;
+    transition-duration: 0.2s;
+  }
+
+  .mercado-bloco div:hover {
+    width: 150px;
+    height: 150px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.575);
+    border-radius: 10px;
+    border: 5px solid #ff0000;
+    
+  }
+
+  .mercado-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #cc1414;
+    color: white;
+    padding: 15px;
+  }
+
+  .mercado-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .mercado-dicas {
+    display: flex;
+    justify-content: center;
+    background-color: #f1c4c4;
+  }
+
+
+  .mercado-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .mercado-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .mercado-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+
+
+
+  .hotel-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #4994af;
+    color: white;
+    padding: 15px;
+  }
+
+  .hotel-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+  .hotel-dicas {
+    
+    display: flex;
+    justify-content: center;
+    background-color: #c0e6f3;
+  }
+
+
+  .hotel-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .hotel-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .hotel-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+
+
+  .beleza-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #DB7093;
+    color: white;
+    padding: 15px;
+  }
+
+  .beleza-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+  .beleza-dicas {
+    
+    display: flex;
+    justify-content: center;
+    background-color: #f1bbcd;
+  }
+
+
+  .beleza-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .beleza-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .beleza-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+
+
+  .roupa-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #ff3c00;
+    color: white;
+    padding: 15px;
+  }
+
+  .roupa-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+  .roupa-dicas {
+    
+    display: flex;
+    justify-content: center;
+    background-color: rgb(238, 201, 195);
+  }
+
+
+  .roupa-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .roupa-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .roupa-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+
+
+
+
+  .gasolina-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #9FC131;
+    color: white;
+    padding: 15px;
+  }
+
+  .gasolina-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+  .gasolina-dicas {
+    display: flex;
+    justify-content: center;
+    background-color: #d8e9a2;
+  }
+
+
+  .gasolina-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .gasolina-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .gasolina-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+.video {
+    background-color: #4994af;
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 56%;
+    position: relative;
+    
+}
+
+.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 15px;
+}
+
+.construçao-bloco {
+    display: flex;
+    justify-content: center;
+}
+
+.construçao-bloco > div {
+    width: 300px;
+    height: 150px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.384);
+    margin: 10px;
+}
+
+.construçao-bloco > div:hover {
+    width: 300px;
+    height: 150px;
+    margin: 5px;
+    border: 5px solid rgb(1, 129, 91);
+    border-radius: 10px;
+   
+}
+
+.construçao-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(1, 129, 91);
+    color: white;
+    padding: 15px;
+  }
+
+  .construçao-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+  .construçao-dicas {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(125, 196, 174);
+  }
+
+
+  .construçao-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .construçao-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .construçao-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+
+
+  .prefeitura-bloco {
+    display: flex;
+    justify-content: center;
+  }
+  .prefeitura-bloco img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .prefeitura-h2 {
+    text-align: center;
+  }
+
+
+  .prefeita-prefeito{
+    display: flex;
+    justify-content: center;
+  }
+
+  .prefeita-prefeito{
+    height: auto;
+    margin: 20px auto 20px auto;
+   
+  }
+
+  .prefeita-prefeito > div{
+    height: auto;
+    margin: 1px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
+  }
+  
+  .prefeita-prefeito > div > .pre-img {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .prefeita-prefeito > div > .pre-img {
+    height: 80%;
+    margin: 80%;
+    
+  }
+
+  .prefeitura-artigo > p {
+     max-width: auto;
+    
+  }
+ 
+
+  .nome-prefeita {
+    text-align: center;
+    padding: 20px;
+    
+  }
+
+  .nome-prefeita  > p{
+    margin-bottom: 37px;
+    text-align: center;
+    
+  }
+
+
+  .prefeitura-artigo {
+    text-align: left;
+    margin: 1px;
+  }
+
+  .prefeitura-artigo > h3 {
+    width: 500px;
+    text-align: left;
+    margin: 5px;
+    font-weight: 400;
+    font-size: 1em;
+  }
+
+  .prefeitura-artigo > p {
+    width: 500px;
+    text-align: left;
+    margin: 5px;
+    font-weight: 100;
+    
+  }
+
+  
+  
+
+footer {
+    background-color: var(--cor1);
+    height: 100px;
+    color: #fff;
+    padding: 40px ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  
+  
+
+
+
+
+
+
+
