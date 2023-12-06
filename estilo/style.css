@@ -152,6 +152,51 @@
 
 }
 
+@media (max-width: 340px) {
+    
+    .publicidade img {
+        display: none;
+    }
+
+    .publicidade div {
+        display: none;
+    }
+    
+    .hotel-bloco div img{
+        display: flex;
+        justify-content: center;
+        max-width: 150px;
+    }
+
+    .hotel-bloco1 div img{
+        display: flex;
+        justify-content: center;
+        max-width: 150px;
+    }
+    .hotel-bloco2 div img{
+        display: flex;
+        justify-content: center;
+        max-width: 150px;
+    }
+    .hotel-bloco3 div img{
+        display: flex;
+        justify-content: center;
+        max-width: 150px;
+    }
+    .hotel-bloco4 div img{
+        display: flex;
+        justify-content: center;
+        max-width: 150px;
+    }
+    .hotel-bloco5 div img{
+        display: flex;
+        justify-content: center;
+        max-width: 150px;
+    }
+
+        
+    
+}
 
 @media (max-width: 600px) {
     .publicidade {
@@ -224,11 +269,7 @@
 
 
     
-    .publicidade div {
-        width: 100%;
-        
-        
-    }
+    
 
 }
 
