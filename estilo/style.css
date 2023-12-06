@@ -155,7 +155,7 @@
     .hotel-bloco div img{
         display: flex;
         justify-content: center;
-        max-width: 350px;
+        max-width: 303px;
         height: 103px;
     }
 
@@ -184,6 +184,7 @@
         height: 103px;
     }
 
+    
 }
 
 
