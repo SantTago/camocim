@@ -185,6 +185,7 @@
     }
 
     
+    
 }
 
 
@@ -219,6 +220,8 @@
         flex-wrap: wrap;
     }
 
+    
+
     .nome-prefeita h3 {
         max-width: 270px;
         text-align: center;
@@ -235,6 +238,36 @@
         font-size: 1em;
       }
     
+    .bloco > .gasolina-bloco1 > img {
+        display: none;
+        
+    }
+
+    .gasolina-bloco2 > h2 {
+        display: none;
+        
+    }
+    .gasolina-bloco2 > address {
+        display: none;
+        
+    }
+
+
+    .bloco0 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bloco1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bloco {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
     
 
         
