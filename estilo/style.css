@@ -150,6 +150,8 @@
         max-width: 300px;
     }
 
+    
+
 }
 @media (max-width: 401px) {
     .hotel-bloco div img{
@@ -184,12 +186,7 @@
         height: 103px;
     }
 
-    .img-contruçao img{
-        display: flex;
-        justify-content: center;
-        max-width: 100%;
-        height: 100%;
-    }
+    
 
 
     
@@ -1670,15 +1667,11 @@ footer {
     padding-bottom: 20px;
   }
 
-  .img-contruçao {
-    display: flex;
-    justify-content: center;
-  }
-  
   .img-contruçao img{
     display: flex;
     justify-content: center;
-    
+    width: 100%;
+    height: 100%;
 }
 
  
