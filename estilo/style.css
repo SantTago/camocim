@@ -165,34 +165,35 @@
     .hotel-bloco div img{
         display: flex;
         justify-content: center;
-        max-width: 150px;
+        max-width: 303px;
+        height: 103px;
     }
 
     .hotel-bloco1 div img{
         display: flex;
         justify-content: center;
-        max-width: 150px;
+        max-width: 303px;
+        height: 103px;
     }
     .hotel-bloco2 div img{
         display: flex;
         justify-content: center;
-        max-width: 150px;
+        max-width: 303px;
+        height: 103px;
     }
     .hotel-bloco3 div img{
         display: flex;
         justify-content: center;
-        max-width: 150px;
+        max-width: 303px;
+        height: 103px;
     }
     .hotel-bloco4 div img{
         display: flex;
         justify-content: center;
-        max-width: 150px;
+        max-width: 303px;
+        height: 103px;
     }
-    .hotel-bloco5 div img{
-        display: flex;
-        justify-content: center;
-        max-width: 150px;
-    }
+    
 
         
     
