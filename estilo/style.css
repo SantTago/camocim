@@ -151,6 +151,41 @@
     }
 
 }
+@media (max-width: 401px) {
+    .hotel-bloco div img{
+        display: flex;
+        justify-content: center;
+        max-width: 350px;
+        height: 103px;
+    }
+
+    .hotel-bloco1 div img{
+        display: flex;
+        justify-content: center;
+        max-width: 350px;
+        height: 103px;
+    }
+    .hotel-bloco2 div img{
+        display: flex;
+        justify-content: center;
+        max-width: 350px;
+        height: 103px;
+    }
+    .hotel-bloco3 div img{
+        display: flex;
+        justify-content: center;
+        max-width: 350px;
+        height: 103px;
+    }
+    .hotel-bloco4 div img{
+        display: flex;
+        justify-content: center;
+        max-width: 350px;
+        height: 103px;
+    }
+
+}
+
 
 @media (max-width: 340px) {
     
