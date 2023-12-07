@@ -108,6 +108,13 @@
         flex-wrap: wrap;
     }
 
+    .farmacia-bloco {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
 
     .prefeitura {
         display: flex;
@@ -1561,14 +1568,21 @@ hr {
 }
 
 .construçao-bloco > div {
-    width: 300px;
+    width: 280px;
+    height: 150px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.384);
+    margin: 10px;
+}
+
+.construçao-bloco > img {
+    width: 280px;
     height: 150px;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.384);
     margin: 10px;
 }
 
 .construçao-bloco > div:hover {
-    width: 300px;
+    width: 280px;
     height: 150px;
     margin: 5px;
     border: 5px solid rgb(1, 129, 91);
@@ -1708,6 +1722,28 @@ hr {
     font-weight: 100;
     
   }
+
+
+
+  .farmacia-bloco {
+    display: flex;
+    justify-content: center;
+}
+
+.farmacia-bloco > div {
+    width: 280px;
+    height: 150px;
+    margin: 10px;
+}
+
+.farmacia-bloco > div:hover {
+    width: 280px;
+    height: 150px;
+    margin: 5px;
+    border: 5px solid #F62C27;
+    border-radius: 10px;
+   
+}
 
 
 
