@@ -1746,6 +1746,27 @@ hr {
 }
 
 
+.banco-bloco {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.banco-bloco > div {
+    width: 280px;
+    height: 150px;
+    margin: 10px;
+    background-color: #005C53;
+}
+
+.banco-bloco > div:hover {
+    width: 280px;
+    height: 150px;
+    margin: 5px;
+    border: 5px solid #27F66C;
+    border-radius: 10px;
+   
+}
 
   
   
