@@ -942,12 +942,14 @@ hr {
     width: 280px;
     height: 150px;
     margin: 15px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.329);
-    transition-duration: 0.1s;
+    
+    
 }
 
-.restaurante-bloco > div:hover {
+.restaurante-bloco > div img:hover {
     border: 5px solid #FF8B55 ;
+    transition-duration: 0.1s;
+    border-radius: 15px;
 }
 
 
@@ -982,6 +984,27 @@ hr {
     margin-left: 8px;
      
 }
+
+.confeitaria-bloco {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.confeitaria-bloco > div {
+    width: 280px;
+    height: 150px;
+    margin: 15px;
+    
+}
+
+.confeitaria-bloco > div > img:hover {
+    border: 5px solid #9A26A8 ;
+    border-radius: 15px;
+    transition-duration: 0.1s;
+}
+
 
 
 
