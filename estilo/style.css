@@ -1461,6 +1461,181 @@ hr {
 
 
 
+  /*-------------------*/
+  .banco-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #1ebb52;
+    color: white;
+    padding: 15px;
+  }
+
+  .banco-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+  .banco-dicas {
+    
+    display: flex;
+    justify-content: center;
+    background-color: #b2e6c3;
+  }
+
+
+  .banco-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .banco-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+    
+  }
+  
+  .banco-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+/*----------------------*/
+
+
+
+.restaurante-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #c06840;
+    color: white;
+    padding: 15px;
+  }
+
+  .restaurante-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+  .restaurante-dicas {
+    
+    display: flex;
+    justify-content: center;
+    background-color: #d8a993
+  }
+
+
+  .restaurante-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .restaurante-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .restaurante-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+/*--------------------------------*/
+
+
+.confeitaria-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #9A26A8;
+    color: white;
+    padding: 15px;
+  }
+
+  .confeitaria-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+  .confeitaria-dicas {
+    
+    display: flex;
+    justify-content: center;
+    background-color: #dbace0;
+  }
+
+
+  .confeitaria-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .confeitaria-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .confeitaria-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+/*------------------------*/
+
+
+
+.farmacia-dicas-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #F62C27;
+    color: white;
+    padding: 15px;
+  }
+
+  .farmacia-dicas-h2 > h2{
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+  .farmacia-dicas {
+    
+    display: flex;
+    justify-content: center;
+    background-color: #df9c9b;
+  }
+
+
+  .farmacia-dicas > ol {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .farmacia-dicas li {
+    font-weight: 900;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .farmacia-dicas  p{
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+
+  /*-----------------------*/
+
   .roupa-dicas-h2{
     display: flex;
     justify-content: center;
