@@ -1617,6 +1617,15 @@ hr {
 
 
 
+
+  .hino-camocim {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+  }
+
   .prefeitura-bloco {
     display: flex;
     justify-content: center;
@@ -1699,6 +1708,8 @@ hr {
     font-weight: 100;
     
   }
+
+
 
   
   
