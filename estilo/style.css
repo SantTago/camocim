@@ -1953,22 +1953,20 @@ hr {
   
   
 
-footer {
-    background-color: var(--cor1);
+.criador {
     height: auto;
-    color: #fff;
     padding: 40px ;
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
-  .footer-bloco {
+  .criador-bloco {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  .footer-bloco > img {
+  .criador-bloco > img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -1976,7 +1974,7 @@ footer {
 
 
 
-  .footer-bloco > div {
+  .criador-bloco > div {
     width: 150px;
     height: 150px;
     box-shadow: 0px 0px 15px black;
@@ -1984,18 +1982,18 @@ footer {
     background-color: #005C53;
   }
 
-  .footer-bloco > div:hover {
+  .criador-bloco > div:hover {
     background-color: #10e6d0;
   }
 
 
 
-  footer > article > h1 {
+  .criador > article > h1 {
     padding-bottom: 50px;
   }
 
 
-  footer > article > p {
+  .criador > article > p {
     padding-bottom: 50px;
     
   }
@@ -2007,6 +2005,14 @@ footer {
     height: 100%;
 }
 
+footer {
+  text-align: center;
+  color: white;
+  width: auto;
+  height: 40px;
+  padding-top: 20px;
+  background-color: var(--cor1);
+}
  
   
   
