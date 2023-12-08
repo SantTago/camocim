@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim</title>
   <link rel="stylesheet" href="estilo/style.css">
+
+
+  
 </head>
 <body>
 
@@ -91,19 +94,62 @@
           <abbr title="Bancos"><a href="banco.html"><img src="icon/banco.png" alt="banco"></a></abbr>
       </div >
   </div>
-  </div>
 
-  <div class="img-contruçao">
-    <img src="tela de contruçao/tela de contruçao.png" alt="contruçao de tela">
-
-  </div>
- 
-  <div class="criador">
-    <div class="criador-bloco">
-        <div>
-          <img src="icon/perfil-criador.png" alt="criador">
-        </div>
+  
+  
+    <!------------------------------->
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="apoiadores/apoiador-1.png" alt="Imagem 1">
+      </div>
+      <div class="slide">
+        <img src="apoiadores/apoiador-2.png" alt="Imagem 2">
+      </div>
+      
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
     </div>
+
+    <!------------------------------->
+    
+    <script>
+  let slideIndex = 0;
+
+  function showSlides() {
+    const slides = document.querySelectorAll('.slide');
+    
+    if (slideIndex >= slides.length) {
+      slideIndex = 0;
+    } else if (slideIndex < 0) {
+      slideIndex = slides.length - 1;
+    }
+
+    slides.forEach((slide, index) => {
+      const distance = index - slideIndex;
+      const transformValue = distance * 100 + '%';
+      slide.style.transform = 'translateX(' + transformValue + ')';
+    });
+  }
+
+  function plusSlides(n) {
+    slideIndex += n;
+    showSlides();
+  }
+
+  setInterval(() => {
+    slideIndex++;
+    showSlides();
+  }, 3000);
+</script>
+    <!------------------------------->
+
+    <div class="criador">
+      <div class="criador-bloco">
+          <div>
+            <img src="icon/perfil-criador.png" alt="criador">
+          </div>
+      </div>
     
     <article>
      
@@ -145,6 +191,24 @@
       <p>
         Que esta história de códigos e sonhos seja contada não apenas por linhas de código, mas pelos corações daqueles que acreditam no poder transformador da tecnologia e na força de um estudante determinado.
       </p>
+
+  </div>
+
+  <div class="slideshow-container">
+    <div class="slide">
+      <img src="apoiadores/apoiador-1.png" alt="Imagem 1">
+    </div>
+    <div class="slide">
+      <img src="apoiadores/apoiador-2.png" alt="Imagem 2">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+
+  <div class="img-contruçao">
+    <img src="tela de contruçao/tela de contruçao.png" alt="contruçao de tela">
 
   </div>
 
