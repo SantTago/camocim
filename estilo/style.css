@@ -745,13 +745,13 @@ hr {
 .roupas-cor1{
     width: 50px;
     height: 50px;
-    background-color: rgb(255, 51, 0);
+    background-color: #4D4D4D;
     border-radius: 50px;
     margin: 10px;
 }
 
-.roupas-cor:hover {
-    background-color: rgb(255, 51, 0);
+.roupas-cor1:hover {
+    background-color: #b6adad;
 }
 
 .roupas-cor .roupas-icon  img {
@@ -1647,7 +1647,7 @@ hr {
     display: flex;
     justify-content: center;
     text-align: center;
-    background-color: #ff3c00;
+    background-color: #4D4D4D;
     color: white;
     padding: 15px;
   }
@@ -1662,7 +1662,7 @@ hr {
     
     display: flex;
     justify-content: center;
-    background-color: rgb(238, 201, 195);
+    background-color: #979595;
   }
 
 
