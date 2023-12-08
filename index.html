@@ -99,76 +99,87 @@
   
     <!------------------------------->
     <div class="slideshow-container">
-      <div class="slide">
+      <div class="mySlides">
         <img src="apoiadores/apoiador-1.png" alt="Imagem 1">
       </div>
-      
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
-    </div>
-
-    <div class="slideshow-container">
-      <div class="slide">
-        <img src="apoiadores/apoiador-2.png" alt="Imagem 1">
+    
+      <div class="mySlides">
+        <img src="apoiadores/apoiador-2.png" alt="Imagem 2">
       </div>
-      
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
-    </div>
-
-    <div class="slideshow-container">
-      <div class="slide">
-        <img src="apoiadores/apoiador-3.png" alt="Imagem 1">
+    
+      <div class="mySlides">
+        <img src="apoiadores/apoiador-3.png" alt="Imagem 3">
       </div>
-      
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
-    </div>
-
-    <div class="slideshow-container">
-      <div class="slide">
-        <img src="apoiadores/apoiador-4.png" alt="Imagem 1">
+    
+      <div class="mySlides">
+        <img src="apoiadores/apoiador-4.png" alt="Imagem 4">
       </div>
-      
+    
+      <div class="mySlides">
+        <img src="apoiadores/apoiador-5.png" alt="Imagem 4">
+      </div>
+
+      <div class="mySlides">
+        <img src="apoiadores/apoiador-6.png" alt="Imagem 4">
+      </div>
+
+      <div class="mySlides">
+        <img src="apoiadores/apoiador-7.png" alt="Imagem 4">
+      </div>
+
+      <div class="mySlides">
+        <img src="apoiadores/apoiador-8.png" alt="Imagem 4">
+      </div>
+
+      <div class="mySlides">
+        <img src="apoiadores/apoiador-9.png" alt="Imagem 4">
+      </div>
+
+      <div class="mySlides">
+        <img src="apoiadores/apoiador-10.png" alt="Imagem 4">
+      </div>
+    
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
     </div>
-
+    
     <!------------------------------->
     
     <script>
-  let slideIndex = 0;
-
-  function showSlides() {
-    const slides = document.querySelectorAll('.slide');
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      autoSlide(); // Inicia o slideshow automático
     
-    if (slideIndex >= slides.length) {
-      slideIndex = 0;
-    } else if (slideIndex < 0) {
-      slideIndex = slides.length - 1;
-    }
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+    
+      function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+    
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+    
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+    
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+    
+        slides[slideIndex - 1].style.display = "block";
+      }
+    
+      function autoSlide() {
+        setInterval(function() {
+          plusSlides(1);
+        }, 2000); // Avança para o próximo slide a cada 2 segundos
+      }
+    </script>
 
-    slides.forEach((slide, index) => {
-      const distance = index - slideIndex;
-      const transformValue = distance * 100 + '%';
-      slide.style.transform = 'translateX(' + transformValue + ')';
-    });
-  }
-
-  function plusSlides(n) {
-    slideIndex += n;
-    showSlides();
-  }
-
-  setInterval(() => {
-    slideIndex++;
-    showSlides();
-  }, 3000);
-</script>
     <!------------------------------->
 
     <div class="criador">

@@ -2030,36 +2030,32 @@ footer {
 /*------------------------------*/
 
 .slideshow-container {
-  display: flex;
-  overflow: hidden;
-  max-width: 100%;
+  max-width: auto;
   position: relative;
+  margin: auto;
 }
 
-.slide {
-  flex: 0 0 100%; /* Ajusta o tamanho da imagem ao contêiner */
-  transition: transform 0.5s ease-in-out;
+.mySlides {
+  display: none;
 }
 
-.slide > img {
- width: 100%;
+img {
+  width: 100%;
+  height: auto;
 }
 
-
-/* Botões de navegação */
 .prev, .next {
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -30px;
   padding: 16px;
+  margin-top: -22px;
   color: white;
   font-weight: bold;
-  font-size: 20px;
-  cursor: pointer;
+  font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
+  cursor: pointer;
 }
 
 .next {
@@ -2070,6 +2066,5 @@ footer {
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 
