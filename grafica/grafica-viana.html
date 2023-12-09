@@ -18,9 +18,9 @@
     </p>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="noticias.html">Notícias</a>
-      <a href="turismo.html">Turismo</a>
+      <a href="../index.html">Home</a>
+      <a href="../noticias.html">Notícias</a>
+      <a href="../turismo.html">Turismo</a>
 
     </nav>
 
@@ -58,6 +58,69 @@
         </div >
     </div>  
 
+    
+    <!------------------------------->
+    <div class="slideshow-container">
+        <div class="mySlides">
+          <img src="../grafica/grafica viana/propagranda.gr/sacola-palhaço.png" alt="Imagem 1">
+        </div>
+      
+        <div class="mySlides">
+          <img src="../grafica/grafica viana/propagranda.gr/publi-2.png" alt="Imagem 2">
+        </div>
+      
+        <div class="mySlides">
+          <img src="../grafica/grafica viana/propagranda.gr/PUCLI-3.png" alt="Imagem 3">
+        </div>
+
+        <div class="mySlides">
+            <img src="../grafica/grafica viana/propagranda.gr/PAPEL.png" alt="Imagem 3">
+          </div>
+      
+      
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      
+      <!------------------------------->
+      
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        autoSlide(); // Inicia o slideshow automático
+      
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+      
+        function showSlides(n) {
+          let i;
+          const slides = document.getElementsByClassName("mySlides");
+      
+          if (n > slides.length) {
+            slideIndex = 1;
+          }
+      
+          if (n < 1) {
+            slideIndex = slides.length;
+          }
+      
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+      
+          slides[slideIndex - 1].style.display = "block";
+        }
+      
+        function autoSlide() {
+          setInterval(function() {
+            plusSlides(1);
+          }, 4000); // Avança para o próximo slide a cada 2 segundos
+        }
+      </script>
+  
+      <!------------------------------->
+
 
 
     <div class="grafica-viana-bloco">
@@ -83,15 +146,67 @@
         <div>
             <img src="grafica viana/painel/redondo.png" alt="painel">
         </div>
+
     </div>
+
+
+
+    <div class="grafica-viana-bloco">
+        <div>
+            <img src="grafica viana/caixinha/piramide.png" alt="caixinha">
+            
+        </div>
+
+        <div>
+            <img src="grafica viana/caixinha/milk.png" alt="milk">
+        </div>
+
+        <div>
+            <img src="grafica viana/caixinha/cofre.png" alt="cofre">
+        </div>
+
+        <div>
+            <img src="grafica viana/convite/convite-2.png" alt="convite-2">
+        </div>
+
+    </div>
+
+    <div class="redes-sociais">
+        <div>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+            
+        </div>
+    </div>
+
+
+    <div class="saiba-mais">
+        
+        <p>Endereço: Rua Paissandu N: 1951, 
+            <br>CEP: 62400-000 | Telefone: (88) 9.9342-4685 <br> Camocim-Ceara
+            </p>
+    </div>
+
     
     <div class="img-contruçao">
         <div>
             <img src="../tela de contruçao/tela de contruçao.png" alt="contruçao de tela">
         </div>
+
     </div>
 
-   
+    
+
     <footer>
     <p>
         Site 100% Criado por um Nativo!
