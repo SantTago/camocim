@@ -193,9 +193,7 @@
         height: 103px;
     }
 
-   
     
-
 
     
     
@@ -204,163 +202,166 @@
 
 @media (max-width: 350px) {
     
-    .publicidade img {
-        display: none;
-    }
+  
 
-    .publicidade div {
-        display: none;
-    }
-    
-    .hotel-bloco div img{
-        display: flex;
-        justify-content: center;
-        max-width: 303px;
-        height: 103px;
-    }
+  .noticias img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-height: 180px;
 
-    
-    .hotel-bloco1 div img{
-        display: flex;
-        justify-content: center;
-        max-width: 303px;
-        height: 103px;
-    }
-    
-    .bloco div {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    
-    
-
-    
-
-    
-
-    .nome-prefeita h3 {
-        max-width: 270px;
-        text-align: center;
-        margin: 5px;
-        font-weight: 400;
-        font-size: 1em;
-      }
-
-    .nome-prefeita p {
-        max-width: 270px;
-        text-align: center;
-        margin: 5px;
-        font-weight: 400;
-        font-size: 1em;
-      }
-    
-    .bloco > .gasolina-bloco1 > img {
-        display: none;
-        
-    }
-
-    .gasolina-bloco2 > h2 {
-        display: none;
-        
-    }
-    .gasolina-bloco2 > address {
-        display: none;
-        
-    }
+  }
 
 
-    .bloco0 {
-        display: flex;
-        justify-content: center;
-    }
 
-    .bloco1 {
-        display: flex;
-        justify-content: center;
-    }
+  .publicidade img {
+      display: none;
+  }
 
-    .bloco {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+  .publicidade div {
+    display: none;
+  }
     
+  .hotel-bloco div img{
+    display: flex;
+    justify-content: center;
+    max-width: 303px;
+    height: 103px;
+  }
+
     
+  .hotel-bloco1 div img{
+    display: flex;
+    justify-content: center;
+    max-width: 303px;
+    height: 103px;
+  }
     
-        
+  .bloco div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+
+  
+  .nome-prefeita h3 {
+    max-width: 270px;
+    text-align: center;
+    margin: 5px;
+    font-weight: 400;
+    font-size: 1em;
+  }
+
+  .nome-prefeita p {
+      max-width: 270px;
+      text-align: center;
+      margin: 5px;
+      font-weight: 400;
+      font-size: 1em;
+  }
+  
+  .bloco > .gasolina-bloco1 > img {
+      display: none;
+      
+  }
+
+  .gasolina-bloco2 > h2 {
+      display: none;
+      
+  }
+  .gasolina-bloco2 > address {
+      display: none;
+      
+  }
+
+
+  .bloco0 {
+      display: flex;
+      justify-content: center;
+  }
+
+  .bloco1 {
+      display: flex;
+      justify-content: center;
+  }
+
+  .bloco {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+}  
     
-}
 
 @media (max-width: 600px) {
-    .publicidade {
-        display: flex;
-        background-color: #00425c;
-        padding: 10px;
-        flex-direction: row;
-        align-content: stretch;
-        justify-content: flex-start;
-        align-items: center;
-        flex-wrap: wrap;
-        
-    }
+  .publicidade {
+      display: flex;
+      background-color: #00425c;
+      padding: 10px;
+      flex-direction: row;
+      align-content: stretch;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      
+  }
 
 
-    .praias {
-        display: flex;
-        padding-bottom: 15px;
-        flex-direction: column-reverse;
-    }
+  .praias {
+      display: flex;
+      padding-bottom: 15px;
+      flex-direction: column-reverse;
+  }
 
-    .praias {
-        margin: 0px auto 0px auto;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        
-    }
+  .praias {
+      margin: 0px auto 0px auto;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      
+  }
     
-    .praias img{
-        margin: 0px auto 0px auto;
-        padding-bottom: 15px;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding: 0px;
-    }
+  .praias img{
+      margin: 0px auto 0px auto;
+      padding-bottom: 15px;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding: 0px;
+  }
 
-    .praias p {
-        display: contents;
-        
-    }
-    .praias2 {
-        display: flex;
-        padding-bottom: 15px;
-        flex-direction: column-reverse;
-    }
+  .praias p {
+      display: contents;
+      
+  }
+  .praias2 {
+      display: flex;
+      padding-bottom: 15px;
+      flex-direction: column-reverse;
+  }
 
-    .praias2 {
-        margin: 0px auto 0px auto;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        
-    }
+  .praias2 {
+      margin: 0px auto 0px auto;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      
+  }
     
-    .praias2 img{
-        margin: 0px auto 0px auto;
-        padding-bottom: 15px;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding: 0px;
-    }
+  .praias2 img{
+      margin: 0px auto 0px auto;
+      padding-bottom: 15px;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding: 0px;
+  }
 
-    .praias2 p {
-        display: contents;
-        
-    }
+  .praias2 p {
+      display: contents;
+      
+  }
 
 
     
@@ -487,6 +488,7 @@ article {
     height: 70%;
     text-align: center;
     margin: auto;
+    
 }
 
 article h1 {
@@ -611,34 +613,7 @@ main .torta {
  }
 
 
- .noticias {
-    display: flex;
-    flex-direction: row; /* Inverte a ordem dos elementos dentro do flex container */
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    
-    max-width: 99%;
-    margin: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-    
-}
 
-.noticias_img {
-    margin-left: 20px; /* Adicione margem à esquerda para separar a imagem do texto */
-}
-
-.noticias_img > img {
-
-    display: flex;
-    max-height: 150px;
-     
-}
-
-.noticias_img > p {
-    
-    background-color: #9FC131;
-}
 
 .sub3 {
     text-align: center;
@@ -650,9 +625,56 @@ main .torta {
     border-radius: 20px;
 }
 
-hr {
-    max-width: 70%;
+/*------------------------*/
+
+
+.noticias {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+  
+  padding: 15px;
 }
+
+.noticias p {
+  max-height: 100%;
+  max-width: 100%;
+  padding-top: 8%;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-weight: 800;
+}
+
+.noticias img {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 280px;
+  width: 100%;
+  padding: 10px;
+  padding-bottom: 15px;
+  border-radius: 20px;
+  
+}
+
+.paragrafo {
+  margin-left:80%;
+  background-color: #d8d6d6;
+}
+
+
+
+.materia > p {
+  font-weight: 100;
+  border: 10px;
+
+}
+
+
+
+
+/*=------------------------*/
 
 .destaque {
     color: red;
