@@ -750,8 +750,9 @@ hr {
     margin: 10px;
 }
 
-.roupas-cor1:hover {
+.roupas-cor:hover {
     background-color: #4D4D4D;
+    
 }
 
 .roupas-cor .roupas-icon  img {
