@@ -751,7 +751,7 @@ hr {
 }
 
 .roupas-cor1:hover {
-    background-color: #b6adad;
+    background-color: #4D4D4D;
 }
 
 .roupas-cor .roupas-icon  img {
@@ -837,13 +837,13 @@ hr {
 .grafica-cor1{
     width: 50px;
     height: 50px;
-    background-color: rgb(255, 153, 0);
+    background-color: rgb(0, 140, 255);
     border-radius: 50px;
     margin: 10px;
 }
 
 .grafica-cor:hover {
-    background-color: rgb(255, 153, 0);
+    background-color: rgb(0, 140, 255);
 }
 
 .grafica-cor .mercadinho-icon  img {
@@ -2000,18 +2000,56 @@ hr {
 
 
 
-.propagandas-bloco {
+
+
+.grafica-bloco {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.propagandas-bloco > div {
-  width: 100%;
-  height: 300px;
+.grafica-bloco > div {
+  width: 280px;
+  height: 150px;
   margin: 10px;
-  background-color: #005C53;
+  
 }
+
+.grafica-bloco > div:hover {
+  width: 280px;
+  height: 150px;
+  margin: 5px;
+  border: 5px solid #0077ff;
+  border-radius: 10px;
+ 
+}
+
+/*---------------------------*/
+
+.grafica-viana-bloco {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.grafica-viana-bloco > div {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.384);
+  
+}
+
+
+.grafica-viana-bloco > div:hover {
+  margin: 5px;
+  border: 5px solid #0077ff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px #0077ff;
+}
+
+/*-----------------------------------*/
+
 
 
 
