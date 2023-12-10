@@ -664,8 +664,7 @@ main .torta {
 }
 
 .paragrafo {
-  display: flex;
-  margin-left:80%;
+  text-align: center;
   background-color: #d8d6d6;
 }
 
@@ -692,6 +691,7 @@ main .torta {
 
 .noticias  p {
     padding:  10px;
+    margin: 20px;
 }
 
 .achar {
@@ -883,6 +883,12 @@ main .torta {
     margin-left: 10px;
      
 }
+
+/*--------------------------*/
+
+
+
+/*--------------------------------*/
 
 
 .construçao-cor{
