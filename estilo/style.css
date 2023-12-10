@@ -660,6 +660,7 @@ main .torta {
 }
 
 .paragrafo {
+  display: flex;
   margin-left:80%;
   background-color: #d8d6d6;
 }
