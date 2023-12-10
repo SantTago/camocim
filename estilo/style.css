@@ -2126,6 +2126,20 @@ main .torta {
   color: #0077ff;
 }
 
+.grafica-texto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.grafica-texto > li {
+  max-width: 300px;
+  padding: 20px;
+  
+}
+
 
 
 footer {
