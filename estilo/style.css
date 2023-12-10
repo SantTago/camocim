@@ -2093,7 +2093,7 @@ main .torta {
   padding: 10px;
   background-color: #0077ff;
   border-radius: 100%;
-  margin: 20px;
+  margin: 6px;
 }
 
 .redes-sociais div:hover {
@@ -2104,15 +2104,27 @@ main .torta {
 
 /*-----------------------------------*/
 
-.saiba-mais {
+.endereço-grafica {
   text-align: center;
   color: white;
   width: auto;
-  height: 60px;
-  padding: 20px;
+  height: 40px;
+  padding: 10px;
   background-color: #0077ff;
 }
 
+
+.saiba-mais > h2{
+  text-align: center;
+  border: 5px solid #ffffff;
+  padding: 0px;
+  font-family: var(--destaque);
+  padding-top: 40px;
+}
+
+.saiba-mais > h2:hover {
+  color: #0077ff;
+}
 
 
 
