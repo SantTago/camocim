@@ -2194,3 +2194,33 @@ img {
 }
 
 
+
+.area-de-postes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+
+.area-de-postes > div {
+  width: 80%;
+  height: 100%;
+ 
+}
+
+.area-de-postes > img {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 800px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.315);
+}
+
+.area-de-postes > div > h2 {
+  text-align: center;
+
+}
+
+
