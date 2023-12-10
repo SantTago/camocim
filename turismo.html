@@ -13,38 +13,100 @@
       Registra Camocim
     </h1>
 
-    <p>
-      Site 100% Criado por um Nativo!
-    </p>
 
+  </header>
+
+  <div class="menu">
     <nav>
       <a href="index.html">Home</a>
       <a href="noticias.html">Notícias</a>
       <a href="turismo.html">Turismo</a>
-
     </nav>
+  </div>
 
-  </header>
 
-  <div class="publicidade">
-    <div>
-      <img src="image/d543fb_597e54b9874c471a9b6ef16b2ad09f03~mv2.webp" alt="Camocim - Ce">
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-1.png" alt="Imagem 1">
     </div>
-    <div>
-      <img src="image/Historia-de-Camocim-Lote-Livre-1-1024x653.jpg" alt="Camocim - Ce">
+  
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-2.png" alt="Imagem 2">
     </div>
-    <div>
-      <img src="image/ilha-do-amor-min-p8mnojossrqqd5lv3nbszl4hrj1onl5d0pbdrrhdpc.jpg" alt="Camocim - Ce">
+  
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-3.png" alt="Imagem 3">
     </div>
-    <div>
-      <img src="image/Camocim-Ceara-Barroquinha-Capa.webp" alt="Camocim - Ce ">
+  
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-4.png" alt="Imagem 4">
     </div>
-    <div>
-      <img src="image/Ilha do Amor.jpg" alt="">
+  
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-5.png" alt="Imagem 5">
     </div>
-    <div>
-      <img src="image/07-930x620.jpg" alt="Camocim">
+
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-6.png" alt="Imagem 6">
     </div>
+
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-7.png" alt="Imagem 7">
+    </div>
+
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-8.png" alt="Imagem 8">
+    </div>
+
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-9.png" alt="Imagem 9">
+    </div>
+
+    <div class="mySlides">
+      <img src="apoiadores/apoiador-10.png" alt="Imagem 10">
+    </div>
+  
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  
+  <!------------------------------->
+  
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    autoSlide(); // Inicia o slideshow automático
+  
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+  
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+  
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+  
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+  
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+  
+      slides[slideIndex - 1].style.display = "block";
+    }
+  
+    function autoSlide() {
+      setInterval(function() {
+        plusSlides(1);
+      }, 4000); // Avança para o próximo slide a cada 2 segundos
+    }
+    </script>
+
   </div>
   
   <main>
