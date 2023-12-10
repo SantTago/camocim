@@ -13,6 +13,7 @@
     font-family: 'KGRedHands';
     src: url(../fontes/KGRedHands.ttf) format('opentype'); 
 }
+
 @media (max-width: 950px) {
 
     .icon {
@@ -1426,7 +1427,7 @@ main .torta {
     
     display: flex;
     justify-content: center;
-    background-color: #c0e6f3;
+    background-color: #ffffff;
   }
 
 
@@ -1468,7 +1469,7 @@ main .torta {
     
     display: flex;
     justify-content: center;
-    background-color: #f1bbcd;
+    background-color: #ffffff;
   }
 
 
