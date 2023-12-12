@@ -33,12 +33,7 @@
         flex-wrap: wrap;
     }
 
-    .beleza-bloco {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
+    
     .roupa-bloco {
         display: flex;
         justify-content: center;
@@ -155,7 +150,14 @@
 
 @media (max-width: 350px) {
     
-  
+  .beleza-bloco div{
+    max-width: 100px;
+    height: 100%;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+
+}
 
   .noticias img {
     display: flex;
@@ -1112,24 +1114,27 @@ main .torta {
 
 
 
-
 .beleza-bloco {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.beleza-bloco > div{
-    width: 200px;
-    height: 350px;
+
+
+.beleza-bloco div{
+    width: 150px;
+    height: 100%;
     margin: 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
 
 }
 
+
 .beleza-bloco img:hover{
-    width: 205px;
-    height: 355px;
+    
+    
  
 }
 
