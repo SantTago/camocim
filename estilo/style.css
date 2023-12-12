@@ -24,43 +24,8 @@
         flex-wrap: wrap;
     }
 
-    .hotel-bloco {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: auto;
-        flex-wrap: wrap;
-    }
 
     .hotel-bloco1 {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: auto;
-        flex-wrap: wrap;
-    }
-
-    
- 
-    
-
-    .hotel-bloco2 {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: auto;
-        flex-wrap: wrap;
-    }
-
-    .hotel-bloco3 {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: auto;
-        flex-wrap: wrap;
-    }
-
-    .hotel-bloco4 {
         display: flex;
         justify-content: center;
         flex-direction: row;
@@ -163,40 +128,22 @@
     }
 
 
-
 }
-@media (max-width: 401px) {
-    .hotel-bloco div img{
-        display: flex;
-        justify-content: center;
-        max-width: 303px;
-        height: 103px;
-    }
+@media (max-width: 500px) {
+  .hotel-bloco div{
+    display: flex;
+    justify-content: center;
+    max-width: 303px;
+    height: 103px;
+}
 
-    .hotel-bloco1 div img{
-        display: flex;
-        justify-content: center;
-        max-width: 350px;
-        height: 103px;
-    }
-    .hotel-bloco2 div img{
-        display: flex;
-        justify-content: center;
-        max-width: 350px;
-        height: 103px;
-    }
-    .hotel-bloco3 div img{
-        display: flex;
-        justify-content: center;
-        max-width: 350px;
-        height: 103px;
-    }
-    .hotel-bloco4 div img{
-        display: flex;
-        justify-content: center;
-        max-width: 350px;
-        height: 103px;
-    }
+.hotel-bloco1 div img{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: 100%;
+}
+    
 
     
     
@@ -228,29 +175,13 @@
     display: none;
   }
     
-  .hotel-bloco div img{
-    display: flex;
-    justify-content: center;
-    max-width: 303px;
-    height: 103px;
-  }
-
-    
-  .hotel-bloco1 div img{
-    display: flex;
-    justify-content: center;
-    max-width: 303px;
-    height: 103px;
-  }
+  
     
   .bloco div {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
-
-
-  
 
   
   
@@ -1157,26 +1088,6 @@ main .torta {
 
 
 
-.hotel-bloco {
-    display: flex;
-    justify-content: center;
-}
-
-.hotel-bloco > div{
-    width: 450px;
-    height: 100px;
-    margin: 5px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
-
-}
-
-.hotel-bloco img:hover{
-    width: 453px;
-    height: 103px;
- 
-}
-
 .hotel-bloco1 {
     display: flex;
     justify-content: center;
@@ -1196,72 +1107,6 @@ main .torta {
     height: 103px;
     border: 2px solid var(--cor7);
     box-shadow: 2px 2px 15px var(--cor8);
- 
-}
-
-
-
-
-.hotel-bloco2 {
-    display: flex;
-    justify-content: center;
-}
-
-.hotel-bloco2 > div{
-    width: 450px;
-    height: 100px;
-    margin: 5px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
-
-}
-.hotel-bloco2 img:hover{
-    width: 453px;
-    height: 103px;
- 
-}
-
-
-
-.hotel-bloco3 {
-    display: flex;
-    justify-content: center;
-}
-
-.hotel-bloco3 > div{
-    width: 450px;
-    height: 100px;
-    margin: 5px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
-
-}
-.hotel-bloco3 img:hover{
-    width: 453px;
-    height: 103px;
- 
-}
-
-
-
-
-.hotel-bloco4 {
-    display: flex;
-    justify-content: center;
-}
-
-.hotel-bloco4 > div{
-    width: 450px;
-    height: 100px;
-    margin: 5px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
-
-}
-
-.hotel-bloco4 img:hover{
-    width: 453px;
-    height: 103px;
  
 }
 
