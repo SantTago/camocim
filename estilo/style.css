@@ -753,7 +753,7 @@ main .torta {
     border-radius: 50px;
     margin: 8px;
     margin-left: 10px;
-    
+ 
     
 }
 
@@ -765,10 +765,9 @@ main .torta {
     margin: 10px;
 }
 
-.beleza-cor1:hover {
-    background-color: palevioletred;
+.beleza-cor:hover {
+    background-color: rgb(238, 192, 207);
 }
-
 
 
 .roupas-cor{
