@@ -164,7 +164,7 @@
   height: 100%;
   margin: 5px;
   border-radius: 5px;
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+  
 
 }
 
@@ -1564,7 +1564,7 @@ main .torta {
     
     display: flex;
     justify-content: center;
-    background-color: #979595;
+    
   }
 
 
