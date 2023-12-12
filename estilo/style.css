@@ -159,6 +159,15 @@
 
 }
 
+.roupa-bloco div{
+  max-width: 100px;
+  height: 100%;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+
+}
+
   .noticias img {
     display: flex;
     justify-content: center;
@@ -1127,37 +1136,34 @@ main .torta {
     height: 100%;
     margin: 5px;
     border-radius: 5px;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+    
 
 }
-
 
 .beleza-bloco img:hover{
-    
-    
- 
-}
+  border: 3px solid rgb(231, 45, 200);
 
+}
 
 
 
 .roupa-bloco {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .roupa-bloco > div{
-    width: 200px;
-    height: 350px;
-    margin: 5px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
+  width: 150px;
+  height: 100%;
+  margin: 5px;
+  border-radius: 5px;
+
 
 }
 
 .roupa-bloco img:hover{
-    width: 205px;
-    height: 355px;
+    border: 3px solid rgb(78, 86, 87);
  
 }
 
