@@ -1692,8 +1692,9 @@ main .torta {
   .construçao-dicas {
     display: flex;
     justify-content: center;
-    background-color: rgb(125, 196, 174);
+     
   }
+
 
 
   .construçao-dicas > ol {
