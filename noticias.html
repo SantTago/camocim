@@ -1,271 +1,261 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noticias</title>
-    <link rel="stylesheet" href="estilo/style.css">
+    <title>Notícias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #e60000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        article {
+            width: 48%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: height 0.3s ease-in-out;
+            
+        }
+
+        
+
+        article img {
+            width: 100%;
+            height: auto;
+        }
+
+        article div {
+            padding: 25px;
+            max-height: 100px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .read-more {
+            display: block;
+            color: #e60000;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .expanded {
+            max-height: none !important;
+        }
+
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        footer {
+            background-color: #e60000;
+            color: #fff;
+            text-align: center;
+            padding: 0px;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            border-bottom: 15px;
+        }
+
+        .icon img {
+          width: 30px;
+          height: 30px;
+          columns: auto;
+          margin: 10px;
+      }
+      
+      .icon {
+          display: flex;
+          justify-content: center;
+          margin: auto;
+      }
+      
+      .icon > div {
+          padding: 5px;
+          text-align: center;
+          border-radius: 50%; 
+      }
+
+      .mercadinho-cor{
+        width: 50px;
+        height: 50px;
+        background-color: rgb(255, 0, 0);
+        border-radius: 50px;
+        margin: 10px;
+    }
+
+      .mercadinho-cor:hover {
+        background-color: rgb(116, 0, 0);
+    }
+
+    .menu{
+      text-align: left;
+      padding-left: 8px;
+      padding-top: 50px;
+  }
+  
+  .menu a {
+      text-decoration: none;
+      font-family: var(--normal);
+      margin: 10px;
+      transition-duration: 0.5s;
+      padding: 5px;
+      border-radius: 10px;
+      color: white;
+  
+      
+  
+  }
+  
+  .menu a:hover {
+      background-color: rgba(255, 255, 255, 0.616);
+      color: var(--cor1);
+  }
+  
+  .menu {
+    background-color: #e60000;
+    height: 40px;
+  }
+
+  header > h1 {
+    text-align: center;
+    padding-top: 45px;
+    font-family: var(--destaque);
+    color: white;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+
+}
+.paragrafo {
+  text-align: center;
+}
+
+header p {
+    font-family: var(--normal);
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+}
+  
+  @media (max-width: 600px) {
+      article {
+          width: 100%;
+      }
+  }
+    </style>
 </head>
+
 <body>
-    <header>
 
-      <h1>
-        Registra Camocim
-      </h1>
+  <header>
 
-    
-    </header>
+    <h1>
+      Registra Camocim
+    </h1>
 
-    <div class="menu">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="noticias.html">Notícias</a>
-        <a href="turismo.html">Turismo</a>
-      </nav>
-    </div>
+  </header>
 
-    
-
-     <!------------------------------->
-    <div class="slideshow-container">
-      <div class="mySlides">
-        <img src="grafica/grafica viana/banner/banner.png" alt="Imagem 1">
-      </div>
-    
-      <div class="mySlides">
-        <img src="apoiadores/apoiador-2.png" alt="Imagem 2">
-      </div>
-    
-      <div class="mySlides">
-        <img src="apoiadores/apoiador-3.png" alt="Imagem 3">
-      </div>
-    
-      <div class="mySlides">
-        <img src="apoiadores/apoiador-4.png" alt="Imagem 4">
-      </div>
-    
-      <div class="mySlides">
-        <img src="grafica/grafica viana/banner/banner-2.png" alt="Imagem 5">
-      </div>
-
-      <div class="mySlides">
-        <img src="apoiadores/apoiador-6.png" alt="Imagem 6">
-      </div>
-
-      <div class="mySlides">
-        <img src="apoiadores/apoiador-7.png" alt="Imagem 7">
-      </div>
-
-      <div class="mySlides">
-        <img src="apoiadores/apoiador-8.png" alt="Imagem 8">
-      </div>
-
-      <div class="mySlides">
-        <img src="apoiadores/apoiador-9.png" alt="Imagem 9">
-      </div>
-
-      <div class="mySlides">
-        <img src="apoiadores/apoiador-10.png" alt="Imagem 10">
-      </div>
-    
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    
-    <!------------------------------->
-    
-    <script>
-      let slideIndex = 1;
-      showSlides(slideIndex);
-      autoSlide(); // Inicia o slideshow automático
-    
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-    
-      function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("mySlides");
-    
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-    
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-    
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-    
-        slides[slideIndex - 1].style.display = "block";
-      }
-    
-      function autoSlide() {
-        setInterval(function() {
-          plusSlides(1);
-        }, 4000); // Avança para o próximo slide a cada 2 segundos
-      }
-    </script>
-
-    <!------------------------------->
-    
-
-    <h2 class="sub3">
-        Notícias 
-    </h2>
-
-
-<!--------------------------------->
-
-
-<hr>
-
-<main class="noticias">
-
-  <div>
-    <img src="https://ifce.edu.br/camocim/noticias/ifce-camocim-encerra-o-semestre-com-o-iii-encontro-de-letras/Logo_EncontrodeLetras.png/@@images/b95fe014-a1ac-4ada-bdb4-f72d657ff51d.png" alt="noticias">
+  <div class="menu">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="noticias.html">Notícias</a>
+      <a href="turismo.html">Turismo</a>
+    </nav>
   </div>
 
-  <div class="materia">
-
-    <h3>
-      IFCE Camocim encerra o semestre com o III Encontro de Letras
-    </h3>
-
-    <p>
-      Para finalizar o semestre 2023.2 com chave de ouro, o IFCE Campus Camocim promove de 11 a 15 de dezembro o III Encontro de Letras, evento institucional para servidores e alunos do curso de Licenciatura em Letras Português - Inglês. A comissão organizadora do evento, composta por professores e discentes, preparou uma programação riquíssima visando oportunizar momentos inesquecíveis para todos os discentes do curso.
-    </p>
-
-    <p>
-      in(ter)disciplinares em prol da práxis educativa" que será trabalhado em todo evento por meio de palestras, mesas-redondas, oficinas, minicursos, salas temáticas, apresentações artístico-culturais e muito mais. Abaixo estão elencados os diversos eixos temáticos que estarão presentes nas atividades do evento:
-    </p>
-
-    </div>
-
-
-    <p class="paragrafo"> 
-      13:48  12/12/2023
-    </p>
   
-  </main>
-
-
-
-    <!--------------------------------->
-
-
-    <hr>
-
-    <main class="noticias">
-
-      <div>
-        <img src="https://portalt5-cdn1.cworks.cloud/fileadmin/_processed_/b/3/csm_crime_uirauna_03-12-2023_27ab0a267d.jpg" alt="noticias">
-      </div>
-
-      <div class="materia">
-
-        <h3>
-          Controladoria instaura procedimento contra PM do Ceará acusado de homicídio na PB
-        </h3>
-
-        <p>
-          A Controladoria Geral de Disciplina dos Órgãos de Segurança Pública (CGD) iniciou um procedimento administrativo disciplinar contra o soldado Yuri Vieira Alves, que se encontra detido após ser flagrado, por uma câmera de vigilância, atirando em Ramon Pedro de Sousa, de 25 anos, que morreu no local. A instauração do procedimento foi formalizada por meio de portaria publicada nesta sexta-feira, 8, no Diário Oficial do Estado.
-        </p>
-
-        <p>
-          O incidente aconteceu no último domingo (3), na cidade de Uiraúna, na Paraíba. O soldado Yuri foi preso por ordem de um mandado de prisão preventiva na terça-feira (5), e estava lotado na cidade de Orós, região Centro-Sul do Ceará.
-        </p>
-
-        <p>
-          Imagens capturadas pela câmera de monitoramento revelam o momento em que Yuri e Ramon caminhavam por uma rua durante a madrugada. O policial se aproxima do jovem e o empurra duas vezes, antes de efetuar um disparo à queima-roupa contra Ramon. Em seguida, Yuri foge do local. De acordo com relatos da imprensa paraibana, o soldado alegou legítima defesa. Atualmente, ele permanece sob prisão preventiva.
-        </p>
-        
-      </div>
-
-
-      <p class="paragrafo"> 
-        09:39   10/12/2023
-      </p>
-      
-    </main>
-
-    <!--------------------------------->
-
-    <hr>
-
-    <main class="noticias">
-
-      <div>
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9ScHEkGdsSo3aUUgmllaK3xd8AAOm1X9otpp1ay1-Ghj7GWP6JBSiXwvcKEg3Y9opXyUokQlHVSQeCr8R5Mq3vPFAEtxmpBz3IKp5_4b6APUohH3oZf63gswRtR0_INQ4O7xIB3vDeL9M9vOAidCkUrg1F8T62o8-_WbFpJC7FdhBlLWD3YXYlPcqV0uO/s1600/transferir%20(11).jpeg" alt="noticias">
-      </div>
-
-      <div class="materia">
-
-        <h3>
-          MORAES SUSPENDE CONCURSO DA PMCE
-        </h3>
-
-        <p>O Supremo Tribunal Federal (STF) suspendeu, nesta quinta-feira (7), os concursos públicos para Polícia Militar do Ceará, por limitar em 15% as vagas para mulheres. </p>
-
-        <p>A suspensão foi um pedido da Procuradoria-Geral da República (PGR).</p>
-
-        <p>A PGR questionou a lei que estabelece percentual mínimo de 15% das vagas a serem preenchidas exclusivamente por mulheres. Procuradoria alega que a regra pode ser interpretada para excluir a concorrência feminina à totalidade das vagas.</p>
-        
-        <p>A decisão suspende a divulgação de resultados, homologações e a convocação de candidatos até o julgamento de mérito da ADI.
-        </p>
-              
-        
-      </div>
-
-
-      <p class="paragrafo"> 
-        16:25   09/12/2023
-      </p>
-    </main>
-
-    <!--------------------------------->
-
-
-    <hr>
-
-    <main class="noticias">
-
-      <div>
-        <img src="noticias/12.23/dia nove.png" alt="noticias">
-      </div>
-      
-      <div class="materia">
-
-        <h3>
-          TORNOZELEIRA ELETRÔNICA ENCONTRADA ABANDONADA PRÓXIMO AO CEMITÉRIO DO GURIÚ
-        </h3>
-        
-        <p>No início da tarde de ontem, sexta-feira, 08, uma pessoa ligou de forma anônima para o 190 informando sobre uma tornozeleira eletrônica abandonada em frente ao cemitério do distrito do Guriú, em Camocim. Uma equipe de pm’s do P.O.G. foi acionada ao local e localizou a tornozeleira. A dedução policial é que algum tornozelado tenha violado (cortado) o objeto e jogado naquele local. O utensílio foi apreendido e apresentado na DRPC de Granja para que seja tomada as providência cabíveis.</p>
-        <h2>Danificar tornozeleira eletrônica é crime?</h2>
-        <p>Alguns Juízes e Promotores de Justiça entendem que o o detento que danifica ou destrói a tornozeleira eletrônica <strong>comete crime de dano qualificado</strong>, entretanto, o STJ em decisão recente afirma que a referida atitude não constitui crime, por ausência de dolo específico, ou seja, o entendimento do STJ é que a finalidade do detento é sua liberdade, é não precisar retornar ao presídio, para isso, precisa danificar a tornozeleira eletrônica, todavia, sua intenção não é causar dano ao patrimônio público ao Estado.</p>
-        
-        <p>É importante frisar que, apesar de haver entendimento de que a destruição de tornozeleira não configura crime, o detento vai responder administrativamente por falta disciplinar de natureza grave, podendo sofrer as sanções correspondentes às normas da penitenciária.</p>
-      </div>
-
-
-      <p class="paragrafo"> 
-        15:33   09/12/2023
-      </p>
-    </main>
-
-    <div class="img-contruçao">
-      <img src="tela de contruçao/tela de contruçao.png" alt="contruçao de tela">
   
-    </div>
-    
+  
+    <div class="icon">
+
+      <div class="mercadinho-cor">
+          <abbr title="Voltar"><a href="index.html"><img src="icon/voltar.png" alt="Voltar"></a></abbr>
+      </div >
+
+      
+    </div>  
+
+    <section>
+        <article>
+            <img src="https://neofeed.com.br/wp-content/uploads/2020/02/ING-1-1-1200x675.jpg" alt="Notícia 1">
+            <div class="content">
+                <h2>Título da Notícia 1</h2>
+                <p class="description ellipsis">Descrição breve da notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu leo et ipsum tempor vulputate vel eu risus. Curabitur vitae mi vel justo consectetur euismod.</p>
+                <p class="full-text" style="display: none;">Texto completo da notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu leo et ipsum tempor vulputate vel eu risus. Curabitur vitae mi vel justo consectetur euismod. Nullam a lectus at justo fringilla dictum.</p>
+                <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+            </div>
+            <p class="paragrafo"> 
+              15:33   09/12/2023
+            </p>
+        </article>
+        
+        <article>
+          <img src="https://neofeed.com.br/wp-content/uploads/2020/02/ING-1-1-1200x675.jpg" alt="Notícia 1">
+          <div class="content">
+              <h2>Título da Notícia 1</h2>
+              <p class="description ellipsis">Descrição breve da notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu leo et ipsum tempor vulputate vel eu risus. Curabitur vitae mi vel justo consectetur euismod.</p>
+              <p class="full-text" style="display: none;">Texto completo da notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu leo et ipsum tempor vulputate vel eu risus. Curabitur vitae mi vel justo consectetur euismod. Nullam a lectus at justo fringilla dictum.</p>
+              <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+          </div>
+          <p class="paragrafo"> 
+            15:33   09/12/2023
+          </p>
+      </article>
+
+    </section>
+
     <footer>
-      <p>
-        Site 100% Criado por um Nativo!
-      </p>
+        <p>&copy; 2023 Notícias Inc.</p>
     </footer>
-    
-      
+
+    <script>
+        function toggleContent(button) {
+            const content = button.parentElement;
+            const fullText = content.querySelector(".full-text");
+
+            if (content.classList.contains("expanded")) {
+                content.classList.remove("expanded");
+                fullText.style.display = "none";
+                button.innerText = "Mostrar Mais";
+            } else {
+                content.classList.add("expanded");
+                fullText.style.display = "block";
+                button.innerText = "Mostrar Menos";
+            }
+        }
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+

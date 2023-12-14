@@ -168,13 +168,7 @@
 
 }
 
-  .noticias img {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-height: 180px;
-
-  }
+  
 
 
 
@@ -360,10 +354,7 @@ header {
     height:150%;
 }
 
-.menu {
-  background-color: var(--cor6);
-  height: 40px;
-}
+
 
 header > h1 {
     text-align: center;
@@ -403,6 +394,11 @@ header p {
 .menu a:hover {
     background-color: rgba(255, 255, 255, 0.616);
     color: var(--cor1);
+}
+
+.menu {
+  background-color: var(--cor6);
+  height: 40px;
 }
 
 
@@ -584,36 +580,6 @@ main .torta {
 /*------------------------*/
 
 
-.noticias {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-bottom: 15px;
-  
-  padding: 15px;
-}
-
-.noticias p {
-  max-height: 100%;
-  max-width: 100%;
-  padding-top: 8%;
-  padding-right: 15px;
-  padding-left: 15px;
-  font-weight: 800;
-}
-
-.noticias img {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  height: 280px;
-  width: 100%;
-  padding: 10px;
-  padding-bottom: 15px;
-  border-radius: 20px;
-  
-}
-
 .paragrafo {
   text-align: center;
   background-color: #d8d6d6;
@@ -640,10 +606,6 @@ main .torta {
     
 }
 
-.noticias  p {
-    padding:  10px;
-    margin: 20px;
-}
 
 .achar {
     width: 50px;
