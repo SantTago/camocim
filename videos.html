@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Página de Vídeos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        header {
+            background-color: #c00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #222;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        h2 {
+            color: #c00;
+        }
+
+        .playlist-container {
+            overflow-x: scroll;
+            white-space: nowrap;
+        }
+
+        .playlist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .playlist-item {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .play-button {
+            background-color: #c00;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Adicionando estilos à barra de rolagem da lista de reprodução */
+        .playlist-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .playlist-container::-webkit-scrollbar-thumb {
+            background-color: #c00;
+        }
+
+        .playlist-container::-webkit-scrollbar-track {
+            background-color: #222;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registra Vídeos</h1>
+        <div class="mercadinho-cor">
+            <abbr title="Voltar"><a href="index.html"><img src="icon/voltar-vermelho.png" alt="Voltar"></a></abbr>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="video-container">
+            <iframe id="video1" width="560" height="315" src="https://www.youtube-nocookie.com/embed/FLVPmlV0gIU?si=UVp-nA30qkEh61X3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <button class="play-button" onclick="handlePlayClick(0)">Reproduzir</button>
+        </div>
+
+        <div class="video-container">
+            <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/D_4spf2Yv4g?si=D60aF15V2DP2lbNm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <button class="play-button" onclick="handlePlayClick(1)">Reproduzir</button>
+        </div>
+
+        <div class="video-container">
+            <iframe id="video3" width="560" height="315" src="https://www.youtube.com/embed/0eBODGTf3sE?si=kSdyM3_HJkF-vfCi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <button class="play-button" onclick="handlePlayClick(2)">Reproduzir</button>
+        </div>
+
+        <div class="video-container">
+            <iframe id="video4" width="560" height="315" src="https://www.youtube.com/embed/JSrJO5W6Mxk?si=y9pBAearf6fbk6H9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <button class="play-button" onclick="handlePlayClick(3)">Reproduzir</button>
+        </div>
+
+        <div class="video-container">
+            <iframe id="video5" width="560" height="315" src="https://www.youtube.com/embed/oxeNvlRLJ8Q?si=azL1XcJwF0ERtae5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <button class="play-button" onclick="handlePlayClick(4)">Reproduzir</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentVideo;
+
+        function playVideo(index) {
+            const videos = document.querySelectorAll('iframe');
+            videos[index].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+        }
+
+        function pauseVideo(index) {
+            const videos = document.querySelectorAll('iframe');
+            videos[index].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        }
+
+        function handlePlayClick(index) {
+            if (currentVideo !== undefined) {
+                pauseVideo(currentVideo);
+            }
+
+            playVideo(index);
+
+            currentVideo = index;
+        }
+    </script>
+</body>
+</html>
