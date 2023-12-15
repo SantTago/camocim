@@ -37,8 +37,6 @@
             
         }
 
-        
-
         article img {
             width: 100%;
             height: auto;
@@ -71,6 +69,51 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        /*---------------------------*/
+        .video-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+        .video-item {
+            scroll-snap-align: start;
+            width: 280px;
+            
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 476px;
+            border: none;
+            overflow: hidden;
+        }
+
+        /*--------------------------*/
+
+        .video {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+          
+            padding-bottom: 56%;
+            position: relative;
+            
+            
+        }
+        
+        .video > iframe {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 90%;
+            height: 90%;
+            border-radius: 15px;
+        }
+
+        /*---------------------*/
 
         footer {
             background-color: #e60000;
@@ -162,12 +205,23 @@ header p {
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
 }
   
+.bloco-noticias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
   @media (max-width: 600px) {
       article {
           width: 100%;
       }
-  }
-    </style>
+      .video-item {
+        width: 100%;
+    } 
+}
+
+
+</style>
 </head>
 
 <body>
@@ -184,23 +238,60 @@ header p {
     <nav>
       <a href="index.html">Home</a>
       <a href="noticias.html">Notícias</a>
-      <a href="turismo.html">Turismo</a>
+      <a href="videos.html">videos</a>
     </nav>
   </div>
 
-  
-  
-  
-    <div class="icon">
 
-      <div class="mercadinho-cor">
-          <abbr title="Voltar"><a href="index.html"><img src="icon/voltar-ver.png" alt="Voltar"></a></abbr>
-      </div >
+  <div class="icon">
 
-      
-    </div>  
+    <div class="mercadinho-cor">
+        <abbr title="Voltar"><a href="index.html"><img src="icon/voltar-ver.png" alt="Voltar"></a></abbr>
+    </div >
 
-    <section>
+    
+  </div>  
+
+  <!------------------------------------->
+
+  <section class="bloco-noticias">
+    
+    <article>
+        
+        <div class="video-container">
+            <div class="video-item">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fportalcameracamocim%2Fvideos%2F670025141822830%2F&show_text=true&width=267&t=0" width="280" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            </div>
+        </div>
+    
+        <div class="video-container">
+            <div class="video-item">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fportalcameracamocim%2Fvideos%2F297538326017500%2F&show_text=true&width=267&t=0" width="280" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            </div>
+        </div>
+        <div class="video-container">
+            <div class="video-item">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fportalcameracamocim%2Fvideos%2F1041736347079445%2F&show_text=true&width=269&t=0" width="280" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            </div>
+        </div>
+        <div class="video-container">
+            <div class="video-item">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fportalcameracamocim%2Fvideos%2F372671778629809%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            </div>
+        </div>
+    </article>
+</section>
+<!---------------------------------------------------------------->
+
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/snDCWYE3QOc?si=aMHDWYdmzL6xFOCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+ 
+
+<!--------------------------------------------->
+  
+
+    <section class="bloco-noticias">
         <article>
             <img src="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3450921:1701523910/cgd3.jpeg?f=16x9&h=720&w=1280&$p$f$h$w=4e46413%201020w" alt="Notícia 1">
             <div class="content">
