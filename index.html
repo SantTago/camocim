@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim</title>
   <link rel="stylesheet" href="estilo/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 
   
@@ -16,6 +17,9 @@
     <h1>
       Registra Camocim
     </h1>
+    <div id="temperatura-container">
+      <p id="temperatura"></p>
+  </div>
   
   </header>
 
@@ -252,6 +256,36 @@
   <footer>
     <p>&copy; 2023 Desenvolvidor Nativo-Ce.</p>
   </footer>
+
+  <script>
+    // Substitua 'SUA_API_KEY' pela chave de API real da OpenWeatherMap
+    const api_key = 'e54bc833d373410a0330145d912aa768';
+    const cidade = 'Camocim';
+    const pais = 'BR';
+
+    // Função para obter a temperatura atual
+    function obterTemperaturaAtual() {
+        const endpoint = `http://api.openweathermap.org/data/2.5/weather?q=${cidade},${pais}&appid=${api_key}&units=metric`;
+
+        $.get(endpoint, function(data) {
+            const temperaturaAtual = data.main.temp;
+            exibirTemperatura(temperaturaAtual);
+        }).fail(function() {
+            console.error('Não foi possível obter a temperatura atual.');
+        });
+    }
+
+    // Função para exibir a temperatura na página
+    function exibirTemperatura(temperatura) {
+        const temperaturaContainer = document.getElementById('temperatura');
+        temperaturaContainer.innerText = `A temperatura atual é ${temperatura}°C`;
+    }
+
+    // Chamando a função ao carregar a página
+    $(document).ready(function() {
+        obterTemperaturaAtual();
+    });
+</script>
 
 </body>
 </html>
