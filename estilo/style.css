@@ -674,6 +674,10 @@ main .torta {
     background-color: rgb(238, 192, 207);
 }
 
+.beleza-cor1:hover {
+  background-color: rgb(238, 192, 207);
+}
+
 
 .roupas-cor{
     width: 50px;
@@ -961,7 +965,7 @@ main .torta {
     
 }
 
-.confeitaria-bloco > div > img:hover {
+.confeitaria-bloco > div img:hover {
     border: 5px solid #9A26A8 ;
     border-radius: 15px;
     transition-duration: 0.1s;
