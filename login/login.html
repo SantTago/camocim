@@ -20,7 +20,7 @@
 
         <p class="error-message" id="error-message"></p>
 
-        <button class="back-button" onclick="goBack()">Voltar</button>
+        <a href="../index.html"><button class="back-button">Voltar</button></a>
     </form>
 
     <script>
@@ -33,8 +33,8 @@
             if (usernameInput === "tiago" && passwordInput === "1") {
                 // Redireciona para a página principal após 3 segundos
                 setTimeout(function() {
-                    window.location.href = "pagina_principal.html";
-                }, 3000);
+                    window.location.href = "usuarios.html";
+                }, 1000);
             } else {
                 // Exibe mensagem de erro
                 errorMessage.textContent = "Usuário ou senha incorretos. Tente novamente.";
