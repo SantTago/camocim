@@ -2164,5 +2164,19 @@ iframe {
 }
 
 
+.embed-responsive > div {
+  display: flex;
+  justify-content: center;
+}
+
+.embed-responsive > iframe{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 70%;
+  height: 70%;
+ 
+}
 
 
