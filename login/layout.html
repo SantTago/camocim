@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Roupas</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 500px;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 10px;
+            margin-top: 0px;
+            padding: 15px;
+            flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 50%;
+        }
+
+        @media only screen and (min-width: 303px) and (max-width: 600px) {
+            /* Entre 319px e 600px, três colunas por linha */
+            .product {
+                flex-basis: calc(33.3333% - 20px);
+
+                
+            }
+
+            img {
+              max-width: 100%;
+              height: auto;
+              width: 100%;
+              border: 1px solid #ddd;
+          }
+        }
+    </style>
+</head>
+<body>
+  <section class="slider">
+    <div class="product">
+      <img src="https://i.pinimg.com/originals/d4/aa/52/d4aa522493ff781bb84308676c10e7e5.png" alt="Roupa 1">
+      <h2>Roupa Elegante</h2>
+      <p>Descrição do produto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>R$ 99,99</p>
+      <button>Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.pinimg.com/originals/d4/aa/52/d4aa522493ff781bb84308676c10e7e5.png" alt="Roupa 1">
+      <h2>Roupa Elegante</h2>
+      <p>Descrição do produto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>R$ 99,99</p>
+      <button>Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.pinimg.com/originals/d4/aa/52/d4aa522493ff781bb84308676c10e7e5.png" alt="Roupa 1">
+      <h2>Roupa Elegante</h2>
+      <p>Descrição do produto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>R$ 99,99</p>
+      <button>Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.pinimg.com/originals/d4/aa/52/d4aa522493ff781bb84308676c10e7e5.png" alt="Roupa 1">
+      <h2>Roupa Elegante</h2>
+      <p>Descrição do produto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>R$ 99,99</p>
+      <button>Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.pinimg.com/originals/d4/aa/52/d4aa522493ff781bb84308676c10e7e5.png" alt="Roupa 1">
+      <h2>Roupa Elegante</h2>
+      <p>Descrição do produto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>R$ 99,99</p>
+      <button>Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="https://i.pinimg.com/originals/d4/aa/52/d4aa522493ff781bb84308676c10e7e5.png" alt="Roupa 1">
+      <h2>Roupa Elegante</h2>
+      <p>Descrição do produto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>R$ 99,99</p>
+      <button>Adicionar ao Carrinho</button>
+    </div>
+
+   
+  </section>
+
+
+  <!-- Adicione este script após a tag <body> -->
+<script>
+  $(document).ready(function(){
+      $('.slider').slick({
+          slidesToShow: 2, // Mostrar dois produtos por vez
+          slidesToScroll: 1,
+          prevArrow: '<button class="slick-prev">Anterior</button>',
+          nextArrow: '<button class="slick-next">Próximo</button>',
+          responsive: [
+              {
+                  breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                  settings: {
+                      slidesToShow: 1
+                  }
+              }
+          ]
+      });
+  });
+</script>
+
+
+
+
+    <header>
+        <h1>Loja de Roupas</h1>
+    </header>
+
+    
+
+    
+
+</body>
+</html>
