@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +8,36 @@
   <link rel="stylesheet" href="../estilo/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
-  }
+    }
 
-  header {
+    header {
       background-color: #333;
       color: #fff;
       text-align: center;
       padding: 10px;
-  }
+    }
 
-  nav {
+    nav {
       display: none;
       flex-direction: column;
-      background-color: rgba(68, 68, 68, 0)9e9;
+      background-color: #333;
       padding: 10px;
       border-radius: 5px;
       margin-top: 10px;
       opacity: 0;
       transition: opacity 0.5s, transform 0.5s;
       transform: translateY(-20px);
-  }
+    }
 
-  nav a {
+    nav a {
       text-decoration: none;
-      color: #383838;
+      color: #fff;
       padding: 10px;
       border-radius: 5px;
       transition: background-color 0.3s;
@@ -45,15 +45,13 @@
       align-items: center;
       margin-left: 5px;
       transition-duration: 0.8s;
-  }
+    }
 
-  nav a:hover {
+    nav a:hover {
       background-color: #555;
-      color: white;
-      
-  }
+    }
 
-  button {
+    button {
       cursor: pointer;
       background-color: #333;
       color: #fff;
@@ -61,71 +59,73 @@
       border: none;
       border-radius: 5px;
       margin: 10px;
-  }
+      display: flex;
+      align-items: center; /* Adicionando este estilo para alinhar o ícone e o texto */
+    }
 
-  .fa-bars,
-  .fa-times {
+    .fa-bars,
+    .fa-times {
       margin-right: 5px;
-  }
-</style>
+    }
 
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Adicionando media query para esconder o texto em dispositivos móveis */
+    @media screen and (max-width: 768px) {
+      button span {
+        display: none;
+      }
+
+      button i {
+        display: inline;
+      }
+    }
+  </style>
 
 </head>
+
 <body>
-  
 
-<button onclick="toggleMenu()">
-    <i class="fas fa-bars"></i> Mostrar Menu
-</button>
+  <header>
+    <h1 style="margin: 0;">Camocim Nativo</h1>
+  </header>
 
-<nav id="menu">
-    <a href="#"><i class="fas fa-home"></i>  Início</a>
-    <a href="#"><i class="fas fa-search"></i>  Buscar</a>
-    <a href="#"><i class="fas fa-heart"></i>  Favoritos</a>
-    <a href="#"><i class="fas fa-shopping-cart"></i>  Carrinho</a>
-    <a href="#"><i class="fas fa-user"></i>  Perfil</a>
-    <a href="#"><i class="fas fa-sign-out-alt"></i>  Sair</a>
-</nav>
+  <button onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+    <span>Mostrar Menu</span>
+  </button>
 
-<script>
+  <nav id="menu">
+    <a href="#"><i class="fas fa-home"></i> Início</a>
+    <a href="layout.html"><i class="fas fa-bullhorn "></i> Atualizações</a>
+    <a href="#fale-conosco"><i class="fas fa-envelope "></i> Fale Conosco</a>
+    <a href="#apoio"><i class="fas fa-hands-helping "></i> Área do Apoiador</a>
+    <a href="#patrocinio"><i class="fas fa-dollar-sign "></i> Área do Patrocinador</a>
+  </nav>
+
+  <footer>
+    <p>
+      Site 100% Criado por um Nativo!
+    </p>
+  </footer>
+
+  <script>
     function toggleMenu() {
-        var menu = document.getElementById("menu");
-        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-        menu.style.opacity = (menu.style.opacity === "1") ? "0" : "1";
-        menu.style.transform = (menu.style.transform === "translateY(0px)") ? "translateY(-20px)" : "translateY(0px)";
+      var menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+      menu.style.opacity = (menu.style.opacity === "1") ? "0" : "1";
+      menu.style.transform = (menu.style.transform === "translateY(0px)") ? "translateY(-20px)" : "translateY(0px)";
     }
-</script>
-
-
-
-    <div class="icon">
-
-        <div class="grafica-cor">
-            <abbr title="Voltar"><a href="../index.html"><img src="../icon/voltar.png" alt="Voltar"></a></abbr>
-            
-        </div >
-
-        <div class="grafica-cor">
-          <abbr title="Em criaçao"><a href="layout.html"><img src="../icon/ir.png" alt="ir"></a></abbr>
-        </div>
-
-    </div>  
-
-
-    <div class="img-contruçao">
-      <img src="../tela de contruçao/tela de contruçao.png" alt="contruçao de tela">
-        
-        
-    </div>
-
-      
-
-    <footer>
-        <p>
-            Site 100% Criado por um Nativo!
-        </p>
-    </footer>
-
+  </script>
 
 </body>
+
 </html>
