@@ -135,9 +135,7 @@
         <button onclick="proceedToPayment()">Prosseguir para o Pagamento</button>
     </div>
 
-    <div id="backButton">
-        <button onclick="goBack()">Voltar</button>
-    </div>
+    
 
     <script>
         function toggleDaysInput() {
@@ -188,10 +186,13 @@
         }
 
         function goBack() {
-            var resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = ''; // Limpar o resultado ao voltar
+            window.history.back();
         }
+
     </script>
+    <div id="backButton">
+    <button onclick="goBack()">Voltar</button>
+
 
 </body>
 </html>
