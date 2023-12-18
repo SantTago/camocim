@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Apoiadores</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #007BFF;
+            text-align: center;
+        }
+
+        form {
+            width: 50%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        td {
+            cursor: pointer;
+        }
+
+        td:hover {
+            background-color: #f5f5f5;
+        }
+
+        .back-button {
+            background-color: #28a745; /* Cor verde semelhante à utilizada no botão anterior */
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Página de Apoiadores</h1>
+
+    <form id="supporterForm">
+        <label for="name">Nome do Apoiador:</label>
+        <input type="text" id="name" name="name" placeholder="Digite o nome do apoiador" required>
+
+        <label for="photos">Número de Fotos:</label>
+        <input type="number" id="photos" name="photos" min="0" placeholder="Digite o número de fotos" required>
+
+        <label for="post">Número de Postagens no Home:</label>
+        <input type="number" id="post" name="post" min="0" placeholder="Digite o número de postagens" required>
+
+        <label for="days">Número de Dias de Publicidade:</label>
+        <input type="number" id="days" name="days" min="0" placeholder="Digite o número de dias de publicidade" required>
+
+        <button type="button" onclick="calculateTotal()">Calcular Valor</button>
+    </form>
+
+    <div id="result"></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr onclick="selectOption('photos')">
+                <td>Atualizações de Fotos (por mês)</td>
+                <td>R$ 5,00 por foto</td>
+            </tr>
+            <tr onclick="selectOption('post')">
+                <td>Postagens no Home</td>
+                <td>R$ 10,00 por postagem</td>
+            </tr>
+            <tr onclick="selectOption('days')">
+                <td>Publicidade na Página do Nicho</td>
+                <td>R$ 20,00 por dia</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="back-button" onclick="goBack()">Voltar</button>
+
+    <script>
+        // Seu script JavaScript existente permanece inalterado
+
+        function goBack() {
+            // Voltar para a página anterior
+            window.history.back();
+        }
+    </script>
+    
+
+    <script>
+        function calculateTotal() {
+            var name = document.getElementById('name').value;
+            var photos = document.getElementById('photos').value;
+            var post = document.getElementById('post').value;
+            var days = document.getElementById('days').value;
+
+            var photosRate = 5;
+            var postRate = 10;
+            var daysRate = 20;
+
+            var total = (photos * photosRate) + (post * postRate) + (days * daysRate);
+
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<p>${name}, o valor total do seu apoio é: R$ ${total.toFixed(2)}</p>`;
+        }
+
+        function selectOption(option) {
+            document.getElementById(option).value = 1; // Definir o valor padrão como 1 quando selecionado
+        }
+    </script>
+
+</body>
+</html>

@@ -12,40 +12,46 @@
         <h2>Registra Camocim</h2>
         <label for="username">Usuário:</label>
         <input type="text" id="username" name="username">
-
+    
         <label for="password">Senha:</label>
         <input type="password" id="password" name="password">
-
+    
         <button type="button" onclick="authenticate()">Entrar</button>
-
+    
         <p class="error-message" id="error-message"></p>
-
+    
+        <!-- Adicione um evento de clique ao botão "Voltar" para verificar se os campos estão vazios antes de redirecionar -->
         <button type="button" class="back-button" onclick="goBack()">Voltar</button>
     </form>
-
+    
     <script>
         function authenticate() {
             var usernameInput = document.getElementById("username").value;
             var passwordInput = document.getElementById("password").value;
             var errorMessage = document.getElementById("error-message");
-
-            // Verifica se o login e senha correspondem aos valores esperados
-            if (usernameInput === "tiago" && passwordInput === "1") {
-                // Redireciona para a página principal após 3 segundos
-                setTimeout(function() {
-                    window.location.href = "usuarios.html";
-                }, 1000);
+    
+            // Verifica se os campos estão preenchidos
+            if (usernameInput.trim() === "" && passwordInput.trim() === "") {
+                // Redireciona para a página ../index.html
+                window.location.href = "../index.html";
             } else {
-                // Exibe mensagem de erro
-                errorMessage.textContent = "Usuário ou senha incorretos. Tente novamente.";
+                // Verifica se o login e senha correspondem aos valores esperados
+                if (usernameInput === "tiago" && passwordInput === "1") {
+                    // Redireciona para a página principal após 3 segundos
+                    setTimeout(function () {
+                        window.location.href = "usuarios.html";
+                    }, 1000);
+                } else {
+                    // Exibe mensagem de erro
+                    errorMessage.textContent = "Usuário ou senha incorretos. Tente novamente.";
+                }
             }
         }
-
+    
         function goBack() {
             // Volta para a página anterior
             window.history.back();
         }
     </script>
-
 </body>
 </html>
