@@ -32,7 +32,7 @@
             margin-top: 20px;
         }
 
-        label {
+        label, input, select {
             display: block;
             margin-bottom: 8px;
         }
@@ -86,18 +86,6 @@
         #backButton {
             margin-top: 20px;
         }
-
-
-        .back-button {
-            background-color: #28a745; /* Cor verde semelhante à utilizada no botão anterior */
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
     </style>
 </head>
 <body>
@@ -105,11 +93,11 @@
     <h1>Patrocinadores</h1>
 
     <form id="sponsorForm">
-        <label for="days">Quantidade de Dias:</label>
-        <input type="number" id="days" name="days" min="1" placeholder="Digite a quantidade de dias" required>
+        <label for="days" id="daysLabel">Quantidade de Dias:</label>
+        <input type="number" id="days" name="days" min="1" placeholder="Digite a quantidade de dias">
 
         <label for="duration">Escolha a Duração:</label>
-        <select id="duration" name="duration">
+        <select id="duration" name="duration" onchange="toggleDaysInput()">
             <option value="daily">Diária</option>
             <option value="weekly">Semanal</option>
             <option value="monthly">Mensal</option>
@@ -147,9 +135,24 @@
         <button onclick="proceedToPayment()">Prosseguir para o Pagamento</button>
     </div>
 
+    <div id="backButton">
+        <button onclick="goBack()">Voltar</button>
+    </div>
+
     <script>
+        function toggleDaysInput() {
+            var duration = document.getElementById('duration').value;
+            var daysLabel = document.getElementById('daysLabel');
+            var daysInput = document.getElementById('days');
+
+            // Mostrar label e input de dias apenas se a duração for "Diária"
+            daysLabel.style.display = (duration === 'daily') ? 'block' : 'none';
+            daysInput.style.display = (duration === 'daily') ? 'block' : 'none';
+        }
+
         function calculateTotal() {
-            var days = document.getElementById('days').value;
+            var daysInput = document.getElementById('days');
+            var days = (daysInput.style.display !== 'none') ? daysInput.value : 1; // Definir 1 se o campo estiver oculto
             var duration = document.getElementById('duration').value;
             var dailyRate = 20;
             var weeklyRate = 100;
@@ -185,13 +188,10 @@
         }
 
         function goBack() {
-            // Voltar para a página anterior
-            window.history.back();
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Limpar o resultado ao voltar
         }
     </script>
-
-    <button class="back-button" onclick="goBack()">Voltar</button>
-    </div>
 
 </body>
 </html>
