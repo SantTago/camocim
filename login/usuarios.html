@@ -5,14 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+  }
+
+  header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+  }
+
+  nav {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(68, 68, 68, 0)9e9;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.5s;
+      transform: translateY(-20px);
+  }
+
+  nav a {
+      text-decoration: none;
+      color: #383838;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      margin-left: 5px;
+      transition-duration: 0.8s;
+  }
+
+  nav a:hover {
+      background-color: #555;
+      color: white;
+      
+  }
+
+  button {
+      cursor: pointer;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+  }
+
+  .fa-bars,
+  .fa-times {
+      margin-right: 5px;
+  }
+</style>
+
+
 </head>
 <body>
   
-    <div class="perfil-bloco">
-       <div></div>
-        <img src="grafica viana/banner/banner.png" alt="">
-      </div>
-    </div>
+
+<button onclick="toggleMenu()">
+    <i class="fas fa-bars"></i> Mostrar Menu
+</button>
+
+<nav id="menu">
+    <a href="#"><i class="fas fa-home"></i>  Início</a>
+    <a href="#"><i class="fas fa-search"></i>  Buscar</a>
+    <a href="#"><i class="fas fa-heart"></i>  Favoritos</a>
+    <a href="#"><i class="fas fa-shopping-cart"></i>  Carrinho</a>
+    <a href="#"><i class="fas fa-user"></i>  Perfil</a>
+    <a href="#"><i class="fas fa-sign-out-alt"></i>  Sair</a>
+</nav>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        menu.style.opacity = (menu.style.opacity === "1") ? "0" : "1";
+        menu.style.transform = (menu.style.transform === "translateY(0px)") ? "translateY(-20px)" : "translateY(0px)";
+    }
+</script>
+
 
 
     <div class="icon">
@@ -23,17 +106,17 @@
         </div >
 
         <div class="grafica-cor">
-          <abbr title="Em criaçao"><a href="layout.html"><img src="../icon/voltar.png" alt="Voltar"></a></abbr>
+          <abbr title="Em criaçao"><a href="layout.html"><img src="../icon/ir.png" alt="ir"></a></abbr>
         </div>
 
     </div>  
 
 
     <div class="img-contruçao">
-        <img src="../tela de contruçao/tela de contruçao.png" alt="contruçao de tela">
+      <img src="../tela de contruçao/tela de contruçao.png" alt="contruçao de tela">
         
         
-      </div>
+    </div>
 
       
 
