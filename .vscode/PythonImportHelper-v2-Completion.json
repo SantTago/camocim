@@ -48,6 +48,30 @@
         "documentation": {}
     },
     {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -57,6 +81,46 @@
         "documentation": {}
     },
     {
+        "label": "UploadSet",
+        "importPath": "flask_uploads",
+        "description": "flask_uploads",
+        "isExtraImport": true,
+        "detail": "flask_uploads",
+        "documentation": {}
+    },
+    {
+        "label": "configure_uploads",
+        "importPath": "flask_uploads",
+        "description": "flask_uploads",
+        "isExtraImport": true,
+        "detail": "flask_uploads",
+        "documentation": {}
+    },
+    {
+        "label": "IMAGES",
+        "importPath": "flask_uploads",
+        "description": "flask_uploads",
+        "isExtraImport": true,
+        "detail": "flask_uploads",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
         "label": "ler_usuarios",
         "kind": 2,
         "importPath": "banco.login.app.app",
@@ -144,6 +208,51 @@
         "description": "construçao.login.app.app",
         "peekOfCode": "usuarios = ler_usuarios()\n@app.route('/')\ndef index():\n    return render_template('login.html')\n@app.route('/autenticar', methods=['POST'])\ndef autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)",
         "detail": "construçao.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "login.menu.app",
+        "description": "login.menu.app",
+        "peekOfCode": "def index():\n    return render_template(\"index.html\")\n@app.route(\"/upload\", methods=[\"POST\"])\ndef upload():\n    # Obter dados do formulário\n    company = request.form[\"company\"]\n    title = request.form[\"title\"]\n    content = request.form[\"content\"]\n    image = request.files[\"image\"]\n    video = request.form[\"video\"]",
+        "detail": "login.menu.app",
+        "documentation": {}
+    },
+    {
+        "label": "upload",
+        "kind": 2,
+        "importPath": "login.menu.app",
+        "description": "login.menu.app",
+        "peekOfCode": "def upload():\n    # Obter dados do formulário\n    company = request.form[\"company\"]\n    title = request.form[\"title\"]\n    content = request.form[\"content\"]\n    image = request.files[\"image\"]\n    video = request.form[\"video\"]\n    # Salvar a imagem na pasta configurada\n    if image:\n        filename = photos.save(image)",
+        "detail": "login.menu.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "login.menu.app",
+        "description": "login.menu.app",
+        "peekOfCode": "app = Flask(__name__)\n# Configuração do Flask-Uploads\nphotos = UploadSet(\"photos\", IMAGES)\napp.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")\n@app.route(\"/upload\", methods=[\"POST\"])\ndef upload():",
+        "detail": "login.menu.app",
+        "documentation": {}
+    },
+    {
+        "label": "photos",
+        "kind": 5,
+        "importPath": "login.menu.app",
+        "description": "login.menu.app",
+        "peekOfCode": "photos = UploadSet(\"photos\", IMAGES)\napp.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")\n@app.route(\"/upload\", methods=[\"POST\"])\ndef upload():\n    # Obter dados do formulário\n    company = request.form[\"company\"]",
+        "detail": "login.menu.app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"UPLOADED_PHOTOS_DEST\"]",
+        "kind": 5,
+        "importPath": "login.menu.app",
+        "description": "login.menu.app",
+        "peekOfCode": "app.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")\n@app.route(\"/upload\", methods=[\"POST\"])\ndef upload():\n    # Obter dados do formulário\n    company = request.form[\"company\"]\n    title = request.form[\"title\"]",
+        "detail": "login.menu.app",
         "documentation": {}
     }
 ]
