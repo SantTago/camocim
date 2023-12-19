@@ -1,0 +1,200 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "ler_usuarios",
+        "kind": 2,
+        "importPath": "banco.login.app.app",
+        "description": "banco.login.app.app",
+        "peekOfCode": "def ler_usuarios():\n    usuarios = {}\n    with open(os.path.join(os.path.dirname(__file__), 'usuarios.txt'), 'r') as arquivo:\n        for linha in arquivo:\n            usuario, senha = linha.strip().split(':')\n            usuarios[usuario] = senha\n    return usuarios\n# Usuários e senhas definidos\nusuarios = ler_usuarios()\n@app.route('/')",
+        "detail": "banco.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "banco.login.app.app",
+        "description": "banco.login.app.app",
+        "peekOfCode": "def index():\n    return render_template('login.html')\n@app.route('/autenticar', methods=['POST'])\ndef autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)\n    else:\n        return render_template('acesso_negado.html')",
+        "detail": "banco.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "autenticar",
+        "kind": 2,
+        "importPath": "banco.login.app.app",
+        "description": "banco.login.app.app",
+        "peekOfCode": "def autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)\n    else:\n        return render_template('acesso_negado.html')\nif __name__ == '__main__':\n    app.run(debug=True)",
+        "detail": "banco.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "banco.login.app.app",
+        "description": "banco.login.app.app",
+        "peekOfCode": "app = Flask(__name__, template_folder=os.path.abspath('templates'))\n# Função para ler usuários e senhas do arquivo\ndef ler_usuarios():\n    usuarios = {}\n    with open(os.path.join(os.path.dirname(__file__), 'usuarios.txt'), 'r') as arquivo:\n        for linha in arquivo:\n            usuario, senha = linha.strip().split(':')\n            usuarios[usuario] = senha\n    return usuarios\n# Usuários e senhas definidos",
+        "detail": "banco.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "usuarios",
+        "kind": 5,
+        "importPath": "banco.login.app.app",
+        "description": "banco.login.app.app",
+        "peekOfCode": "usuarios = ler_usuarios()\n@app.route('/')\ndef index():\n    return render_template('login.html')\n@app.route('/autenticar', methods=['POST'])\ndef autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)",
+        "detail": "banco.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "ler_usuarios",
+        "kind": 2,
+        "importPath": "construçao.login.app.app",
+        "description": "construçao.login.app.app",
+        "peekOfCode": "def ler_usuarios():\n    usuarios = {}\n    with open(os.path.join(os.path.dirname(__file__), 'usuarios.txt'), 'r') as arquivo:\n        for linha in arquivo:\n            usuario, senha = linha.strip().split(':')\n            usuarios[usuario] = senha\n    return usuarios\n# Usuários e senhas definidos\nusuarios = ler_usuarios()\n@app.route('/')",
+        "detail": "construçao.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "construçao.login.app.app",
+        "description": "construçao.login.app.app",
+        "peekOfCode": "def index():\n    return render_template('login.html')\n@app.route('/autenticar', methods=['POST'])\ndef autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)\n    else:\n        return render_template('acesso_negado.html')",
+        "detail": "construçao.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "autenticar",
+        "kind": 2,
+        "importPath": "construçao.login.app.app",
+        "description": "construçao.login.app.app",
+        "peekOfCode": "def autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)\n    else:\n        return render_template('acesso_negado.html')\nif __name__ == '__main__':\n    app.run(debug=True)",
+        "detail": "construçao.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "construçao.login.app.app",
+        "description": "construçao.login.app.app",
+        "peekOfCode": "app = Flask(__name__, template_folder=os.path.abspath('templates'))\n# Função para ler usuários e senhas do arquivo\ndef ler_usuarios():\n    usuarios = {}\n    with open(os.path.join(os.path.dirname(__file__), 'usuarios.txt'), 'r') as arquivo:\n        for linha in arquivo:\n            usuario, senha = linha.strip().split(':')\n            usuarios[usuario] = senha\n    return usuarios\n# Usuários e senhas definidos",
+        "detail": "construçao.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "usuarios",
+        "kind": 5,
+        "importPath": "construçao.login.app.app",
+        "description": "construçao.login.app.app",
+        "peekOfCode": "usuarios = ler_usuarios()\n@app.route('/')\ndef index():\n    return render_template('login.html')\n@app.route('/autenticar', methods=['POST'])\ndef autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)",
+        "detail": "construçao.login.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "login.menu.app",
+        "description": "login.menu.app",
+        "peekOfCode": "def index():\n    return render_template('index.html')\n@app.route('/submit', methods=['POST'])\ndef submit():\n    if request.method == 'POST':\n        # Aqui você pode processar os dados do formulário\n        nome_empresa = request.form['company']\n        titulo = request.form['title']\n        conteudo = request.form['content']\n        imagem = request.files['image']",
+        "detail": "login.menu.app",
+        "documentation": {}
+    },
+    {
+        "label": "submit",
+        "kind": 2,
+        "importPath": "login.menu.app",
+        "description": "login.menu.app",
+        "peekOfCode": "def submit():\n    if request.method == 'POST':\n        # Aqui você pode processar os dados do formulário\n        nome_empresa = request.form['company']\n        titulo = request.form['title']\n        conteudo = request.form['content']\n        imagem = request.files['image']\n        video = request.form['video']\n        # Aqui você pode fazer o que quiser com os dados, por exemplo, enviá-los por email, armazenar em um banco de dados, etc.\n        return 'Formulário enviado com sucesso!'",
+        "detail": "login.menu.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "login.menu.app",
+        "description": "login.menu.app",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef index():\n    return render_template('index.html')\n@app.route('/submit', methods=['POST'])\ndef submit():\n    if request.method == 'POST':\n        # Aqui você pode processar os dados do formulário\n        nome_empresa = request.form['company']\n        titulo = request.form['title']",
+        "detail": "login.menu.app",
+        "documentation": {}
+    }
+]
