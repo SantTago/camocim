@@ -48,30 +48,6 @@
         "documentation": {}
     },
     {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "render_template",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -168,33 +144,6 @@
         "description": "construçao.login.app.app",
         "peekOfCode": "usuarios = ler_usuarios()\n@app.route('/')\ndef index():\n    return render_template('login.html')\n@app.route('/autenticar', methods=['POST'])\ndef autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)",
         "detail": "construçao.login.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "index",
-        "kind": 2,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "def index():\n    return render_template('index.html')\n@app.route('/submit', methods=['POST'])\ndef submit():\n    if request.method == 'POST':\n        # Aqui você pode processar os dados do formulário\n        nome_empresa = request.form['company']\n        titulo = request.form['title']\n        conteudo = request.form['content']\n        imagem = request.files['image']",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "submit",
-        "kind": 2,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "def submit():\n    if request.method == 'POST':\n        # Aqui você pode processar os dados do formulário\n        nome_empresa = request.form['company']\n        titulo = request.form['title']\n        conteudo = request.form['content']\n        imagem = request.files['image']\n        video = request.form['video']\n        # Aqui você pode fazer o que quiser com os dados, por exemplo, enviá-los por email, armazenar em um banco de dados, etc.\n        return 'Formulário enviado com sucesso!'",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "kind": 5,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef index():\n    return render_template('index.html')\n@app.route('/submit', methods=['POST'])\ndef submit():\n    if request.method == 'POST':\n        # Aqui você pode processar os dados do formulário\n        nome_empresa = request.form['company']\n        titulo = request.form['title']",
-        "detail": "login.menu.app",
         "documentation": {}
     }
 ]
