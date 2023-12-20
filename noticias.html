@@ -247,6 +247,11 @@
         display: flex;
         align-items: center;
       }
+
+      .fa-bars,
+        .fa-times {
+            margin-right: 5px;
+        }
       
       /* Adicionando media query para tornar o menu responsivo */
       @media screen and (max-width: 768px) {
@@ -260,34 +265,34 @@
           margin: 5px 0;
         }
       
-        button span {
-          display: inline;
-        }
-      
-        button i {
-          display: none;
-        }
-      
-        button {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      
-        button:hover + nav {
-          display: flex;
-        }
-        
-  
-        button i {
-          display: inline;
-        }
-      }
 
-    .fa-bars,
-    .fa-times {
-      margin-right: 5px;
-    }
-      
+        /* Adicionando media query para tornar o menu responsivo */
+        @media screen and (max-width: 768px) {
+            /* ... (seu estilo existente) ... */
+
+            button {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            button span {
+                margin-left: 5px;
+            }
+
+            button i {
+                display: none;
+            }
+
+            button:hover + nav {
+                display: flex;
+            }
+        }
+
+        .fa-bars,
+        .fa-times {
+            margin-right: 5px;
+        }
 </style>
 </head>
 
