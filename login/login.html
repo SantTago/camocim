@@ -25,44 +25,39 @@
     </form>
     
     <script>
-        function authenticate() {
+        async function authenticate() {
             var usernameInput = document.getElementById("username").value;
             var passwordInput = document.getElementById("password").value;
             var errorMessage = document.getElementById("error-message");
-
-            // Verifica se os campos estão preenchidos
-            if (usernameInput.trim() === "" || passwordInput.trim() === "") {
-                // Exibe mensagem de erro
-                errorMessage.textContent = "Preencha todos os campos.";
+    
+            // Envia uma solicitação POST para o servidor Flask
+            const response = await fetch('/authenticate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `username=${encodeURIComponent(usernameInput)}&password=${encodeURIComponent(passwordInput)}`,
+            });
+    
+            const result = await response.json();
+    
+            if ('redirect' in result) {
+                // Redireciona para a página principal após 3 segundos
+                setTimeout(function () {
+                    window.location.href = result.redirect;
+                }, 1000);
             } else {
-                // Faz uma requisição assíncrona para carregar os dados do arquivo TXT
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        var users = JSON.parse(xhr.responseText);
-
-                        // Verifica se o login e senha correspondem aos valores esperados no arquivo TXT
-                        if (users.hasOwnProperty(usernameInput) && users[usernameInput] === passwordInput) {
-                            // Redireciona para a página principal após 3 segundos
-                            setTimeout(function () {
-                                window.location.href = "usuarios.html";
-                            }, 1000);
-                        } else {
-                            // Exibe mensagem de erro
-                            errorMessage.textContent = "Usuário ou senha incorretos. Tente novamente.";
-                        }
-                    }
-                };
-
-                xhr.open("GET", "verificacao.txt", true);
-                xhr.send();
+                // Exibe mensagem de erro
+                errorMessage.textContent = result.error || "Ocorreu um erro. Tente novamente.";
             }
         }
-
+    
         function goBack() {
             // Volta para a página anterior
             window.history.back();
         }
     </script>
+
+    
 </body>
 </html>
