@@ -104,23 +104,21 @@
         .video {
             display: flex;
             justify-content: center;
+            align-items: center; /* Adicionado para centralizar verticalmente */
             flex-wrap: wrap;
-          
             padding-bottom: 56%;
             position: relative;
-            
-            
         }
         
         .video > iframe {
             position: absolute;
-            top: 5%;
-            left: 5%;
-            width: 90%;
-            height: 90%;
+            top: 0;
+            left: 0;
+            width: 100%; /* Alterado para 100% para ocupar a largura do contêiner pai */
+            height: 100%; /* Alterado para 100% para ocupar a altura do contêiner pai */
             border-radius: 15px;
         }
-
+        
         /*---------------------*/
 
         footer {
@@ -278,9 +276,7 @@
         button:hover + nav {
           display: flex;
         }
-        button span {
-          display: none;
-        }
+        
   
         button i {
           display: inline;
@@ -312,8 +308,7 @@
   </button>
 
   <nav id="menu">
-    <a href="../index.html"><i class="fas fa-home" style="margin-right: 5px;"></i> Início</a>
-    <a href=" https://998a-2804-145c-c85a-e400-a830-4f20-e480-a528.ngrok-free.app"><i class="fas fa-bullhorn" style="margin-right: 5px;"></i> Poste</a>
+    <a href="index.html"><i class="fas fa-home" style="margin-right: 5px;"></i> Início</a>
     <a href="menu/atualizaçoes.html"><i class="fas fa-arrow-circle-up" style="margin-right: 5px;"></i> Denuncias</a>
     <a href="menu/patrocinadores.html"><i class="fas fa-dollar-sign" style="margin-right: 5px;"></i> Área do Patrocinador</a>
 </nav>
