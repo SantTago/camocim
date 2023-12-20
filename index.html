@@ -139,11 +139,12 @@
   </div>
 
   <div id="search-container">
+
     <form onsubmit="searchStore(); return false;">
-        <input type="text" id="search-box" placeholder="Pesquisar loja" required>
+        <input type="text" id="search-box" placeholder="Pesquisar loja" oninput="searchStore()" required>
         <input type="submit" id="search-button" value="Pesquisar">
     </form>
-  </div>
+</div>
 
 <div id="search-results"></div>
 
