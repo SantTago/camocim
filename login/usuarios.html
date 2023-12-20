@@ -9,8 +9,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <style>
+    /* Reset de margin e padding para todos os elementos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
@@ -20,12 +27,12 @@
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 10px;
+      padding: 1rem; /* Adaptei para unidades rem para melhor responsividade */
     }
 
     nav {
-      display: none;
-      flex-direction: column;
+      display: flex;
+      flex-direction: row;
       background-color: #333;
       padding: 10px;
       border-radius: 5px;
@@ -33,8 +40,12 @@
       opacity: 0;
       transition: opacity 0.5s, transform 0.5s;
       transform: translateY(-20px);
+      position: absolute;
+      top: 50px; /* Ajuste a altura conforme necessário */
+      left: 0;
+      right: 0;
     }
-
+    
     nav a {
       text-decoration: none;
       color: #fff;
@@ -46,11 +57,11 @@
       margin-left: 5px;
       transition-duration: 0.8s;
     }
-
+    
     nav a:hover {
       background-color: #555;
     }
-
+    
     button {
       cursor: pointer;
       background-color: #333;
@@ -60,8 +71,47 @@
       border-radius: 5px;
       margin: 10px;
       display: flex;
-      align-items: center; /* Adicionando este estilo para alinhar o ícone e o texto */
+      align-items: center;
     }
+    
+    /* Adicionando media query para tornar o menu responsivo */
+    @media screen and (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: static;
+      }
+    
+      nav a {
+        margin: 5px 0;
+      }
+    
+      button span {
+        display: inline;
+      }
+    
+      button i {
+        display: none;
+      }
+    
+      button {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      button:hover + nav {
+        display: flex;
+      }
+      button span {
+        display: none;
+      }
+
+      button i {
+        display: inline;
+      }
+    }
+    
+    
 
     .fa-bars,
     .fa-times {
@@ -78,16 +128,63 @@
       width: 100%;
     }
 
-    /* Adicionando media query para esconder o texto em dispositivos móveis */
-    @media screen and (max-width: 768px) {
-      button span {
-        display: none;
-      }
-
-      button i {
-        display: inline;
-      }
+    .criador {
+      padding: 20px;
+      background-color: #fff;
+      margin: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .termos-de-uso {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .termos-de-uso h2 {
+      color: #333;
+    }
+
+    .termos-de-uso ol {
+      list-style-type: decimal;
+      margin-left: 20px;
+    }
+
+    .termos-de-uso p {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Adicionando media query para esconder o texto em dispositivos móveis */
+     
   </style>
 
 </head>
@@ -111,6 +208,82 @@
     <a href="menu/patrocinadores.html"><i class="fas fa-dollar-sign" style="margin-right: 5px;"></i> Área do Patrocinador</a>
 </nav>
 
+<div class="criador">
+  <div class="criador-bloco">
+      <div>
+        <img src="../icon/perfil-criador.png" alt="criador">
+      </div>
+  </div>
+<article>
+
+  <h1>
+    Desenvolvedor da Página 
+  </h1>
+
+  <p>
+    Era uma vez, em um universo de bits e pixels, um estudante apaixonado por tecnologia que ousou sonhar grande. Seu nome? Um código bem tramado entre Python, HTML e CSS.
+  </p>
+
+  <p>
+    Na jornada acadêmica, em busca do título de Engenheiro de Software, descobriu o poder de traduzir ideias em linhas de código, dando vida a projetos que vão além do mundo virtual. A cada "print" de sucesso, uma conquista no caminho da realização.
+  </p>
+
+  <p>
+    Desbravando as linguagens de programação, o estudante vislumbrou horizontes mais vastos. Sabia que JavaScript seria a trilha sonora do seu próximo capítulo. Com a maestria de quem conduz uma sinfonia, a harmonia do código ganhou ritmo, cores e interatividade.
+  </p>
+
+  <p>
+    E eis que, entre as tags e as queries, surge a visão do futuro. Um portfólio, não apenas como um repositório de códigos, mas como um legado digital. Um local onde a essência de cada linha reflete a paixão, o aprendizado e a evolução.
+  </p>
+
+  <p>
+    Este projeto, que nasce da sede de conhecimento, não é apenas um conjunto de páginas web. É uma narrativa viva, um reflexo do comprometimento e da resiliência. Um testemunho de que cada desafio superado é um degrau mais alto na escada do sucesso.</p>
+
+  <p>
+    Mas como toda grande história, esta também precisa de aliados. Visionários que reconhecem o valor do conhecimento transformado em código. Apoiadores que entendem que investir neste sonho é contribuir para a construção de um amanhã mais tecnológico e inovador.
+  </p>
+
+  <p>
+    Assim, convido você a fazer parte desta jornada. Seja um patrono desta narrativa digital, onde cada click é um passo em direção a novas conquistas. Juntos, podemos tecer o futuro com linhas de código, criatividade e, acima de tudo, a paixão por transformar ideias em realidade.
+  </p>
+
+  <p>
+    Seu apoio não é apenas um investimento em um portfólio, mas sim na construção de um legado que transcende o mundo virtual. Um legado que, além de gerar receita para a educação, cria oportunidades e inspira as gerações que estão por vir.
+  </p>
+
+  <p>
+    Que esta história de códigos e sonhos seja contada não apenas por linhas de código, mas pelos corações daqueles que acreditam no poder transformador da tecnologia e na força de um estudante determinado.
+  </p>
+
+</div>
+
+
+<div class="termos-de-uso">
+  <h2>Termos de Uso</h2>
+
+  <p>Bem-vindo ao Camocim Nativo. Ao acessar e utilizar este site, você concorda com os seguintes termos e condições:</p>
+
+  <ol>
+    <li><strong>Conteúdo:</strong> Não é permitido postar, transmitir ou compartilhar qualquer conteúdo que seja ilegal, difamatório, ameaçador, invasivo da privacidade ou que viole qualquer lei.</li>
+
+    <li><strong>Comportamento:</strong> Os usuários concordam em não se envolver em comportamentos prejudiciais, como hacking, phishing, ou qualquer atividade que possa prejudicar a segurança do site ou de outros usuários.</li>
+
+    <li><strong>Respeito:</strong> É proibido o discurso de ódio, discriminação, assédio ou qualquer forma de comportamento que desrespeite outros usuários.</li>
+
+    <li><strong>Propriedade Intelectual:</strong> Os usuários concordam em respeitar os direitos de propriedade intelectual de terceiros, incluindo direitos autorais, marcas registradas e patentes.</li>
+
+    <li><strong>Segurança:</strong> Os usuários são responsáveis por manter a segurança de suas contas e senhas.</li>
+
+    <li><strong>Moderação:</strong> O Camocim Nativo reserva-se o direito de moderar, remover ou bloquear qualquer conteúdo que viole estes termos.</li>
+
+    <li><strong>Alterações nos Termos:</strong> Estes termos podem ser alterados a qualquer momento, e os usuários são encorajados a revisá-los periodicamente.</li>
+  </ol>
+
+  <p>Ao continuar a usar o site, você concorda em cumprir estes termos. Se não concordar com estes termos, por favor, não use o Camocim Nativo.</p>
+</div>
+
+
+<footer>
 
 
 

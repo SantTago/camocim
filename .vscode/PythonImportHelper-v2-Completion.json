@@ -96,38 +96,6 @@
         "documentation": {}
     },
     {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "render_template",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "jsonify",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -354,42 +322,6 @@
         "description": "login.menu.app",
         "peekOfCode": "app.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\ndef save_text_fields(company, title, content, video, folder_path):\n    # Salvar os outros campos de texto como um arquivo TXT\n    text_data = f\"Empresa: {company}\\nTítulo: {title}\\nConteúdo: {content}\\nVídeo: {video}\"\n    file_path = os.path.join(folder_path, \"info.txt\")\n    with open(file_path, \"w\") as file:\n        file.write(text_data)\ndef get_unique_folder_name(base_folder, company):\n    # Obter um nome de pasta único",
         "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "index",
-        "kind": 2,
-        "importPath": "login.app",
-        "description": "login.app",
-        "peekOfCode": "def index():\n    return render_template('index.html')\n@app.route('/authenticate', methods=['POST'])\ndef authenticate():\n    username_input = request.form.get('username')\n    password_input = request.form.get('password')\n    if username_input in usuarios and usuarios[username_input] == password_input:\n        return jsonify({'redirect': '/usuarios.html'})\n    else:\n        return jsonify({'error': 'Usuário ou senha incorretos'})",
-        "detail": "login.app",
-        "documentation": {}
-    },
-    {
-        "label": "authenticate",
-        "kind": 2,
-        "importPath": "login.app",
-        "description": "login.app",
-        "peekOfCode": "def authenticate():\n    username_input = request.form.get('username')\n    password_input = request.form.get('password')\n    if username_input in usuarios and usuarios[username_input] == password_input:\n        return jsonify({'redirect': '/usuarios.html'})\n    else:\n        return jsonify({'error': 'Usuário ou senha incorretos'})\nif __name__ == '__main__':\n    app.run(debug=True)",
-        "detail": "login.app",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "kind": 5,
-        "importPath": "login.app",
-        "description": "login.app",
-        "peekOfCode": "app = Flask(__name__)\n# Dicionário de usuários (substitua com os seus próprios dados)\nusuarios = {\n    'tiago': '1',\n    'usuario2': 'senha2',\n    'usuario3': 'senha3'\n}\n@app.route('/')\ndef index():\n    return render_template('index.html')",
-        "detail": "login.app",
-        "documentation": {}
-    },
-    {
-        "label": "usuarios",
-        "kind": 5,
-        "importPath": "login.app",
-        "description": "login.app",
-        "peekOfCode": "usuarios = {\n    'tiago': '1',\n    'usuario2': 'senha2',\n    'usuario3': 'senha3'\n}\n@app.route('/')\ndef index():\n    return render_template('index.html')\n@app.route('/authenticate', methods=['POST'])\ndef authenticate():",
-        "detail": "login.app",
         "documentation": {}
     }
 ]
