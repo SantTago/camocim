@@ -40,6 +40,7 @@
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         var users = JSON.parse(xhr.responseText);
+
                         // Verifica se o login e senha correspondem aos valores esperados no arquivo TXT
                         if (users.hasOwnProperty(usernameInput) && users[usernameInput] === passwordInput) {
                             // Redireciona para a página principal após 3 segundos
@@ -53,7 +54,7 @@
                     }
                 };
 
-                xhr.open("GET", "curso\camocim\verificaçao.txt", true);
+                xhr.open("GET", "verificacao.txt", true);
                 xhr.send();
             }
         }
