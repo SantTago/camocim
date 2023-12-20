@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notícias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -133,24 +134,6 @@
             border-bottom: 15px;
         }
 
-        .icon img {
-          width: 30px;
-          height: 30px;
-          columns: auto;
-          margin: 10px;
-      }
-      
-      .icon {
-          display: flex;
-          justify-content: center;
-          margin: auto;
-      }
-      
-      .icon > div {
-          padding: 5px;
-          text-align: center;
-          border-radius: 50%; 
-      }
 
       .mercadinho-cor{
         width: 50px;
@@ -164,78 +147,156 @@
         background-color: rgb(116, 0, 0);
     }
 
-    .menu{
-      text-align: left;
-      padding-left: 8px;
-      padding-top: 50px;
-  }
-  
-  .menu a {
-      text-decoration: none;
-      font-family: var(--normal);
-      margin: 10px;
-      transition-duration: 0.5s;
-      padding: 5px;
-      border-radius: 10px;
-      color: white;
-  
-      
-  
-  }
-  
-  .menu a:hover {
-      background-color: rgba(255, 255, 255, 0.616);
-      color: var(--cor1);
-  }
-  
-  .menu {
-    background-color: #e60000;
-    height: 40px;
-  }
+    
 
-  header > h1 {
+    header > h1 {
+        text-align: center;
+        padding-top: 45px;
+        font-family: var(--destaque);
+        color: white;
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+
+    }
+    .paragrafo {
     text-align: center;
-    padding-top: 45px;
-    font-family: var(--destaque);
-    color: white;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+    }
 
-}
-.paragrafo {
-  text-align: center;
-}
+    header p {
+        font-family: var(--normal);
+        text-align: center;
+        color: white;
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+    }
+    
+    .bloco-noticias {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-header p {
-    font-family: var(--normal);
-    text-align: center;
-    color: white;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
-}
-  
-.bloco-noticias {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+    .content p{
+        text-align: center;
+    }
 
-.content p{
-    text-align: center;
-}
-
-  @media (max-width: 600px) {
-      article {
-          width: 100%;
-      }
-      .video-item {
+    .instagram-container {
+        position: relative;
+        margin: auto;
+        max-width: 600px; /* Defina o valor máximo desejado para a largura do contêiner */
         width: 100%;
-    } 
-}
+        padding-bottom: 75%; /* Ajuste isso conforme necessário para o aspecto desejado */
+        overflow: hidden;
+    }
 
+    .instagram-media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
+    @media (max-width: 600px) {
+        article {
+            width: 100%;
+        }
+        .video-item {
+            width: 100%;
+        } 
+        .instagram-container {
+            padding-bottom: 180%;
+    }
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        opacity: 0;
+        transition: opacity 0.5s, transform 0.5s;
+        transform: translateY(-20px);
+        top: 50px; /* Ajuste a altura conforme necessário */
+        left: 0;
+        right: 0;
+      }
+      
+      nav a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        display: flex;
+        align-items: center;
+        margin-left: 5px;
+        transition-duration: 0.8s;
+      }
+      
+      nav a:hover {
+        background-color: #555;
+      }
+      
+      button {
+        cursor: pointer;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+      }
+      
+      /* Adicionando media query para tornar o menu responsivo */
+      @media screen and (max-width: 768px) {
+        nav {
+          display: none;
+          flex-direction: column;
+          position: static;
+        }
+      
+        nav a {
+          margin: 5px 0;
+        }
+      
+        button span {
+          display: inline;
+        }
+      
+        button i {
+          display: none;
+        }
+      
+        button {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        button:hover + nav {
+          display: flex;
+        }
+        button span {
+          display: none;
+        }
+  
+        button i {
+          display: inline;
+        }
+      }
+
+    .fa-bars,
+    .fa-times {
+      margin-right: 5px;
+    }
+      
 </style>
 </head>
 
 <body>
+    
 
   <header>
 
@@ -245,16 +306,32 @@ header p {
 
   </header>
 
+  <button onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+    <span>Mostrar Menu</span>
+  </button>
+
+  <nav id="menu">
+    <a href="../index.html"><i class="fas fa-home" style="margin-right: 5px;"></i> Início</a>
+    <a href=" https://998a-2804-145c-c85a-e400-a830-4f20-e480-a528.ngrok-free.app"><i class="fas fa-bullhorn" style="margin-right: 5px;"></i> Poste</a>
+    <a href="menu/atualizaçoes.html"><i class="fas fa-arrow-circle-up" style="margin-right: 5px;"></i> Denuncias</a>
+    <a href="menu/patrocinadores.html"><i class="fas fa-dollar-sign" style="margin-right: 5px;"></i> Área do Patrocinador</a>
+</nav>
 
 
-  <div class="icon">
+  <!------------------------------------->
 
-    <div class="mercadinho-cor">
-        <abbr title="Voltar"><a href="index.html"><img src="icon/voltar-ver.png" alt="Voltar"></a></abbr>
-    </div >
+  <div class="instagram-container">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C09oAreRc8D/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+    </div>
 
-    
-  </div>  
+  <!------------------------------------->
+
+  <div class="instagram-container">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C1E4erIOS9M/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+</div>
 
   <!------------------------------------->
 
@@ -285,7 +362,7 @@ header p {
               15:33   02/12/2023
             </p>
         </article>
-        
+        <!--------------------------------------------->
         <article>
           <img src="https://neofeed.com.br/wp-content/uploads/2020/02/ING-1-1-1200x675.jpg" alt="Notícia 1">
           <div class="content">
@@ -298,7 +375,7 @@ header p {
             00:00   00/00/0000
           </p>
       </article>
-
+      <!--------------------------------------------->
     </section>
 
     <footer>
@@ -321,6 +398,16 @@ header p {
             }
         }
     </script>
+
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById("menu");
+          menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+          menu.style.opacity = (menu.style.opacity === "1") ? "0" : "1";
+          menu.style.transform = (menu.style.transform === "translateY(0px)") ? "translateY(-20px)" : "translateY(0px)";
+        }
+      </script>
+      
 </body>
 </html>
 
