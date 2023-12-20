@@ -13,6 +13,76 @@
     <meta name="description" content="Descrição da sua página para SEO">
     <meta name="keywords" content="palavras-chave relevantes">
     <meta name="author" content="Seu Nome">
+    <style>
+     
+      #search-container {
+        display: flex;
+        justify-content: end;
+        flex-wrap: nowrap;
+        text-align: center;
+        margin: -62px auto 0px auto;
+        background-color: #007bff;
+        
+      }
+
+      #search-box {
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          margin-bottom: 15px;
+      }
+
+      #search-button {
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #007bff;
+          border-radius: 5px;
+          background-color: #007bff;
+          color: #fff;
+          cursor: pointer;
+          margin-right: 20px;
+      }
+
+      #search-results {
+          text-align: left;
+          max-width: 800px;
+          margin: 0 auto;
+      }
+
+      @media only screen and (max-width: 600px) {
+        /* Adiciona estilos específicos para telas maiores (por exemplo, PCs) */
+        #search-container {
+          display: flex;
+          justify-content: end;
+          flex-wrap: nowrap;
+          text-align: center;
+          margin: -1px auto 0px auto;
+          background-color: #007bff;
+          
+        }
+  
+        #search-box {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+  
+        #search-button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+      }
+      
+  </style>
   </head>
 <body>
 
@@ -22,16 +92,60 @@
       Registra Camocim
     </h1>
     
+    
   </header>
+
+  <script>
+    var stores = [
+        { name: 'Loja A', url: 'https://www.lojaA.com' },
+        { name: 'Loja B', url: 'https://www.lojaB.com' },
+        { name: 'Loja C', url: 'https://www.lojaC.com' },
+        // Adicione mais lojas conforme necessário
+    ];
+
+    function searchStore() {
+        var query = document.getElementById('search-box').value.toLowerCase();
+        var searchResultsContainer = document.getElementById('search-results');
+
+        // Limpar resultados anteriores
+        searchResultsContainer.innerHTML = '';
+
+        // Verificar se a loja pesquisada está na lista
+        var matchingStores = stores.filter(function(store) {
+            return store.name.toLowerCase().includes(query);
+        });
+
+        if (matchingStores.length > 0) {
+            matchingStores.forEach(function(store) {
+                var resultElement = document.createElement('div');
+                resultElement.innerHTML = '<h3><a href="' + store.url + '">' + store.name + '</a></h3>';
+                searchResultsContainer.appendChild(resultElement);
+            });
+        } else {
+            searchResultsContainer.innerHTML = '<p>Loja não encontrada no site.</p>';
+        }
+    }
+</script>
 
 
   <div class="menu">
     <nav>
       <a href="index.html">Home</a>
       <a href="noticias.html">Notícias</a>
+
+
       
     </nav>
   </div>
+
+  <div id="search-container">
+    <form onsubmit="searchStore(); return false;">
+        <input type="text" id="search-box" placeholder="Pesquisar loja" required>
+        <input type="submit" id="search-button" value="Pesquisar">
+    </form>
+  </div>
+
+<div id="search-results"></div>
 
   <div class="publicidade">
     <div>
