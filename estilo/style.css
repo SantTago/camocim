@@ -1033,6 +1033,34 @@ main .torta {
      
 }
 
+.adulto-cor{
+  width: 50px;
+  height: 50px;
+  background-color: var(--cor1);
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.adulto-cor1{
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.adulto-cor:hover {
+  background-color: #000000;
+}
+
+.adulto .banco-icon  img {
+  width: 31px;
+  height: 31px;
+  border-radius: 50px;
+  margin: 7px;
+  margin-left: 8px;
+   
+}
 
 
 .achar {

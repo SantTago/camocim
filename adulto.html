@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação de Idade</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-family: 'Playball', cursive; /* Fonte mais sugestiva */
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column; /* Para empilhar os elementos verticalmente */
+      overflow: hidden;
+    }
+
+    #adult-space {
+      font-size: 36px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    #login-container {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      width: 80%;
+      max-width: 400px;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards 2s;
+    }
+
+    #age-check {
+      display: none;
+    }
+
+    #btnYes, #btnNo {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px auto 10px auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #btnYes {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+    }
+
+    #btnNo {
+      background-color: #333;
+      color: #fff;
+      border: none;
+    }
+
+    #warning {
+      font-family: serif; /* Fonte serifada */
+      color: #ffffff;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="adult-space">Espaço Adulto</div>
+
+  <div id="login-container">
+    <div id="age-check">
+      <p>Você é maior de 18 anos?</p>
+      <a href="Sex-Shop/adulto.html"><button id="btnYes">Sim</button></a>
+      <a href="index.html"><button id="btnNo">Não</button></a>
+    </div>
+    
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var ageCheck = document.getElementById('age-check');
+      var btnYes = document.getElementById('btnYes');
+      var btnNo = document.getElementById('btnNo');
+      var warning = document.getElementById('warning');
+
+      
+
+      btnNo.addEventListener('click', function() {
+        // Exibir aviso
+        warning.style.display = 'block';
+      });
+
+      ageCheck.style.display = 'block';  // Exibe a tela de verificação de idade
+    });
+  </script>
+
+</body>
+</html>
