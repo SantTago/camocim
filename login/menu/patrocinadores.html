@@ -177,19 +177,33 @@
         }
 
         function proceedToPayment() {
+            var days = document.getElementById('days').value;
+            var duration = document.getElementById('duration').value;
             var result = document.getElementById('result').innerText;
+        
             if (result.includes('Valor Total')) {
-                alert('Simulação de pagamento. Redirecionar para o processador de pagamento real.');
+                // Construir a URL do WhatsApp com os parâmetros
+                var whatsappLink = 'https://api.whatsapp.com/send/?phone=5588993464285&text&type=phone_number&app_absent=0';
+                var message = `Olá, gostaria de patrocinar por ${days} dias com duração ${duration}. Valor total: R$ ${result.match(/\d+\.\d+/)[0]}.`;
+        
+                // Codificar a mensagem para URL
+                message = encodeURIComponent(message);
+        
+                // Adicionar a mensagem à URL
+                whatsappLink += message;
+        
+                // Redirecionar para o link do WhatsApp
+                window.location.href = whatsappLink;
             } else {
                 alert('Calcule o valor total antes de prosseguir para o pagamento.');
             }
         }
+        
 
-        function goBack() {
-            window.history.back();
-        }
+        
 
     </script>
+    
     <div id="backButton">
     <button onclick="goBack()">Voltar</button>
 
