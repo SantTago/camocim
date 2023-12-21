@@ -132,34 +132,65 @@
 
   <script>
     var stores = [
-        { name: 'Loja A', url: 'https://www.lojaA.com' },
-        { name: 'Loja B', url: 'https://www.lojaB.com' },
-        { name: 'Loja C', url: 'https://www.lojaC.com' },
-        // Adicione mais lojas conforme necessário
+        { name: 'Dolos da tia Gleice', page: 'confeitaria/gleicy_patricio_bolos.html' },
+        { name: 'Donfeitaria rodrigues', page: 'confeitaria/confeitaria_rodrigues.html' },
+        { name: 'Deju doceria', page: 'confeitaria/deju doceria.html' },
+        { name: 'Fran Bolos', page: 'confeitaria/Fran Bolos.html' },
+        { name: 'Gleicy Patricio bolos', page: 'confeitaria/gleicy_patricio_bolos.html' },
+        { name: 'Ray Alves', page: 'confeitaria/ray-alves.html' },
+
+
+        { name: 'Batista construções', page: 'construçao/Batista construções.html' },
+        { name: 'Camocim Construções', page: 'construçao/Camocim Construções.html' },
+        { name: 'Constrular', page: 'construçao/Constrular.html' },
+        { name: 'Tend Tudo Construções', page: 'construçao/Tend Tudo Construções.html' },
+        { name: 'Wilson Construções', page: 'construçao/Wilson Construções.html' },
+
+
+        { name: 'Farmácia central', page: 'farmacia/central.html' },
+        { name: 'Farmácia farma vida', page: 'farmacia/farma-vida.html' },
+        { name: 'Farmácia Pague Menos', page: 'farmacia/Farmácia Pague Menos.html' },
+        { name: 'Farmacia Santa Branca', page: 'farmacia/Farmacia Santa Branca.html' },
+        { name: 'Farmácia Hiper Popular Drogarias', page: 'farmacia/Hiper Popular Drogarias.html' },
+        { name: 'Farmácia MedFarma', page: 'farmacia/MedFarma.html' },
+        { name: 'Farmácia Pague Facil', page: 'farmacia/Pague Facil.html' },
+        { name: 'Farmácia Sao Francisco', page: 'farmacia/Sao Francisco.html' },
+
+        { name: 'Mercadinho duas-irmas', page: 'mercados/duas-irmas.html' },
+        { name: 'Mercadinho Leuda', page: 'mercados/Leuda' },
+        { name: 'Mercadinho Bacana', page: 'mercados/Mercadinho Bacana.html' },
+        { name: 'Mercadinho Gouveia', page: 'mercados/Mercadinho Gouveia.html' },
+        { name: 'Mercado Rainha', page: 'mercados/rainha.html' },
+        { name: 'tete', page: 'mercados/tete.html' },
+        
+        
     ];
 
     function searchStore() {
-        var query = document.getElementById('search-box').value.toLowerCase();
-        var searchResultsContainer = document.getElementById('search-results');
-
-        // Limpar resultados anteriores
-        searchResultsContainer.innerHTML = '';
-
-        // Verificar se a loja pesquisada está na lista
-        var matchingStores = stores.filter(function(store) {
-            return store.name.toLowerCase().includes(query);
-        });
-
-        if (matchingStores.length > 0) {
-            matchingStores.forEach(function(store) {
-                var resultElement = document.createElement('div');
-                resultElement.innerHTML = '<h3><a href="' + store.url + '">' + store.name + '</a></h3>';
-                searchResultsContainer.appendChild(resultElement);
-            });
-        } else {
-            searchResultsContainer.innerHTML = '<p>Loja não encontrada <br> no site.</p>';
-        }
-    }
+      var query = document.getElementById('search-box').value.toLowerCase();
+      var searchResultsContainer = document.getElementById('search-results');
+  
+      // Limpar resultados anteriores
+      searchResultsContainer.innerHTML = '';
+  
+      // Verificar se a loja pesquisada está na lista
+      var matchingStores = stores.filter(function(store) {
+          return store.name.toLowerCase().includes(query);
+      });
+  
+      // Limitar o número de resultados exibidos a 3
+      matchingStores = matchingStores.slice(0, 3);
+  
+      if (matchingStores.length > 0) {
+          matchingStores.forEach(function(store) {
+              var resultElement = document.createElement('div');
+              resultElement.innerHTML = '<h3><a href="' + store.page + '">' + store.name + '</a></h3>';
+              searchResultsContainer.appendChild(resultElement);
+          });
+      } else {
+          searchResultsContainer.innerHTML = '<p>Loja não encontrada na página.</p>';
+      }
+  }
 </script>
 
 
@@ -360,6 +391,9 @@
   <footer>
     <p>&copy; 2023 Desenvolvidor Nativo-Ce.</p>
   </footer>
+
+
+  
 
 
 </body>
