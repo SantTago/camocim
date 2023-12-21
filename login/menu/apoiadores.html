@@ -144,30 +144,31 @@
             var planValueDiv = document.getElementById('planValue');
             var monthlyRate = 10;
             var annualRate = 100;
-
+    
             var value = (plan === 'monthly') ? monthlyRate : annualRate;
-
+    
             planValueDiv.innerHTML = `<p>Valor do Plano: R$ ${value.toFixed(2)}</p>`;
         }
-
+    
         function proceedToPayment() {
             var name = document.getElementById('name').value;
             var plan = document.getElementById('plan').value;
             var monthlyRate = 10;
             var annualRate = 100;
-
+    
             var total = (plan === 'monthly') ? monthlyRate : annualRate;
-
+    
             var resultDiv = document.getElementById('result');
             resultDiv.innerHTML = `<p>${name}, o valor total do seu apoio é: R$ ${total.toFixed(2)}</p>`;
-
+    
             alert('Simulação de pagamento. Redirecionar para o processador de pagamento real.');
         }
-
+    
         function goBack() {
             window.history.back();
         }
     </script>
+    
 
     <button class="back-button" onclick="goBack()">Voltar</button>
     </div>
