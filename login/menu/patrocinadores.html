@@ -181,19 +181,12 @@
 
             if (result.includes('Valor Total')) {
                 // Construir a URL do WhatsApp com os parâmetros
-                var whatsappLink = 'https://api.whatsapp.com/send/?phone=5588993464285&text=';
+                var phoneNumber = '5588993464285';
                 var message = `Olá, gostaria de patrocinar por ${days} dias com duração ${duration}. Valor total: R$ ${result.match(/\d+\.\d+/)[0]}.`;
-                whatsappLink += message;
-                window.location.href = whatsappLink;
 
-                // Codificar a mensagem para URL
-                message = encodeURIComponent(message);
+                var whatsappLink = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
-                // Adicionar a mensagem à URL
-                whatsappLink += message;
-
-                // Redirecionar para o link do WhatsApp
-                window.location.href = whatsappLink;
+                window.open(whatsappLink, '_blank');
             } else {
                 alert('Calcule o valor total antes de prosseguir para o pagamento.');
             }
