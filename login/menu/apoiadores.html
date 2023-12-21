@@ -102,13 +102,13 @@
     <h1>Área de Apoiador</h1>
 
     <form id="supporterForm">
-        <label for="name">Nome do Apoiador:</label>
+        <label for="name">Nome da Empresa:</label>
         <input type="text" id="name" name="name" placeholder="Digite o nome do apoiador" required>
 
         <label for="plan">Escolha o Plano:</label>
         <select id="plan" name="plan" onchange="displayPlanValue()">
-            <option value="monthly">Mensal (4 postes por mês)</option>
-            <option value="annual">Anual (10 postes por mês)</option>
+            <option value="monthly">Mensal (3 postes por mês)</option>
+            <option value="annual">Anual (7 postes por mês)</option>
         </select>
 
         <div id="planValue"></div>
@@ -150,7 +150,7 @@
         }
     
         function proceedToPayment() {
-            var name = document.getElementById('name').value;
+            var companyName = document.getElementById('name').value;
             var plan = document.getElementById('plan').value;
             var monthlyRate = 10;
             var annualRate = 100;
@@ -158,11 +158,11 @@
             var total = (plan === 'monthly') ? monthlyRate : annualRate;
     
             var resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = `<p>${name}, o valor total do seu apoio é: R$ ${total.toFixed(2)}</p>`;
+            resultDiv.innerHTML = `<p>${companyName}, o valor total do seu apoio é: R$ ${total.toFixed(2)}</p>`;
     
             // Construir a URL do WhatsApp com os parâmetros
             var whatsappLink = 'https://api.whatsapp.com/send/?phone=5588993464285&text=';
-            var message = `Olá, gostaria de apoiar com o plano ${plan}. Valor total: R$ ${total.toFixed(2)}.`;
+            var message = `Olá, a empresa ${companyName} gostaria de apoiar com o plano ${plan}. Valor total: R$ ${total.toFixed(2)}.`;
     
             // Codificar a mensagem para URL
             message = encodeURIComponent(message);
