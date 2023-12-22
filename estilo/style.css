@@ -140,28 +140,9 @@
   }
     
  
-  .banco-bloco {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+ 
   
-  
-  
-  .banco-bloco div{
-      width: 100px;
-      height: 100%;
-      margin: 5px;
-      border-radius: 5px;
-      
-  
-  }
-  
-  .banco-bloco img:hover{
-    border: 3px solid #27F66C;
-  
-  }
-    
+
     
     
 }
@@ -177,6 +158,7 @@
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.308);
 
   }
+
 
   
   
@@ -1165,8 +1147,7 @@ main .torta {
 
 
 
-
-.banco-bloco {
+.bancos-bloco {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -1174,8 +1155,8 @@ main .torta {
 
 
 
-.banco-bloco div{
-    width: 150px;
+.bancos-bloco div{
+    width: 130px;
     height: 100%;
     margin: 5px;
     border-radius: 5px;
@@ -1183,10 +1164,13 @@ main .torta {
 
 }
 
-.banco-bloco img:hover{
-  border: 3px solid #27F66C;
+.bancos-bloco img:hover{
+  border: 3px solid #27f66c;
 
 }
+
+
+
 
 
 
@@ -1210,8 +1194,6 @@ main .torta {
     border: 3px solid rgb(78, 86, 87);
  
 }
-
-
 
 
 

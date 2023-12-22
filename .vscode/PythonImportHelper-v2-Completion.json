@@ -48,30 +48,6 @@
         "documentation": {}
     },
     {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "render_template",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
         "label": "redirect",
         "importPath": "flask",
         "description": "flask",
@@ -142,51 +118,6 @@
         "description": "app",
         "isExtraImport": true,
         "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "ler_usuarios",
-        "kind": 2,
-        "importPath": "banco.login.app.app",
-        "description": "banco.login.app.app",
-        "peekOfCode": "def ler_usuarios():\n    usuarios = {}\n    with open(os.path.join(os.path.dirname(__file__), 'usuarios.txt'), 'r') as arquivo:\n        for linha in arquivo:\n            usuario, senha = linha.strip().split(':')\n            usuarios[usuario] = senha\n    return usuarios\n# Usuários e senhas definidos\nusuarios = ler_usuarios()\n@app.route('/')",
-        "detail": "banco.login.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "index",
-        "kind": 2,
-        "importPath": "banco.login.app.app",
-        "description": "banco.login.app.app",
-        "peekOfCode": "def index():\n    return render_template('login.html')\n@app.route('/autenticar', methods=['POST'])\ndef autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)\n    else:\n        return render_template('acesso_negado.html')",
-        "detail": "banco.login.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "autenticar",
-        "kind": 2,
-        "importPath": "banco.login.app.app",
-        "description": "banco.login.app.app",
-        "peekOfCode": "def autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)\n    else:\n        return render_template('acesso_negado.html')\nif __name__ == '__main__':\n    app.run(debug=True)",
-        "detail": "banco.login.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "kind": 5,
-        "importPath": "banco.login.app.app",
-        "description": "banco.login.app.app",
-        "peekOfCode": "app = Flask(__name__, template_folder=os.path.abspath('templates'))\n# Função para ler usuários e senhas do arquivo\ndef ler_usuarios():\n    usuarios = {}\n    with open(os.path.join(os.path.dirname(__file__), 'usuarios.txt'), 'r') as arquivo:\n        for linha in arquivo:\n            usuario, senha = linha.strip().split(':')\n            usuarios[usuario] = senha\n    return usuarios\n# Usuários e senhas definidos",
-        "detail": "banco.login.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "usuarios",
-        "kind": 5,
-        "importPath": "banco.login.app.app",
-        "description": "banco.login.app.app",
-        "peekOfCode": "usuarios = ler_usuarios()\n@app.route('/')\ndef index():\n    return render_template('login.html')\n@app.route('/autenticar', methods=['POST'])\ndef autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)",
-        "detail": "banco.login.app.app",
         "documentation": {}
     },
     {
