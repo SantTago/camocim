@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motos Táxi na Cidade</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            min-height: 50vh;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-weight: 600;
+            background-color: #042940;
+        }
+
+        nav {
+            background-color: #00425c; /* Cor do menu */
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        nav a {
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px;
+            box-sizing: border-box;
+        }
+
+        nav a.back {
+            background-color: #8bd6f1; /* Cor do botão "Voltar" */
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                width: auto;
+            }
+        }
+
+        .mototaxi {
+            width: 110px;
+            padding: 10px;
+            background: linear-gradient(45deg, #000, #333);
+            color: #ffc107;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .mototaxi:hover {
+            transform: scale(1.1);
+        }
+
+        .mototaxi img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        #informacoes {
+            display: none;
+            background: linear-gradient(45deg, #000, #333);
+            color: #ffc107;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-radius: 10px;
+        }
+
+        #fechar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #ffc107;
+        }
+
+        #chamarBotao {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #chamarBotao:hover {
+            background-color: #ffdb58;
+        }
+
+        :root {
+            --cor1: #042940;
+            --cor2: #005C53;
+            --cor3: #9FC131;
+            --cor4: #DBF227;
+            --cor5: #D6D58E;
+            --cor6: #0077ff;
+            --cor7: #8bd6f1;
+            --cor8: #00425c;
+        }
+
+        header {
+            background-color: var(--cor1);
+            color: #fff;
+            text-align: center;
+            
+        }
+
+
+        .moto-taxi { background-color: var(--cor2); }
+        .taxistas { background-color: var(--cor3); }
+        .entregadores { background-color: var(--cor4); }
+        .modelos { background-color: var(--cor6); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Moto Táxis</h1>
+    </header>
+
+    <nav>
+        <a href="Serviços/moto-taxi.html" class="menu-link moto-taxi">Moto Táxi</a>
+        <a href="#" class="menu-link taxistas">Taxistas</a>
+        <a href="#" class="menu-link entregadores">Entregadores</a>
+        <a href="#" class="menu-link modelos">Modelos</a>
+        <a href="../index.html" class="menu-link back">Voltar</a>
+    </nav>
+
+    <!-------------------------------------------------------->
+
+    <div class="mototaxi" onclick="mostrarInformacoes(1)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 1">
+        <h3>Mototaxista 1</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 2</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 3</h3>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div class="mototaxi" onclick="mostrarInformacoes(1)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 1">
+        <h3>Mototaxista 1</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 2</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 3</h3>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div class="mototaxi" onclick="mostrarInformacoes(1)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 1">
+        <h3>Mototaxista 1</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 2</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 3</h3>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div class="mototaxi" onclick="mostrarInformacoes(1)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 1">
+        <h3>Mototaxista 1</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 2</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 3</h3>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div class="mototaxi" onclick="mostrarInformacoes(1)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 1">
+        <h3>Mototaxista 1</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 2</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 3</h3>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div class="mototaxi" onclick="mostrarInformacoes(1)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 1">
+        <h3>Mototaxista 1</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 2</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 3</h3>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div class="mototaxi" onclick="mostrarInformacoes(1)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 1">
+        <h3>Mototaxista 1</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 2</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 3</h3>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div class="mototaxi" onclick="mostrarInformacoes(1)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 1">
+        <h3>Mototaxista 1</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 2</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 3</h3>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div class="mototaxi" onclick="mostrarInformacoes(1)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 1">
+        <h3>Mototaxista 1</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 2</h3>
+    </div>
+
+    <div class="mototaxi" onclick="mostrarInformacoes(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOXM9yBhZ6Fm0DCkoWmjjJshTkqPnIpgIV5INj3Sj4CLb2ldSrKk8Px9ktZOd2pPfjzZ0&usqp=CAU" alt="Mototaxista 2">
+        <h3>Mototaxista 3</h3>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div id="informacoes">
+        <span id="fechar" onclick="fecharInformacoes()">&times;</span>
+        <h2 id="mototaxistaNome"></h2>
+        <p id="mototaxistaInfo"></p>
+        <p id="mototaxistaNumero">Número: <span id="numeroMotoTaxista"></span></p>
+        <button id="copiarBotao" onclick="copiarNumero()">Copiar Número</button>
+        <button id="chamarBotao" onclick="chamarMotoTaxi()">Chamar Moto Táxi</button>
+    </div>
+
+    <script>
+        function mostrarInformacoes(mototaxistaId) {
+            const nomeElemento = document.getElementById('mototaxistaNome');
+            const infoElemento = document.getElementById('mototaxistaInfo');
+            const numeroElemento = document.getElementById('numeroMotoTaxista');
+            const informacoesDiv = document.getElementById('informacoes');
+
+            if (mototaxistaId === 1) {
+                nomeElemento.textContent = 'Mototaxista 1';
+                infoElemento.textContent = 'Nome: Matehsu.';
+                numeroElemento.textContent = '123456789';  // Substitua pelo número real do mototaxista 1
+            } else if (mototaxistaId === 2) {
+                nomeElemento.textContent = 'Mototaxista 2';
+                infoElemento.textContent = 'Informações detalhadas sobre o Mototaxista 2.';
+                numeroElemento.textContent = '987654321';  
+            } else if (mototaxistaId === 3) {
+                nomeElemento.textContent = 'Mototaxista 3';
+                infoElemento.textContent = 'Informações detalhadas sobre o Mototaxista 3.';
+                numeroElemento.textContent = '956465453415641654';  
+            }
+
+            informacoesDiv.style.display = 'block';
+        }
+
+        function fecharInformacoes() {
+            document.getElementById('informacoes').style.display = 'none';
+        }
+
+        function copiarNumero() {
+            const numeroElemento = document.getElementById('numeroMotoTaxista');
+            const numeroMotoTaxista = numeroElemento.textContent;
+
+            // Cria um elemento de texto temporário para copiar o número
+            const tempInput = document.createElement('input');
+            tempInput.value = numeroMotoTaxista;
+            document.body.appendChild(tempInput);
+
+            // Seleciona e copia o conteúdo do campo de texto temporário
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            alert('Número copiado: ' + numeroMotoTaxista);
+        }
+
+        function chamarMotoTaxi() {
+            alert('Moto Táxi chamado!');
+        }
+    </script>
+
+</body>
+</html>

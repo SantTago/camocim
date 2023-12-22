@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços da Cidade</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-weight: 600;
+            background-color: #042940;
+        }
+
+        header {
+            background-color: var(--cor1);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            
+            background-color: var(--cor8);
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px; /* Adicionando margem entre os itens do menu */
+            box-sizing: border-box; /* Evita que a largura 100% ultrapasse o contêiner */
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .service {
+            border: 1px solid var(--cor5);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            flex: 0 0 calc(33.33% - 20px);
+        }
+
+        .moto-taxi { background-color: var(--cor2); }
+        .taxistas { background-color: var(--cor3); }
+        .entregadores { background-color: var(--cor4); }
+        .modelos { background-color: var(--cor6); }
+
+        footer {
+            background-color: var(--cor1);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .banner-container {
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .banner-img {
+            width: 100%;
+            display: none;
+        }
+
+        .banner-img.active {
+            display: block;
+        }
+
+        /* Adicionando media query para tornar o menu responsivo */
+        @media (max-width: 600px) {
+            nav a {
+                width: auto; /* Volta à largura automática para o layout de coluna */
+            }
+        }
+
+        /* Adicionando estilo para a opção de "Voltar" */
+        .menu-link.back {
+            background-color: var(--cor7);
+        }
+
+        /* Ajustando a cor do texto para torná-lo mais escuro */
+        nav a, .service h2, .service p, footer p {
+            color: #000;
+        }
+
+        /* Adicionando a paleta de cores */
+        :root {
+            --cor1: #042940;
+            --cor2: #005C53;
+            --cor3: #9FC131;
+            --cor4: #DBF227;
+            --cor5: #D6D58E;
+            --cor6: #0077ff;
+            --cor7: #8bd6f1;
+            --cor8: #00425c;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Registra Serviços</h1>
+    </header>
+
+    <nav>
+        <a href="Serviços/moto-taxi.html" class="menu-link moto-taxi">Moto Táxi</a>
+        <a href="#" class="menu-link taxistas">Taxistas</a>
+        <a href="#" class="menu-link entregadores">Entregadores</a>
+        <a href="#" class="menu-link modelos">Modelos</a>
+        <a href="index.html" class="menu-link back">Voltar</a>
+    </nav>
+
+    <section>
+        <div class="banner-container">
+            <img src="moto_taxi_image.jpg" alt="Moto Táxi" class="banner-img moto-taxi active">
+            <img src="taxistas_image.jpg" alt="Taxistas" class="banner-img taxistas">
+            <img src="entregadores_image.jpg" alt="Entregadores" class="banner-img entregadores">
+            <img src="modelos_image.jpg" alt="Modelos" class="banner-img modelos">
+        </div>
+
+        <div class="service moto-taxi">
+            <h2>Moto Táxi</h2>
+            <p>Encontre moto taxistas disponíveis na sua região.</p>
+        </div>
+
+        <div class="service taxistas">
+            <h2>Taxistas</h2>
+            <p>Chame um táxi para levá-lo ao seu destino.</p>
+        </div>
+
+        <div class="service entregadores">
+            <h2>Entregadores</h2>
+            <p>Receba entregas rápidas e seguras na sua porta.</p>
+        </div>
+
+        <div class="service modelos">
+            <h2>Modelos da Cidade</h2>
+            <p>Explore oportunidades de emprego como modelo na cidade.</p>
+        </div>
+    </section>
+
+    
+
+    <script>
+        // Script para o banner rotativo
+        let currentBannerIndex = 0;
+        const banners = document.querySelectorAll('.banner-img');
+        
+        function showNextBanner() {
+            banners[currentBannerIndex].classList.remove('active');
+            currentBannerIndex = (currentBannerIndex + 1) % banners.length;
+            banners[currentBannerIndex].classList.add('active');
+        }
+
+        // Trocar de banner a cada 5 segundos (5000 milissegundos)
+        setInterval(showNextBanner, 5000);
+    </script>
+</body>
+</html>
