@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,7 +103,7 @@
             <option value="monthly">Mensal</option>
         </select>
 
-        <button type="button" onclick="calculateTotal()">Calcular Total</button>
+        <button type="button" onclick="calcularTotal()">Calcular Total</button>
     </form>
 
     <div id="result"></div>
@@ -116,15 +116,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr onclick="selectDuration('daily')">
+            <tr onclick="selecionarDuracao('diaria')">
                 <td>Diária</td>
                 <td>R$ 20,00</td>
             </tr>
-            <tr onclick="selectDuration('weekly')">
+            <tr onclick="selecionarDuracao('semanal')">
                 <td>Semanal</td>
                 <td>R$ 100,00</td>
             </tr>
-            <tr onclick="selectDuration('monthly')">
+            <tr onclick="selecionarDuracao('mensal')">
                 <td>Mensal</td>
                 <td>R$ 250,00</td>
             </tr>
@@ -132,10 +132,12 @@
     </table>
 
     <div id="paymentButton">
-        <button onclick="proceedToPayment()">Prosseguir para o Pagamento</button>
+        <button onclick="prosseguirParaPagamento()">Prosseguir para o Pagamento</button>
     </div>
 
-    
+    <div id="backButton">
+        <button onclick="voltar()">Voltar</button>
+    </div>
 
     <script>
         function toggleDaysInput() {
@@ -148,7 +150,7 @@
             daysInput.style.display = (duration === 'daily') ? 'block' : 'none';
         }
     
-        function calculateTotal() {
+        function calcularTotal() {
             var daysInput = document.getElementById('days');
             var days = (daysInput.style.display !== 'none') ? daysInput.value : 1; // Definir 1 se o campo estiver oculto
             var duration = document.getElementById('duration').value;
@@ -176,7 +178,7 @@
             resultDiv.innerHTML = `<p>Valor Total: R$ ${total.toFixed(2)}</p>`;
         }
     
-        function proceedToPayment() {
+        function prosseguirParaPagamento() {
             var days = document.getElementById('days').value;
             var duration = document.getElementById('duration').value;
             var result = document.getElementById('result').innerText;
@@ -198,12 +200,11 @@
                 alert('Calcule o valor total antes de prosseguir para o pagamento.');
             }
         }
-    </script>
-    
-    
-    <div id="backButton">
-    <button onclick="goBack()">Voltar</button>
 
+        function voltar() {
+            window.history.back();
+        }
+    </script>
 
 </body>
 </html>
