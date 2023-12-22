@@ -385,7 +385,7 @@ header p {
 .menu a {
     text-decoration: none;
     font-family: var(--normal);
-    margin: 10px;
+    
     transition-duration: 0.5s;
     padding: 5px;
     border-radius: 10px;
