@@ -186,7 +186,21 @@
             if (result.includes('Valor Total')) {
                 // Construir a URL do WhatsApp com os parâmetros
                 var whatsappLink = 'https://api.whatsapp.com/send/?phone=5588993464285&text=';
-                var message = `Olá, gostaria de patrocinar por ${days} dias com duração ${duration}. Valor total: R$ ${result.match(/\d+\.\d+/)[0]}.`;
+                var message = '';
+                
+                switch (duration) {
+                    case 'daily':
+                        message = `Olá, gostaria de patrocinar por ${days} dia(s). Valor total: R$ ${result.match(/\d+\.\d+/)[0]}.`;
+                        break;
+                    case 'weekly':
+                        message = `Olá, gostaria de patrocinar por 1 semana. Valor total: R$ ${result.match(/\d+\.\d+/)[0]}.`;
+                        break;
+                    case 'monthly':
+                        message = `Olá, gostaria de patrocinar por 1 mês. Valor total: R$ ${result.match(/\d+\.\d+/)[0]}.`;
+                        break;
+                    default:
+                        break;
+                }
     
                 // Codificar a mensagem para URL
                 message = encodeURIComponent(message);

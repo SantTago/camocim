@@ -127,11 +127,11 @@
         </thead>
         <tbody>
             <tr onclick="selecionePlano('mensal')">
-                <td>Mensal (4 postes)</td>
+                <td>Mensal (3 postes)</td>
                 <td>R$ 10,00</td>
             </tr>
             <tr onclick="selecionePlano('anual')">
-                <td>Anual (10 postes por mês)</td>
+                <td>Anual (7 postes por mês)</td>
                 <td>R$ 100,00</td>
             </tr>
         </tbody>
@@ -158,11 +158,23 @@
             var total = (plano === 'monthly') ? taxaMensal : taxaAnual;
     
             var resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = `<p>${nomeEmpresa}, o valor total do seu apoio é: R$ ${total.toFixed(2)}</p>`;
+            var mensagem = '';
+            
+            switch (plano) {
+                case 'monthly':
+                    mensagem = `Olá, a empresa ${nomeEmpresa}. Valor total para o plano mensal: R$ ${total.toFixed(2)}.`;
+                    break;
+                case 'annual':
+                    mensagem = `Olá, a empresa ${nomeEmpresa}. Valor total para o plano anual: R$ ${total.toFixed(2)}.`;
+                    break;
+                default:
+                    break;
+            }
+
+            resultDiv.innerHTML = `<p>${mensagem}</p>`;
     
             // Construir a URL do WhatsApp com os parâmetros
             var whatsappLink = 'https://api.whatsapp.com/send/?phone=5588993464285&text=';
-            var mensagem = `Olá, a empresa ${nomeEmpresa} gostaria de apoiar com o plano ${plano}. Valor total: R$ ${total.toFixed(2)}.`;
     
             // Codificar a mensagem para URL
             mensagem = encodeURIComponent(mensagem);
