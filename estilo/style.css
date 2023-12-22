@@ -1142,6 +1142,32 @@ main .torta {
 
 
 
+
+.banco-bloco {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+
+.banco-bloco div{
+    width: 150px;
+    height: 100%;
+    margin: 5px;
+    border-radius: 5px;
+    
+
+}
+
+.banco-bloco img:hover{
+  border: 3px solid #27F66C;
+
+}
+
+
+
+
 .roupa-bloco {
   display: flex;
   justify-content: center;
