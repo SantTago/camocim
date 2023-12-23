@@ -29,9 +29,9 @@
             text-align: center;
             background-color: #444; /* Tom mais escuro para os blocos */
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            padding: 1em;
-            margin: 1em;
+            display: flex; /* Adicionado o estilo flexível */
+            justify-content: center; /* Alinha os itens horizontalmente no centro */
+            align-items: center; /* Alinha os itens verticalmente no centro */
         }
 
         nav a {
@@ -130,7 +130,7 @@
         .voltar {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
+            align-items: center;
         }
 
         /* Oculta a seção de Moteis inicialmente */
@@ -173,11 +173,8 @@
 
     <nav>
         <a href="#" onclick="toggleMoteisMenu()">Moteis</a>
-        <div id="moteisMenu" class="moteis-menu">
-            <a href="#" onclick="selectMotel('motel1')">Motel 1</a>
-            <a href="#" onclick="selectMotel('motel2')">Motel 2</a>
-            <a href="#" onclick="selectMotel('motel3')">Motel 3</a>
-            <!-- Adicione mais opções conforme necessário -->
+        <div class="voltar">
+            <a href="../index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
         </div>
     </nav>
 
@@ -217,21 +214,7 @@
         </section>
     </main>
 
-    <div class="voltar">
-        <a href="../index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
-    </div>
-
     <script>
-        function toggleMoteisMenu() {
-            const moteisMenu = document.getElementById('moteisMenu');
-            moteisMenu.style.display = (moteisMenu.style.display === 'block') ? 'none' : 'block';
-        }
-
-        function selectMotel(motelId) {
-            toggleMoteisMenu();
-            showSection('moteis', motelId);
-        }
-
         function showSection(section, motelId) {
             const lojasSection = document.getElementById('main').getElementsByClassName('store');
             const moteisSection = document.getElementById('main').getElementsByClassName('motel');
@@ -267,6 +250,5 @@
             // Substitua ou adicione aqui as alterações específicas para cada motel
         }
     </script>
-
 </body>
 </html>
