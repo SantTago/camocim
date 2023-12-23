@@ -137,6 +137,33 @@
         .motel {
             display: none;
         }
+
+        /* Estilo para o menu de moteis */
+        .moteis-menu {
+            display: none;
+            position: absolute;
+            background-color: #444; /* Tom mais escuro para os blocos */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 1em;
+            margin-top: 5px;
+            left: 50%; /* Posiciona o menu no centro */
+            transform: translateX(-50%); /* Corrige a posição no centro */
+        }
+
+        /* Estilo para os itens do menu de moteis */
+        .moteis-menu a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 8px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Efeito de hover para os itens do menu de moteis */
+        .moteis-menu a:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -145,7 +172,13 @@
     </header>
 
     <nav>
-        <a href="#" onclick="showSection('moteis')">Moteis</a>
+        <a href="#" onclick="toggleMoteisMenu()">Moteis</a>
+        <div id="moteisMenu" class="moteis-menu">
+            <a href="#" onclick="selectMotel('motel1')">Motel 1</a>
+            <a href="#" onclick="selectMotel('motel2')">Motel 2</a>
+            <a href="#" onclick="selectMotel('motel3')">Motel 3</a>
+            <!-- Adicione mais opções conforme necessário -->
+        </div>
     </nav>
 
     <main>
@@ -169,8 +202,18 @@
         <!-- Seção de Moteis -->
         <section class="motel" id="motel1">
             <img src="caminho/para/sua/imagem-motel.jpg" alt="motel">
-            <h2>Motel Exemplo</h2>
+            <h2>Motel Exemplo 1</h2>
             <!-- Conteúdo do motel 1 -->
+        </section>
+        <section class="motel" id="motel2">
+            <img src="caminho/para/sua/imagem-motel.jpg" alt="motel">
+            <h2>Motel Exemplo 2</h2>
+            <!-- Conteúdo do motel 2 -->
+        </section>
+        <section class="motel" id="motel3">
+            <img src="caminho/para/sua/imagem-motel.jpg" alt="motel">
+            <h2>Motel Exemplo 3</h2>
+            <!-- Conteúdo do motel 3 -->
         </section>
     </main>
 
@@ -179,7 +222,17 @@
     </div>
 
     <script>
-        function showSection(section) {
+        function toggleMoteisMenu() {
+            const moteisMenu = document.getElementById('moteisMenu');
+            moteisMenu.style.display = (moteisMenu.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function selectMotel(motelId) {
+            toggleMoteisMenu();
+            showSection('moteis', motelId);
+        }
+
+        function showSection(section, motelId) {
             const lojasSection = document.getElementById('main').getElementsByClassName('store');
             const moteisSection = document.getElementById('main').getElementsByClassName('motel');
 
@@ -189,6 +242,7 @@
             } else if (section === 'moteis') {
                 showElements(moteisSection);
                 hideElements(lojasSection);
+                updateMotel(motelId);
             }
         }
 
@@ -204,6 +258,13 @@
                 element.style.display = 'none';
                 element.style.opacity = '0';
             }
+        }
+
+        function updateMotel(selectedMotel) {
+            // Atualize o conteúdo do motel com base no valor selecionado
+            const motelContent = document.getElementById(selectedMotel);
+
+            // Substitua ou adicione aqui as alterações específicas para cada motel
         }
     </script>
 
