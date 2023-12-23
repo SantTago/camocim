@@ -5,6 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1d5d5;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        padding: 15px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          border: 1px solid #ddd;
+      }
+    }
+</style>
 </head>
 <body>
   
@@ -25,32 +136,84 @@
   </div>  
 
 
-
-    <div class="sun-city-bloco">
-        
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/399073955_836745404812107_3459749418356284345_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFq__WwYZBWrTjZOkoe9Tn6_NrqJ6q9CD782uonqr0IPq6cf6DyVcm96gfYT_wgE0e637lI4I7UgH9RAIq_DZPY&_nc_ohc=RhMBMK0ayPkAX9TZy8G&_nc_ht=scontent.ffor12-1.fna&oh=00_AfAlWRMuhg2--Zm69PYgHfJ7nstCuLF1U2AF8oKek18B4w&oe=65828542" alt="restaurante">
-            
+    <!--------------------------------------------------->
+    <section class="slider">
+        <div class="product">
+          <img src="deju/001.png" alt="Bolo">
+          <h2>Bolo</h2>
+          <p>Descrição do produto.</p>
+          <p>R$ 00,00</p>
+          
         </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/346610426_3692741447664324_9210803132296148719_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeGpwhoe0QN6nNO8kZjJiuAxnK2rJeuJEAicrasl64kQCAcYAF0Fxxargs6vfnGbgGxhWMU41MET7U3PeqTrg81S&_nc_ohc=agTlKV8LTJgAX83ZKH8&_nc_ht=scontent.ffor12-1.fna&oh=00_AfBzOUcjz2Mx5k8JhGN6LsOi69MipvHCGY3WSbvmjcXBMw&oe=6580E64B" alt="restaurante">
+    
+        <div class="product">
+          <img src="deju/002.png" alt="Bolo">
+          <h2>Bolo</h2>
+          <p>Descrição do produto.</p>
+          <p>R$ 00,00</p>
+          
         </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/399474388_836745411478773_654521943692465354_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeHlmpFb95ax2zMAzSUGW4AQ65WBFh1CBzHrlYEWHUIHMW7jc-9H3B2Ih3DBl1HWW_5zYIvlPHZQlfXbxLT5n_9m&_nc_ohc=2enamr7NTjcAX9Wyb39&_nc_ht=scontent.ffor12-1.fna&oh=00_AfDf7Jw-Tt-Hi9LsRbvRNYDYL6vPKZsUBe83HDXi69xPGA&oe=6581E886" alt="restaurante">
+    
+        <div class="product">
+          <img src="deju/003.png" alt="Bolo">
+          <h2>Bolo</h2>
+          <p>Descrição do produto.</p>
+          <p>R$ 00,00</p>
+          
         </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/395037021_829008635585784_507415543941857902_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeEVVHpxtbD_SyU9CRiBtdFIgI4xM93zLDeAjjEz3fMsN3vYDDJBBLVtqAZ3twJTt52k2D_g5wA6NUrk-sbgqyxc&_nc_ohc=UeKXl-aSeWQAX_gJfov&_nc_ht=scontent.ffor12-1.fna&oh=00_AfDurlQk0e49MfHFwuZ4ESurzhGnQz_cKUFnxs6Xw9djFA&oe=6580E3ED" alt="restaurante">
+    
+        <div class="product">
+          <img src="deju/004.png" alt="Bolo">
+          <h2>Bolo</h2>
+          <p>Descrição do produto.</p>
+          <p>R$ 00,00</p>
+          
         </div>
-        
-       
+    
+        <div class="product">
+          <img src="deju/005.png" alt="Bolo">
+          <h2>Bolo</h2>
+          <p>Descrição do produto.</p>
+          <p>R$ 00,00</p>
+          
+        </div>
+    
+        <div class="product">
+          <img src="deju/006.png" alt="Bolo">
+          <h2>Bolo</h2>
+          <p>Descrição do produto..</p>
+          <p>R$ 00,00</p>
+          
+        </div>
+    
+ 
+      </section>
+    
+    
+      <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                slidesToShow: 4, // Mostrar dois produtos por vez
+                slidesToScroll: 1,
+                prevArrow: '<button class="slick-prev">Anterior</button>',
+                nextArrow: '<button class="slick-next">Próximo</button>',
+                responsive: [
+                    {
+                        breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+      </script>
+      
+      <!--------------------------------------------------->
 
-    </div>
 
 
+    
 
    
 
