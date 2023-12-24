@@ -21,7 +21,6 @@
         }
 
         nav {
-            
             background-color: var(--cor8);
             text-align: center;
             padding: 10px;
@@ -32,11 +31,10 @@
 
         nav a {
             font-weight: 600;
-            color: #fff;
             text-decoration: none;
             padding: 10px;
-            margin: 5px; /* Adicionando margem entre os itens do menu */
-            box-sizing: border-box; /* Evita que a largura 100% ultrapasse o contêiner */
+            margin: 5px;
+            box-sizing: border-box;
         }
 
         section {
@@ -55,18 +53,7 @@
         .moto-taxi { background-color: var(--cor2); }
         .taxistas { background-color: var(--cor3); }
         .entregadores { background-color: var(--cor4); }
-        .modelos { background-color: var(--cor6); }
-
-        footer {
-            background-color: var(--cor1);
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
+        .guias-turisticos { background-color: yellow; }
         .banner-container {
             max-width: 100%;
             overflow: hidden;
@@ -82,24 +69,20 @@
             display: block;
         }
 
-        /* Adicionando media query para tornar o menu responsivo */
         @media (max-width: 600px) {
             nav a {
-                width: auto; /* Volta à largura automática para o layout de coluna */
+                width: auto;
             }
         }
 
-        /* Adicionando estilo para a opção de "Voltar" */
         .menu-link.back {
             background-color: var(--cor7);
         }
 
-        /* Ajustando a cor do texto para torná-lo mais escuro */
         nav a, .service h2, .service p, footer p {
             color: #000;
         }
 
-        /* Adicionando a paleta de cores */
         :root {
             --cor1: #042940;
             --cor2: #005C53;
@@ -122,6 +105,7 @@
         <a href="Serviços/moto-taxi.html" class="menu-link moto-taxi">Moto Táxi</a>
         <a href="Serviços/taxi.html" class="menu-link taxistas">Taxistas</a>
         <a href="Serviços/entregadores.html" class="menu-link entregadores">Entregadores</a>
+        <a href="#" class="menu-link guias-turisticos">Guias Turísticos</a>
         <a href="index.html" class="menu-link back">Voltar</a>
     </nav>
 
@@ -148,13 +132,14 @@
             <p>Receba entregas rápidas e seguras na sua porta.</p>
         </div>
 
-        <div class="service modelos">
-            <h2>Modelos da Cidade</h2>
-            <p>Explore oportunidades de emprego como modelo na cidade.</p>
+        <div class="service guias-turisticos">
+            <h2>Guias Turísticos</h2>
+            <p>Explore a cidade com nossos guias turísticos especializados.</p>
         </div>
-    </section>
 
-    
+        <!-- Removido o bloco para modelos -->
+
+    </section>
 
     <script>
         // Script para o banner rotativo
