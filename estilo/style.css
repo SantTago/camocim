@@ -178,14 +178,7 @@
 
 
 
-  .publicidade img {
-      display: none;
-  }
 
-  .publicidade div {
-    display: none;
-  }
-    
   
     
   .bloco div {
@@ -246,18 +239,7 @@
     
 
 @media (max-width: 600px) {
-  .publicidade {
-      display: flex;
-      background-color: #00425c;
-      padding: 10px;
-      flex-direction: row;
-      align-content: stretch;
-      justify-content: flex-start;
-      align-items: center;
-      flex-wrap: wrap;
-      
-  }
-
+ 
 
   .praias {
       display: flex;
@@ -356,7 +338,7 @@
 
 
 header {
-    background-image: linear-gradient(to top, var(--cor6), var(--cor7));
+    background-image: linear-gradient(to top, var(--cor6), #002431);
     height:150%;
 }
 
@@ -408,38 +390,8 @@ header p {
 }
 
 
-.publicidade {
-    display: flex;
-    max-height: 600px;
-    background-color: var(--cor1);
-    padding: 1px;
-    
-}
 
-.publicidade div {
-    width: 30%; /* Ajuste a largura conforme necessário */
-    height: 100px; /* Ajuste a altura conforme necessário */
-    background-color: #ccc; /* Ajuste a cor de fundo conforme necessário */
-    margin: 5px; /* Adicione margens conforme necessário */
-    border-radius: 5px;
-}
 
-.publicidade > div img {
-    /* width: 95%; */
-    width: 100%;
-    height: 100%;
-
-    background-color: #ccc;
-    /* margin: 5px; */
-    border-radius: 5px;
-}
-
-.publicidade > div img:hover {
-    width: 102%;
-    height: 102px;
-    border-radius: 5px;
-    background-color: #0077ff;
-}
 
 
 
