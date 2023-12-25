@@ -215,9 +215,7 @@
         <h3>Guia 2</h3>
     </div>
 
-   
-
-<!-------------------------------------------------------->
+   <!-------------------------------------------------------->  
 
     <div id="informacoes">
         <span id="fechar" onclick="fecharInformacoes()">&times;</span>
@@ -236,14 +234,20 @@
             const informacoesDiv = document.getElementById('informacoes');
 
             if (mototaxistaId === 1) {
-                nomeElemento.textContent = 'taxista 1';
+                nomeElemento.textContent = 'Guia 1';
                 infoElemento.textContent = 'Nome: Sem nome ainda.';
                 numeroElemento.textContent = '(88)9.0000-0000)';  
             } else if (mototaxistaId === 2) {
-                nomeElemento.textContent = 'taxista 2';
+                nomeElemento.textContent = 'Guia 2';
                 infoElemento.textContent = 'Nome: Sem nome ainda .';
                 numeroElemento.textContent = '(88)9.0000-0000';  
-  
+            } else if (mototaxistaId === 3) {
+                nomeElemento.textContent = 'Guia 3';
+                infoElemento.textContent = 'Nome:Sem nome ainda.';
+                numeroElemento.textContent = '(88)9.0000-0000';  
+            }
+            
+            
 
             informacoesDiv.style.display = 'block';
         }
