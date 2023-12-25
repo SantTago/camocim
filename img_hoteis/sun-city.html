@@ -5,6 +5,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #97b1ca;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        padding: 15px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          border: 1px solid #ddd;
+      }
+    }
+</style>
 </head>
 <body>
   
@@ -26,50 +136,122 @@
         </div >
     </div>  
 
+  <!--------------------------------------------------->
+  <section class="slider">
+    <div class="product">
+      <img src="sun_city/001.png" alt="hotel">
+      
+      
+      
+    </div>
 
+    <div class="product">
+      <img src="sun_city/002.png" alt="hotel">
+      
+      
+      
+    </div>
 
-    <div class="sun-city-bloco">
-        <div>
-            <img src="https://cdn.worldota.net/t/1024x768/content/60/7b/607bf275625b08a29083c2f7580c2f6852d6dff7.jpeg" alt="sacola-1">
-        </div>
+    <div class="product">
+      <img src="sun_city/003.png" alt="hotel">
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="sun_city/004.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="sun_city/005.png" alt="hotel">
+      
+      
+      
+    </div>
+
+   
+    <div class="product">
+      <img src="sun_city/006.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+        <img src="sun_city/007.png" alt="hotel">
         
-
-        <div>
-            <img src="https://cdn.worldota.net/t/1024x768/content/ee/5a/ee5ac1f8a7e219c48d6c91338e54c229bb5023ea.jpeg" alt="sacola papel">
-            
-        </div>
-
-        <div>
-            <img src="https://cdn.worldota.net/t/1024x768/content/37/90/3790036fdb12c652a35971243f1434fb870aed50.jpeg" alt="convite">
-        </div>
-
-        <div>
-            <img src="https://cdn.worldota.net/t/1024x768/content/b0/4f/b04fce722721383697ce54d56c2ab7131fc97a42.jpeg" alt="painel">
-        </div>
-
+        
+        
     </div>
 
-
-
-    <div class="sun-city-bloco">
-        <div>
-            <img src="https://cdn.worldota.net/t/1024x768/content/2b/0e/2b0eab76b6d5fc9f8f8ca244bcaee798aa8e2957.jpeg" alt="caixinha">
-            
-        </div>
-
-        <div>
-            <img src="https://cdn.worldota.net/t/1024x768/content/c0/07/c0071da580e69ed322e6f4adc4788f013f0b7873.jpeg" alt="milk">
-        </div>
-
-        <div>
-            <img src="https://cdn.worldota.net/t/1024x768/content/b6/5b/b65bb18e814e57fae10589bf3ceb81e64883a000.jpeg">
-        </div>
-
-        <div>
-            <img src="https://cdn.worldota.net/t/1024x768/content/99/43/99435024e990a3e5d143970c47d0d373c646c816.jpeg" alt="convite-2">
-        </div>
-
+    <div class="product">
+        <img src="sun_city/008.png" alt="hotel">
+        
+        
+        
     </div>
+
+    <div class="product">
+        <img src="sun_city/009.png" alt="hotel">
+        
+        
+        
+    </div>
+
+    <div class="product">
+        <img src="sun_city/010.png" alt="hotel">
+        
+        
+        
+    </div>
+    
+    <div class="product">
+        <img src="sun_city/011.png" alt="hotel">
+        
+        
+        
+    </div>
+
+    <div class="product">
+        <img src="sun_city/012.png" alt="hotel">
+        
+        
+        
+    </div>
+    
+    
+
+   
+  </section>
+
+
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar 4 produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+
+
+    
+  <!--------------------------------------------------->
+
+    
 
     <div class="saiba-mais">
         <h2>Fale Conosco</h2>
@@ -104,10 +286,6 @@
 
     <!------------------------------->
 
-    <footer>
-        <p>Av. Beira Mar, 2045 - Praia das Barreiras <br> 
-            Camocim - CE, 62400-000 
-    </footer>
 
 
 </body>

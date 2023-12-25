@@ -5,6 +5,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #97b1ca;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        padding: 15px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          border: 1px solid #ddd;
+      }
+    }
+</style>
 </head>
 <body>
   
@@ -28,47 +138,79 @@
 
 
 
-    <div class="sun-city-bloco">
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/486593055.jpg?k=218a4a0f271d3ca5b9a9ac7c5f877fcb3041e474f63a1041996e65a6a6a3e180&o=&hp=1" alt="sacola-1">
-        </div>
-        
-
-        
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/486593172.jpg?k=4956920f864d8ff04123df593220700acb2d9de0cae6dc033d8e0f1949265206&o=&hp=1" alt="sacola papel">
-            
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/486593178.jpg?k=83d20bd95889daf59a465583b7c3455d74709d9a1e685e45c0600293686fa25c&o=&hp=1" alt="convite">
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/486593190.jpg?k=9e01c963091861712531bdb6f8c9a2c0f733005eb95ca1fb0ba4cd7871ae3ead&o=&hp=1" alt="painel">
-        </div>
-
+      <!--------------------------------------------------->
+   <section class="slider">
+    <div class="product">
+      <img src="POUSADA_VILLAGE_KITE/001.png" alt="hotel">
+      
+      
+      
     </div>
 
-    <div class="sun-city-bloco">
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/486593300.jpg?k=1e39fc0cf2672fb30e1aebc84beee8c9e5818d304461ec6de9604f7af8ba7360&o=&hp=1" alt="hotel">
-            
-        </div>
-        
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/486593209.jpg?k=1bc394f7cf4f2637455d518132cfc067f8137e8a977aa1715d95c21e384ed003&o=&hp=1" alt="hotel">
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/486593266.jpg?k=330baaabad01a662fc2a8ab841391a61ce0a09f6ba3d7848ddec43b918c31466&o=&hp=1">
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/486593300.jpg?k=1e39fc0cf2672fb30e1aebc84beee8c9e5818d304461ec6de9604f7af8ba7360&o=&hp=1" alt="hotel">
-        </div>
+    <div class="product">
+      <img src="POUSADA_VILLAGE_KITE/002.png" alt="hotel">
+      
+      
+      
     </div>
+
+    <div class="product">
+      <img src="POUSADA_VILLAGE_KITE/003.png" alt="hotel">
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="POUSADA_VILLAGE_KITE/004.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="POUSADA_VILLAGE_KITE/005.png" alt="hotel">
+      
+      
+      
+    </div>
+
+   
+    <div class="product">
+      <img src="POUSADA_VILLAGE_KITE/007.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    
+
+   
+  </section>
+
+
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar 4 produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+
+
+    
+  <!--------------------------------------------------->
+
 
 
 
@@ -107,11 +249,6 @@
 
     <!------------------------------->
 
-    <footer>
-        <p>
-          Site 100% Criado por um Nativo!
-        </p>
-      </footer>
-
+  
 </body>
 </html>

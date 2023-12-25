@@ -5,6 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #97b1ca;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        padding: 15px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          border: 1px solid #ddd;
+      }
+    }
+</style>
 </head>
 <body>
   
@@ -28,48 +139,91 @@
 
 
 
-    <div class="sun-city-bloco">
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/381059330.jpg?k=6d27a086e9186e115ce5f2cf1e1f0fa815e3aad52a30bbaf5932113e5da824b8&o=&hp=1" alt="sacola-1">
-        </div>
-        
-
-        
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/455166988.jpg?k=84fd421fd5cf90e622493edea39752c68350bfa34b05363dfb63dce57e3dc77e&o=&hp=1" alt="sacola papel">
-            
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/374101033.jpg?k=ff8561299c9acdb2c218246fede2138bf97e613767918704ddcb75c0ef50bfca&o=&hp=1" alt="convite">
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/378254309.jpg?k=365a695540a760e7bbcec3ddacb979f4a04acb60e04a7f6e688f9821b2fdf4d1&o=&hp=1" alt="painel">
-        </div>
-
+   
+   <!--------------------------------------------------->
+   <section class="slider">
+    <div class="product">
+      <img src="Pousada_La_Grécia/001.png" alt="hotel">
+      
+      
+      
     </div>
 
-    <div class="sun-city-bloco">
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/378254309.jpg?k=365a695540a760e7bbcec3ddacb979f4a04acb60e04a7f6e688f9821b2fdf4d1&o=&hp=1" alt="hotel">
-            
-        </div>
-        
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/361586932.jpg?k=da930435a7006a38f74a607a9659613e2b086831658b9c238a3fc932e2529e5b&o=&hp=1" alt="hotel">
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/378252970.jpg?k=08b61b9763ab1f8e295f8db4a44051374a55cb6157807b30c4318fbed4112dc8&o=&hp=1" alt="hotel">
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/378252677.jpg?k=c73f0cdc8a10ba801ca2df2159a9bd3147332b4476c5084277e3c1abf4f4a253&o=&hp=1" alt="hotel">
-        </div>
+    <div class="product">
+      <img src="Pousada_La_Grécia/002.png" alt="hotel">
+      
+      
+      
     </div>
 
+    <div class="product">
+      <img src="Pousada_La_Grécia/003.png" alt="hotel">
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_La_Grécia/004.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_La_Grécia/005.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_La_Grécia/006.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_La_Grécia/007.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_La_Grécia/008.png" alt="hotel">
+      
+      
+    </div>
+
+    
+
+   
+  </section>
+
+
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar 4 produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+
+
+    
+  <!--------------------------------------------------->
 
 
    
@@ -107,11 +261,6 @@
 
     <!------------------------------->
 
-    <footer>
-        <p>
-          Site 100% Criado por um Nativo!
-        </p>
-      </footer>
-
+  
 </body>
 </html>

@@ -5,6 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #97b1ca;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        padding: 15px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          border: 1px solid #ddd;
+      }
+    }
+</style>
 </head>
 <body>
   
@@ -28,48 +139,98 @@
 
 
 
-    <div class="sun-city-bloco">
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/409639141_18321742258109995_4487095838054224486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFVVjvTZ1TDCFrI71oA5gneU_JpQOjtT5ZT8mlA6O1Pltm2QCkEnlYKSkD3MYYjxa4NH0zqXSzKxGws4hx7YEcM&_nc_ohc=-m_Lu0FfId8AX_no_LC&_nc_ht=scontent.ffor12-1.fna&oh=00_AfA-jh6oF8Jvm6wSG38vUTU6pXYDVES_ozGBhGVzlGKUqQ&oe=657BCED2" alt="sacola-1">
-        </div>
-        
-
-        
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/410288502_18321742267109995_2472283054824567044_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFXm_nnZ1AQ2FgXKZdAa1OLrIioeNp2mOKsiKh42naY4iu3mw4Mgpwv9_0wY-ybXWGeMJ3atNKz2Za4NG42c6p3&_nc_ohc=PFNIGuGTT4IAX84rpyA&_nc_ht=scontent.ffor12-1.fna&oh=00_AfCvQCppzvdR37Nm3LAd-78z0h-EkbJSXeFem8gutDS0rw&oe=657C6CDE" alt="sacola papel">
-            
-        </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/410282386_18321742285109995_528333305525055964_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFab8HrnqxfR7qot4piDludLLRG-p4UpLYstEb6nhSktlJqJ4yj3rsW6R-YmgCb_YaQukOPe6gi2X8KW8fFwSBE&_nc_ohc=T4rsX95J6foAX_JLO5Q&_nc_ht=scontent.ffor12-1.fna&oh=00_AfArs65CgvnVlc7hj72-E3aU-TDm7wNXRvBVe7SCfQgmPA&oe=657CCCEC" alt="convite">
-        </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/409626165_18321742306109995_5299902730804717328_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFKeZDWR7BSQ5JSzaRaVf8J5qaianjMfmPmpqJqeMx-Y3ZfMvyzv6Y0iZ7fU4HnGla8vJQpoivT1ZpWPBDzu2Ys&_nc_ohc=R1-VpnkLI08AX_df5Yp&_nc_ht=scontent.ffor12-1.fna&oh=00_AfDfEBmJvpxDqCZdpEgzdft4hO_QyQ6M-ea5IlY3L0qIow&oe=657CF02A" alt="painel">
-        </div>
-
+    <!--------------------------------------------------->
+  <section class="slider">
+    <div class="product">
+      <img src="Villa_Zen_Hotel/001.png" alt="hotel">
+      
+      
+      
     </div>
 
-    <div class="sun-city-bloco">
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/410278870_18321742315109995_4027226432769056250_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFNvOVQPThCSxyIh2X9-QecNrm9rB7rs_82ub2sHuuz_6fIm1cFbI2d3XLZYL-o3IXFRAhfDsfMXQ8G0p-6o9-e&_nc_ohc=QL-3GQqtcFgAX_65nph&_nc_ht=scontent.ffor12-1.fna&oh=00_AfBAuK-CWlmEOAHXKiUZxPJiYd7sDb-HNzNrseNWa_u2Rw&oe=657BA8E4" alt="hotel">
-            
-        </div>
-        
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/410216745_18321742297109995_4454273133567005134_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeEySvoHPZmIdiqUMGlfQc79r1oPExkmnGavWg8TGSacZpqQhE2rbMs4i49caxAk-lmMRvQEbj-J9EH2xQnJefxq&_nc_ohc=pJnuucMb6v8AX9OPQ3D&_nc_ht=scontent.ffor12-1.fna&oh=00_AfBrt7caxbU4hLDYmI_UUUU7SrNnZkIUVMUc45MiDzClpQ&oe=657C6675" alt="hotel">
-        </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/409639141_18321742258109995_4487095838054224486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFVVjvTZ1TDCFrI71oA5gneU_JpQOjtT5ZT8mlA6O1Pltm2QCkEnlYKSkD3MYYjxa4NH0zqXSzKxGws4hx7YEcM&_nc_ohc=-m_Lu0FfId8AX_no_LC&_nc_ht=scontent.ffor12-1.fna&oh=00_AfA-jh6oF8Jvm6wSG38vUTU6pXYDVES_ozGBhGVzlGKUqQ&oe=657BCED2" alt="hotel">
-        </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/410251161_18321742246109995_7903309139988925991_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeEVVREcbZzjrqiyMkjClJ01c5NId92bmZxzk0h33ZuZnHDyAI3-sVNNNXa1ofBSRd2Z9-_wF90UbUwXHphANOrj&_nc_ohc=vCpJRJQoYY4AX9qb-9v&_nc_ht=scontent.ffor12-1.fna&oh=00_AfDRahGII8qhLQ9ElRzGLfPYK9sNHXw99AghJA8pFL7vow&oe=657D0939" alt="hotel">
-        </div>
+    <div class="product">
+      <img src="Villa_Zen_Hotel/002.png" alt="hotel">
+      
+      
+      
     </div>
 
+    <div class="product">
+      <img src="Villa_Zen_Hotel/003.png" alt="hotel">
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Villa_Zen_Hotel/004.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Villa_Zen_Hotel/005.png" alt="hotel">
+      
+      
+      
+    </div>
+
+   
+    <div class="product">
+      <img src="Villa_Zen_Hotel/006.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+        <img src="Villa_Zen_Hotel/007.png" alt="hotel">
+        
+        
+        
+    </div>
+
+    <div class="product">
+        <img src="Villa_Zen_Hotel/008.png" alt="hotel">
+        
+        
+        
+    </div>
+
+    <div class="product">
+        <img src="Villa_Zen_Hotel/009.png" alt="hotel">
+        
+        
+        
+    </div>
+
+    
+   
+  </section>
+
+
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar 4 produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+
+
+    
+  <!--------------------------------------------------->
 
 
    
@@ -107,11 +268,7 @@
 
     <!------------------------------->
 
-    <footer>
-        <p>
-          Site 100% Criado por um Nativo!
-        </p>
-      </footer>
+
 
 </body>
 </html>

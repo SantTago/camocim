@@ -5,6 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #97b1ca;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        padding: 15px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          border: 1px solid #ddd;
+      }
+    }
+</style>
 </head>
 <body>
   
@@ -26,50 +138,102 @@
         </div >
     </div>  
 
-
-
-    <div class="sun-city-bloco">
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/287980316.jpg?k=900ca30e17b3e781c080ea2eefdd3cb49c7cc513933a0a6fcd5c0a72860f4fa3&o=&hp=1" alt="sacola-1">
-        </div>
-        
-
-        
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/287980301.jpg?k=0b8e3a5453d779ed67bc51f7bf2ad6b83f5824df4d52ead4b66c055e63613d97&o=&hp=1" alt="sacola papel">
-            
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/287980317.jpg?k=207658e84808f562ac009201aee2a1455d8667178ab0e5e1b396b69c2fcbb471&o=&hp=1" alt="convite">
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/287980302.jpg?k=12c8d086d598b448314424f793d534e3ed0d4af20c465d3a7b932ab67b8f9235&o=&hp=1" alt="painel">
-        </div>
-
+  <!--------------------------------------------------->
+  <section class="slider">
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/001.png" alt="hotel">
+      
+      
+      
     </div>
 
-    <div class="sun-city-bloco">
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/287980637.jpg?k=a30e01a12a0af03043ee5a5f8e62dd5291ee13267eff6fe32111dac07d1a5998&o=&hp=1" alt="hotel">
-            
-        </div>
-        
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/287980632.jpg?k=0be6ba245b0ce31af2a6c614abd911b323cbc1acd0cc7ee75a99874f6af738a3&o=&hp=1" alt="hotel">
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/287980809.jpg?k=d0d2ce409e7de9466f01dfd4d2e5cecc5976fe7b32e69255328bba5db88b50e1&o=&hp=1">
-        </div>
-
-        <div>
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/287980815.jpg?k=780634f6f181e1f1c80651fe365e5c8535a2919365c8ed244e9e3d8cd1eb3239&o=&hp=1" alt="hotel">
-        </div>
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/002.png" alt="hotel">
+      
+      
+      
     </div>
 
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/003.png" alt="hotel">
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/004.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/005.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/006.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/007.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/008.png" alt="hotel">
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/009.png" alt="hotel">
+      
+      
+      
+    </div>
+
+    <div class="product">
+      <img src="Pousada_Recanto_Beach/010.png" alt="hotel">
+      
+      
+      
+    </div>
+
+   
+  </section>
+
+
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar dois produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+
+
+    
+  <!--------------------------------------------------->
 
 
    
@@ -107,11 +271,6 @@
 
     <!------------------------------->
 
-    <footer>
-        <p>
-          Site 100% Criado por um Nativo!
-        </p>
-      </footer>
 
 </body>
 </html>
