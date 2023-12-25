@@ -5,6 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1d5d5;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          
+      }
+    }
+</style>
 </head>
 <body>
   
@@ -25,38 +136,72 @@
     </div>  
 
 
+<!--------------------------------------------------->
+<section class="slider">
+  <div class="product">
+    <img src="Stylo_Charme-img/001.png" alt="Bolo">
+    
+    
+  </div>
 
-    <div class="sun-city-bloco">
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/406477349_122142474542019897_6960162873288119835_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeHLxLIGL4bD67iE9nhr3jORvmp6pCRhGhO-anqkJGEaE07K2cHhLBVEzqtz5-p5k4xAGraq_TGTGkXnWGeFeZ6K&_nc_ohc=IFBqUjUA80MAX-vuNCa&_nc_ht=scontent.ffor12-1.fna&oh=00_AfChmNO3jjheI4Ra39kX0TlcYMcBL-xc0V3QehNoiCzCMw&oe=657D8FC3" alt="loja">
-        </div>
-        
+  <div class="product">
+    <img src="Stylo_Charme-img/002.png" alt="Bolo">
+    
+    
+  </div>
 
-        
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/409458471_122142353642019897_3328685046266631445_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeHSkPh5_RwdOLI9qx65evNYczC1ieeaONZzMLWJ55o41vrUch1jC3tL_Ib2UXfz25L7ilVc6NbKPJ4tkDnNaNDu&_nc_ohc=3hswJ8A8lrEAX-H3CG2&_nc_ht=scontent.ffor12-1.fna&oh=00_AfBsW_AhS8LlvFgPDn15wJBIr9NNvb2h-j5JhfPz_oygdw&oe=657D0035" alt="modelo">> 
-            
-        </div>
+  <div class="product">
+    <img src="Stylo_Charme-img/003.png" alt="Bolo">
+    
+    
+  </div>
 
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/409040319_122142200456019897_8164693291577808017_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFKU4LKHT2azqUYquYK6ZW-NikSaSFYzIc2KRJpIVjMhwiEepeHnwLcem84oqHU4fFOKWdeCmJGUHOJ_n1qFpbt&_nc_ohc=wWxgFHY-QmoAX_xWm4B&_nc_ht=scontent.ffor12-1.fna&oh=00_AfDYn3fLphvypBbEkPipKNAZcCupk_R3sSLZKSSBmwve_g&oe=657D85A8" alt="modelo">
-        </div>
+  <div class="product">
+    <img src="Stylo_Charme-img/004.png" alt="Bolo">
+    
+    
+  </div>
 
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/387131099_122129902802019897_7789628504630015894_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeGmaLWiExir1HMHtbRT9s14XM3apDMVgq5czdqkMxWCrgEueBDrCOSpsXWVv1l2Tf1Kc3uGVflbhgigP8zReeyZ&_nc_ohc=HZtU1bEwTcwAX-J1saH&_nc_ht=scontent.ffor12-1.fna&oh=00_AfD1NTSMqOUPmbrQvibiVCaU5Bf8OEAsRHYRyxisfr3Tug&oe=657C72A3" alt="modelo">
-        </div>
-        
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/391757270_122129901326019897_8893248253152353176_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeGjKm4rwslOaQ6I3gxEwaKuyD4hMzS4GLPIPiEzNLgYszYaux-LKRUpjo2KPOT8HQ6q7VywQqAJqtW-ChGakrcV&_nc_ohc=Ct646iN8X8UAX8yiGKy&_nc_oc=AQklHOx0k1urR4qhQfcGcj_jBtfkjfN2VSQuI9E0j9GGJHEXJp5g8VYYZwih9rkCX7E0EUpxQuy44sjIVRrsUabG&_nc_ht=scontent.ffor12-1.fna&oh=00_AfBJQaHB7MkB2--VSIr8hlYL44gSZvxkK7rYPYnjQZF2dg&oe=657C09CD" alt="modelo">
-        </div>
+  <div class="product">
+    <img src="Stylo_Charme-img/005.png" alt="Bolo">
+    
+    
+  </div>
 
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t39.30808-6/394150133_122131399616019897_861774672543707184_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeHFN7hVQ01jZpqZAz_w47VZ98wK_aLDItn3zAr9osMi2YLEVbpD9o2P-a_UKDANikaG_wuH0JFg8N3y4re6EC-0&_nc_ohc=3frHpCSxIEYAX_4tc8V&_nc_ht=scontent.ffor12-1.fna&oh=00_AfD6__f9W9wwtPHSrKPziAoY8vkHp1p7dEdRSDN_wUGEVQ&oe=657C4166" alt="modelo">
-        </div>
-
-    </div>
+  <div class="product">
+    <img src="Stylo_Charme-img/006.png" alt="Bolo">
+    
+    
+  </div>
 
 
+
+  
+
+ 
+</section>
+
+
+<script>
+  $(document).ready(function(){
+      $('.slider').slick({
+          slidesToShow: 4, // Mostrar dois produtos por vez
+          slidesToScroll: 1,
+          prevArrow: '<button class="slick-prev">Anterior</button>',
+          nextArrow: '<button class="slick-next">Próximo</button>',
+          responsive: [
+              {
+                  breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                  settings: {
+                      slidesToShow: 1
+                  }
+              }
+          ]
+      });
+  });
+</script>
+
+<!--------------------------------------------------->
 
    
 
@@ -93,11 +238,6 @@
 
     <!------------------------------->
 
-    <footer>
-        <p>
-          Site 100% Criado por um Nativo!
-        </p>
-      </footer>
-
+ 
 </body>
 </html>
