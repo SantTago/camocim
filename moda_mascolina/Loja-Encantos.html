@@ -5,6 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim</title>
   <link rel="stylesheet" href="../estilo/style.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #d5e6f1;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          
+      }
+    }
+</style>
 </head>
 <body>
   
@@ -26,29 +137,73 @@
 
 
 
-    <div class="sun-city-bloco">
-        <div>
-            <img src="https://lh5.googleusercontent.com/p/AF1QipMuU1LCYH91vf6VSGcrxOfyhd6_cnj569e_3ZNn=w540-h585-p-k-no" alt="loja">
-        </div>
-        
+      <!--------------------------------------------------->
+<section class="slider">
+  <div class="product">
+    <img src="Loja Encantos/001.png" alt="roupa">
+    
+    
+  </div>
 
-        
-        <div>
-            <img src="https://lh5.googleusercontent.com/p/AF1QipPzZYOFeolZtr8BxC645FW_Lw1dfz9k_1Jw-ALF=w540-h889-p-k-no" alt="modelo">            
-        </div>
+  <div class="product">
+    <img src="Loja Encantos/002.png" alt="roupa">
+    
+    
+  </div>
 
-        <div>
-            <img src="https://lh5.googleusercontent.com/p/AF1QipNJOsoz4KHRQhVYTlYKZ3529NBHLuVubzner8Hq=w540-h889-p-k-no" alt="modelo">
-        </div>
+  <div class="product">
+    <img src="Loja Encantos/003.png" alt="roupa">
+    
+    
+  </div>
 
-        <div>
-            <img src="https://lh5.googleusercontent.com/p/AF1QipO3hDcMqYULRzGrRtWbDGNMSyvsv9-2ODCUyV1k=w540-h585-p-k-no"modelo">
-        </div>
-        
-       
+  <div class="product">
+    <img src="Loja Encantos/004.png" alt="roupa">
+    
+    
+  </div>
 
-    </div>
+  <div class="product">
+    <img src="Loja Encantos/005.png" alt="roupa">
+    
+    
+  </div>
 
+
+  <div class="product">
+    <img src="Loja Encantos/006.png" alt="roupa">
+    
+    
+  </div>
+
+
+
+  
+
+ 
+</section>
+
+
+<script>
+  $(document).ready(function(){
+      $('.slider').slick({
+          slidesToShow: 4, // Mostrar dois produtos por vez
+          slidesToScroll: 1,
+          prevArrow: '<button class="slick-prev">Anterior</button>',
+          nextArrow: '<button class="slick-next">Próximo</button>',
+          responsive: [
+              {
+                  breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                  settings: {
+                      slidesToShow: 1
+                  }
+              }
+          ]
+      });
+  });
+</script>
+
+<!--------------------------------------------------->
 
 
    
