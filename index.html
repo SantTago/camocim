@@ -11,9 +11,108 @@
   
     <!-- Adição de Meta Tags para SEO -->
     <meta name="description" content="Descrição da sua página para SEO">
-    <meta name="keywords" content="palavras-chave relevantes">
-    <meta name="author" content="Seu Nome">
+    <meta name="keywords" content="Camocim, ceara, noticias, turismo, jericoacoara, passeios, Camocim online, policia 24 horas">
+    <meta name="author" content="Tiago viana da cruz">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <style>
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #97b1ca;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          
+      }
+    }
+
      
       #search-container {
         display: flex;
@@ -326,10 +425,13 @@
   </div>
 
 
+  
+
+
     <!------------------------------->
     <div class="slideshow-container">
       <div class="mySlides">
-        <img src="grafica/grafica viana/banner/banner.png"" alt="Imagem 1">
+        <img src="grafica/grafica viana/banner/banner.png" alt="Imagem 1">
       </div>
 
       <div class="mySlides">
@@ -406,18 +508,195 @@
     </script>
 
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-    <div class="area-de-postes">
+
+<!--------------------------------------------------->
+
+    <div class="perfil-bloco">
       <div>
-        <picture>
-          <source media="(max-width: 450px)" srcset="image/postes.png" type="image/png">
-          <img src="image/grande.png" alt="A imagem flexivel">
-      </picture>
-
-      </div>
-    </div>
+       <img src="confeitaria/deju/banner.png" alt="image png">
+     </div>
+   </div> 
 
 
+   <!--------------------------------------------------->
+   <section class="slider">
+       <div class="product">
+         <img src="confeitaria/deju/001.png" alt="Bolo">
+         
+       </div>
+   
+       <div class="product">
+         <img src="confeitaria/deju/002.png" alt="Bolo">
+        
+       </div>
+   
+       <div class="product">
+         <img src="confeitaria/deju/003.png" alt="Bolo">
+         
+       </div>
+   
+       <div class="product">
+         <img src="confeitaria/deju/004.png" alt="Bolo">
+         
+       </div>
+   
+       <div class="product">
+         <img src="confeitaria/deju/005.png" alt="Bolo">
+         
+       </div>
+   
+       <div class="product">
+         <img src="confeitaria/deju/006.png" alt="Bolo">
+      
+       </div>
+   
+
+     </section>
+
+    <!------------------------------------------>
+
+    <div class="perfil-bloco">
+      <div>
+       <img src="img_hoteis/sun_city/banner.png" alt="image png">
+     </div>
+   </div>
+
+ <!--------------------------------------------------->
+ <section class="slider">
+   <div class="product">
+     <img src="img_hoteis/sun_city/001.png" alt="hotel">
+     
+     
+     
+   </div>
+
+   <div class="product">
+     <img src="img_hoteis/sun_city/002.png" alt="hotel">
+     
+     
+     
+   </div>
+
+   <div class="product">
+     <img src="img_hoteis/sun_city/003.png" alt="hotel">
+     
+     
+   </div>
+
+   <div class="product">
+     <img src="img_hoteis/sun_city/004.png" alt="hotel">
+     
+     
+     
+   </div>
+
+   <div class="product">
+     <img src="img_hoteis/sun_city/005.png" alt="hotel">
+     
+     
+     
+   </div>
+
+  
+   <div class="product">
+     <img src="img_hoteis/sun_city/006.png" alt="hotel">
+     
+     
+     
+   </div>
+
+   <div class="product">
+       <img src="img_hoteis/sun_city/007.png" alt="hotel">
+       
+       
+       
+   </div>
+
+   <div class="product">
+       <img src="img_hoteis/sun_city/008.png" alt="hotel">
+       
+       
+       
+   </div>
+
+   <div class="product">
+       <img src="img_hoteis/sun_city/009.png" alt="hotel">
+       
+       
+       
+   </div>
+
+   <div class="product">
+       <img src="img_hoteis/sun_city/010.png" alt="hotel">
+       
+       
+       
+   </div>
+   
+   <div class="product">
+       <img src="img_hoteis/sun_city/011.png" alt="hotel">
+       
+       
+       
+   </div>
+
+   <div class="product">
+       <img src="img_hoteis/sun_city/012.png" alt="hotel">
+       
+       
+       
+   </div>
+   
+   
+
+  
+ </section>
+
+
+ <script>
+   $(document).ready(function(){
+       $('.slider').slick({
+           slidesToShow: 4, // Mostrar 4 produtos por vez
+           slidesToScroll: 1,
+           prevArrow: '<button class="slick-prev">Anterior</button>',
+           nextArrow: '<button class="slick-next">Próximo</button>',
+           responsive: [
+               {
+                   breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                   settings: {
+                       slidesToShow: 1
+                   }
+               }
+           ]
+       });
+   });
+ </script>
+
+
+
+<!------------------------------------------>
 
     <div id="map-container">
       <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31877.6522184504!2d-40.87610314566077!3d-2.900641662847323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ebdbdcfbe66681%3A0x6ec8f325507490fb!2sCamocim%2C%20CE%2C%2062400-000!5e0!3m2!1spt-BR!2sbr!4v1702817972192!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
