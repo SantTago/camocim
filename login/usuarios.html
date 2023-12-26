@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <style>
     /* Reset de margin e padding para todos os elementos */
@@ -21,136 +20,46 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
-    }
-
-    header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem; /* Adaptei para unidades rem para melhor responsividade */
-    }
-
-    nav {
-      display: flex;
-      flex-direction: row;
-      background-color: #333;
-      padding: 10px;
-      border-radius: 5px;
-      margin-top: 10px;
-      opacity: 0;
-      transition: opacity 0.5s, transform 0.5s;
-      transform: translateY(-20px);
-      position: absolute;
-      top: 50px; /* Ajuste a altura conforme necessário */
-      left: 0;
-      right: 0;
-    }
-    
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      padding: 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-      display: flex;
-      align-items: center;
-      margin-left: 5px;
-      transition-duration: 0.8s;
-    }
-    
-    nav a:hover {
-      background-color: #555;
-    }
-    
-    button {
-      cursor: pointer;
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      margin: 10px;
-      display: flex;
-      align-items: center;
-    }
-    
-    /* Adicionando media query para tornar o menu responsivo */
-    @media screen and (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        position: static;
-      }
-    
-      nav a {
-        margin: 5px 0;
-      }
-    
-      button span {
-        display: inline;
-      }
-    
-      button i {
-        display: none;
-      }
-    
-      button {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    
-      button:hover + nav {
-        display: flex;
-      }
-      button span {
-        display: none;
-      }
-
-      button i {
-        display: inline;
-      }
-    }
-    
-    
-
-    .fa-bars,
-    .fa-times {
-      margin-right: 5px;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .criador {
-      padding: 20px;
-      background-color: #fff;
-      margin: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
       color: #333;
     }
 
-    header {
+    .menuu {
       background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
+      color: white;
+      padding: 10px 0;
+      padding-left: 18px;
+      font-size: 14px;
     }
 
+    .menuu nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .menuu nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+  .menuu nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .menuu nav a:hover {
+      color: #ffcc00; /* Altere a cor conforme necessário */
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .criador,
     .termos-de-uso {
       max-width: 800px;
       margin: 20px auto;
@@ -158,6 +67,11 @@
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .criador img {
+      max-width: 100%;
+      height: auto;
     }
 
     .termos-de-uso h2 {
@@ -183,10 +97,18 @@
       width: 100%;
     }
 
-    
-
     /* Adicionando media query para esconder o texto em dispositivos móveis */
-     
+    @media (max-width: 768px) {
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+    
+      nav ul li {
+        display: inline;
+        margin-right: 10px;
+      }
+    }
   </style>
 
 </head>
@@ -194,28 +116,25 @@
 <body>
 
   <header>
-    <h1 style="margin: 0;">Camocim Nativo</h1>
+    <h1>Camocim Nativo</h1>
   </header>
 
-  <button onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-    <span>Mostrar Menu</span>
-  </button>
+  <div class="menuu">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="menu/apoiadores.html">Apoiadores</a></li>
+        <li><a href="menu/patrocinadores.html">Patrocinadores</a></li>
+      </ul>
+    </nav>
+  </div>
 
-  <nav id="menu">
-    <a href="../index.html"><i class="fas fa-home" style="margin-right: 5px;"></i> Início</a>
-    <a href="menu/poste.html"><i class="fas fa-bullhorn" style="margin-right: 5px;"></i> Poste</a>
-    <a href="menu/atualizaçoes.html"><i class="fas fa-arrow-circle-up" style="margin-right: 5px;"></i> Atualizações</a>
-    <a href="menu/apoiadores.html"><i class="fas fa-hands-helping" style="margin-right: 5px;"></i> Área do Apoiador</a>
-    <a href="menu/patrocinadores.html"><i class="fas fa-dollar-sign" style="margin-right: 5px;"></i> Área do Patrocinador</a>
-</nav>
-
-<div class="criador">
-  <div class="criador-bloco">
+  <div class="criador">
+    <div class="criador-bloco">
       <div>
         <img src="../icon/perfil-criador.png" alt="criador">
       </div>
-  </div>
+    </div>
 <article>
 
   <h1>
@@ -285,24 +204,7 @@
 </div>
 
 
-<footer>
 
-
-
-  <footer>
-    <p>
-      Site 100% Criado por um Nativo!
-    </p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      var menu = document.getElementById("menu");
-      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-      menu.style.opacity = (menu.style.opacity === "1") ? "0" : "1";
-      menu.style.transform = (menu.style.transform === "translateY(0px)") ? "translateY(-20px)" : "translateY(0px)";
-    }
-  </script>
 
 </body>
 

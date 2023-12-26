@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área do Patrocinadores</title>
     <style>
+        /* Seu estilo CSS aqui */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -32,7 +33,6 @@
             margin-top: 20px;
         }
 
-
         label, input, select {
             display: block;
             margin-bottom: 8px;
@@ -47,15 +47,17 @@
         button {
             background-color: #007BFF;
             color: #fff;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
         }
 
-        #result {
-            margin-top: 20px;
-            text-align: center;
+        .warning {
+            color: red;
+            font-size: 12px;
         }
 
         table {
@@ -83,24 +85,28 @@
             background-color: #f5f5f5;
         }
 
-        #paymentButton,
-        #backButton {
+        .back-button, .back-button:hover {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
             margin-top: 20px;
-            text-align: center; /* Adicionado para centralizar o botão */
+            text-align: center;
         }
 
-        /* Adicionado estilo para a mensagem de aviso */
-        .warning {
-            color: red;
-            font-size: 12px;
-        }
-
-        .informacoes{
+        .informacoes {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.342);
             max-width: 800px;
             border: 10px auto 10px auto;
             padding: 20px;
         }
     </style>
+    
 </head>
 <body>
 
@@ -125,14 +131,11 @@
         <div id="result"></div>
         
         <div id="paymentButton">
-            <button onclick="prosseguirParaPagamento()">Prosseguir para o Pagamento</button>
+            <button type="button" onclick="prossigaParaPagamento()">Prosseguir para o Pagamento</button>
         </div>
-    
-    </form>
 
-    <div id="backButton">
-        <button onclick="voltar()">Voltar</button>
-    </div>
+        <a href="../usuarios.html" class="back-button">Voltar </a>
+    </form>
 
     <table>
         <thead>
@@ -196,9 +199,10 @@
             resultDiv.innerHTML = `<p>Valor Total: R$ ${total.toFixed(2)}</p>`;
         }
     
-        function prosseguirParaPagamento() {
+        function prossigaParaPagamento() {
             var companyName = document.getElementById('companyName').value;
-            var days = document.getElementById('days').value;
+            var daysInput = document.getElementById('days');
+            var days = (daysInput.style.display !== 'none') ? daysInput.value : 1;
             var duration = document.getElementById('duration').value;
 
             // Verificar se os campos obrigatórios foram preenchidos
@@ -209,13 +213,14 @@
                 document.getElementById('companyNameWarning').innerText = '';
             }
 
-            if (!days) {
+            // Verificar se o campo de dias é obrigatório (somente se a duração for "Diária")
+            if (duration === 'daily' && !days) {
                 document.getElementById('daysWarning').innerText = 'Campo obrigatório';
                 return;
             } else {
                 document.getElementById('daysWarning').innerText = '';
             }
-            
+
             var result = document.getElementById('result').innerHTML;
             var whatsappLink = 'https://api.whatsapp.com/send/?phone=5588993464285&text=';
             var message = '';
@@ -239,13 +244,9 @@
     
             window.open(whatsappLink, '_blank');
         }
-
-        function voltar() {
-            window.history.back();
-        }
     </script>
 
-    <div class="informacoes" style="text-align: center; margin-top: 20px;">
+    <div class="informacoes" style="text-align: center; margin: 20px;box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.342);max-width: 800px;border: 10px auto 10px auto;padding: 20px;">
         <h2>Como Funciona para Patrocinadores</h2>
         <p>
             Bem-vindo à Área dos Patrocinadores! Aqui, você tem a oportunidade de ter sua empresa em destaque na página inicial da nossa plataforma. Ao escolher o plano de patrocínio, sua empresa terá um banner visível para os usuários no primeiro acesso à página, proporcionando grande visibilidade.
