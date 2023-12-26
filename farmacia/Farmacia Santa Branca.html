@@ -5,6 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camocim Nativo</title>
   <link rel="stylesheet" href="../estilo/style.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #d5e6f1;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          
+      }
+    }
+
+</style>
 </head>
 <body>
   
@@ -26,30 +138,57 @@
 
 
 
-    <div class="sun-city-bloco">
-        
-
-        <div>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIf6eg_dzgGoSjSOm7hYxjheuuxtxIy1PzT583isMUjYROywF4TsM65wn_j0KGnnADPUbBaYirdHA8EAL_VUjrybM0sNWITOA-huakNlxNntNj16NZysf4g68E9JFYgkw7I_1sqe8TQeQYFp7Oy4X1L8mKwc9cwAa1AlKK6culIYdIpOwb8Z2cZYL8jw/s1024/Santa%20Branca.jpeg" alt="restaurante">
-            
-        </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t1.6435-9/106034090_3133165276799808_212143630083337455_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=c2f564&_nc_eui2=AeGe6WHugErApb7__IEQy63lCfhtybQlXL8J-G3JtCVcv0aNA_ny4B4pYqlgH1rHaas-2mdB7dxw8jSy2DdspG_u&_nc_ohc=b4ICrXGfBVkAX_kgAhc&_nc_ht=scontent.ffor12-1.fna&oh=00_AfA30KcR-neQXEg05ZQGXWlP4yhG4CO75JlSb9qmCbYeAg&oe=65A4879F" alt="restaurante">
-        </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t1.6435-9/106789355_3154440038005665_3066666485085976264_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c2f564&_nc_eui2=AeFTCdi-vQiNhjvP5FqexmmRRWHiR_mNkelFYeJH-Y2R6ZFa7fTtd4p1WmVpmBOBgd_tZ1DNNjRzb7aFILJiiM08&_nc_ohc=8v6vD9qiB2UAX-DYlXV&_nc_ht=scontent.ffor12-1.fna&oh=00_AfCQtkp4JRPj67IdFTPrqp-30h36UBpkyDsXlgNZVpEz3A&oe=65A47C97" alt="restaurante">
-        </div>
-
-        <div>
-            <img src="https://scontent.ffor12-1.fna.fbcdn.net/v/t1.6435-9/106530767_3151890228260646_5743689901010063931_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c2f564&_nc_eui2=AeHMwN_CacQPtmTlL7xSm7B19r4j421gk8n2viPjbWCTybd53t3ZjDSIFTN6G8PB4ECUope422MON55UJx-a-BGj&_nc_ohc=Q1bTZ9mC8UsAX_wJ9P9&_nc_ht=scontent.ffor12-1.fna&oh=00_AfBFxFydjQaFcOmgKTXHyHGTpQZ4Y8AJseT6KcpFUb49xg&oe=65A46AD7" alt="restaurante">
-        </div>
-        
-       
-
+   <!--------------------------------------------------->
+ <section class="slider">
+    <div class="product">
+      <img src="Farmacia Santa Branca/001.png" alt="Farmacia">
+      
+      
     </div>
+  
+    <div class="product">
+      <img src="Farmacia Santa Branca/002.png" alt="Farmacia">
+      
+      
+    </div>
+  
+    <div class="product">
+      <img src="Farmacia Santa Branca/003.png" alt="Farmacia">
+      
+      
+    </div>
+  
+    <div class="product">
+      <img src="Farmacia Santa Branca/004.png" alt="Farmacia">
+      
+      
+    </div>
+  
 
+   
+  </section>
+  
+  
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar dois produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+  
+  <!--------------------------------------------------->
 
 
    
