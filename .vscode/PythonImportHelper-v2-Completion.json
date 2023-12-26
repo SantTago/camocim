@@ -24,100 +24,12 @@
         "documentation": {}
     },
     {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "render_template",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "url_for",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "flash",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "os",
         "description": "os",
         "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "UploadSet",
-        "importPath": "flask_uploads",
-        "description": "flask_uploads",
-        "isExtraImport": true,
-        "detail": "flask_uploads",
-        "documentation": {}
-    },
-    {
-        "label": "configure_uploads",
-        "importPath": "flask_uploads",
-        "description": "flask_uploads",
-        "isExtraImport": true,
-        "detail": "flask_uploads",
-        "documentation": {}
-    },
-    {
-        "label": "IMAGES",
-        "importPath": "flask_uploads",
-        "description": "flask_uploads",
-        "isExtraImport": true,
-        "detail": "flask_uploads",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "importPath": "app",
-        "description": "app",
-        "isExtraImport": true,
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "importPath": "app",
-        "description": "app",
-        "isExtraImport": true,
-        "detail": "app",
         "documentation": {}
     },
     {
@@ -163,96 +75,6 @@
         "description": "construçao.login.app.app",
         "peekOfCode": "usuarios = ler_usuarios()\n@app.route('/')\ndef index():\n    return render_template('login.html')\n@app.route('/autenticar', methods=['POST'])\ndef autenticar():\n    usuario = request.form['usuario']\n    senha = request.form['senha']\n    if usuario in usuarios and usuarios[usuario] == senha:\n        return render_template('acesso_permitido.html', usuario=usuario)",
         "detail": "construçao.login.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "save_text_fields",
-        "kind": 2,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "def save_text_fields(company, title, content, video, folder_path):\n    # Salvar os outros campos de texto como um arquivo TXT\n    text_data = f\"Empresa: {company}\\nTítulo: {title}\\nConteúdo: {content}\\nVídeo: {video}\"\n    file_path = os.path.join(folder_path, \"info.txt\")\n    with open(file_path, \"w\") as file:\n        file.write(text_data)\ndef get_unique_folder_name(base_folder, company):\n    # Obter um nome de pasta único\n    folder_name = company\n    count = 1",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "get_unique_folder_name",
-        "kind": 2,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "def get_unique_folder_name(base_folder, company):\n    # Obter um nome de pasta único\n    folder_name = company\n    count = 1\n    while os.path.exists(os.path.join(base_folder, folder_name)):\n        folder_name = f\"{company}{count}\"\n        count += 1\n    return folder_name\n@app.route(\"/\")\ndef index():",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "index",
-        "kind": 2,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "def index():\n    return render_template(\"index.html\")\n@app.route(\"/upload\", methods=[\"POST\"])\ndef upload():\n    try:\n        # Obter dados do formulário\n        company = request.form[\"company\"]\n        title = request.form[\"title\"]\n        content = request.form[\"content\"]\n        image = request.files[\"image\"]",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "upload",
-        "kind": 2,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "def upload():\n    try:\n        # Obter dados do formulário\n        company = request.form[\"company\"]\n        title = request.form[\"title\"]\n        content = request.form[\"content\"]\n        image = request.files[\"image\"]\n        video = request.form[\"video\"]\n        # Criar uma pasta com um nome único para a empresa\n        folder_path = os.path.join(app.config[\"UPLOADED_PHOTOS_DEST\"], get_unique_folder_name(app.config[\"UPLOADED_PHOTOS_DEST\"], company))",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "kind": 5,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "app = Flask(__name__)\napp.secret_key = 'supersecretkey'  # Chave secreta para o uso de flash messages\n# Caminho completo para o diretório de modelos (templates)\ntemplate_dir = os.path.join(os.path.dirname(__file__), \"templates\")\napp.template_folder = template_dir\n# Configuração do Flask-Uploads\nphotos = UploadSet(\"photos\", IMAGES)\napp.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\ndef save_text_fields(company, title, content, video, folder_path):",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "app.secret_key",
-        "kind": 5,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "app.secret_key = 'supersecretkey'  # Chave secreta para o uso de flash messages\n# Caminho completo para o diretório de modelos (templates)\ntemplate_dir = os.path.join(os.path.dirname(__file__), \"templates\")\napp.template_folder = template_dir\n# Configuração do Flask-Uploads\nphotos = UploadSet(\"photos\", IMAGES)\napp.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\ndef save_text_fields(company, title, content, video, folder_path):\n    # Salvar os outros campos de texto como um arquivo TXT",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "template_dir",
-        "kind": 5,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "template_dir = os.path.join(os.path.dirname(__file__), \"templates\")\napp.template_folder = template_dir\n# Configuração do Flask-Uploads\nphotos = UploadSet(\"photos\", IMAGES)\napp.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\ndef save_text_fields(company, title, content, video, folder_path):\n    # Salvar os outros campos de texto como um arquivo TXT\n    text_data = f\"Empresa: {company}\\nTítulo: {title}\\nConteúdo: {content}\\nVídeo: {video}\"\n    file_path = os.path.join(folder_path, \"info.txt\")",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "app.template_folder",
-        "kind": 5,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "app.template_folder = template_dir\n# Configuração do Flask-Uploads\nphotos = UploadSet(\"photos\", IMAGES)\napp.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\ndef save_text_fields(company, title, content, video, folder_path):\n    # Salvar os outros campos de texto como um arquivo TXT\n    text_data = f\"Empresa: {company}\\nTítulo: {title}\\nConteúdo: {content}\\nVídeo: {video}\"\n    file_path = os.path.join(folder_path, \"info.txt\")\n    with open(file_path, \"w\") as file:",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "photos",
-        "kind": 5,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "photos = UploadSet(\"photos\", IMAGES)\napp.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\ndef save_text_fields(company, title, content, video, folder_path):\n    # Salvar os outros campos de texto como um arquivo TXT\n    text_data = f\"Empresa: {company}\\nTítulo: {title}\\nConteúdo: {content}\\nVídeo: {video}\"\n    file_path = os.path.join(folder_path, \"info.txt\")\n    with open(file_path, \"w\") as file:\n        file.write(text_data)\ndef get_unique_folder_name(base_folder, company):",
-        "detail": "login.menu.app",
-        "documentation": {}
-    },
-    {
-        "label": "app.config[\"UPLOADED_PHOTOS_DEST\"]",
-        "kind": 5,
-        "importPath": "login.menu.app",
-        "description": "login.menu.app",
-        "peekOfCode": "app.config[\"UPLOADED_PHOTOS_DEST\"] = \"uploads\"  # Pasta onde as imagens serão armazenadas\nconfigure_uploads(app, photos)\ndef save_text_fields(company, title, content, video, folder_path):\n    # Salvar os outros campos de texto como um arquivo TXT\n    text_data = f\"Empresa: {company}\\nTítulo: {title}\\nConteúdo: {content}\\nVídeo: {video}\"\n    file_path = os.path.join(folder_path, \"info.txt\")\n    with open(file_path, \"w\") as file:\n        file.write(text_data)\ndef get_unique_folder_name(base_folder, company):\n    # Obter um nome de pasta único",
-        "detail": "login.menu.app",
         "documentation": {}
     }
 ]
