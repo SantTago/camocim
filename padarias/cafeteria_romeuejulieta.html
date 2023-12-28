@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camocim Nativo</title>
+  <link rel="stylesheet" href="../estilo/style.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1d5d5;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          
+      }
+    }
+</style>
+</head>
+<body>
+  
+    <div class="perfil-bloco">
+       <div>
+        <img src="../padarias/cafeteria_romeuejulieta/banner.png" alt="image png">
+      </div>
+    </div>
+
+ 
+    <div class="icon">
+
+      <div class="padaria-cor1">
+          <abbr title="Voltar"><a href="../padaria.html"><img src="../icon/voltar.png" alt="Voltar"></a></abbr>
+      </div >
+
+      
+  </div>
+  
+   <!--------------------------------------------------->
+   <section class="slider">
+    <div class="product">
+      <img src="cafeteria_romeuejulieta/001.png" alt="Bolo">
+      
+    </div>
+
+    <div class="product">
+      <img src="cafeteria_romeuejulieta/002.png" alt="Bolo">
+      
+    </div>
+
+    <div class="product">
+      <img src="cafeteria_romeuejulieta/003.png" alt="Bolo">
+      
+    </div>
+
+    <div class="product">
+      <img src="cafeteria_romeuejulieta/004.png" alt="Bolo">
+      
+    </div>
+
+    <div class="product">
+      <img src="cafeteria_romeuejulieta/005.png" alt="Bolo">
+      
+    </div>
+
+    <div class="product">
+      <img src="cafeteria_romeuejulieta/006.png" alt="Bolo">
+      
+    </div>
+
+
+  </section>
+
+
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar dois produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+
+
+<!-------------------------------------------------->
+    
+
+
+   
+
+    <div class="saiba-mais">
+        <h2>Fale Conosco</h2>
+    </div>
+
+    <div class="redes-sociais">
+        
+        <div>
+          <img src="../icon/zap.png" alt="zap">
+        </div>
+
+        <div>
+            <a href="https://www.instagram.com/cafeteria_romeuejulieta/" target="_blank"><img src="../icon/insta.png" alt="insta"></a>
+        </div>
+
+    
+        
+        <div>
+            <a href="https://www.google.com/maps/uv?pb=!1s0x7ebdbe08d1b90cd%3A0xa3cd22f0cbd12cc0!3m1!7e115!4s%2Fmaps%2Fplace%2Fcafeteria_romeuejulieta%2F%40-2.8977557%2C-40.8408858%2C3a%2C75y%2C198.29h%2C90t%2Fdata%3D*213m4*211e1*213m2*211s3pMYQTzTpomGm7iRWP2L2g*212e0*214m2*213m1*211s0x7ebdbe08d1b90cd%3A0xa3cd22f0cbd12cc0%3Fsa%3DX%26ved%3D2ahUKEwiIr5LPxLKDAxWSrJUCHauoDDIQpx96BAgvEAA%26hl%3Dpt-BR!5scafeteria%20romeu%20e%20julieta%20-%20Pesquisa%20Google!15sCgIgAQ&imagekey=!1e2!2s3pMYQTzTpomGm7iRWP2L2g&hl=pt-BR&sa=X&ved=2ahUKEwiIr5LPxLKDAxWSrJUCHauoDDIQpx96BAhBEA0" target="_blank"><img src="../icon/local.png" alt="localizaçao"></a>
+        </div>
+    </div>
+
+
+    <!-------------------------->
+    <div class="perfil-bloco">
+      <div>
+        <img src="../padarias/cafeteria_romeuejulieta/banner-2.png" alt="banner">
+      </div>
+    </div>
+
+    <!------------------------------->
+
+    
+
+</body>
+</html>

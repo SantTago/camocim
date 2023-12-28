@@ -617,17 +617,17 @@ main .torta {
 .beleza-cor{
     width: 50px;
     height: 50px;
-    background-color: palevioletred;
+    background-color: rgb(255, 0, 85);
     border-radius: 50px;
     margin: 1px;
 }
 
 .beleza-cor:hover {
-    background-color: rgb(238, 192, 207);
+    background-color: rgb(255, 0, 85);
 }
 
 .beleza-cor1:hover {
-  background-color: rgb(238, 192, 207);
+  background-color: rgb(255, 0, 85);
 }
 
 
@@ -642,13 +642,13 @@ main .torta {
 .roupas-cor1{
     width: 50px;
     height: 50px;
-    background-color: #4D4D4D;
+    background-color: #88ff00;
     border-radius: 50px;
     margin: 1px;
 }
 
 .roupas-cor:hover {
-    background-color: #4D4D4D;
+    background-color: #88ff00;
     
 }
 
@@ -903,6 +903,60 @@ main .torta {
      
 }
 
+
+.padaria-cor{
+  width: 50px;
+  height: 50px;
+  background-color: var(--cor1);
+  border-radius: 50px;
+  margin: 1px;
+}
+
+.padaria-cor1{
+  width: 50px;
+  height: 50px;
+  background-color: #f5dc00 ;
+  border-radius: 50px;
+  margin: 1px;
+}
+
+.padaria-cor:hover {
+  background-color: #f5dc00 ;
+}
+
+.padaria-cor .sorveteria-icon  img {
+  width: 31px;
+  height: 31px;
+  border-radius: 50px;
+  margin: 7px;
+  margin-left: 8px;
+   
+}
+
+.padaria-bloco {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.padaria-bloco > div {
+  width: 280px;
+  height: 150px;
+  margin: 10px;
+  
+}
+
+.padaria-bloco > div img:hover {
+  border: 5px solid #f5dc00 ;
+  border-radius: 15px;
+  transition-duration: 0.1s;
+}
+
+
+
+
+
 .confeitaria-bloco {
     display: flex;
     justify-content: center;
@@ -1080,7 +1134,7 @@ main .torta {
 }
 
 .beleza-bloco img:hover{
-  border: 3px solid rgb(231, 45, 200);
+  border: 3px solid rgb(255, 0, 85);
 
 }
 
@@ -1130,7 +1184,7 @@ main .torta {
 }
 
 .roupa-bloco img:hover{
-    border: 3px solid rgb(78, 86, 87);
+    border: 3px solid #88ff00;
  
 }
 
