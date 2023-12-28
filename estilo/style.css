@@ -1417,31 +1417,6 @@ main .torta {
 
 
 
-  .criador-bloco > div {
-    width: 150px;
-    height: 150px;
-    border-radius: 100px;
-    background-color: #005C53;
-  }
-
-  .criador > article > h1 {
-    padding-bottom: 50px;
-  }
-
-
-  .criador > article > p {
-    padding-bottom: 50px;
-    
-  }
-
-  .img-contruçao img{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-
 
 
 
