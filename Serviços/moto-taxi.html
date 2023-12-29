@@ -164,12 +164,14 @@
         }
 
         .aberto::before {
-            content: '🟢'; /* Bolinha verde */
+            content: '\25A0'; /* Quadrado preto - pode ser usado como bolinha verde */
+            color: #00FF00; /* Cor verde */
             display: inline-block;
         }
-
+        
         .fechado::before {
-            content: '🔴'; /* Bolinha vermelha */
+            content: '\25A0'; /* Quadrado preto - pode ser usado como bolinha vermelha */
+            color: #FF0000; /* Cor vermelha */
             display: inline-block;
         }
 

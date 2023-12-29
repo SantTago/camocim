@@ -162,6 +162,25 @@
         .banner-img.active {
             display: block;
         }
+
+        .aberto::before {
+            content: '\25A0'; /* Quadrado preto - pode ser usado como bolinha verde */
+            color: #00FF00; /* Cor verde */
+            display: inline-block;
+        }
+        
+        .fechado::before {
+            content: '\25A0'; /* Quadrado preto - pode ser usado como bolinha vermelha */
+            color: #FF0000; /* Cor vermelha */
+            display: inline-block;
+        }
+
+        #horario-funcionamento {
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: #fff;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -207,16 +226,19 @@
     <div class="mototaxi" onclick="mostrarInformacoes(1)">
         <img src="entregador.png" alt="entregador">
         <h3>entregador 1</h3>
+        <div id="mototaxista1" class="horario-funcionamento"></div>
     </div>
 
     <div class="mototaxi" onclick="mostrarInformacoes(2)">
         <img src="entregador.png" alt="entregador">
         <h3>entregador 2</h3>
+        <div id="mototaxista2" class="horario-funcionamento"></div>
     </div>
 
     <div class="mototaxi" onclick="mostrarInformacoes(3)">
         <img src="entregador.png" alt="entregador">
         <h3>entregador 3</h3>
+        <div id="mototaxista3" class="horario-funcionamento"></div>
     </div>
 
     <!-------------------------------------------------------->
@@ -226,16 +248,19 @@
    <div class="mototaxi" onclick="mostrarInformacoes(4)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 4</h3>
+    <div id="mototaxista4" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(5)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 5</h3>
+    <div id="mototaxista5" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(6)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 6</h3>
+    <div id="mototaxista6" class="horario-funcionamento"></div>
 </div>
 
 <!-------------------------------------------------------->
@@ -245,16 +270,19 @@
 <div class="mototaxi" onclick="mostrarInformacoes(7)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 7</h3>
+    <div id="mototaxista7" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(8)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 8</h3>
+    <div id="mototaxista8" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(9)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 9</h3>
+    <div id="mototaxista9" class="horario-funcionamento"></div>
 </div>
 
 <!-------------------------------------------------------->
@@ -264,16 +292,19 @@
 <div class="mototaxi" onclick="mostrarInformacoes(10)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 10</h3>
+    <div id="mototaxista10" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(11)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 11</h3>
+    <div id="mototaxista11" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(12)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 12</h3>
+    <div id="mototaxista12" class="horario-funcionamento"></div>
 </div>
 
 <!-------------------------------------------------------->
@@ -283,16 +314,19 @@
 <div class="mototaxi" onclick="mostrarInformacoes(13)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 13</h3>
+    <div id="mototaxista13" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(14)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 14</h3>
+    <div id="mototaxista14" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(15)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 15</h3>
+    <div id="mototaxista15" class="horario-funcionamento"></div>
 </div>
 
 <!-------------------------------------------------------->
@@ -302,21 +336,75 @@
 <div class="mototaxi" onclick="mostrarInformacoes(16)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 16</h3>
+    <div id="mototaxista16" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(17)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 17</h3>
+    <div id="mototaxista17" class="horario-funcionamento"></div>
 </div>
 
 <div class="mototaxi" onclick="mostrarInformacoes(18)">
     <img src="entregador.png" alt="entregador">
     <h3>entregador 18</h3>
+    <div id="mototaxista18" class="horario-funcionamento"></div>
 </div>
 
 <!-------------------------------------------------------->
 
+<script>
+    // Função para verificar o horário de funcionamento de uma pessoa com dois períodos e horários de fim de semana
+    function verificarHorarioFuncionamento(elementId, manhaAbertura, manhaFechamento, tardeAbertura, tardeFechamento, sabadoAbertura, sabadoFechamento, domingoAbertura, domingoFechamento) {
+        var agora = new Date();
+        var diaAtual = agora.getDay(); // 0 para domingo, 1 para segunda, ..., 6 para sábado
+        var horaAtual = agora.getHours();
+        var elemento = document.getElementById(elementId);
 
+        // Lógica para verificar o fim de semana
+        if (diaAtual === 0 || diaAtual === 6) { // Domingo ou sábado
+            if (horaAtual >= sabadoAbertura && horaAtual < sabadoFechamento) {
+                elemento.classList.remove('fechado');
+                elemento.classList.add('aberto');
+            } else {
+                elemento.classList.remove('aberto');
+                elemento.classList.add('fechado');
+            }
+        } else { // Dias de semana
+            if (horaAtual >= manhaAbertura && horaAtual < manhaFechamento) {
+                elemento.classList.remove('fechado');
+                elemento.classList.add('aberto');
+            } else if (horaAtual >= tardeAbertura && horaAtual < tardeFechamento) {
+                elemento.classList.remove('fechado');
+                elemento.classList.add('aberto');
+            } else {
+                elemento.classList.remove('aberto');
+                elemento.classList.add('fechado');
+            }
+        }
+    }
+
+    //  9,12-> manha  14,17->tarde | 10,15, sabado  11,16 domingo
+    verificarHorarioFuncionamento('mototaxista1', 9, 12, 14, 17, 10, 15, 11, 16);
+    verificarHorarioFuncionamento('mototaxista2', 8, 12, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista3', 9, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista4', 7, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista5', 10, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista6', 6, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista7', 8, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista8', 9, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista9', 7, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista10', 6, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista11', 8, 12, 14, 17, 10, 15, 11, 16);
+    verificarHorarioFuncionamento('mototaxista12', 7, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista13', 8, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista14', 8, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista15', 9, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista16', 7, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista17', 7, 13, 15, 18, 11, 16, 12, 17);
+    verificarHorarioFuncionamento('mototaxista18', 8, 13, 15, 18, 11, 16, 12, 17);
+    
+</script>
 
 <!-------------------------------------------------------->
 
