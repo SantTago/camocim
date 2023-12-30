@@ -69,6 +69,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
 
         th,
@@ -126,11 +127,12 @@
         #copyPixButton {
             margin-bottom: 10px;
         }
+
         .green-button {
             background-color: #4CAF50;
         }
-    </style>
 
+    </style>
 </head>
 
 <body>
@@ -173,15 +175,15 @@
         <tbody>
             <tr onclick="selecionarDuracao('diaria')">
                 <td>Diária</td>
-                <td>R$ 20,00</td>
+                <td>R$ 10,00</td>
             </tr>
             <tr onclick="selecionarDuracao('semanal')">
                 <td>Semanal</td>
-                <td>R$ 100,00</td>
+                <td>R$ 50,00</td>
             </tr>
             <tr onclick="selecionarDuracao('mensal')">
                 <td>Mensal</td>
-                <td>R$ 250,00</td>
+                <td>R$ 100,00</td>
             </tr>
         </tbody>
     </table>
@@ -201,9 +203,9 @@
             var daysInput = document.getElementById('days');
             var days = (daysInput.style.display !== 'none') ? daysInput.value : 1;
             var duration = document.getElementById('duration').value;
-            var dailyRate = 20;
-            var weeklyRate = 100;
-            var monthlyRate = 250;
+            var dailyRate = 10;
+            var weeklyRate = 50;
+            var monthlyRate = 100;
 
             var total = 0;
 
@@ -319,8 +321,7 @@
         <p>
             Agora, para efetuar o patrocínio, basta enviar o Pix com o valor correspondente ao plano escolhido. Após realizar o pagamento, envie o comprovante para o WhatsApp. Nosso assistente automatizado irá verificar o pagamento e encaminhá-lo ao criador para discutir os detalhes específicos da exposição, incluindo a criação da arte do seu banner.
         </p>
-        </div>
-
+    </div>
 
 </body>
 
