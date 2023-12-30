@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área do Patrocinadores</title>
     <style>
-        *{
+        * {
             margin: 0;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -32,15 +34,17 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            
         }
 
-        label, input, select {
+        label,
+        input,
+        select {
             display: block;
             margin-bottom: 8px;
         }
 
-        input, select {
+        input,
+        select {
             width: calc(100% - 16px);
             padding: 8px;
             margin-bottom: 16px;
@@ -67,7 +71,8 @@
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
@@ -86,7 +91,8 @@
             background-color: #f5f5f5;
         }
 
-        .back-button, .back-button:hover {
+        .back-button,
+        .back-button:hover {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -100,10 +106,33 @@
             text-align: center;
         }
 
-        
+        #notificationBar {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        #buttonsContainer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #copyPixButton {
+            margin-bottom: 10px;
+        }
+        .green-button {
+            background-color: #4CAF50;
+        }
     </style>
-    
+
 </head>
+
 <body>
 
     <h1>Patrocinadores</h1>
@@ -125,9 +154,10 @@
         </select>
 
         <div id="result"></div>
-        
-        <div id="paymentButton">
-            <button type="button" onclick="prossigaParaPagamento()">Prosseguir para o Pagamento</button>
+
+        <div id="buttonsContainer">
+            <button type="button" id="copyPixButton" onclick="copyPixKey()">Copiar Chave Pix</button>
+            <button type="button" onclick="prossigaParaPagamento()">Enviar Comprovante</button>
         </div>
 
         <a href="../usuarios.html" class="back-button">Voltar </a>
@@ -161,12 +191,12 @@
             var duration = document.getElementById('duration').value;
             var daysLabel = document.getElementById('daysLabel');
             var daysInput = document.getElementById('days');
-    
+
             // Mostrar label e input de dias apenas se a duração for "Diária"
             daysLabel.style.display = (duration === 'daily') ? 'block' : 'none';
             daysInput.style.display = (duration === 'daily') ? 'block' : 'none';
         }
-    
+
         function calcularTotal() {
             var daysInput = document.getElementById('days');
             var days = (daysInput.style.display !== 'none') ? daysInput.value : 1;
@@ -174,9 +204,9 @@
             var dailyRate = 20;
             var weeklyRate = 100;
             var monthlyRate = 250;
-    
+
             var total = 0;
-    
+
             switch (duration) {
                 case 'daily':
                     total = days * dailyRate;
@@ -190,11 +220,11 @@
                 default:
                     break;
             }
-    
+
             var resultDiv = document.getElementById('result');
             resultDiv.innerHTML = `<p>Valor Total: R$ ${total.toFixed(2)}</p>`;
         }
-    
+
         function prossigaParaPagamento() {
             var companyName = document.getElementById('companyName').value;
             var daysInput = document.getElementById('days');
@@ -220,40 +250,78 @@
             var result = document.getElementById('result').innerHTML;
             var whatsappLink = 'https://api.whatsapp.com/send/?phone=5588993464285&text=';
             var message = '';
-            
+
             switch (duration) {
                 case 'daily':
-                    message = `Olá, gostaria de patrocinar por ${days} dia(s). Valor total: R$ ${result.match(/\d+\.\d+/)[0]}`;
+                    message = `Olá, a empresa ${companyName} gostaria de patrocinar por ${days} dia(s). Valor total: R$ ${result.match(/\d+\.\d+/)[0]}`;
                     break;
                 case 'weekly':
-                    message = `Olá, gostaria de patrocinar por 1 semana. Valor total: R$ ${result.match(/\d+\.\d+/)[0]}`;
+                    message = `Olá, a empresa ${companyName} gostaria de patrocinar por 1 semana. Valor total: R$ ${result.match(/\d+\.\d+/)[0]}`;
                     break;
                 case 'monthly':
-                    message = `Olá, gostaria de patrocinar por 1 mês. Valor total: R$ ${result.match(/\d+\.\d+/)[0]}`;
+                    message = `Olá, a empresa ${companyName} gostaria de patrocinar por 1 mês. Valor total: R$ ${result.match(/\d+\.\d+/)[0]}`;
                     break;
                 default:
                     break;
             }
-    
+
             message = encodeURIComponent(message);
             whatsappLink += message;
-    
+
             window.open(whatsappLink, '_blank');
+        }
+
+        function copyPixKey() {
+            var pixKey = '88993464285';
+
+            var tempInput = document.createElement('input');
+            tempInput.value = pixKey;
+            document.body.appendChild(tempInput);
+
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); /* Para dispositivos móveis */
+
+            try {
+                document.execCommand('copy');
+
+                // Adiciona a classe para alterar a cor do botão para verde
+                document.getElementById('copyPixButton').classList.add('green-button');
+
+                showNotification('Chave Pix copiada para a área de transferência.');
+
+            } catch (err) {
+                console.error('Falha ao copiar a chave Pix: ', err);
+            }
+
+            document.body.removeChild(tempInput);
+        }
+
+        function showNotification(message) {
+            var notificationBar = document.getElementById('notificationBar');
+            notificationBar.innerText = message;
+            notificationBar.style.backgroundColor = '#4CAF50'; // Cor verde
+            notificationBar.style.display = 'block';
+
+            setTimeout(function () {
+                notificationBar.style.display = 'none';
+            }, 4000);
         }
     </script>
 
     <div class="informacoes" style="text-align: center; margin: 20px;box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.342);max-width: 800px;border: 10px auto 10px auto;padding: 20px;">
         <h2>Como Funciona para Patrocinadores</h2>
         <p>
-            Bem-vindo à Área dos Patrocinadores! Aqui, você tem a oportunidade de ter sua empresa em destaque na página inicial da nossa plataforma. Ao escolher o plano de patrocínio, sua empresa terá um banner visível para os usuários no primeiro acesso à página, proporcionando grande visibilidade.
+            Bem-vindo à Área dos Patrocinadores! Aqui, você tem a oportunidade de destacar sua empresa na página inicial da nossa plataforma. Ao escolher o plano de patrocínio, sua empresa terá um banner visível para os usuários no primeiro acesso à página, proporcionando grande visibilidade.
         </p>
         <p>
             Cada dia de exposição na página principal é uma oportunidade única para atrair a atenção dos usuários. Além disso, incentivamos os patrocinadores a fornecerem sugestões de melhorias para aprimorarmos constantemente nossa plataforma.
         </p>
         <p>
-            Após selecionar a quantidade de dias desejada, clique em "Prosseguir para o Pagamento" e siga as instruções para concluir o processo. Você será redirecionado ao WhatsApp, onde um assistente automatizado finalizará o pagamento e o encaminhará ao criador para discutir detalhes específicos da exposição.
+            Agora, para efetuar o patrocínio, basta enviar o Pix com o valor correspondente ao plano escolhido. Após realizar o pagamento, envie o comprovante para o WhatsApp. Nosso assistente automatizado irá verificar o pagamento e encaminhá-lo ao criador para discutir os detalhes específicos da exposição, incluindo a criação da arte do seu banner.
         </p>
-    </div>
+        </div>
+
 
 </body>
+
 </html>
