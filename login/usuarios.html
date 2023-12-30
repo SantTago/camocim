@@ -54,10 +54,7 @@
       color: #ffcc00; /* Altere a cor conforme necessário */
     }
 
-    header {
-      text-align: center;
-      padding: 20px;
-    }
+   
 
     .criador,
     .termos-de-uso {
@@ -132,7 +129,60 @@
   }
   
     
+  .menu{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    padding-left: 8px;
+    padding-top: 50px;
+}
 
+.logomarca {
+  /* padding: 9px; */
+  /* padding-top: 4px; */
+  max-width: 217px;
+  width: 107%;
+  text-align: center;
+  margin-bottom: -20px;
+}
+
+.logomarca img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 490px) {
+  .logomarca {
+    /* padding: 9px; */
+    max-width: 237px;
+    margin-bottom: -3px;
+}
+  .menu {
+    text-align: center;
+  }
+  header {
+    background-color: #0077FF;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    /* justify-items: center; */
+    /* flex-wrap: wrap; */
+    flex-direction: column-reverse;
+    align-items: center;
+}
+}
+header {
+  background-color: #0077FF;
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+  display: flex;
+  /* justify-items: center; */
+  /* flex-wrap: wrap; */
+  flex-direction: column-reverse;
+  align-items: center;
+}
 
   </style>
 
@@ -141,7 +191,13 @@
 <body>
 
   <header>
-    <h1>Camocim Nativo</h1>
+
+   
+
+    <div class="logomarca">
+      <img src="../icon/logo da pagina.png" alt="logo da pagina">
+    </div>
+    
   </header>
 
   <div class="menuu">

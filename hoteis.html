@@ -24,15 +24,62 @@
     margin: 0px auto 0px auto;
     max-width: 100%;
   }
+
+  .menu{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    padding-left: 8px;
+    padding-top: 50px;
+}
+
+.logomarca {
+  padding: 9px;
+  padding-top: 4px;
+  max-width: 109px;
+  width: 107%;
+  text-align: center;
+  margin-bottom: -95px;
+}
+
+.logomarca img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 490px) {
+  .logomarca {
+    padding: 9px;
+    max-width: 212px;
+    margin-bottom: -59px;
+    
+}
+  .menu {
+    text-align: center;
+  }
+  header {
+    background-color: #0077FF;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    /* justify-items: center; */
+    /* flex-wrap: wrap; */
+    flex-direction: column-reverse;
+    align-items: center;
+}
+}
   </style>
 </head>
 <body>
   <header>
 
-    <h1>
-      Registra Camocim
-    </h1>
+   
 
+    <div class="logomarca">
+      <img src="icon/logo da pagina.png" alt="logo da pagina">
+    </div>
+    
   </header>
 
 
