@@ -116,6 +116,51 @@
           
       }
     }
+
+    .like-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+  }
+
+  .like-button {
+      background-color: #3498db;
+      color: #fff;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+  }
+
+  .like-button:hover {
+      background-color: #2980b9;
+  }
+
+  .like-button.clicked {
+      background-color: #2ecc71;
+  }
+
+  .like-count {
+      font-size: 1.5em;
+      color: #555;
+      font-size: 18px;
+  }
+
+  @keyframes likeAnimation {
+      0% {
+          transform: scale(1);
+      }
+      50% {
+          transform: scale(1.2);
+      }
+      100% {
+          transform: scale(1);
+      }
+  }
+
 </style>
 </head>
 <body>
@@ -143,47 +188,166 @@
    <section class="slider">
     <div class="product">
       <img src="grafica viana/001.png" alt="Grafica">
+
+      <div class="like-container">
+        <div>
+          <p class="like-count" id="like-count-1">0 Likes</p>
+          <button onclick="like(1)" class="like-button" id="likeButton1">Like</button>
+      </div>
+      </div>
      
     </div>
 
     <div class="product">
       <img src="grafica viana/002.png" alt="Grafica">
       
+      <div class="like-container">
+        <div>
+          <p class="like-count" id="like-count-2">0 Likes</p>
+          <button onclick="like(2)" class="like-button" id="likeButton2">Like</button>
+      </div>
+      </div>
       
     </div>
 
     <div class="product">
       <img src="grafica viana/003.png" alt="Grafica">
       
+      <div class="like-container">
+        <div>
+          <p class="like-count" id="like-count-3">0 Likes</p>
+          <button onclick="like(3)" class="like-button" id="likeButton3">Like</button>
+        </div>
+      </div>
       
     </div>
 
     <div class="product">
       <img src="grafica viana/004.png" alt="Grafica">
       
+      <div class="like-container">
+        <div>
+          <p class="like-count" id="like-count-4">0 Likes</p>
+          <button onclick="like(4)" class="like-button" id="likeButton4">Like</button>
+      </div>
+      </div>
       
     </div>
 
     <div class="product">
       <img src="grafica viana/005.png" alt="Grafica">
     
+      <div class="like-container">
+        <div>
+          <p class="like-count" id="like-count-5">0 Likes</p>
+          <button onclick="like(5)" class="like-button" id="likeButton5">Like</button>
+      </div>
+      </div>
       
     </div>
 
     <div class="product">
       <img src="grafica viana/006.png" alt="Grafica">
      
+      <div class="like-container">
+        <div>
+          <p class="like-count" id="like-count-6">0 Likes</p>
+          <button onclick="like(6)" class="like-button" id="likeButton6">Like</button>
+      </div>
+      </div>
       
     </div>
 
     <div class="product">
         <img src="grafica viana/007.png" alt="Grafica">
         
+        <div>
+          <p class="like-count" id="like-count-7">0 Likes</p>
+          <button onclick="like(7)" class="like-button" id="likeButton7">Like</button>
+        </div>
+    </div>
         
-      </div>
+    </div>
 
 
   </section>
+
+
+  <script>
+    function getLikesCount(buttonId) {
+        return parseInt(localStorage.getItem(`likes_count_${buttonId}`)) || 0;
+    }
+
+    function getLastLikeTime(buttonId) {
+        return parseInt(localStorage.getItem(`last_like_time_${buttonId}`)) || 0;
+    }
+
+    function updateLikesCount(buttonId, likes) {
+        document.getElementById(`like-count-${buttonId}`).innerText = likes + ' Likes';
+        localStorage.setItem(`likes_count_${buttonId}`, likes);
+    }
+
+    function updateLastLikeTime(buttonId, time) {
+        localStorage.setItem(`last_like_time_${buttonId}`, time);
+    }
+
+    function canLike(buttonId) {
+        const currentTime = new Date().getTime();
+        const lastLikeTime = getLastLikeTime(buttonId);
+        const elapsedTime = currentTime - lastLikeTime;
+        const timeInterval = 30 * 60 * 1000; // 30 minutes in milliseconds
+
+        return elapsedTime >= timeInterval;
+    }
+
+    function showNotification(message) {
+        const notificationElement = document.getElementById('notification');
+        notificationElement.innerText = message;
+
+        // Adiciona a classe de animação
+        notificationElement.style.animation = 'fadeInOut 3s ease-in-out';
+
+        // Exibe a notificação
+        notificationElement.style.display = 'block';
+
+        // Remove a classe de animação após a animação ser concluída
+        setTimeout(() => {
+            notificationElement.style.animation = '';
+            notificationElement.style.display = 'none';
+        }, 3000);
+    }
+
+    function like(buttonId) {
+        if (!canLike(buttonId)) {
+            showNotification("Você só pode dar like a cada 30 minutos!");
+            return;
+        }
+
+        var likesCount = getLikesCount(buttonId);
+        likesCount++;
+        updateLikesCount(buttonId, likesCount);
+
+        // Adiciona a classe "clicked" para aplicar a animação
+        document.getElementById(`likeButton${buttonId}`).classList.add('clicked');
+
+        // Remove a classe após um curto período para permitir futuros cliques
+        setTimeout(function () {
+            document.getElementById(`likeButton${buttonId}`).classList.remove('clicked');
+        }, 500);
+
+        // Atualiza o tempo do último like
+        updateLastLikeTime(buttonId, new Date().getTime());
+    }
+
+    window.onload = function () {
+        for (let i = 1; i <= 10; i++) {
+            var likesCount = getLikesCount(i);
+            updateLikesCount(i, likesCount);
+        }
+    };
+</script>
+
+
 
 
   <script>
