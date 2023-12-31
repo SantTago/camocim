@@ -23,8 +23,8 @@
 
         section {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 5px auto;
+            padding: 3px;
             background-color: #222;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
@@ -188,16 +188,33 @@
         height: 100%;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
         article {
             width: 100%;
+        }
+        
+        article  h2{
+            width: 100%;
+            font-size: 13px;
+        }
+        article  p{
+            width: 100%;
+            font-size: 13px;
         }
         .video-item {
             width: 100%;
         } 
         .instagram-container {
             padding-bottom: 180%;
-    }
+        }
+        main {
+            padding: 1em;
+        }
+
+        .store, .motel {
+            width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
+            max-width: none;
+        }
     }
 
     nav {
@@ -222,16 +239,6 @@
         background-color: #555;
     }
 
-    @media (max-width: 768px) {
-        main {
-            padding: 1em;
-        }
-    
-        .store, .motel {
-            width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
-            max-width: none;
-        }
-    }
 
     /* Estilo para o botão de voltar */
     .back-button {
@@ -382,92 +389,71 @@
  <--------------------------------------------->
   
 
- <section class="bloco-noticias">
-    <article>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeh7mxsirnSHNnvWMp4JkNaEUlDNzENs8okQ&usqp=CAU" alt="Notícia 1">
-        <div class="content">
-            <h2>O som de um paredão em volume elevado na Avenida Beira Mar na noite deste sábado, 30 de dezembro, está sendo alvo de intervenção por parte da Polícia Militar neste momento.</h2>
-            <p class="description ellipsis"></p>
-            <p class="full-text" style="display: none;">
-
-                É importante destacar que, por meio de um decreto municipal, a prefeita de Camocim anunciou a regulamentação do uso de paredões de som durante o período do Réveillon 2024.
-
-                Durante a festividade, fica autorizado o uso de paredões de som no trecho da Praia do Farol, compreendido entre o Farol do Trapiá e o início das barracas. Abaixo, segue um trecho do decreto:
-
-                “Art. 2o A regulamentação mencionada no caput do artigo 1o deste Decreto destina-se ao período da festa de Réveillon 2024, abrangendo os dias 30 de dezembro de 2023 (sábado), iniciando às 12h:00min e encerrando às 00h:00min, e 31 de dezembro de 2023 (domingo), iniciando às 12h:00min e encerrando às 4h:00min do dia 01 de janeiro de 2024 (segunda-feira).”
-
-                A Polícia Militar alerta que excessos sonoros identificados em outras localidades serão combatidos com a apreensão do equipamento de som e a abertura de um processo contra o proprietário.
-            </p>
-            <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
-        </div>
-        <p class="paragrafo"> 
-          13:20   30/12/2023
-        </p>
-    </article>
-
-    <!--------------------------------------------->
-  
-
-    <section class="bloco-noticias">
+ <main>
+     <section class="bloco-noticias">
         <article>
-            <img src="https://s2-g1.glbimg.com/kamDZBJmAScCm0eGIPYKdXpr-jc=/0x0:2048x1152/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/J/C/PbbykKTdGPdKaRs3gJ5w/morte-por-choque.jpg" alt="Notícia 1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeh7mxsirnSHNnvWMp4JkNaEUlDNzENs8okQ&usqp=CAU" alt="Notícia 1">
             <div class="content">
-                <h2>O som de um paredão em volume elevado na Avenida Beira Mar na noite deste sábado, 30 de dezembro, está sendo alvo de intervenção por parte da Polícia Militar neste momento..</h2>
+                <h2>O som de um paredão em volume elevado na Avenida Beira Mar na noite deste sábado, 30 de dezembro, está sendo alvo de intervenção por parte da Polícia Militar neste momento.</h2>
                 <p class="description ellipsis"></p>
                 <p class="full-text" style="display: none;">
-
-                    Jucinete Ferreira estava utilizando um dispositivo de monitoramento no tornozelo. As autoridades da Perícia Forense estão conduzindo uma investigação para determinar a causa do óbito.
-
-                    Uma mulher de 49 anos faleceu nesta sexta-feira (29) após ser vítima de uma descarga elétrica em Juazeiro do Norte, na região do Cariri cearense.
-                    
-                    Segundo o relatório da Polícia Militar, Jucinete Ferreira Da Silva Lima, que utilizava uma tornozeleira eletrônica, foi encontrada sem vida. A família da vítima suspeita que o choque elétrico ocorreu durante o processo de recarga do dispositivo.
-                    
-                    A Secretaria da Administração Penitenciária do Estado do Ceará (SAP) declarou que a Perícia Forense (Pefoce) está conduzindo uma investigação sobre o incidente e emitirá um laudo oficial. A SAP ressaltou que a tornozeleira eletrônica está em uso há mais de 10 anos sem que tenha ocorrido qualquer incidente ou acidente dessa natureza.
+                    É importante destacar que, por meio de um decreto municipal, a prefeita de Camocim anunciou a regulamentação do uso de paredões de som durante o período do Réveillon 2024.
+                    Durante a festividade, fica autorizado o uso de paredões de som no trecho da Praia do Farol, compreendido entre o Farol do Trapiá e o início das barracas. Abaixo, segue um trecho do decreto:
+                    “Art. 2o A regulamentação mencionada no caput do artigo 1o deste Decreto destina-se ao período da festa de Réveillon 2024, abrangendo os dias 30 de dezembro de 2023 (sábado), iniciando às 12h:00min e encerrando às 00h:00min, e 31 de dezembro de 2023 (domingo), iniciando às 12h:00min e encerrando às 4h:00min do dia 01 de janeiro de 2024 (segunda-feira).”
+                    A Polícia Militar alerta que excessos sonoros identificados em outras localidades serão combatidos com a apreensão do equipamento de som e a abertura de um processo contra o proprietário.
                 </p>
                 <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
             </div>
-            <p class="paragrafo"> 
-              13:20   30/12/2023
+            <p class="paragrafo">
+              18:20   30/12/2023
             </p>
         </article>
         <!--------------------------------------------->
-
-
-  
-
-    <section class="bloco-noticias">
-        <article>
-            <img src="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3450921:1701523910/cgd3.jpeg?f=16x9&h=720&w=1280&$p$f$h$w=4e46413%201020w" alt="Notícia 1">
-            <div class="content">
-                <h2>Policial militar que matou jovem dentro da Delegacia de Camocim é demitido da Corporação</h2>
-                <p class="description ellipsis"A Justiça Estadual já decidiu levar o acusado a julgamento pelo homicídio></p>
-                <p class="full-text" style="display: none;">O soldado George Tarick de Vasconcelos Ferreira, de 34 anos, foi demitido da Polícia Militar do Ceará (PMCE), por decisão da Controladoria Geral de Disciplina dos Órgãos de Segurança Pública e Sistema Penitenciário (CGD), em razão de ter matado Mateus Silva Cruz, 19, dentro da Delegacia Regional de Camocim, em fevereiro do ano passado. A Justiça Estadual já decidiu levar o PM a julgamento pelo homicídio.
-                <br>
-                A demissão foi publicada pela CGD no Diário Oficial do Estado (DOE) da última sexta-feira (1º). O controlador geral Rodrigo Bona Carneiro acatou os relatórios Final e Comprementar elaborados pela Comissão Processante, "em face da prática de atos que revelam incompatibilidade com a função militar estadual, comprovado mediante Processo Regular". O policial tem 10 dias corridos para recorrer.
-                <br>
-                Segundo o documento, George Tarick alegou que, "no momento que entrou na delegacia para saber se o delegado estava na delegacia, Mateus disse: ‘Tu vai morrer, tu e teus filhos, sua desgraça’; que aí quando partiu para a família e os filhos, foi o momento que puxou a arma e perdeu o controle; que ficou cego e não foi normal aquilo ali”.
+     
+        <section class="bloco-noticias">
+            <article>
+                <img src="https://s2-g1.glbimg.com/kamDZBJmAScCm0eGIPYKdXpr-jc=/0x0:2048x1152/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/J/C/PbbykKTdGPdKaRs3gJ5w/morte-por-choque.jpg" alt="Notícia 1">
+                <div class="content">
+                    <h2>O som de um paredão em volume elevado na Avenida Beira Mar na noite deste sábado, 30 de dezembro, está sendo alvo de intervenção por parte da Polícia Militar neste momento..</h2>
+                    <p class="description ellipsis"></p>
+                    <p class="full-text" style="display: none;">
+                        Jucinete Ferreira estava utilizando um dispositivo de monitoramento no tornozelo. As autoridades da Perícia Forense estão conduzindo uma investigação para determinar a causa do óbito.
+                        Uma mulher de 49 anos faleceu nesta sexta-feira (29) após ser vítima de uma descarga elétrica em Juazeiro do Norte, na região do Cariri cearense.
+     
+                        Segundo o relatório da Polícia Militar, Jucinete Ferreira Da Silva Lima, que utilizava uma tornozeleira eletrônica, foi encontrada sem vida. A família da vítima suspeita que o choque elétrico ocorreu durante o processo de recarga do dispositivo.
+     
+                        A Secretaria da Administração Penitenciária do Estado do Ceará (SAP) declarou que a Perícia Forense (Pefoce) está conduzindo uma investigação sobre o incidente e emitirá um laudo oficial. A SAP ressaltou que a tornozeleira eletrônica está em uso há mais de 10 anos sem que tenha ocorrido qualquer incidente ou acidente dessa natureza.
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                  13:20   30/12/2023
                 </p>
-                <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
-            </div>
-            <p class="paragrafo"> 
-              15:33   02/12/2023
-            </p>
-        </article>
-        <!--------------------------------------------->
-        <article>
-          <img src="https://neofeed.com.br/wp-content/uploads/2020/02/ING-1-1-1200x675.jpg" alt="Notícia 1">
-          <div class="content">
-              <h2>teste</h2>
-              <p class="description ellipsis">Descrição breve da notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu leo et ipsum tempor vulputate vel eu risus. Curabitur vitae mi vel justo consectetur euismod.</p>
-              <p class="full-text" style="display: none;">Texto completo da notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu leo et ipsum tempor vulputate vel eu risus. Curabitur vitae mi vel justo consectetur euismod. Nullam a lectus at justo fringilla dictum.</p>
-              <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
-          </div>
-          <p class="paragrafo"> 
-            00:00   00/00/0000
-          </p>
-      </article>
-      <!--------------------------------------------->
-    </section>
+            </article>
+            <!--------------------------------------------->
+        </section>
+        <section class="bloco-noticias">
+            <article>
+                <img src="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3450921:1701523910/cgd3.jpeg?f=16x9&h=720&w=1280&$p$h=4e46413%201020w" alt="Notícia 1">
+                <div class="content">
+                    <h2>Policial militar que matou jovem dentro da Delegacia de Camocim é demitido da Corporação</h2>
+                    <p class="description ellipsis"A Justiça Estadual já decidiu levar o acusado a julgamento pelo homicídio></p>
+                    <p class="full-text" style="display: none;">O soldado George Tarick de Vasconcelos Ferreira, de 34 anos, foi demitido da Polícia Militar do Ceará (PMCE), por decisão da Controladoria Geral de Disciplina dos Órgãos de Segurança Pública e Sistema Penitenciário (CGD), em razão de ter matado Mateus Silva Cruz, 19, dentro da Delegacia Regional de Camocim, em fevereiro do ano passado. A Justiça Estadual já decidiu levar o PM a julgamento pelo homicídio.
+                    <br>
+                    A demissão foi publicada pela CGD no Diário Oficial do Estado (DOE) da última sexta-feira (1º). O controlador geral Rodrigo Bona Carneiro acatou os relatórios Final e Comprementar elaborados pela Comissão Processante, "em face da prática de atos que revelam incompatibilidade com a função militar estadual, comprovado mediante Processo Regular". O policial tem 10 dias corridos para recorrer.
+                    <br>
+                    Segundo o documento, George Tarick alegou que, "no momento que entrou na delegacia para saber se o delegado estava na delegacia, Mateus disse: ‘Tu vai morrer, tu e teus filhos, sua desgraça’; que aí quando partiu para a família e os filhos, foi o momento que puxou a arma e perdeu o controle; que ficou cego e não foi normal aquilo ali”.
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                  15:33   02/12/2023
+                </p>
+            </article>
+            <!--------------------------------------------->
+        </section>
+       
+    </main>
 
     <footer>
         <p>&copy; 2023 Notícias Inc.</p>
