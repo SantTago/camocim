@@ -1,3 +1,4 @@
+
 import os
 import requests
 from bs4 import BeautifulSoup
@@ -65,11 +66,101 @@ def salvar_noticias(noticias):
                 f.write(noticia['imagem_url'])
 
 if __name__ == "__main__":
-    # Solicita ao usuário o número de notícias a serem baixadas
-    num_noticias = int(input("Digite o número de notícias a serem baixadas: "))
-
-    noticias = obter_noticias_g1()[:num_noticias]
+    # Obtém automaticamente 10 notícias
+    noticias = obter_noticias_g1()[:10]
 
     if noticias:
         salvar_noticias(noticias)
         print("Notícias salvas com sucesso na área de trabalho, dentro da pasta 'Noticias_G1'.")
+
+
+def gerar_html_conteudo(titulo, conteudo, imagem_url, data):
+    # Substitua os espaços e caracteres especiais no título para criar um identificador único
+    identificador = titulo.lower().replace(' ', '_')
+
+    # Monta o HTML para a notícia
+    html = f"""
+    <section class="bloco-noticias">
+        <article>
+            <img src="{imagem_url}" alt="{titulo}">
+            <div class="content">
+                <h2>{titulo}</h2>
+                <p class="description ellipsis"></p>
+                <p class="full-text" style="display: none;">
+                    {conteudo}
+                </p>
+                <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+            </div>
+            <p class="paragrafo">
+                {data}
+            </p>
+        </article>
+    <section>
+   <!------------------------------------------------------>
+    """
+    return html
+
+def main():
+    pasta_noticias = os.path.join(os.path.expanduser("~/Desktop"), "Noticias_G1")
+    pasta_html = os.path.join(pasta_noticias, "html")
+
+    # Cria a pasta "html" se ela não existir
+    os.makedirs(pasta_html, exist_ok=True)
+
+    # Substitua pela data desejada
+    data = '10:40   31/12/2023'
+
+    # Inicia o arquivo HTML com a estrutura inicial
+    html_total = """<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias G1</title>
+    <style>
+        .article {
+            margin-bottom: 20px;
+        }
+        hr {
+            border: 0.5px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+"""
+
+    for subpasta in os.listdir(pasta_noticias):
+        subpasta_path = os.path.join(pasta_noticias, subpasta)
+
+        # Verifica se é uma pasta
+        if os.path.isdir(subpasta_path):
+            conteudo_path = os.path.join(subpasta_path, 'conteudo.txt')
+            imagem_path = os.path.join(subpasta_path, 'imagem_link.txt')
+            titulo_path = os.path.join(subpasta_path, 'titulo.txt')
+
+            # Verifica se todos os arquivos existem
+            if os.path.exists(conteudo_path) and os.path.exists(imagem_path) and os.path.exists(titulo_path):
+                with open(conteudo_path, 'r', encoding='utf-8') as f_conteudo, \
+                        open(imagem_path, 'r', encoding='utf-8') as f_imagem, \
+                        open(titulo_path, 'r', encoding='utf-8') as f_titulo:
+
+                    conteudo = f_conteudo.read().strip()
+                    imagem_url = f_imagem.read().strip()
+                    titulo = f_titulo.read().strip()
+
+                    # Gera o código HTML para a notícia
+                    html_total += gerar_html_conteudo(titulo, conteudo, imagem_url, data)
+
+    # Finaliza o arquivo HTML
+    html_total += """
+</body>
+</html>
+"""
+
+    # Salva o HTML em um único arquivo na pasta "html"
+    with open(os.path.join(pasta_html, "noticias_g1.html"), 'w', encoding='utf-8') as html_file:
+        html_file.write(html_total)
+
+if __name__ == "__main__":
+    main()
