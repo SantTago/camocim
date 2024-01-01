@@ -288,6 +288,36 @@
     color: #fff;
 }
 
+
+#to-top-btn, #to-news-btn {
+  display: none;
+  position: fixed;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#to-top-btn {
+  right: 20px;
+  bottom: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#to-news-btn {
+  right: -7px;
+  top: 20px;
+  z-index: 1000;
+  transform: scale(0); /* Inicia com escala zero para a animação */
+}
+
+#content {
+  padding: 20px;
+  line-height: 1.6;
+}
+
   </style>
   </head>
 <body>
@@ -875,7 +905,65 @@
 
 
 <!------------------------------------------>
+<script>
+  window.addEventListener('scroll', function () {
+      var toTopBtn = document.getElementById('to-top-btn');
+      var toNewsBtn = document.getElementById('to-news-btn');
 
+      // Verifica se a largura da tela é menor que 768 pixels (dispositivo móvel)
+      if (window.innerWidth < 768) {
+          // Verifica se a posição de rolagem é maior que 200 pixels do topo
+          if (window.scrollY > 200) {
+              toTopBtn.style.display = 'block';
+              toTopBtn.style.opacity = '1';
+
+              toNewsBtn.style.display = 'block';
+              toNewsBtn.style.opacity = '1';
+              toNewsBtn.style.transform = 'scale(1)'; // Escala 1 para mostrar o botão
+          } else {
+              toTopBtn.style.opacity = '0';
+              setTimeout(function() {
+                  toTopBtn.style.display = 'none';
+              }, 300); // Tempo da transição em milissegundos
+
+              toNewsBtn.style.opacity = '0';
+              toNewsBtn.style.transform = 'scale(0)'; // Escala 0 para esconder o botão
+              setTimeout(function() {
+                  toNewsBtn.style.display = 'none';
+              }, 300);
+          }
+      } else {
+          toTopBtn.style.opacity = '0';
+          setTimeout(function() {
+              toTopBtn.style.display = 'none';
+          }, 300);
+
+          toNewsBtn.style.opacity = '0';
+          toNewsBtn.style.transform = 'scale(0)';
+          setTimeout(function() {
+              toNewsBtn.style.display = 'none';
+          }, 300);
+      }
+  });
+
+  function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function redirectToNews() {
+      // Substitua "sua-pagina-de-noticias.html" pela URL real da sua página de notícias
+      window.location.href = "noticias.html";
+  }
+</script>
+
+<!-- Botões flutuantes -->
+<div id="to-top-btn" onclick="scrollToTop()">
+  &#9650; <!-- Triângulo para cima (pode ser substituído por um ícone ou texto) -->
+</div>
+
+<div id="to-news-btn" onclick="redirectToNews()">
+  <img src="icon/noticias.png" alt="Notícias"> <!-- Substitua pelo caminho real da sua imagem -->
+</div>
 
 </body>
 
