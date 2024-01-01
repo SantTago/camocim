@@ -7,6 +7,36 @@
     <title>Notícias</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
+
+
+    <script>
+        //oque define a hora que vai sair e  
+        //<p class="paragrafo">
+          //  31/12/2023 20h34
+        // </p>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Defina a hora em que deseja tornar o artigo público (em milissegundos desde a meia-noite)
+            var horaPublicacao = new Date('2024-01-01T12:00:00').getTime();
+            
+            // Obtenha o elemento p com a classe 'full-text'
+            var fullTextElement = document.querySelector('.full-text');
+            
+            // Obtenha o elemento article
+            var articleElement = document.querySelector('article');
+            
+            // Obtenha a hora atual
+            var horaAtual = new Date().getTime();
+            
+            // Verifique se a hora atual é posterior à hora de publicação desejada
+            if (horaAtual >= horaPublicacao) {
+                // Remova o 'display: none;' do elemento 'full-text'
+                fullTextElement.style.display = 'block';
+                
+                // Se necessário, adicione qualquer outra lógica de exibição do artigo aqui
+            }
+        });
+    </script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -429,7 +459,7 @@
   
 
  <main>
-    <section class="bloco-noticias">
+    
         
         <!--------------------------------------------->
         <!--------------------------------------------->
@@ -460,6 +490,200 @@
 
 
     <main>
+
+        <section class="bloco-noticias">
+            <article>
+                <img src="https://s2-g1.glbimg.com/fLOVg93BQlo8_5Oi4qUxJ-wMH58=/1200x/smart/filters:cover():strip_icc()/s04.video.glbimg.com/x720/12232183.jpg" alt="Horas após tremor, Japão mantém alerta de tsunami, mas reduz risco">
+                <div class="content">
+                    <h2>Horas após tremor, Japão mantém alerta de tsunami, mas reduz risco</h2>
+                    <p class="description ellipsis"></p>
+                    <p class="full-text" style="display: none;">
+                        Por g1 
+                        01/01/2024 04h19
+                        Japão emite alerta para tsunami após forte terremoto 
+                        O Japão emitiu nesta segunda-feira (1º) um alerta para risco de tsunami na costa oeste do país após uma série de terremotos atingir a região. O mais forte deles teve magnitude 7,6, segundo o serviço meteorológico japonês. 
+                        Por conta dos tremores, Rússia, Coreia do Norte e Coreia do Sul também emitiram alertas por tsunami em seus países. 
+                        
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                    01/01/2024 05h19
+                </p>
+            </article>
+        <section>
+       <!------------------------------------------------------>
+
+
+    
+    <section class="bloco-noticias">
+        <article>
+            <img src="https://s2-g1.glbimg.com/rMInOzC5qQemnJssgK23dgORIGo=/1200x/smart/filters:cover():strip_icc()/s04.video.glbimg.com/x720/12232407.jpg" alt="Emissora japonesa emite alerta a brasileiros: 'Fuja para salvar sua vida'">
+            <div class="content">
+                <h2>Emissora japonesa emite alerta a brasileiros: 'Fuja para salvar sua vida'</h2>
+                <p class="description ellipsis"></p>
+                <p class="full-text" style="display: none;">
+
+                TV japonesa alerta brasileiros sobre a possibilidade de tsunami 
+                Uma TV japonesa fez um alerta a brasileiros sobre riscos de tsunami após terremoto de 7.6. 'Fuja pela sua vida'. O anúncio da Sun Television (veja vídeo acima) é escrito em português. 
+                O governo do Japão emitiu o alerta para risco de tsunami na costa oeste do país após uma série de terremotos na região. Por conta dos tremores, Rússia, Coreia do Norte e Coreia do Sul também emitiram alertas por tsunami em seus países 
+                Segundo a rede de TV japonesa NTV, um homem morreu ao ficar preso em escombros de um prédio que desabou durante um dos tremores. 
+
+
+                </p>
+                <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+            </div>
+            <p class="paragrafo">
+                01/01/2024 01h30   
+            </p>
+        </article>
+    <section>
+
+        <!------------------------------------------------------>
+    
+    <section class="bloco-noticias">
+        <article>
+            <img src="https://s2-g1.glbimg.com/ICbdzLMRQwwpmD_VhXewVq7JYcA=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/j/A/Df5lKFSWiQJXCys80kvQ/bmw-4-mortos-balneario-camboriu.jpeg" alt="Entenda os riscos do gás que pode ter causado morte de quatro jovens em SC">
+            <div class="content">
+                <h2>Entenda os riscos do gás que pode ter causado morte de quatro jovens em SC</h2>
+                <p class="description ellipsis"></p>
+                <p class="full-text" style="display: none;">
+                    
+   
+                    Quando inalamos monóxido de carbono, o gás 'toma o lugar' do oxigênio no nosso sangue. 
+                    Isso porque as moléculas do gás se ligam mais facilmente à hemoglobina, responsável pelo transporte de oxigênio dos pulmões para o organismo. 
+                    Quadro de intoxicação começa com sintomas de cansaço e moleza e evolui para sonolência, torpor e, caso a pessoa não seja socorrida, pode evoluir para coma e morte. 
+                    BMW onde corpos foram achados em parada cardiorrespiratório em SC — Foto: Felipe Salles/NSC TV 
+                    Quatro jovens foram encontrados mortos nesta segunda-feira (1º) dentro de uma BMW, em Balneário Camboriú, no Litoral Norte de Santa Catarina. Segundo informações preliminares da polícia, uma falha mecânica na BMW/320I M Sport, fabricada em 2022, teria levado monóxido de carbono para dentro do veículo, o que pode ter causado a morte do grupo. 
+                    De acordo com o delegado Bruno Effori, as vítimas ficaram cerca de quatro horas dentro do carro ligado, com o ar-condicionado funcionando. 
+                    "Há necessidade de exames complementares, mas a perícia apontou uma perfuração no escape entre o motor e o painel do automóvel, e que teria vazado monóxido de carbono para dentro do veículo, que teria causado asfixia e parada cardiorrespiratória nos ocupantes", disse Effori. 
+ 
+                </p>
+                <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+            </div>
+            <p class="paragrafo">
+                02/01/2024 00h29
+            </p>
+        </article>
+    <section>
+   <!------------------------------------------------------>
+
+        <section class="bloco-noticias">
+            <article>
+                <img src="https://s2-g1.glbimg.com/J8fvpisQxDppR8zY-3yYUTlKlzE=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/k/B/pJdtGJTKuHojcigDirgQ/2023-04-01t175355z-944774452-rc2t50aneaob-rtrmadp-3-israel-politics-judiciary-protests.jpg" alt="Israel derruba reforma que levou milhões às ruas contra Netanyahu">
+                <div class="content">
+                    <h2>Israel derruba reforma que levou milhões às ruas contra Netanyahu</h2>
+                    <p class="description ellipsis"></p>
+                    <p class="full-text" style="display: none;">
+                       
+                        
+                        A Suprema Corte de Israel derrubou nesta segunda-feira (1º) uma polêmica reforma do primeiro-ministro do país, Benjamin Netanyahu, que tirava poder do Judiciário do país. A lei provocou uma onda de protestos sem precedentes nas principais cidades de Israel ao longo de 2023. 
+    
+                        A revolta contra a lei levou milhões de pessoas às ruas de Israel durante meses, em manifestações que só arrefeceram após o início da guerra entre Israel e Hamas, em outubro de 2023. 
+                        A reforma, aprovada em votação no Parlamento do país, enfraquecia o Supremo Tribunal Federal ao determinar que parte das decisões da Corte poderiam ser vetadas pelo Legislativo. 
+                        A nova legislação também havia retirado o poder do Supremo de anular decisões governamentais e ministeriais, concentrando mais decisões nas mãos de Netanyahu. E dava mais liberdade ao governo para nomear juízes da Suprema Corte. 
+                        Na prática, a medida também poderia livrar o premiê de três processos pelos quais ele ainda responde em seu país, por suborno, quebra de confiança e fraude. 
+                        Em um comunicado, a Suprema Corte afirmou que 8 de seus 15 juízes se manifestaram contra a medida em votação nesta segunda. Os juízes argumentaram que a lei prejudica o exercício da democracia em Israel. 
+                        O Likud, partido de Netanyahu e defensor ferrenho da medida, chamou a decisão de "infeliz" e acusou a Suprema Corte de "se opor à vontade do povo por unidade, especialmente em tempos de guerra". O ministro da Justiça, Yariv Levin, aliado de Netanyahu e arquiteto da reforma disse que a decisão prejudica "o sucesso dos nossos soldados na linha de frente”. 
+                        SANDRA COHEN: Entenda a cruzada de Netanyahu contra a Suprema Corte israelense
+                        Polêmica 
+                        O rosto dos protestos históricos de Israel 
+                        A reforma foi uma das primeiras medidas do novo governo de Netanyahu, que assumiu novamente o poder em Israel no fim de 2022 graças a uma aliança polêmica com Itamar Ben-Gvir, deputado de extrema direita com um discurso incendiário contra palestinos. 
+                        A reação de parte dos israelenses, já insatisfeitos com a aliança com a extrema direita, foi imediata, e a população foi às ruas de forma massiva por meses. 
+                        Os manifestantes argumentavam que a lei abria caminho para a corrupção e nomeações indevidas para a Suprema Corte. 
+                        Veja também
+    
+    
+    
+    
+                        Horas após tremor, Japão mantém alerta de tsunami, mas reduz risco
+                        Emissora japonesa emite alerta a brasileiros: 'Fuja para salvar sua vida' 
+    
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                    01/01/2024 21h10
+                </p>
+            </article>
+        <section>
+       <!------------------------------------------------------>
+
+        <section class="bloco-noticias">
+            <article>
+                <img src="https://s2-g1.glbimg.com/wEMZcvECS6peTa2-n3W5QrNwVko=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/7/i/AozvPpSvm4otEhF6Aj5Q/helicoptero.jpg" alt="Força Aérea busca helicóptero com 4 pessoas que desapareceu a caminho de Ilhabela">
+                <div class="content">
+                    <h2>Força Aérea busca helicóptero com 4 pessoas que desapareceu a caminho de Ilhabela</h2>
+                    <p class="description ellipsis"></p>
+                    <p class="full-text" style="display: none;">
+                         
+       
+                    Modelo do helicóptero similar ao que desapareceu no Litoral Norte de SP — Foto: Divulgação 
+                    A Força Aérea Brasileira (FAB) faz buscas por um helicóptero com quatro ocupantes que desapareceu, neste domingo (31), quando estava a caminho do Litoral Norte paulista. A aeronave saiu de São Paulo (SP) com destino a Ilhabela (SP), mas perdeu o contato com as torres de comando. 
+    
+                    De acordo com a Polícia Militar, que deu apoio nas buscas, a aeronave desaparecida saiu do aeroporto de Campo de Marte, em São Paulo, no domingo (31), por volta das 13h15, com destino a Ilhabela. 
+                    O g1 apurou com familiares que os passageiros do helicóptero são: Luciana Rodzewics, de 45 anos; a filha dela, Letícia Ayumi Rodzewics, de 20 anos; e o terceiro passageiro é o Rafael Torres, um amigo da família que fez o convite para o passeio. 
+                    Ao g1, a irmã da passageira Luciana informou que eles planejavam fazer um bate-volta para Ilhabela. Ela alega que Rafael é amigo do piloto e convidou a Luciana e a filha para esse passeio. Não era, segundo ela, um passeio contratado. A identidade do piloto não foi divulgada pela FAB. 
+                    Polícia busca por helicóptero desaparecido em São Paulo 
+                    O último contato do helicóptero com a torre de controle foi às 15h10 deste domingo, quando sobrevoava Caraguatatuba. 
+                    Horas depois, às 22h40, foi gerado um alerta para o Comando de Aviação e para o Corpo de Bombeiros, já que não havia registro de pouso da aeronave ou possibilidade de contato com o piloto. 
+                    O helicóptero que desapareceu possui o prefixo PRHDB, modelo Robson 44, e é pintado de cinza e preto. 
+                    Antes de helicoptero desaparecer, passageira enviou vídeo para namorado: 'Tempo ruim' 
+                    Antes do desaparecimento, por volta das 14h, a passageira Letícia Ayumi Rodzewics enviou um vídeo para o namorado, de dentro do helicóptero, mostrando o voo e afirmou por mensagem que o tempo estava ruim. 
+     
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                    01/01/2024 22h16 
+                </p>
+            </article>
+        <section>
+
+        <!------------------------------------------------------>
+    
+    <section class="bloco-noticias">
+        <article>
+            <img src="https://s2-g1.glbimg.com/duK5u63q8loCMrjs8YXYi6x_ON8=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/r/M/YVuCXVRPSxuEvMGsls6w/joserobertoburnier.jpg" alt="Jornalista José Roberto Burnier passa bem após sofrer infarto">
+            <div class="content">
+                <h2>Jornalista José Roberto Burnier passa bem após sofrer infarto</h2>
+                <p class="description ellipsis"></p>
+                <p class="full-text" style="display: none;">
+                    
+                    O jornalista José Roberto Burnier está internado no Hospital Sírio-Libanês, em São Paulo. Ele foi submetido a uma angioplastia na madrugada de sábado (30), depois de sofrer um infarto agudo do miocárdio. 
+                    De acordo com o boletim médico divulgado pelo hospital, Burnier tem quadro clínico estável e está internado em Unidade Coronária, sob os cuidados do médico Roberto Kalil Filho. 
+                    Em nota, a TV Globo informou que Burnier passa bem e que, durante a ausência dele, o SP2 será apresentado pelo jornalista Bruno Tavares. 
+ 
+                </p>
+                <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+            </div>
+            <p class="paragrafo">
+                01/01/2024 21h10 
+            </p>
+        </article>
+    <section>
+        <!------------------------------------------------------>
+    
+    <section class="bloco-noticias">
+        <article>
+            <img src="https://s2-g1.glbimg.com/d48AK-SHQoT301oP3taMV7KM_OI=/1200x/smart/filters:cover():strip_icc()/s04.video.glbimg.com/x720/12232107.jpg" alt="Cinco apostas dividem prêmio recorde de R$ 588,8 milhões">
+            <div class="content">
+                <h2>Cinco apostas dividem prêmio recorde de R$ 588,8 milhões</h2>
+                <p class="description ellipsis"></p>
+                <p class="full-text" style="display: none;">
+                 
+  
+                    Mega da Virada 2023: resultado do sorteio do concurso 2670; veja números sorteados 
+                    O sorteio da Mega da Virada 2023 foi realizado às 20h30 deste domingo (31), em São Paulo, com transmissão ao vivo pelo g1 (veja mais no vídeo acima). O prêmio é de 588.891.021, o maior valor da história do concurso especial. 
+ 
+                </p>
+                <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+            </div>
+            <p class="paragrafo">
+                31/12/2023 20h50
+            </p>
+        </article>
+    <section>
         <!--------------------------------------------->
         <section class="bloco-noticias">
             <article>
