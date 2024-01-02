@@ -452,7 +452,7 @@
       <a href="index.html">Home</a>
       <a href="noticias.html">Notícias</a>
       <a href="Serviços/moto-taxi.html">serviços</a>
-      <a href="comentarios/aparecer.html">serviços</a>
+      
 
       
     </nav>
@@ -467,6 +467,58 @@
 </div>
 
 <div id="search-results"></div>
+
+<!------------------------------------------------------->
+<style>
+  .mobile-only {
+    display: none;
+  }
+  .icon2 {
+    display: block;
+}
+
+  @media only screen and (max-width: 600px) {
+      .mobile-only {
+          display: block;
+      }
+      .icon2 {
+        display: none;
+    }
+  }
+
+
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      var isMobile = window.innerWidth <= 600; // Verifica se a largura da tela é menor ou igual a 600px
+
+      if (isMobile) {
+          var lojasBtn = document.getElementById("lojasBtn");
+          var icon2 = document.querySelector(".icon2");
+
+          lojasBtn.addEventListener("click", function () {
+              // Alternar a visibilidade da classe "icon2" ao clicar no botão "Lojas"
+              if (icon2.style.display === "none" || icon2.style.display === "") {
+                  icon2.style.display = "block";
+              } else {
+                  icon2.style.display = "none";
+              }
+          });
+
+          // Exibe o botão "Lojas" apenas se for um dispositivo móvel
+          lojasBtn.style.display = "block";
+      }
+  });
+</script>
+
+<button id="lojasBtn" class="mobile-only">Lojas</button>
+
+<div id="search-results">
+  <!-- Conteúdo inicial da div search-results -->
+</div>
+
+
 
   <div class="icon2">
     <div class="icon">
