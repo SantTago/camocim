@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+    <!-- Adicione os scripts do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js"></script>
+</head>
+<body>
+
+    <h2>Deixe seu comentário:</h2>
+
+    <textarea id="comentario" placeholder="Digite seu comentário aqui..." rows="4" cols="50"></textarea><br>
+
+    <button onclick="liberarComentario()">Enviar Comentário</button>
+
+    <div id="comentariosAnteriores">
+        <!-- Comentários anteriores podem ser exibidos aqui -->
+    </div>
+
+    <script>
+       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCIpOVnSGIY6kUNrRNDD7LFFre5akwt2fo",
+            authDomain: "registra-camocim.firebaseapp.com",
+            databaseURL: "https://registra-camocim-default-rtdb.firebaseio.com",
+            projectId: "registra-camocim",
+            storageBucket: "registra-camocim.appspot.com",
+            messagingSenderId: "417371027136",
+            appId: "1:417371027136:web:296cfd53dd029307e71f25",
+            measurementId: "G-DHXSTQ0XKE"
+        };
+                firebase.initializeApp(firebaseConfig);
+
+        // Referência ao nó de comentários no Firebase Realtime Database
+        const comentariosRef = firebase.database().ref('comentarios');
+
+        // Função para salvar comentários no Firebase
+        function salvarComentario(comentario) {
+            comentariosRef.push().set(comentario);
+        }
+
+        // Função para carregar e exibir comentários salvos
+        function carregarComentarios() {
+            comentariosRef.on('value', function(snapshot) {
+                var comentarios = snapshot.val();
+
+                if (comentarios) {
+                    var comentariosAnteriores = document.getElementById("comentariosAnteriores");
+                    comentariosAnteriores.innerHTML = "";
+
+                    // Itera sobre os comentários e os exibe
+                    Object.keys(comentarios).forEach(function(key) {
+                        var novoComentario = document.createElement("p");
+                        novoComentario.innerHTML = comentarios[key];
+                        comentariosAnteriores.appendChild(novoComentario);
+                    });
+                }
+            });
+        }
+
+        // Função para liberar um novo comentário
+        function liberarComentario() {
+            var comentario = document.getElementById("comentario").value;
+
+            // Verifica se o campo de comentário não está vazio
+            if (comentario.trim() !== "") {
+                salvarComentario(comentario);
+
+                // Limpa o campo de comentário após enviar
+                document.getElementById("comentario").value = "";
+            } else {
+                alert("Por favor, digite um comentário antes de enviar.");
+            }
+        }
+
+        // Carrega os comentários ao carregar a página
+        carregarComentarios();
+    </script>
+
+</body>
+</html>
