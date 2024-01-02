@@ -9,33 +9,7 @@
     <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
 
 
-    <script>
-        //oque define a hora que vai sair e  
-        //<p class="paragrafo">
-          //  31/12/2023 20h34
-        // </p>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Defina a hora em que deseja tornar o artigo público (em milissegundos desde a meia-noite)
-            var horaPublicacao = new Date('2024-01-01T12:00:00').getTime();
-            
-            // Obtenha o elemento p com a classe 'full-text'
-            var fullTextElement = document.querySelector('.full-text');
-            
-            // Obtenha o elemento article
-            var articleElement = document.querySelector('article');
-            
-            // Obtenha a hora atual
-            var horaAtual = new Date().getTime();
-            
-            // Verifique se a hora atual é posterior à hora de publicação desejada
-            if (horaAtual >= horaPublicacao) {
-                // Remova o 'display: none;' do elemento 'full-text'
-                fullTextElement.style.display = 'block';
-                
-                // Se necessário, adicione qualquer outra lógica de exibição do artigo aqui
-            }
-        });
-    </script>
+    
 
     <style>
         body {
@@ -376,7 +350,7 @@
         right: 20px;
         background-color: rgb(158, 4, 4);
         color: #fff;
-        padding: 10px;
+        padding: 14px;
         border-radius: 50%;
         cursor: pointer;
         z-index: 1000;
