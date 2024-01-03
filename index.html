@@ -224,9 +224,24 @@
           text-align: center;
           margin: -1px auto 0px auto;
           background-color: var();
-          
         }
-  
+      
+        /* Adiciona estilo para exibir os resultados da pesquisa em telas menores que 600px */
+        #search-results {
+          display: block !important;
+        }
+      
+        /* Esconde a div "icon2" em telas menores que 600px */
+        .icon2 {
+          display: none;
+        }
+      
+        /* Ajusta o estilo do botão "Lojas" em telas menores que 600px */
+        .mobile-only {
+          display: block;
+        }
+      }
+      
         #search-box {
             padding: 10px;
             font-size: 16px;
@@ -257,7 +272,7 @@
 
         
 
-    }
+    
 
     .menu{
       display: flex;
@@ -518,7 +533,7 @@
     var lojasBtn = document.getElementById("lojasBtn");
     var icon2 = document.querySelector(".icon2");
     var searchResults = document.getElementById("search-results");
-
+  
     lojasBtn.addEventListener("click", function () {
       // Alternar a visibilidade da classe "icon2" ao clicar no botão "Lojas"
       if (icon2.style.display === "none" || icon2.style.display === "") {
@@ -527,28 +542,27 @@
         icon2.style.display = "none";
       }
     });
-
+  
     function handleResize() {
       var isMobile = window.innerWidth <= 600;
-
+  
       // Exibe ou oculta o botão "Lojas" com base na largura da tela
       lojasBtn.style.display = isMobile ? "block" : "none";
-      searchResults.style.display = isMobile ? "none" : "block";
-
+  
+      // Ajusta a visibilidade dos resultados da pesquisa com base na largura da tela
+      searchResults.style.display = isMobile ? "block" : "block";
+  
       // Se a tela for maior que 600px, exibe a div "icon2"
-      if (window.innerWidth > 600) {
-        icon2.style.display = "block";
-      } else {
-        icon2.style.display = "none";
-      }
+      icon2.style.display = window.innerWidth > 600 ? "block" : "none";
     }
-
+  
     // Adiciona um ouvinte para lidar com alterações no tamanho da janela
     window.addEventListener("resize", handleResize);
-
+  
     // Inicializa o estado quando a página é carregada
     handleResize();
   });
+  
 </script>
 
 <button id="lojasBtn" class="mobile-only">Lojas</button>
