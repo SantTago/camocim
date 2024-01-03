@@ -77,6 +77,93 @@
     </nav>
   </div>
 
+
+    <!-----------------  hover do lojas-------------------------------------->
+<style>
+  .mobile-only {
+    display: none;
+    background-color: var(--cor1);
+    color: #fff;
+    /* padding-bottom: 10px; */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0px 5px 0px 0px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    box-shadow: -15px 15px 20px 18px #ffffff;
+    font-weight: 600;
+}
+
+.mobile-only:hover {  
+  box-shadow: -15px 15px 20px 18px #ffe600;
+}
+
+
+  .mobile-only {
+    display: none;
+  }
+
+  .icon2 {
+    display: none; /* Inicialmente oculta */
+  }
+
+  @media only screen and (max-width: 600px) {
+    .mobile-only {
+      display: block;
+    }
+  }
+
+  @media only screen and (min-width: 601px) {
+    .icon2 {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var lojasBtn = document.getElementById("lojasBtn");
+    var icon2 = document.querySelector(".icon2");
+    var searchResults = document.getElementById("search-results");
+
+    lojasBtn.addEventListener("click", function () {
+      // Alternar a visibilidade da classe "icon2" ao clicar no botão "Lojas"
+      if (icon2.style.display === "none" || icon2.style.display === "") {
+        icon2.style.display = "block";
+      } else {
+        icon2.style.display = "none";
+      }
+    });
+
+    function handleResize() {
+      var isMobile = window.innerWidth <= 600;
+
+      // Exibe ou oculta o botão "Lojas" com base na largura da tela
+      lojasBtn.style.display = isMobile ? "block" : "none";
+      searchResults.style.display = isMobile ? "none" : "block";
+
+      // Se a tela for maior que 600px, exibe a div "icon2"
+      if (window.innerWidth > 600) {
+        icon2.style.display = "block";
+      } else {
+        icon2.style.display = "none";
+      }
+    }
+
+    // Adiciona um ouvinte para lidar com alterações no tamanho da janela
+    window.addEventListener("resize", handleResize);
+
+    // Inicializa o estado quando a página é carregada
+    handleResize();
+  });
+</script>
+
+<button id="lojasBtn" class="mobile-only">Lojas</button>
+
+<!------------------------------------------>
+
+
+
   <div class="icon">
     <div class="hoteis-cor">
       <abbr title="Hoteis"><a href="hoteis.html"><img src="icon/hotel.png" alt="hotel"></a></abbr>   
