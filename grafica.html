@@ -226,63 +226,6 @@
 </div>
 
 
-  <div class="slideshow-container">
-    <div class="mySlides">
-      <img loading="lazy" src="grafica/grafica viana/banner/banner.jpg" alt="Imagem 1">
-    </div>
-  
-    <div class="mySlides">
-      <img loading="lazy" src="grafica/Idealize Acessórios/banner.jpg" alt="Imagem 2">
-    </div>
-  
-    
-  
-    
-  
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  
-  <!------------------------------->
-  
-  <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    autoSlide(); // Inicia o slideshow automático
-  
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-  
-    function showSlides(n) {
-      let i;
-      const slides = document.getElementsByClassName("mySlides");
-  
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-  
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-  
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-  
-      slides[slideIndex - 1].style.display = "block";
-    }
-  
-    function autoSlide() {
-      setInterval(function() {
-        plusSlides(1);
-      }, 4000); // Avança para o próximo slide a cada 2 segundos
-    }
-  </script>
-
-  </div>
-  
-  
 
 
   <div class="grafica-bloco">

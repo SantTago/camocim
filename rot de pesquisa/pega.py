@@ -1,4 +1,3 @@
-
 import os
 import requests
 from bs4 import BeautifulSoup
@@ -25,7 +24,14 @@ def obter_noticias_g1():
     # Itera sobre as manchetes e extrai informações
     for i, manchete in enumerate(manchetes):
         titulo = manchete.text.strip()
-        link = manchete['href']
+    
+        # Verifica se a tag 'a' possui o atributo 'href'
+        if 'href' in manchete.attrs:
+            link = manchete['href']
+        else:
+            # Se não tiver, pule para a próxima manchete
+            print(f"Manchete {i + 1} não possui atributo 'href'. Pulando para a próxima.")
+            continue
 
         # Faz uma nova requisição para obter o conteúdo completo da notícia
         noticia_response = requests.get(link)
@@ -72,8 +78,8 @@ if __name__ == "__main__":
     if noticias:
         salvar_noticias(noticias)
         print("Notícias salvas com sucesso na área de trabalho, dentro da pasta 'Noticias_G1'.")
-
-
+        
+        
 def gerar_html_conteudo(titulo, conteudo, imagem_url, data):
     # Substitua os espaços e caracteres especiais no título para criar um identificador único
     identificador = titulo.lower().replace(' ', '_')

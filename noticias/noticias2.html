@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        header {
+            background-color: #c00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 5px auto; 
+            background-color: #222;
+
+        }
+
+        article {
+            width: 55%;
+            margin-bottom: 20px;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: height 0.3s ease-in-out;
+            padding: 15px;
+            
+        }
+        article h1 {
+            font-family: var(--normal);
+            padding-top: 30px;
+        }
+        
+
+        article img {
+            width: 100%;
+            height: auto;
+        }
+
+        article div {
+            
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .read-more {
+            display: block;
+            color: #e60000;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .expanded {
+            max-height: none !important;
+        }
+
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /*---------------------------*/
+        .video-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+        .video-item {
+            scroll-snap-align: start;
+            width: 280px;
+            
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 476px;
+            border: none;
+            overflow: hidden;
+        }
+
+        /*--------------------------*/
+
+        .video {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Adicionado para centralizar verticalmente */
+            flex-wrap: wrap;
+            padding-bottom: 56%;
+            position: relative;
+        }
+        
+        .video > iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Alterado para 100% para ocupar a largura do contêiner pai */
+            height: 100%; /* Alterado para 100% para ocupar a altura do contêiner pai */
+            border-radius: 15px;
+        }
+        
+        /*---------------------*/
+
+        footer {
+            background-color: #e60000;
+            color: #fff;
+            text-align: center;
+            padding: 0px;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            border-bottom: 15px;
+        }
+
+
+      .mercadinho-cor{
+        width: 50px;
+        height: 50px;
+        background-color: rgb(255, 0, 0);
+        border-radius: 50px;
+        margin: 10px;
+    }
+
+      .mercadinho-cor:hover {
+        background-color: rgb(116, 0, 0);
+    }
+
+    
+
+    header > h1 {
+        text-align: center;
+        padding-top: 45px;
+        font-family: var(--destaque);
+        color: white;
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+
+    }
+    .paragrafo {
+    text-align: center;
+    }
+
+    
+    
+    .bloco-noticias {
+        display: flex;
+        justify-content: center;
+        
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content p{
+        text-align: center;
+    }
+
+    .instagram-container {
+        position: relative;
+        margin: auto;
+        max-width: 600px; /* Defina o valor máximo desejado para a largura do contêiner */
+        width: 100%;
+        padding-bottom: 75%; /* Ajuste isso conforme necessário para o aspecto desejado */
+        overflow: hidden;
+    }
+
+    .instagram-media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (max-width: 650px) {
+        article {
+            width: 100%;
+        }
+        
+        article  h2{
+            width: 100%;
+            font-size: 13px;
+        }
+        article  p{
+            width: 100%;
+            font-size: 13px;
+        }
+        .video-item {
+            width: 100%;
+        } 
+        .instagram-container {
+            padding-bottom: 180%;
+        }
+        main {
+            padding: 1em;
+        }
+
+        .store, .motel {
+            width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
+            max-width: none;
+        }
+    }
+
+    nav {
+        text-align: center;
+        background-color: #444; /* Tom mais escuro para os blocos */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        display: flex; /* Adicionado o estilo flexível */
+        justify-content: center; /* Alinha os itens horizontalmente no centro */
+        align-items: center; /* Alinha os itens verticalmente no centro */
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 10px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+        background-color: #555;
+    }
+
+
+    /* Estilo para o botão de voltar */
+    .back-button {
+        max-width: 68px;
+        display: block;
+        justify-content: center;
+        margin: 1em;
+        padding: 0.5em;
+        text-align: center;
+        text-decoration: none;
+        background-color: #970000; /* Vermelho escuro */
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Efeito de hover para o botão de voltar */
+    .back-button:hover {
+        background-color: #970000; /* Vermelho mais escuro no hover */
+    }
+
+    .voltar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Oculta a seção de Moteis inicialmente */
+    .motel {
+        display: none;
+        
+    }
+
+    /* Estilo para o menu de moteis */
+    .moteis-menu {
+        display: none;
+        position: absolute;
+        background-color: #444; /* Tom mais escuro para os blocos */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1em;
+        margin-top: 5px;
+        left: 50%; /* Posiciona o menu no centro */
+        transform: translateX(-50%); /* Corrige a posição no centro */
+    }
+
+    /* Estilo para os itens do menu de moteis */
+    .moteis-menu a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        padding: 8px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Efeito de hover para os itens do menu de moteis */
+    .moteis-menu a:hover {
+        background-color: #555;
+    }
+      
+   
+  
+    .logomarca {
+        padding: 9px;
+        padding-top: 4px;
+        max-width: 109px;
+        width: 107%;
+        text-align: center;
+        margin-bottom: -1px;
+        margin: 10px auto;
+    }
+      
+      .logomarca img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      @media only screen and (max-width: 490px) {
+        .logomarca {
+          padding: 9px;
+          max-width: 212px;
+          margin-bottom: -1px;
+          
+      }
+        .menu {
+          text-align: center;
+        }
+        header {
+          background-color: red;
+          color: #fff;
+          text-align: center;
+          padding: 10px;
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+      }
+      }
+      #floating-btn {
+        display: none;
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+        background-color: rgb(158, 4, 4);
+        color: #fff;
+        padding: 7px;
+        border-radius: 25%;
+        cursor: pointer;
+        z-index: 1000;
+        
+    }
+
+    #content {
+        padding: 20px;
+        line-height: 1.6;
+    }
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .pagination button {
+        margin: 0 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        margin-bottom: 57px;
+    }
+    .pagination button.active {
+        background-color: red;
+        color: #fff;
+    }
+        
+</style>
+</head>
+
+<body>
+    
+
+    <header>
+
+   
+
+        <div class="logomarca">
+          <img loading="lazy" src="../icon/logo da pagina.png" alt="logo da pagina">
+        </div>
+        
+      </header>
+
+  <nav>
+    <div class="voltar">
+        <a href="../index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+    </div>
+</nav>
+<!-------------------------------------
+
+<div class="instagram-container">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C1J_W21OqUu/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+</div>
+
+ 
+
+  <div class="instagram-container">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C09oAreRc8D/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+    </div>
+
+
+
+  <div class="instagram-container">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C1E4erIOS9M/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+</div>
+
+
+
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/snDCWYE3QOc?si=aMHDWYdmzL6xFOCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+ 
+     <--------------------------------------------->
+  
+
+ <main>
+    <section class="bloco-noticias">
+        
+        <!--------------------------------------------->
+        <!--------------------------------------------->
+
+        <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias G1</title>
+    <style>
+        .article {
+            margin-bottom: 20px;
+        }
+        hr {
+            border: 0.5px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    
+   
+    
+</body>
+</html>
+
+
+
+
+        <!--------------------------------------------->
+
+
+        
+    
+
+
+    <main>
+        
+       <!------------------------------------------------------>
+       
+       <!------------------------------------------------------>
+        
+        <section class="bloco-noticias">
+            <article>
+                <img loading="lazy" src="https://s2-g1.glbimg.com/CgPz6j_FGT79BZp8TezC3oPPjFE=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/M/d/byssU6RkKXYnAlo0n1UQ/ap21362853944906.jpg" alt="Irmão do rei Charles aparece em lista ligada a Jeffrey Epstein e tráfico sexual">
+                <div class="content">
+                    <h2>Irmão do rei Charles aparece em lista ligada a Jeffrey Epstein e tráfico sexual</h2>
+                    <p class="description ellipsis"></p>
+                    <p class="full-text" style="display: none;">
+         
+                        Príncipe Andrew em foto de 11 de abril de 2021 — Foto: Steve Parsons/Pool via AP, Arquivo 
+                        O príncipe Andrew, do Reino Unido, é uma das pessoas que estavam ligadas a Jeffrey Epstein, bilionário norte-americano que comandou um esquema de tráfico sexual. A informação foi revelada nesta quarta-feira (3), após uma série de documentos sobre o processo do criminoso serem tornados públicos pela Justiça dos Estados Unidos. 
+                        Epstein socializou com titãs de Wall Street, realeza e celebridades antes de se declarar culpado de solicitar prostituição a uma menor em 2008. Ele cometeu suicídio em 2019, aos 66 anos, enquanto estava preso aguardando julgamento por acusações federais de tráfico sexual. 
+                        Dezenas de mulheres acusaram Epstein de forçá-las a prestar serviços sexuais a ele e a seus convidados em sua ilha particular no Caribe e nas casas que ele possuía em Nova York, Flórida e Novo México. 
+                        Jeffrey Epstein, preso por crimes sexuais, em fotografia tirada pela Divisão criminal de justiça de Nova York — Foto: New York State Division of Criminal Justice Services/Handout/File Photo via REUTERS 
+                        Os nomes de mais de 150 pessoas mencionadas num processo movido por Virginia Giuffre, uma das mais proeminentes acusadoras de Epstein, foram mantidos sob sigilo durante anos, até que uma juiza federal decidiu no mês passado que não havia justificativa legal para mantê-los privados. 
+                        Em depoimento, Giuffre disse que fez sexo com vários políticos e líderes financeiros proeminentes, incluindo o George Mitchell, ex-senador dos EUA, e Bill Richardson, ex-governador do estado do Novo México. 
+                        Príncipe Andrew
+                        Uma das vítimas disse que o príncipe britânico Andrew colocou a mão em seu seio na casa de Epstein em Manhattan em 2001, de acordo com documentos judiciais abertos na quarta-feira. O incidente já havia sido relatado anteriormente e negado pelo irmão do rei Charles III. 
+                        O incidente, que foi relatado anteriormente e Andrew negou, estava entre os detalhes revelados em uma série de documentos previamente editados. 
+                        Andrew perdeu a maioria de seus títulos reais devido à sua associação com Epstein. Ele resolveu uma ação civil com Giuffre no ano passado por uma quantia não revelada e negou qualquer irregularidade. 
+                        Documentos revelados
+                        Os documentos revelados são parte de um processo de difamação movido por Giuffre contra Ghislaine Maxwell, ex-namorada de Epstein presa por recrutar meninas menores de idade para o esquema do bilionário. 
+                        A juíza distrital dos EUA, Loretta Preska, decidiu no mês passado que não havia justificativa legal para continuar mantendo a privacidade da maioria dos nomes no processo de Giuffre. 
+                        Ela decidiu que alguns nomes permaneceriam confidenciais, incluindo os de pessoas que eram menores de idade quando Epstein abusou delas. 
+    
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                    03/01/2024 18h54
+                </p>
+            </article>
+        <section>
+       <!------------------------------------------------------>
+        
+       
+       <!------------------------------------------------------>
+        
+        <section class="bloco-noticias">
+            <article>
+                <img loading="lazy" src="https://s2-g1.glbimg.com/VXn5u1F0iEN9PhhyguN9k_BZfL8=/1200x/smart/filters:cover():strip_icc()/s01.video.glbimg.com/x720/12224768.jpg" alt="Justiça suspende reforma trabalhista incluída em 'decretaço' de Milei">
+                <div class="content">
+                    <h2>Justiça suspende reforma trabalhista incluída em 'decretaço' de Milei</h2>
+                    <p class="description ellipsis"></p>
+                    <p class="full-text" style="display: none;">
+                         
+                        Milei manda pacote pro Congresso decretando emergência até 2025 
+                        A Justiça Trabalhista da Argentina decidiu nesta quarta-feira (3) suspender parte do "decretaço" de Javier Milei, atual presidente do país. A decisão se aplica às medidas relacionadas à reforma trabalhista proposta por Milei (veja mais abaixo). 
+    
+                        As alterações nas regras trabalhistas que Milei quer implementar foram consideradas polêmicas no país. Entre as mudanças que mais desagradaram as centrais sindicais estão o aumento do período de experiência para 8 meses, a participação em manifestações como motivo legal para demissões e mudanças no sistema de indenizações dos profissionais que saem de uma empresa. 
+                        A decisão da Justiça do Trabalho é cautelar. Há uma discussão ainda sobre qual é a instância da Justiça adequada para tratar esse tema. O que os juízes do Trabalho disseram é que, até que se resolva a questão do foro apropriado, a medida fica suspensa. 
+                        A ação foi protocolada na Justiça do Trabalho por uma central sindical argentina. 
+                        Reforma trabalhista
+                        Milei afirma que as mudanças que ele propõe para as regras trabalhistas são uma modernização. 
+                        Pela reforma, os empresários terão mais facilidade e menos custos para demitir empregados. Hoje, os empregados não podem ser demitidos por qualquer motivo e recebem indenizações quando saem da empresa. 
+                        Assim como no Brasil, também há previsão de um período de experiência de três meses. Se a empresa decidir demitir o funcionário antes dessa fase de experiência, não precisa pagar algumas indenizações. Pela proposta de Milei, esse tempo será expandido para oito meses. 
+                        Outra regra que pode ser alterada é uma multa que a empresa precisa pagar caso não cadastre corretamente o empregado. Milei quer acabar com essa multa. 
+                        "Decretaço"
+                        Anunciado em 20 de dezembro, o Decreto de Necessidade e Urgência (DNU), visa reformar ou revogar mais de 350 normas. 
+                        Entre outros pontos, o decreto desregulamenta o serviço de internet via satélite e a medicina privada, flexibiliza o mercado de trabalho e revoga uma série de leis nacionais. As medidas incluem também a conversão de diversas empresas estatais em sociedades anônimas, facilitando o processo de privatização dessas instituições. 
+                        Entre as medidas anunciadas por Milei, estão: 
+                        Revogação da Lei do Aluguel.Revogação da Lei de Abastecimento.Revogação da Lei das Gôndolas.Revogação da Lei Nacional de Compras.Revogação do Observatório de Preços do Ministério da Economia.Revogação da Lei de Promoção Industrial.Revogação da Lei de Promoção Comercial.Revogação da regulamentação que impede a privatização de empresas públicas.Revogação do regime das empresas estatais.Transformação de todas as empresas do Estado em sociedades anônimas para sua subsequente privatização.Modernização do regime de trabalho para facilitar o processo de geração de emprego.Reforma do Código Aduaneiro para facilitar o comércio internacional.Revogação da Lei de Terras.Modificação da Lei de Combate ao Fogo.Revogação das obrigações das usinas de açúcar quanto à produção.Liberação do regime jurídico aplicável ao setor vitivinícola.Revogação do sistema nacional de comércio mineiro e do Banco de Informação Mineiro.Autorização para transferência do pacote total ou parcial de ações da companhias aéreas argentinas.Implementação da política de céu aberto.Modificação do Código Civil e Comercial para reforçar o princípio da liberdade contratual entre as partes.Modificação do Código Civil e Comercial para garantir que as obrigações contratuais em moeda estrangeira sejam pagas na moeda acordada.Modificação do marco regulatório de medicamentos pré-pagos e obras sociais.Eliminação de restrições de preços na indústria pré-paga.Incorporação de empresas de medicamentos pré-pagos ao regime de obras sociais.Estabelecimento das prescrições médicas eletrônicas.Modificações ao regime das empresas farmacêuticas para promover concorrência e reduzir custos.Modificação da Lei das Sociedades por Ações para que os clubes de futebol possam se tornar corporações.Desregulamentação dos serviços de Internet via satélite.Desregulamentação do setor de turismo.Incorporação de ferramentas digitais para procedimentos de registro automotivo.
+    
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                    03/01/2024 17h50
+                </p>
+            </article>
+        <section>
+       <!------------------------------------------------------>
+        
+        
+       <!------------------------------------------------------>
+        
+        <section class="bloco-noticias">
+            <article>
+                <img loading="lazy" src="https://s2-g1.glbimg.com/xvBzC2TVXx7PhM4I4gc_g1KUe3Q=/1200x/smart/filters:cover():strip_icc()/s01.video.glbimg.com/x720/12238156.jpg" alt="VÍDEO: Helicóptero que caiu em Capitólio é retirado da água">
+                <div class="content">
+                    <h2>Helicóptero que caiu em Capitólio é retirado da água</h2>
+                    <p class="description ellipsis"></p>
+                    <p class="full-text" style="display: none;">
+                          
+                        Helicóptero que caiu em Capitólio é retirado da água e levado até rampa de marina 
+                        O helicóptero que caiu no Lago de Furnas, em Capitólio, foi retirado da água na tarde desta quarta-feira (3). Veja os vídeos acima obtidos pela TV Integração. 
+                        Nos arredores da queda, os bombeiros também encontraram o rotor de cauda da aeronave, que havia se desprendido no momento da queda. 
+                        Em nota divulgada pela assessoria, o Corpo de Bombeiros informou que foi finalizada a "reflutuação e reboque da aeronave até a rampa da Marina Escarpas". 
+                        Rotor de cauda de helicóptero que caiu em Capitólio — Foto: Corpo de Bombeiros/Divulgação 
+                        O local onde a aeronave caiu foi isolado para os trabalhos de remoção. Ainda segundo os bombeiros, os trabalhos ocorreram de "forma técnica, sem nenhum incidente de mergulho". 
+                        Os militares também contaram com o apoio de embarcação civil para levar o helicóptero até a rampa. Em seguida, um guincho foi utilizado para retirar a aeronave da rampa. 
+                        Helicóptero que caiu em Capitólio é retirado da água 
+                        Helicóptero que caiu em Capitólio é retirado da água — Foto: Corpo de Bombeiros/Divulgação 
+                        Compartilhe no WhatsAppCompartilhe no Telegram
+                        O acidente
+                        A Polícia Civil, através da 19ª Delegacia de Piumhi, informou que a aeronave decolou de um heliponto existente no Balneário Escarpas do Lago, em Capitólio. A queda ocorreu logo após a decolagem, nas proximidades de Marinas Portobello. 
+                        Helicóptero com quatro pessoas a bordo cai no Lago de Furnas em Capitólio, MG 
+                        O vídeo acima, registrado por uma câmera de segurança de um rancho no local, mostra o momento da queda às 9h03. 
+                        Queda de helicóptero em Capitólio, MG — Foto: Arte/g1 
+                        Corpo encontrado
+                        O homem que morreu foi identificado como Vanilton Alves Balieiro, de 44 anos. Ele residia em Capitólio e, segundo a Polícia Civil, foi convidado pelo piloto da aeronave para o voo. 
+                        Após buscas na água, o corpo dele foi encontrado e levado para o Posto Médico-Legal, em Passos. 
+                        De acordo com a funerária Santa Rita, o sepultamento aconteceu na tarde desta quarta-feira (3) no Cemitério Municipal de Capitólio. 
+                        Vanilton Alves Balieiro, que morreu após helicóptero cair em Capitólio — Foto: Reprodução/Redes sociais 
+                        Feridos são transferidos
+                        As três pessoas que ficaram feridas foram a passageira Julia Mendonça Silva Bernardes, de 22 anos, e o piloto Lucas Chaves Ávila, de 26 anos. Eles foram levados para a Santa Casa de Piumhi. 
+                        Julia Mendonça, posteriormente, foi transferida para Bom Despacho e já teve alta. Lucas Chaves foi transferido para a Santa Casa de Passos, onde permanece internado na UTI. A divulgação de detalhes sobre o estado de saúde dele não foi autorizada por familiares. 
+                        Já o passageiro Leonardo Resende Silva Vitorino, de 28 anos, foi levado para a Santa Casa de Passos. Posteriormente, segundo a assessoria da unidade de saúde, ele foi transferido para outra instituição em Belo Horizonte. 
+                        Ao g1, o delegado Fábio Alexandre Csiszer informou que os passageiros Julia Mendonça e Leonardo Resende tinham como destino Piumhi. De lá, iriam pegar outro voo para Bom Despacho, onde residem. 
+                        Ainda de acordo com a Polícia Civil, Julia Mendonça e Leonardo Resende foram convidados do proprietário da aeronave. Inicialmente, o Corpo de Bombeiros divulgou que a "aeronave foi fretada para este passeio e teria outras programações agendadas na sequência (não informado se seriam também na região)". 
+                        Em vídeo (veja abaixo), o delegado Fábio Alexandre Csiszer, da 19ª Delegacia de Polícia Civil de Piumhi, informou que os três feridos não correm risco de morrer. 
+                        Polícia Civil divulga informações sobre queda de helicóptero em Capitólio 
+                        A aeronave
+                        Conforme dados da Agência Nacional de Aviação Civil (ANAC), o helicóptero de matrícula PP-MMA, modelo EC 120 B, foi fabricado em 2009. A situação de aeronavegabilidade consta como normal e o Certificado de Verificação de Aeronavegabilidade (CVA) é válido até 19 de outubro de 2024. 
+                        A aeronave, que pertence a "Âncora MG Participações Societárias LTDA", pode transportar até quatro pessoas e peso máximo de decolagem de 1.715 kg. A reportagem não conseguiu contato com a empresa. 
+                        Ainda conforme os dados da ANAC, consta operação negada para táxi aéreo, o que, de acordo com a assessoria do órgão, significa que a aeronave não tem autorização específica para realizar operações da natureza táxi aéreo, não que haja alguma irregularidade no registro em si. 
+    
+                        Queda de helicóptero no Lago de Furnas, em Capitólio
+                        A investigação
+                        Na terça-feira (2), em nota, a Força Aérea Brasileira (FAB) informou que investigadores do Terceiro Serviço Regional de Investigação e Prevenção de Acidentes Aeronáuticos (SERIPA III), localizado no Rio de Janeiro, órgão regional do Centro de Investigação e Prevenção de Acidentes Aeronáuticos (Cenipa), foram acionados para realizar a Ação Inicial da ocorrência envolvendo a aeronave de matrícula PP-MMA em Capitólio (MG). 
+                        "Na Ação Inicial são utilizadas técnicas específicas, conduzidas por pessoal qualificado e credenciado, que realiza a coleta e confirmação de dados, a preservação de indícios, a verificação inicial de danos causados à aeronave, ou pela aeronave, e o levantamento de outras informações necessárias ao processo de investigação", diz a nota. 
+                        A Polícia Civil de Minas Gerais (PCMG) informou que deslocou equipe de policiais civis e a perícia oficial ao local a fim de realizar os primeiros levantamentos. Um inquérito foi instaurado para apurar as causas e circunstâncias do acidente. 
+    
+    
+    
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                    03/01/2024 16h22
+                </p>
+            </article>
+        <section>
+       <!------------------------------------------------------>
+        
+        <!--------------------------------------------->
+        <section class="bloco-noticias">
+            <article>
+                <img loading="lazy" src="12.23/03.01.2024.png" alt="acidente">
+                <div class="content">
+                    <h2>JOVEM MORRE E DOIS FICAM FERIDOS DURANTE ACIDENTE ENVOLVENDO RÊS VEÍCULOS ENTRE COREAÚ E MORAÚJO NO CEARÁ</h2>
+                    <p class="description ellipsis"></p>
+                    <p class="full-text" style="display: none;">
+                       
+                        
+                    Na noite de terça-feira, 02 de janeiro, um trágico acidente ocorreu na rodovia 364, entre as localidades de Coreaú e Moraújo, no Ceará, resultando na perda de um jovem identificado como Apollo Fontenele, morador de Moraújo. Além disso, outras duas pessoas ficaram gravemente feridas. O incidente envolveu três veículos: um caminhão com placa de Camocim, transportando frangos, uma motocicleta e um veículo de aplicativo.
+
+                    Apollo Fontenele, de 24 anos, que conduzia a motocicleta, foi a vítima fatal do acidente. Sua companheira, que estava na garupa, sofreu ferimentos graves e foi prontamente levada ao Hospital Municipal de Coreaú. O motorista do veículo de aplicativo também sofreu lesões graves e recebeu cuidados médicos no mesmo hospital.
+
+                    Autoridades da polícia rodoviária e da perícia forense foram chamadas para o local do acidente. A perícia assumiu a responsabilidade de remover o corpo da vítima e iniciar as investigações para determinar as causas do trágico incidente.
+
+                    Apollo Fontenele, reconhecido e respeitado em sua comunidade, era um jovem empreendedor. Além de desempenhar atividades como entregador, ele era proprietário de um lava-jato em Moraújo. Sua morte prematura deixou ambas as cidades enlutadas, com muitos expressando profunda tristeza e pesar pela perda.
+         
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                    03/01/2024 08h40 
+                </p>
+            </article>
+        </section>
+       
+       
+    </main>
+
+    <!-- Botão flutuante -->
+    <div id="floating-btn" onclick="scrollToTop()">
+        &#9650; <!-- Triângulo para cima (pode ser substituído por um ícone ou texto) -->
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var floatingBtn = document.getElementById('floating-btn');
+
+            // Verifica se a largura da tela é menor que 768 pixels (dispositivo móvel)
+            if (window.innerWidth < 768) {
+                // Verifica se a posição de rolagem é maior que 200 pixels do topo
+                if (window.scrollY > 200) {
+                    floatingBtn.style.display = 'block';
+                } else {
+                    floatingBtn.style.display = 'none';
+                }
+            } else {
+                floatingBtn.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+
+
+    <footer>
+        <p>&copy; 2024 Notícias.</p>
+    </footer>
+
+    <script>
+        function toggleContent(button) {
+            const content = button.parentElement;
+            const fullText = content.querySelector(".full-text");
+
+            if (content.classList.contains("expanded")) {
+                content.classList.remove("expanded");
+                fullText.style.display = "none";
+                button.innerText = "Mostrar Mais";
+            } else {
+                content.classList.add("expanded");
+                fullText.style.display = "block";
+                button.innerText = "Mostrar Menos";
+            }
+        }
+    </script>
+
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById("menu");
+          menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+          menu.style.opacity = (menu.style.opacity === "1") ? "0" : "1";
+          menu.style.transform = (menu.style.transform === "translateY(0px)") ? "translateY(-20px)" : "translateY(0px)";
+        }
+      </script>
+
+      <div class="pagination">
+        <button onclick="changePage('../noticias.html')">1</button>
+        <button onclick="changePage('noticias2.html')">2</button>
+        <button onclick="changePage('noticias1.html')">3</button>
+        
+        <!-- Adicione mais botões conforme necessário -->
+      </div>
+
+      <script>
+        function changePage(pagePath) {
+            // Lógica para redirecionar para a página com o caminho especificado
+            console.log("Redirecionando para a página: " + pagePath);
+            // Substitua essa linha com a lógica real para redirecionar para a página desejada
+            window.location.href = pagePath;
+        }
+      </script>
+</body>
+</html>
+
+
+
+
+
+
+
