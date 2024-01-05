@@ -624,10 +624,50 @@
         <abbr title="Sex Shop"><a href="sex-shop.html"><img src="icon/+18.png" alt="Sex Shop"></a></abbr>
     </div >
   </div>
+  
 
 
 
     <!------------------------------->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let slideIndexIcon2 = 1;
+        showSlidesIcon2(slideIndexIcon2);
+        autoSlideIcon2(); // Inicia o slideshow automático do segundo slideshow
+      });
+    
+      function plusSlidesIcon2(n) {
+        showSlidesIcon2(slideIndexIcon2 += n);
+      }
+    
+      function showSlidesIcon2(n) {
+        let i;
+        const slidesIcon2 = document.getElementsByClassName("icon2");
+    
+        if (n > slidesIcon2.length) {
+          slideIndexIcon2 = 1;
+        }
+    
+        if (n < 1) {
+          slideIndexIcon2 = slidesIcon2.length;
+        }
+    
+        for (i = 0; i < slidesIcon2.length; i++) {
+          slidesIcon2[i].style.display = "none";
+        }
+    
+        slidesIcon2[slideIndexIcon2 - 1].style.display = "block";
+      }
+    
+      function autoSlideIcon2() {
+        setInterval(function () {
+          plusSlidesIcon2(1);
+        }, 4000); // Avança para o próximo slide do segundo slideshow a cada 4 segundos
+      }
+    </script>
+    
+  </div>
+
     <div class="slideshow-container">
       
       <div class="mySlides">
