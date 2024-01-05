@@ -626,94 +626,70 @@
   </div>
   
 
+  <style>
+    .icon2 {
+      display: block; /* Ícone visível por padrão */
+    }
 
+    @media only screen and (max-width: 600px) {
+      .icon2 {
+        display: none; /* Oculta o ícone em telas menores que 600 pixels */
+      }
+    }
+  </style>
 
     <!------------------------------->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let slideIndexIcon2 = 1;
-        showSlidesIcon2(slideIndexIcon2);
-        autoSlideIcon2(); // Inicia o slideshow automático do segundo slideshow
-      });
     
-      function plusSlidesIcon2(n) {
-        showSlidesIcon2(slideIndexIcon2 += n);
-      }
-    
-      function showSlidesIcon2(n) {
-        let i;
-        const slidesIcon2 = document.getElementsByClassName("icon2");
-    
-        if (n > slidesIcon2.length) {
-          slideIndexIcon2 = 1;
-        }
-    
-        if (n < 1) {
-          slideIndexIcon2 = slidesIcon2.length;
-        }
-    
-        for (i = 0; i < slidesIcon2.length; i++) {
-          slidesIcon2[i].style.display = "none";
-        }
-    
-        slidesIcon2[slideIndexIcon2 - 1].style.display = "block";
-      }
-    
-      function autoSlideIcon2() {
-        setInterval(function () {
-          plusSlidesIcon2(1);
-        }, 4000); // Avança para o próximo slide do segundo slideshow a cada 4 segundos
-      }
-    </script>
+   
     
   </div>
 
     <div class="slideshow-container">
       
       <div class="mySlides">
-        <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/banner-2.png" alt="Imagem 1">
+        <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/banner-2.jpg" alt="Imagem 1">
       </div>
       
       <div class="mySlides">
-        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/banner.png" alt="Imagem 1">
+        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/banner.jpg" alt="Imagem 1">
       </div>
 
       <div class="mySlides">
-        <img loading="lazy" src="confeitaria/fabia-bolos/banner-2.png" alt="Imagem 1">
+        <img loading="lazy" src="confeitaria/fabia-bolos/banner-2.jpg" alt="Imagem 1">
       </div>
 
       <div class="mySlides">
-        <img loading="lazy" src="grafica/grafica viana/banner/banner.png" alt="Imagem 1">
+        <img loading="lazy" src="grafica/grafica viana/banner/banner.jpg" alt="Imagem 1">
       </div>
 
       <div class="mySlides">
-        <img loading="lazy" src="moda_mascolina/Mr. Famol/banner.png" alt="Imagem 7">
+        <img loading="lazy" src="moda_mascolina/Mr. Famol/banner.jpg" alt="Imagem 7">
       </div>
 
     
       <div class="mySlides">
-        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/banner.png" alt="Imagem 2">
+        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/banner.jpg" alt="Imagem 2">
       </div>
     
       <div class="mySlides">
-        <img loading="lazy" src="confeitaria/bolos da tia gleice/banner.png" alt="Imagem 3">
+        <img loading="lazy" src="confeitaria/bolos da tia gleice/banner.jpg" alt="Imagem 3">
       </div>
     
       <div class="mySlides">
-        <img loading="lazy" src="farmacia/Hiper Popular Drogarias/banner.png" alt="Imagem 4">
+        <img loading="lazy" src="farmacia/Hiper Popular Drogarias/banner.jpg" alt="Imagem 4">
       </div>
     
       <div class="mySlides">
-        <img loading="lazy" src="grafica/grafica viana/banner/banner-2.png" alt="Imagem 5">
+        <img loading="lazy" src="grafica/grafica viana/banner/banner-2.jpg" alt="Imagem 5">
       </div>
 
       <div class="mySlides">
-        <img loading="lazy" src="mercados/Teté Camocim/banner.png" alt="Imagem 6">
+        <img loading="lazy" src="mercados/Teté Camocim/banner.jpg" alt="Imagem 6">
       </div>
 
       
       <div class="mySlides">
-        <img loading="lazy" src="restaurantes/Lounge99/banner.png" alt="Imagem 8">
+        <img loading="lazy" src="restaurantes/Lounge99/banner.jpg" alt="Imagem 8">
       </div>
 
       
@@ -770,7 +746,7 @@
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
     <div class="perfil-bloco">
       <div>
-        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/banner-2.png" alt="image png">
+        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/banner-2.jpg" alt="image png">
       </div>
     </div>
     <section class="slider">
@@ -812,7 +788,7 @@
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
     <div class="perfil-bloco">
       <div>
-        <img loading="lazy" src="confeitaria/fabia-bolos/banner.png" alt="image png">
+        <img loading="lazy" src="confeitaria/fabia-bolos/banner.jpg" alt="image png">
       </div>
     </div>
     <section class="slider">
@@ -854,7 +830,7 @@
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
     <div class="perfil-bloco">
       <div>
-        <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/banner.png" alt="image png">
+        <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/banner.jpg" alt="image png">
       </div>
     </div>
     <section class="slider">
@@ -888,29 +864,34 @@
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
     <div class="perfil-bloco">
       <div>
-        <img loading="lazy" src="confeitaria/bolos da tia gleice/banner.png" alt="image png">
+        <img loading="lazy" src="confeitaria/bolos da tia gleice/banner.jpg" alt="image png">
       </div>
     </div>
     <section class="slider">
 
       <div class="product">
-        <img loading="lazy" src="confeitaria/bolos da tia gleice/001.png" alt="image png">
-    
-    
+        <img loading="lazy" src="confeitaria/bolos da tia gleice/001.png" alt="Bolo">
+        
+        
       </div>
-
+  
       <div class="product">
-        <img loading="lazy" src="confeitaria/bolos da tia gleice/002.png" alt="image png">
+        <img loading="lazy" src="confeitaria/bolos da tia gleice/002.png" alt="Bolo">
+        
+        
       </div>
-      
+  
       <div class="product">
-        <img loading="lazy" src="confeitaria/bolos da tia gleice/003.png" alt="image png">
+        <img loading="lazy" src="confeitaria/bolos da tia gleice/003.png" alt="Bolo">
+        
+        
       </div>
-    
+  
       <div class="product">
-        <img loading="lazy" src="confeitaria/bolos da tia gleice/004.png" alt="image png">
+        <img loading="lazy" src="confeitaria/bolos da tia gleice/004.png" alt="Bolo">
+        
+        
       </div>
-    
       
     </section>  
 
@@ -922,7 +903,7 @@
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
     <div class="perfil-bloco">
       <div>
-        <img loading="lazy" src="grafica/Idealize Acessórios/banner.png" alt="image png">
+        <img loading="lazy" src="grafica/Idealize Acessórios/banner.jpg" alt="image png">
       </div>
     </div>
     <section class="slider">
@@ -964,7 +945,7 @@
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
     <div class="perfil-bloco">
       <div>
-        <img loading="lazy" src="padarias/cafeteria_romeuejulieta/banner.png" alt="image png">
+        <img loading="lazy" src="padarias/cafeteria_romeuejulieta/banner.jpg" alt="image png">
       </div>
     </div>
     <section class="slider">
@@ -1007,7 +988,7 @@
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
       <div class="perfil-bloco">
         <div>
-          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/banner.png" alt="image png">
+          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/banner.jpg" alt="image png">
         </div>
       </div>
       <section class="slider">
@@ -1053,7 +1034,7 @@
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
       <div class="perfil-bloco">
         <div>
-          <img loading="lazy" src="restaurantes/Lounge99/banner-2.png" alt="image png">
+          <img loading="lazy" src="restaurantes/Lounge99/banner-2.jpg" alt="image png">
         </div>
       </div>
       <section class="slider">
@@ -1095,7 +1076,7 @@
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
     <div class="perfil-bloco">
       <div>
-        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/banner-2.png" alt="image png">
+        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/banner-2.jpg" alt="image png">
       </div>
     </div>
     <section class="slider">
