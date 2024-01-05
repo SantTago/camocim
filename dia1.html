@@ -7,8 +7,8 @@
     <title>Camocim</title>
     <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilo/style.css">
-    <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
   
     <!-- Adição de Meta Tags para SEO -->
     <meta name="description" content="Descrição da sua página para SEO">
@@ -25,8 +25,9 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #008cff;
+        background-color: #0077ff;
         box-shadow: 0px 0px 15px black;
+        
       }
       
       header {
@@ -132,7 +133,7 @@
         margin: -78px auto 0 auto;
         background-color: var(--cor6);
         padding: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        
       }
   
       #search-box {
@@ -162,18 +163,20 @@
       }
   
       #search-results {
-    padding-right: 50px;
-    text-align: end;
-    max-width: 100%;
-    margin: 0;
-    height: auto;
-    background-color: #007bff;
-    color: white;
-    display: flex;
     
-    flex-direction: column-reverse;
+      text-align: end;
+      max-width: 100%;
+      margin: 0;
+      height: auto;
+      background-color: #007bff;
+      color: white;
+      display: flex;
+     
+      flex-direction: column-reverse;
     
 }
+
+
 
 .empresas{
   text-align: center;
@@ -239,24 +242,6 @@
         }
       }
       
-      
-        /* Adiciona estilo para exibir os resultados da pesquisa em telas menores que 600px */
-        #search-results {
-          display: block !important;
-        }
-      
-        /* Esconde a div "icon2" em telas menores que 600px */
-        .icon2 {
-          display: none;
-        }
-      
-        /* Ajusta o estilo do botão "Lojas" em telas menores que 600px */
-        .mobile-only {
-          display: block;
-        }
-      
-      
-  
         #search-box {
             padding: 10px;
             font-size: 16px;
@@ -321,6 +306,7 @@
     color: #fff;
 }
 
+
 #to-top-btn, #to-news-btn {
   display: none;
   position: fixed;
@@ -349,7 +335,7 @@
   padding: 20px;
   line-height: 1.6;
 }
-      
+
   </style>
   </head>
 <body>
@@ -379,7 +365,7 @@
       { name: 'Villa Zen Hotel', page: 'img_hoteis/Villa-Zen-Hotel.html' },
 
 
-      
+      { name: 'Sonho doce’s da faby', page: 'confeitaria/fabia-bolos.html' },
       { name: 'Confeitaria rodrigues', page: 'confeitaria/confeitaria_rodrigues.html' },
       { name: 'Deju doceria', page: 'confeitaria/deju doceria.html' },
       { name: 'Fran Bolos', page: 'confeitaria/Fran Bolos.html' },
@@ -394,12 +380,11 @@
       { name: 'Wilson Construções', page: 'construçao/Wilson Construções.html' },
 
 
-      { name: 'Farmácia central', page: 'farmacia/central.html' },
+      
       { name: 'Farmácia farma vida', page: 'farmacia/farma-vida.html' },
       { name: 'Farmácia Pague Menos', page: 'farmacia/Farmácia Pague Menos.html' },
       { name: 'Farmacia Santa Branca', page: 'farmacia/Farmacia Santa Branca.html' },
       { name: 'Farmácia Hiper Popular Drogarias', page: 'farmacia/Hiper Popular Drogarias.html' },
-      { name: 'Farmácia MedFarma', page: 'farmacia/MedFarma.html' },
       { name: 'Farmácia Pague Facil', page: 'farmacia/Pague Facil.html' },
       { name: 'Farmácia Sao Francisco', page: 'farmacia/Sao Francisco.html' },
 
@@ -441,10 +426,15 @@
       { name: 'Posto Siena I', page: 'gasolina/Posto Siena I.html' },
       { name: 'Posto Rocha Comercial', page: 'gasolina/Posto Rocha Comercial.html' },
 
-      { name: 'Bradesco', page: '#' },
-      { name: 'Caixa economica', page: '#' },
-      { name: 'Banco do Brasil', page: '#' },
-      { name: 'Santander', page: '#' },
+      { name: 'Bradesco', page: 'banco/bradesco.html' },
+      { name: 'Caixa economica', page: 'banco/bradesco.html' },
+      { name: 'Banco do Brasil', page: 'banco/banco do brasil.html' },
+      { name: 'Santander', page: 'banco/santander.html' },
+
+
+      { name: 'Cafeteria Rromeu e julieta', page: 'padarias/cafeteria_romeuejulieta.html' },
+
+
     ];
 
     function searchStore() {
@@ -480,6 +470,7 @@
       <a href="index.html">Home</a>
       <a href="noticias.html">Notícias</a>
       <a href="Serviços/moto-taxi.html">serviços</a>
+      
 
       
     </nav>
@@ -575,8 +566,10 @@
 </script>
 
 <button id="lojasBtn" class="mobile-only">Lojas</button>
-<!---------------------------------------->
 
+<div id="search-results">
+  <!-- Conteúdo inicial da div search-results -->
+</div>
 
 
 
@@ -620,7 +613,7 @@
       <div class="padaria-cor">
         <abbr title="Padaria"><a href="padaria.html"><img src="icon/padaria.png" alt="sorveteria"></a></abbr>
       </div >
-
+      
       <div class="farmacia-cor">
         <abbr title="farmacias"><a href="farmacia.html"><img src="icon/farmacia.png" alt="farmacia"></a></abbr>
       </div >
@@ -631,11 +624,64 @@
         <abbr title="Sex Shop"><a href="sex-shop.html"><img src="icon/+18.png" alt="Sex Shop"></a></abbr>
     </div >
   </div>
+  
 
 
 
     <!------------------------------->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let slideIndexIcon2 = 1;
+        showSlidesIcon2(slideIndexIcon2);
+        autoSlideIcon2(); // Inicia o slideshow automático do segundo slideshow
+      });
+    
+      function plusSlidesIcon2(n) {
+        showSlidesIcon2(slideIndexIcon2 += n);
+      }
+    
+      function showSlidesIcon2(n) {
+        let i;
+        const slidesIcon2 = document.getElementsByClassName("icon2");
+    
+        if (n > slidesIcon2.length) {
+          slideIndexIcon2 = 1;
+        }
+    
+        if (n < 1) {
+          slideIndexIcon2 = slidesIcon2.length;
+        }
+    
+        for (i = 0; i < slidesIcon2.length; i++) {
+          slidesIcon2[i].style.display = "none";
+        }
+    
+        slidesIcon2[slideIndexIcon2 - 1].style.display = "block";
+      }
+    
+      function autoSlideIcon2() {
+        setInterval(function () {
+          plusSlidesIcon2(1);
+        }, 4000); // Avança para o próximo slide do segundo slideshow a cada 4 segundos
+      }
+    </script>
+    
+  </div>
+
     <div class="slideshow-container">
+      
+      <div class="mySlides">
+        <img src="img_hoteis/Pousada_Village_Sonhos_Camocim/banner-2.png" alt="Imagem 1">
+      </div>
+      
+      <div class="mySlides">
+        <img src="img_hoteis/Camozen_Resort_&_Spa/banner.png" alt="Imagem 1">
+      </div>
+
+      <div class="mySlides">
+        <img src="confeitaria/fabia-bolos/banner-2.png" alt="Imagem 1">
+      </div>
+
       <div class="mySlides">
         <img src="grafica/grafica viana/banner/banner.png" alt="Imagem 1">
       </div>
@@ -650,7 +696,7 @@
       </div>
     
       <div class="mySlides">
-        <img src="construçao/Tend Tudo Construções/banner.png" alt="Imagem 3">
+        <img src="confeitaria/bolos da tia gleice/banner.png" alt="Imagem 3">
       </div>
     
       <div class="mySlides">
@@ -715,8 +761,9 @@
 
     </div>
     <h2 class="empresas">Home</h2>
-    <!--------------------------------------------------->
+
     
+    <!--------------------------------------------------->
 
   <main>
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
