@@ -74,6 +74,14 @@
         "documentation": {}
     },
     {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
         "label": "ler_usuarios",
         "kind": 2,
         "importPath": "construçao.login.app.app",
@@ -121,82 +129,109 @@
     {
         "label": "gerar_html_conteudo",
         "kind": 2,
-        "importPath": "rot de pesquisa.gera-html",
-        "description": "rot de pesquisa.gera-html",
+        "importPath": "ferramentas.rot de pesquisa.gera-html",
+        "description": "ferramentas.rot de pesquisa.gera-html",
         "peekOfCode": "def gerar_html_conteudo(titulo, conteudo, imagem_url, data):\n    # Substitua os espaços e caracteres especiais no título para criar um identificador único\n    identificador = titulo.lower().replace(' ', '_')\n    # Monta o HTML para a notícia\n    html = f\"\"\"\n    <article id=\"{identificador}\">\n        <img src=\"{imagem_url}\" alt=\"{titulo}\">\n        <div class=\"content\">\n            <h2>{titulo}</h2>\n            <p class=\"description ellipsis\"></p>",
-        "detail": "rot de pesquisa.gera-html",
+        "detail": "ferramentas.rot de pesquisa.gera-html",
         "documentation": {}
     },
     {
         "label": "ler_arquivos_noticias",
         "kind": 2,
-        "importPath": "rot de pesquisa.gera-html",
-        "description": "rot de pesquisa.gera-html",
+        "importPath": "ferramentas.rot de pesquisa.gera-html",
+        "description": "ferramentas.rot de pesquisa.gera-html",
         "peekOfCode": "def ler_arquivos_noticias(pasta):\n    noticias = []\n    for arquivo in os.listdir(pasta):\n        if arquivo.endswith(\".txt\"):\n            path_arquivo = os.path.join(pasta, arquivo)\n            with open(path_arquivo, 'r', encoding='utf-8') as f:\n                conteudo = f.read().strip()\n                noticias.append({'titulo': os.path.splitext(arquivo)[0], 'conteudo': conteudo})\n    return noticias\ndef main():",
-        "detail": "rot de pesquisa.gera-html",
+        "detail": "ferramentas.rot de pesquisa.gera-html",
         "documentation": {}
     },
     {
         "label": "main",
         "kind": 2,
-        "importPath": "rot de pesquisa.gera-html",
-        "description": "rot de pesquisa.gera-html",
+        "importPath": "ferramentas.rot de pesquisa.gera-html",
+        "description": "ferramentas.rot de pesquisa.gera-html",
         "peekOfCode": "def main():\n    pasta_noticias = os.path.join(os.path.expanduser(\"~/Desktop\"), \"Noticias_G1\")\n    pasta_html = os.path.join(pasta_noticias, \"html\")\n    # Cria a pasta \"html\" se ela não existir\n    os.makedirs(pasta_html, exist_ok=True)\n    # Substitua pela data desejada\n    data = '10:40   31/12/2023'\n    for subpasta in os.listdir(pasta_noticias):\n        subpasta_path = os.path.join(pasta_noticias, subpasta)\n        # Verifica se é uma pasta",
-        "detail": "rot de pesquisa.gera-html",
+        "detail": "ferramentas.rot de pesquisa.gera-html",
         "documentation": {}
     },
     {
         "label": "obter_noticias_g1",
         "kind": 2,
-        "importPath": "rot de pesquisa.pega-antigo",
-        "description": "rot de pesquisa.pega-antigo",
+        "importPath": "ferramentas.rot de pesquisa.pega-antigo",
+        "description": "ferramentas.rot de pesquisa.pega-antigo",
         "peekOfCode": "def obter_noticias_g1():\n    url = 'https://g1.globo.com/'\n    # Faz a requisição HTTP para a página do G1\n    response = requests.get(url)\n    if response.status_code != 200:\n        print(f\"Erro ao acessar o site. Código de status: {response.status_code}\")\n        return None\n    # Parseia o HTML da página\n    soup = BeautifulSoup(response.text, 'html.parser')\n    # Encontra as manchetes no HTML",
-        "detail": "rot de pesquisa.pega-antigo",
+        "detail": "ferramentas.rot de pesquisa.pega-antigo",
         "documentation": {}
     },
     {
         "label": "salvar_noticias",
         "kind": 2,
-        "importPath": "rot de pesquisa.pega-antigo",
-        "description": "rot de pesquisa.pega-antigo",
+        "importPath": "ferramentas.rot de pesquisa.pega-antigo",
+        "description": "ferramentas.rot de pesquisa.pega-antigo",
         "peekOfCode": "def salvar_noticias(noticias):\n    diretorio_destino = os.path.join(os.path.expanduser(\"~/Desktop\"), \"Noticias_G1\")\n    os.makedirs(diretorio_destino, exist_ok=True)\n    for i, noticia in enumerate(noticias):\n        pasta = os.path.join(diretorio_destino, f'noticia_{i + 1}')\n        os.makedirs(pasta, exist_ok=True)\n        if noticia['titulo']:\n            with open(os.path.join(pasta, 'titulo.txt'), 'w', encoding='utf-8') as f:\n                f.write(noticia['titulo'])\n        if noticia['conteudo']:",
-        "detail": "rot de pesquisa.pega-antigo",
+        "detail": "ferramentas.rot de pesquisa.pega-antigo",
         "documentation": {}
     },
     {
         "label": "obter_noticias_g1",
         "kind": 2,
-        "importPath": "rot de pesquisa.pega",
-        "description": "rot de pesquisa.pega",
+        "importPath": "ferramentas.rot de pesquisa.pega",
+        "description": "ferramentas.rot de pesquisa.pega",
         "peekOfCode": "def obter_noticias_g1():\n    url = 'https://g1.globo.com/'\n    # Faz a requisição HTTP para a página do G1\n    response = requests.get(url)\n    if response.status_code != 200:\n        print(f\"Erro ao acessar o site. Código de status: {response.status_code}\")\n        return None\n    # Parseia o HTML da página\n    soup = BeautifulSoup(response.text, 'html.parser')\n    # Encontra as manchetes no HTML",
-        "detail": "rot de pesquisa.pega",
+        "detail": "ferramentas.rot de pesquisa.pega",
         "documentation": {}
     },
     {
         "label": "salvar_noticias",
         "kind": 2,
-        "importPath": "rot de pesquisa.pega",
-        "description": "rot de pesquisa.pega",
+        "importPath": "ferramentas.rot de pesquisa.pega",
+        "description": "ferramentas.rot de pesquisa.pega",
         "peekOfCode": "def salvar_noticias(noticias):\n    diretorio_destino = os.path.join(os.path.expanduser(\"~/Desktop\"), \"Noticias_G1\")\n    os.makedirs(diretorio_destino, exist_ok=True)\n    for i, noticia in enumerate(noticias):\n        pasta = os.path.join(diretorio_destino, f'noticia_{i + 1}')\n        os.makedirs(pasta, exist_ok=True)\n        if noticia['titulo']:\n            with open(os.path.join(pasta, 'titulo.txt'), 'w', encoding='utf-8') as f:\n                f.write(noticia['titulo'])\n        if noticia['conteudo']:",
-        "detail": "rot de pesquisa.pega",
+        "detail": "ferramentas.rot de pesquisa.pega",
         "documentation": {}
     },
     {
         "label": "gerar_html_conteudo",
         "kind": 2,
-        "importPath": "rot de pesquisa.pega",
-        "description": "rot de pesquisa.pega",
+        "importPath": "ferramentas.rot de pesquisa.pega",
+        "description": "ferramentas.rot de pesquisa.pega",
         "peekOfCode": "def gerar_html_conteudo(titulo, conteudo, imagem_url, data):\n    # Substitua os espaços e caracteres especiais no título para criar um identificador único\n    identificador = titulo.lower().replace(' ', '_')\n    # Monta o HTML para a notícia\n    html = f\"\"\"\n    <section class=\"bloco-noticias\">\n        <article>\n            <img src=\"{imagem_url}\" alt=\"{titulo}\">\n            <div class=\"content\">\n                <h2>{titulo}</h2>",
-        "detail": "rot de pesquisa.pega",
+        "detail": "ferramentas.rot de pesquisa.pega",
         "documentation": {}
     },
     {
         "label": "main",
         "kind": 2,
-        "importPath": "rot de pesquisa.pega",
-        "description": "rot de pesquisa.pega",
+        "importPath": "ferramentas.rot de pesquisa.pega",
+        "description": "ferramentas.rot de pesquisa.pega",
         "peekOfCode": "def main():\n    pasta_noticias = os.path.join(os.path.expanduser(\"~/Desktop\"), \"Noticias_G1\")\n    pasta_html = os.path.join(pasta_noticias, \"html\")\n    # Cria a pasta \"html\" se ela não existir\n    os.makedirs(pasta_html, exist_ok=True)\n    # Substitua pela data desejada\n    data = '10:40   31/12/2023'\n    # Inicia o arquivo HTML com a estrutura inicial\n    html_total = \"\"\"<!DOCTYPE html>\n<html lang=\"pt-BR\">",
-        "detail": "rot de pesquisa.pega",
+        "detail": "ferramentas.rot de pesquisa.pega",
+        "documentation": {}
+    },
+    {
+        "label": "diretorio_jpg",
+        "kind": 5,
+        "importPath": "ferramentas.conversor",
+        "description": "ferramentas.conversor",
+        "peekOfCode": "diretorio_jpg = \"C:\\\\Users\\\\mocob\\\\Documents\\\\curso\\\\camocim\\\\Serviços\\\\entregador\"\n# Caminho para o diretório de destino das imagens WebP\ndiretorio_webp = \"C:\\\\Users\\\\mocob\\\\Documents\\\\curso\\\\camocim\\\\Serviços\\\\entregador\"\n# Garanta que o diretório de destino exista\nif not os.path.exists(diretorio_webp):\n    os.makedirs(diretorio_webp)\n# Lista todos os arquivos no diretório JPEG\narquivos_jpg = [arquivo for arquivo in os.listdir(diretorio_jpg) if arquivo.lower().endswith('.jpg')]\n# Itera sobre cada arquivo JPEG\nfor arquivo_jpg in arquivos_jpg:",
+        "detail": "ferramentas.conversor",
+        "documentation": {}
+    },
+    {
+        "label": "diretorio_webp",
+        "kind": 5,
+        "importPath": "ferramentas.conversor",
+        "description": "ferramentas.conversor",
+        "peekOfCode": "diretorio_webp = \"C:\\\\Users\\\\mocob\\\\Documents\\\\curso\\\\camocim\\\\Serviços\\\\entregador\"\n# Garanta que o diretório de destino exista\nif not os.path.exists(diretorio_webp):\n    os.makedirs(diretorio_webp)\n# Lista todos os arquivos no diretório JPEG\narquivos_jpg = [arquivo for arquivo in os.listdir(diretorio_jpg) if arquivo.lower().endswith('.jpg')]\n# Itera sobre cada arquivo JPEG\nfor arquivo_jpg in arquivos_jpg:\n    caminho_jpg = os.path.join(diretorio_jpg, arquivo_jpg)\n    # Abre a imagem JPEG",
+        "detail": "ferramentas.conversor",
+        "documentation": {}
+    },
+    {
+        "label": "arquivos_jpg",
+        "kind": 5,
+        "importPath": "ferramentas.conversor",
+        "description": "ferramentas.conversor",
+        "peekOfCode": "arquivos_jpg = [arquivo for arquivo in os.listdir(diretorio_jpg) if arquivo.lower().endswith('.jpg')]\n# Itera sobre cada arquivo JPEG\nfor arquivo_jpg in arquivos_jpg:\n    caminho_jpg = os.path.join(diretorio_jpg, arquivo_jpg)\n    # Abre a imagem JPEG\n    imagem = Image.open(caminho_jpg)\n    # Gera o caminho para o arquivo WebP no diretório de destino\n    caminho_webp = os.path.join(diretorio_webp, os.path.splitext(arquivo_jpg)[0] + '.webp')\n    # Salva a imagem como WebP\n    imagem.save(caminho_webp, 'WEBP')",
+        "detail": "ferramentas.conversor",
         "documentation": {}
     }
 ]
