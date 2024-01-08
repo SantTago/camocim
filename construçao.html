@@ -79,7 +79,7 @@
 
 
 
-    <!-----------------  hover do lojas-------------------------------------->
+<!-----------------  hover do lojas-------------------------------------->
 <style>
   .mobile-only {
     display: none;
@@ -126,7 +126,7 @@
     var lojasBtn = document.getElementById("lojasBtn");
     var icon2 = document.querySelector(".icon2");
     var searchResults = document.getElementById("search-results");
-
+  
     lojasBtn.addEventListener("click", function () {
       // Alternar a visibilidade da classe "icon2" ao clicar no botão "Lojas"
       if (icon2.style.display === "none" || icon2.style.display === "") {
@@ -135,31 +135,35 @@
         icon2.style.display = "none";
       }
     });
-
+  
     function handleResize() {
       var isMobile = window.innerWidth <= 600;
-
+  
       // Exibe ou oculta o botão "Lojas" com base na largura da tela
       lojasBtn.style.display = isMobile ? "block" : "none";
-      searchResults.style.display = isMobile ? "none" : "block";
-
+  
+      // Ajusta a visibilidade dos resultados da pesquisa com base na largura da tela
+      searchResults.style.display = isMobile ? "block" : "block";
+  
       // Se a tela for maior que 600px, exibe a div "icon2"
-      if (window.innerWidth > 600) {
-        icon2.style.display = "block";
-      } else {
-        icon2.style.display = "none";
-      }
+      icon2.style.display = window.innerWidth > 600 ? "block" : "none";
     }
-
+  
     // Adiciona um ouvinte para lidar com alterações no tamanho da janela
     window.addEventListener("resize", handleResize);
-
+  
     // Inicializa o estado quando a página é carregada
     handleResize();
   });
+  
 </script>
 
 <button id="lojasBtn" class="mobile-only">Lojas</button>
+
+<div id="search-results">
+  <!-- Conteúdo inicial da div search-results -->
+</div>
+  
 
 <!------------------------------------------>
 
@@ -188,7 +192,7 @@
     <div class="grafica-cor">
       <abbr title="Graficas"><a href="grafica.html"><img src="https://i.ibb.co/YB1nkJB/grafica.png" alt="grafica"></a></abbr>
     </div >
-    <div class="construçao-cor">
+    <div class="construçao-cor1">
       <abbr title="Construção"><a href="construçao.html"><img src="https://i.ibb.co/tLM1TSm/constru-ao.png" alt="constru-ao"></a></abbr>
     </div >
     <div class="prefeitura-cor">
@@ -219,6 +223,24 @@
 
 
 
+</div>
+
+<style>
+
+  .empresas{
+    text-align: center;
+    color: #ffffff;
+    padding: 1px;
+    font-family: var(--destaque);
+    font-size: 1em;
+    background-color: var(--cor1);
+    margin: 0px auto 0px auto;
+    max-width: 100%;
+  }
+
+</style>
+
+<h2 class="empresas">Contrução</h2>
 
 <div class="construçao-bloco">
   <div>
