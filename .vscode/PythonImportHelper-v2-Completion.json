@@ -212,7 +212,7 @@
         "kind": 5,
         "importPath": "ferramentas.conversor",
         "description": "ferramentas.conversor",
-        "peekOfCode": "diretorio_jpg = \"C:\\\\Users\\\\mocob\\\\Documents\\\\curso\\\\camocim\\\\Serviços\\\\entregador\"\n# Caminho para o diretório de destino das imagens WebP\ndiretorio_webp = \"C:\\\\Users\\\\mocob\\\\Documents\\\\curso\\\\camocim\\\\Serviços\\\\entregador\"\n# Garanta que o diretório de destino exista\nif not os.path.exists(diretorio_webp):\n    os.makedirs(diretorio_webp)\n# Lista todos os arquivos no diretório JPEG\narquivos_jpg = [arquivo for arquivo in os.listdir(diretorio_jpg) if arquivo.lower().endswith('.jpg')]\n# Itera sobre cada arquivo JPEG\nfor arquivo_jpg in arquivos_jpg:",
+        "peekOfCode": "diretorio_jpg = \"C:\\\\Users\\\\mocob\\\\Desktop\\\\formatos\"\n# Caminho para o diretório de destino das imagens WebP\ndiretorio_webp = \"C:\\\\Users\\\\mocob\\\\Desktop\\\\formatos\"\n# Garanta que o diretório de destino exista\nif not os.path.exists(diretorio_webp):\n    os.makedirs(diretorio_webp)\n# Lista todos os arquivos no diretório JPEG\narquivos_jpg = [arquivo for arquivo in os.listdir(diretorio_jpg) if arquivo.lower().endswith('.jpg')]\n# Itera sobre cada arquivo JPEG\nfor arquivo_jpg in arquivos_jpg:",
         "detail": "ferramentas.conversor",
         "documentation": {}
     },
@@ -221,7 +221,7 @@
         "kind": 5,
         "importPath": "ferramentas.conversor",
         "description": "ferramentas.conversor",
-        "peekOfCode": "diretorio_webp = \"C:\\\\Users\\\\mocob\\\\Documents\\\\curso\\\\camocim\\\\Serviços\\\\entregador\"\n# Garanta que o diretório de destino exista\nif not os.path.exists(diretorio_webp):\n    os.makedirs(diretorio_webp)\n# Lista todos os arquivos no diretório JPEG\narquivos_jpg = [arquivo for arquivo in os.listdir(diretorio_jpg) if arquivo.lower().endswith('.jpg')]\n# Itera sobre cada arquivo JPEG\nfor arquivo_jpg in arquivos_jpg:\n    caminho_jpg = os.path.join(diretorio_jpg, arquivo_jpg)\n    # Abre a imagem JPEG",
+        "peekOfCode": "diretorio_webp = \"C:\\\\Users\\\\mocob\\\\Desktop\\\\formatos\"\n# Garanta que o diretório de destino exista\nif not os.path.exists(diretorio_webp):\n    os.makedirs(diretorio_webp)\n# Lista todos os arquivos no diretório JPEG\narquivos_jpg = [arquivo for arquivo in os.listdir(diretorio_jpg) if arquivo.lower().endswith('.jpg')]\n# Itera sobre cada arquivo JPEG\nfor arquivo_jpg in arquivos_jpg:\n    caminho_jpg = os.path.join(diretorio_jpg, arquivo_jpg)\n    # Abre a imagem JPEG",
         "detail": "ferramentas.conversor",
         "documentation": {}
     },

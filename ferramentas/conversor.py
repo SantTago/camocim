@@ -2,10 +2,10 @@ from PIL import Image
 import os
 
 # Caminho para o diretório das imagens JPEG
-diretorio_jpg = "C:\\Users\\mocob\\Documents\\curso\\camocim\\Serviços\\entregador"
+diretorio_jpg = "C:\\Users\\mocob\\Desktop\\formatos"
 
 # Caminho para o diretório de destino das imagens WebP
-diretorio_webp = "C:\\Users\\mocob\\Documents\\curso\\camocim\\Serviços\\entregador"
+diretorio_webp = "C:\\Users\\mocob\\Desktop\\formatos"
 
 # Garanta que o diretório de destino exista
 if not os.path.exists(diretorio_webp):
