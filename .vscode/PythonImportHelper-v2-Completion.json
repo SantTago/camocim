@@ -74,6 +74,14 @@
         "documentation": {}
     },
     {
+        "label": "VideoFileClip",
+        "importPath": "moviepy.editor",
+        "description": "moviepy.editor",
+        "isExtraImport": true,
+        "detail": "moviepy.editor",
+        "documentation": {}
+    },
+    {
         "label": "Image",
         "importPath": "PIL",
         "description": "PIL",
@@ -205,6 +213,15 @@
         "description": "ferramentas.rot de pesquisa.pega",
         "peekOfCode": "def main():\n    pasta_noticias = os.path.join(os.path.expanduser(\"~/Desktop\"), \"Noticias_G1\")\n    pasta_html = os.path.join(pasta_noticias, \"html\")\n    # Cria a pasta \"html\" se ela não existir\n    os.makedirs(pasta_html, exist_ok=True)\n    # Substitua pela data desejada\n    data = '10:40   31/12/2023'\n    # Inicia o arquivo HTML com a estrutura inicial\n    html_total = \"\"\"<!DOCTYPE html>\n<html lang=\"pt-BR\">",
         "detail": "ferramentas.rot de pesquisa.pega",
+        "documentation": {}
+    },
+    {
+        "label": "converter_mkv_para_mp4",
+        "kind": 2,
+        "importPath": "ferramentas.conversor de video",
+        "description": "ferramentas.conversor de video",
+        "peekOfCode": "def converter_mkv_para_mp4(input_file, output_file):\n    # Carregar o vídeo\n    video_clip = VideoFileClip(input_file)\n    # Salvar o vídeo no formato MP4\n    video_clip.write_videofile(output_file, codec='libx264', audio_codec='aac')\nif __name__ == \"__main__\":\n    # Substitua 'input_video.mkv' pelo caminho do seu vídeo MKV de entrada\n    input_video = 'C:\\\\Users\\\\mocob\\\\Videos\\\\Nova pasta'\n    # Substitua 'output_video.mp4' pelo nome desejado para o vídeo de saída\n    output_video = 'C:\\\\Users\\\\mocob\\\\Videos\\\\Nova pasta'",
+        "detail": "ferramentas.conversor de video",
         "documentation": {}
     },
     {
