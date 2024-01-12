@@ -7,6 +7,7 @@
     <title>Camocim</title>
     <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilo/style.css">
+    <link rel="stylesheet" href="index/IA-img.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
   
@@ -349,6 +350,66 @@
     </div>
     
   </header>
+
+    <!----------------------------------------------->
+ 
+
+    <div id="popup">
+      <img id="popup-image" alt="Imagem popup">
+      <p id="challenge">Você nunca verá essa imagem novamente no Registra Camocim!</p>
+      <div id="popup-buttons">
+        <button onclick="generateImage()">Ver Nova Imagem</button>
+        <button id="auto-mode-btn-popup" onclick="toggleAutoMode()">Auto</button>
+        <button onclick="stopAutoMode()">Stop</button>
+        <button class="close-btn" onclick="closePopup()">Fechar</button>
+      </div>
+    </div>
+    
+    <script>
+      var autoMode = false;
+      var autoInterval;
+    
+      function showPopup() {
+        var popup = document.getElementById('popup');
+        var popupImage = document.getElementById('popup-image');
+    
+        var imageUrl = 'https://picsum.photos/500/300?random=' + Math.random();
+    
+        popupImage.src = imageUrl;
+        popup.style.display = 'flex';
+      }
+    
+      function closePopup() {
+        var popup = document.getElementById('popup');
+        popup.style.display = 'none';
+        stopAutoMode();
+      }
+    
+      function generateImage() {
+        showPopup();
+      }
+    
+      function toggleAutoMode() {
+        autoMode = !autoMode;
+        var autoModeBtn = document.getElementById('auto-mode-btn-popup');
+    
+        if (autoMode) {
+          autoInterval = setInterval(generateImage, 3000);
+          autoModeBtn.classList.add('active');
+        } else {
+          clearInterval(autoInterval);
+          autoModeBtn.classList.remove('active');
+        }
+      }
+    
+      function stopAutoMode() {
+        autoMode = false;
+        clearInterval(autoInterval);
+        document.getElementById('auto-mode-btn-popup').classList.remove('active');
+      }
+    </script>
+    <!----------------------------------------------->
+
 
   <script>
     var stores = [
@@ -1113,9 +1174,7 @@
   &#9650; <!-- Triângulo para cima (pode ser substituído por um ícone ou texto) -->
 </div>
 
-<div id="to-news-btn" onclick="redirectToNews()">
-  <img loading="lazy" src="icon/noticias.png" alt="Notícias"> <!-- Substitua pelo caminho real da sua imagem -->
-</div>
+<button id="floating-button" onclick="showPopup()">IA-IMG</button>
 
 </body>
 
