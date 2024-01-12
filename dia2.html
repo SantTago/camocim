@@ -189,6 +189,7 @@
   margin: 0px auto 0px auto;
   max-width: 948px;
 }
+
 :root {
   --cor1: #042940;
   --cor2: #005C53;
@@ -337,6 +338,27 @@
   line-height: 1.6;
 }
 
+#empresas{
+  text-align: center;
+  color: #ffffff;
+  font-family: var(--destaque);
+  font-size: 13px;
+  background-color: var(--cor1);
+  margin: 0px auto 0px auto;
+  max-width: 948px;
+  margin: 10px;
+}
+#Botao {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #00425c;
+  text-decoration: none;
+}
+#Botao:hover{
+  color: #ff8800;
+}
+
   </style>
   </head>
 <body>
@@ -351,64 +373,98 @@
     
   </header>
 
-    <!----------------------------------------------->
- 
+     <!-------------------------------------------------------------------->
+  <style>
+    #popup {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #000000c2;
+      border: 1px solid #ffffff;
+      z-index: 999;
+    }
+    
+    #popup-buttons {
+      margin-top: 10px;
+    }
+    
+    .close-btn {
+      margin-left: 10px;
+    }
+  </style>
 
-    <div id="popup">
-      <img id="popup-image" alt="Imagem popup">
-      <p id="challenge">Você nunca verá essa imagem novamente no Registra Camocim!</p>
-      <div id="popup-buttons">
-        <button onclick="generateImage()">Ver Nova Imagem</button>
-        <button id="auto-mode-btn-popup" onclick="toggleAutoMode()">Auto</button>
-        <button onclick="stopAutoMode()">Stop</button>
-        <button class="close-btn" onclick="closePopup()">Fechar</button>
-      </div>
-    </div>
-    
-    <script>
-      var autoMode = false;
-      var autoInterval;
-    
-      function showPopup() {
-        var popup = document.getElementById('popup');
-        var popupImage = document.getElementById('popup-image');
-    
-        var imageUrl = 'https://picsum.photos/500/300?random=' + Math.random();
-    
-        popupImage.src = imageUrl;
-        popup.style.display = 'flex';
-      }
-    
-      function closePopup() {
-        var popup = document.getElementById('popup');
-        popup.style.display = 'none';
-        stopAutoMode();
-      }
-    
-      function generateImage() {
-        showPopup();
-      }
-    
-      function toggleAutoMode() {
-        autoMode = !autoMode;
-        var autoModeBtn = document.getElementById('auto-mode-btn-popup');
-    
-        if (autoMode) {
-          autoInterval = setInterval(generateImage, 3000);
-          autoModeBtn.classList.add('active');
-        } else {
-          clearInterval(autoInterval);
-          autoModeBtn.classList.remove('active');
-        }
-      }
-    
-      function stopAutoMode() {
-        autoMode = false;
-        clearInterval(autoInterval);
-        document.getElementById('auto-mode-btn-popup').classList.remove('active');
-      }
-    </script>
-    <!----------------------------------------------->
+
+  
+
+<div id="popup">
+  <img id="popup-image" alt="Imagem popup">
+  <p id="challenge" style="color: #ffffff;">IA-IMG -> Imagens do mundo inteiro! </p>
+  <div id="popup-buttons">
+    <button onclick="generateImage()">Ver Nova Imagem</button>
+    <button id="auto-mode-btn-popup" onclick="toggleAutoMode()">Auto</button>
+    <button onclick="stopAutoMode()">Stop</button>
+    <button class="close-btn" onclick="closePopup()">Fechar</button>
+  </div>
+</div>
+
+<script>
+  var autoMode = false;
+  var autoInterval;
+  var displayedImages = [];
+
+  function showPopup() {
+    var popup = document.getElementById('popup');
+    var popupImage = document.getElementById('popup-image');
+    var challengeText = document.getElementById('challenge');
+
+    var imageUrl;
+    do {
+      imageUrl = 'https://picsum.photos/500/300?random=' + Math.random();
+    } while (displayedImages.includes(imageUrl));
+
+    displayedImages.push(imageUrl);
+
+    popupImage.src = imageUrl;
+    challengeText.innerHTML = 'IA-IMG -> Imagens do mundo inteiro!';
+    popup.style.display = 'flex';
+  }
+
+  function closePopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
+    stopAutoMode();
+  }
+
+  function generateImage() {
+    showPopup();
+  }
+
+  function toggleAutoMode() {
+    autoMode = !autoMode;
+    var autoModeBtn = document.getElementById('auto-mode-btn-popup');
+
+    if (autoMode) {
+      autoInterval = setInterval(generateImage, 3000);
+      autoModeBtn.classList.add('active');
+    } else {
+      clearInterval(autoInterval);
+      autoModeBtn.classList.remove('active');
+    }
+  }
+
+  function stopAutoMode() {
+    autoMode = false;
+    clearInterval(autoInterval);
+    document.getElementById('auto-mode-btn-popup').classList.remove('active');
+  }
+</script>
+<!-------------------------------------------------------------------->
 
 
   <script>
