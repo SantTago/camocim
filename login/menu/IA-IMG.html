@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registra</title>
+  <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0; /* Cor de fundo do corpo */
+      font-family: 'Arial', sans-serif; /* Fonte padrão para o corpo */
+    }
+    #generator-container {
+      text-align: center;
+      color: #333;
+      margin-top: 50px; /* Adicione uma margem superior para o espaço da logo */
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+      transition: opacity 0.5s ease-in-out; /* Adiciona uma transição suave de opacidade */
+    }
+    #new-image-btn, #stop-auto-btn, #auto-mode-btn, #back-btn {
+      background-color: #87CEEB; /* Tom de azul bebê */
+      color: #fff; /* Texto branco */
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.3s ease-in-out; /* Adiciona transição suave de cor e escala */
+    }
+    #new-image-btn:hover, #stop-auto-btn:hover, #back-btn:hover {
+      background-color: aqua;
+      color: #333;
+      transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+    } 
+    #auto-mode-btn.active {
+      background-color: green; /* Cor quando o modo automático está ativado */
+    }
+    #auto-mode-btn.active:hover {
+      background-color: darkgreen; /* Cor quando o modo automático está ativado, ao passar o mouse */
+    }
+    #auto-mode-btn:hover {
+      background-color: aqua;
+      color: #333;
+      transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+    }
+  </style>
+  
+</head>
+<body>
+ 
+
+<div id="generator-container">
+  <img id="generated-image" alt="Imagem gerada" onclick="animateImage()">
+  <p id="challenge">Você nunca verá essa imagem novamente no Registra Camocim!</p>
+  <button id="new-image-btn" onclick="generateImage()">Ver Nova Imagem</button>
+  <button id="auto-mode-btn" onclick="toggleAutoMode()">Auto</button>
+  <button id="stop-auto-btn" onclick="stopAutoMode()">Stop</button>
+  <button id="back-btn" onclick="goBack()">Voltar</button>
+</div>
+
+<script>
+  var autoMode = false; // Variável para controlar o modo automático
+  var autoInterval; // Variável para armazenar o intervalo
+
+  function generateImage() {
+    var generatedImage = document.getElementById('generated-image');
+
+    // URL base da API Lorem Picsum
+    var baseUrl = 'https://picsum.photos';
+
+    // Gera uma URL de imagem aleatória
+    var imageUrl = `${baseUrl}/500/300?random=${Math.random()}`;
+
+    // Atualiza a imagem exibida
+    generatedImage.src = imageUrl;
+    // Reseta a opacidade da imagem para 1
+    generatedImage.style.opacity = 1;
+  }
+
+  function animateImage() {
+    var generatedImage = document.getElementById('generated-image');
+    // Diminui a opacidade para simular a animação de "regando"
+    generatedImage.style.opacity = 0;
+  }
+
+  function toggleAutoMode() {
+    autoMode = !autoMode; // Inverte o estado do modo automático
+
+    var autoModeBtn = document.getElementById('auto-mode-btn');
+    
+    if (autoMode) {
+      autoInterval = setInterval(generateImage, 3000); // Gera uma nova imagem a cada 3 segundos
+      autoModeBtn.classList.add('active'); // Adiciona a classe 'active' quando o modo automático está ativado
+    } else {
+      clearInterval(autoInterval); // Limpa o intervalo se o modo automático for desativado
+      autoModeBtn.classList.remove('active'); // Remove a classe 'active' quando o modo automático é desativado
+    }
+  }
+
+  function stopAutoMode() {
+    autoMode = false; // Desativa o modo automático
+    clearInterval(autoInterval); // Limpa o intervalo
+    document.getElementById('auto-mode-btn').classList.remove('active'); // Remove a classe 'active'
+  }
+
+  function goBack() {
+    window.history.back();
+  }
+
+  // Chama a função inicialmente
+  generateImage();
+</script>
+
+</body>
+</html>
