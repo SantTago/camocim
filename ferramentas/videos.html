@@ -18,15 +18,15 @@
     #top-bar {
       background-color: #333;
       color: #fff;
-      padding: 10px;
+      padding: 2px;
       text-align: center;
     }
 
     #floating-button {
-      position: fixed; /* Ajuste para posição fixa */
-      top: 20px; /* Distância do topo */
-      right: 20px; /* Distância da direita */
-      background-color: #87CEEB;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background-color: #ff000063;
       color: #fff;
       padding: 10px 20px;
       font-size: 16px;
@@ -37,8 +37,8 @@
     }
 
     #floating-button:hover {
-      background-color: aqua;
-      color: #333;
+      background-color: rgb(255, 0, 0);
+      color: #ffffff;
       transform: scale(1.1);
     }
 
@@ -55,23 +55,16 @@
       justify-content: center;
       z-index: 999;
       flex-direction: column;
-      text-align: center; /* Centraliza o conteúdo horizontalmente */
+      text-align: center;
       padding: 20px;
       border-radius: 10px;
     }
 
-    #popup img {
+    #popup iframe {
       max-width: 100%;
       max-height: 60%;
       border-radius: 10px;
       margin-bottom: 20px;
-    }
-
-    #challenge {
-      color: #fff;
-      font-size: 16px;
-      text-align: center;
-      margin: 20px;
     }
 
     #popup-buttons {
@@ -82,9 +75,9 @@
     }
 
     #popup button {
-      background-color: rgb(9, 156, 156);
+      background-color: rgba(255, 0, 0, 0.459);
       color: #000000;
-      padding: 15px;
+      padding: 5px;
       font-size: 16px;
       border: none;
       border-radius: 5px;
@@ -93,8 +86,8 @@
     }
 
     #popup button:hover {
-      background-color: aqua;
-      color: #333;
+      background-color: rgb(255, 0, 0);
+      color: #ffffff;
       transform: scale(1.1);
     }
 
@@ -105,7 +98,17 @@
     #auto-mode-btn-popup.active:hover {
       background-color: rgb(7, 216, 7);
     }
-   
+
+    #close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      color: white;
+      background: none;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -117,43 +120,62 @@
   <button id="floating-button" onclick="showPopup()">IA-IMG</button>
   
   <div id="popup">
+    <button id="close-btn" onclick="closePopup()">X</button>
+    
+    <!-- Área do vídeo -->
     <iframe id="popup-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-    <p id="challenge">Você nunca verá esse vídeo novamente no Registra Camocim!</p>
+    
     <div id="popup-buttons">
-      <button onclick="generateContent('video')">Ver Novo Vídeo</button>
-      <button onclick="generateContent('image')">Ver Nova Imagem</button>
-      <button id="auto-mode-btn-popup" onclick="toggleAutoMode()">Auto</button>
-      <button onclick="stopAutoMode()">Stop</button>
-      <button id="cor" onclick="closePopup()" style="background-color: rgb(76, 114, 0); ">Fechar</button>
+      <button onclick="previousVideo()">Voltar</button>
+      <button onclick="nextVideo()">Próximo</button>
     </div>
+    
+    <!-- Outros elementos ... -->
   </div>
   
   <script>
-    var autoMode = false;
-    var autoInterval;
-  
+    var videoLinks = [
+      'https://www.youtube.com/embed/WwNOEoWKmGs?si=uYABBTvTwr4CMHIY',
+      'https://www.youtube.com/embed/bJ0qUlZ5qOQ?si=6jRAqaRfwYzYVvIL',
+      'https://www.youtube.com/embed/_deyLu3epGU?si=GgnHILjR9mZS9CtZ',
+      'https://youtube.com/shorts/ksVrKcXcRxU?si=MjK_4ysUbjoe-LJs',
+      
+      // Adicione os links dos outros vídeos aqui
+    ]; 
+
+    var currentVideoIndex = 0; // Índice do vídeo atual
+
     function showPopup() {
       var popup = document.getElementById('popup');
       var popupVideo = document.getElementById('popup-video');
   
       // Substitua a URL do vídeo abaixo pela lógica desejada para obter o vídeo atual
-      var videoUrl = 'https://www.youtube.com/watch?v=vwKTRLS8cSA';
+      var videoUrl = videoLinks[0];
   
       popupVideo.src = videoUrl;
       popup.style.display = 'flex';
     }
-  
-    function generateContent(contentType) {
-      if (contentType === 'video') {
-        showPopup();
-      } else if (contentType === 'image') {
-        // Lógica para gerar uma nova imagem (mesma lógica que você já tinha)
-        showPopup();
-      }
+
+    function previousVideo() {
+      currentVideoIndex = (currentVideoIndex - 1 + videoLinks.length) % videoLinks.length;
+      updateVideo();
     }
-  
-    // ... (o resto do seu código JavaScript permanece o mesmo)
+
+    function nextVideo() {
+      currentVideoIndex = (currentVideoIndex + 1) % videoLinks.length;
+      updateVideo();
+    }
+
+    function updateVideo() {
+      var popupVideo = document.getElementById('popup-video');
+      popupVideo.src = videoLinks[currentVideoIndex];
+    }
+
+    function closePopup() {
+      var popup = document.getElementById('popup');
+      popup.style.display = 'none';
+    }
   </script>
   
-  </body>
-  </html>
+</body>
+</html>
