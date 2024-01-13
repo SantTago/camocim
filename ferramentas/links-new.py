@@ -17,7 +17,7 @@ def obter_links_incorporacao_ultimas_noticias(query, max_resultados, arquivo_sai
 # Substitua 'QUERY' pela consulta de pesquisa que corresponde aos vídeos desejados
 QUERY = 'últimas notícias'  # Pode ser ajustado conforme necessário
 # Substitua 'MAX_RESULTADOS' pelo número máximo de vídeos que você deseja obter
-MAX_RESULTADOS = 5
+MAX_RESULTADOS = 20
 # Nome do arquivo de saída
 ARQUIVO_SAIDA = 'links_incorporacao_noticias_youtube.txt'
 
