@@ -90,6 +90,14 @@
         "documentation": {}
     },
     {
+        "label": "VideosSearch",
+        "importPath": "youtubesearchpython",
+        "description": "youtubesearchpython",
+        "isExtraImport": true,
+        "detail": "youtubesearchpython",
+        "documentation": {}
+    },
+    {
         "label": "ler_usuarios",
         "kind": 2,
         "importPath": "construçao.login.app.app",
@@ -249,6 +257,42 @@
         "description": "ferramentas.conversor",
         "peekOfCode": "arquivos_jpg = [arquivo for arquivo in os.listdir(diretorio_jpg) if arquivo.lower().endswith('.jpg')]\n# Itera sobre cada arquivo JPEG\nfor arquivo_jpg in arquivos_jpg:\n    caminho_jpg = os.path.join(diretorio_jpg, arquivo_jpg)\n    # Abre a imagem JPEG\n    imagem = Image.open(caminho_jpg)\n    # Gera o caminho para o arquivo WebP no diretório de destino\n    caminho_webp = os.path.join(diretorio_webp, os.path.splitext(arquivo_jpg)[0] + '.webp')\n    # Salva a imagem como WebP\n    imagem.save(caminho_webp, 'WEBP')",
         "detail": "ferramentas.conversor",
+        "documentation": {}
+    },
+    {
+        "label": "obter_links_incorporacao_ultimas_noticias",
+        "kind": 2,
+        "importPath": "ferramentas.links-new",
+        "description": "ferramentas.links-new",
+        "peekOfCode": "def obter_links_incorporacao_ultimas_noticias(query, max_resultados, arquivo_saida):\n    videos_search = VideosSearch(query, limit=max_resultados)\n    results = videos_search.result()\n    # Extrai os links de incorporação dos vídeos\n    links_incorporacao = [f\"'https://www.youtube.com/embed/{video['id']}',\" for video in results['result']]\n    # Salva os links em um arquivo TXT\n    with open(arquivo_saida, 'w') as arquivo:\n        for link in links_incorporacao:\n            arquivo.write(link + '\\n')\n    print(f'Links de incorporação das últimas notícias do YouTube foram salvos em {arquivo_saida}')",
+        "detail": "ferramentas.links-new",
+        "documentation": {}
+    },
+    {
+        "label": "QUERY",
+        "kind": 5,
+        "importPath": "ferramentas.links-new",
+        "description": "ferramentas.links-new",
+        "peekOfCode": "QUERY = 'últimas notícias'  # Pode ser ajustado conforme necessário\n# Substitua 'MAX_RESULTADOS' pelo número máximo de vídeos que você deseja obter\nMAX_RESULTADOS = 5\n# Nome do arquivo de saída\nARQUIVO_SAIDA = 'links_incorporacao_noticias_youtube.txt'\nobter_links_incorporacao_ultimas_noticias(QUERY, MAX_RESULTADOS, ARQUIVO_SAIDA)",
+        "detail": "ferramentas.links-new",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_RESULTADOS",
+        "kind": 5,
+        "importPath": "ferramentas.links-new",
+        "description": "ferramentas.links-new",
+        "peekOfCode": "MAX_RESULTADOS = 5\n# Nome do arquivo de saída\nARQUIVO_SAIDA = 'links_incorporacao_noticias_youtube.txt'\nobter_links_incorporacao_ultimas_noticias(QUERY, MAX_RESULTADOS, ARQUIVO_SAIDA)",
+        "detail": "ferramentas.links-new",
+        "documentation": {}
+    },
+    {
+        "label": "ARQUIVO_SAIDA",
+        "kind": 5,
+        "importPath": "ferramentas.links-new",
+        "description": "ferramentas.links-new",
+        "peekOfCode": "ARQUIVO_SAIDA = 'links_incorporacao_noticias_youtube.txt'\nobter_links_incorporacao_ultimas_noticias(QUERY, MAX_RESULTADOS, ARQUIVO_SAIDA)",
+        "detail": "ferramentas.links-new",
         "documentation": {}
     }
 ]

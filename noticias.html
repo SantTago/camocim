@@ -380,7 +380,195 @@
 </head>
 
 <body>
+<!--------------------------------------->
+    <style>
+        body {
+          min-height: 100vh;
+          margin: 0;
+          
+        }
     
+        #top-bar {
+          background-color: #333;
+          color: #fff;
+          padding: 2px;
+          text-align: center;
+        }
+    
+        #floating-button {
+          position: fixed;
+          top: 60px;
+          right: 20px;
+          background-color: #ff000063;
+          color: #fff;
+          padding: 10px 20px;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.3s ease-in-out;
+        }
+    
+        #floating-button:hover {
+          background-color: rgb(255, 0, 0);
+          color: #ffffff;
+          transform: scale(1.1);
+        }
+    
+        #popup {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80%;
+          max-width: 600px;
+          background-color: rgba(0, 0, 0, 0.9);
+          align-items: center;
+          justify-content: center;
+          z-index: 999;
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+          border-radius: 10px;
+        }
+    
+        #popup iframe {
+          max-width: 100%;
+          max-height: 60%;
+          border-radius: 10px;
+          margin-bottom: 20px;
+        }
+    
+        #popup-buttons {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+        }
+    
+        #popup button {
+          background-color: rgba(255, 0, 0, 0.459);
+          color: #000000;
+          padding: 5px;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.3s ease-in-out;
+        }
+    
+        #popup button:hover {
+          background-color: rgb(255, 0, 0);
+          color: #ffffff;
+          transform: scale(1.1);
+        }
+    
+        #auto-mode-btn-popup.active {
+          background-color: green;
+        }
+    
+        #auto-mode-btn-popup.active:hover {
+          background-color: rgb(7, 216, 7);
+        }
+    
+        #close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 20px;
+          cursor: pointer;
+          color: white;
+          background: none;
+          border: none;
+        }
+      </style>
+    </head>
+    <body>
+    
+      <div id="top-bar">
+        <h1>Exemplo com Botão Flutuante e Janela Pop-up</h1>
+      </div>
+      
+      <button id="floating-button" onclick="showPopup()">IA</button>
+      
+      <div id="popup">
+        <button id="close-btn" onclick="closePopup()">X</button>
+        
+        <!-- Área do vídeo -->
+        <iframe id="popup-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        
+        <div id="popup-buttons">
+          <button onclick="previousVideo()">Voltar</button>
+          <button onclick="nextVideo()">Próximo</button>
+        </div>
+        
+        <!-- Outros elementos ... -->
+      </div>
+      
+      <script>
+        var videoLinks = [
+        'https://www.youtube.com/embed/lkS3H1vpTCg',
+        'https://www.youtube.com/embed/EDM3GwmHoE8',
+        'https://www.youtube.com/embed/sJVmo3v-k1g',
+        'https://www.youtube.com/embed/NYi3cJ4_8eE',
+        'https://www.youtube.com/embed/bHtW_FhQESY',
+        'https://www.youtube.com/embed/ZvhSwVjZxOI',
+        'https://www.youtube.com/embed/Q2JZjAPtXRs',
+        'https://www.youtube.com/embed/xRZiupDl8Xs',
+        'https://www.youtube.com/embed/ERSPmREOMuc',
+        'https://www.youtube.com/embed/YQckIO3-n6E',
+        'https://www.youtube.com/embed/9ymR-9T3i7w',
+        'https://www.youtube.com/embed/9Z5nn4eUT6g',
+        'https://www.youtube.com/embed/vDTnx20e7e4',
+        'https://www.youtube.com/embed/JNNloa5oNxA',
+        'https://www.youtube.com/embed/LY2XEQ_SSXA',
+        'https://www.youtube.com/embed/GcA8qoUbZQo',
+        'https://www.youtube.com/embed/q3eH26XaT1Q',
+        'https://www.youtube.com/embed/21v1Ubo7ZdY',
+        'https://www.youtube.com/embed/3dRCJQ3Mhzc',
+        'https://www.youtube.com/embed/tDY3etfo27M',
+        
+          
+          
+          // Adicione os links dos outros vídeos aqui
+        ]; 
+    
+        var currentVideoIndex = 0; // Índice do vídeo atual
+    
+        function showPopup() {
+          var popup = document.getElementById('popup');
+          var popupVideo = document.getElementById('popup-video');
+      
+          // Substitua a URL do vídeo abaixo pela lógica desejada para obter o vídeo atual
+          var videoUrl = videoLinks[0];
+      
+          popupVideo.src = videoUrl;
+          popup.style.display = 'flex';
+        }
+    
+        function previousVideo() {
+          currentVideoIndex = (currentVideoIndex - 1 + videoLinks.length) % videoLinks.length;
+          updateVideo();
+        }
+    
+        function nextVideo() {
+          currentVideoIndex = (currentVideoIndex + 1) % videoLinks.length;
+          updateVideo();
+        }
+    
+        function updateVideo() {
+          var popupVideo = document.getElementById('popup-video');
+          popupVideo.src = videoLinks[currentVideoIndex];
+        }
+    
+        function closePopup() {
+          var popup = document.getElementById('popup');
+          popup.style.display = 'none';
+        }
+      </script>
+      
+    <!--------------------------------------->
 
     <header>
 
