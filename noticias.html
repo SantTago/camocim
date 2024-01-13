@@ -1,823 +1,254 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notícias</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-            color: #fff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Notícias</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      color: #fff;
+  }
 
-        header {
-            background-color: #c00;
-            padding: 10px;
-            text-align: center;
-        }
+  header {
+      background-color: #c00;
+      padding: 10px;
+      text-align: center;
+  }
 
-        section {
-            max-width: 800px;
-            margin: 5px auto; 
-            background-color: #222;
-
-        }
-
-        article {
-            width: 55%;
-            margin-bottom: 20px;
-            background-color: #333;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: height 0.3s ease-in-out;
-            padding: 15px;
-            
-        }
-        article h1 {
-            font-family: var(--normal);
-            padding-top: 30px;
-        }
-        
-
-        article img {
-            width: 100%;
-            height: auto;
-        }
-
-        article div {
-            
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out;
-        }
-
-        .read-more {
-            display: block;
-            color: #e60000;
-            cursor: pointer;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
-        }
-
-        .expanded {
-            max-height: none !important;
-        }
-
-        .ellipsis {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        /*---------------------------*/
-        .video-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-content: space-around;
-        }
-        .video-item {
-            scroll-snap-align: start;
-            width: 280px;
-            
-        }
-
-        .video-item iframe {
-            width: 100%;
-            height: 476px;
-            border: none;
-            overflow: hidden;
-        }
-
-        /*--------------------------*/
-
-        .video {
-            display: flex;
-            justify-content: center;
-            align-items: center; /* Adicionado para centralizar verticalmente */
-            flex-wrap: wrap;
-            padding-bottom: 56%;
-            position: relative;
-        }
-        
-        .video > iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%; /* Alterado para 100% para ocupar a largura do contêiner pai */
-            height: 100%; /* Alterado para 100% para ocupar a altura do contêiner pai */
-            border-radius: 15px;
-        }
-        
-        /*---------------------*/
-
-        footer {
-            background-color: #e60000;
-            color: #fff;
-            text-align: center;
-            padding: 0px;
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
-            border-bottom: 15px;
-        }
-
-
-      .mercadinho-cor{
-        width: 50px;
-        height: 50px;
-        background-color: rgb(255, 0, 0);
-        border-radius: 50px;
-        margin: 10px;
+    #header {
+      background-color: #c00; /* Vermelho escuro */
+      color: #000; /* Preto */
+      padding: 10px;
+      text-align: center;
+      width: 100%;
     }
 
-      .mercadinho-cor:hover {
-        background-color: rgb(116, 0, 0);
+    #noticias-container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    
-
-    header > h1 {
-        text-align: center;
-        padding-top: 45px;
-        font-family: var(--destaque);
-        color: white;
-        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
-
-    }
-    .paragrafo {
-    text-align: center;
+    #ultimas-noticias {
+      width: 250px;
+      height: 70px;
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgb(255 255 255 / 30%);
+      cursor: pointer;
     }
 
-    
-    
-    .bloco-noticias {
-        display: flex;
-        justify-content: center;
-        
-        flex-direction: column;
-        align-items: center;
+   h2 {
+      text-align: center;
     }
 
-    .content p{
-        text-align: center;
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 600px;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
     }
 
-    .instagram-container {
-        position: relative;
-        margin: auto;
-        max-width: 600px; /* Defina o valor máximo desejado para a largura do contêiner */
-        width: 100%;
-        padding-bottom: 75%; /* Ajuste isso conforme necessário para o aspecto desejado */
-        overflow: hidden;
+    #popup iframe {
+      max-width: 100%;
+      max-height: 60%;
+      border-radius: 10px;
+      margin-bottom: 20px;
     }
 
-    .instagram-media {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    #popup-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
     }
 
-    @media (max-width: 650px) {
-        article {
-            width: 100%;
-        }
-        
-        article  h2{
-            width: 100%;
-            font-size: 13px;
-        }
-        article  p{
-            width: 100%;
-            font-size: 13px;
-        }
-        .video-item {
-            width: 100%;
-        } 
-        .instagram-container {
-            padding-bottom: 180%;
-        }
-        main {
-            padding: 1em;
-        }
-
-        .store, .motel {
-            width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
-            max-width: none;
-        }
+    #popup button {
+      background-color: rgba(255, 0, 0, 0.459);
+      color: #000000;
+      padding: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.3s ease-in-out;
     }
 
-    nav {
-        text-align: center;
-        background-color: #444; /* Tom mais escuro para os blocos */
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-        display: flex; /* Adicionado o estilo flexível */
-        justify-content: center; /* Alinha os itens horizontalmente no centro */
-        align-items: center; /* Alinha os itens verticalmente no centro */
+    #popup button:hover {
+      background-color: rgb(255, 0, 0);
+      color: #ffffff;
+      transform: scale(1.1);
     }
 
-    nav a {
-        text-decoration: none;
-        color: #fff;
-        margin: 0 10px;
-        padding: 8px 12px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease-in-out;
+    #close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      color: white;
+      background: none;
+      border: none;
     }
 
-    nav a:hover {
-        background-color: #555;
-    }
-
-
-    /* Estilo para o botão de voltar */
-    .back-button {
-        max-width: 68px;
-        display: block;
-        justify-content: center;
-        margin: 1em;
-        padding: 0.5em;
-        text-align: center;
-        text-decoration: none;
-        background-color: #970000; /* Vermelho escuro */
-        color: #fff;
-        border-radius: 5px;
-        transition: background-color 0.3s ease-in-out;
-    }
-
-    /* Efeito de hover para o botão de voltar */
-    .back-button:hover {
-        background-color: #970000; /* Vermelho mais escuro no hover */
-    }
-
-    .voltar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Oculta a seção de Moteis inicialmente */
-    .motel {
-        display: none;
-        
-    }
-
-    /* Estilo para o menu de moteis */
-    .moteis-menu {
-        display: none;
-        position: absolute;
-        background-color: #444; /* Tom mais escuro para os blocos */
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-        border-radius: 10px;
-        padding: 1em;
-        margin-top: 5px;
-        left: 50%; /* Posiciona o menu no centro */
-        transform: translateX(-50%); /* Corrige a posição no centro */
-    }
-
-    /* Estilo para os itens do menu de moteis */
-    .moteis-menu a {
-        display: block;
-        text-decoration: none;
-        color: #fff;
-        padding: 8px;
-        transition: background-color 0.3s ease-in-out;
-    }
-
-    /* Efeito de hover para os itens do menu de moteis */
-    .moteis-menu a:hover {
-        background-color: #555;
-    }
-      
-   
-  
     .logomarca {
-        padding: 9px;
-        padding-top: 4px;
-        max-width: 109px;
-        width: 107%;
+      background-color: #c00;
+      padding: 50px;
+      padding-top: 25px;
+      text-align: center;
+      margin-bottom: -1px;
+      
+  }
+    
+    .logomarca img {
+      max-width: 70%;
+      height: auto;
+    }
+    
+    @media only screen and (max-width: 490px) {
+      .logomarca {
+        background-color: #c00;
+        padding: 50px;
+        padding-top: 25px;
         text-align: center;
         margin-bottom: -1px;
-        margin: 10px auto;
-    }
-      
-      .logomarca img {
-        max-width: 100%;
-        height: auto;
-      }
-      
-      @media only screen and (max-width: 490px) {
-        .logomarca {
-          padding: 9px;
-          max-width: 212px;
-          margin-bottom: -1px;
-          
-      }
-        .menu {
-          text-align: center;
-        }
-        header {
-          background-color: red;
-          color: #fff;
-          text-align: center;
-          padding: 10px;
-          display: flex;
-          flex-direction: column-reverse;
-          align-items: center;
-      }
-      }
-      #floating-btn {
-        display: none;
-        position: fixed;
-        bottom: 60px;
-        right: 20px;
-        background-color: rgb(158, 4, 4);
-        color: #fff;
-        padding: 7px;
-        border-radius: 25%;
-        cursor: pointer;
-        z-index: 1000;
         
     }
+  }
 
-    #content {
-        padding: 20px;
-        line-height: 1.6;
-    }
-    
-    .pagination {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-    .pagination button {
-        margin: 0 5px;
-        padding: 8px 12px;
-        cursor: pointer;
-        border: 1px solid #ccc;
-        background-color: #f9f9f9;
-        border-radius: 5px;
-        margin-bottom: 57px;
-    }
-    .pagination button.active {
-        background-color: red;
-        color: #fff;
-    }
-        
-</style>
-</head>
-
-<body>
-<!--------------------------------------->
-    <style>
-        body {
-          min-height: 100vh;
-          margin: 0;
-          
-        }
-    
-        #top-bar {
-          background-color: #333;
-          color: #fff;
-          padding: 2px;
-          text-align: center;
-        }
-    
-        #floating-button {
-          position: fixed;
-          top: 60px;
-          right: 20px;
-          background-color: #000000;
-          color: #fff;
-          padding: 10px 20px;
-          font-size: 16px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.3s ease-in-out;
-        }
-    
-        #floating-button:hover {
-          background-color: rgb(119, 0, 0);
-          color: #ffffff;
-          transform: scale(1.1);
-        }
-    
-        #popup {
-          display: none;
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 80%;
-          max-width: 600px;
-          background-color: rgba(0, 0, 0, 0.9);
-          align-items: center;
-          justify-content: center;
-          z-index: 999;
-          flex-direction: column;
-          text-align: center;
-          padding: 20px;
-          border-radius: 10px;
-        }
-    
-        #popup iframe {
-          max-width: 100%;
-          max-height: 60%;
-          border-radius: 10px;
-          margin-bottom: 20px;
-        }
-    
-        #popup-buttons {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          justify-content: center;
-        }
-    
-        #popup button {
-          background-color: rgb(255, 0, 0);
-          color: #000000;
-          padding: 5px;
-          font-size: 16px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.3s ease-in-out;
-        }
-    
-        #popup button:hover {
-          background-color: rgb(255, 0, 0);
-          color: #ffffff;
-          transform: scale(1.1);
-        }
-    
-        #auto-mode-btn-popup.active {
-          background-color: green;
-        }
-    
-        #auto-mode-btn-popup.active:hover {
-          background-color: rgb(7, 216, 7);
-        }
-    
-        #close-btn {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          font-size: 20px;
-          cursor: pointer;
-          color: white;
-          background: none;
-          border: none;
-        }
-      </style>
-    </head>
-    <body>
-    
   
-      <button id="floating-button" onclick="showPopup()">IA-NEW</button>
-      
-      <div id="popup">
-        <button id="close-btn" onclick="closePopup()">X</button>
+.voltar > a{
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  background-color: #970000; /* Vermelho escuro */
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  }
+
+  .voltar>a:hover{
+    background-color: rgb(255, 0, 0);
+  }
+
+  </style>
+</head>
+<body>
+
+    <div class="logomarca">
+        <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
         
-        <!-- Área do vídeo -->
-        <iframe id="popup-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-        
-        <div id="popup-buttons">
-          <button onclick="previousVideo()">Voltar</button>
-          <button onclick="nextVideo()">Próximo</button>
-        </div>
-        
-        <!-- Outros elementos ... -->
-      </div>
-      
-      <script>
-        var videoLinks = [
-        'https://www.youtube.com/embed/q3eH26XaT1Q',
-        'https://www.youtube.com/embed/lkS3H1vpTCg',
-        'https://www.youtube.com/embed/4Rr2YNj4EmE',
-        'https://www.youtube.com/embed/dJR9rXIPcac',
-        'https://www.youtube.com/embed/uGwmsFrhCgQ',
-        'https://www.youtube.com/embed/Xoshe_9YUWY',
-        'https://www.youtube.com/embed/vD6CcDzKmcs',
-        'https://www.youtube.com/embed/618vtdmZVO0',
-        'https://www.youtube.com/embed/tDY3etfo27M',
-        'https://www.youtube.com/embed/fZF-X3YUBJ0',
-        'https://www.youtube.com/embed/kKtVSxfBg6A',
-        'https://www.youtube.com/embed/37njlfQmXPc',
-        'https://www.youtube.com/embed/3dRCJQ3Mhzc',
-        'https://www.youtube.com/embed/bHtW_FhQESY',
-        'https://www.youtube.com/embed/6mmyC5cSoJE',
-        'https://www.youtube.com/embed/21v1Ubo7ZdY',
-        'https://www.youtube.com/embed/B-FYSlM6G0c',
-        'https://www.youtube.com/embed/u9IUfYASUCo',
-        'https://www.youtube.com/embed/wtOdQOI9FRY',
-        'https://www.youtube.com/embed/hBGt_k8YElc',
-
-          
-          
-          // Adicione os links dos outros vídeos aqui
-        ]; 
+    </div>
     
-        var currentVideoIndex = 0; // Índice do vídeo atual
-    
-        function showPopup() {
-          var popup = document.getElementById('popup');
-          var popupVideo = document.getElementById('popup-video');
-      
-          // Substitua a URL do vídeo abaixo pela lógica desejada para obter o vídeo atual
-          var videoUrl = videoLinks[0];
-      
-          popupVideo.src = videoUrl;
-          popup.style.display = 'flex';
-        }
-    
-        function previousVideo() {
-          currentVideoIndex = (currentVideoIndex - 1 + videoLinks.length) % videoLinks.length;
-          updateVideo();
-        }
-    
-        function nextVideo() {
-          currentVideoIndex = (currentVideoIndex + 1) % videoLinks.length;
-          updateVideo();
-        }
-    
-        function updateVideo() {
-          var popupVideo = document.getElementById('popup-video');
-          popupVideo.src = videoLinks[currentVideoIndex];
-        }
-    
-        function closePopup() {
-          var popup = document.getElementById('popup');
-          popup.style.display = 'none';
-        }
-      </script>
-      
-    <!--------------------------------------->
-
-    <header>
-
-   
-
-        <div class="logomarca">
-            <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
-        </div>
-        
-      </header>
-
+  </header>
+  
   <nav>
-    <div class="voltar">
-        <a href="index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+  <div class="voltar">
+    <a href="index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+  </div>
+  </nav>
+
+  <!-- Div de notícias -->
+  <div id="noticias-container">
+    <div id="ultimas-noticias" onclick="showPopup()">
+      <h2>Últimas Notícias</h2>
     </div>
-</nav>
-<!-------------------------------------
+  </div>
 
-<div class="instagram-container">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C1J_W21OqUu/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
-    <script async src="https://www.instagram.com/embed.js"></script>
-</div>
-
- 
-
-  <div class="instagram-container">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C09oAreRc8D/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
-    <script async src="https://www.instagram.com/embed.js"></script>
+  <!-- Janela Pop-up -->
+  <div id="popup">
+    <button id="close-btn" onclick="closePopup()">X</button>
+    
+    <!-- Área do vídeo -->
+    <iframe id="popup-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+    
+    <div id="popup-buttons">
+      <button onclick="previousVideo()">Voltar</button>
+      <button onclick="nextVideo()">Próximo</button>
     </div>
+    
+    <!-- Outros elementos ... -->
+  </div>
 
+  <script>
+    var videoLinks = [
+    'https://www.youtube.com/embed/EDM3GwmHoE8',
+    'https://www.youtube.com/embed/DEfN3ETRcwU',
+    'https://www.youtube.com/embed/4Rr2YNj4EmE',
+    'https://www.youtube.com/embed/Xoshe_9YUWY',
+    'https://www.youtube.com/embed/q3eH26XaT1Q',
+    'https://www.youtube.com/embed/lkS3H1vpTCg',
+    'https://www.youtube.com/embed/dJR9rXIPcac',
+    'https://www.youtube.com/embed/tDY3etfo27M',
+    'https://www.youtube.com/embed/618vtdmZVO0',
+    'https://www.youtube.com/embed/dNl8LmnEtR8',
+    'https://www.youtube.com/embed/joy4rbYNIv0',
+    'https://www.youtube.com/embed/tBbcf6DWucY',
+    'https://www.youtube.com/embed/6mmyC5cSoJE',
+    'https://www.youtube.com/embed/yfg55TkTE1g',
+    'https://www.youtube.com/embed/vD6CcDzKmcs',
+    'https://www.youtube.com/embed/IoJ4TB_uaGA',
+    'https://www.youtube.com/embed/SjE5wsknI24',
+    'https://www.youtube.com/embed/sh-8EEeKNEc',
+    'https://www.youtube.com/embed/C_Lvl_6qeus',
+    'https://www.youtube.com/embed/6VAO355Tlvw',
+    
+      
+      // Adicione os links dos outros vídeos aqui
+    ]; 
 
+    var currentVideoIndex = 0; // Índice do vídeo atual
 
-  <div class="instagram-container">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C1E4erIOS9M/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
-    <script async src="https://www.instagram.com/embed.js"></script>
-</div>
-
-
-
-    <div class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/snDCWYE3QOc?si=aMHDWYdmzL6xFOCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
- 
-     <--------------------------------------------->
+    function showPopup() {
+      var popup = document.getElementById('popup');
+      var popupVideo = document.getElementById('popup-video');
   
+      // Substitua a URL do vídeo abaixo pela lógica desejada para obter o vídeo atual
+      var videoUrl = videoLinks[currentVideoIndex];
+  
+      popupVideo.src = videoUrl;
+      popup.style.display = 'flex';
+    }
 
- <main>
-    <section class="bloco-noticias">
-        
-        <!--------------------------------------------->
-        <!--------------------------------------------->
+    function previousVideo() {
+      currentVideoIndex = (currentVideoIndex - 1 + videoLinks.length) % videoLinks.length;
+      updateVideo();
+    }
 
-        <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notícias G1</title>
-    <style>
-        .article {
-            margin-bottom: 20px;
-        }
-        hr {
-            border: 0.5px solid #ccc;
-        }
-    </style>
-</head>
-<body>
+    function nextVideo() {
+      currentVideoIndex = (currentVideoIndex + 1) % videoLinks.length;
+      updateVideo();
+    }
 
-    
-   
-    
+    function updateVideo() {
+      var popupVideo = document.getElementById('popup-video');
+      popupVideo.src = videoLinks[currentVideoIndex];
+    }
+
+    function closePopup() {
+      var popup = document.getElementById('popup');
+      popup.style.display = 'none';
+    }
+  </script>
+  
 </body>
 </html>
-
-
-
-
-        <!--------------------------------------------->
-
-
-        
-    
-
-
-    <main>
-
-
-
-         <!------------------------------------------------------>
-    
-    <section class="bloco-noticias">
-        <article>
-            <img src="https://s2-g1.glbimg.com/Xu6L2UbIhwjjg-nxH5b8HZFFAO8=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/K/A/EQtmnETNAzfo67WGtZaA/2023-07-05t110211z-1752146069-rc22vy962yry-rtrmadp-3-climate-change-deforestation-companies.jpg" alt="Desmatamento cai pela metade na Amazônia e sobe 43% no Cerrado">
-            <div class="content">
-                <h2>Desmatamento cai pela metade na Amazônia e sobe 43% no Cerrado</h2>
-                <p class="description ellipsis"></p>
-                <p class="full-text" style="display: none;">
-                  
-   
-                Foto aérea mostra uma área desmatada durante uma operação de combate ao desmatamento perto de Uruara, Estado do Pará, em 21 de janeiro de 2023. — Foto: Reprodução/Reuters 
-                O acumulado de alertas de desmatamento na Amazônia Legal caiu pela metade no primeiro ano do terceiro mandato do presidente Lula — o melhor índice desde 2018. Já o Cerrado registrou um aumento de 43% em 2023, atingindo o maior índice da série histórica do Deter no bioma. 
-                Os índices levam em conta o chamado ano civil, ou seja, o período total de janeiro a dezembro, e foram divulgados pelo Instituto Nacional de Pesquisas Espaciais (Inpe) nesta sexta-feira (5). 
-                Queda na Amazônia
-                No ano passado, a área com alertas na Amazônia Legal foi de 5.152 km² (os dados divulgados vão até 29 de dezembro de 2023). A queda veio depois de anos de alta no desmate, que bateu seu recorde em 2022, com 10.278 km² (veja no gráfico abaixo). 
-                A Amazônia Legal é uma região que corresponde a 59% do território brasileiro e que engloba a área de 9 estados – Acre, Amapá, Amazonas, Mato Grosso, Pará, Rondônia, Roraima, Tocantins e uma parte do Maranhão. 
-                Pará liderou a lista dos estados com mais desmate em 2023. Segundo o Deter, foram quase 2 mil km² (1.903 km²). Mato Grosso veio na sequência, com 1.408 km², e Amazonas com 894 km². Os três também são os líderes da série histórica. 
-                Para Suely Araújo, coordenadora de políticas públicas do Observatório do Clima, o desmatamento na Amazônia caiu sobretudo pela intensificação do trabalho do Ibama. 
-                "Aumentou bastante o número de operações, de campo e remotas, assim como as multas aplicadas e a apreensão de instrumentos e produtos do crime ambiental. O desafio agora é aplicar o PPCDAm em sua integralidade, reforçando a correta destinação das florestas públicas e o fomento a atividades produtivas sustentáveis", diz a coordenadora de políticas públicas do OC. 
-                Números do Prodes, o relatório anual do Projeto de Monitoramento do Desmatamento na Amazônia Legal por Satélite, considerado o mais preciso para medir as taxas anuais, já apontavam essa queda em 2023. O documento divulgado em novembro do ano passado apontou uma redução de 2.593 km² na taxa (22%) entre agosto de 2022 e julho de 2023 (período chamado de ano referência), a menor para uma temporada do Prodes desde 2019. 
-                Por que o desmatamento cai na Amazônia e cresce no Cerrado?Governo federal anuncia plano de preservação do Cerrado
-                Recorde no Cerrado
-                O Cerrado vem registrando alta no desmate desde 2020. Em 2023, a área sob alerta foi de 7.828 km² — a maior desde o começo das medições do Deter no segundo maior bioma do país (veja no gráfico abaixo). 
-                Segundo o Inpe, Maranhão foi o estado que teve a maior área de vegetação nativa suprimida (1.765 km²), seguido por Bahia (1.727 km²), Tocantins (1.604 km²) e Piauí (824 km²). 
-                A manutenção do Cerrado é condição para a distribuição da água pelo Brasil. O bioma, por ter o solo mais alto, absorve a umidade e leva água para 8 das 12 bacias importantes para o consumo de água e geração de energia no país. 
-                Suely Araújo lembra que o desmatamento no bioma é lastreado em autorizações dos órgãos ambientais estaduais. 
-                "Os entes subnacionais não estão tendo a atenção necessária para a proteção do Cerrado, estão flexibilizando essas autorizações. O ministério terá de trabalhar muito essa interação federativa", completa. 
-                Em novembro, o Inpe divulgou o balanço do projeto Prodes Cerrado, que apontou um aumento de 3% no desmatamento em 2023. Entre agosto de 2022 e julho de 2023, o bioma perdeu 11.011 km² de vegetação nativa. 
-                Deter x Prodes
-                Os alertas de desmatamento foram feitos pelo Sistema de Detecção de Desmatamento em Tempo Real (Deter), do Inpe, que produz sinais diários de alteração na cobertura florestal para áreas maiores que 3 hectares (0,03 km²), tanto para áreas totalmente desmatadas como para aquelas em processo de degradação florestal (exploração de madeira, mineração, queimadas e outras). 
-                O Deter não é o dado oficial de desmatamento, mas alerta sobre onde o problema está acontecendo. O Projeto de Monitoramento do Desmatamento na Amazônia Legal por Satélite (Prodes) é considerado o sistema mais preciso para medir as taxas anuais. 
-                Ferramenta que monitora desmatamento começa a apoiar o Ibama em operações no Pantanal 
-
-                </p>
-                <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
-            </div>
-            <p class="paragrafo">
-                05/01/2024 20h04 
-            </p>
-        </article>
-    <section>
-   <!------------------------------------------------------>
-        
-       <!------------------------------------------------------>
-        
-        <section class="bloco-noticias">
-            <article>
-                <img loading="lazy" src="https://s2-g1.glbimg.com/AvlqnHGVbq9R7ODTaYtiWbVG9do=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/K/M/nCv83mQ1KgbAUKRfrA6w/agf20230426332.jpg" alt="Justiça da Suíça anula condenação de Cuca por estupro">
-                <div class="content">
-                    <h2>Justiça da Suíça anula condenação de Cuca por estupro</h2>
-                    <p class="description ellipsis"></p>
-                    <p class="full-text" style="display: none;">
-                          
-                        Justiça da Suíça anula condenação de Cuca por estupro — Foto: ETTORE CHIEREGUINI/AGIF - AGÊNCIA DE FOTOGRAFIA/AGIF - AGÊNCIA DE FOTOGRAFIA/ESTADÃO CONTEÚDO 
-                        O Tribunal Regional de Berna-Mittelland, na Suíça, anulou a sentença que condenou o técnico de futebol Alexi Stival, Cuca, por estuprar uma menor de idade durante uma excursão do Grêmio ao país europeu em 1987. 
-                        Além dele, outros dois homens, que na época também jogavam no time, foram condenados. Um quarto jogador foi absolvido dessa acusação, mas foi condenado por coação, por ter participado do crime. Leia mais a seguir. 
-                        A decisão foi tomada após a Justiça suíça receber um pedido de novo julgamento, solicitado pela defesa do esportista curitibano em maio de 2023. Com isso, o caso foi reaberto e anulado em função de irregularidades identificadas no processo de 1989. 
-    
-                        A anulação determinou que poderia ter um novo julgamento, porém, o Ministério Público suíço considerou que isso não seria possível uma vez que o crime prescreveu. O órgão sugeriu então a anulação da pena e extinção do processo. 
-                        Dessa forma, a anulação não ocorreu no mérito da inocência ou culpa de Cuca. A defesa alega que reuniu elementos para sustentar que ele não cometeu o crime, mas a decisão focou apenas na irregularidade do julgamento. 
-                        Além da decisão pela anulação e pela prescrição, a juíza responsável ainda determinou uma indenização a Cuca em 13.000 francos suíços, cerca de R$ 75 mil na cotação de hoje. 
-                        Técnico diz estar aliviado
-                        A anulação é recebida com alívio pelo Cuca. 
-                        "Hoje eu entendo que deveria ter tratado desse assunto antes. Estou aliviado com o resultado e convicto de que os últimos 8 meses, mesmo tendo sido emocionalmente difíceis, aconteceram no tempo certo e de Deus", desabafou. 
-                        Cuca foi contratado pelo Corinthians em 21 de abril de 2023 e pediu demissão do cargo sete dias depois, por conta da repercussão do crime. 
-                        Até antes do anúncio oficial da contratação, o Corinthians conviveu com protestos contra o técnico. E depois, com manifestações que pediam a saída dele. 
-     
-                    </p>
-                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
-                </div>
-                <p class="paragrafo">
-                    03/01/2024 19h04 
-                </p>
-            </article>
-        <section>
-       <!------------------------------------------------------>
-        
-       
-    </main>
-
-    <!-- Botão flutuante -->
-    <div id="floating-btn" onclick="scrollToTop()">
-        &#9650; <!-- Triângulo para cima (pode ser substituído por um ícone ou texto) -->
-    </div>
-
-    <script>
-        window.addEventListener('scroll', function () {
-            var floatingBtn = document.getElementById('floating-btn');
-
-            // Verifica se a largura da tela é menor que 768 pixels (dispositivo móvel)
-            if (window.innerWidth < 768) {
-                // Verifica se a posição de rolagem é maior que 200 pixels do topo
-                if (window.scrollY > 200) {
-                    floatingBtn.style.display = 'block';
-                } else {
-                    floatingBtn.style.display = 'none';
-                }
-            } else {
-                floatingBtn.style.display = 'none';
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-
-
-
-    <footer>
-        <p>&copy; 2024 Notícias.</p>
-    </footer>
-
-    <script>
-        function toggleContent(button) {
-            const content = button.parentElement;
-            const fullText = content.querySelector(".full-text");
-
-            if (content.classList.contains("expanded")) {
-                content.classList.remove("expanded");
-                fullText.style.display = "none";
-                button.innerText = "Mostrar Mais";
-            } else {
-                content.classList.add("expanded");
-                fullText.style.display = "block";
-                button.innerText = "Mostrar Menos";
-            }
-        }
-    </script>
-
-    <script>
-        function toggleMenu() {
-          var menu = document.getElementById("menu");
-          menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-          menu.style.opacity = (menu.style.opacity === "1") ? "0" : "1";
-          menu.style.transform = (menu.style.transform === "translateY(0px)") ? "translateY(-20px)" : "translateY(0px)";
-        }
-      </script>
-
-      <div class="pagination">
-        <button onclick="changePage('noticias.html')">1</button>
-        <button onclick="changePage('noticias/noticias2.html')">2</button>
-        <button onclick="changePage('noticias/noticias1.html')">3</button>
-        
-        <!-- Adicione mais botões conforme necessário -->
-      </div>
-
-      <script>
-        function changePage(pagePath) {
-            // Lógica para redirecionar para a página com o caminho especificado
-            console.log("Redirecionando para a página: " + pagePath);
-            // Substitua essa linha com a lógica real para redirecionar para a página desejada
-            window.location.href = pagePath;
-        }
-      </script>
-</body>
-</html>
-
-
-
-
-
-
-
