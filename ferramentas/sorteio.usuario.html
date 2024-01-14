@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorteio de Números</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px; /* Limitando a largura máxima para melhorar a legibilidade em telas grandes */
+      width: 100%; /* Garantindo que a largura seja 100% em telas pequenas */
+      margin: 20px; /* Adicionando margem para melhorar o espaçamento nas bordas */
+    }
+    @media (max-width: 600px) {
+        #resultadoContainer {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          z-index: 999;
+        }
+      }
+
+    button {
+      padding: 10px;
+      
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%; /* Fazendo com que a largura do input seja 100% */
+      box-sizing: border-box; /* Garantindo que a largura inclua padding e borda */
+      margin-bottom: 10px;
+    }
+
+    #resultadoContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 20px;
+    }
+
+    #resultadoTitulo {
+      font-size: 16px;
+      color: #28a745;
+      margin-bottom: 5px;
+    }
+
+    #resultado {
+      font-size: 20px;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    #dataHora {
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    #contadorTotal,
+    #contador {
+      font-size: 18px;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    #numerosContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .quadradinho {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 5px;
+      border: 1px solid #000;
+      text-align: center;
+      line-height: 30px;
+      transition: background-color 0.5s ease;
+    }
+
+    @media (max-width: 600px) {
+      .quadradinho {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sorteio de Números</h1>
+    
+        <label for="numeroInput">Quantidade de Números:</label>
+        <input type="number" id="numeroInput" placeholder="Quantidade" min="1" max="100">
+    
+        <!-- Adicione o elemento de input para escolher a cor das divs -->
+        <label for="corDivsInput">Cor:</label>
+        <input type="color" id="corDivsInput" value="#28a745">
+    
+        <button id="gerarNumerosBtn">Gerar Números</button>
+        <button id="iniciarSorteioBtn">Iniciar Sorteio</button>
+        <button id="registrarSorteioBtn">Registrar Sorteio</button>
+        <button id="zerarSorteioBtn">Zerar Sorteio</button>
+        <button id="limparResultadoBtn">Limpar Último Resultado</button>
+    
+        <div id="contadorTotal">Total: 0</div>
+        <div id="contador"></div>
+        <div id="resultadoContainer">
+          <div id="resultadoTitulo">Último Resultado:</div>
+          <div id="resultado"></div>
+          <div id="dataHora"></div>
+        </div>
+        <div id="numerosContainer"></div>
+      </div>
+
+      <script>
+        let numeros = JSON.parse(localStorage.getItem('numeros')) || [];
+        let resultados = JSON.parse(localStorage.getItem('resultados')) || [];
+        let ultimoResultadoIndex = -1;
+        let totalCount = JSON.parse(localStorage.getItem('totalCount')) || 0;
+        let corDivs = localStorage.getItem('corDivs') || '#28a745';
+    
+        // Definir a cor inicial
+        document.getElementById('corDivsInput').value = corDivs;
+    
+        document.getElementById('gerarNumerosBtn').addEventListener('click', gerarNumeros);
+        document.getElementById('iniciarSorteioBtn').addEventListener('click', iniciarSorteio);
+        document.getElementById('zerarSorteioBtn').addEventListener('click', zerarSorteio);
+        document.getElementById('limparResultadoBtn').addEventListener('click', limparUltimoResultado);
+    
+        function gerarNumeros() {
+          const quantidadeNumeros = parseInt(document.getElementById('numeroInput').value, 10);
+          corDivs = document.getElementById('corDivsInput').value;
+    
+          if (quantidadeNumeros > 0 && totalCount + quantidadeNumeros <= 100) {
+            const numerosContainer = document.getElementById('numerosContainer');
+            numerosContainer.innerHTML = ''; // Limpar os números visíveis
+            gerarListaNumeros(quantidadeNumeros, corDivs);
+          } else {
+            alert('A quantidade total de quadrados não pode ultrapassar 100.');
+          }
+        }
+    
+        function gerarListaNumeros(quantidade, corDivs) {
+          const numerosContainer = document.getElementById('numerosContainer');
+          const numerosGerados = Array.from({ length: quantidade }, (_, i) => i + 1);
+    
+          numerosGerados.forEach(numero => {
+            const quadradinho = document.createElement('div');
+            quadradinho.classList.add('quadradinho');
+            quadradinho.textContent = numero;
+            quadradinho.style.backgroundColor = corDivs; // Defina a cor fornecida pelo usuário
+            numerosContainer.appendChild(quadradinho);
+          });
+    
+          numeros = numeros.concat(numerosGerados);
+          resultados.push({ tipo: 'numeros', valores: numerosGerados });
+          ultimoResultadoIndex = resultados.length - 1;
+          totalCount += quantidade;
+          atualizarContadores();
+          salvarDadosNoLocalStorage();
+        }
+
+    async function realizarSorteio() {
+      if (numeros.length === 0) {
+        return 'Nenhum número disponível';
+      } else {
+        const indiceSorteado = Math.floor(Math.random() * numeros.length);
+        return numeros[indiceSorteado];
+      }
+    }
+
+    async function exibirResultado(resultado) {
+        const resultadoElement = document.getElementById('resultado');
+        const dataHoraElement = document.getElementById('dataHora');
+      
+        resultadoElement.textContent = `Sorteado: ${resultado}`;
+        dataHoraElement.textContent = `Hora do Sorteio: ${obterHoraAtual()}, Dia do Sorteio: ${obterDiaAtual()}`;
+      
+        const numerosContainer = document.getElementById('numerosContainer');
+        const quadrados = numerosContainer.getElementsByClassName('quadradinho');
+      
+        // Resetar cores
+        for (let i = 0; i < quadrados.length; i++) {
+          quadrados[i].style.backgroundColor = '';
+        }
+      
+        // Mudar cor do quadrado correspondente ao número sorteado
+        if (resultado !== 'Nenhum número disponível') {
+          quadrados[numeros.indexOf(resultado)].style.backgroundColor = '#28a745'; // Cor verde
+        }
+      }
+
+      async function iniciarSorteio() {
+        const contagemRegressiva = 5; // Defina a duração da contagem regressiva em segundos
+      
+        for (let i = contagemRegressiva; i > 0; i--) {
+          document.getElementById('resultado').textContent = `Iniciando sorteio em ${i}...`;
+          await sleep(1000); // Aguarda 1 segundo
+        }
+      
+        const resultado = await realizarSorteio();
+        exibirResultado(resultado);
+        salvarDadosNoLocalStorage();
+      }
+      
+
+    function zerarSorteio() {
+      const numerosContainer = document.getElementById('numerosContainer');
+      numerosContainer.innerHTML = ''; // Limpar os números visíveis
+
+      // Remover os números diretamente do DOM
+      const numerosGerados = document.getElementsByClassName('quadradinho');
+      while (numerosGerados.length > 0) {
+        numerosGerados[0].parentNode.removeChild(numerosGerados[0]);
+      }
+
+      numeros = [];
+      resultados = [];
+      ultimoResultadoIndex = -1;
+      totalCount = 0;
+      atualizarContadores();
+      salvarDadosNoLocalStorage();
+    }
+
+    function limparUltimoResultado() {
+      if (ultimoResultadoIndex !== -1) {
+        resultados.splice(ultimoResultadoIndex, 1);
+        ultimoResultadoIndex = -1;
+        const ultimoResultado = resultados[resultados.length - 1];
+        if (ultimoResultado && ultimoResultado.tipo === 'numeros') {
+          totalCount -= ultimoResultado.valores.length;
+        } else {
+          totalCount--;
+        }
+        atualizarContadores();
+        salvarDadosNoLocalStorage();
+      }
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function salvarDadosNoLocalStorage() {
+      localStorage.setItem('numeros', JSON.stringify(numeros));
+      localStorage.setItem('resultados', JSON.stringify(resultados));
+      localStorage.setItem('totalCount', JSON.stringify(totalCount));
+    }
+
+    function obterHoraAtual() {
+      const dataHoraAtual = new Date();
+      return dataHoraAtual.getHours() + ':' + dataHoraAtual.getMinutes();
+    }
+
+    function obterDiaAtual() {
+      const dataHoraAtual = new Date();
+      return dataHoraAtual.toLocaleDateString();
+    }
+
+    window.onload = function () {
+        corDivs = localStorage.getItem('corDivs') || '#28a745'; // Configurar a cor inicial
+        const ultimoResultado = resultados[resultados.length - 1];
+        if (ultimoResultado && ultimoResultado.tipo === 'numeros') {
+          ultimoResultadoIndex = resultados.length - 1;
+          totalCount = ultimoResultado.valores.length;
+          // Restaurar os quadrados na inicialização se houver dados armazenados localmente
+          gerarListaNumeros(totalCount, corDivs); // Passar a cor para a função gerarListaNumeros
+        } else {
+          ultimoResultadoIndex = -1;
+        }
+        atualizarContadores();
+      };
+    document.getElementById('registrarSorteioBtn').addEventListener('click', registrarSorteio);
+
+    function registrarSorteio() {
+      if (ultimoResultadoIndex !== -1) {
+        alert('Sorteio registrado com sucesso!');
+        salvarDadosNoLocalStorage();
+      } else {
+        alert('Não há sorteio para registrar.');
+      }
+    }
+
+    function salvarDadosNoLocalStorage() {
+        localStorage.setItem('numeros', JSON.stringify(numeros));
+        localStorage.setItem('resultados', JSON.stringify(resultados));
+        localStorage.setItem('totalCount', JSON.stringify(totalCount));
+        localStorage.setItem('corDivs', corDivs); // Salvar a cor no localStorage
+      }
+
+      function exibirMensagem(mensagem) {
+  const mensagemContainer = document.getElementById('mensagemContainer');
+  mensagemContainer.textContent = mensagem;
+  mensagemContainer.style.display = 'block';
+
+  // Esconder a mensagem após alguns segundos
+  setTimeout(() => {
+    mensagemContainer.style.display = 'none';
+  }, 3000); // 3000 milissegundos (3 segundos)
+}
+
+  </script>
+</body>
+
+</html>
