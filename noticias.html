@@ -12,76 +12,102 @@
       padding: 0;
       background-color: #333;
       color: #fff;
-  }
+    }
 
-  header {
+    header {
       background-color: #c00;
       padding: 10px;
       text-align: center;
-  }
-
-    #header {
-      background-color: #c00; /* Vermelho escuro */
-      color: #000; /* Preto */
-      padding: 10px;
-      text-align: center;
-      width: 100%;
     }
 
-    #noticias-container {
+    .logomarca {
+      background-color: #c00;
+      padding: 25px;
+      text-align: center;
+      margin-bottom: -1px;
+    }
+
+    .logomarca img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .logomarca {
+        padding: 15px;
+      }
+
+      #video-container,
+      #curiosidades-video-container {
+        padding-bottom: 56.25%;
+      }
+    }
+
+    @media only screen and (min-width: 769px) {
+      #video-container,
+      #curiosidades-video-container {
+        padding-bottom: 31.25%;
+      }
+    }
+
+    .voltar > a {
+      display: flex;
+      justify-content: center;
+      padding: 0.5em;
+      text-align: center;
+      text-decoration: none;
+      background-color: #970000;
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .voltar > a:hover {
+      background-color: rgb(255, 0, 0);
+    }
+
+    .video-section {
       margin-top: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    #ultimas-noticias {
-      width: 250px;
-      height: 70px;
-      background-color: #1e1e1e;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgb(255 255 255 / 30%);
-      cursor: pointer;
+    .video-label {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: rgb(255, 255, 255);
     }
 
-   h2 {
-      text-align: center;
+    #video-container,
+    #curiosidades-video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
     }
 
-    #popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 600px;
-      background-color: rgba(0, 0, 0, 0.9);
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-      flex-direction: column;
-      text-align: center;
-      padding: 20px;
-      border-radius: 10px;
+    #popup-video,
+    #curiosidades-popup-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
-    #popup iframe {
-      max-width: 100%;
-      max-height: 60%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    #popup-buttons {
+    #popup-buttons,
+    #curiosidades-popup-buttons {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
       justify-content: center;
+      margin-top: 20px;
+      padding: 10px;
     }
 
-    #popup button {
+    #popup-buttons button,
+    #curiosidades-popup-buttons button {
       background-color: rgba(255, 0, 0, 0.459);
       color: #000000;
       padding: 5px;
@@ -90,167 +116,128 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.3s ease-in-out;
+      margin: 0 10px;
     }
 
-    #popup button:hover {
+    #popup-buttons button:hover,
+    #curiosidades-popup-buttons button:hover {
       background-color: rgb(255, 0, 0);
       color: #ffffff;
       transform: scale(1.1);
     }
-
-    #close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 20px;
-      cursor: pointer;
-      color: white;
-      background: none;
-      border: none;
-    }
-
-    .logomarca {
-      background-color: #c00;
-      padding: 50px;
-      padding-top: 25px;
-      text-align: center;
-      margin-bottom: -1px;
-      
-  }
-    
-    .logomarca img {
-      max-width: 70%;
-      height: auto;
-    }
-    
-    @media only screen and (max-width: 490px) {
-      .logomarca {
-        background-color: #c00;
-        padding: 50px;
-        padding-top: 25px;
-        text-align: center;
-        margin-bottom: -1px;
-        
-    }
-  }
-
-  
-
-  
-.voltar > a{
-  display: flex;
-  justify-content: center;
-  padding: 0.5em;
-  text-align: center;
-  text-decoration: none;
-  background-color: #970000; /* Vermelho escuro */
-  color: #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
-  }
-
-  .voltar>a:hover{
-    background-color: rgb(255, 0, 0);
-  }
-
   </style>
 </head>
 <body>
 
-    <div class="logomarca">
-        <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
-        
-    </div>
-    
-  </header>
-  
-  <nav>
-  <div class="voltar">
-    <a href="index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+  <div class="logomarca">
+    <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
   </div>
+
+  <nav>
+    <div class="voltar">
+      <a href="index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+    </div>
   </nav>
 
-  <!-- Div de notícias -->
-  <div id="noticias-container">
-    <div id="ultimas-noticias" onclick="showPopup()">
-      <h2>Últimas Notícias</h2>
+  <!-- Notícias -->
+  <div class="video-section">
+    <div class="video-label">Notícias</div>
+    <div id="video-container">
+      <iframe id="popup-video" src="" frameborder="0" allowfullscreen></iframe>
     </div>
-  </div>
-
-  <!-- Janela Pop-up -->
-  <div id="popup">
-    <button id="close-btn" onclick="closePopup()">X</button>
-    
-    <!-- Área do vídeo -->
-    <iframe id="popup-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-    
     <div id="popup-buttons">
       <button onclick="previousVideo()">Voltar</button>
       <button onclick="nextVideo()">Próximo</button>
     </div>
-    
-    <!-- Outros elementos ... -->
   </div>
+
+  <nav>
+    <div class="voltar">
+      <a href="#" class="back-button" onclick="showSection('lojas')"></a>
+    </div>
+  </nav>
+
+
+  <!-- Curiosidades -->
+  <div class="video-section">
+    <div class="video-label">Curiosidades</div>
+    <div id="curiosidades-video-container">
+      <iframe id="curiosidades-popup-video" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="curiosidades-popup-buttons">
+      <button onclick="previousCuriosidadeVideo()">Voltar</button>
+      <button onclick="nextCuriosidadeVideo()">Próximo</button>
+    </div>
+  </div>
+
+  <nav>
+    <div class="voltar">
+      <a href="#" class="back-button" onclick="showSection('lojas')"></a>
+    </div>
+  </nav>
 
   <script>
     var videoLinks = [
-    'https://www.youtube.com/embed/AaTYRwqtTQY',
-    'https://www.youtube.com/embed/V-9_qO3QUbo',
-    'https://www.youtube.com/embed/p4yga5noNfw',
-    'https://www.youtube.com/embed/9S6xcumShdY',
-    'https://www.youtube.com/embed/qF90MMRwy7s',
-    'https://www.youtube.com/embed/eNH5HtB8CoM',
-    'https://www.youtube.com/embed/pMbATje-tVI',
-    'https://www.youtube.com/embed/EDlRWVVR5io',
-    'https://www.youtube.com/embed/16t-clPkAR0',
-    'https://www.youtube.com/embed/q3jJyZ27g84',
-    'https://www.youtube.com/embed/BXYRjr2mGGQ',
-    'https://www.youtube.com/embed/Oewu_xBd6Zg',
-    'https://www.youtube.com/embed/JBZ7HdIkL98',
-    'https://www.youtube.com/embed/tHUjRa9qN2c',
-    'https://www.youtube.com/embed/Vu3p0QnK9LI',
-    'https://www.youtube.com/embed/1MGOyhlfHPQ',
-    'https://www.youtube.com/embed/ELYpkC8v7RI',
-    'https://www.youtube.com/embed/NxUy_LsyHP8',
-    'https://www.youtube.com/embed/1jw5OOUh3WE',
-    'https://www.youtube.com/embed/yUcskQmTMZk',
-
-    'https://www.youtube.com/embed/Oewu_xBd6Zg',
-
-
-    'https://www.youtube.com/embed/iPxaTiBDvmM',
+      'https://www.youtube.com/embed/hJak9T1P1jA',
+      'https://www.youtube.com/embed/eO8uYRie110',
+      'https://www.youtube.com/embed/E86ecxVQc9E',
+      'https://www.youtube.com/embed/fOveCTp3b7o',
+      
+      'https://www.youtube.com/embed/BKnjQNc0DBE',
+      'https://www.youtube.com/embed/pFiHRIx2KZQ',
+      'https://www.youtube.com/embed/fuJTtp_mHP8',
+      'https://www.youtube.com/embed/p9k874TATFQ',
+      'https://www.youtube.com/embed/4JiVd_yjTqs',
+      'https://www.youtube.com/embed/_k_jAjeKqFA',
+      'https://www.youtube.com/embed/-l4UwfNP_KQ',
+      'https://www.youtube.com/embed/0GQ4CcGvf2A',
+      'https://www.youtube.com/embed/JmjmGFJ25UA',
+      'https://www.youtube.com/embed/YeblfzbSL0M',
+      
+      'https://www.youtube.com/embed/e7tcaJu2ztI',
+      'https://www.youtube.com/embed/LNZo4Z3r_eg',
+      'https://www.youtube.com/embed/jB5gxQQJ7XM',
     
-    'https://www.youtube.com/embed/vvI_FoemwtY',
-    'https://www.youtube.com/embed/1q1ccv2NbJI',
-    'https://www.youtube.com/embed/uedfRUSfGQQ',
-    'https://www.youtube.com/embed/NiKkUBTUcPI',
-    'https://www.youtube.com/embed/-yVqExGq-0g',
-    'https://www.youtube.com/embed/MH4c3YzOQ7Q',
-    'https://www.youtube.com/embed/u0YjAqnPnbg',
-    'https://www.youtube.com/embed/gmEapwdfP0U',
-    'https://www.youtube.com/embed/HDdR1ZNzM_s',
-    'https://www.youtube.com/embed/R0ajqMuDfDk',
-    'https://www.youtube.com/embed/rFBWlaIl8Tk',
-    'https://www.youtube.com/embed/UJ3E5lvWf2Q',
-    'https://www.youtube.com/embed/xBoppi58b4E',
-    'https://www.youtube.com/embed/OVVhafg-CeM',
-    'https://www.youtube.com/embed/IS3KAZ8Yrtw',
-    'https://www.youtube.com/embed/p_-2OySI97o',
-    'https://www.youtube.com/embed/kKZ2SyY0e38',
+      
+    ];
 
-    ]; 
+    var curiosidadeVideoLinks = [
+      'https://www.youtube.com/embed/GYSQP2QBJeM',
+      'https://www.youtube.com/embed/8Yf5MLY3hyM',
+      'https://www.youtube.com/embed/QCXFOqFK7Qc',
+      'https://www.youtube.com/embed/QE3QjXmbiww',
+      
+      'https://www.youtube.com/embed/ZyK_qzdUhYM',
+      'https://www.youtube.com/embed/vCwNah3_WsU',
+      'https://www.youtube.com/embed/Bu5FKDqJGkQ',
+      'https://www.youtube.com/embed/ddAkBaYQcvQ',
+      'https://www.youtube.com/embed/miPi_0K9j7w',
+      'https://www.youtube.com/embed/bF0SawIQF7I',
+      'https://www.youtube.com/embed/6iO8s0-J9Js',
+      'https://www.youtube.com/embed/NFFH0I8BleU',
+      'https://www.youtube.com/embed/AwLa2CVr0tw',
+      'https://www.youtube.com/embed/cHWmqEVsKCg',
+      'https://www.youtube.com/embed/mYUNqom4hS0',
+      'https://www.youtube.com/embed/HnY_eVOk2Es',
+      'https://www.youtube.com/embed/-413NQ8Ul0E',
+      'https://www.youtube.com/embed/EfPx98bgRnI',
+      'https://www.youtube.com/embed/Dj5MVV9GxlM',
+      
+    ];
 
     var currentVideoIndex = 0; // Índice do vídeo atual
+    var currentCuriosidadeVideoIndex = 0; // Índice do vídeo de curiosidades atual
 
-    function showPopup() {
-      var popup = document.getElementById('popup');
+    // Carrega o primeiro vídeo automaticamente
+    window.onload = function () {
+      showVideo();
+      showCuriosidadeVideo();
+    };
+
+    function showVideo() {
       var popupVideo = document.getElementById('popup-video');
-  
-      // Substitua a URL do vídeo abaixo pela lógica desejada para obter o vídeo atual
       var videoUrl = videoLinks[currentVideoIndex];
-  
       popupVideo.src = videoUrl;
-      popup.style.display = 'flex';
     }
 
     function previousVideo() {
@@ -264,15 +251,30 @@
     }
 
     function updateVideo() {
-      var popupVideo = document.getElementById('popup-video');
-      popupVideo.src = videoLinks[currentVideoIndex];
+      showVideo();
     }
 
-    function closePopup() {
-      var popup = document.getElementById('popup');
-      popup.style.display = 'none';
+    // Funções para o segundo campo de vídeo (curiosidades)
+    function showCuriosidadeVideo() {
+      var curiosidadePopupVideo = document.getElementById('curiosidades-popup-video');
+      var curiosidadeVideoUrl = curiosidadeVideoLinks[currentCuriosidadeVideoIndex];
+      curiosidadePopupVideo.src = curiosidadeVideoUrl;
+    }
+
+    function previousCuriosidadeVideo() {
+      currentCuriosidadeVideoIndex = (currentCuriosidadeVideoIndex - 1 + curiosidadeVideoLinks.length) % curiosidadeVideoLinks.length;
+      updateCuriosidadeVideo();
+    }
+
+    function nextCuriosidadeVideo() {
+      currentCuriosidadeVideoIndex = (currentCuriosidadeVideoIndex + 1) % curiosidadeVideoLinks.length;
+      updateCuriosidadeVideo();
+    }
+
+    function updateCuriosidadeVideo() {
+      showCuriosidadeVideo();
     }
   </script>
-  
+
 </body>
 </html>
