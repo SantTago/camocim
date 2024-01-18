@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lojas de Produtos Eróticos</title>
+    <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #2b2b2b; /* Tom mais escuro para o fundo */
+            color: #eee; /* Texto mais claro */
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        header {
+            background-color: #970000; /* Vermelho escuro */
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #444; /* Tom mais escuro para os blocos */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            display: flex; /* Adicionado o estilo flexível */
+            justify-content: center; /* Alinha os itens horizontalmente no centro */
+            align-items: center; /* Alinha os itens verticalmente no centro */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+        
+        main {
+            display: flex;
+            justify-content: space-around;
+            padding: 2em;
+            flex-wrap: wrap;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .store, .motel {
+            background-color: #444; /* Tom mais escuro para os blocos */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 1.5em;
+            margin: 1em;
+            width: 30%;
+            max-width: 300px;
+            text-align: center;
+            opacity: 1;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .store:hover, .motel:hover {
+            transform: scale(1.05);
+        }
+        
+        .store h2, .motel h2 {
+            color: #ffffff; /* Vermelho mais claro */
+            margin-bottom: 0.5em;
+        }
+        
+        .store p, .motel p {
+            color: #999; /* Cinza mais claro */
+        }
+
+        .store img, .motel img {
+            background-color: #444; /* Tom mais escuro para os blocos */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            max-width: 100%; /* Alteração para ocupar 100% da largura do contêiner pai */
+            height: auto; /* Mantém a proporção da imagem */
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        
+        
+        /* Media Query para telas menores, como celulares */
+        @media (max-width: 768px) {
+            main {
+                padding: 1em;
+            }
+        
+            .store, .motel {
+                width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
+                max-width: none;
+            }
+        }
+
+        /* Estilo para o botão de voltar */
+        .back-button {
+            max-width: 68px;
+            display: block;
+            justify-content: center;
+            margin: 1em;
+            padding: 0.5em;
+            text-align: center;
+            text-decoration: none;
+            background-color: #970000; /* Vermelho escuro */
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Efeito de hover para o botão de voltar */
+        .back-button:hover {
+            background-color: #970000; /* Vermelho mais escuro no hover */
+        }
+
+        .voltar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Oculta a seção de Moteis inicialmente */
+        .motel {
+            display: none;
+            
+        }
+
+        /* Estilo para o menu de moteis */
+        .moteis-menu {
+            display: none;
+            position: absolute;
+            background-color: #444; /* Tom mais escuro para os blocos */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 1em;
+            margin-top: 5px;
+            left: 50%; /* Posiciona o menu no centro */
+            transform: translateX(-50%); /* Corrige a posição no centro */
+        }
+
+        /* Estilo para os itens do menu de moteis */
+        .moteis-menu a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 8px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Efeito de hover para os itens do menu de moteis */
+        .moteis-menu a:hover {
+            background-color: #555;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 80%px;
+            height: 80%;
+        }
+    
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 10px;
+            margin-top: 0px;
+            flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+            box-sizing: border-box;
+            text-align: center;
+        }
+    
+        img {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+            
+        }
+    
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 50%;
+        }
+    
+        .slick-next {
+            right: 4px;
+            
+        }
+    
+        .slick-prev {
+            left: 4px;
+        }
+    
+        element.style {
+            width: 303px;
+            height: 104%;
+        }
+    
+        .perfil {
+            max-width: 50px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin: auto;
+            flex-wrap: wrap;
+        
+        }
+    
+        
+        @media only screen and (min-width: 303px) and (max-width: 600px) {
+            /* Entre 319px e 600px, três colunas por linha */
+            .product {
+                flex-basis: calc(33.3333% - 20px);
+    
+                
+            }
+    
+            img {
+              max-width: 100%;
+              height: auto;
+              width: 100%;
+              
+          }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lojas de Produtos Eróticos</h1>
+    </header>
+
+    <nav>
+        <div class="voltar">
+            <a href="../motel.html" class="back-button" onclick="showSection('lojas')">Moteis</a>
+            <a href="../adulto.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+        </div>
+    </nav>
+
+    
+ <!--------------------------------------------------->
+ <section class="slider">
+    <div class="product">
+        <img src="https://i.ibb.co/B6f4fcb/001.webp" alt="001">
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/Twjmd23/003.webp" alt="003">
+      
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/ySnq8mr/004.webp" alt="004">
+      
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/k17bsGR/005.webp" alt="005">
+      
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/9GjLvG7/006.webp" alt="006">
+      
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/XsGPJHN/007.webp" alt="007">
+      
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/HPfs5h5/008.webp" alt="008">
+      
+      
+    </div>
+
+    <div class="product">
+        <img src="https://i.ibb.co/d4LGrv4/009.webp" alt="009">
+        
+        
+      </div>
+  </section>
+
+   <!--------------------------------------------------->
+
+  <nav>
+    <div class="voltar">
+      <a href="#" onclick="showSection('lojas')"></a>
+    </div>
+  </nav>
+
+   <!--------------------------------------------------->
+ <section class="slider">
+    <div class="product">
+        <img src="https://i.ibb.co/C5RHLrB/17.jpg" alt="17">
+      
+    </div>
+  
+  
+    <div class="product">
+        <img src="https://i.ibb.co/Df4g0kp/18.jpg" alt="18">
+      
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/VS1mPVk/15.jpg" alt="15">
+      
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/1fv3M0L/14.jpg" alt="14">
+      
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/KwWkXKY/13.jpg" alt="13">
+      
+      
+    </div>
+  
+    <div class="product">
+        <img src="https://i.ibb.co/W0zRJhN/12.jpg" alt="12">
+      
+      
+    </div>
+
+    <div class="product">
+        <img src="https://i.ibb.co/Sd262bR/11.jpg" alt="11" >
+        
+        
+      </div>
+
+    <div class="product">
+        <img src="https://i.ibb.co/dfXYyT6/10.jpg" alt="10">
+        
+        
+    </div>
+  </section>
+   <!--------------------------------------------------->
+  <nav>
+    <div class="voltar">
+      <a href="#" onclick="showSection('lojas')"></a>
+    </div>
+  </nav>
+ <!--------------------------------------------------->
+
+  
+  
+  
+  
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar dois produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+  
+  <!--------------------------------------------------->
+
+    
+</body>
+</html>
