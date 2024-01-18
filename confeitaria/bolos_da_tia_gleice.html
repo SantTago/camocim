@@ -13,30 +13,26 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
   <style>
-
     .saiba-mais > h2 {
       text-align: center;
       border: 0px solid #ffffff;
       padding: 0px;
       font-family: var(--destaque);
       padding-top: 40px;
-  }
-
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f1d5d5;
-        box-shadow: 0px 0px 15px black;
     }
-
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1d5d5;
+      box-shadow: 0px 0px 15px black;
+    }
     header {
         background-color: #333;
         color: #fff;
         text-align: center;
         padding: 10px;
     }
-
     section {
         display: flex;
         flex-wrap: wrap;
@@ -46,127 +42,91 @@
         max-width: 80%px;
         height: 80%;
     }
-
     .product {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        margin: 10px;
-        margin-top: 0px;
-        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
-        box-sizing: border-box;
-        text-align: center;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin: 10px;
+      margin-top: 0px;
+      flex: 1 0 calc(50% - 20px); 
+      box-sizing: border-box;
+      text-align: center;
     }
-
     img {
+      max-width: 100%;
+      height: auto;
+      width: 100%;
+        
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 50%;
+    }
+    .slick-next {
+      right: 4px;
+        
+    }
+    .slick-prev {
+      left: 4px;
+    }
+    element.style {
+      width: 303px;
+      height: 104%;
+    }
+    .perfil {
+      max-width: 50px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      margin: auto;
+      flex-wrap: wrap;
+    
+    }
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+      .product {
+        flex-basis: calc(33.3333% - 20px);
+
+      }
+      img {
         max-width: 100%;
         height: auto;
         width: 100%;
-        
-    }
-
-    footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 50%;
-    }
-
-    .slick-next {
-        right: 4px;
-        
-    }
-
-    .slick-prev {
-        left: 4px;
-    }
-
-    element.style {
-        width: 303px;
-        height: 104%;
-    }
-
-    .perfil {
-        max-width: 50px;
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: auto;
-        flex-wrap: wrap;
-    
-    }
-
-    
-    @media only screen and (min-width: 303px) and (max-width: 600px) {
-        /* Entre 319px e 600px, três colunas por linha */
-        .product {
-            flex-basis: calc(33.3333% - 20px);
-
-            
-        }
-
-        img {
-          max-width: 100%;
-          height: auto;
-          width: 100%;
           
       }
     }
-</style>
+  </style>
 </head>
 <body>
-  
-    <div class="perfil-bloco">
-       <div>
-        <img src="https://i.ibb.co/2Y6fryN/banner.webp" alt="banner">
-      </div>
+  <div class="perfil-bloco">
+    <div>
+      <img src="https://i.ibb.co/2Y6fryN/banner.webp" alt="banner">
     </div>
-
- 
-    <div class="icon">
-
-      <div class="sorveteria-cor1">
-          <abbr title="Voltar"><a href="../confeitaria.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
-      </div >
-
-      
+  </div>
+  <div class="icon">
+    <div class="sorveteria-cor1">
+      <abbr title="Voltar"><a href="../confeitaria.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
+    </div >
   </div>  
   <!--------------------------------------------------->
   <section class="slider">
     <div class="product">
       <img src="https://i.ibb.co/d6K1GTJ/002.webp" alt="002">
-      
-      
     </div>
-
     <div class="product">
       <img src="https://i.ibb.co/6mMpBNr/001.webp" alt="001">
-      
-      
     </div>
-
     <div class="product">
       <img src="https://i.ibb.co/BzHFYmd/004.webp" alt="004">
-      
-      
     </div>
-
     <div class="product">
       <img src="https://i.ibb.co/SvY2SB9/003.webp" alt="003" >
-      
-      
     </div>
-
-    
-
-    
-
-   
   </section>
-
-
+   <!--------------------------------------------------->
   <script>
     $(document).ready(function(){
         $('.slider').slick({
@@ -185,35 +145,19 @@
         });
     });
   </script>
-  
   <!--------------------------------------------------->
-
     <div class="saiba-mais">
-        <h2>Fale Conosco</h2>
+      <h2>Fale Conosco</h2>
     </div>
-
     <div class="redes-sociais">
-        
-        <div>
-          <img loading="lazy" src="../icon/zap.png" alt="zap">
-        </div>
+      <div>
+        <img loading="lazy" src="../icon/zap.png" alt="zap">
+      </div>
 
-        <div>
-            <a href="https://www.instagram.com/bolos_da_tia_gleice/" target="_blank"><img loading="lazy" src="../icon/insta.png" alt="insta"></a>
-        </div>
-
-       
-        
-        
+      <div>
+        <a href="https://www.instagram.com/bolos_da_tia_gleice/" target="_blank"><img loading="lazy" src="../icon/insta.png" alt="insta"></a>
+      </div>  
     </div>
-
-
-
-   
-
     <!------------------------------->
-
-    
-
 </body>
 </html>

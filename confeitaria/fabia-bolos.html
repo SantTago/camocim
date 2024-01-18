@@ -6,175 +6,134 @@
   <title>Registra Camocim</title>
   <link rel="stylesheet" href="../estilo/style.css">
   <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
-
-
-
-
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-
   <style>
-
     .saiba-mais > h2 {
       text-align: center;
       border: 0px solid #ffffff;
       padding: 0px;
       font-family: var(--destaque);
       padding-top: 40px;
-  }
-
+    }
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f1d5d5;
-        box-shadow: 0px 0px 15px black;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1d5d5;
+      box-shadow: 0px 0px 15px black;
     }
-
     header {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
     }
-
     section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 20px;
-        box-sizing: border-box;
-        max-width: 80%px;
-        height: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+      box-sizing: border-box;
+      max-width: 80%px;
+      height: 80%;
     }
-
     .product {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        margin: 10px;
-        margin-top: 0px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin: 10px;
+      margin-top: 0px;
+      flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+      box-sizing: border-box;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      width: 100%;
         
-        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
-        box-sizing: border-box;
-        text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 50%;
+    }
+    .slick-next {
+      right: 4px;
+        
+    }
+    .slick-prev {
+      left: 4px;
+    }
+    element.style {
+      width: 303px;
+      height: 104%;
+    }
+    .perfil {
+      max-width: 50px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      margin: auto;
+      flex-wrap: wrap;
     }
 
-    img {
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+      .product {
+        flex-basis: calc(33.3333% - 20px);
+
+            
+      }
+      img {
         max-width: 100%;
         height: auto;
         width: 100%;
-        
-    }
-
-    footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 50%;
-    }
-
-    .slick-next {
-        right: 4px;
-        
-    }
-
-    .slick-prev {
-        left: 4px;
-    }
-
-    element.style {
-        width: 303px;
-        height: 104%;
-    }
-
-    .perfil {
-        max-width: 50px;
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: auto;
-        flex-wrap: wrap;
-    
-    }
-
-    
-    @media only screen and (min-width: 303px) and (max-width: 600px) {
-        /* Entre 319px e 600px, três colunas por linha */
-        .product {
-            flex-basis: calc(33.3333% - 20px);
-
-            
-        }
-
-        img {
-          max-width: 100%;
-          height: auto;
-          width: 100%;
           
       }
     }
-</style>
+  </style>
 </head>
 <body>
-  
-    <div class="perfil-bloco">
-       <div>
-        <img src="https://i.ibb.co/r373wQM/banner.webp" alt="banner">
-      </div>
-    </div>
-
- 
+  <div class="perfil-bloco">
+    <div>
+    <img src="https://i.ibb.co/r373wQM/banner.webp" alt="banner">
+  </div>
+  </div>
     <div class="icon">
-
       <div class="sorveteria-cor1">
-          <abbr title="Voltar"><a href="../confeitaria.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
-      </div >
-
-      
+        <abbr title="Voltar"><a href="../confeitaria.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
+      </div> 
+    </div>  
   </div> 
-
   <!--------------------------------------------------->
   <section class="slider">
     <div class="product">
       <img src="https://i.ibb.co/PzYJRg3/001.webp" alt="001">
-     
     </div>
-
     <div class="product">
-      <img src="https://i.ibb.co/g3Y6QQ2/003.webp" alt="003">
-      
+      <img src="https://i.ibb.co/g3Y6QQ2/003.webp" alt="003"> 
     </div>
-
     <div class="product">
       <img src="https://i.ibb.co/YtWKhqj/002.webp" alt="002">
-      
     </div>
-
     <div class="product">
       <img src="https://i.ibb.co/n33LwFR/004.webp" alt="004">
-      
     </div>
-
     <div class="product">
       <img src="https://i.ibb.co/XXMjvrt/005.webp" alt="005">
-      
     </div>
-
     <div class="product">
       <img src="https://i.ibb.co/PrBrsZY/006.webp" alt="006">
-      
     </div>
-
-
   </section>
-
-
+<!--------------------------------------------------->
   <script>
     $(document).ready(function(){
         $('.slider').slick({
@@ -193,44 +152,26 @@
         });
     });
   </script>
-  
   <!--------------------------------------------------->
-
-
-
-   
-
-    <div class="saiba-mais">
-        <h2>Fale Conosco</h2>
+  <div class="saiba-mais">
+    <h2>Fale Conosco</h2>
+  </div>
+  <div class="redes-sociais">
+    <div>
+      <img loading="lazy" src="../icon/zap.png" alt="zap">
     </div>
-
-    <div class="redes-sociais">
-        
-        <div>
-          <img loading="lazy" src="../icon/zap.png" alt="zap">
-        </div>
-
-        <div>
-            <a href="https://www.instagram.com/fabya_costa46/" target="_blank"><img loading="lazy" src="../icon/insta.png" alt="insta"></a>
-        </div>
-
-        
-        <div>
-            <a href="" target="_blank"><img loading="lazy" src="../icon/local.png" alt="localizaçao"></a>
-        </div>
+    <div>
+      <a href="https://www.instagram.com/fabya_costa46/" target="_blank"><img loading="lazy" src="../icon/insta.png" alt="insta"></a>
     </div>
-
-
-    <!-------------------------->
-    <div class="perfil-bloco">
-      <div>
-        <img src="https://i.ibb.co/yFHbSP8/banner-2.webp" alt="banner-2">
-      </div>
+    <div>
+      <a href="" target="_blank"><img loading="lazy" src="../icon/local.png" alt="localizaçao"></a>
     </div>
-
-    <!------------------------------->
-
-    
-
+  </div>
+  <!-------------------------->
+  <div class="perfil-bloco">
+    <div>
+      <img src="https://i.ibb.co/yFHbSP8/banner-2.webp" alt="banner-2">
+    </div>
+  </div>
 </body>
 </html>
