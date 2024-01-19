@@ -6,244 +6,168 @@
   <title>Registra Contruções</title>
   <link rel="stylesheet" href="../estilo/style.css">
   <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
-
-
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
   <style>
-
     .saiba-mais > h2 {
       text-align: center;
       border: 0px solid #ffffff;
       padding: 0px;
       font-family: var(--destaque);
       padding-top: 40px;
-  }
-
+    }
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #d5e6f1;
-        box-shadow: 0px 0px 15px black;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #d5e6f1;
+      box-shadow: 0px 0px 15px black;
     }
-
     header {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
     }
-
     section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 20px;
-        box-sizing: border-box;
-        max-width: 80%px;
-        height: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+      box-sizing: border-box;
+      max-width: 80%px;
+      height: 80%;
     }
-
     .product {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        margin: 10px;
-        margin-top: 0px;
-        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
-        box-sizing: border-box;
-        text-align: center;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin: 10px;
+      margin-top: 0px;
+      flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+      box-sizing: border-box;
+      text-align: center;
     }
-
     img {
+      max-width: 100%;
+      height: auto;
+      width: 100%;  
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 50%;
+    }
+    .slick-next {
+      right: 4px;  
+    }
+    .slick-prev {
+      left: 4px;
+    }
+    element.style {
+      width: 303px;
+      height: 104%;
+    }
+    .perfil {
+      max-width: 50px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+      .product {
+        flex-basis: calc(33.3333% - 20px);  
+      }
+      img {
         max-width: 100%;
         height: auto;
         width: 100%;
-        
-    }
-
-    footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 50%;
-    }
-
-    .slick-next {
-        right: 4px;
-        
-    }
-
-    .slick-prev {
-        left: 4px;
-    }
-
-    element.style {
-        width: 303px;
-        height: 104%;
-    }
-
-    .perfil {
-        max-width: 50px;
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: auto;
-        flex-wrap: wrap;
-    
-    }
-
-    
-    @media only screen and (min-width: 303px) and (max-width: 600px) {
-        /* Entre 319px e 600px, três colunas por linha */
-        .product {
-            flex-basis: calc(33.3333% - 20px);
-
-            
-        }
-
-        img {
-          max-width: 100%;
-          height: auto;
-          width: 100%;
-          
       }
     }
-
-</style>
+  </style>
 </head>
 <body>
-  
-    <div class="perfil-bloco">
-       <div>
-        <img src="https://i.ibb.co/1QYRZ2v/banner.webp" alt="banner">
-      </div>
+  <div class="perfil-bloco">
+      <div>
+      <img src="https://i.ibb.co/1QYRZ2v/banner.webp" alt="banner">
     </div>
-
- 
-    <div class="icon">
-
-      <div class="mercadinho-cor">
-          <abbr title="Voltar"><a href="../construçao.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
-      </div >
-
-      
+  </div>
+  <div class="icon">
+    <div class="mercadinho-cor">
+      <abbr title="Voltar"><a href="../construçao.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
+    </div > 
   </div>  
-
-
- <!--------------------------------------------------->
- <section class="slider">
+  <!--------------------------------------------------->
+  <section class="slider">
   <div class="product">
-    <img src="https://i.ibb.co/gg37Pmn/001.webp" alt="001">
-    
-    
+    <img src="https://i.ibb.co/gg37Pmn/001.webp" alt="001"> 
   </div>
-
   <div class="product">
-    <img src="https://i.ibb.co/rQLH75B/002.webp" alt="002">
-    
-    
+    <img src="https://i.ibb.co/rQLH75B/002.webp" alt="002">  
   </div>
-
   <div class="product">
-    <img src="https://i.ibb.co/JdjVkKV/003.webp" alt="003">
-    
-    
+    <img src="https://i.ibb.co/JdjVkKV/003.webp" alt="003">  
   </div>
-
   <div class="product">
     <img src="https://i.ibb.co/Ms8npZg/004.webp" alt="004">
-    
-    
   </div>
-
   <div class="product">
     <img src="https://i.ibb.co/JFx3pQ0/005.webp" alt="005">
-    
-    
   </div>
-
   <div class="product">
     <img src="https://i.ibb.co/3pv8spr/006.webp" alt="006">
-    
-    
   </div>
-
-
- 
-</section>
-
-
-<script>
-  $(document).ready(function(){
-      $('.slider').slick({
-          slidesToShow: 4, // Mostrar dois produtos por vez
-          slidesToScroll: 1,
-          prevArrow: '<button class="slick-prev">Anterior</button>',
-          nextArrow: '<button class="slick-next">Próximo</button>',
-          responsive: [
-              {
-                  breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                  settings: {
-                      slidesToShow: 1
-                  }
-              }
-          ]
-      });
-  });
-</script>
-
-<!--------------------------------------------------->
-    
-
-
-
-   
-
-    <div class="saiba-mais">
-        <h2>Fale Conosco</h2>
+  </section>
+  <!--------------------------------------------------->
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar dois produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+  <!--------------------------------------------------->
+  <div class="saiba-mais">
+    <h2>Fale Conosco</h2>
+  </div>
+  <div class="redes-sociais">    
+    <div>
+      <img src="../icon/zap.png" alt="zap">
     </div>
-
-    <div class="redes-sociais">
-        
-        <div>
-          <img src="../icon/zap.png" alt="zap">
-        </div>
-
-        <div>
-            <a href="https://www.instagram.com/constrularcamocim/" target="_blank"><img src="../icon/insta.png" alt="insta"></a>
-          </div>
-  
-          <div>
-              <a href="https://www.facebook.com/constrularcamocimce/?paipv=0&eav=AfbBm5dTuTTVLhXAh0HirCddc8yQ2g-L7yLF9jYbqBRz58gqB6DCpEp3_M8VUGaPVts&_rdr" target="_blank"><img src="../icon/face.png" alt="face"></a>
-            </div>
-  
-
-        
-        
-        
-        <div>
-            <a href="https://www.google.com/maps/dir//R.+Humait%C3%A1,+1501+-+Camocim,+CE,+62400-000/@-2.9014009,-40.9270538,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x7ebdbd1ae327d13:0x7a031a7b7003ef24!2m2!1d-40.8446518!2d-2.9014039?entry=ttu" target="_blank"><img src="../icon/local.png" alt="localizaçao"></a>
-        </div>
+    <div>
+      <a href="https://www.instagram.com/constrularcamocim/" target="_blank"><img src="../icon/insta.png" alt="insta"></a>
     </div>
-
-
-    <!-------------------------->
-    <div class="perfil-bloco">
-      <div>
-        <img src="https://i.ibb.co/T8dqWf6/banner-2.webp" alt="banner-2">
-      </div>
+    <div>
+      <a href="https://www.facebook.com/constrularcamocimce/?paipv=0&eav=AfbBm5dTuTTVLhXAh0HirCddc8yQ2g-L7yLF9jYbqBRz58gqB6DCpEp3_M8VUGaPVts&_rdr" target="_blank"><img src="../icon/face.png" alt="face"></a>
     </div>
-
-    <!------------------------------->
-
-    
-
+    <div>
+      <a href="https://www.google.com/maps/dir//R.+Humait%C3%A1,+1501+-+Camocim,+CE,+62400-000/@-2.9014009,-40.9270538,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x7ebdbd1ae327d13:0x7a031a7b7003ef24!2m2!1d-40.8446518!2d-2.9014039?entry=ttu" target="_blank"><img src="../icon/local.png" alt="localizaçao"></a>
+    </div>
+  </div>
+  <!-------------------------->
+  <div class="perfil-bloco">
+    <div>
+      <img src="https://i.ibb.co/T8dqWf6/banner-2.webp" alt="banner-2">
+    </div>
+  </div>
+  <!------------------------------->
 </body>
 </html>
