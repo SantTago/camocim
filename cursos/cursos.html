@@ -6,6 +6,8 @@
   <title>Registra Camocim</title>
   <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
+ 
+  
 </head>
 <body>
 
@@ -13,31 +15,28 @@
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
-    
     <a href="cursos.html" onclick="showSection('noticias')">Inicio</a>
+    <a href="Redes sociais.html" onclick="showSection('noticias')">Redes sociais</a>
     <a href="Hotelaria e Hotel.html" onclick="showSection('noticias')">Hotelaria e Hotel</a>
     <a href="Idiomas.html" onclick="showSection('noticias')">Idiomas</a>
     <a href="Farmácia.html" onclick="showSection('noticias')">Farmácia</a>
+    <a href="Enfermagem.html" onclick="showSection('noticias')">Enfermagem</a>
     <a href="Concurso publico.html" onclick="showSection('noticias')">Concurso publico</a>
     <a href="Moda Feminina.html" onclick="showSection('noticias')">Moda Feminina</a>
     <a href="Confeitaria.html" onclick="showSection('noticias')">Confeitaria</a>
-    <a href="#" onclick="closeMenu()"><span class="close-arrow">&larr;</span></a>
+    <a href="#" onclick="closeMenu()"><span class="close-arrow" id="baixo">&larr;</span></a>
   </div>
-
 
   <!-- Content -->
   <div class="content">
-
     <div class="logomarca">
       <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
     </div>
-
     <nav>
       <div class="voltar">
         <a href="../index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
       </div>
     </nav>
-
     <!------------------------------------------------->
     <h2 class="cur">Sugestões de Cursos</h2>
     <div class="sugestao">
@@ -63,7 +62,7 @@
       </div>
       <div class="curso">
         <img src="https://static-media.hotmart.com/Iq0SozJ97WZm6xiP0ctybuAtFxQ=/filters:background_color(white)/hotmart/product_pictures/450509f4-fd32-4840-b71a-fa95803890a3/067F6455F8A54278886226C76AAFB62A.jpeg" alt="Curso 1">
-        <h3>Método Francês sem Fronteiras<</h3>
+        <h3>Método Francês sem Fronteiras</h3>
         <a href="https://go.hotmart.com/K90140705X" class="adquirir-btn" target="_blank">Adquirir Curso</a>
       </div>
       <div class="curso">
@@ -71,6 +70,16 @@
         <h3>Polícia Militar do Ceará (PM CE) - Soldado</h3>
         <a href="https://go.hotmart.com/N90143609W?dp=1" class="adquirir-btn" target="_blank">Adquirir Curso</a>
     </div>
+    <div class="curso">
+      <img src="https://static-media.hotmart.com/Qa3nHQlJNsXe8zk6ZI1IlKiCBJs=/filters:background_color(white)/hotmart/product_pictures/fbf20fd1-44f0-4ec4-aabb-25040bf7fb89/CANVAENFERMAGEM.png" alt="Curso 1">
+      <h3>CANVA ENFERMAGEM</h3>
+      <a href="https://go.hotmart.com/X90149109W" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+    </div>
+    <div class="curso">
+      <img src="https://static-media.hotmart.com/PKiv3ZrJNG0lijqnaExlGWwxSbM=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/99a7511a-8780-4621-928b-7b2f77b99db4/e1.png?w=920" alt="Curso 1">
+      <h3>COMO SE DESTACAR NAS REDES SOCIAIS</h3>
+      <a href="https://go.hotmart.com/P90149763T" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+  </div>
     </div>
 
     <!------------------------------------------------->
@@ -79,7 +88,7 @@
       function toggleMenu() {
         var sidebar = document.getElementById('sidebar');
         var menuIcon = document.getElementById('menu-icon');
-
+  
         if (parseInt(sidebar.style.left) >= 0) {
           sidebar.style.left = '-200px';
           menuIcon.innerHTML = '&#9776;'; // Ícone para indicar menu fechado
@@ -88,14 +97,14 @@
           menuIcon.innerHTML = '&#10005;'; // Ícone para indicar menu aberto
         }
       }
-
+  
       function closeMenu() {
         var sidebar = document.getElementById('sidebar');
         var menuIcon = document.getElementById('menu-icon');
         sidebar.style.left = '-200px';
         menuIcon.innerHTML = '&#9776;'; // Ícone para indicar menu fechado
       }
-
+  
       // Adicionei esta função para fechar o menu quando clicar fora dele
       document.addEventListener('click', function (event) {
         var sidebar = document.getElementById('sidebar');
@@ -105,7 +114,7 @@
           menuIcon.innerHTML = '&#9776;'; // Ícone para indicar menu fechado
         }
       });
-
+  
       function adquirirCurso(curso) {
         alert('Curso adquirido: ' + curso);
         // Adicione a lógica real aqui, como redirecionar para uma página de pagamento, etc.

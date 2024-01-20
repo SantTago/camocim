@@ -21,12 +21,17 @@ body {
   @media only screen and (max-width: 768px) {
     .logomarca {
       padding: 15px;
+      padding-bottom: 50px;
     }
 
     #video-container,
     #curiosidades-video-container {
       padding-bottom: 56.25%;
     }
+  }
+
+  #baixo{
+    padding-bottom: 100px;
   }
 
   @media only screen and (min-width: 769px) {
@@ -137,6 +142,8 @@ body {
   .sidebar a:hover {
     color: #f1f1f1;
   }
+
+  
 
   .content {
     margin-left: 0;
@@ -253,4 +260,23 @@ body {
   }
   .cur{
       text-align: center;
+  }
+
+  #sidebar {
+    overflow-y: auto;
+    max-height: 100vh; /* Define a altura máxima para o tamanho da viewport */
+  }
+  
+  /* Adiciona estilo à barra de rolagem */
+  #sidebar::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+  }
+  
+  #sidebar::-webkit-scrollbar-thumb {
+    background-color: #0077ff; /* Cor da "thumb" da barra de rolagem (parte que você arrasta) */
+    border-radius: 10px; /* Raio da borda da "thumb" */
+  }
+  
+  #sidebar::-webkit-scrollbar-track {
+    background-color: #91b7da; /* Cor do fundo da barra de rolagem */
   }
