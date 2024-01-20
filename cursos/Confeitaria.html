@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registra Camocim</title>
+  <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="open-btn" onclick="toggleMenu()">&#9776;</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="cursos.html" onclick="showSection('noticias')">Inicio</a>
+    <a href="Hotelaria e Hotel.html" onclick="showSection('noticias')">Hotelaria e Hotel</a>
+    <a href="Moda Feminina.html" onclick="showSection('noticias')">Moda Feminina</a>
+    <a href="Confeitaria.html" onclick="showSection('noticias')">Confeitaria</a>
+
+    <a href="#" onclick="closeMenu()"><span class="close-arrow">&larr;</span> Fechar</a>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+
+    <div class="logomarca">
+      <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
+    </div>
+
+    <nav>
+      <div class="voltar">
+        <a href="../index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+      </div>
+    </nav>
+
+
+      <!------------------------------------------------->
+      <h2 class="cur">Confeitaria</h2>
+    <div class="sugestao">
+        <div class="curso">
+            <img src="https://static-media.hotmart.com/03srT6G7jaBgC_lSXF9FdHa5CxU=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/49a4e704-324f-4397-8079-94907982ac85/Screenshot_20240105090219_Canva.jpg?w=920" alt="Curso 1">
+            <h3>Ebook de confeitaria</h3>
+            <a href="https://go.hotmart.com/K90129787K" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+        </div>
+        <div class="curso">
+          <img src="https://static-media.hotmart.com/Pg2rX55T3H4MrsmM1biQWUgBWh8=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/9061bae6-37db-4ba4-97ab-44fe21a94985/StoryInstagramReceitadeTiramissucomFoto.png?w=920" alt="Curso 1">
+          <h3>A sua confeitaria</h3>
+          <a href="https://go.hotmart.com/D90129800B" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+      </div>
+        <div class="curso">
+            <img src="https://static-media.hotmart.com/aOcyGor8-IC_j8hDuaajViovJNw=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/095e66d2-7870-4c3e-bf94-be3fc50934cd/BD7B8395CD33410C88010BB197D8C3A9.jpeg?w=920" alt="Curso 1">
+            <h3>Confeitaria</h3>
+            <a href="https://go.hotmart.com/H90129812H" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+        </div>
+        
+        <div class="curso">
+            <img src="https://static-media.hotmart.com/7DfMh8S8A8JC_JmD2CMwk9J33Xs=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/d436b81d-ba71-4bb1-9bf2-e1537be4d1a2/IMG_0116.jpg?w=920" alt="Curso 1">
+            <h3>A Fórmula da Confeitaria</h3>
+            <a href="https://go.hotmart.com/E90129854G?dp=1" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+        </div>
+        <div class="curso">
+          <img src="https://static-media.hotmart.com/IUz8F6cS7tA0Zx-rvTKMSEzM7mo=/filters:background_color(white)/hotmart/product_pictures/4dfb83fe-8cdb-4b67-af7b-7e056a75b646/Borcelle1.png" alt="Curso 1">
+          <h3>ARTE DA CONFEITARIA</h3>
+          <a href="https://go.hotmart.com/Y90129924F" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+      </div>
+        <div class="curso">
+            <img src="https://static-media.hotmart.com/L5n3oG4zqOEQXRC03FYw_53BC4E=/filters:background_color(white)/hotmart/product_pictures/8b1e7012-7621-464a-83b4-81e1ecbcf56a/CAPA2.png" alt="Curso 1">
+            <h3>Vivendo da Confeitaria</h3>
+            <a href="https://go.hotmart.com/C90129946W" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+        </div>
+        
+      </div>
+
+    
+       <!------------------------------------------------->
+
+  <script>
+
+    function toggleMenu() {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.style.left = (sidebar.style.left === '0px' || sidebar.style.left === '') ? '-200px' : '0px';
+    }
+
+    function closeMenu() {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.style.left = '-200px';
+    }
+
+    function adquirirCurso(curso) {
+        alert('Curso adquirido: ' + curso);
+        // Adicione a lógica real aqui, como redirecionar para uma página de pagamento, etc.
+      }
+
+  </script>
+
+</body>
+</html>
