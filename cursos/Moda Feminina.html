@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="Pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +9,18 @@
 </head>
 <body>
 
-  <div class="open-btn" onclick="toggleMenu()">&#9776;</div>
+  <div class="open-btn" onclick="toggleMenu()"><span id="menu-icon">&#9776;</span></div>
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
+    
     <a href="cursos.html" onclick="showSection('noticias')">Inicio</a>
     <a href="Hotelaria e Hotel.html" onclick="showSection('noticias')">Hotelaria e Hotel</a>
+    <a href="Idiomas.html" onclick="showSection('noticias')">Idiomas</a>
+    <a href="Farmácia.html" onclick="showSection('noticias')">Farmácia</a>
     <a href="Moda Feminina.html" onclick="showSection('noticias')">Moda Feminina</a>
     <a href="Confeitaria.html" onclick="showSection('noticias')">Confeitaria</a>
-    <a href="#" onclick="closeMenu()"><span class="close-arrow">&larr;</span> Fechar</a>
+    <a href="#" onclick="closeMenu()"><span class="close-arrow">&larr;</span></a>
   </div>
 
   <!-- Content -->
@@ -44,7 +47,7 @@
         <div class="curso">
             <img src="https://static-media.hotmart.com/gb-6wjK8uptxvbeQS5avBG67cSo=/filters:background_color(white)/hotmart/product_pictures/ca3045fc-c463-4b27-8a4f-966e9b55efa6/ModaFeminina.png" alt="Curso 1">
             <h3>Pacote (Moda Feminina)</h3>
-            <a href="https://material.gmmoldes.com.br/" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+            <a href="https://go.hotmart.com/U90127483L" class="adquirir-btn" target="_blank">Adquirir Curso</a>
         </div>
         <div class="curso">
             <img src="https://static-media.hotmart.com/WVSGB3p8ZRTfJTnW5wNq2M34RwM=/filters:background_color(white)/hotmart/product_pictures/c007c803-8949-4444-a324-b9e8c28698be/CAC193E8370E49D99DDE971715503680.png" alt="Curso 1">
@@ -73,24 +76,42 @@
     
        <!------------------------------------------------->
 
-  <script>
-
-    function toggleMenu() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.style.left = (sidebar.style.left === '0px' || sidebar.style.left === '') ? '-200px' : '0px';
-    }
-
-    function closeMenu() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.style.left = '-200px';
-    }
-
-    function adquirirCurso(curso) {
-        alert('Curso adquirido: ' + curso);
-        // Adicione a lógica real aqui, como redirecionar para uma página de pagamento, etc.
-      }
-
-  </script>
+       <script>
+        function toggleMenu() {
+          var sidebar = document.getElementById('sidebar');
+          var menuIcon = document.getElementById('menu-icon');
+  
+          if (parseInt(sidebar.style.left) >= 0) {
+            sidebar.style.left = '-200px';
+            menuIcon.innerHTML = '&#9776;'; // Ícone para indicar menu fechado
+          } else {
+            sidebar.style.left = '0px';
+            menuIcon.innerHTML = '&#10005;'; // Ícone para indicar menu aberto
+          }
+        }
+  
+        function closeMenu() {
+          var sidebar = document.getElementById('sidebar');
+          var menuIcon = document.getElementById('menu-icon');
+          sidebar.style.left = '-200px';
+          menuIcon.innerHTML = '&#9776;'; // Ícone para indicar menu fechado
+        }
+  
+        // Adicionei esta função para fechar o menu quando clicar fora dele
+        document.addEventListener('click', function (event) {
+          var sidebar = document.getElementById('sidebar');
+          var menuIcon = document.getElementById('menu-icon');
+          if (!event.target.closest('.open-btn') && !event.target.closest('.sidebar')) {
+            sidebar.style.left = '-200px';
+            menuIcon.innerHTML = '&#9776;'; // Ícone para indicar menu fechado
+          }
+        });
+  
+        function adquirirCurso(curso) {
+          alert('Curso adquirido: ' + curso);
+          // Adicione a lógica real aqui, como redirecionar para uma página de pagamento, etc.
+        }
+      </script>
 
 </body>
 </html>

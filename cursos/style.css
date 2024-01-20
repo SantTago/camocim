@@ -155,8 +155,9 @@ body {
   }
 
   .close-arrow {
-    font-size: 20px;
-    margin-right: 5px;
+    font-size: 36px;
+    margin-left: 50px;
+    display: flex;
   }
 
   #sugestoes-cursos {
