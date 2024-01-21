@@ -471,7 +471,7 @@
 </body>
 </html>
 <!-------------------------------------------------------------------->
-
+  
 
   <script>
     var stores = [
@@ -1192,6 +1192,44 @@
 
 <button id="floating-button" onclick="showPopup()">IA-IMG</button>
 
+  
+<!-- Script JavaScript para controlar a animação -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      // Define um tempo limite para a animação
+      setTimeout(function() {
+          // Esconde a animação após 3 segundos
+          document.getElementById("loading-animation").style.display = "none";
+      }, 3000);
+  });
+</script>
+
+<!-- Elemento que contém a animação -->
+<div id="loading-animation">
+  <img src="icon/sdsdsdsas.jpg" alt="Sua Imagem" id="custom-image">
+  <!-- Adicione a barra de loading e a imagem aqui -->
+  <div id="loading-bar-container">
+      <div id="loading-bar"></div>
+  </div>
+  
+</div>
+
+<!-- Script JavaScript para atualizar a barra de loading -->
+<script>
+  document.onreadystatechange = function () {
+      var loadingBar = document.getElementById("loading-bar");
+      if (document.readyState === "complete") {
+          loadingBar.style.width = "100%";
+          setTimeout(function() {
+              // Esconde a animação após 1 segundo
+              document.getElementById("loading-animation").style.display = "none";
+          }, 1000);
+      } else {
+          var progress = Math.floor((document.readyState / 4) * 100);
+          loadingBar.style.width = progress + "%";
+      }
+  };
+</script>
 </body>
 
 </html>

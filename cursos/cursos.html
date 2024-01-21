@@ -6,10 +6,25 @@
   <title>Registra Camocim</title>
   <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
- 
+  <style>
+    /* Estilos para a animação (pode ser personalizado conforme necessário) */
+    #loading-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff; /* Cor de fundo da animação */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Certifique-se de que a animação esteja acima de outros elementos */
+    }
+</style>
   
 </head>
 <body>
+  
 
   <div class="open-btn" onclick="toggleMenu()"><span id="menu-icon">&#9776;</span></div>
 
@@ -24,6 +39,7 @@
     <a href="Concurso publico.html" onclick="showSection('noticias')">Concurso publico</a>
     <a href="vestibular.html" onclick="showSection('noticias')">Vestibular</a>
     <a href="Moda Feminina.html" onclick="showSection('noticias')">Moda Feminina</a>
+    <a href="beleza.html" onclick="showSection('noticias')">Beleza</a>
     <a href="Confeitaria.html" onclick="showSection('noticias')">Confeitaria</a>
     <a href="#" onclick="closeMenu()"><span class="close-arrow" id="baixo">&larr;</span></a>
   </div>
@@ -86,6 +102,11 @@
       <h3>COMO SE DESTACAR NAS REDES SOCIAIS</h3>
       <a href="https://go.hotmart.com/P90149763T" class="adquirir-btn" target="_blank">Adquirir Curso</a>
   </div>
+  <div class="curso">
+    <img src="https://static-media.hotmart.com/PKhqXM1huwt6hJKDJqZEv25MrAs=/filters:background_color(white)/hotmart/product_pictures/281e9447-f6b0-4218-8e82-c8a3c4184fe2/capa_hotmart_ii.png" alt="Curso 1">
+    <h3>Como Montar um Salão de Beleza - Mestres da Beleza</h3>
+    <a href="https://go.hotmart.com/W90152657L" class="adquirir-btn" target="_blank">Adquirir Curso</a>
+</div>
     </div>
 
     <!------------------------------------------------->
