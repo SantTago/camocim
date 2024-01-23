@@ -295,8 +295,8 @@
     margin-top: 20px;
 }
 .pagination button {
+    max-width: 43px;
     margin: 0 5px;
-    padding: 8px 12px;
     cursor: pointer;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
@@ -309,22 +309,9 @@
 }
 
 
-#to-top-btn, #to-news-btn {
-  display: none;
-  position: fixed;
-  border-radius: 25%;
-  cursor: pointer;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
 
-#to-top-btn {
-  right: 20px;
-  bottom: 20px;
-  background-color: #007bff;
-  color: #fff;
-  padding: 7px;
-  z-index: 1000;
-}
+
+
 
 #to-news-btn {
   right: -7px;
@@ -1174,63 +1161,8 @@
 
 
 <!------------------------------------------>
-<script>
-  window.addEventListener('scroll', function () {
-      var toTopBtn = document.getElementById('to-top-btn');
-      var toNewsBtn = document.getElementById('to-news-btn');
 
-      // Verifica se a largura da tela é menor que 768 pixels (dispositivo móvel)
-      if (window.innerWidth < 768) {
-          // Verifica se a posição de rolagem é maior que 200 pixels do topo
-          if (window.scrollY > 200) {
-              toTopBtn.style.display = 'block';
-              toTopBtn.style.opacity = '1';
 
-              toNewsBtn.style.display = 'block';
-              toNewsBtn.style.opacity = '1';
-              toNewsBtn.style.transform = 'scale(1)'; // Escala 1 para mostrar o botão
-          } else {
-              toTopBtn.style.opacity = '0';
-              setTimeout(function() {
-                  toTopBtn.style.display = 'none';
-              }, 300); // Tempo da transição em milissegundos
-
-              toNewsBtn.style.opacity = '0';
-              toNewsBtn.style.transform = 'scale(0)'; // Escala 0 para esconder o botão
-              setTimeout(function() {
-                  toNewsBtn.style.display = 'none';
-              }, 300);
-          }
-      } else {
-          toTopBtn.style.opacity = '0';
-          setTimeout(function() {
-              toTopBtn.style.display = 'none';
-          }, 300);
-
-          toNewsBtn.style.opacity = '0';
-          toNewsBtn.style.transform = 'scale(0)';
-          setTimeout(function() {
-              toNewsBtn.style.display = 'none';
-          }, 300);
-      }
-  });
-
-  function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function redirectToNews() {
-      // Substitua "sua-pagina-de-noticias.html" pela URL real da sua página de notícias
-      window.location.href = "noticias.html";
-  }
-</script>
-
-<!-- Botões flutuantes -->
-<div id="to-top-btn" onclick="scrollToTop()">
-  &#9650; <!-- Triângulo para cima (pode ser substituído por um ícone ou texto) -->
-</div>
-
-<button id="floating-button" onclick="showPopup()">IA-IMG</button>
 
   <!-- Script JavaScript para controlar a animação -->
 <script>
@@ -1269,6 +1201,266 @@
       }
   };
 </script>
+
+<!----------------------------------------->
+
+
+<button id="botaoFlutuante">Poste</button>
+
+<div id="janelaLogin">
+  <span id="fecharJanela" onclick="fecharJanelaLogin()">X</span>
+  <div class="logomarca">
+      <img src="https://i.ibb.co/ZmFw9r9/logo-da-pagina.png" alt="logo-da-pagina">
+  </div>
+  <div class="botoes">
+      <button onclick="adicionarNumero(1)">1</button>
+      <button onclick="adicionarNumero(2)">2</button>
+      <button onclick="adicionarNumero(3)">3</button>
+      <button onclick="adicionarNumero(4)">4</button>
+      <button onclick="adicionarNumero(5)">5</button>
+      <button onclick="adicionarNumero(6)">6</button>
+      <button onclick="adicionarNumero(7)">7</button>
+      <button onclick="adicionarNumero(8)">8</button>
+      <button onclick="adicionarNumero(9)">9</button>
+  </div>
+  <div id="senha-container">
+      <input type="password" id="senhaLogin" placeholder="Senha">
+      <input type="checkbox" id="mostrarSenhaCheckbox" onchange="toggleMostrarSenha()"> Mostrar Senha
+  </div>
+  <p id="mensagem"></p>
+  <button id="prosseguir" onclick="verificarSenhaLogin()">Prosseguir</button>
+ 
+</div>
+
+<script>
+  var senhaCorreta = "624";
+  var senhaDigitada = "";
+
+  document.getElementById("botaoFlutuante").addEventListener("click", function(event) {
+      event.stopPropagation();
+      document.getElementById("janelaLogin").style.display = "block";
+  });
+
+  document.addEventListener("click", function(event) {
+      var janelaLogin = document.getElementById("janelaLogin");
+      if (event.target !== janelaLogin && !janelaLogin.contains(event.target)) {
+          janelaLogin.style.display = "none";
+      }
+  });
+
+  function fecharJanelaLogin() {
+      document.getElementById("janelaLogin").style.display = "none";
+  }
+
+  function adicionarNumero(numero) {
+      senhaDigitada += numero;
+      document.getElementById("mensagem").innerText = "";
+      updateSenhaInput();
+  }
+
+  function toggleMostrarSenha() {
+      var mostrarSenhaCheckbox = document.getElementById("mostrarSenhaCheckbox");
+      var senhaInput = document.getElementById("senhaLogin");
+      senhaInput.type = mostrarSenhaCheckbox.checked ? "text" : "password";
+  }
+
+  function updateSenhaInput() {
+      var senhaInput = document.getElementById("senhaLogin");
+      senhaInput.value = senhaDigitada;
+  }
+
+  function verificarSenhaLogin() {
+      if (senhaDigitada === senhaCorreta) {
+          window.location.href = "login/apoiadores.html";
+      } else {
+          document.getElementById("mensagem").innerText = "Senha incorreta. Tente novamente.";
+          resetSenha();
+      }
+  }
+
+  function voltar() {
+      window.history.back();
+  }
+
+  function resetSenha() {
+      senhaDigitada = "";
+      updateSenhaInput();
+  }
+</script>
+
+<style>
+  
+  #botaoFlutuante {
+    position: fixed;
+    top: 20px; /* ajuste conforme necessário */
+    right: 20px; /* ajuste conforme necessário */
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 80px;
+}
+
+#botaoFlutuante:hover {
+    background-color: #00ff6a;
+}
+
+  #janelaLogin {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+  }
+
+  #fecharJanela {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      height: 10px;
+  }
+  
+
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(3, 75px);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+button {
+    width: 100%;
+    height: 37px;
+    background-color: #3463db59;
+    color: #4400ff;
+    border: none;
+    border-radius: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #00ff6a;
+    color: white;
+    transition: 0.1s;
+    box-shadow: 0px 0px 15px rgb(0, 238, 255);
+}
+
+button:active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#mensagem {
+    margin-top: 20px;
+    color: #e74c3c;
+}
+
+#senha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#senha {
+  
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 156px;
+    transition: border-color 0.3s ease;
+}
+
+#mostrarSenha {
+    margin-left: 10px;
+}
+
+#prosseguir {
+    margin-top: 10px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#prosseguir:hover {
+    background-color: #00ff6a;
+}
+
+#voltar {
+    margin-top: 10px;
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#voltar:hover {
+    background-color: #c0392b;
+}
+
+.logomarca {
+    padding: 9px;
+    padding-top: 4px;
+    max-width: 200px;
+    width: 107%;
+    text-align: center;
+    margin-bottom: -95px;
+    margin: 0px auto;
+}
+  
+.logomarca img {
+    
+    max-width: 73%;
+    border-top: 11px;
+    height: auto;
+}
+  
+  @media only screen and (max-width: 490px) {
+    .logomarca {
+      padding: 9px;
+      max-width: 212px;
+      margin-bottom: -59px;
+      margin: 0px auto;
+  }
+    .menu {
+      text-align: center;
+    }
+    header {
+      background-color: #ffffff;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      /* justify-items: center; */
+      /* flex-wrap: wrap; */
+      flex-direction: column-reverse;
+      align-items: center;
+  }
+  }
+  /* Restante dos estilos permanecem iguais */
+</style>
 </body>
 
 </html>
