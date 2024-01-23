@@ -598,20 +598,23 @@
     display: none;
     background-color: var(--cor1);
     color: #fff;
-    /* padding-bottom: 10px; */
-    padding: 10px 15px;
+    padding-bottom: 10px; 
+  font-size: 16px;
     border: none;
     border-radius: 0px 5px 0px 0px;
     cursor: pointer;
     margin-bottom: 0px;
     box-shadow: -15px 15px 20px 18px #ffffff;
     font-weight: 600;
+   
 }
 
-.mobile-only:hover {  
-  box-shadow: -15px 15px 20px 18px #ffe600;
+button:hover {
+  background-color: #00ff6a;
+  color: white;
+  transition: 0.1s;
+  box-shadow: 0px 0px 15px rgb(0, 238, 255);
 }
-
 
   .mobile-only {
     display: none;
@@ -624,8 +627,10 @@
   @media only screen and (max-width: 600px) {
     .mobile-only {
       display: block;
-    }
+      max-width: 100px;
+      padding: 10px 20px;
   }
+}
 
   @media only screen and (min-width: 601px) {
     .icon2 {
@@ -1447,17 +1452,7 @@ button:active {
     .menu {
       text-align: center;
     }
-    header {
-      background-color: #ffffff;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      display: flex;
-      /* justify-items: center; */
-      /* flex-wrap: wrap; */
-      flex-direction: column-reverse;
-      align-items: center;
-  }
+    
   }
   /* Restante dos estilos permanecem iguais */
 </style>

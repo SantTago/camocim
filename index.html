@@ -31,12 +31,7 @@
         
       }
       
-      header {
-        background-color: #0077FF;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-      }
+     
       
       section {
         display: flex;
@@ -361,82 +356,6 @@
     
   </header>
 
-
-  <!-------------------------------------------------------------------->
-  <style>
-    #popup {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      background-color: #000000c2;
-      border: 1px solid #ffffff;
-      z-index: 999;
-    }
-    
-    #popup-buttons {
-      margin-top: 10px;
-    }
-    
-    .close-btn {
-      margin-left: 10px;
-    }
-  </style>
-
-
-  
-
-<div id="popup">
-  <img id="popup-image" alt="Imagem popup">
-  <p id="challenge" style="color: #ffffff;">IA-IMG -> Imagens do mundo inteiro! </p>
-  <div id="popup-buttons">
-    <button onclick="generateImage()">Ver Nova Imagem</button>
-    <button id="auto-mode-btn-popup" onclick="toggleAutoMode()">Auto</button>
-    <button onclick="stopAutoMode()">Stop</button>
-    <button class="close-btn" onclick="closePopup()">Fechar</button>
-  </div>
-</div>
-
-<script>
-  var autoMode = false;
-  var autoInterval;
-  var displayedImages = [];
-
-  function closePopup() {
-    var popup = document.getElementById('popup');
-    popup.style.display = 'none';
-    stopAutoMode();
-  }
-
-
-  function toggleAutoMode() {
-    autoMode = !autoMode;
-    var autoModeBtn = document.getElementById('auto-mode-btn-popup');
-
-    if (autoMode) {
-      autoInterval = setInterval(generateImage, 3000);
-      autoModeBtn.classList.add('active');
-    } else {
-      clearInterval(autoInterval);
-      autoModeBtn.classList.remove('active');
-    }
-  }
-
-  function stopAutoMode() {
-    autoMode = false;
-    clearInterval(autoInterval);
-    document.getElementById('auto-mode-btn-popup').classList.remove('active');
-  }
-</script>
-
-</body>
-</html>
-<!-------------------------------------------------------------------->
   
 
   <script>
@@ -586,19 +505,22 @@
     background-color: var(--cor1);
     color: #fff;
     /* padding-bottom: 10px; */
-    padding: 10px 15px;
+  font-size: 16px;
     border: none;
     border-radius: 0px 5px 0px 0px;
     cursor: pointer;
     margin-bottom: 0px;
     box-shadow: -15px 15px 20px 18px #ffffff;
     font-weight: 600;
+    max-width: 100px;
 }
 
-.mobile-only:hover {  
-  box-shadow: -15px 15px 20px 18px #ffe600;
+button:hover {
+  background-color: #00ff6a;
+  color: white;
+  transition: 0.1s;
+  box-shadow: 0px 0px 15px rgb(0, 238, 255);
 }
-
 
   .mobile-only {
     display: none;
@@ -1097,11 +1019,6 @@
 
 
 
-<!------------------------------------------>
-
-
-
-
 
 
 
@@ -1359,9 +1276,7 @@ button:active {
     transition: background-color 0.3s ease;
 }
 
-#voltar:hover {
-    background-color: #c0392b;
-}
+
 
 .logomarca {
     padding: 9px;
@@ -1375,7 +1290,7 @@ button:active {
   
 .logomarca img {
     
-    max-width: 73%;
+    max-width: 100%;
     border-top: 11px;
     height: auto;
 }
@@ -1390,17 +1305,7 @@ button:active {
     .menu {
       text-align: center;
     }
-    header {
-      background-color: #ffffff;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      display: flex;
-      /* justify-items: center; */
-      /* flex-wrap: wrap; */
-      flex-direction: column-reverse;
-      align-items: center;
-  }
+  
   }
   /* Restante dos estilos permanecem iguais */
 </style>
