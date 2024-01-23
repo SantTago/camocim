@@ -60,6 +60,12 @@
             width: 100%;
             margin-top: 10px;
         }
+        button:hover {
+            background-color: #00ff6a;
+            color: white;
+            transition: 0.1s;
+            box-shadow: 0px 0px 15px rgb(0, 238, 255);
+        }
 
         #planValue {
             margin-top: 10px;
@@ -83,7 +89,13 @@
             cursor: pointer;
             margin-top: 20px;
             text-align: center;
-            }
+        }
+        .back-button:hover {
+            background-color: #00ff6a;
+            color: white;
+            transition: 0.1s;
+            box-shadow: 0px 0px 15px rgb(0, 238, 255);
+        }
 
         /* Adição: Estilos para tornar a notificação mais responsiva */
         @media only screen and (max-width: 600px) {
@@ -97,8 +109,6 @@
                 margin-top: 5px;
             }
 
-            
-
             #notificationBar {
                 font-size: 14px;
                 padding: 8px;
@@ -107,7 +117,7 @@
 
         #notificationBar {
             display: none;
-            background-color: #4CAF50;
+            background-color: #00ff6a;
             color: white;
             text-align: center;
             padding: 10px;
@@ -129,94 +139,121 @@
             text-align: center;
             margin-bottom: -1px;
         }
-          
-          .logomarca img {
+
+        .logomarca img {
             max-width: 100%;
             height: auto;
-          }
-          
-          @media only screen and (max-width: 490px) {
+        }
+
+        @media only screen and (max-width: 490px) {
             .logomarca {
-              padding: 9px;
-              max-width: 212px;
-              margin-bottom: -1px;
-              
-          }
+                padding: 9px;
+                max-width: 212px;
+                margin-bottom: -1px;
+            }
             .menu {
-              text-align: center;
+                text-align: center;
             }
             header {
-              background-color: var(--cor1);
-              color: #fff;
-              text-align: center;
-              padding: 10px;
-              display: flex;
-              /* justify-items: center; */
-              /* flex-wrap: wrap; */
-              flex-direction: column-reverse;
-              align-items: center;
-          }
-          }
+                background-color: var(--cor1);
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+                display: flex;
+                /* justify-items: center; */
+                /* flex-wrap: wrap; */
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+        }
 
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .qr-code-info-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .qr-code-container {
+            margin-bottom: 20px;
+        }
+
+        .qr-code-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .payment-info {
+            max-width: 400px;
+            text-align: left;
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-
-   
-
         <div class="logomarca">
             <img src="https://i.ibb.co/ZmFw9r9/logo-da-pagina.png" alt="logo-da-pagina">
         </div>
-        
-      </header>
+    </header>
 
-    <form id="supporterForm">
-        <!-- Modificação: Chave Pix -->
-        <input type="hidden" id="pixKey" name="pixKey" value="88993464285">
-        <!-- Modificação: Nome do Pix -->
-        <input type="hidden" id="pixName" name="pixName" value="Jucilene Alves Viana">
-        <!-- Modificação: Valor predefinido -->
-        <input type="hidden" id="amount" name="amount" value="10.00">
+    <div class="content-container">
+        <form id="supporterForm">
+            <!-- Modificação: Chave Pix -->
+            <input type="hidden" id="pixKey" name="pixKey" value="registracamocim@gmail.com">
+            <!-- Modificação: Nome do Pix -->
+            <input type="hidden" id="pixName" name="pixName" value="Tiago Viana Da Cruz">
+            <!-- Modificação: Valor predefinido -->
+            <input type="hidden" id="amount" name="amount" value="100.00">
 
-        <label for="name">Nome da Empresa:</label>
-        <input type="text" id="name" name="name" placeholder="Digite o nome do apoiador" required>
-        <div id="nameError" style="color: red;"></div>
+            <label for="name">Nome da Empresa:</label>
+            <input type="text" id="name" name="name" placeholder="Digite o nome do apoiador" required>
+            <div id="nameError" style="color: red;"></div>
 
-        <label for="plan">Escolha o Plano Diário:</label>
-        <select id="plan" name="plan" onchange="displayPlanValue()" required>
-            <option value="unique">Poste Único (4 fotos) - R$10,00</option>
-        </select>
-        <div id="planError" style="color: red;"></div>
+            <label for="plan">Escolha o Plano Diário:</label>
+            <select id="plan" name="plan" onchange="displayPlanValue()" required>
+                <option value="unique">Poste Único (4 fotos) - R$100,00</option>
+            </select>
+            <div id="planError" style="color: red;"></div>
 
-        <!-- Modificação: Adicionando seção para exibir o botão de copiar a chave Pix -->
-       
+            <!-- Modificação: Adicionando seção para exibir o botão de copiar a chave Pix -->
+            <div id="planValue"></div>
 
-        <div id="planValue"></div>
+            <h1>Detalhes para Pagamento via PIX</h1>
 
-        <h1>Detalhes para Pagamento via PIX</h1>
-    
-    <p>Escaneie o QR Code ou utilize as informações abaixo para efetuar o pagamento:</p>
+            <p>Escaneie o QR Code ou utilize as informações abaixo para efetuar o pagamento:</p>
 
-    <p>Chave PIX: <strong>chave_pix@exemplo.com</strong></p>
-    <p>Nome do Beneficiário: <strong>Nome do Beneficiário</strong></p>
-    <p>Descrição do Pagamento: <strong>Pagamento de Produtos/Serviços</strong></p>
-    <p>Valor: <strong>R$ 100,00</strong></p>
+            <div class="qr-code-info-container">
+                <div class="qr-code-container">
+                    <img src="https://b.rgbimg.com/users/a/ay/ayla87/300/nteyFXG.jpg" alt="QR Code PIX">
+                </div>
 
-    <img src="url_do_seu_qr_code_gerado_pelo_servico_PIX" alt="QR Code PIX">
+                <div class="payment-info">
+                    <p>Chave PIX: <strong>registracamocim@gmail.com</strong></p>
+                    <p>Nome: <strong>Tiago Viana da Cruz</strong></p>
+                    <p>Descrição: <strong>Poste - (4 fotos)</strong></p>
+                    <p>Valor: <strong>R$ 100,00</strong></p>
 
-    <p>Após efetuar o pagamento, clique em enviar comprovante para o Envio do mesmo + 4 fotos para o poste.</p>
+                    <p>Após efetuar o pagamento, clique em enviar comprovante para o Envio do mesmo + 4 fotos para o poste.</p>
+                </div>
+            </div>
 
-
-
-        <div id="buttonsContainer">
-            <button type="button" id="copyPixButton" onclick="copyPixKey()">Copiar Chave Pix</button>
-            <button type="button" onclick="prossigaParaPagamento()">Enviar Comprovante</button>
-            <a href="../usuarios.html" class="back-button">Voltar</a>
-        </div>
-    </form>
+            <div id="buttonsContainer">
+                <button type="button" id="copyPixButton" onclick="copyPixKey()">Copiar Chave Pix</button>
+                <button type="button" onclick="prossigaParaPagamento()">Enviar Comprovante</button>
+                <a href="../index.html" class="back-button">Voltar</a>
+            </div>
+        </form>
+    </div>
 
     <div id="result"></div>
 
@@ -247,7 +284,7 @@
 
                 // Modificação: Muda a cor do botão para verde
                 var copyPixButton = document.getElementById('copyPixButton');
-                copyPixButton.style.backgroundColor = '#4CAF50'; // Cor verde
+                copyPixButton.style.backgroundColor = '#00ff6a'; // Cor verde
                 copyPixButton.style.color = 'white'; // Texto branco
 
                 showNotification('Chave Pix copiada');
@@ -314,16 +351,6 @@
         }
         
     </script>
-
-    <div class="informacoes" style="text-align: center; margin: 20px;box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.342);max-width: 800px;border: 10px auto 10px auto;padding: 20px;">
-        <h2>Como Funciona</h2>
-        <p>
-            Bem-vindo à Área do Apoiador! Aqui, você pode escolher o Plano Diário, que permite que você compartilhe conosco um poste composto por 4 fotos.
-        </p>
-        <p>
-            Após o envio do pix, clique em "Enviar Comprovante" envie o comprovante junto com as 4 imagens para o poste no site.
-        </p>
-    </div>
 
 </body>
 
