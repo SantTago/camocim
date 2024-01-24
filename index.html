@@ -7,7 +7,6 @@
     <title>Camocim</title>
     <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilo/style.css">
-    <link rel="stylesheet" href="index/IA-img.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
   
@@ -1063,8 +1062,122 @@ button:hover {
 
 
 <!----------------------------------------->
+<style>
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 80%; /* Limitando a largura do popup */
+    text-align: center; /* Centralizando o texto no popup */
+}
 
-<a href="https://mont.ink/registra-camocim" target="_blank"><button class="loginha">Lojinha</button></a>
+.popup button {
+    background-color: #007BFF; /* Definindo a cor azul para os botões */
+    color: #fff; /* Definindo a cor do texto nos botões como branco */
+    height: 60px;
+    padding: 10px 20px;
+    margin: 3px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600; 
+}
+.popup button:hover {
+  background-color: #00ff6a;
+  color: white;
+  transition: 0.1s;
+  box-shadow: 0px 0px 15px rgb(0, 238, 255);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #007BFF; /* Cor azul para o botão de fechar */
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.opçao{
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+/* Adicionando regras de mídia para tornar responsivo */
+@media screen and (max-width: 600px) {
+    .popup {
+        max-width: 90%;
+    }
+
+    .popup button {
+    background-color: #007BFF; /* Definindo a cor azul para os botões */
+    color: #fff; /* Definindo a cor do texto nos botões como branco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    height: 75px;
+}
+.popup button:hover {
+  background-color: #00ff6a;
+  color: white;
+  transition: 0.1s;
+  box-shadow: 0px 0px 15px rgb(0, 238, 255);
+}
+
+}
+  
+  /* Restante dos estilos permanecem iguais */
+</style>
+<a href="#" onclick="openPopup()"><button class="loginha">Lojinha</button></a>
+
+<a href="#" onclick="openPopup()">Lojinha</a>
+
+    <div id="popup" class="popup">
+        <span class="close-btn" onclick="closePopup()">X</span>
+        <p class="opçao">Escolha uma opção:</p>
+        <button  onclick="redirectTo('https://mont.ink/registra-camocim')">Lojinha Registra Camocim</button>
+        <button onclick="redirectTo('URL_DA_SEGUNDA_OPCAO')">Produtos da Lojinha Personalizados</button>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
+<!----------------------------------------------->
 <button id="botaoFlutuante">Poste</button>
 
 <div id="janelaLogin">
@@ -1324,7 +1437,9 @@ button:active {
     }
   
   }
-  /* Restante dos estilos permanecem iguais */
+
+
+
 </style>
 </body>
 
