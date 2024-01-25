@@ -50,11 +50,16 @@ body {
     background-color: #00438f;
     color: #fff;
     border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
+    
   }
 
+ 
   .voltar > a:hover {
-    background-color: rgb(57, 26, 194);
+    background-color: #00ff6a;
+    color: white;
+    transition: 0.1s;
+    box-shadow: 0px 0px 15px rgb(0, 238, 255);
+  
     }
 
   .video-section {
