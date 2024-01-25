@@ -1170,7 +1170,9 @@ button:hover {
 
 <!----------------------------------------->
 
+<!----------------------------------------->
 
+<a href="cursos/cursos.html" onclick="openPopup()"><button class="loginha">Cursos</button></a>
 <button id="botaoFlutuante">Poste</button>
 
 <div id="janelaLogin">
@@ -1255,20 +1257,37 @@ button:hover {
 </script>
 
 <style>
-  
-  #botaoFlutuante {
+  .loginha{
     position: fixed;
     top: 20px; /* ajuste conforme necessário */
-    right: 20px; /* ajuste conforme necessário */
+    right: -2px;
     background-color: #3498db;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     max-width: 80px;
+    margin-top: 45px;
+    
+  }
+  .loginha:hover{
+    background-color: #00ff6a;
+  }
+  #botaoFlutuante {
+    position: fixed;
+    top: 20px; 
+    right: -2px; 
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 80px;
+    
 }
 
 #botaoFlutuante:hover {
@@ -1382,9 +1401,7 @@ button:active {
     transition: background-color 0.3s ease;
 }
 
-#voltar:hover {
-    background-color: #c0392b;
-}
+
 
 .logomarca {
     padding: 9px;
@@ -1398,7 +1415,7 @@ button:active {
   
 .logomarca img {
     
-    max-width: 73%;
+    max-width: 100%;
     border-top: 11px;
     height: auto;
 }
@@ -1413,9 +1430,11 @@ button:active {
     .menu {
       text-align: center;
     }
-    
+  
   }
-  /* Restante dos estilos permanecem iguais */
+
+
+
 </style>
 </body>
 
