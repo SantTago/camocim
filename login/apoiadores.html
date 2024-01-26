@@ -209,13 +209,13 @@
     <div class="content-container">
         <form id="supporterForm">
             <!-- Modificação: Chave Pix -->
-            <input type="hidden" id="pixKey" name="pixKey" value="00020126470014BR.GOV.BCB.PIX0125registracamocim@gmail.com5204000053039865406100.005802BR5919Tiago Viana Da Cruz6010Camocim-Ce62070503***630478DA">
+            <input type="hidden" id="pixKey" name="pixKey" value="registracamocim@gmail.com">
             <!-- Modificação: Nome do Pix -->
             <input type="hidden" id="pixName" name="pixName" value="Tiago Viana Da Cruz">
             <!-- Modificação: Valor predefinido -->
             <input type="hidden" id="amount" name="amount" value="100.00">
 
-            <label for="name">Nome da Empresa:</label>
+            <label for="name">Nome completo:</label>
             <input type="text" id="name" name="name" placeholder="Digite o nome do apoiador" required>
             <div id="nameError" style="color: red;"></div>
 
@@ -346,7 +346,7 @@
         
             } else {
                 // Se o campo do nome não estiver preenchido, exibe uma mensagem de erro
-                document.getElementById('nameError').innerHTML = 'Por favor, preencha o nome da empresa.';
+                document.getElementById('nameError').innerHTML = 'Por favor, preencha seu nome completo.';
             }
         }
         
