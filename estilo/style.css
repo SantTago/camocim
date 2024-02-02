@@ -389,7 +389,7 @@
 
 
 header {
-    background-image: #0077FF;
+    
     height:150%;
 }
 
@@ -438,7 +438,6 @@ header p {
 }
 
 .menu {
-  background-color: var(--cor6);
   height: 40px;
   margin-bottom: -48px;
 }
