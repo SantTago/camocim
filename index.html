@@ -509,6 +509,7 @@ button:hover {
       display: block;
     }
   }
+  
 </style>
 
 <script>
@@ -548,7 +549,16 @@ button:hover {
   
 </script>
 
+
+
+<audio controls autoplay id="fm">
+  <source src="http://stream-153.zeno.fm/qeuluzrd2sgvv?zs=M-BFe9SiSsmoxTf_2TsHew" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
 <button id="lojasBtn" class="mobile-only">Lojas</button>
+
+
 
 <div id="search-results">
   <!-- Conteúdo inicial da div search-results -->
@@ -618,7 +628,34 @@ button:hover {
       .icon2 {
         display: none; /* Oculta o ícone em telas menores que 600 pixels */
       }
+
+      #fm {
+        height: 30px;
+        width: 180px;
+        padding-left: 35vw;
+        margin-bottom: -36px;
+      }
+
+
     }
+
+    #fm {
+      height: 30px;
+      width: 180px;
+    }
+
+  
+
+  /* Cor da barra de reprodução */
+  audio::-webkit-media-controls-panel {
+    background-color: red;
+  }
+  
+  /* Cor do botão de play/pause */
+  audio::-webkit-media-controls-play-button {
+    color: rgb(255, 255, 255);
+  }
+
 
   
   </style>
