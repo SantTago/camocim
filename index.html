@@ -26,7 +26,7 @@
         margin: 0;
         padding: 0;
         background-color: #0077ff;
-        box-shadow: 0px 0px 15px black;
+       
        
       }
       
@@ -551,6 +551,64 @@ button:hover {
   
 </script>
 
+<style>
+
+  body {
+    height: 50px;
+}
+
+  .music-display {
+    display: flex;
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    transition: 0.3s;
+  }
+
+  .bar {
+      width: 10px;
+      margin: 0 4px;
+      background: linear-gradient(to top, #ff0000, #f80000,#ff0000);
+      border-radius: 5px 5px 0 0;
+      animation: musicAnimation 0.5s ease-in-out infinite alternate;
+  }
+
+  .bar:nth-child(2n) {
+      animation-delay: 0.1s;
+  }
+
+  .bar:nth-child(3n) {
+      animation-delay: 0.2s;
+  }
+
+  .bar:nth-child(4n) {
+      animation-delay: 0.3s;
+  }
+
+  .bar:nth-child(5n) {
+      animation-delay: 0.4s;
+  }
+
+  @keyframes musicAnimation {
+      0%, 100% {
+          height: 50%;
+      }
+      50% {
+          height: 80%;
+      }
+  }
+</style>
+
+<div class="music-display">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
 
 <section class="radio-fm">
   <a href="https://www.socialcreator.com/radiowebjesuseavida" target="_blank"><img src="https://i.ibb.co/DzSgQC6/3e4276bd-6650-41a9-9225-2c9a188677b0-1.jpg"alt="159615-208318" id="img-fm"></a>
@@ -558,8 +616,9 @@ button:hover {
     <source src="http://stream-153.zeno.fm/qeuluzrd2sgvv?zs=M-BFe9SiSsmoxTf_2TsHew" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
   </audio>
-</section>
 
+</section>
+ 
 <button id="lojasBtn" class="mobile-only">Lojas</button>
 
 
