@@ -122,18 +122,7 @@
           align-items: center;
       }
       }
-     
-      #search-container {
-        display: flex;
-        align-items: baseline;
-        margin: -21px auto -194px auto;
-        background-color: var(--cor6);
-        padding: 4px;
-        align-content: space-between;
-        flex-wrap: nowrap;
-        padding-top: 118px;
-        
-      }
+    
   
       #search-box {
         padding: 10px;
@@ -373,96 +362,6 @@
 
   
 
-  <script>
-    var stores = [
-
-      { name: 'Camozen Resort', page: 'img_hoteis/Camozen_Resort.html' },
-      { name: 'Pousada Village Sonhos', page: 'img_hoteis/Pousada_Village_Sonhos.html' },
-     
-
-
-      { name: 'Sonho doce’s da faby', page: 'confeitaria/fabia-bolos.html' },
-      { name: 'Confeitaria rodrigues', page: 'confeitaria/confeitaria_rodrigues.html' },
-      { name: 'Deju doceria', page: 'confeitaria/deju doceria.html' },
-      { name: 'Fran Bolos', page: 'confeitaria/Fran Bolos.html' },
-      { name: 'Bolos da tia Gleice', page: 'confeitaria/bolos_da_tia_gleice.html' },
-      { name: 'Ray Alves', page: 'confeitaria/ray-alves.html' },
-      { name: 'Zuh doce arte', page: 'confeitaria/Zuila.html' },
-
-
-
-      { name: 'Batista construções', page: 'construçao/Batista construções.html' },
-      { name: 'Camocim Construções', page: 'construçao/Camocim Construções.html' },
-      { name: 'Constrular', page: 'construçao/Constrular.html' },
-      { name: 'Tend Tudo Construções', page: 'construçao/Tend Tudo Construções.html' },
-      { name: 'Wilson Construções', page: 'construçao/Wilson Construções.html' },
-
-
-
-      { name: 'Mercadinho seu batista', page: 'mercados/batista.html' },
-      
-      { name: 'Mercadinho Bacana', page: 'mercados/Mercadinho Bacana.html' },
-      { name: 'Mercadinho Gouveia', page: 'mercados/Mercadinho Gouveia.html' },
-      { name: 'Mercado Rainha', page: 'mercados/rainha.html' },
-      
-
-
-      { name: 'Cavalcante', page: 'moda_mascolina/cavalcante.html' },
-    
-      { name: 'Parfumimportadoss', page: 'moda_mascolina/parfumimportadoss.html' },
-      { name: 'Pimenta dcheiro', page: 'moda_mascolina/pimenta-dcheiro.html' },
-
-
-     
-      { name: 'Louge99', page: 'restaurantes/louge99.html' },
-      
-
-      { name: 'Posto AMV', page: 'gasolina/Posto AMV.html' },
-      { name: 'Posto da Tijuca', page: 'gasolina/Posto da Tijuca.html' },
-      { name: 'Posto Machadinho', page: 'gasolina/Posto Machadinho.html' },
-      { name: 'Posto Shell', page: 'gasolina/Posto Shell.html' },
-      { name: 'Posto Siena I', page: 'gasolina/Posto Siena I.html' },
-      { name: 'Posto Rocha Comercial', page: 'gasolina/Posto Rocha Comercial.html' },
-
-      { name: 'Bradesco', page: 'banco/bradesco.html' },
-      { name: 'Caixa economica', page: 'banco/bradesco.html' },
-      { name: 'Banco do Brasil', page: 'banco/banco do brasil.html' },
-      { name: 'Santander', page: 'banco/santander.html' },
-
-
-      { name: 'Cafeteria Rromeu e julieta', page: 'padarias/cafeteria_romeuejulieta.html' },
-
-
-    ];
-
-    function searchStore() {
-      var query = document.getElementById('search-box').value.toLowerCase();
-      var searchResultsContainer = document.getElementById('search-results');
-  
-      // Limpar resultados anteriores
-      searchResultsContainer.innerHTML = '';
-  
-      // Verificar se a loja pesquisada está na lista
-      var matchingStores = stores.filter(function(store) {
-          return store.name.toLowerCase().includes(query);
-      });
-  
-      // Limitar o número de resultados exibidos a 3
-      matchingStores = matchingStores.slice(0, 3);
-  
-      if (matchingStores.length > 0) {
-          matchingStores.forEach(function(store) {
-              var resultElement = document.createElement('div');
-              resultElement.innerHTML = '<h3><a href="' + store.page + '">' + store.name + '</a></h3>';
-              searchResultsContainer.appendChild(resultElement);
-          });
-      } else {
-          searchResultsContainer.innerHTML = '<p>Loja não encontrada na página.</p>';
-      }
-  }
-</script>
-
-
   <div class="menu">
     <nav>
       <a href="index.html">Home</a>
@@ -472,15 +371,6 @@
     </nav>
   </div>
 
-  <div id="search-container">
-
-    <form onsubmit="searchStore(); return false;">
-        <input type="text" id="search-box" placeholder="Pesquisar loja" oninput="searchStore()" required>
-        <input type="submit" id="search-button" value="Pesquisar">
-    </form>
-</div>
-
-<div id="search-results"></div>
 
 <!-----------------  hover do lojas-------------------------------------->
 <style>
@@ -580,6 +470,7 @@ button:hover {
     justify-content: center;
     align-items: flex-end;
     transition: 0.3s;
+    margin-bottom: -63px;
   }
 
   .bar {
@@ -614,6 +505,70 @@ button:hover {
           height: 80%;
       }
   }
+
+
+  @media only screen and (max-width: 600px) {
+    
+
+    .music-display {
+      display: flex;
+      height: 80%;
+      width: 100%;
+      justify-content: center;
+      align-items: flex-end;
+      transition: 0.3s;
+      padding-top: 106px;
+    }
+    
+  
+    #img-fm{
+      display: block;
+      width: 300px;
+      height: 60px;
+      margin-top: 60px;
+    
+    }
+    
+  }
+
+  #fm {
+    height: 30px;
+    width: 300px;
+    padding-bottom: 10px;
+  }
+  #img-fm{
+    display: block;
+    width: 300px;
+    height: 60px;
+    margin-top: 60px;
+  
+  }
+
+
+  .radio-fm{
+    display: flex;
+    box-sizing: border-box;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+}
+
+  
+
+
+
+/* Cor da barra de reprodução */
+audio::-webkit-media-controls-panel {
+  background-color: red;
+}
+
+/* Cor do botão de play/pause */
+audio::-webkit-media-controls-play-button {
+  color: rgb(255, 255, 255);
+}
+
+
+
 </style>
 
 <div class="music-display">
@@ -627,7 +582,7 @@ button:hover {
 </div>
 
 <section class="radio-fm">
-  <a href="https://www.socialcreator.com/radiowebjesuseavida" target="_blank"><img src="https://i.ibb.co/DzSgQC6/3e4276bd-6650-41a9-9225-2c9a188677b0-1.jpg"alt="159615-208318" id="img-fm"></a>
+  <a href="https://www.socialcreator.com/radiowebjesuseavida" target="_blank"><img src="icon/banner-fm.jpg"alt="159615-208318" id="img-fm"></a>
   <audio controls autoplay id="fm">
     <source src="http://stream-153.zeno.fm/qeuluzrd2sgvv?zs=M-BFe9SiSsmoxTf_2TsHew" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
@@ -637,11 +592,6 @@ button:hover {
  
 <button id="lojasBtn" class="mobile-only">Lojas</button>
 
-
-
-<div id="search-results">
-  <!-- Conteúdo inicial da div search-results -->
-</div>
 
 
 
@@ -707,62 +657,7 @@ button:hover {
       .icon2 {
         display: none; /* Oculta o ícone em telas menores que 600 pixels */
       }
-
-      .music-display {
-        display: flex;
-        height: 80%;
-        width: 100%;
-        justify-content: center;
-        align-items: flex-end;
-        transition: 0.3s;
-        margin-top: 60px;
-        margin-bottom: -61px;
-      }
-      #img-fm{
-        display: block;
-        width: 130px;
-        height: 130px;
-        margin-top: 60px;
-      }
-      
     }
-
-    #fm {
-      height: 30px;
-      width: 180px;
-      padding-bottom: 10px;
-    }
-    #img-fm{
-      display: block;
-      width: 130px;
-      height: 130px;
- 
-    }
-
-
-    .radio-fm{
-      display: flex;
-    box-sizing: border-box;
-    margin: 0 auto;
-    align-items: center;
-    flex-direction: column;
-  }
-
-    
-
-  
-
-  /* Cor da barra de reprodução */
-  audio::-webkit-media-controls-panel {
-    background-color: red;
-  }
-  
-  /* Cor do botão de play/pause */
-  audio::-webkit-media-controls-play-button {
-    color: rgb(255, 255, 255);
-  }
-
-
   
   </style>
 
@@ -1389,14 +1284,7 @@ button:active {
       margin-bottom: -59px;
       margin: 0px auto;
   }
-  #search-container {
-    display: flex;
-    justify-content: end;
-    flex-wrap: nowrap;
-    text-align: center;
-    margin: -1px auto 0px auto;
-    
-  }
+
     .menu {
       text-align: center;
       margin-bottom: -169px;

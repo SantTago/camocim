@@ -127,15 +127,7 @@
       }
       }
      
-      #search-container {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin: -78px auto 0 auto;
-        background-color: var(--cor6);
-        padding: 10px;
-        
-      }
+   
   
       #search-box {
         padding: 10px;
@@ -218,20 +210,6 @@
         color: #fff;
       }
       @media only screen and (max-width: 890px) {
-        /* Adiciona estilos específicos para telas maiores (por exemplo, PCs) */
-        #search-container {
-          display: flex;
-          justify-content: end;
-          flex-wrap: nowrap;
-          text-align: center;
-          margin: -1px auto 0px auto;
-          background-color: var();
-        }
-      
-        /* Adiciona estilo para exibir os resultados da pesquisa em telas menores que 600px */
-        #search-results {
-          display: block !important;
-        }
       
         /* Esconde a div "icon2" em telas menores que 600px */
         .icon2 {
@@ -454,122 +432,6 @@
 <!-------------------------------------------------------------------->
 
 
-  <script>
-    var stores = [
-
-      { name: 'Camozen Resort', page: 'img_hoteis/Camozen_Resort.html' },
-      { name: 'Hotel Pinto Martins', page: 'img_hoteis/hotelpintomartins.html' },
-      { name: 'Morada do Sol', page: 'img_hoteis/Morada-do-Sol.html' },
-      { name: 'Pousada Recanto Beach', page: 'img_hoteis/Pousada_Recanto_Beach.html' },
-      { name: 'Pousada Village Sonhos', page: 'img_hoteis/Pousada_Village_Sonhos.html' },
-      { name: 'Pousada La Grécia', page: 'img_hoteis/Pousada-La-Grécia.html' },
-      { name: 'Pousada Village_Kite', page: 'img_hoteis/Pousada-Village_Kite.html' },
-      { name: 'Sun City', page: 'img_hoteis/sun-city.html' },
-      { name: 'Villa del Mar', page: 'img_hoteis/Villa_del_Mar.html' },
-      { name: 'Villa Zen Hotel', page: 'img_hoteis/Villa-Zen-Hotel.html' },
-
-
-      { name: 'Sonho doce’s da faby', page: 'confeitaria/fabia-bolos.html' },
-      { name: 'Confeitaria rodrigues', page: 'confeitaria/confeitaria_rodrigues.html' },
-      { name: 'Deju doceria', page: 'confeitaria/deju doceria.html' },
-      { name: 'Fran Bolos', page: 'confeitaria/Fran Bolos.html' },
-      { name: 'Bolos da tia Gleice', page: 'confeitaria/bolos_da_tia_gleice.html' },
-      { name: 'Ray Alves', page: 'confeitaria/ray-alves.html' },
-      { name: 'Zuh doce arte', page: 'confeitaria/Zuila.html' },
-
-
-      { name: 'Batista construções', page: 'construçao/Batista construções.html' },
-      { name: 'Camocim Construções', page: 'construçao/Camocim Construções.html' },
-      { name: 'Constrular', page: 'construçao/Constrular.html' },
-      { name: 'Tend Tudo Construções', page: 'construçao/Tend Tudo Construções.html' },
-      { name: 'Wilson Construções', page: 'construçao/Wilson Construções.html' },
-
-
-      
-      { name: 'Farmácia farma vida', page: 'farmacia/farma-vida.html' },
-      { name: 'Farmácia Pague Menos', page: 'farmacia/Farmácia Pague Menos.html' },
-      { name: 'Farmacia Santa Branca', page: 'farmacia/Farmacia Santa Branca.html' },
-      { name: 'Farmácia Hiper Popular Drogarias', page: 'farmacia/Hiper Popular Drogarias.html' },
-      { name: 'Farmácia Pague Facil', page: 'farmacia/Pague Facil.html' },
-      { name: 'Farmácia Sao Francisco', page: 'farmacia/Sao Francisco.html' },
-
-
-      { name: 'Mercadinho seu batista', page: 'mercados/batista.html' },
-      
-      { name: 'Mercadinho Bacana', page: 'mercados/Mercadinho Bacana.html' },
-      { name: 'Mercadinho Gouveia', page: 'mercados/Mercadinho Gouveia.html' },
-      { name: 'Mercado Rainha', page: 'mercados/rainha.html' },
-      { name: 'tete', page: 'mercados/tete.html' },
-      
-
-      { name: 'exclusiva', page: 'moda_feminina/exclusiva.html' },
-      { name: 'Li Looks', page: 'moda_feminina/Li-Looks.html' },
-      { name: 'stylo charme', page: 'moda_feminina/stylo-charme.html' },
-      { name: 'unni-shop', page: 'moda_feminina/unni-shop.html' },
-
-
-      { name: 'Cavalcante', page: 'moda_mascolina/cavalcante.html' },
-      { name: 'kdmcamocim', page: 'moda_mascolina/kdmcamocim.html' },
-      { name: 'Loja Encantos', page: 'moda_mascolina/Loja-Encantos.html' },
-      { name: 'Mr. Famol', page: 'moda_mascolina/Mr. Famol.html' },
-      { name: 'Parfumimportadoss', page: 'moda_mascolina/parfumimportadoss.html' },
-      { name: 'Pimenta dcheiro', page: 'moda_mascolina/pimenta-dcheiro.html' },
-
-
-      { name: 'Barraca Dona Mazé', page: 'restaurantes/Barraca Dona Mazé.html' },
-      { name: 'Budega Nordestina', page: 'restaurantes/Budega Nordestina.html' },
-      { name: 'Eva Mar', page: 'restaurantes/eva-mar.html' },
-      { name: 'Louge99', page: 'restaurantes/louge99.html' },
-      { name: 'Onda do mar', page: 'restaurantes/onda do mar.html' },
-      { name: 'Ponto 10', page: 'restaurantes/ponto-10.html' },
-      { name: 'Restaurante Oeuclides', page: 'restaurantes/Barraca Dona Mazé.html' },
-
-      { name: 'Posto AMV', page: 'gasolina/Posto AMV.html' },
-      { name: 'Posto da Tijuca', page: 'gasolina/Posto da Tijuca.html' },
-      { name: 'Posto Machadinho', page: 'gasolina/Posto Machadinho.html' },
-      { name: 'Posto Shell', page: 'gasolina/Posto Shell.html' },
-      { name: 'Posto Siena I', page: 'gasolina/Posto Siena I.html' },
-      { name: 'Posto Rocha Comercial', page: 'gasolina/Posto Rocha Comercial.html' },
-
-      { name: 'Bradesco', page: 'banco/bradesco.html' },
-      { name: 'Caixa economica', page: 'banco/bradesco.html' },
-      { name: 'Banco do Brasil', page: 'banco/banco do brasil.html' },
-      { name: 'Santander', page: 'banco/santander.html' },
-
-
-      { name: 'Cafeteria Rromeu e julieta', page: 'padarias/cafeteria_romeuejulieta.html' },
-
-
-    ];
-
-    function searchStore() {
-      var query = document.getElementById('search-box').value.toLowerCase();
-      var searchResultsContainer = document.getElementById('search-results');
-  
-      // Limpar resultados anteriores
-      searchResultsContainer.innerHTML = '';
-  
-      // Verificar se a loja pesquisada está na lista
-      var matchingStores = stores.filter(function(store) {
-          return store.name.toLowerCase().includes(query);
-      });
-  
-      // Limitar o número de resultados exibidos a 3
-      matchingStores = matchingStores.slice(0, 3);
-  
-      if (matchingStores.length > 0) {
-          matchingStores.forEach(function(store) {
-              var resultElement = document.createElement('div');
-              resultElement.innerHTML = '<h3><a href="' + store.page + '">' + store.name + '</a></h3>';
-              searchResultsContainer.appendChild(resultElement);
-          });
-      } else {
-          searchResultsContainer.innerHTML = '<p>Loja não encontrada na página.</p>';
-      }
-  }
-</script>
-
-
   <div class="menu">
     <nav>
       <a href="index.html">Home</a>
@@ -581,15 +443,7 @@
     </nav>
   </div>
 
-  <div id="search-container">
-
-    <form onsubmit="searchStore(); return false;">
-        <input type="text" id="search-box" placeholder="Pesquisar loja" oninput="searchStore()" required>
-        <input type="submit" id="search-button" value="Pesquisar">
-    </form>
-</div>
-
-<div id="search-results"></div>
+ 
 
 <!-----------------  hover do lojas-------------------------------------->
 <style>
@@ -674,6 +528,139 @@ button:hover {
   });
   
 </script>
+
+<style>
+
+  body {
+    height: 50px;
+}
+
+  .music-display {
+    display: flex;
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    transition: 0.3s;
+    margin-bottom: -63px;
+  }
+
+  .bar {
+      width: 10px;
+      margin: 0 4px;
+      background: linear-gradient(to top, #ff0000, #f80000,#ff0000);
+      border-radius: 5px 5px 0 0;
+      animation: musicAnimation 0.5s ease-in-out infinite alternate;
+  }
+
+  .bar:nth-child(2n) {
+      animation-delay: 0.1s;
+  }
+
+  .bar:nth-child(3n) {
+      animation-delay: 0.2s;
+  }
+
+  .bar:nth-child(4n) {
+      animation-delay: 0.3s;
+  }
+
+  .bar:nth-child(5n) {
+      animation-delay: 0.4s;
+  }
+
+  @keyframes musicAnimation {
+      0%, 100% {
+          height: 50%;
+      }
+      50% {
+          height: 80%;
+      }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    
+
+    .music-display {
+      display: flex;
+      height: 80%;
+      width: 100%;
+      justify-content: center;
+      align-items: flex-end;
+      transition: 0.3s;
+      padding-top: 106px;
+    }
+    
+  
+    #img-fm{
+      display: block;
+      width: 300px;
+      height: 60px;
+      margin-top: 60px;
+    
+    }
+    
+  }
+
+  #fm {
+    height: 30px;
+    width: 300px;
+    padding-bottom: 10px;
+  }
+  #img-fm{
+    display: block;
+    width: 300px;
+    height: 60px;
+    margin-top: 60px;
+  
+  }
+
+
+  .radio-fm{
+    display: flex;
+    box-sizing: border-box;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+}
+
+  
+
+
+
+/* Cor da barra de reprodução */
+audio::-webkit-media-controls-panel {
+  background-color: red;
+}
+
+/* Cor do botão de play/pause */
+audio::-webkit-media-controls-play-button {
+  color: rgb(255, 255, 255);
+}
+
+
+
+</style>
+
+<div class="music-display">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<section class="radio-fm">
+  <a href="https://www.socialcreator.com/radiowebjesuseavida" target="_blank"><img src="icon/banner-fm.jpg"alt="159615-208318" id="img-fm"></a>
+  <audio controls autoplay id="fm">
+    <source src="http://stream-153.zeno.fm/qeuluzrd2sgvv?zs=M-BFe9SiSsmoxTf_2TsHew" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+</section>
 
 <button id="lojasBtn" class="mobile-only">Lojas</button>
 
