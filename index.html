@@ -105,6 +105,7 @@
           margin-bottom: -20px;
           
       }
+
         .menu {
           text-align: center;
           
@@ -161,18 +162,19 @@
       }
   
       #search-results {
-      padding-right: 17px;
-      text-align: end;
-      max-width: 100%;
-      margin: 0;
-      height: auto;
-      background-color: #007bff;
-      color: white;
-      display: flex;
-     
-      flex-direction: column-reverse;
-    
-}
+        padding-right: 17px;
+        text-align: end;
+        max-width: 100%;
+        margin: 0;
+        height: auto;
+        background-color: #007bff;
+        color: white;
+        display: flex;
+        flex-direction: column-reverse;
+        position: absolute;
+        margin-top: 70px;
+        padding-left: 16px;
+    }
 
 
 
@@ -218,6 +220,24 @@
         #search-results {
           display: block !important;
         }
+
+       
+
+
+        #search-results {
+          padding-right: 17px;
+          text-align: end;
+          max-width: 100%;
+          margin: 0;
+          height: auto;
+          /* background-color: #007bff; */
+          color: white;
+          display: flex;
+          flex-direction: column-reverse;
+          /* position: absolute; */
+          /* margin-top: 70px; */
+          padding-left: 16px;
+      }
       
         /* Esconde a div "icon2" em telas menores que 600px */
         .icon2 {
@@ -231,11 +251,13 @@
       }
       
         #search-box {
+          #search-box {
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            margin-bottom: 5px;
+            
+        }
         }
   
         #search-button {
@@ -686,6 +708,22 @@ button:hover {
         display: none; /* Oculta o ícone em telas menores que 600 pixels */
       }
 
+      .music-display {
+        display: flex;
+        height: 80%;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-end;
+        transition: 0.3s;
+        margin-top: 60px;
+        margin-bottom: -61px;
+      }
+      #img-fm{
+        display: block;
+        width: 130px;
+        height: 130px;
+        margin-top: 60px;
+      }
       
     }
 
@@ -698,17 +736,9 @@ button:hover {
       display: block;
       width: 130px;
       height: 130px;
-      margin-bottom: 10px;
+ 
     }
 
-    #img-fm:hover{
-      display: block;
-      width: 135px;
-      height: 135px;
-      margin-bottom: 10px;
-      transition: 0.5s;
-      
-    }
 
     .radio-fm{
       display: flex;
@@ -1352,7 +1382,7 @@ button:active {
     height: auto;
 }
   
-  @media only screen and (max-width: 490px) {
+  @media only screen and (max-width: 830px) {
     .logomarca {
       padding: 9px;
       max-width: 212px;
