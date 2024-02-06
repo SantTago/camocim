@@ -49,7 +49,7 @@
         flex: 1 0 calc(50% - 20px);
         box-sizing: border-box;
         text-align: center;
-        padding: 10px;
+        padding: 36px;
       }
       
       img {
@@ -74,6 +74,7 @@
       
       .slick-prev {
         left: 4px;
+        
       }
       
       .perfil {
@@ -83,6 +84,7 @@
         flex-direction: row;
         margin: auto;
         flex-wrap: wrap;
+        background-image: url();
       }
       
       .logomarca {
@@ -517,15 +519,16 @@ button:hover {
       justify-content: center;
       align-items: flex-end;
       transition: 0.3s;
-      padding-top: 106px;
+      
     }
     
   
     #img-fm{
       display: block;
-      width: 300px;
+      width: 260px;
       height: 60px;
       margin-top: 60px;
+      border-radius: 20px 20px 0px 0px;
     
     }
     
@@ -538,7 +541,7 @@ button:hover {
   }
   #img-fm{
     display: block;
-    width: 300px;
+    width: 260px;
     height: 60px;
     margin-top: 60px;
   
@@ -551,6 +554,7 @@ button:hover {
     margin: 0 auto;
     align-items: center;
     flex-direction: column;
+    
 }
 
   
@@ -1007,24 +1011,26 @@ audio::-webkit-media-controls-play-button {
   }
 </script>
 
- <script>
-   $(document).ready(function(){
-       $('.slider').slick({
-           slidesToShow: 4, // Mostrar 4 produtos por vez
-           slidesToScroll: 1,
-           prevArrow: '<button class="slick-prev">Anterior</button>',
-           nextArrow: '<button class="slick-next">Próximo</button>',
-           responsive: [
-               {
-                   breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                   settings: {
-                       slidesToShow: 1
-                   }
-               }
-           ]
-       });
-   });
- </script>
+<script>
+  $(document).ready(function(){
+      $('.slider').slick({
+          slidesToShow: 4, // Mostrar 4 produtos por vez
+          slidesToScroll: 1,
+          prevArrow: '<button class="slick-prev" style="background-color: #add8e6; color: #ffffff;">Anterior</button>',
+          nextArrow: '<button class="slick-next" style="background-color: #add8e6; color: #ffffff;">Próximo</button>',
+          responsive: [
+              {
+                  breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                  settings: {
+                      slidesToShow: 1
+                  }
+              }
+          ]
+      });
+  });
+</script>
+
+
 
 
  
@@ -1287,7 +1293,7 @@ button:active {
 
     .menu {
       text-align: center;
-      margin-bottom: -169px;
+     
     }
   
   }
