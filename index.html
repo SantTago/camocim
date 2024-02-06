@@ -94,6 +94,16 @@
         text-align: center;
         margin-bottom: -55px;
       }
+
+      .logomarca-flutuante{
+        padding: 9px;
+        padding-top: 4px;
+        max-width: 152px;
+        /* width: 117%; */
+        text-align: center;
+        /* margin-bottom: -95px; */
+        margin: auto;
+      }
       
       .logomarca img {
         max-width: 100%;
@@ -354,8 +364,10 @@
 
 
     <div class="logomarca">
-      <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
+      <img  id="logomarca-flutuante" src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
     </div>
+
+
     
   </header>
 
@@ -758,7 +770,7 @@ audio::-webkit-media-controls-play-button {
      <!--------------------------------------------------->
 
      <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-     <div class="perfil-bloco">
+     <div  class="perfil-bloco">
        <div>
         <img src="https://i.ibb.co/9rTp7WJ/bannerr.webp" alt="bannerr">
        </div>
@@ -1033,11 +1045,11 @@ audio::-webkit-media-controls-play-button {
  
 
 <a href="cursos/cursos.html" onclick="openPopup()"><button class="loginha">Cursos</button></a>
-<button id="botaoFlutuante">Poste</button>
+<a href="noticias.html"><button id="botaoFlutuante">Noticias</button></a>
 
 <div id="janelaLogin">
   <span id="fecharJanela" onclick="fecharJanelaLogin()">X</span>
-  <div class="logomarca">
+  <div  class="logomarca-flutuante">
       <img src="https://i.ibb.co/ZmFw9r9/logo-da-pagina.png" alt="logo-da-pagina">
   </div>
   <div class="botoes">
@@ -1064,7 +1076,7 @@ audio::-webkit-media-controls-play-button {
   var senhaCorreta = "624";
   var senhaDigitada = "";
 
-  document.getElementById("botaoFlutuante").addEventListener("click", function(event) {
+  document.getElementById("logomarca-flutuante").addEventListener("click", function(event) {
       event.stopPropagation();
       document.getElementById("janelaLogin").style.display = "block";
   });

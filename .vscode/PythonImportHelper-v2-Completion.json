@@ -273,7 +273,7 @@
         "kind": 5,
         "importPath": "ferramentas.links-new",
         "description": "ferramentas.links-new",
-        "peekOfCode": "QUERY = 'shorts'  #Curiosidades ou 'noticia br 15/01/2024' |  Pode ser ajustado conforme necessário\n# Substitua 'MAX_RESULTADOS' pelo número máximo de vídeos que você deseja obter\nMAX_RESULTADOS = 20\n# Nome do arquivo de saída\nARQUIVO_SAIDA = 'links_incorporacao_noticias_youtube.txt'\nobter_links_incorporacao_ultimas_noticias(QUERY, MAX_RESULTADOS, ARQUIVO_SAIDA)",
+        "peekOfCode": "QUERY = 'noticia 06/02/2024'  #Curiosidades ou 'noticia br 15/01/2024' |  Pode ser ajustado conforme necessário\n# Substitua 'MAX_RESULTADOS' pelo número máximo de vídeos que você deseja obter\nMAX_RESULTADOS = 20\n# Nome do arquivo de saída\nARQUIVO_SAIDA = 'links_incorporacao_noticias_youtube.txt'\nobter_links_incorporacao_ultimas_noticias(QUERY, MAX_RESULTADOS, ARQUIVO_SAIDA)",
         "detail": "ferramentas.links-new",
         "documentation": {}
     },
