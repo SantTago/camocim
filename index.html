@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Camocim</title>
     <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilo/style.css">
@@ -584,7 +585,24 @@ audio::-webkit-media-controls-play-button {
 
 </style>
 
+<div class="music-display">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
 
+<section class="radio-fm">
+  <a href="https://www.socialcreator.com/radiowebjesuseavida" target="_blank"><img src="icon/banner-fm.jpg"alt="159615-208318" id="img-fm"></a>
+  <audio controls autoplay id="fm">
+    <source src="http://stream-153.zeno.fm/qeuluzrd2sgvv?zs=M-BFe9SiSsmoxTf_2TsHew" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+</section>
  
 <button id="lojasBtn" class="mobile-only">Lojas</button>
 
