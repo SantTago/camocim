@@ -1,283 +1,555 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registra Camocim</title>
-  <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #333;
-      color: #fff;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        header {
+            background-color: #c00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 5px auto;
+            background-color: #222;
+            
+        }
+
+        article {
+            width: 55%;
+            margin-bottom: 20px;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: height 0.3s ease-in-out;
+            padding: 15px;
+            
+        }
+        article h1 {
+            font-family: var(--normal);
+            padding-top: 30px;
+        }
+        
+
+        article img {
+            width: 100%;
+            height: auto;
+        }
+
+        article div {
+            
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .read-more {
+            display: block;
+            color: #e60000;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .expanded {
+            max-height: none !important;
+        }
+
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /*---------------------------*/
+        .video-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+        .video-item {
+            scroll-snap-align: start;
+            width: 280px;
+            
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 476px;
+            border: none;
+            overflow: hidden;
+        }
+
+        /*--------------------------*/
+
+        .video {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Adicionado para centralizar verticalmente */
+            flex-wrap: wrap;
+            padding-bottom: 56%;
+            position: relative;
+        }
+        
+        .video > iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Alterado para 100% para ocupar a largura do contêiner pai */
+            height: 100%; /* Alterado para 100% para ocupar a altura do contêiner pai */
+            border-radius: 15px;
+        }
+        
+        /*---------------------*/
+
+        footer {
+            background-color: #e60000;
+            color: #fff;
+            text-align: center;
+            padding: 0px;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            border-bottom: 15px;
+        }
+
+
+      .mercadinho-cor{
+        width: 50px;
+        height: 50px;
+        background-color: rgb(255, 0, 0);
+        border-radius: 50px;
+        margin: 10px;
     }
 
-    header {
-      background-color: #c00;
-      padding: 10px;
-      text-align: center;
+      .mercadinho-cor:hover {
+        background-color: rgb(116, 0, 0);
     }
 
-    .logomarca {
-      background-color: #c00;
-      padding: 25px;
-      text-align: center;
-      margin-bottom: -1px;
-    }
-
-    .logomarca img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    @media only screen and (max-width: 768px) {
-      .logomarca {
-        padding: 15px;
-      }
-
-      #video-container,
-      #curiosidades-video-container {
-        padding-bottom: 56.25%;
-      }
-    }
-
-    @media only screen and (min-width: 769px) {
-      #video-container,
-      #curiosidades-video-container {
-        padding-bottom: 31.25%;
-      }
-    }
-
-    .voltar > a {
-      display: flex;
-      justify-content: center;
-      padding: 0.5em;
-      text-align: center;
-      text-decoration: none;
-      background-color: #970000;
-      color: #fff;
-      border-radius: 5px;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    .voltar > a:hover {
-      background-color: rgb(255, 0, 0);
-    }
-
-    .video-section {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .video-label {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: rgb(255, 255, 255);
-    }
-
-    #video-container,
-    #curiosidades-video-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-
-    #popup-video,
-    #curiosidades-popup-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    #popup-buttons,
-    #curiosidades-popup-buttons {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      padding: 10px;
-    }
-
-    #popup-buttons button,
-    #curiosidades-popup-buttons button {
-      background-color: rgba(255, 0, 0, 0.459);
-      color: #000000;
-      padding: 5px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.3s ease-in-out;
-      margin: 0 10px;
-    }
-
-    #popup-buttons button:hover,
-    #curiosidades-popup-buttons button:hover {
-      background-color: rgb(255, 0, 0);
-      color: #ffffff;
-      transform: scale(1.1);
-    }
-  </style>
-</head>
-<body>
-
-  <div class="logomarca">
-    <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
-  </div>
-
-  <nav>
-    <div class="voltar">
-      <a href="index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
-    </div>
-  </nav>
-
-  <!-- Notícias -->
-  <div class="video-section">
-    <div class="video-label">Notícias</div>
-    <div id="video-container">
-      <iframe id="popup-video" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div id="popup-buttons">
-      <button onclick="previousVideo()">Voltar</button>
-      <button onclick="nextVideo()">Próximo</button>
-    </div>
-  </div>
-
-  <nav>
-    <div class="voltar">
-      <a href="#" class="back-button" onclick="showSection('lojas')"></a>
-    </div>
-  </nav>
-
-
-  <!-- Curiosidades -->
-  <div class="video-section">
-    <div class="video-label">Curiosidades</div>
-    <div id="curiosidades-video-container">
-      <iframe id="curiosidades-popup-video" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div id="curiosidades-popup-buttons">
-      <button onclick="previousCuriosidadeVideo()">Voltar</button>
-      <button onclick="nextCuriosidadeVideo()">Próximo</button>
-    </div>
-  </div>
-
-  <nav>
-    <div class="voltar">
-      <a href="#" class="back-button" onclick="showSection('lojas')"></a>
-    </div>
-  </nav>
-
-  <script>
-    var videoLinks = [
-      'https://www.youtube.com/embed/3v2788d4sc8',
-      'https://www.youtube.com/embed/0S8UsFUevG0',
-      'https://www.youtube.com/embed/oBB2G-unVqw',
-      
-      'https://www.youtube.com/embed/qqWqW1XQr_M',
-      'https://www.youtube.com/embed/UIyNsGGpV0M',
-      'https://www.youtube.com/embed/65TqWMXHG8A',
-      
-      'https://www.youtube.com/embed/zqjp1WkPo7o',
-      'https://www.youtube.com/embed/QW8obQsOJZg',
-     
-      'https://www.youtube.com/embed/QdVIzSBrj6s',
-      'https://www.youtube.com/embed/cnGnkbStNJo',
-      'https://www.youtube.com/embed/9jYaJwA6Td8',
-      'https://www.youtube.com/embed/IP2nEv3c6s4',
-      'https://www.youtube.com/embed/5kgd3piQRG8',
-      'https://www.youtube.com/embed/52gUzRjCB9U',
-      'https://www.youtube.com/embed/nK_Y5kywFRc',
-      'https://www.youtube.com/embed/8GU4zFTD0yU',
     
-      
-      
-    ];
 
-    var curiosidadeVideoLinks = [
-      'https://www.youtube.com/embed/8foxqhfrDnU',
-      'https://www.youtube.com/embed/tI1jiZOOO4I',
+    header > h1 {
+        text-align: center;
+        padding-top: 45px;
+        font-family: var(--destaque);
+        color: white;
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+
+    }
+    .paragrafo {
+    text-align: center;
+    }
+
+    
+    
+    .bloco-noticias {
+        display: flex;
+        justify-content: center;
+        
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content p{
+        text-align: center;
+    }
+
+    .instagram-container {
+        position: relative;
+        margin: auto;
+        max-width: 600px; /* Defina o valor máximo desejado para a largura do contêiner */
+        width: 100%;
+        padding-bottom: 75%; /* Ajuste isso conforme necessário para o aspecto desejado */
+        overflow: hidden;
+    }
+
+    .instagram-media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (max-width: 650px) {
+        article {
+            width: 100%;
+        }
+        
+        article  h2{
+            width: 100%;
+            font-size: 13px;
+        }
+        article  p{
+            width: 100%;
+            font-size: 13px;
+        }
+        .video-item {
+            width: 100%;
+        } 
+        .instagram-container {
+            padding-bottom: 180%;
+        }
+        main {
+            padding: 1em;
+        }
+
+        .store, .motel {
+            width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
+            max-width: none;
+        }
+    }
+
+    nav {
+        text-align: center;
+        background-color: #444; /* Tom mais escuro para os blocos */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        display: flex; /* Adicionado o estilo flexível */
+        justify-content: center; /* Alinha os itens horizontalmente no centro */
+        align-items: center; /* Alinha os itens verticalmente no centro */
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 10px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+        background-color: #555;
+    }
+
+
+    /* Estilo para o botão de voltar */
+    .back-button {
+        max-width: 68px;
+        display: block;
+        justify-content: center;
+        margin: 1em;
+        padding: 0.5em;
+        text-align: center;
+        text-decoration: none;
+        background-color: #970000; /* Vermelho escuro */
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Efeito de hover para o botão de voltar */
+    .back-button:hover {
+        background-color: #970000; /* Vermelho mais escuro no hover */
+    }
+
+    .voltar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Oculta a seção de Moteis inicialmente */
+    .motel {
+        display: none;
+        
+    }
+
+    /* Estilo para o menu de moteis */
+    .moteis-menu {
+        display: none;
+        position: absolute;
+        background-color: #444; /* Tom mais escuro para os blocos */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1em;
+        margin-top: 5px;
+        left: 50%; /* Posiciona o menu no centro */
+        transform: translateX(-50%); /* Corrige a posição no centro */
+    }
+
+    /* Estilo para os itens do menu de moteis */
+    .moteis-menu a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        padding: 8px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Efeito de hover para os itens do menu de moteis */
+    .moteis-menu a:hover {
+        background-color: #555;
+    }
+      
    
-      'https://www.youtube.com/embed/MZgbZLl2VaI',
-      'https://www.youtube.com/embed/0xMicQZGXZ0',
-      'https://www.youtube.com/embed/FXwbGTS3x4A',
-      'https://www.youtube.com/embed/0fmPB8uw3To',
-      'https://www.youtube.com/embed/implVwMNjvw',
-      'https://www.youtube.com/embed/aOPFINAIAL4',
-      'https://www.youtube.com/embed/M_b_EkZiXq8',
-      'https://www.youtube.com/embed/_yvUI0htPvc',
-      'https://www.youtube.com/embed/O0Ul7M38eS0',
+  
+    .logomarca {
+        padding: 9px;
+        padding-top: 4px;
+        max-width: 109px;
+        width: 107%;
+        text-align: center;
+        margin-bottom: -1px;
+        margin: 10px auto;
+    }
       
-      'https://www.youtube.com/embed/c3Ph5fuHHQA',
-      'https://www.youtube.com/embed/KCzD1dgzZZ8',
-      'https://www.youtube.com/embed/T3qVBHb4Gcc',
+      .logomarca img {
+        max-width: 100%;
+        height: auto;
+      }
       
-      'https://www.youtube.com/embed/UMs2qHKIkR8',
-     
-      'https://www.youtube.com/embed/6UNg0CJNv2g',
-      
-      
-      
-    ];
-
-    var currentVideoIndex = 0; // Índice do vídeo atual
-    var currentCuriosidadeVideoIndex = 0; // Índice do vídeo de curiosidades atual
-
-    // Carrega o primeiro vídeo automaticamente
-    window.onload = function () {
-      showVideo();
-      showCuriosidadeVideo();
-    };
-
-    function showVideo() {
-      var popupVideo = document.getElementById('popup-video');
-      var videoUrl = videoLinks[currentVideoIndex];
-      popupVideo.src = videoUrl;
+      @media only screen and (max-width: 490px) {
+        .logomarca {
+          padding: 9px;
+          max-width: 212px;
+          margin-bottom: -1px;
+          
+      }
+        .menu {
+          text-align: center;
+        }
+        header {
+          background-color: red;
+          color: #fff;
+          text-align: center;
+          padding: 10px;
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+      }
+      }
+      #floating-btn {
+        display: none;
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+        background-color: rgb(158, 4, 4);
+        color: #fff;
+        padding: 7px;
+        border-radius: 25%;
+        cursor: pointer;
+        z-index: 1000;
+        
     }
 
-    function previousVideo() {
-      currentVideoIndex = (currentVideoIndex - 1 + videoLinks.length) % videoLinks.length;
-      updateVideo();
+    #content {
+        padding: 20px;
+        line-height: 1.6;
     }
-
-    function nextVideo() {
-      currentVideoIndex = (currentVideoIndex + 1) % videoLinks.length;
-      updateVideo();
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
     }
-
-    function updateVideo() {
-      showVideo();
+    .pagination button {
+        margin: 0 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        margin-bottom: 57px;
     }
-
-    // Funções para o segundo campo de vídeo (curiosidades)
-    function showCuriosidadeVideo() {
-      var curiosidadePopupVideo = document.getElementById('curiosidades-popup-video');
-      var curiosidadeVideoUrl = curiosidadeVideoLinks[currentCuriosidadeVideoIndex];
-      curiosidadePopupVideo.src = curiosidadeVideoUrl;
+    .pagination button.active {
+        background-color: red;
+        color: #fff;
     }
-
-    function previousCuriosidadeVideo() {
-      currentCuriosidadeVideoIndex = (currentCuriosidadeVideoIndex - 1 + curiosidadeVideoLinks.length) % curiosidadeVideoLinks.length;
-      updateCuriosidadeVideo();
+    .titulo{
+      text-align: center;
     }
+</style>
+</head>
 
-    function nextCuriosidadeVideo() {
-      currentCuriosidadeVideoIndex = (currentCuriosidadeVideoIndex + 1) % curiosidadeVideoLinks.length;
-      updateCuriosidadeVideo();
-    }
+<body>
+    
 
-    function updateCuriosidadeVideo() {
-      showCuriosidadeVideo();
-    }
-  </script>
+    <header>
 
+        <div class="logomarca">
+          <img src="icon/logo da pagina.png" alt="logo da pagina">
+        </div>
+        
+      </header>
+
+  <nav>
+    <div class="voltar">
+        <a href="index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+    </div>
+</nav>
+<!-------------------------------------
+
+<div class="instagram-container">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C1J_W21OqUu/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+</div>
+
+ 
+
+  <div class="instagram-container">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C09oAreRc8D/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+    </div>
+
+
+
+  <div class="instagram-container">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C1E4erIOS9M/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
+    <script async src="https://www.instagram.com/embed.js"></script>
+</div>
+
+
+
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/snDCWYE3QOc?si=aMHDWYdmzL6xFOCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+ 
+     <--------------------------------------------->
+  
 </body>
 </html>
+
+
+    <!--------------------------------------------->
+    <main>
+        <section class="bloco-noticias">
+
+        </section>
+        <!--------------------------------------------->
+        <section class="bloco-noticias">
+            <article>
+              <img src="https://i.ibb.co/T8JLZY5/poste-noticias.jpg" alt="poste-noticias">
+                <div class="content">
+                    <h2 class="titulo">Bem-vindo ao Registra Camocim!</h2>
+                    <p class="description ellipsis"></p>
+                    <p class="full-text" style="display: none;">
+                       
+                      É com grande alegria que recebemos você em nosso site. Aqui, no Registra Camocim, estamos empenhados em oferecer a você uma experiência única e personalizada ao explorar tudo o que nossa bela cidade tem a oferecer.<br>
+                       <br>
+                       Nosso objetivo é ser seu guia confiável para descobrir os melhores lugares, eventos emocionantes e serviços essenciais em Camocim. Queremos facilitar sua jornada, fornecendo informações precisas e atualizadas sobre tudo o que acontece em nossa comunidade. <br>
+                       <br>
+                       Nosso objetivo é ser seu guia confiável para descobrir os melhores lugares, eventos emocionantes e serviços essenciais em Camocim. Queremos facilitar sua jornada, fornecendo informações precisas e atualizadas sobre tudo o que acontece em nossa comunidade. <br>
+                      <br>
+                      Então, sinta-se à vontade para explorar nosso site, descobrir novos lugares, eventos e serviços, e, acima de tudo, aproveitar tudo o que Camocim tem a oferecer. <br>
+                      <br>
+                      Obrigado por se juntar a nós nesta jornada. Estamos animados para ter você conosco! <br>
+                      <br>
+                      Equipe Registra Camocim
+                    </p>
+                    <p class="read-more" onclick="toggleContent(this)">Mostrar Mais</p>
+                </div>
+                <p class="paragrafo">
+                    06/02/2024 21h54 
+                </p>
+            </article>
+        </section>
+        <!--------------------------------------------->
+       
+       
+    </main>
+
+    <!-- Botão flutuante -->
+    <div id="floating-btn" onclick="scrollToTop()">
+        &#9650; <!-- Triângulo para cima (pode ser substituído por um ícone ou texto) -->
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var floatingBtn = document.getElementById('floating-btn');
+
+            // Verifica se a largura da tela é menor que 768 pixels (dispositivo móvel)
+            if (window.innerWidth < 768) {
+                // Verifica se a posição de rolagem é maior que 200 pixels do topo
+                if (window.scrollY > 200) {
+                    floatingBtn.style.display = 'block';
+                } else {
+                    floatingBtn.style.display = 'none';
+                }
+            } else {
+                floatingBtn.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+
+
+    <footer>
+        <p>&copy; 2024 Notícias.</p>
+    </footer>
+
+    <script>
+        function toggleContent(button) {
+            const content = button.parentElement;
+            const fullText = content.querySelector(".full-text");
+
+            if (content.classList.contains("expanded")) {
+                content.classList.remove("expanded");
+                fullText.style.display = "none";
+                button.innerText = "Mostrar Mais";
+            } else {
+                content.classList.add("expanded");
+                fullText.style.display = "block";
+                button.innerText = "Mostrar Menos";
+            }
+        }
+    </script>
+
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById("menu");
+          menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+          menu.style.opacity = (menu.style.opacity === "1") ? "0" : "1";
+          menu.style.transform = (menu.style.transform === "translateY(0px)") ? "translateY(-20px)" : "translateY(0px)";
+        }
+      </script>
+
+      <div class="pagination">
+        <button onclick="changePage('noticias.html')">1</button>
+        <button onclick="changePage('noticias/noticias2.html')">2</button>
+        <button onclick="changePage('noticias/noticias1.html')">3</button>
+        
+        
+        <!-- Adicione mais botões conforme necessário -->
+      </div>
+
+      <script>
+        function changePage(pagePath) {
+            // Lógica para redirecionar para a página com o caminho especificado
+            console.log("Redirecionando para a página: " + pagePath);
+            // Substitua essa linha com a lógica real para redirecionar para a página desejada
+            window.location.href = pagePath;
+        }
+      </script>
+</body>
+</html>
+
+
+
+
+
+
+
