@@ -127,55 +127,6 @@
       }
       }
      
-      #search-container {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin: -78px auto 0 auto;
-        background-color: var(--cor6);
-        padding: 10px;
-        
-      }
-  
-      #search-box {
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: 15px;
-        flex: 1;
-        outline: none;
-      }
-  
-      #search-button {
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #fff;
-        border-radius: 5px;
-        background-color: #fff;
-        color: #007bff;
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-  
-      #search-button:hover {
-        background-color: #0056b3;
-        color: #fff;
-      }
-  
-      #search-results {
-    
-      text-align: end;
-      max-width: 100%;
-      margin: 0;
-      height: auto;
-      background-color: #007bff;
-      color: white;
-      display: flex;
-     
-      flex-direction: column-reverse;
-    
-}
 
 
 
@@ -310,7 +261,24 @@
 
 
 
+button {
+  width: 100%;
+  height: 37px;
+  background-color: #3463db59;
+  color: #4400ff;
+  border: none;
+  border-radius: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
+button:hover {
+  background-color: #00ff6a;
+  color: white;
+  transition: 0.1s;
+  box-shadow: 0px 0px 15px rgb(0, 238, 255);
+}
 
 
 #to-news-btn {
@@ -454,121 +422,6 @@
 <!-------------------------------------------------------------------->
 
 
-  <script>
-    var stores = [
-
-      { name: 'Camozen Resort', page: 'img_hoteis/Camozen_Resort.html' },
-      { name: 'Hotel Pinto Martins', page: 'img_hoteis/hotelpintomartins.html' },
-      { name: 'Morada do Sol', page: 'img_hoteis/Morada-do-Sol.html' },
-      { name: 'Pousada Recanto Beach', page: 'img_hoteis/Pousada_Recanto_Beach.html' },
-      { name: 'Pousada Village Sonhos', page: 'img_hoteis/Pousada_Village_Sonhos.html' },
-      { name: 'Pousada La Grécia', page: 'img_hoteis/Pousada-La-Grécia.html' },
-      { name: 'Pousada Village_Kite', page: 'img_hoteis/Pousada-Village_Kite.html' },
-      { name: 'Sun City', page: 'img_hoteis/sun-city.html' },
-      { name: 'Villa del Mar', page: 'img_hoteis/Villa_del_Mar.html' },
-      { name: 'Villa Zen Hotel', page: 'img_hoteis/Villa-Zen-Hotel.html' },
-
-
-      { name: 'Sonho doce’s da faby', page: 'confeitaria/fabia-bolos.html' },
-      { name: 'Confeitaria rodrigues', page: 'confeitaria/confeitaria_rodrigues.html' },
-      { name: 'Deju doceria', page: 'confeitaria/deju doceria.html' },
-      { name: 'Fran Bolos', page: 'confeitaria/Fran Bolos.html' },
-      { name: 'Bolos da tia Gleice', page: 'confeitaria/bolos_da_tia_gleice.html' },
-      { name: 'Ray Alves', page: 'confeitaria/ray-alves.html' },
-      { name: 'Zuh doce arte', page: 'confeitaria/Zuila.html' },
-
-
-      { name: 'Batista construções', page: 'construçao/Batista construções.html' },
-      { name: 'Camocim Construções', page: 'construçao/Camocim Construções.html' },
-      { name: 'Constrular', page: 'construçao/Constrular.html' },
-      { name: 'Tend Tudo Construções', page: 'construçao/Tend Tudo Construções.html' },
-      { name: 'Wilson Construções', page: 'construçao/Wilson Construções.html' },
-
-
-      
-      { name: 'Farmácia farma vida', page: 'farmacia/farma-vida.html' },
-      { name: 'Farmácia Pague Menos', page: 'farmacia/Farmácia Pague Menos.html' },
-      { name: 'Farmacia Santa Branca', page: 'farmacia/Farmacia Santa Branca.html' },
-      { name: 'Farmácia Hiper Popular Drogarias', page: 'farmacia/Hiper Popular Drogarias.html' },
-      { name: 'Farmácia Pague Facil', page: 'farmacia/Pague Facil.html' },
-      { name: 'Farmácia Sao Francisco', page: 'farmacia/Sao Francisco.html' },
-
-
-      { name: 'Mercadinho seu batista', page: 'mercados/batista.html' },
-      
-      { name: 'Mercadinho Bacana', page: 'mercados/Mercadinho Bacana.html' },
-      { name: 'Mercadinho Gouveia', page: 'mercados/Mercadinho Gouveia.html' },
-      { name: 'Mercado Rainha', page: 'mercados/rainha.html' },
-      { name: 'tete', page: 'mercados/tete.html' },
-      
-
-      { name: 'exclusiva', page: 'moda_feminina/exclusiva.html' },
-      { name: 'Li Looks', page: 'moda_feminina/Li-Looks.html' },
-      { name: 'stylo charme', page: 'moda_feminina/stylo-charme.html' },
-      { name: 'unni-shop', page: 'moda_feminina/unni-shop.html' },
-
-
-      { name: 'Cavalcante', page: 'moda_mascolina/cavalcante.html' },
-      { name: 'kdmcamocim', page: 'moda_mascolina/kdmcamocim.html' },
-      { name: 'Loja Encantos', page: 'moda_mascolina/Loja-Encantos.html' },
-      { name: 'Mr. Famol', page: 'moda_mascolina/Mr. Famol.html' },
-      { name: 'Parfumimportadoss', page: 'moda_mascolina/parfumimportadoss.html' },
-      { name: 'Pimenta dcheiro', page: 'moda_mascolina/pimenta-dcheiro.html' },
-
-
-      { name: 'Barraca Dona Mazé', page: 'restaurantes/Barraca Dona Mazé.html' },
-      { name: 'Budega Nordestina', page: 'restaurantes/Budega Nordestina.html' },
-      { name: 'Eva Mar', page: 'restaurantes/eva-mar.html' },
-      { name: 'Louge99', page: 'restaurantes/louge99.html' },
-      { name: 'Onda do mar', page: 'restaurantes/onda do mar.html' },
-      { name: 'Ponto 10', page: 'restaurantes/ponto-10.html' },
-      { name: 'Restaurante Oeuclides', page: 'restaurantes/Barraca Dona Mazé.html' },
-
-      { name: 'Posto AMV', page: 'gasolina/Posto AMV.html' },
-      { name: 'Posto da Tijuca', page: 'gasolina/Posto da Tijuca.html' },
-      { name: 'Posto Machadinho', page: 'gasolina/Posto Machadinho.html' },
-      { name: 'Posto Shell', page: 'gasolina/Posto Shell.html' },
-      { name: 'Posto Siena I', page: 'gasolina/Posto Siena I.html' },
-      { name: 'Posto Rocha Comercial', page: 'gasolina/Posto Rocha Comercial.html' },
-
-      { name: 'Bradesco', page: 'banco/bradesco.html' },
-      { name: 'Caixa economica', page: 'banco/bradesco.html' },
-      { name: 'Banco do Brasil', page: 'banco/banco do brasil.html' },
-      { name: 'Santander', page: 'banco/santander.html' },
-
-
-      { name: 'Cafeteria Rromeu e julieta', page: 'padarias/cafeteria_romeuejulieta.html' },
-
-
-    ];
-
-    function searchStore() {
-      var query = document.getElementById('search-box').value.toLowerCase();
-      var searchResultsContainer = document.getElementById('search-results');
-  
-      // Limpar resultados anteriores
-      searchResultsContainer.innerHTML = '';
-  
-      // Verificar se a loja pesquisada está na lista
-      var matchingStores = stores.filter(function(store) {
-          return store.name.toLowerCase().includes(query);
-      });
-  
-      // Limitar o número de resultados exibidos a 3
-      matchingStores = matchingStores.slice(0, 3);
-  
-      if (matchingStores.length > 0) {
-          matchingStores.forEach(function(store) {
-              var resultElement = document.createElement('div');
-              resultElement.innerHTML = '<h3><a href="' + store.page + '">' + store.name + '</a></h3>';
-              searchResultsContainer.appendChild(resultElement);
-          });
-      } else {
-          searchResultsContainer.innerHTML = '<p>Loja não encontrada na página.</p>';
-      }
-  }
-</script>
-
 
   <div class="menu">
     <nav>
@@ -581,16 +434,7 @@
     </nav>
   </div>
 
-  <div id="search-container">
-
-    <form onsubmit="searchStore(); return false;">
-        <input type="text" id="search-box" placeholder="Pesquisar loja" oninput="searchStore()" required>
-        <input type="submit" id="search-button" value="Pesquisar">
-    </form>
-</div>
-
-<div id="search-results"></div>
-
+  <
 <!-----------------  hover do lojas-------------------------------------->
 <style>
   .mobile-only {
@@ -819,7 +663,85 @@ button:hover {
 
   <main>
     
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+    <div class="perfil-bloco">
+      <div>
+        <img loading="lazy" src="confeitaria/fabia-bolos/banner.webp" alt="image png">
+      </div>
+    </div>
+    <section class="slider">
 
+      <div class="product">
+        <img loading="lazy" src="confeitaria/fabia-bolos/001.webp" alt="image png">
+    
+    
+      </div>
+
+      <div class="product">
+        <img loading="lazy" src="confeitaria/fabia-bolos/002.webp" alt="image png">
+      </div>
+      
+      <div class="product">
+        <img loading="lazy" src="confeitaria/fabia-bolos/003.webp" alt="image png">
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="confeitaria/fabia-bolos/004.webp" alt="image png">
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="confeitaria/fabia-bolos/005.webp" alt="image png">
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="confeitaria/fabia-bolos/006.webp" alt="image png">
+      </div>
+    
+      
+    </section>  
+
+    <a id="empresas" href="confeitaria/fabia-bolos.html">
+      <h2  id="Botao">Saiba mais</h2>
+    </a>
+
+    
+
+    <!--------------------------------------------------->
+
+
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+    <div class="perfil-bloco">
+      <div>
+        <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/banner.webp" alt="image png">
+      </div>
+    </div>
+    <section class="slider">
+
+      <div class="product">
+        <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/228556345.webp" alt="image png">
+    
+    
+      </div>
+
+      <div class="product">
+        <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/329314913.webp" alt="image png">
+      </div>
+      
+      <div class="product">
+        <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/329314892.webp" alt="image png">
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/329314700.webp" alt="image png">
+      </div>
+    
+      
+    </section>  
+
+    <a id="empresas" href="img_hoteis/Pousada_Village_Sonhos.html">
+      <h2  id="Botao">Saiba mais</h2>
+    </a>
+<!------------------------------------------------------>
 
 
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
@@ -1008,101 +930,7 @@ button:hover {
       <!--------------------------------------------------->
 
 
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-      <div class="perfil-bloco">
-        <div>
-          <img loading="lazy" src="restaurantes/Lounge99/banner-2.webp" alt="image png">
-        </div>
-      </div>
-      <section class="slider">
-        <div class="product">
-          <img loading="lazy" src="restaurantes/Lounge99/001.webp" alt="restaurante">
-        </div>
-        <div class="product">
-          <img loading="lazy" src="restaurantes/Lounge99/002.webp" alt="restaurante">
-      
-      
-        </div>
-        <div class="product">
-          <img loading="lazy" src="restaurantes/Lounge99/003.webp" alt="restaurante">
-      
-      
-        </div>
-        <div class="product">
-          <img loading="lazy" src="restaurantes/Lounge99/004.webp" alt="restaurante">
-      
-      
-        </div>
-  
-        <div class="product">
-          <img loading="lazy" src="restaurantes/Lounge99/005.webp" alt="restaurante">
-      
-      
-        </div>
-  
-        <div class="product">
-          <img loading="lazy" src="restaurantes/Lounge99/006.webp" alt="restaurante">
-      
-      
-        </div>
-      </section>  
 
-      <a id="empresas" href="restaurantes/louge99.html">
-        <h2  id="Botao">Saiba mais</h2>
-      </a>
-
-      <!--------------------------------------------------->
-
-
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/banner-2.webp" alt="image png">
-      </div>
-    </div>
-    <section class="slider">
-      <div class="product">
-
-        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/002.webp" alt="Farmacia">
-      </div>
-
-      <div class="product">
-        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/003.webp" alt="Farmacia">
-    
-    
-      </div>
-      
-      <div class="product">
-        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/001.webp" alt="Farmacia">
-    
-    
-      </div>
-      
-      <div class="product">
-        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/004.webp" alt="Farmacia">
-    
-    
-      </div>
-
-      <div class="product">
-        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/005.webp" alt="Farmacia">
-    
-    
-      </div>
-
-      <div class="product">
-        <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/006.webp" alt="Farmacia">
-    
-    
-      </div>
-    </section>
-
-    <a id="empresas" href="confeitaria/ray-alves.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
-    
-    
-     
     
     
   </main>
