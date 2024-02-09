@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registra Camocim</title>
+  <link rel="stylesheet" href="../estilo/style.css">
+  <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <style>
+
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+  }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #d5e6f1;
+        box-shadow: 0px 0px 15px black;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .slick-next {
+        right: 4px;
+        
+    }
+
+    .slick-prev {
+        left: 4px;
+    }
+
+    element.style {
+        width: 303px;
+        height: 104%;
+    }
+
+    .perfil {
+        max-width: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        flex-wrap: wrap;
+    
+    }
+
+    
+    @media only screen and (min-width: 303px) and (max-width: 600px) {
+        /* Entre 319px e 600px, três colunas por linha */
+        .product {
+            flex-basis: calc(33.3333% - 20px);
+
+            
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          
+      }
+    }
+</style>
+</head>
+<body>
+  
+    <div class="perfil-bloco">
+       <div>
+        <img src="https://i.ibb.co/5BQkRPq/maradona.jpg" alt="maradona">
+      </div>
+    </div>
+
+ 
+    <div class="icon">
+
+      <div class="restaurante-cor">
+          <abbr title="Voltar"><a href="../restaurante.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
+      </div >
+
+      
+  </div>  
+
+
+
+ <!--------------------------------------------------->
+<section class="slider">
+  <div class="product">
+    <img src="https://www.entrepratosecopos.com.br/storage/receitas/imagem1_6648.jpg" alt="001">
+    <h2>Camarão a paulista</h2>
+ 
+    
+  </div>
+
+  <div class="product">
+    <img src="https://portalamazonia.com/images/easyblog_articles/2414/24801cc2923cebe2f02e21d32065f4cc.png" alt="002">
+    <h2>Moqueca de Arraia</h2>
+   
+    
+  </div>
+
+
+
+  <div class="product">
+    <img src="https://3.bp.blogspot.com/-fvbalQ04mAs/WW0ThjBxRcI/AAAAAAAAmB8/CtS8OCsl_VQakEFqtra_zqrl1O5ipNBbACLcBGAs/s1600/489-102907-culinaria-cearense-panelada-cearense-foto-gustavo-sampaio-divulgacaogr.JPG" alt="003">
+    <h2>Panelada</h2>
+
+    
+  </div>
+
+  <div class="product">
+    <img src="https://1.bp.blogspot.com/--n_Y62wOf_Q/V57FDnZxaRI/AAAAAAAAB_Q/1YaVJWiLKZEA-55k46KxO_9zUTsG5okBACLcB/s640/Peixada%2BPernambucana.png" alt="004">
+    <h2>Peixada de Cavala</h2>
+
+    
+  </div>
+
+  <div class="product">
+    <img src="https://img.cybercook.com.br/receitas/896/carne-de-sol-com-mandioca.jpeg" alt="005">
+    <h2>Carne de sol</h2>
+ 
+    
+  </div>
+
+  <div class="product">
+    <img src="https://img77.uenicdn.com/image/upload/v1570205026/service_images/shutterstock_1122865346.jpg" alt="006">
+    <h2>Pastel de Arraia</h2>
+  
+    
+  </div>
+
+</section>
+
+
+<script>
+  $(document).ready(function(){
+      $('.slider').slick({
+          slidesToShow: 4, // Mostrar dois produtos por vez
+          slidesToScroll: 1,
+          prevArrow: '<button class="slick-prev">Anterior</button>',
+          nextArrow: '<button class="slick-next">Próximo</button>',
+          responsive: [
+              {
+                  breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                  settings: {
+                      slidesToShow: 1
+                  }
+              }
+          ]
+      });
+  });
+</script>
+
+<!--------------------------------------------------->
+
+
+   
+
+    <div class="saiba-mais">
+        <h2>Fale Conosco</h2>
+    </div>
+
+    <div class="redes-sociais">
+        
+        <div>
+          <a href="https://api.whatsapp.com/send/?phone=558892302173&text="><img loading="lazy" src="../icon/zap.png" alt="zap"></a>
+        </div>
+    
+      </div>
+
+
+    <!-------------------------->
+    <div class="perfil-bloco">
+      <div>
+        <img src="https://i.ibb.co/hHwtPdy/xdc.jpg" alt="xdc">
+        
+      </div>
+    </div>
+
+    <!------------------------------->
+
+    
+
+</body>
+</html>
