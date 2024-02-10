@@ -434,8 +434,25 @@
 
     <!--------------------------------------------->
     <main>
-
+        <div class="instagram-container" id="instagram-container">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C3LnfX4xQSC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" data-instgrm-version="13"></blockquote>
+            <script async src="https://www.instagram.com/embed.js"></script>
+        </div>
         
+        <script>
+            // Obtém o elemento do vídeo
+            var video = document.querySelector('.instagram-media');
+        
+            // Adiciona um event listener para cliques fora do vídeo
+            document.addEventListener('click', function(event) {
+                // Pausa a reprodução do vídeo
+                if (typeof window.instgrm !== 'undefined' && window.instgrm.Embeds) {
+                    window.instgrm.Embeds.process();
+                }
+            });
+        </script>
+        
+        <!--------------------------------------------->
         <section class="bloco-noticias">
             <article>
                 <img src="https://www.tjdft.jus.br/institucional/imprensa/campanhas-e-produtos/direito-facil/edicao-semanal/se-beber-nao-dirija/@@images/f64be865-09cf-401e-b83d-83c915d6e1dd.jpeg" alt="'noticia">
