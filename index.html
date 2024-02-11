@@ -767,10 +767,56 @@ audio::-webkit-media-controls-play-button {
 
     
     <!--------------------------------------------------->
+    <style>
+      .video-container1 {
+        display: none; /* Oculta o contêiner de vídeo por padrão */
+        margin-bottom: 20px;
+      }
+     
+      @media only screen and (min-width: 768px){
+        #video-container1 {
+          display: none; /* Oculta o contêiner de vídeo por padrão */
+          margin-bottom: 20px;
+        }
+        .video-container1 {
+          display: none; /* Oculta o contêiner de vídeo por padrão */
+          margin-bottom: 20px;
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        .video-container1 {
+          display: block; /* Exibe o contêiner de vídeo para dispositivos móveis */
+          width: 100%;
+          max-width: 800px;
+          margin: 0 auto;
+          overflow: hidden;
+          border-radius: 10px;
+        }
     
+        .video-container1 iframe {
+          width: 99%;
+          height: 540px;
+          border: none;
+          border-radius: 10px;
+        }
+        .product1 {
+          background-color: #fff;
+          border: 1px solid #ddd;
+          margin-top: 0px;
+          flex: 1 0 calc(50% - 20px);
+          box-sizing: border-box;
+          text-align: center;
+          padding: 280px;
+        }
+      }
 
+    </style>
+   
   <main>
 
+   
+    <!--------------------------------------------------->
+    
     <h2 class="empresas">- - - - - - - - - - - - - -</h2>
       <div class="perfil-bloco">
         <div>
@@ -800,52 +846,19 @@ audio::-webkit-media-controls-play-button {
       </a>
       <!--------------------------------------------------->
 
-
-      <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-      <div class="perfil-bloco">
-        <div>
-          <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/banner-2.webp" alt="image png">
-        </div>
+      <h2  id="video-container1" class="empresas">- - - - - - - - - - - - - -</h2>
+      <div id="video-container1" class="perfil-bloco">
+          <img loading="lazy" src="https://i.ibb.co/ZL10MxW/banner.webp" alt="image png">
       </div>
       <section class="slider">
-        <div class="product">
-  
-          <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/002.webp" alt="Farmacia">
-        </div>
-  
-        <div class="product">
-          <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/003.webp" alt="Farmacia">
-      
-      
-        </div>
-        
-        <div class="product">
-          <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/001.webp" alt="Farmacia">
-      
-      
-        </div>
-        
-        <div class="product">
-          <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/004.webp" alt="Farmacia">
-      
-      
-        </div>
-  
-        <div class="product">
-          <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/005.webp" alt="Farmacia">
-      
-      
-        </div>
-  
-        <div class="product">
-          <img loading="lazy" src="confeitaria/Raí Alves Cake Designer/006.webp" alt="Farmacia">
-      
-      
+        <div class="product1" id="face">
+          <div class="video-container1">
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/964115157623834" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
       </section>
-  
-      <a id="empresas" href="confeitaria/ray-alves.html">
-        <h2  id="Botao">Saiba mais</h2>
+      <a  class="video-container1" id="empresas" href="confeitaria/ray-alves.html">
+        <h2  class="video-container1"  id="Botao">Saiba mais</h2>
       </a>
     <!--------------------------------------------------->
 
