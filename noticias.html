@@ -380,7 +380,33 @@
     .titulo{
       text-align: center;
     }
+
+    
 </style>
+<style>
+    .video-container {
+      display: none; /* Oculta o contêiner de vídeo por padrão */
+      margin-bottom: 20px;
+    }
+  
+    @media only screen and (max-width: 768px) {
+      .video-container {
+        display: block; /* Exibe o contêiner de vídeo para dispositivos móveis */
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+  
+      .video-container iframe {
+        width: 99%;
+        height: 530px;
+        border: none;
+        border-radius: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -435,90 +461,11 @@
     <!--------------------------------------------->
     <main>
 
-
-        <style>
-        #video-container {
-            width: 100%;
-            max-width: 800px; /* Defina o tamanho máximo desejado para o vídeo */
-            margin: 0 auto; /* Centralizar o vídeo na página */
-            overflow: hidden; /* Para garantir que o vídeo não ultrapasse os limites do contêiner */
-            border-radius: 10px;
-          }
-      
-          #video-container iframe {
-            width: 99%;
-            height: 578px;
-            border: none;
-            border-radius: 10px;
-        }
-      
-          #video-controls {
-            text-align: center;
-            margin-top: 10px;
-          }
-      
-          #video-controls button {
-            background-color: #c00;
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
-          }
-      
-          #video-controls button:hover {
-            background-color: #970000; /* Vermelho escuro */
-          }
-        </style>
-        <!-- Vídeo incorporado -->
-        <div id="video-container">
-            <iframe id="embedded-video" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <!-- Controles do vídeo -->
-        <div id="video-controls">
-            <button onclick="previousVideo()">Voltar</button>
-            <button onclick="nextVideo()">Próximo</button>
-        </div>
-
-        <script>
-            var videoLinks = [
-            
-            'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/413478194573772',
-            'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/374520698677686',
-            'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/749981523429842',
-            'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/847015110531599',
-           
-            // Adicione os links dos outros vídeos aqui
-            ]; 
-
-            var currentVideoIndex = 0; // Índice do vídeo atual
-
-            function showVideo() {
-            var embeddedVideo = document.getElementById('embedded-video');
-            embeddedVideo.src = videoLinks[currentVideoIndex];
-            }
-
-            function previousVideo() {
-            currentVideoIndex = (currentVideoIndex - 1 + videoLinks.length) % videoLinks.length;
-            updateVideo();
-            }
-
-            function nextVideo() {
-            currentVideoIndex = (currentVideoIndex + 1) % videoLinks.length;
-            updateVideo();
-            }
-
-            function updateVideo() {
-            var embeddedVideo = document.getElementById('embedded-video');
-            embeddedVideo.src = videoLinks[currentVideoIndex];
-            }
-
-            // Chame a função showVideo() para exibir o vídeo quando a página for carregada
-            showVideo();
-        </script>
+          
+          <!-- Vídeo incorporado 1 -->
+          <div class="video-container">
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/413478194573772" frameborder="0" allowfullscreen></iframe>
+          </div>
 
         <!--------------------------------------------->
         <section class="bloco-noticias">
