@@ -434,24 +434,92 @@
 
     <!--------------------------------------------->
     <main>
-        <div class="instagram-container" id="instagram-container">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C3LnfX4xQSC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" data-instgrm-version="13"></blockquote>
-            <script async src="https://www.instagram.com/embed.js"></script>
+
+
+        <style>
+        #video-container {
+            width: 100%;
+            max-width: 800px; /* Defina o tamanho máximo desejado para o vídeo */
+            margin: 0 auto; /* Centralizar o vídeo na página */
+            overflow: hidden; /* Para garantir que o vídeo não ultrapasse os limites do contêiner */
+            border-radius: 10px;
+          }
+      
+          #video-container iframe {
+            width: 99%;
+            height: 531px;
+            border: none;
+            border-radius: 10px;
+        }
+      
+          #video-controls {
+            text-align: center;
+            margin-top: 10px;
+          }
+      
+          #video-controls button {
+            background-color: #c00;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+          }
+      
+          #video-controls button:hover {
+            background-color: #970000; /* Vermelho escuro */
+          }
+        </style>
+        <!-- Vídeo incorporado -->
+        <div id="video-container">
+            <iframe id="embedded-video" src="" frameborder="0" allowfullscreen></iframe>
         </div>
-        
+
+        <!-- Controles do vídeo -->
+        <div id="video-controls">
+            <button onclick="previousVideo()">Voltar</button>
+            <button onclick="nextVideo()">Próximo</button>
+        </div>
+
         <script>
-            // Obtém o elemento do vídeo
-            var video = document.querySelector('.instagram-media');
-        
-            // Adiciona um event listener para cliques fora do vídeo
-            document.addEventListener('click', function(event) {
-                // Pausa a reprodução do vídeo
-                if (typeof window.instgrm !== 'undefined' && window.instgrm.Embeds) {
-                    window.instgrm.Embeds.process();
-                }
-            });
+            var videoLinks = [
+            
+            'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/413478194573772',
+            'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/374520698677686',
+            'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/749981523429842',
+            'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/847015110531599',
+           
+            // Adicione os links dos outros vídeos aqui
+            ]; 
+
+            var currentVideoIndex = 0; // Índice do vídeo atual
+
+            function showVideo() {
+            var embeddedVideo = document.getElementById('embedded-video');
+            embeddedVideo.src = videoLinks[currentVideoIndex];
+            }
+
+            function previousVideo() {
+            currentVideoIndex = (currentVideoIndex - 1 + videoLinks.length) % videoLinks.length;
+            updateVideo();
+            }
+
+            function nextVideo() {
+            currentVideoIndex = (currentVideoIndex + 1) % videoLinks.length;
+            updateVideo();
+            }
+
+            function updateVideo() {
+            var embeddedVideo = document.getElementById('embedded-video');
+            embeddedVideo.src = videoLinks[currentVideoIndex];
+            }
+
+            // Chame a função showVideo() para exibir o vídeo quando a página for carregada
+            showVideo();
         </script>
-        
+
         <!--------------------------------------------->
         <section class="bloco-noticias">
             <article>
