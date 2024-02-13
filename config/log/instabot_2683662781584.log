@@ -1,0 +1,15 @@
+2024-02-13 17:55:35,604 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2024-02-13 17:55:35,605 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from C:\Users\mocob\AppData\Local\Programs\Python\Python311\Lib\site-packages\instabot\bot\bot.py
+2024-02-13 17:55:35,607 - instabot version: 0.117.0 (api_login) - INFO - Not yet logged in starting: PRE-LOGIN FLOW!
+2024-02-13 17:55:35,992 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/get_prefill_candidates/ returned response: <Response [429]>
+2024-02-13 17:55:35,993 - instabot version: 0.117.0 (api) - DEBUG - Responsecode indicates error; response content: b'{"message":"Please wait a few minutes before you try again.","status":"fail"}'
+2024-02-13 17:55:35,994 - instabot version: 0.117.0 (api) - ERROR - Request returns 429 error!
+2024-02-13 17:55:35,994 - instabot version: 0.117.0 (api) - WARNING - That means 'too many requests'. I'll go to sleep for 5 minutes.
+2024-02-13 18:00:36,358 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/get_prefill_candidates/ returned response: <Response [429]>
+2024-02-13 18:00:36,358 - instabot version: 0.117.0 (api) - DEBUG - Responsecode indicates error; response content: b'{"message":"Please wait a few minutes before you try again.","status":"fail"}'
+2024-02-13 18:00:36,358 - instabot version: 0.117.0 (api) - ERROR - Request returns 429 error!
+2024-02-13 18:00:36,358 - instabot version: 0.117.0 (api) - WARNING - That means 'too many requests'. I'll go to sleep for 10 minutes.
+2024-02-13 18:10:36,714 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/get_prefill_candidates/ returned response: <Response [429]>
+2024-02-13 18:10:36,715 - instabot version: 0.117.0 (api) - DEBUG - Responsecode indicates error; response content: b'{"message":"Please wait a few minutes before you try again.","status":"fail"}'
+2024-02-13 18:10:36,715 - instabot version: 0.117.0 (api) - ERROR - Request returns 429 error!
+2024-02-13 18:10:36,716 - instabot version: 0.117.0 (api) - WARNING - That means 'too many requests'. I'll go to sleep for 15 minutes.
