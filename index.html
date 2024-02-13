@@ -571,15 +571,7 @@ button:hover {
 
 
 
-/* Cor da barra de reprodução */
-audio::-webkit-media-controls-panel {
-  background-color: red;
-}
 
-/* Cor do botão de play/pause */
-audio::-webkit-media-controls-play-button {
-  color: rgb(255, 255, 255);
-}
 
 
 
@@ -597,7 +589,7 @@ audio::-webkit-media-controls-play-button {
 
 <section class="radio-fm">
   <a href="https://www.socialcreator.com/radiowebjesuseavida" target="_blank"><img src="icon/banner-fm.jpg"alt="159615-208318" id="img-fm"></a>
-  <audio controls autoplay id="fm">
+  <audio controls id="fm">
     <source src="https://encurtador.com.br/vzIN1" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
   </audio>
@@ -1287,6 +1279,7 @@ audio::-webkit-media-controls-play-button {
 <a href="cursos/cursos.html" onclick="openPopup()"><button class="loginha">Cursos</button></a>
 <a href="noticias.html"><button id="botaoFlutuante">Noticias</button></a>
 
+
 <div id="janelaLogin">
   <span id="fecharJanela" onclick="fecharJanelaLogin()">X</span>
   <div  class="logomarca-flutuante">
@@ -1513,8 +1506,6 @@ button:active {
     transition: background-color 0.3s ease;
 }
 
-
-
 .logomarca {
   padding: 9px;
   padding-top: 4px;
@@ -1547,9 +1538,163 @@ button:active {
   
   }
 
-
-
 </style>
+<style>
+  .floating-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  .floating-button {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 30px;
+  }
+
+  .floating-button:hover{
+    background-color: #00ff6a;
+    box-shadow: 2px 2px 50px #00ff6a;
+    color: #fff;
+    border-radius: 30px;
+  }
+
+
+ 
+  .popup {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+  }
+
+  .popup h2 {
+    text-align: center;
+  }
+
+  .popup label,
+  .popup button {
+    display: block;
+    margin: 10px auto;
+  }
+
+  .popup input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .popup button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .copied-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    background-color: rgba(0, 123, 255, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .popup {
+      width: 67%;
+      padding: 47px;
+    }
+   
+  }
+  .floating-button-text{
+    font-size: medium;
+   
+  }
+
+ 
+</style>
+
+<div class="floating-button-container">
+  <div class="floating-button" id="floatingButton">
+    <span class="floating-button-text">Doar</span>
+  </div>
+</div>
+
+<div id="popup" class="popup">
+  <h2>Apoie um estudante apaixonado por tecnologia - Site em constante atualização</h2>
+  <div class="hino-camocim">
+    <audio src="login/artigo.mp3" controls style="padding-bottom: 20px;"></audio>
+  </div>
+  <div>
+    <p>Chave PIX:</p>
+    <div id="chavePix" contenteditable="true">Registracamocim@gmail.com</div>
+  </div>
+  <button type="button" id="copiarChavePix">Copiar Chave PIX</button>
+  <button class="close-button">Fechar</button>
+</div>
+
+<div id="copiedNotification" class="copied-notification">Chave PIX copiada!</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const floatingButton = document.getElementById("floatingButton");
+    const popup = document.getElementById("popup");
+    const copiarChavePixButton = document.getElementById("copiarChavePix");
+    const closeButton = document.querySelector('.close-button');
+    const copiedNotification = document.getElementById("copiedNotification");
+  
+    floatingButton.addEventListener('click', function () {
+      popup.style.display = popup.style.display === "block" ? "none" : "block";
+    });
+  
+    document.addEventListener('click', function (event) {
+      if (event.target === popup) {
+        popup.style.display = "none";
+      }
+    });
+  
+    copiarChavePixButton.addEventListener('click', copiarChavePix);
+  
+    closeButton.addEventListener('click', function () {
+      popup.style.display = "none";
+    });
+  
+    function copiarChavePix() {
+      const chavePix = document.getElementById("chavePix");
+      const range = document.createRange();
+      range.selectNode(chavePix);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+      copiedNotification.style.display = "block";
+      setTimeout(function () {
+        copiedNotification.style.display = "none";
+      }, 2000);
+    }
+  });
+  </script>
+
 </body>
 
 </html>
