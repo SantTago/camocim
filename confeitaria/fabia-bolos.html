@@ -50,11 +50,19 @@
       box-sizing: border-box;
       text-align: center;
     }
-    img {
+    main > img {
       max-width: 100%;
       height: auto;
-      width: 100%;
-        
+      width: 100%; 
+    }
+    main{
+      max-width: 800px;
+      background-color: rgb(255, 255, 255);
+    }
+    .paragrafo{
+      max-width: 800px;
+      padding: 10px;
+      background-color: #ffffff;
     }
     footer {
       background-color: #333;
@@ -85,22 +93,32 @@
       flex-wrap: wrap;
     }
 
-    @media only screen and (min-width: 303px) and (max-width: 600px) {
-      .product {
-        flex-basis: calc(33.3333% - 20px);
-
-            
-      }
-      img {
+    @media only screen and (max-width: 600px) {
+      /* Estilos específicos para dispositivos móveis aqui */
+      body {
         max-width: 100%;
-        height: auto;
-        width: 100%;
-          
+        overflow-x: hidden;
       }
+      section {
+        max-width: 100%;
+      }
+      .product {
+        flex: 1 0 calc(100% - 20px);
+      }
+    }
+    #fundo{
+      background-image: url('https://ae01.alicdn.com/kf/Hd3b3272bf3bc48a39cb8808625b79540V/Avezano-fotografia-fundo-rosa-doce-rosquinhas-rec-m-nascidos-meninas-bolo-de-anivers-rio-quebra-pano.jpg');
+      position: absolute;
+      background-attachment: fixed;
+    }
+    .paragrafo{
+      text-align: center;
+      font-size: larger;
+      
     }
   </style>
 </head>
-<body>
+<body id="fundo">
   <div class="perfil-bloco">
     <div>
     <img src="https://i.ibb.co/r373wQM/banner.webp" alt="banner">
@@ -113,45 +131,61 @@
     </div>  
   </div> 
   <!--------------------------------------------------->
-  <section class="slider">
-    <div class="product">
-      <img src="https://i.ibb.co/PzYJRg3/001.webp" alt="001">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/g3Y6QQ2/003.webp" alt="003"> 
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/YtWKhqj/002.webp" alt="002">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/n33LwFR/004.webp" alt="004">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/XXMjvrt/005.webp" alt="005">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/PrBrsZY/006.webp" alt="006">
-    </div>
-  </section>
-<!--------------------------------------------------->
-  <script>
-    $(document).ready(function(){
-        $('.slider').slick({
-            slidesToShow: 4, // Mostrar dois produtos por vez
-            slidesToScroll: 1,
-            prevArrow: '<button class="slick-prev">Anterior</button>',
-            nextArrow: '<button class="slick-next">Próximo</button>',
-            responsive: [
-                {
-                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    });
-  </script>
+  <main >
+
+    <h2>Sugestões de produtos</h2>
+
+    <section class="slider">
+      <div class="product">
+        <img src="https://i.ibb.co/PzYJRg3/001.webp" alt="001">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/g3Y6QQ2/003.webp" alt="003">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/YtWKhqj/002.webp" alt="002">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/n33LwFR/004.webp" alt="004">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/XXMjvrt/005.webp" alt="005">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/PrBrsZY/006.webp" alt="006">
+      </div>
+
+    </section>
+      <h2>
+      Fabia Bolos é o nome que brilha na confeitaria, destacando-se por sua habilidade excepcional na criação de bolos que encantam a todos.
+    </h2>
+
+      <p class="paragrafo">
+        Fabia Bolos é uma mestra da confeitaria, conhecida por suas criações magníficas que encantam os sentidos. Cada bolo é uma expressão de sua habilidade e paixão, resultando em obras de arte comestíveis que tornam qualquer ocasião especial verdadeiramente memorável. <br>
+        <br>
+        dedicação incomparáveis, Fabia Bolos transforma ingredientes simples em delícias extraordinárias, conquistando paladares e corações por onde passa. <br>
+        <br>
+      </p>
+    <!--------------------------------------------------->
+    <script>
+      $(document).ready(function(){
+          $('.slider').slick({
+              slidesToShow: 4, // Mostrar dois produtos por vez
+              slidesToScroll: 1,
+              prevArrow: '<button class="slick-prev">Anterior</button>',
+              nextArrow: '<button class="slick-next">Próximo</button>',
+              responsive: [
+                  {
+                      breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                      settings: {
+                          slidesToShow: 1
+                      }
+                  }
+              ]
+          });
+      });
+    </script>
+  </main>
   <!--------------------------------------------------->
   <div class="saiba-mais">
     <h2>Fale Conosco</h2>

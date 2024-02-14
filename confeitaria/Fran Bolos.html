@@ -49,11 +49,19 @@
     box-sizing: border-box;
     text-align: center;
   }
-  img {
+  main > img {
     max-width: 100%;
     height: auto;
-    width: 100%;
-        
+    width: 100%; 
+  }
+  main{
+    max-width: 800px;
+    background-color: rgb(255, 255, 255);
+  }
+  .paragrafo{
+    max-width: 800px;
+    padding: 10px;
+    background-color: #ffffff;
   }
   footer {
     background-color: #333;
@@ -82,19 +90,33 @@
     margin: auto;
     flex-wrap: wrap;
   }
-  @media only screen and (min-width: 303px) and (max-width: 600px) {
-    .product {
-      flex-basis: calc(33.3333% - 20px);   
-    }
-    img {
+  @media only screen and (max-width: 600px) {
+    /* Estilos específicos para dispositivos móveis aqui */
+    body {
       max-width: 100%;
-      height: auto;
-      width: 100%; 
+      overflow-x: hidden;
+    }
+    section {
+      max-width: 100%;
+    }
+    .product {
+      flex: 1 0 calc(100% - 20px);
     }
   }
+  #fundo{
+    background-image: url('https://ae01.alicdn.com/kf/Hd3b3272bf3bc48a39cb8808625b79540V/Avezano-fotografia-fundo-rosa-doce-rosquinhas-rec-m-nascidos-meninas-bolo-de-anivers-rio-quebra-pano.jpg');
+    position: absolute;
+    background-attachment: fixed;
+  }
+  .paragrafo{
+    text-align: center;
+    font-size: larger;
+    
+  }
+
 </style>
 </head>
-<body>
+<body id="fundo">
   <div class="perfil-bloco">
     <div>
       <img src="https://i.ibb.co/M5HHhf1/banner.webp" alt="banner">
@@ -106,51 +128,66 @@
     </div >   
   </div>  
   <!--------------------------------------------------->
-  <section class="slider">
-    <div class="product">
-      <img src="https://i.ibb.co/yFwN57K/001.webp" alt="001">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/YLFx1MS/002.webp" alt="002">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/QpTKTqL/003.webp" alt="003">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/tQHpthT/004.webp" alt="004">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/yFwN57K/001.webp" alt="001">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/YLFx1MS/002.webp" alt="002">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/QpTKTqL/003.webp" alt="003">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/tQHpthT/004.webp" alt="004"> 
-    </div>
-  </section>
-<!--------------------------------------------------->
-  <script>
-    $(document).ready(function(){
-        $('.slider').slick({
-            slidesToShow: 4, // Mostrar dois produtos por vez
-            slidesToScroll: 1,
-            prevArrow: '<button class="slick-prev">Anterior</button>',
-            nextArrow: '<button class="slick-next">Próximo</button>',
-            responsive: [
-                {
-                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    });
-  </script>
+  <main>
+    <h2>Sugestões de produtos</h2>
+
+    <section class="slider">
+      <div class="product">
+        <img src="https://i.ibb.co/yFwN57K/001.webp" alt="001">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/YLFx1MS/002.webp" alt="002">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/QpTKTqL/003.webp" alt="003">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/tQHpthT/004.webp" alt="004">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/yFwN57K/001.webp" alt="001">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/YLFx1MS/002.webp" alt="002">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/QpTKTqL/003.webp" alt="003">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/tQHpthT/004.webp" alt="004">
+      </div>
+    </section>
+
+    <h2>
+      Fran Bolos é a referência suprema na arte da confeitaria, celebrada por sua maestria em criar bolos que são verdadeiras obras-primas.
+    </h2>
+    <p class="paragrafo">
+      Fran Bolos, a talentosa confeiteira da nossa cidade, transforma açúcar, farinha e ovos em verdadeiras obras de arte comestíveis. <br>
+      <br>
+      Seus bolos são mais do que simples sobremesas; são lembranças doces que tornam cada momento especial ainda mais memorável. <br>
+      <br>
+      Com sua paixão pela confeitaria e sua habilidade excepcional, Fran Bolos adoça a vida de todos os que têm a sorte de provar suas criações.
+    </p>
+    <!--------------------------------------------------->
+    <script>
+      $(document).ready(function(){
+          $('.slider').slick({
+              slidesToShow: 4, // Mostrar dois produtos por vez
+              slidesToScroll: 1,
+              prevArrow: '<button class="slick-prev">Anterior</button>',
+              nextArrow: '<button class="slick-next">Próximo</button>',
+              responsive: [
+                  {
+                      breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                      settings: {
+                          slidesToShow: 1
+                      }
+                  }
+              ]
+          });
+      });
+    </script>
+  </main>
   <!--------------------------------------------------->
   <div class="saiba-mais">
       <h2>Fale Conosco</h2>
