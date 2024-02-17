@@ -29,198 +29,220 @@
         nav {
             background-color: #00425c; /* Cor do menu */
             text-align: center;
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-        }
-
-        nav a {
-            font-weight: 600;
-            color: #000;
-            text-decoration: none;
-            padding: 10px;
-            margin: 5px;
-            box-sizing: border-box;
-        }
-
-        nav a.back {
-            background-color: #8bd6f1; /* Cor do botão "Voltar" */
-        }
-
-        @media (max-width: 600px) {
+            padding: 10    body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                min-height: 50vh;
+            }
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                font-weight: 600;
+                background-color: #042940;
+            }
+    
+            nav {
+                background-color: #00425c; /* Cor do menu */
+                text-align: center;
+                padding: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+            }
+    
             nav a {
-                width: auto;
+                font-weight: 600;
+                color: #000;
+                text-decoration: none;
+                padding: 10px;
+                margin: 5px;
+                box-sizing: border-box;
             }
-        }
-
-        .mototaxi {
-            width: 110px;
-            padding: 10px;
-            background: linear-gradient(45deg, #000, #333);
-            color: #ffc107;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-            border-radius: 10px;
-        }
-
-        .mototaxi:hover {
-            transform: scale(1.1);
-        }
-
-        .mototaxi img {
-            width: 100%;
-            border-radius: 50%;
-        }
-
-        #informacoes {
-            display: none;
-            width: 200px;
-            background: linear-gradient(45deg, #000, #333);
-            color: #ffc107;
-            padding: 20px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            border-radius: 10px;
-        }
-
-        #fechar {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: #ffc107;
-        }
-
-        #chamarBotao {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #ffc107;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        #chamarBotao:hover {
-            background-color: #ffdb58;
-        }
-
-        :root {
-            --cor1: #042940;
-            --cor2: #005C53;
-            --cor3: #9FC131;
-            --cor4: #DBF227;
-            --cor5: #D6D58E;
-            --cor6: #0077ff;
-            --cor7: #8bd6f1;
-            --cor8: #00425c;
-        }
-
-        header {
-            background-color: var(--cor1);
-            color: #fff;
-            text-align: center;
-            
-        }
-
-
-        .moto-taxi { background-color: var(--cor2); }
-        .taxistas { background-color: var(--cor3); }
-        .entregadores { background-color: var(--cor4); }
-        .guias-turisticos { background-color: yellow; }
-        .banner-container {
-            max-width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .banner-img {
-            width: 100%;
-            display: none;
-        }
-
-        .banner-img.active {
-            display: block;
-        }
-
-        section {
-            margin: 20px;
-            text-align: center;
-        }
-
-        .service {
-            border: 1px solid var(--cor5);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px;
-            flex: 0 0 calc(33.33% - 20px);
-        }
-
-        .aberto::before {
-            content: '\25A0'; /* Quadrado preto - pode ser usado como bolinha verde */
-            color: #00FF00; /* Cor verde */
-            display: inline-block;
-        }
-        
-        .fechado::before {
-            content: '\25A0'; /* Quadrado preto - pode ser usado como bolinha vermelha */
-            color: #FF0000; /* Cor vermelha */
-            display: inline-block;
-        }
-
-        #horario-funcionamento {
-            padding: 20px;
-            border: 2px solid #333;
-            background-color: #fff;
-            display: inline-block;
-        }
-
-        .logomarca {
-            padding: 9px;
-            padding-top: 4px;
-            max-width: 109px;
-            width: 107%;
-            text-align: center;
-            margin-bottom: -1px;
-        }
-          
-          .logomarca img {
-            max-width: 100%;
-            height: auto;
-          }
-          
-          @media only screen and (max-width: 490px) {
-            .logomarca {
-              padding: 9px;
-              max-width: 212px;
-              margin-bottom: -1px;
-              
-          }
-            .menu {
-              text-align: center;
+    
+            nav a.back {
+                background-color: #8bd6f1; /* Cor do botão "Voltar" */
             }
+    
+            @media (max-width: 600px) {
+                nav a {
+                    width: auto;
+                }
+            }
+    
+            .mototaxi {
+                width: 110px;
+                padding: 10px;
+                background: linear-gradient(45deg, #000, #333);
+                color: #ffc107;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                cursor: pointer;
+                transition: transform 0.3s ease-in-out;
+                border-radius: 10px;
+            }
+    
+            .mototaxi:hover {
+                transform: scale(1.1);
+            }
+    
+            .mototaxi img {
+                width: 100%;
+                border-radius: 50%;
+            }
+    
+            #informacoes {
+                display: none;
+                width: 200px;
+                background: linear-gradient(45deg, #000, #333);
+                color: #ffc107;
+                padding: 20px;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+                border-radius: 10px;
+                text-align: center;
+            }
+    
+            #fechar {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                color: #ffc107;
+            }
+    
+            #chamarBotao {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #ffc107;
+                color: #000;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+            }
+    
+            #chamarBotao:hover {
+                background-color: #ffdb58;
+            }
+    
+            :root {
+                --cor1: #042940;
+                --cor2: #005C53;
+                --cor3: #9FC131;
+                --cor4: #DBF227;
+                --cor5: #D6D58E;
+                --cor6: #0077ff;
+                --cor7: #8bd6f1;
+                --cor8: #00425c;
+            }
+    
             header {
-              background-color: var(--cor1);
-              color: #fff;
-              text-align: center;
-              padding: 10px;
-              display: flex;
-              /* justify-items: center; */
-              /* flex-wrap: wrap; */
-              flex-direction: column-reverse;
-              align-items: center;
-          }
-          }
-    </style>
+                background-color: var(--cor1);
+                color: #fff;
+                text-align: center;
+                
+            }
+    
+    
+            .moto-taxi { background-color: var(--cor2); }
+            .taxistas { background-color: var(--cor3); }
+            .entregadores { background-color: var(--cor4); }
+            .guias-turisticos { background-color: yellow; }
+            .banner-container {
+                max-width: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+    
+            .banner-img {
+                width: 100%;
+                display: none;
+            }
+    
+            .banner-img.active {
+                display: block;
+            }
+    
+            section {
+                margin: 20px;
+                text-align: center;
+            }
+    
+            .service {
+                border: 1px solid var(--cor5);
+                border-radius: 8px;
+                padding: 20px;
+                margin: 10px;
+                flex: 0 0 calc(33.33% - 20px);
+            }
+    
+            .aberto::before {
+                content: '\25A0'; /* Quadrado preto - pode ser usado como bolinha verde */
+                color: #00FF00; /* Cor verde */
+                display: inline-block;
+            }
+            
+            .fechado::before {
+                content: '\25A0'; /* Quadrado preto - pode ser usado como bolinha vermelha */
+                color: #FF0000; /* Cor vermelha */
+                display: inline-block;
+            }
+    
+            #horario-funcionamento {
+                padding: 20px;
+                border: 2px solid #333;
+                background-color: #fff;
+                display: inline-block;
+            }
+    
+            .logomarca {
+                padding: 9px;
+                padding-top: 4px;
+                max-width: 109px;
+                width: 107%;
+                text-align: center;
+                margin-bottom: -1px;
+            }
+              
+              .logomarca img {
+                max-width: 100%;
+                height: auto;
+              }
+              
+              @media only screen and (max-width: 490px) {
+                .logomarca {
+                  padding: 9px;
+                  max-width: 212px;
+                  margin-bottom: -1px;
+                  
+              }
+                .menu {
+                  text-align: center;
+                }
+                header {
+                  background-color: var(--cor1);
+                  color: #fff;
+                  text-align: center;
+                  padding: 10px;
+                  display: flex;
+                  /* justify-items: center; */
+                  /* flex-wrap: wrap; */
+                  flex-direction: column-reverse;
+                  align-items: center;
+              }
+              }
+        </style>
 </head>
 <body>
 

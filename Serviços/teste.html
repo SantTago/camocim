@@ -354,51 +354,7 @@
         <h3>Naty</h3>
         <div id="mototaxista1" class="horario-funcionamento"></div>
     </div>
-    <div class="mototaxi" onclick="mostrarInformacoes(2)">
-        <img src="perfil-taxi.png" alt="taxista 2">
-        <h3>Taxista-2</h3>
-        <div id="mototaxista2" class="horario-funcionamento"></div>
-    </div>
-    <div class="mototaxi" onclick="mostrarInformacoes(3)">
-        <img src="perfil-taxi.png" alt="taxista 2">
-        <h3>Taxista-3</h3>
-        <div id="mototaxista2" class="horario-funcionamento"></div>
-    </div>
-    <div class="mototaxi" onclick="mostrarInformacoes(4)">
-        <img src="perfil-taxi.png" alt="taxista 2">
-        <h3>Taxista-4</h3>
-        <div id="mototaxista2" class="horario-funcionamento"></div>
-    </div>
-    <div class="mototaxi" onclick="mostrarInformacoes(5)">
-        <img src="perfil-taxi.png" alt="taxista 2">
-        <h3>Taxista-5</h3>
-        <div id="mototaxista2" class="horario-funcionamento"></div>
-    </div>
-    <div class="mototaxi" onclick="mostrarInformacoes(5)">
-        <img src="perfil-taxi.png" alt="taxista 2">
-        <h3>Taxista-6</h3>
-        <div id="mototaxista2" class="horario-funcionamento"></div>
-    </div>
-    <div class="mototaxi" onclick="mostrarInformacoes(5)">
-        <img src="perfil-taxi.png" alt="taxista 2">
-        <h3>Taxista-7</h3>
-        <div id="mototaxista2" class="horario-funcionamento"></div>
-    </div>
-    <div class="mototaxi" onclick="mostrarInformacoes(5)">
-        <img src="perfil-taxi.png" alt="taxista 2">
-        <h3>Taxista-8</h3>
-        <div id="mototaxista2" class="horario-funcionamento"></div>
-    </div>
-    <div class="mototaxi" onclick="mostrarInformacoes(5)">
-        <img src="perfil-taxi.png" alt="taxista 2">
-        <h3>Taxista-9</h3>
-        <div id="mototaxista2" class="horario-funcionamento"></div>
-    </div>
-    <div class="mototaxi" onclick="mostrarInformacoes(5)">
-        <img src="perfil-taxi.png" alt="taxista 2">
-        <h3>Taxista-10</h3>
-        <div id="mototaxista2" class="horario-funcionamento"></div>
-    </div>
+
     <!-- Adicione os outros mototaxistas aqui -->
 
     <div id="informacoes">
@@ -413,6 +369,7 @@
     <script>
         function mostrarInformacoes(mototaxistaId) {
             const nomeElemento = document.getElementById('mototaxistaNome');
+            const infoElemento = document.getElementById('mototaxistaInfo');
             const numeroElemento = document.getElementById('numeroMotoTaxista');
             const informacoesDiv = document.getElementById('informacoes');
 
@@ -420,45 +377,11 @@
                 nomeElemento.textContent = 'Naty';
                 numeroElemento.textContent = '(88)9.9212-4494';  
             } else if (mototaxistaId === 2) {
-                nomeElemento.textContent = 'Sem Nome ainda';
-                numeroElemento.textContent = '(00)0.0000-0000';  
-            }
-            else if (mototaxistaId === 3) {
-                nomeElemento.textContent = 'Sem Nome ainda';
-                numeroElemento.textContent = '(00)0.0000-0000';  
-            }
-            else if (mototaxistaId === 4) {
-                nomeElemento.textContent = 'Sem Nome ainda';
-                numeroElemento.textContent = '(00)0.0000-0000';  
-            }
-            else if (mototaxistaId === 5) {
-                nomeElemento.textContent = 'Sem Nome ainda';
-                numeroElemento.textContent = '(00)0.0000-0000';  
-            }
-            else if (mototaxistaId === 6) {
-                nomeElemento.textContent = 'Sem Nome ainda';
-                numeroElemento.textContent = '(00)0.0000-0000';  
-            }
-            else if (mototaxistaId === 7) {
-                nomeElemento.textContent = 'Sem Nome ainda';
-                numeroElemento.textContent = '(00)0.0000-0000';  
-            }
-            else if (mototaxistaId === 8) {
-                nomeElemento.textContent = 'Sem Nome ainda';
-                numeroElemento.textContent = '(00)0.0000-0000';  
-            }
-            else if (mototaxistaId === 9) {
-                nomeElemento.textContent = 'Sem Nome ainda';
-                numeroElemento.textContent = '(00)0.0000-0000';  
-            }
-            else if (mototaxistaId === 10) {
-                nomeElemento.textContent = 'Sem Nome ainda';
-                numeroElemento.textContent = '(00)0.0000-0000';  
+                // Adicione informações para outros mototaxistas aqui
             }
             // Adicione informações para os outros mototaxistas conforme necessário
 
             informacoesDiv.style.display = 'block';
-            informacoesDiv.dataset.mototaxistaId = mototaxistaId; // Armazena o ID do mototaxista nos dados do elemento
         }
 
         function fecharInformacoes() {
@@ -483,37 +406,12 @@
         }
 
         function chamarMotoTaxi() {
-            const informacoesDiv = document.getElementById('informacoes');
-            const mototaxistaId = informacoesDiv.dataset.mototaxistaId; // Obtém o ID do mototaxista dos dados do elemento
+            const mototaxistaId = 1; // Aqui deve ser ajustado conforme o mototaxista selecionado
             let linkWhatsApp = '';
-            if (mototaxistaId === '1') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=5588992124494&text=';
-            } else if (mototaxistaId === '2') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=558800000000&text=';
-            }
-            else if (mototaxistaId === '3') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=558800000000&text=';
-            }
-            else if (mototaxistaId === '4') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=558800000000&text=';
-            }
-            else if (mototaxistaId === '5') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=558800000009&text=';
-            }
-            else if (mototaxistaId === '6') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=558800000009&text=';
-            }
-            else if (mototaxistaId === '7') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=558800000009&text=';
-            }
-            else if (mototaxistaId === '8') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=558800000009&text=';
-            }
-            else if (mototaxistaId === '9') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=558800000009&text=';
-            }
-            else if (mototaxistaId === '10') {
-                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=558800000009&text=';
+            if (mototaxistaId === 1) {
+                linkWhatsApp = 'https://api.whatsapp.com/send/?phone=5588988600455&text=';
+            } else if (mototaxistaId === 2) {
+                // Adicione links do WhatsApp para outros mototaxistas conforme necessário
             }
             // Adicione links do WhatsApp para os outros mototaxistas conforme necessário
 
@@ -556,36 +454,12 @@
         }
     
         //  9,12-> manha  14,17->tarde | 10,15, sabado  11,16 domingo
-        verificarHorarioFuncionamento('mototaxista1', 8, 12, 12, 18, 8, 18, 8, 18); /*Naty*/
+        verificarHorarioFuncionamento('mototaxista1', 9, 12, 14, 17, 10, 15, 11, 16);
         verificarHorarioFuncionamento('mototaxista2', 8, 12, 15, 18, 11, 16, 12, 17);
         verificarHorarioFuncionamento('mototaxista3', 9, 13, 15, 18, 11, 16, 12, 17);
         verificarHorarioFuncionamento('mototaxista4', 7, 13, 15, 18, 11, 16, 12, 17);
         verificarHorarioFuncionamento('mototaxista5', 10, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista6', 6, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista7', 8, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista8', 9, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista9', 7, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista10', 6, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista11', 8, 12, 14, 17, 10, 15, 11, 16);
-        verificarHorarioFuncionamento('mototaxista12', 7, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista13', 8, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista14', 8, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista15', 9, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista16', 7, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista17', 7, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista18', 8, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista19', 7, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista20', 8, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista21', 9, 12, 14, 17, 10, 15, 11, 16);
-        verificarHorarioFuncionamento('mototaxista22', 8, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista23', 7, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista24', 9, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista25', 8, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista26', 8, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista27', 7, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista28', 7, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista29', 9, 13, 15, 18, 11, 16, 12, 17);
-        verificarHorarioFuncionamento('mototaxista30', 8, 13, 15, 18, 11, 16, 12, 17);
+       
     </script>
 </body>
 </html>
