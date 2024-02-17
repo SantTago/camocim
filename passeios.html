@@ -61,13 +61,25 @@
             align-items: center;
             opacity: 0;
             transition: opacity 0.3s ease;
-        }
-        .gallery-item:hover .overlay {
-            opacity: 1;
+            animation: fadeInOut 2s forwards; /* Animação de fade in e fade out */
         }
         .overlay-text {
             color: white;
             font-size: 24px;
+        }
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
         }
         .back-button {
             display: block;
