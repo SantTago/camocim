@@ -74,6 +74,40 @@
         "documentation": {}
     },
     {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "Keys",
+        "importPath": "selenium.webdriver.common.keys",
+        "description": "selenium.webdriver.common.keys",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.keys",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "string",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "string",
+        "description": "string",
+        "detail": "string",
+        "documentation": {}
+    },
+    {
         "label": "VideoFileClip",
         "importPath": "moviepy.editor",
         "description": "moviepy.editor",
@@ -221,6 +255,60 @@
         "description": "ferramentas.rot de pesquisa.pega",
         "peekOfCode": "def main():\n    pasta_noticias = os.path.join(os.path.expanduser(\"~/Desktop\"), \"Noticias_G1\")\n    pasta_html = os.path.join(pasta_noticias, \"html\")\n    # Cria a pasta \"html\" se ela não existir\n    os.makedirs(pasta_html, exist_ok=True)\n    # Substitua pela data desejada\n    data = '10:40   31/12/2023'\n    # Inicia o arquivo HTML com a estrutura inicial\n    html_total = \"\"\"<!DOCTYPE html>\n<html lang=\"pt-BR\">",
         "detail": "ferramentas.rot de pesquisa.pega",
+        "documentation": {}
+    },
+    {
+        "label": "generate_username",
+        "kind": 2,
+        "importPath": "ferramentas.bot contas",
+        "description": "ferramentas.bot contas",
+        "peekOfCode": "def generate_username(length=8):\n    letters = string.ascii_lowercase\n    return ''.join(random.choice(letters) for i in range(length))\n# Função para gerar uma senha aleatória\ndef generate_password(length=10):\n    characters = string.ascii_letters + string.digits + string.punctuation\n    return ''.join(random.choice(characters) for i in range(length))\n# Número de contas que você deseja criar\nnum_accounts = 10\n# Inicializa o navegador",
+        "detail": "ferramentas.bot contas",
+        "documentation": {}
+    },
+    {
+        "label": "generate_password",
+        "kind": 2,
+        "importPath": "ferramentas.bot contas",
+        "description": "ferramentas.bot contas",
+        "peekOfCode": "def generate_password(length=10):\n    characters = string.ascii_letters + string.digits + string.punctuation\n    return ''.join(random.choice(characters) for i in range(length))\n# Número de contas que você deseja criar\nnum_accounts = 10\n# Inicializa o navegador\nchrome_driver_path = \"C:/Users/mocob/Desktop/PASTAS/chromedriver_win32.exe\"  # Caminho para o ChromeDriver\ndriver = webdriver.Chrome(executable_path=chrome_driver_path)\n# Lista para armazenar os detalhes das contas\naccount_details = []",
+        "detail": "ferramentas.bot contas",
+        "documentation": {}
+    },
+    {
+        "label": "num_accounts",
+        "kind": 5,
+        "importPath": "ferramentas.bot contas",
+        "description": "ferramentas.bot contas",
+        "peekOfCode": "num_accounts = 10\n# Inicializa o navegador\nchrome_driver_path = \"C:/Users/mocob/Desktop/PASTAS/chromedriver_win32.exe\"  # Caminho para o ChromeDriver\ndriver = webdriver.Chrome(executable_path=chrome_driver_path)\n# Lista para armazenar os detalhes das contas\naccount_details = []\nfor _ in range(num_accounts):\n    # Gera um nome de usuário e senha aleatórios\n    username = generate_username()\n    password = generate_password()",
+        "detail": "ferramentas.bot contas",
+        "documentation": {}
+    },
+    {
+        "label": "chrome_driver_path",
+        "kind": 5,
+        "importPath": "ferramentas.bot contas",
+        "description": "ferramentas.bot contas",
+        "peekOfCode": "chrome_driver_path = \"C:/Users/mocob/Desktop/PASTAS/chromedriver_win32.exe\"  # Caminho para o ChromeDriver\ndriver = webdriver.Chrome(executable_path=chrome_driver_path)\n# Lista para armazenar os detalhes das contas\naccount_details = []\nfor _ in range(num_accounts):\n    # Gera um nome de usuário e senha aleatórios\n    username = generate_username()\n    password = generate_password()\n    # Abre a página de registro do Instagram\n    driver.get(\"https://www.instagram.com/accounts/emailsignup/\")",
+        "detail": "ferramentas.bot contas",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "ferramentas.bot contas",
+        "description": "ferramentas.bot contas",
+        "peekOfCode": "driver = webdriver.Chrome(executable_path=chrome_driver_path)\n# Lista para armazenar os detalhes das contas\naccount_details = []\nfor _ in range(num_accounts):\n    # Gera um nome de usuário e senha aleatórios\n    username = generate_username()\n    password = generate_password()\n    # Abre a página de registro do Instagram\n    driver.get(\"https://www.instagram.com/accounts/emailsignup/\")\n    # Preenche o nome de usuário e a senha",
+        "detail": "ferramentas.bot contas",
+        "documentation": {}
+    },
+    {
+        "label": "account_details",
+        "kind": 5,
+        "importPath": "ferramentas.bot contas",
+        "description": "ferramentas.bot contas",
+        "peekOfCode": "account_details = []\nfor _ in range(num_accounts):\n    # Gera um nome de usuário e senha aleatórios\n    username = generate_username()\n    password = generate_password()\n    # Abre a página de registro do Instagram\n    driver.get(\"https://www.instagram.com/accounts/emailsignup/\")\n    # Preenche o nome de usuário e a senha\n    driver.find_element_by_name(\"username\").send_keys(username)\n    driver.find_element_by_name(\"password\").send_keys(password)",
+        "detail": "ferramentas.bot contas",
         "documentation": {}
     },
     {
