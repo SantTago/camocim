@@ -12,24 +12,27 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <style>
     .saiba-mais > h2 {
-    text-align: center;
-    border: 0px solid #ffffff;
-    padding: 0px;
-    font-family: var(--destaque);
-    padding-top: 40px;
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
     }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #97b1ca;
       box-shadow: 0px 0px 15px black;
+      /* Definindo a imagem de fundo */
+      background-image: url('https://img.freepik.com/vetores-gratis/fundo-de-viagem-realista-com-elementos_52683-77784.jpg');
+      background-size: cover;
+      background-attachment: fixed;
     }
     header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
     }
     section {
       display: flex;
@@ -41,18 +44,28 @@
       height: 80%;
     }
     .product {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      margin: 10px;
-      margin-top: 0px;
-      flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
-      box-sizing: border-box;
-      text-align: center;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
     }
-    img {
+    main > img {
       max-width: 100%;
       height: auto;
-      width: 100%;  
+      width: 100%; 
+    }
+    main{
+      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.589); /* Alterando a cor de fundo para ser mais transparente */
+      padding: 20px; /* Adicionando algum espaço para separar o conteúdo do fundo */
+    }
+    .paragrafo{
+      max-width: 800px;
+      padding: 10px;
+      background-color:rgb(255 255 255 / 14%);;
     }
     footer {
       background-color: #333;
@@ -64,14 +77,16 @@
       width: 50%;
     }
     .slick-next {
-      right: 4px;   
+      right: 35px;
+        
     }
     .slick-prev {
-      left: 4px;
+        left: 35px;
+        
     }
     element.style {
-      width: 303px;
-      height: 104%;
+        width: 303px;
+        height: 104%;
     }
     .perfil {
       max-width: 50px;
@@ -81,73 +96,221 @@
       margin: auto;
       flex-wrap: wrap;
     }
-    @media only screen and (min-width: 303px) and (max-width: 600px) {
-      .product {
-        flex-basis: calc(33.3333% - 20px);  
-      }
-      img {
+    @media only screen and (max-width: 600px) {
+      /* Estilos específicos para dispositivos móveis aqui */
+      body {
         max-width: 100%;
-        height: auto;
-        width: 100%;  
+        overflow-x: hidden;
+      }
+      section {
+        max-width: 100%;
+      }
+      .product {
+        flex: 1 0 calc(100% - 20px);
       }
     }
+    #fundo{
+      position: absolute;
+      z-index: -1; /* Movendo para trás para que fique atrás do conteúdo */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3; /* Opacidade para torná-lo mais sutil */
+    }
+    
+    #botaoFlutuante {
+      position: fixed;
+      top: 20px; 
+      right: -2px; 
+      background-color: #ff3de5;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      padding: 11px;
+      padding-right: 16px;
+  }
+  
+  #botaoFlutuante:hover {
+      background-color: #ff00ea;
+  }
   </style>
 </head>
 <body>
+  <div id="fundo"></div> <!-- Adicionando a imagem de fundo -->
   <div class="perfil-bloco">
-    <div>
+     <div>
       <img src="https://i.ibb.co/R012Wsm/banner.webp" alt="banner">
     </div>
   </div>
   <div class="icon">
-    <div class="hoteis-cor">
-      <abbr title="VOltar"><a href="../hoteis.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
-    </div >
-    <div class="hoteis-cor1">
-      <abbr title="Graficas"><a href="grafica.html"><img loading="lazy" src="../icon/hotel.png" alt="hitel"></a></abbr>
-    </div >
-  </div>  
-  <!--------------------------------------------------->
-  <section class="slider">
-    <div class="product">
-      <img src="https://i.ibb.co/WPyqkwz/329314913.webp" alt="329314913">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/dBsPSsd/329314892.webp" alt="329314892" >
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/LCh4wjG/329314700.webp" alt="329314700">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/fr9RnfY/228556345.webp" alt="228556345">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/LS2ZdWF/228555425.webp" alt="228555425">
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/pyS9pbv/222099918.webp" alt="222099918">  
-    </div>
-  </section>
- <!--------------------------------------------------->
-  <script>
-    $(document).ready(function(){
-        $('.slider').slick({
-            slidesToShow: 4, // Mostrar dois produtos por vez
-            slidesToScroll: 1,
-            prevArrow: '<button class="slick-prev">Anterior</button>',
-            nextArrow: '<button class="slick-next">Próximo</button>',
-            responsive: [
-                {
-                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    });
-  </script> 
-  <!--------------------------------------------------->
+     
+    <div class="sorveteria-cor">
+      <abbr title="Voltar"><a href="../hoteis.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
+    </div >   
+    
+  </div>
+
+  
+  
+</div>
+
+    <!--------------------------------------------------->
+
+    <style>
+      .floating-menu {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .floating-menu a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 50px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease;
+    }
+    
+    .floating-menu a:hover {
+        background-color: #0056b3;
+    }
+    
+    .floating-menu i {
+        font-size: 15px;
+    }
+    
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+    }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        margin-top: 27vh;
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    ul li {
+        margin-bottom: 10px;
+    }
+    
+    ul li a {
+        text-decoration: none;
+        color: #000;
+        transition: color 0.3s ease;
+        font-size: larger;
+    }
+    
+    ul li a:hover {
+        color: #007bff;
+        font-size: 25px;
+    }
+    .paragrafo{
+      text-align: center;
+      font-size: larger;
+    }
+    </style>
+
+  
+  <main>
+    
+
+    <section class="slider">
+      <div class="product">
+        <img src="https://i.ibb.co/WPyqkwz/329314913.webp" alt="001">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/dBsPSsd/329314892.webp" alt="002">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/LCh4wjG/329314700.webp" alt="003">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/fr9RnfY/228556345.webp" alt="004">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/LS2ZdWF/228555425.webpp" alt="005">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/pyS9pbv/222099918.webp" alt="006">
+      </div>
+      
+    
+    </section>
+
+    <h2>Retiro Paradisíaco: Descubra um Mundo Distante da Rotina na Pousada Village Sonhos</h2>
+
+    <p class="paragrafo">
+      Desvende a Pousada Village Sonhos, seu refúgio perfeito longe de casa. Localizada em um cenário deslumbrante, nossa hospedaria proporciona uma experiência autêntica para os viajantes em busca de aventura e relaxamento.  <br>
+       <br>
+       Com acomodações encantadoras e uma atmosfera acolhedora, cada momento passado conosco é uma oportunidade para se reconectar com a natureza e descobrir novos horizontes. Deixe-se levar pela magia da nossa vila e embarque em uma jornada de sonhos e descobertas na Pousada Village Sonhos.<br>
+       <br>
+       
+    </p>
+    <!--------------------------------------------------->
+    <script>
+      $(document).ready(function(){
+          $('.slider').slick({
+              slidesToShow: 4, // Mostrar dois produtos por vez
+              slidesToScroll: 1,
+              prevArrow: '<button class="slick-prev">Anterior</button>',
+              nextArrow: '<button class="slick-next">Próximo</button>',
+              responsive: [
+                  {
+                      breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                      settings: {
+                          slidesToShow: 1
+                      }
+                  }
+              ]
+          });
+      });
+    </script>
+    <!-------------------------------------------------->
+  </main>
+  
   <div class="saiba-mais">
     <h2>Fale Conosco</h2>
   </div>
@@ -169,5 +332,8 @@
     </div>
   </div>
   <!------------------------------->
+
+
+<!--------------------------------------------------->
 </body>
 </html>
