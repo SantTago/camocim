@@ -1,365 +1,256 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../estilo/style.css">
-    <title>Lojas de Produtos Eróticos</title>
-    <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
-
-
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
-
-    <style>
-        body {
-            font-family: 'Helvetica', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #2b2b2b; /* Tom mais escuro para o fundo */
-            color: #eee; /* Texto mais claro */
-            transition: background-color 0.3s ease-in-out;
-        }
-        
-        header {
-            background-color: #970000; /* Vermelho escuro */
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        nav {
-            text-align: center;
-            background-color: #444; /* Tom mais escuro para os blocos */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-            display: flex; /* Adicionado o estilo flexível */
-            justify-content: center; /* Alinha os itens horizontalmente no centro */
-            align-items: center; /* Alinha os itens verticalmente no centro */
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 10px;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        nav a:hover {
-            background-color: #555;
-        }
-        
-        main {
-            display: flex;
-            justify-content: space-around;
-            padding: 2em;
-            flex-wrap: wrap;
-            transition: opacity 0.5s ease-in-out;
-        }
-        
-        .store, .motel {
-            background-color: #444; /* Tom mais escuro para os blocos */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            padding: 1.5em;
-            margin: 1em;
-            width: 30%;
-            max-width: 300px;
-            text-align: center;
-            opacity: 1;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .store:hover, .motel:hover {
-            transform: scale(1.05);
-        }
-        
-        .store h2, .motel h2 {
-            color: #ffffff; /* Vermelho mais claro */
-            margin-bottom: 0.5em;
-        }
-        
-        .store p, .motel p {
-            color: #999; /* Cinza mais claro */
-        }
-
-        .store img, .motel img {
-            background-color: #444; /* Tom mais escuro para os blocos */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            max-width: 100%; /* Alteração para ocupar 100% da largura do contêiner pai */
-            height: auto; /* Mantém a proporção da imagem */
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        
-        
-        /* Media Query para telas menores, como celulares */
-        @media (max-width: 768px) {
-            main {
-                padding: 1em;
-            }
-        
-            .store, .motel {
-                width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
-                max-width: none;
-            }
-        }
-
-        /* Estilo para o botão de voltar */
-        .back-button {
-            max-width: 68px;
-            display: block;
-            justify-content: center;
-            margin: 1em;
-            padding: 0.5em;
-            text-align: center;
-            text-decoration: none;
-            background-color: #970000; /* Vermelho escuro */
-            color: #fff;
-            border-radius: 5px;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        /* Efeito de hover para o botão de voltar */
-        .back-button:hover {
-            background-color: #970000; /* Vermelho mais escuro no hover */
-        }
-
-        .voltar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Oculta a seção de Moteis inicialmente */
-        .motel {
-            display: none;
-            
-        }
-
-        /* Estilo para o menu de moteis */
-        .moteis-menu {
-            display: none;
-            position: absolute;
-            background-color: #444; /* Tom mais escuro para os blocos */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            padding: 1em;
-            margin-top: 5px;
-            left: 50%; /* Posiciona o menu no centro */
-            transform: translateX(-50%); /* Corrige a posição no centro */
-        }
-
-        /* Estilo para os itens do menu de moteis */
-        .moteis-menu a {
-            display: block;
-            text-decoration: none;
-            color: #fff;
-            padding: 8px;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        /* Efeito de hover para os itens do menu de moteis */
-        .moteis-menu a:hover {
-            background-color: #555;
-        }
-
-        section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-            box-sizing: border-box;
-            max-width: 80%px;
-            height: 80%;
-        }
-    
-        .product {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            margin: 10px;
-            margin-top: 0px;
-            flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
-            box-sizing: border-box;
-            text-align: center;
-        }
-    
-        img {
-            max-width: 100%;
-            height: auto;
-            width: 100%;
-            
-        }
-    
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 50%;
-        }
-    
-        .slick-next {
-            right: 4px;
-            
-        }
-    
-        .slick-prev {
-            left: 4px;
-        }
-    
-        element.style {
-            width: 303px;
-            height: 104%;
-        }
-    
-        .perfil {
-            max-width: 50px;
-            display: flex;
-            justify-content: center;
-            flex-direction: row;
-            margin: auto;
-            flex-wrap: wrap;
-        
-        }
-    
-        
-        @media only screen and (min-width: 303px) and (max-width: 600px) {
-            /* Entre 319px e 600px, três colunas por linha */
-            .product {
-                flex-basis: calc(33.3333% - 20px);
-    
-                
-            }
-    
-            img {
-              max-width: 100%;
-              height: auto;
-              width: 100%;
-              
-          }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos de Sex Shop</title>
+  <style>
+    /* Estilos CSS para tornar a página mais bonita e responsiva */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      position: relative; /* Importante para o posicionamento dos botões flutuantes */
+    }
+    header {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .profile-img {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-img img {
+      width: 150px;
+      border-radius: 50%;
+      border: 5px solid #ffffff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .product {
+      width: calc(50% - 15px); /* 50% width for each product with 15px spacing */
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centralizar o conteúdo verticalmente */
+      align-items: center; /* Centralizar o conteúdo horizontalmente */
+    }
+    .product img {
+      max-width: 100%;
+      height: 200px; /* Definindo uma altura fixa para as imagens */
+      object-fit: cover; /* Para manter a proporção da imagem e cortar o excesso */
+    }
+    .product-info {
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center; /* Centralizar as informações dos produtos */
+    }
+    .product-info h2 {
+      margin-top: 0;
+    }
+    .contact-buttons {
+      position: fixed; /* Torna os botões flutuantes */
+      bottom: 20px; /* Distância do fundo */
+      right: 20px; /* Distância da direita */
+      text-align: center;
+      display: flex; /* Para os botões ficarem lado a lado */
+      justify-content: space-between; /* Distribuir o espaço entre os botões */
+      width: 200px; /* Largura dos botões */
+    }
+    .contact-buttons a {
+      display: inline-block;
+      background-color: #ff0000;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 0; /* Espaçamento vertical dentro do botão */
+      margin: 10px 0; /* Espaçamento vertical entre os botões */
+      border-radius: 5px;
+      width: 45%; /* Largura dos botões */
+      transition: background-color 0.3s ease;
+    }
+    .contact-buttons a:hover {
+      background-color: #ff5959;
+    }
+    .back-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .back-button a {
+      display: inline-block;
+      background-color: #ff0000;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .back-button a:hover {
+      background-color: #ff5959;
+    }
+   
+    @media only screen and (max-width: 600px) {
+      .product {
+        width: 100%; /* Full width for products on smaller screens */
+      }
+      .product-info {
+        text-align: center; /* Centralizar as informações dos produtos em telas menores */
+      }
+      .contact-buttons {
+        width: 100%; /* Full width for contact buttons on smaller screens */
+        bottom: 0; /* Align the buttons to the bottom */
+        left: 0; /* Align the buttons to the left */
+        text-align: center;
+        justify-content: center; /* Centralizar os botões */
+      }
+      .contact-buttons a {
+        width: 100%; /* Largura total para botões em telas menores */
+        margin: 20px;
+      }
+      
+    }
+    .floating-button {
+        position: fixed;
+        top: 24px;
+        right: -3px;
+        background-color: #ff0000;
+        color: #ffffff;
+        border: none;
+        width: 78px;
+        height: 35px;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        transition: background-color 0.3s ease;
+        text-align: center;
+        line-height: 35px;
+        text-decoration: none;
+    }
+      
+      .floating-button:hover {
+        background-color: #686868;
+        box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+      }
+      
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Lojas de Produtos Eróticos</h1>
-    </header>
+    <a href="dicas.html" class="floating-button">Dicas</a>
 
-    <nav>
-        <div class="voltar">
-            <a href="../motel.html" class="back-button" onclick="showSection('lojas')">Moteis</a>
-            <a href="../adulto.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+  <header>
+    <div class="profile-img">
+      <img src="https://i.ibb.co/J5b7DWK/perfil-sex.png" alt="Imagem do Perfil">
+    </div>
+    <h1>Sex Shop Tentacoes</h1>
+    <div class="back-button">
+      <a href="../../index.html">Voltar</a>
+    </div>
+  </header>
+  <div class="container">
+    <div class="product">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_702821-MLU72943693386_112023-O.webp" alt="Produto 1">
+      <div class="product-info">
+        <h2>Sempre virgem</h2>
+        <p>Age diretamente no aumento da circulação sanguínea da região íntima feminina, logo causa o efeito de estreitamento no canal vaginal, o gel também funciona como um lubrificante íntimo, então ao mesmo tempo que “reduz” o espaço também gera um grande conforto durante a penetração.
+          • Função: Adstringente e Excitante</p>
+        <p>Preço: R$30,00</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_602423-MLB52553526124_112022-O.webp" alt="Produto 2">
+      <div class="product-info">
+        <h2>InDolor</h2>
+        <p>É um dessensibilizante que auxilia na pratica do sexo anal, ajudando na diminuição dos desconfortos causados na hora da peneteração, lubrificando a região, ele possui Extrato de Aloe Vera que ajuda a hidratar e proteger os tecidos, atua como suavizante, cicatrizante e ajuda a reduzir inflamações e lesões.</p>
+        <p>Preço: R$20,00</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://vegalove.com.br/wp-content/uploads/2021/11/Gel-Dessenssibilizante-Arrebite-4-g-Menu-dos-Prazeres-600x600.jpg" alt="Produto 2">
+      <div class="product-info">
+        <h2>Arrebite</h2>
+        <p>É um lubrificante anal desenvolvido para mulheres e homens que não querem sentir dor no sexo anal, mas também não desejam usar um anestésico e perder a total sensibilidade do ânus e do pênis durante a relação sexual.</p>
+        <p>Preço: R$10,00</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://drogariaemcasa.com.br/media/catalog/product/cache/1/thumbnail/600x/17f82f742ffe127f42dca9de82fb58b1/n/e/neosaldina-imagem.jpg" alt="Produto 2">
+      <div class="product-info">
+        <h2>Gel dessensibilizante</h2>
+        <p>Nada melhor do que praticar sexo anal de forma confortável e sem dor! Esse maravilhoso gel promete te proporcionar um momento sem desconforto e incomodo, ele traz uma sensação de relaxamento na região aplicada, dessa forma você irá conseguir aproveitar ainda mais cada segundo de prazer ao lado de seu parceiro.</p>
+        <p>Preço: R$12,00</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/41jBpoLARVL._AC_SY450_.jpg" alt="Produto 2">
+      <div class="product-info">
+        <h2>Prótese Realística com escroto e ventosa</h2>
+        <p>Dispõe de um material com altíssima qualidade, perfeito para a segurança na sua utilização. Além disso e imita perfeitamente um pênis, maravilhoso para esquentar a relação ou uma deliciosa masturbação.
+          ° 18 X 4,4cm</p>
+        <p>Preço: R$70,00</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_618233-MLU71282859909_082023-O.webp" alt="Produto 2">
+      <div class="product-info">
+        <h2>Vibrador Ponto G É clitóris com língua</h2>
+        <p>São 12 Níveis de Vibração que estimulam os pontos mais sensíveis do corpo feminino, proporcionando o êxtase total e um orgasmo inesquecível.</p>
+        <p>Preço: R$95,00</p>
+      </div>
+    </div>
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/51vQSX05f4L.__AC_SY300_SX300_QL70_ML2_.jpg" alt="Produto 2">
+        <div class="product-info">
+          <h2>Tanga fio "Delícia"</h2>
+          <p>Além de possuir a parte frontal confeccionada em renda, a sua modelagem fio e de arrebatar corações, turbinando o bumbum e realçando ainda mais a cintura e o quadril, esta peça é perfeita para qualquer mulher que busca trazer ousadia para o quarto!</p>
+          <p>Preço: R$30,00</p>
         </div>
-    </nav>
-
-    
- <!--------------------------------------------------->
- <section class="slider">
-    <div class="product">
-      <img src="001.png" alt="Sex shop">
-      
-      
-    </div>
-  
-    <div class="product">
-      <img src="002.png" alt="Sex shop">
-      
-      
-    </div>
-  
-    <div class="product">
-      <img src="003.png" alt="Sex shop">
-      
-      
-    </div>
-  
-    <div class="product">
-      <img src="004.png" alt="Sex shop">
-      
-      
-    </div>
-  
-    <div class="product">
-      <img src="005.png" alt="Sex shop">
-      
-      
-    </div>
-  
-    <div class="product">
-      <img src="006.png" alt="Sex shop">
-      
-      
-    </div>
-  
-    <div class="product">
-      <img src="007.png" alt="Sex shop">
-      
-      
-    </div>
-
-    <div class="product">
-        <img src="008.png" alt="Sex shop">
-        
-        
       </div>
-
-    <div class="product">
-        <img src="009.png" alt="Sex shop">
-        
-        
+      <div class="product">
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTOPkqVciSKcg0XsHOsDAVK0Ngm0IXVnEvMeKRw668WAz7AHYmX" alt="Produto 2">
+        <div class="product-info">
+          <h2>Plug Anal</h2>
+          <p>O acessório anal, possui várias funções, serve de auxilio para iniciantes que desejam começar a pratica do sexo anal ou para quem já pratica, ajudando também a dilatar o ânus e prepará-lo para a relação, servindo também como estimualdor de próstata, sendo tanto para ele quanto para ela.</p>
+          <p>Preço: R$32,00</p>
+        </div>
       </div>
-  
-  
+      <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROBnnp6JvjHp7-88YbIixeQ0ZqrxEr3KAPaPpzY1IJ4MscsQCB" alt="Produto 2">
+        <div class="product-info">
+          <h2>Xana hot crazy</h2>
+          <p>Proporciona todo o prazer que uma verdadeira rainha da sensualidade merece, junto a uma delicioso aroma perfumado para atrair sua companhia. Além disso, ela possui sensações incríveis de calor e vibração para deixar o momento irresistível!
+            • Função: Vibrante, pulsante, aromatizante, esquenta e esfria.</p>
+          <p>Preço: R$12,00</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://m.media-amazon.com/images/I/41ghEU54uQL._AC_SY450_.jpg" alt="Produto 2">
+        <div class="product-info">
+          <h2>Preservativo lubrificado</h2>
+          <p>
+            Preservativo lubrificado
+            Preservativo liso, opaco, com reservatório, lados paralelos, material não estéril e lubrificados.
+            ° Possui largura nominal de 52mm. ° Contém 3 unidades.</p>
+          <p>Preço: R$10,00</p>
+        </div>
+      </div>
+     
+    </div>
     
-  
    
-  </section>
-
-  <div class="redes-sociais">
-        
-    <div>
-      <a href="https://api.whatsapp.com/send/?phone=5588991049073&text="><img loading="lazy" src="../../icon/zap.png" alt="zap"></a>
-    </div>
-
-    <div>
-        <a href="https://www.instagram.com/sex_shoptentacoes/" target="_blank"><img loading="lazy" src="../../icon/insta.png" alt="insta"></a>
-    </div>
-
-</div>
-  
-  <script>
-    $(document).ready(function(){
-        $('.slider').slick({
-            slidesToShow: 4, // Mostrar dois produtos por vez
-            slidesToScroll: 1,
-            prevArrow: '<button class="slick-prev">Anterior</button>',
-            nextArrow: '<button class="slick-next">Próximo</button>',
-            responsive: [
-                {
-                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    });
-  </script>
-  
-  <!--------------------------------------------------->
-
+  </div>
+  <!-- Botões de contato flutuantes -->
+  <div class="contact-buttons">
+    <a href="https://api.whatsapp.com/send/?phone=5588991049073&text=" target="_blank">WhatsApp</a>
+    <a href="https://www.instagram.com/sex_shoptentacoes/" target="_blank">Instagram</a>
     
+  </div>
 </body>
 </html>
