@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camocim</title>
+  <title>Registra Camocim</title>
   <link rel="stylesheet" href="../estilo/style.css">
   <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
@@ -22,14 +22,18 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #d5e6f1;
       box-shadow: 0px 0px 15px black;
+      /* Definindo a imagem de fundo */
+      background-image: url('https://e1.pxfuel.com/desktop-wallpaper/735/279/desktop-wallpaper-menswear-backgrounds-menswear.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center center;
     }
     header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
     }
     section {
       display: flex;
@@ -41,18 +45,28 @@
       height: 80%;
     }
     .product {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      margin: 10px;
-      margin-top: 0px;
-      flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
-      box-sizing: border-box;
-      text-align: center;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 10px;
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
+        box-sizing: border-box;
+        text-align: center;
     }
-    img {
+    main > img {
       max-width: 100%;
       height: auto;
-      width: 100%;
+      width: 100%; 
+    }
+    main{
+      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.589); /* Alterando a cor de fundo para ser mais transparente */
+      padding: 20px; /* Adicionando algum espaço para separar o conteúdo do fundo */
+    }
+    .paragrafo{
+      max-width: 800px;
+      padding: 10px;
+      background-color:rgb(255 255 255 / 14%);;
     }
     footer {
       background-color: #333;
@@ -64,15 +78,16 @@
       width: 50%;
     }
     .slick-next {
-      right: 4px;
+      right: 35px;
         
     }
     .slick-prev {
-      left: 4px;
+        left: 35px;
+        
     }
     element.style {
-      width: 303px;
-      height: 104%;
+        width: 303px;
+        height: 104%;
     }
     .perfil {
       max-width: 50px;
@@ -82,67 +97,206 @@
       margin: auto;
       flex-wrap: wrap;
     }
-    @media only screen and (min-width: 303px) and (max-width: 600px) {
-      .product {
-        flex-basis: calc(33.3333% - 20px);
-      }
-      img {
+    @media only screen and (max-width: 600px) {
+      /* Estilos específicos para dispositivos móveis aqui */
+      body {
         max-width: 100%;
-        height: auto;
-        width: 100%; 
+        overflow-x: hidden;
+      }
+      section {
+        max-width: 100%;
+      }
+      .product {
+        flex: 1 0 calc(100% - 20px);
       }
     }
+    #fundo{
+      position: absolute;
+      z-index: -1; /* Movendo para trás para que fique atrás do conteúdo */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3; /* Opacidade para torná-lo mais sutil */
+    }
+    
   </style>
 </head>
 <body>
+  <div id="fundo"></div> <!-- Adicionando a imagem de fundo -->
   <div class="perfil-bloco">
-    <div>
-      <img loading="lazy" src="../moda_mascolina/parfumimportadoss/banner.webp" alt="image png">
+     <div>
+      <img src="parfumimportadoss/banner.webp" alt="banner">
     </div>
   </div>
   <div class="icon">
-    <div class="roupas-cor">
+     
+    <div class="sorveteria-cor">
       <abbr title="Voltar"><a href="../roupas.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
-    </div >
-  </div>  
-  <!--------------------------------------------------->
-  <section class="slider">
-    <div class="product">
-      <img loading="lazy" src="parfumimportadoss/001.webp" alt="roupa">
-    </div>
-    <div class="product">
-      <img loading="lazy" src="parfumimportadoss/002.webp" alt="roupa">
-    </div>
-    <div class="product">
-      <img loading="lazy" src="parfumimportadoss/003.webp" alt="roupa"> 
-    </div>
-    <div class="product">
-      <img loading="lazy" src="parfumimportadoss/004.webp" alt="roupa"> 
-    </div>
-    <div class="product">
-      <img loading="lazy" src="parfumimportadoss/005.webp" alt="roupa">
-    </div>
-  </section>
-  <!--------------------------------------------------->
-  <script>
-    $(document).ready(function(){
-        $('.slider').slick({
-            slidesToShow: 4, // Mostrar dois produtos por vez
-            slidesToScroll: 1,
-            prevArrow: '<button class="slick-prev">Anterior</button>',
-            nextArrow: '<button class="slick-next">Próximo</button>',
-            responsive: [
-                {
-                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    });
-  </script>
-  <!--------------------------------------------------->
+    </div >   
+    
+  </div>
+
+  
+  
+</div>
+
+    <!--------------------------------------------------->
+
+    <style>
+      .floating-menu {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .floating-menu a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 50px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease;
+    }
+    
+    .floating-menu a:hover {
+        background-color: #0056b3;
+    }
+    
+    .floating-menu i {
+        font-size: 15px;
+    }
+    
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+    }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        margin-top: 27vh;
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    ul li {
+        margin-bottom: 10px;
+    }
+    
+    ul li a {
+        text-decoration: none;
+        color: #000;
+        transition: color 0.3s ease;
+        font-size: larger;
+    }
+    
+    ul li a:hover {
+        color: #007bff;
+        font-size: 25px;
+    }
+    .paragrafo{
+      text-align: center;
+      font-size: larger;
+    }
+    </style>
+
+  
+  <main>
+    
+
+    <section class="slider">
+      <div class="product">
+        <img src="parfumimportadoss/001.webp" alt="001">
+      </div>
+      <div class="product">
+        <img src="parfumimportadoss/002.webp" alt="002">
+      </div>
+      <div class="product">
+        <img src="parfumimportadoss/003.webp" alt="003">
+      </div>
+      <div class="product">
+        <img src="parfumimportadoss/004.webp" alt="004">
+      </div>
+      <div class="product">
+        <img src="parfumimportadoss/005.webp" alt="005">
+      </div>
+  
+      
+      
+      
+    
+    </section>
+
+    <h2>Parfum Importados Moda Masculina</h2>
+
+    <p class="paragrafo">
+      Na Parfum Importados, elevamos o estilo masculino a um novo patamar, oferecendo uma seleção exclusiva das últimas tendências da moda internacional. Nossa loja é um verdadeiro paraíso para os homens que buscam sofisticação, qualidade e originalidade em suas roupas e acessórios.<br>
+       <br>
+       Desde trajes casuais até peças de alta costura, nossa coleção abrange uma ampla variedade de estilos para atender às necessidades de cada cliente. Trabalhamos com marcas renomadas e peças importadas cuidadosamente selecionadas para garantir que você encontre exatamente o que procura.<br>
+       <br>
+       Nossa equipe está aqui para oferecer assistência personalizada e ajudá-lo a criar looks que reflitam sua personalidade e individualidade. Na Parfum Importados, acreditamos que cada detalhe importa, e estamos comprometidos em proporcionar uma experiência de compra excepcional a cada cliente.<br>
+       <br>
+       Visite-nos na Parfum Importados Moda Masculina e descubra como podemos ajudá-lo a elevar seu estilo a um novo patamar com peças exclusivas e de alta qualidade.<br>
+       <br>
+       
+    </p>
+    <!--------------------------------------------------->
+    <script>
+      $(document).ready(function(){
+          $('.slider').slick({
+              slidesToShow: 4, // Mostrar dois produtos por vez
+              slidesToScroll: 1,
+              prevArrow: '<button class="slick-prev">Anterior</button>',
+              nextArrow: '<button class="slick-next">Próximo</button>',
+              responsive: [
+                  {
+                      breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                      settings: {
+                          slidesToShow: 1
+                      }
+                  }
+              ]
+          });
+      });
+    </script>
+    <!-------------------------------------------------->
+  </main>
   <div class="saiba-mais">
     <h2>Fale Conosco</h2>
   </div>
@@ -162,6 +316,14 @@
     <div>
       <img loading="lazy" src="../moda_mascolina/parfumimportadoss/banner-2.webp" alt="banner">
     </div>
-  </div>
+
+  <!------------------------------->
+
+
+
 </body>
 </html>
+
+
+
+
