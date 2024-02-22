@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos de Sex Shop</title>
+  <style>
+    /* Estilos CSS para tornar a página mais bonita e responsiva */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      position: relative; /* Importante para o posicionamento dos botões flutuantes */
+    }
+    header {
+      background-color: #77009b;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .profile-img {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-img img {
+        width: 274px;
+        border-radius: 0%;
+        /* border: 5px solid #ffffff; */
+        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .product {
+      width: calc(50% - 15px); /* 50% width for each product with 15px spacing */
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centralizar o conteúdo verticalmente */
+      align-items: center; /* Centralizar o conteúdo horizontalmente */
+    }
+    .product img {
+      max-width: 100%;
+      height: 200px; /* Definindo uma altura fixa para as imagens */
+      object-fit: cover; /* Para manter a proporção da imagem e cortar o excesso */
+      padding: 10px;
+    }
+    .product-info {
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center; /* Centralizar as informações dos produtos */
+    }
+    .product-info h2 {
+      margin-top: 0;
+    }
+    .contact-buttons {
+      position: fixed; /* Torna os botões flutuantes */
+      bottom: 20px; /* Distância do fundo */
+      right: 20px; /* Distância da direita */
+      text-align: center;
+      display: flex; /* Para os botões ficarem lado a lado */
+      justify-content: space-between; /* Distribuir o espaço entre os botões */
+      width: 200px; /* Largura dos botões */
+    }
+    .contact-buttons a {
+      display: inline-block;
+      background-color: #ae00ff;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 0; /* Espaçamento vertical dentro do botão */
+      margin: 10px 0; /* Espaçamento vertical entre os botões */
+      border-radius: 5px;
+      width: 45%; /* Largura dos botões */
+      transition: background-color 0.3s ease;
+    }
+    .contact-buttons a:hover {
+      background-color: #7200a7;
+    }
+    .back-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .back-button a {
+      display: inline-block;
+      background-color: #ae00ff;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .back-button a:hover {
+      background-color: #7200a7;
+    }
+   
+    @media only screen and (max-width: 600px) {
+      .product {
+        width: 100%; /* Full width for products on smaller screens */
+      }
+      .product-info {
+        text-align: center; /* Centralizar as informações dos produtos em telas menores */
+      }
+      .contact-buttons {
+        width: 100%; /* Full width for contact buttons on smaller screens */
+        bottom: 0; /* Align the buttons to the bottom */
+        left: 0; /* Align the buttons to the left */
+        text-align: center;
+        justify-content: center; /* Centralizar os botões */
+      }
+      .contact-buttons a {
+        width: 100%; /* Largura total para botões em telas menores */
+         margin: 20px;
+      }
+      
+    }
+    .floating-button {
+        position: fixed;
+        top: 140px;
+        right: -3px;
+        background-color: #ae00ff;
+        color: #ffffff;
+        border: none;
+        width: 78px;
+        height: 35px;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        transition: background-color 0.3s ease;
+        text-align: center;
+        line-height: 35px;
+        text-decoration: none;
+    }
+      
+      .floating-button:hover {
+        background-color: #7200a7;
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+      }
+      
+  </style>
+</head>
+<body>
+  
+
+  <header>
+    <div class="profile-img">
+      <img src="logo-1.png" alt="Imagem do Perfil">
+    </div>
+    
+    <div class="back-button">
+      <a href="principal.html">Voltar</a>
+    </div>
+  </header>
+  <div class="container">
+    <div class="product">
+      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTIrf0BDJlDPhZdZpzyhG3ihAVfMoGJn4koz-TDdd9oS9cwn7E1" alt="Produto 1">
+      <div class="product-info">
+        <h2>Fita coloridas</h2>
+        <p>Fitas coloridas é uma explosão de alegria e criatividade! As crianças se divertem escolhendo suas cores favoritas e deixando suas tranças reluzirem com um arco-íris de tons vibrantes. Cada movimento é uma dança de cores, enquanto as fitas dançam no ar, transformando-se em acessórios mágicos que tornam a festa ainda mais especial.</p>
+        
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://a-static.mlcdn.com.br/450x450/tinta-temporaria-para-cabelo-spray-colorido-ima-aerossois/artfantasias/6679f05a039711ed8dc94201ac185079/71505b0598a0f0ea0d90d85735c8059d.jpeg" alt="Produto 2">
+      <div class="product-info">
+        <h2>Spray Colorido</h2>
+        <p>Spray colorido é uma verdadeira festa para os cabelos! As crianças se animam com a possibilidade de transformar seus penteados em obras de arte multicoloridas, usando os sprays para adicionar um toque de fantasia e diversão. Cada jato de cor é como um pincel mágico, criando padrões vibrantes que fazem os cabelos brilharem com alegria e criatividade. É uma experiência única, onde cada criança se torna uma estrela colorida em sua própria festa de cabelos!</p>
+       
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_944449-MLU74310282592_022024-F.webp" alt="Produto 2">
+      <div class="product-info">
+        <h2>Aneis Coloridos</h2>
+        <p>Anéis coloridos em festas infantis é como trazer um arco-íris de alegria para os dedos das crianças! Com uma variedade de cores e estilos, cada anel se torna uma pequena obra de arte a ser exibida e compartilhada entre amigos. As crianças se divertem misturando e combinando anéis para criar conjuntos únicos e coloridos, adicionando um toque de brilho e glamour a cada movimento. Esses anéis coloridos não são apenas acessórios, são símbolos de amizade, diversão e imaginação em uma festa que brilha com criatividade e alegria.</p>
+        
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWK9t5KDzMi_DA1IG8AhvMP7hAUWG0z-sJqKpGfbPIfesusSVp" alt="Produto 2">
+      <div class="product-info">
+        <h2>Glitter colorido</h2>
+        <p>Glitter colorido é uma experiência mágica e reluzente! Cada mecha de cabelo se transforma em uma tela em branco, pronta para ser adornada com um toque de brilho e cor. As crianças se divertem escolhendo entre uma variedade de glitter colorido, criando designs deslumbrantes que refletem sua personalidade única. É um momento de pura diversão e criatividade, onde risos e sorrisos se misturam com o brilho do glitter, transformando a festa em um verdadeiro espetáculo de luz e cor.</p>
+       
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9W3PVpVujwAjZCPlkFliFzDK_hthnbljIvbqyBk4fVMRe6b0KikX2w-r4q5VmF0dHBNM&usqp=CAU" alt="Produto 2">
+      <div class="product-info">
+        <h2>Trança Nagô</h2>
+        <p>Trançar Nagô com cores vibrantes em festas infantis é como tecer um arco-íris nos cabelos das crianças! Cada trança se torna uma obra de arte única, onde fios coloridos se entrelaçam em padrões encantadores. As crianças se divertem escolhendo suas cores favoritas e observando suas tranças ganharem vida com tons brilhantes e vibrantes. É uma experiência de conexão cultural e criatividade, onde as crianças podem se expressar livremente enquanto celebram a diversidade e a beleza dos penteados afrodescendentes.</p>
+        
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRmLZ17ZWTEufbhU2arHo9KhVYMx1AJscKADl3M_SJcTzJvpbkG" alt="Produto 2">
+      <div class="product-info">
+        <h2>Pingente</h2>
+        <p>Adicionar pingentes coloridos em festas infantis é uma maneira encantadora de trazer um toque de brilho e diversão para as celebrações! Cada criança pode escolher seu próprio pingente, desde estrelas cintilantes até corações reluzentes, para adornar seus colares ou pulseiras. Esses pequenos acessórios se tornam tesouros preciosos, lembranças vívidas de um dia repleto de risos e alegria. É uma oportunidade para as crianças expressarem sua individualidade e estilo, criando memórias coloridas que durarão para sempre.</p>
+       
+      </div>
+    </div>
+   
+    
+   
+  <!-- Botões de contato flutuantes -->
+  <div class="contact-buttons">
+    <a href="https://api.whatsapp.com/send/?phone=5588996780542&text=" target="_blank">WhatsApp</a>
+    <a href="https://www.instagram.com/deboora_lia/" target="_blank">Instagram</a>
+    
+  </div>
+</body>
+</html>

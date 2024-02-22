@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Pessoa</title>
+  <style>
+    /* Estilos CSS para tornar a página mais bonita e responsiva */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      position: relative; /* Importante para o posicionamento dos botões flutuantes */
+      animation: fadeIn ease 1s; /* Adicionando animação de fade-in */
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    header {
+      background-color: #77009b;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .profile-img {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-img img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #ffffff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .article {
+      width: 100%;
+      margin-bottom: 30px;
+      text-align: justify;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease; /* Adicionando transição para hover */
+      margin-bottom: 10px;
+    }
+    .article:hover {
+      transform: translateY(-5px); /* Efeito de levantar ligeiramente ao passar o mouse */
+    }
+    .article h2 {
+      margin-top: 0;
+      color: #77009b;
+    }
+    .article p {
+      margin-bottom: 20px;
+      line-height: 1.6; /* Ajustando o espaçamento entre linhas */
+    }
+    .bobo {
+        display: contents;
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: justify;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 10px;
+    }
+    .contact-buttons {
+      position: fixed; /* Torna os botões flutuantes */
+      bottom: 20px; /* Distância do fundo */
+      right: 20px; /* Distância da direita */
+      text-align: center;
+      display: flex; /* Para os botões ficarem lado a lado */
+      justify-content: space-between; /* Distribuir o espaço entre os botões */
+      width: 200px; /* Largura dos botões */
+    }
+    .contact-buttons a {
+      display: inline-block;
+      background-color: #ae00ff;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 0; /* Espaçamento vertical dentro do botão */
+      margin: 10px 0; /* Espaçamento vertical entre os botões */
+      border-radius: 5px;
+      width: 45%; /* Largura dos botões */
+      transition: background-color 0.3s ease;
+    }
+    .contact-buttons a:hover {
+      background-color: #7200a7;
+    }
+    .back-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .back-button a {
+      display: inline-block;
+      background-color: #ae00ff;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .back-button a:hover {
+      background-color: #7200a7;
+    }
+
+    .event-list {
+        margin-top: 20px;
+        text-align: center;
+        margin: auto;
+      }
+
+      .event-list ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+      }
+
+      .event-list li {
+        display: flex;
+        align-items: center;
+        margin: 10px; /* Espaçamento entre os itens */
+      }
+
+      .event-list li:not(:last-child)::after {
+        content: "●"; /* Usando um ponto para separar os itens */
+        margin-left: 10px;
+        color: #77009b; /* Cor da bolinha */
+        font-size: 10px;
+      }
+   
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 0 10px; /* Reduzindo o espaço nas bordas para telas menores */
+      }
+      .contact-buttons {
+        position: static; /* Removendo a posição fixa para telas menores */
+        width: auto; /* Largura automática para os botões */
+        margin-top: 20px; /* Margem superior para os botões */
+        flex-direction: column; /* Colocando os botões um abaixo do outro */
+        align-items: center; /* Centralizando os botões */
+      }
+      .contact-buttons a {
+        width: 100%; /* Largura total para os botões */
+        margin: 5px 0; /* Espaçamento vertical entre os botões */
+      }
+      .floating-button {
+        top: 80px; /* Ajustando a posição do botão flutuante */
+      }
+      .article {
+        width: calc(100% - 40px); /* Definindo a largura total para os artigos com margens */
+      }
+      /* Estilos para a lista de eventos */
+      .event-list {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .event-list ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+      }
+
+      .event-list li {
+        display: flex;
+        align-items: center;
+        margin: 10px; /* Espaçamento entre os itens */
+      }
+
+      .event-list li:not(:last-child)::after {
+        content: "●"; /* Usando um ponto para separar os itens */
+        margin-left: 10px;
+        color: #77009b; /* Cor da bolinha */
+        font-size: 10px;
+      }
+    }
+    .floating-button {
+      position: fixed;
+      top: 140px;
+      right: -3px;
+      background-color: #ae00ff;
+      color: #ffffff;
+      border: none;
+      width: 78px;
+      height: 35px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease;
+      text-align: center;
+      line-height: 35px;
+      text-decoration: none;
+    }
+      
+    .floating-button:hover {
+      background-color: #7200a7;
+      box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    }
+
+    /* Animação de floquinhos */
+    @keyframes flakes {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    .flakes {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      animation: flakes 3s linear infinite;
+    }
+
+    .flake1 {
+      top: -10px;
+      left: 50%;
+      animation-delay: 0s;
+    }
+
+    .flake2 {
+      top: -10px;
+      left: 25%;
+      animation-delay: 1s;
+    }
+
+    .flake3 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 2s;
+    }
+    .flake4 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 2s;
+    }
+    .flake5 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 1s;
+    }
+    .flake6 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 2s;
+    }
+    .flake7 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 1s;
+    }
+    .flake8{
+      top: -10px;
+      left: 75%;
+      animation-delay: 2s;
+    }
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .button {
+      display: inline-block;
+      background-color: #ae00ff;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .button:hover {
+      background-color: #7200a7;
+    }
+  </style>
+</head>
+<body>
+  <div class="flakes flake1"></div>
+  <div class="flakes flake2"></div>
+  <div class="flakes flake3"></div>
+  <div class="flakes flake4"></div>
+  <div class="flakes flake5"></div>
+  <div class="flakes flake6"></div>
+  <div class="flakes flake7"></div>
+  <div class="flakes flake8"></div>
+  <div class="flakes flake1"></div>
+  <div class="flakes flake2"></div>
+  <div class="flakes flake3"></div>
+  <div class="flakes flake4"></div>
+  <div class="flakes flake5"></div>
+  <div class="flakes flake6"></div>
+  <div class="flakes flake7"></div>
+  <div class="flakes flake8"></div>
+
+  <header>
+  
+    <div class="profile-img">
+      <!-- Substitua 'foto-perfil.jpg' pelo link da foto de perfil -->
+      <img src="perfil-foto.png" alt="Foto de Perfil">
+    </div>
+    
+    <div class="back-button">
+      <a href="../../index.html">Voltar</a>
+    </div>
+  </header>
+
+  <!-- Adicionando a lista de eventos -->
+  <div class="container">
+    <div class="event-list">
+      <h2>Eventos</h2>
+      <ul>
+        <li>SALÕES DE FESTAS</li>
+        <li>ANIVERSÁRIOS</li>
+        <li>ESCOLAS</li>
+        <li>CASA</li>
+      </ul>
+      <!-- Botão "Meu Trabalho" -->
+      <div class="bobo">
+        <a href="trabalho.html" class="button">Meu Trabalho</a>
+        <a href="produtos.html" class="button">Material</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Espaço para o artigo -->
+    <div class="article">
+      <h2>Débora Lia </h2>
+      <!-- Substitua o conteúdo abaixo pelo artigo -->
+      <p>No suave crepitar das páginas da vida, sou conhecida como Débora Lia, uma jovem de 18 anos, cujo coração transborda com a sublime jornada da maternidade. Em meio às doçuras e desafios, fui abençoada com a dádiva de ser mãe de um pequeno príncipe, um ser de luz que preenche meus dias com risos e amor incondicional.</p>
+      <p>Resido nos encantos de Camocim, onde os ventos sussurram segredos da natureza e os raios de sol dançam sobre os campos verdejantes. É aqui, neste cenário de beleza ímpar, que encontro minha morada, meu refúgio de paz e serenidade.</p>
+      <p>Ah, e sobre minha paixão, permita-me compartilhar um segredo: entre os muitos tesouros que a vida me oferece, um dos mais queridos é a arte de trançar. Sim, sou uma verdadeira entusiasta das tranças, tecendo histórias em cada mecha, entrelaçando sonhos e inspirações em cada movimento delicado das mãos.</p>
+      <p>Assim sou eu, Débora Lia, uma alma que vive, ama e encontra beleza nos pequenos detalhes desta jornada chamada vida.</p>
+    </div>
+  
+  </div>
+
+  <!-- Botões de contato flutuantes -->
+  <div class="contact-buttons">
+    <a href="https://api.whatsapp.com/send/?phone=5588996780542&text=" target="_blank">WhatsApp</a>
+    <a href="https://www.instagram.com/deboora_lia/" target="_blank">Instagram</a>
+  </div>
+</body>
+</html>

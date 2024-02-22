@@ -130,48 +130,6 @@
 
 
 
-    .prefeitura {
-        display: flex;
-        justify-content: center;
-    }
-    .prefeita-prefeito {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .prefeitura-artigo p{
-        margin: 0px auto 0px auto;
-        text-align: center;
-    }
-
-
-    .pre-img {
-        display: flex;
-        justify-content: center;
-    }
-
-    .prefeita-prefeito > div {
-        height: auto;
-        margin: 1px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
-    }
-    
-    .prefeitura-artigo > h3 {
-        max-width: 320px;
-       
-     }
-
-    .prefeitura-artigo > p {
-        max-width: 310px;
-       
-     }
-
-    .prefeita-prefeito img {
-        max-width: 300px;
-    }
-
-
 }
 @media (max-width: 500px) {
   .hotel-bloco div{
@@ -909,24 +867,14 @@ background-color: rgb(0, 165, 151);
 .prefeitura-cor1{
     width: 50px;
     height: 50px;
-    background-color: rgb(1, 46, 129);
+    background-color: rgb(30, 184, 184);
     border-radius: 50px;
     margin: 1px;
 }
 
 .prefeitura-cor:hover {
-    background-color: rgb(1, 46, 129);
+    background-color: rgb(30, 184, 184);
 }
-
-.prefeitura-cor .prefeitura-icon  img {
-    width: 31px;
-    height: 31px;
-    border-radius: 50px;
-    margin: 2px;
-    margin-left: 8px;
-     
-}
-
 
 .restaurante-cor{
     width: 50px;
