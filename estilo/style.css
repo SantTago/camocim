@@ -759,6 +759,47 @@ background-color: rgb(0, 165, 151);
 }
 
 
+
+
+
+.academia-cor{
+  width: 50px;
+  height: 50px;
+  background-color: var(--cor1);
+  border-radius: 50px;
+  margin: 1px;
+}
+
+.academia-cor1{
+  width: 50px;
+  height: 50px;
+  background-color: rgb(110, 110, 110);
+  border-radius: 50px;
+  margin: 1px;
+}
+
+.academia-cor:hover {
+  background-color: rgb(180, 180, 180);
+}
+
+.academia-cor .academia-icon  img {
+  width: 31px;
+  height: 35px;
+  border-radius: 50px;
+  margin: 2px;
+  margin-left: 10px;
+   
+}
+
+
+
+
+
+
+
+
+
+
 .mercadinho-cor{
     width: 50px;
     height: 50px;

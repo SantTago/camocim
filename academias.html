@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academias, Moda Fitness e Suplementos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1b1b1b, #757575); /* Gradiente verde associado à academia */
+        }
+        header {
+            background: linear-gradient(to bottom, #0c007a, rgb(0, 195, 255)); /* Gradiente verde associado à academia */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 150px; /* Ajuste conforme necessário */
+            height: auto;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            margin: 10px;
+            position: relative; /* Adiciona posição relativa para poder posicionar o overlay */
+        }
+        .gallery-item img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px #0c007a;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5); /* Sobreposição semi-transparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay-text {
+            color: white;
+            font-size: 24px;
+        }
+        .back-button {
+            display: block;
+            width: 100px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #0c007a;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #786cfa;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="Logo da sua empresa">
+        </div>
+        <h1>Atrações Fitness</h1>
+        <a href="javascript:history.back()" class="back-button">Voltar</a>
+    </header>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <a href="confeitaria/contruçao/contruçao.html">
+                <img src="https://www.26fit.com.br/fotos/produtos/gd_yomrzw.jpg" alt="Academia">
+                <div class="overlay">
+                    <span class="overlay-text">Academias</span>
+                </div>
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="confeitaria/contruçao/contruçao.html">
+                <img src="https://i.pinimg.com/736x/b5/0d/05/b50d05e05acd8cd7502085703be23820.jpg" alt="Moda Fitness">
+                <div class="overlay">
+                    <span class="overlay-text">Moda Fitness</span>
+                </div>
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="confeitaria/contruçao/contruçao.html">
+                <img src="https://www.formularium.com.br/inform/wp-content/uploads/2013/11/iStock-1400781187.jpg" alt="Suplementos">
+                <div class="overlay">
+                    <span class="overlay-text">Suplementos</span>
+                </div>
+            </a>
+        </div>
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
+</body>
+</html>
