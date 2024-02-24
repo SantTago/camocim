@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso</title>
+  <title>Perfil</title>
   <style>
     /* Estilos CSS para tornar a página mais bonita e responsiva */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      position: relative; /* Importante para o posicionamento dos botões flutuantes */
+      animation: fadeIn ease 1s; /* Adicionando animação de fade-in */
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     header {
       background-color: #77009b;
@@ -17,13 +23,23 @@
       padding: 20px;
       text-align: center;
     }
+    footer {
+        background-color: #77009b;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+      }
     .profile-img {
       text-align: center;
       margin-bottom: 20px;
     }
     .profile-img img {
-        width: 274px;
-        border-radius: 0%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #ffffff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
     .container {
       max-width: 800px;
@@ -31,32 +47,64 @@
       padding: 0 20px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      justify-content: space-between;
     }
-    .product {
-      width: calc(50% - 15px);
+    .article {
+      width: 100%;
       margin-bottom: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: justify;
-    }
-    .product img {
-      max-width: 100%;
-      height: 200px;
-      object-fit: cover;
-      padding: 10px;
-    }
-    .product-info {
       background-color: #f9f9f9;
       padding: 20px;
-      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgb(188 0 255 / 33%);
+      transition: transform 0.3s ease; /* Adicionando transição para hover */
+      margin-bottom: 10px;
     }
-    .product-info h2 {
+    .article:hover {
+      transform: translateY(-5px); /* Efeito de levantar ligeiramente ao passar o mouse */
+    }
+    .article h2 {
       margin-top: 0;
+      color: #77009b;
+    }
+    .article p {
+      margin-bottom: 20px;
+      line-height: 1.6; /* Ajustando o espaçamento entre linhas */
+    }
+    .bobo {
+        display: contents;
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: justify;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 10px;
+    }
+    .contact-buttons {
+      position: fixed; /* Torna os botões flutuantes */
+      bottom: 20px; /* Distância do fundo */
+      right: 20px; /* Distância da direita */
+      text-align: center;
+      display: flex; /* Para os botões ficarem lado a lado */
+      justify-content: space-between; /* Distribuir o espaço entre os botões */
+      width: 200px; /* Largura dos botões */
+    }
+    .contact-buttons a {
+      display: inline-block;
+      background-color: #ae00ff;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 0; /* Espaçamento vertical dentro do botão */
+      margin: 10px 0; /* Espaçamento vertical entre os botões */
+      border-radius: 5px;
+      width: 45%; /* Largura dos botões */
+      transition: background-color 0.3s ease;
+    }
+    .contact-buttons a:hover {
+      background-color: #7200a7;
     }
     .back-button {
       text-align: center;
@@ -74,65 +122,396 @@
     .back-button a:hover {
       background-color: #7200a7;
     }
-    .titulo {
-      font-size: 54px;
-      text-align: center;
-      font-weight: 500;
-      font-family: 'Times New Roman', Times, serif;
-    }
-    .subi {
-      font-family: cursive, 'Courier New';
-      position: absolute;
-    }
-    @media only screen and (max-width: 600px) {
-      .product {
-        width: 100%;
+
+    .event-list {
+        margin-top: 20px;
+        text-align: center;
+        margin: auto;
       }
-      .product-info {
+
+      .event-list ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+      }
+
+      .event-list li {
+        display: flex;
+        align-items: center;
+        margin: 10px; /* Espaçamento entre os itens */
+      }
+
+      .event-list li:not(:last-child)::after {
+        content: "●"; /* Usando um ponto para separar os itens */
+        margin-left: 10px;
+        color: #77009b; /* Cor da bolinha */
+        font-size: 10px;
+      }
+   
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 0 10px; /* Reduzindo o espaço nas bordas para telas menores */
+      }
+      .contact-buttons {
+        position: static; /* Removendo a posição fixa para telas menores */
+        width: auto; /* Largura automática para os botões */
+        margin-top: 20px; /* Margem superior para os botões */
+        flex-direction: column; /* Colocando os botões um abaixo do outro */
+        align-items: center; /* Centralizando os botões */
+      }
+      .contact-buttons a {
+        width: 100%; /* Largura total para os botões */
+        margin: 5px 0; /* Espaçamento vertical entre os botões */
+      }
+      .floating-button {
+        top: 80px; /* Ajustando a posição do botão flutuante */
+      }
+      .article {
+        width: calc(100% - 40px); /* Definindo a largura total para os artigos com margens */
+      }
+      /* Estilos para a lista de eventos */
+      .event-list {
+        margin-top: 20px;
         text-align: center;
       }
-      .product-info p {
-        width: 100%;
+
+      .event-list ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+      }
+
+      .event-list li {
+        display: flex;
+        align-items: center;
+        margin: 10px; /* Espaçamento entre os itens */
+      }
+
+      .event-list li:not(:last-child)::after {
+        content: "●"; /* Usando um ponto para separar os itens */
+        margin-left: 10px;
+        color: #77009b; /* Cor da bolinha */
+        font-size: 10px;
       }
     }
-    .fixed-button {
-      display: block;
-      margin: auto;
+    .floating-button {
+      position: fixed;
+      top: 140px;
+      right: -3px;
       background-color: #ae00ff;
       color: #ffffff;
       border: none;
+      width: 78px;
+      height: 35px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease;
+      text-align: center;
+      line-height: 35px;
+      text-decoration: none;
+    }
+      
+    .floating-button:hover {
+      background-color: #7200a7;
+      box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    }
+
+    /* Animação de floquinhos */
+    @keyframes flakes {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    .flakes {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      animation: flakes 3s linear infinite;
+    }
+
+    .flake1 {
+      top: -10px;
+      left: 50%;
+      animation-delay: 0s;
+    }
+
+    .flake2 {
+      top: -10px;
+      left: 25%;
+      animation-delay: 1s;
+    }
+
+    .flake3 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 2s;
+    }
+    .flake4 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 2s;
+    }
+    .flake5 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 1s;
+    }
+    .flake6 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 2s;
+    }
+    .flake7 {
+      top: -10px;
+      left: 75%;
+      animation-delay: 1s;
+    }
+    .flake8{
+      top: -10px;
+      left: 75%;
+      animation-delay: 2s;
+    }
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .button {
+      display: inline-block;
+      background-color: #ae00ff;
+      color: #ffffff;
+      text-decoration: none;
       padding: 10px 20px;
       border-radius: 5px;
       transition: background-color 0.3s ease;
-      margin-bottom: 20px;
+      cursor: pointer;
+      margin-bottom: 10px;
     }
-    .fixed-button:hover {
+    .button:hover {
       background-color: #7200a7;
     }
+    .titulo{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 57px;
+    }
+    .subi{
+        font-family: cursive, 'Courier New';
+        margin-top: -32px;
+      }
+      @media only screen and (max-width: 600px) {
+        .product {
+          width: 100%; /* Full width for products on smaller screens */
+        }
+        
+      }
+      .product img {
+       
+        height: 200px; /* Definindo uma altura fixa para as imagens */
+        object-fit: cover; /* Para manter a proporção da imagem e cortar o excesso */
+        padding: 10px;
+      }
+      .product {
+        width: calc(50% - 15px); /* 50% width for each product with 15px spacing */
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centralizar o conteúdo verticalmente */
+        align-items: center; /* Centralizar o conteúdo horizontalmente */
+      }
+      .img {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .article > h2{
+        text-align: center;
+    }
+    #vertical{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+
+    }
+
+    
+      .product {
+        width: calc(48% - 15px); /* 48% de largura para cada imagem */
+        margin-bottom: 0; /* Remover a margem inferior para evitar espaçamento extra */
+        }
+        .round-image {
+            width: 200px; /* Defina a largura desejada */
+            height: 200px; /* Defina a altura desejada */
+            border-radius: 50%; /* Torna a imagem redonda */
+            object-fit: cover; /* Mantém a proporção e corta o excesso */
+            margin-bottom: 20px; /* Espaçamento entre as imagens */
+          }
+          
+          .img1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          
   </style>
 </head>
 <body>
+  <div class="flakes flake1"></div>
+  <div class="flakes flake2"></div>
+  <div class="flakes flake3"></div>
+  <div class="flakes flake4"></div>
+  <div class="flakes flake5"></div>
+  <div class="flakes flake6"></div>
+  <div class="flakes flake7"></div>
+  <div class="flakes flake8"></div>
+  <div class="flakes flake1"></div>
+  <div class="flakes flake2"></div>
+  <div class="flakes flake3"></div>
+  <div class="flakes flake4"></div>
+  <div class="flakes flake5"></div>
+  <div class="flakes flake6"></div>
+  <div class="flakes flake7"></div>
+  <div class="flakes flake8"></div>
+
   <header>
+  
     <div class="profile-img">
-      <img src="" alt="">
+      <h2 class="titulo">Curso de  trancista  profissional</h2>
+      <p class="subi">Ministrado por Débora Lia N Pereira</p>
     </div>
+    
     <div class="back-button">
       <a href="principal.html">Voltar</a>
     </div>
   </header>
+
+  <!-- Adicionando a lista de eventos -->
   <div class="container">
-    <div class="product">
-      <h2 class="titulo">Curso de <br> trancista <br> profissional</h2>
-      <p class="subi">Ministrado por Débora Lia N Pereira</p>
-      <img src="https://img.myloview.com.br/posters/forme-a-ilustracao-de-uma-menina-com-penteado-longo-coberto-de-urzes-tranca-de-mao-extraidas-para-web-brochura-modelos-post-cartao-de-visita-400-145184961.jpg" alt="">
-    </div>
-    <div class="product">
-      <h2>Texto teste</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id quo corrupti atque incidunt veritatis, tenetur placeat aliquid autem debitis. Accusamus vitae quae, explicabo odit praesentium voluptatum labore repellendus neque? Magnam?</p>
-      <!-- Repetir o padrão acima conforme necessário -->
-    </div>
+    
   </div>
-  <!-- Botão fixo para agendar -->
-  <button class="fixed-button">Agendar</button>
+  <div class="img">
+      <div class="product">
+        <img src="https://img.myloview.com.br/posters/forme-a-ilustracao-de-uma-menina-com-penteado-longo-coberto-de-urzes-tranca-de-mao-extraidas-para-web-brochura-modelos-post-cartao-de-visita-400-145184961.jpg" alt="">
+      </div>
+  </div>
+  <div class="event-list">
+    <h2>Quem sou eu?</h2>
+    <ul>
+      <li></li>
+      
+    </ul>
+    <!-- Botão "Meu Trabalho" -->
+    
+  </div>
+
+  <div class="container">
+    <!-- Espaço para o artigo -->
+    <div class="article">
+      <h2>Débora Lia </h2>
+      <!-- Substitua o conteúdo abaixo pelo artigo -->
+      <p>Prazer, sou trancista, moro em Camocim-ce
+        e faço faculdade de estética. Tenho 18 anos 
+       e sou mãe de príncipe! Amo esse mundo da beleza 
+       e amo transformar a vida das pessoas com arte.</p>
+       
+    </div>
+    <div class="article">
+        <h2>O curso é pra mim? </h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <p>Esse curso é indicado para trancistas iniciantes que
+            querem se tornar trancistas posicionais, que 
+            querem aprender e aperfeiçoar as técnicas.</p>
+        <p>Tudo planejado com muito carinho e especialmente 
+            para você que deseja ter um futuro incrível de carreia
+            como trancista(a) </p>
+         
+      </div>
+      <div class="article">
+        <h2>Objetivos do curso Profissional</h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <img src="curso-img-1.jpg" alt="img" style="max-width: 100%;">
+       
+      </div>
+      <div class="article">
+        <h2>Quais e quantas técnicas
+            serão ensinadas?</h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <img src="curso-img-2.jpg" alt="img" style="max-width: 100%;">
+         
+      </div>
+      <div class="article" id="vertical">
+        <h2>Pacotes personalizados</h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <img src="curso-img-3.jpg" alt="img" style="max-width: 70%;" class="vertical">
+        
+      </div>
+
+       
+      <div class="container">
+        <div class="img1">
+          <div class="product">
+            <img class="round-image" loading="lazy" src="1.jpeg" alt="roupa">
+          </div>
+          <div class="product">
+            <img class="round-image" loading="lazy" src="2.jpeg" alt="roupa">
+          </div>
+          <div class="product">
+            <img class="round-image" loading="lazy" src="3.jpeg" alt="roupa">
+          </div>
+          <div class="product">
+            <img class="round-image" loading="lazy" src="4.jpeg" alt="roupa">
+          </div>
+        
+        
+        </div>
+      </div>
+      
+  </div>
+  <div class="container">
+    <!-- Espaço para o artigo -->
+    <div class="article" id="vertical">
+        <h2>Formas de pagamento</h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <img src="curso-img-4.jpg" alt="img" style="max-width: 100%;" class="vertical">
+        <img src="curso-img-5.jpg" alt="img" style="max-width: 100%;" class="vertical">
+         
+      </div>
+ 
+      <footer>
+        <div class="profile-img">
+          <!-- Substitua 'foto-perfil.jpg' pelo link da foto de perfil -->
+          <img src="perfil-foto.png" alt="Foto de Perfil">
+        </div>
+        <div class="profile-img">
+        
+          <p class="subi" style=" margin-top: 0px;">Venha fazer parte do nosso Curso de Trancista Profissional e torne-se a mais nova trancista de sucesso!</p>
+        </div>
+        
+        <div class="back-button">   
+          <a href="https://www.instagram.com/liapenteadoss/">Agendar</a>
+        </div>
+    </footer>
+
 </body>
+
 </html>
+
+

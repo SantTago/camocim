@@ -23,6 +23,12 @@
       padding: 20px;
       text-align: center;
     }
+    footer {
+        background-color: #77009b;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+      }
     .profile-img {
       text-align: center;
       margin-bottom: 20px;
@@ -298,6 +304,73 @@
     .button:hover {
       background-color: #7200a7;
     }
+    .titulo{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 57px;
+    }
+    .subi{
+        font-family: cursive, 'Courier New';
+        margin-top: -32px;
+      }
+      @media only screen and (max-width: 600px) {
+        .product {
+          width: 100%; /* Full width for products on smaller screens */
+        }
+        
+      }
+      .product img {
+       
+        height: 200px; /* Definindo uma altura fixa para as imagens */
+        object-fit: cover; /* Para manter a proporção da imagem e cortar o excesso */
+        padding: 10px;
+      }
+      .product {
+        width: calc(50% - 15px); /* 50% width for each product with 15px spacing */
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centralizar o conteúdo verticalmente */
+        align-items: center; /* Centralizar o conteúdo horizontalmente */
+      }
+      .img {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .article > h2{
+        text-align: center;
+    }
+    #vertical{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+
+    }
+
+    
+      .product {
+        width: calc(48% - 15px); /* 48% de largura para cada imagem */
+        margin-bottom: 0; /* Remover a margem inferior para evitar espaçamento extra */
+        }
+        .round-image {
+            width: 200px; /* Defina a largura desejada */
+            height: 200px; /* Defina a altura desejada */
+            border-radius: 50%; /* Torna a imagem redonda */
+            object-fit: cover; /* Mantém a proporção e corta o excesso */
+            margin-bottom: 20px; /* Espaçamento entre as imagens */
+          }
+          
+          .img1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          
   </style>
 </head>
 <body>
@@ -321,8 +394,8 @@
   <header>
   
     <div class="profile-img">
-      <!-- Substitua 'foto-perfil.jpg' pelo link da foto de perfil -->
-      <img src="perfil-foto.png" alt="Foto de Perfil">
+      <h2 class="titulo">Curso de  trancista  profissional</h2>
+      <p class="subi">Ministrado por Débora Lia N Pereira</p>
     </div>
     
     <div class="back-button">
@@ -332,21 +405,21 @@
 
   <!-- Adicionando a lista de eventos -->
   <div class="container">
-    <div class="event-list">
-      <h2>Eventos</h2>
-      <ul>
-        <li>SALÕES DE FESTAS</li>
-        <li>ANIVERSÁRIOS</li>
-        <li>ESCOLAS</li>
-        <li>CASA</li>
-      </ul>
-      <!-- Botão "Meu Trabalho" -->
-      <div class="bobo">
-        <a href="trabalho.html" class="button">Meu Trabalho</a>
-        <a href="produtos.html" class="button">Material</a>
-        <a href="curso.html" class="button">Curso</a>
+    
+  </div>
+  <div class="img">
+      <div class="product">
+        <img src="https://img.myloview.com.br/posters/forme-a-ilustracao-de-uma-menina-com-penteado-longo-coberto-de-urzes-tranca-de-mao-extraidas-para-web-brochura-modelos-post-cartao-de-visita-400-145184961.jpg" alt="">
       </div>
-    </div>
+  </div>
+  <div class="event-list">
+    <h2>Quem sou eu?</h2>
+    <ul>
+      <li></li>
+      
+    </ul>
+    <!-- Botão "Meu Trabalho" -->
+    
   </div>
 
   <div class="container">
@@ -354,18 +427,91 @@
     <div class="article">
       <h2>Débora Lia </h2>
       <!-- Substitua o conteúdo abaixo pelo artigo -->
-      <p>No suave crepitar das páginas da vida, sou conhecida como Débora Lia, uma jovem de 18 anos, cujo coração transborda com a sublime jornada da maternidade. Em meio às doçuras e desafios, fui abençoada com a dádiva de ser mãe de um pequeno príncipe, um ser de luz que preenche meus dias com risos e amor incondicional.</p>
-      <p>Resido nos encantos de Camocim, onde os ventos sussurram segredos da natureza e os raios de sol dançam sobre os campos verdejantes. É aqui, neste cenário de beleza ímpar, que encontro minha morada, meu refúgio de paz e serenidade.</p>
-      <p>Ah, e sobre minha paixão, permita-me compartilhar um segredo: entre os muitos tesouros que a vida me oferece, um dos mais queridos é a arte de trançar. Sim, sou uma verdadeira entusiasta das tranças, tecendo histórias em cada mecha, entrelaçando sonhos e inspirações em cada movimento delicado das mãos.</p>
-      <p>Assim sou eu, Débora Lia, uma alma que vive, ama e encontra beleza nos pequenos detalhes desta jornada chamada vida.</p>
+      <p>Prazer, sou trancista, moro em Camocim-ce
+        e faço faculdade de estética. Tenho 18 anos 
+       e sou mãe de príncipe! Amo esse mundo da beleza 
+       e amo transformar a vida das pessoas com arte.</p>
+       <hr>
     </div>
-  
-  </div>
+    <div class="article">
+        <h2>O curso é pra mim? </h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <p>Esse curso é indicado para trancistas iniciantes que
+            querem se tornar trancistas posicionais, que 
+            querem aprender e aperfeiçoar as técnicas.</p>
+        <p>Tudo planejado com muito carinho e especialmente 
+            para você que deseja ter um futuro incrível de carreia
+            como trancista(a) </p>
+         <hr>
+      </div>
+      <div class="article">
+        <h2>Objetivos do curso Profissional</h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <img src="curso-img-1.jpg" alt="img" style="max-width: 100%;">
+         <hr>
+      </div>
+      <div class="article">
+        <h2>Quais e quantas técnicas
+            serão ensinadas?</h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <img src="curso-img-2.jpg" alt="img" style="max-width: 100%;">
+         <hr>
+      </div>
+      <div class="article" id="vertical">
+        <h2>Pacotes personalizados</h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <img src="curso-img-3.jpg" alt="img" style="max-width: 70%;" class="vertical">
+         <hr>
+      </div>
 
-  <!-- Botões de contato flutuantes -->
-  <div class="contact-buttons">
-    <a href="https://api.whatsapp.com/send/?phone=5588996780542&text=" target="_blank">WhatsApp</a>
-    <a href="https://www.instagram.com/deboora_lia/" target="_blank">Instagram</a>
+       
+      <div class="container">
+        <div class="img1">
+          <div class="product">
+            <img class="round-image" loading="lazy" src="1.jpeg" alt="roupa">
+          </div>
+          <div class="product">
+            <img class="round-image" loading="lazy" src="2.jpeg" alt="roupa">
+          </div>
+          <div class="product">
+            <img class="round-image" loading="lazy" src="3.jpeg" alt="roupa">
+          </div>
+          <div class="product">
+            <img class="round-image" loading="lazy" src="4.jpeg" alt="roupa">
+          </div>
+        
+        
+        </div>
+      </div>
+      
   </div>
+  <div class="container">
+    <!-- Espaço para o artigo -->
+    <div class="article" id="vertical">
+        <h2>Formas de pagamento</h2>
+        <!-- Substitua o conteúdo abaixo pelo artigo -->
+        <img src="curso-img-4.jpg" alt="img" style="max-width: 100%;" class="vertical">
+        <img src="curso-img-5.jpg" alt="img" style="max-width: 100%;" class="vertical">
+         <hr>
+      </div>
+ 
+      <footer>
+        <div class="profile-img">
+          <!-- Substitua 'foto-perfil.jpg' pelo link da foto de perfil -->
+          <img src="perfil-foto.png" alt="Foto de Perfil">
+        </div>
+        <div class="profile-img">
+        
+          <p class="subi" style=" margin-top: 0px;">Venha fazer parte do nosso Curso de Trancista Profissional e torne-se a mais nova trancista de sucesso!</p>
+        </div>
+        
+        <div class="back-button">   
+          <a href="https://www.instagram.com/liapenteadoss/">Agendar</a>
+        </div>
+    </footer>
+
 </body>
+
 </html>
+
+
