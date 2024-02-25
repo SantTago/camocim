@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academias, Moda Fitness e Suplementos</title>
+    <title>Agências de Passeios</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #1b1b1b, #757575); /* Gradiente verde associado à academia */
+            background: linear-gradient(to bottom, #1b1b1b, #363636); /* Gradiente verde associado à academia */
         }
         header {
             background: linear-gradient(to bottom, #0c007a, rgb(0, 195, 255)); /* Gradiente verde associado à academia */
@@ -17,6 +17,7 @@
             padding: 20px;
             text-align: center;
         }
+        
         h1 {
             margin-top: 0;
         }
@@ -43,7 +44,7 @@
             height: 200px;
             object-fit: cover;
             border-radius: 5px;
-            box-shadow: 0 2px 4px #0c007a;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
         .gallery-item img:hover {
@@ -51,19 +52,23 @@
         }
         .overlay {
             position: absolute;
-            top: 50%;
+            top: 0;
             left: 0;
             width: 100%;
-            transform: translateY(-50%);
+            height: 100%;
             background-color: rgba(0, 0, 0, 0.5); /* Sobreposição semi-transparente */
             display: flex;
             justify-content: center;
             align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: fadeInOut 2s forwards; /* Animação de fade in e fade out */
         }
         .overlay-text {
             color: white;
             font-size: 24px;
         }
+        
         .back-button {
             display: block;
             width: 100px;
@@ -77,8 +82,8 @@
             transition: background-color 0.3s ease;
         }
         .back-button:hover {
-            background-color: #786cfa;
-            color: rgb(255, 255, 255);
+            background-color:  #786cfa;
+            color: black;
         }
     </style>
 </head>
@@ -87,36 +92,30 @@
         <div class="logo">
             <img src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="Logo da sua empresa">
         </div>
-        <h1>Atrações Fitness</h1>
+        <h1>Moda fitness</h1>
         <a href="javascript:history.back()" class="back-button">Voltar</a>
     </header>
 
     <div class="gallery">
         <div class="gallery-item">
-            <a href="confeitaria/contruçao/contruçao.html">
-                <img src="https://www.26fit.com.br/fotos/produtos/gd_yomrzw.jpg" alt="Academia">
+            <a href="li_closet/principal.html">
+                <img src="li_closet/frente.jpg" alt="Passeio 1">
                 <div class="overlay">
-                    <span class="overlay-text">Academias</span>
+                    <span class="overlay-text">Clique para ver mais</span>
                 </div>
             </a>
         </div>
+    </div>
+    <div class="gallery">
         <div class="gallery-item">
-            <a href="academia/lojas.html">
-                <img src="https://i.pinimg.com/736x/b5/0d/05/b50d05e05acd8cd7502085703be23820.jpg" alt="Moda Fitness">
+            <a href="https://forms.gle/p1bZo5Lfj3NJAe1X8">
+                <img src="li_closet/cadastro.jpg" alt="Passeio 1">
                 <div class="overlay">
-                    <span class="overlay-text">Moda Fitness</span>
+                    <span class="overlay-text">Clique para ver mais</span>
                 </div>
             </a>
         </div>
-        <div class="gallery-item">
-            <a href="confeitaria/contruçao/contruçao.html">
-                <img src="https://www.formularium.com.br/inform/wp-content/uploads/2013/11/iStock-1400781187.jpg" alt="Suplementos">
-                <div class="overlay">
-                    <span class="overlay-text">Suplementos</span>
-                </div>
-            </a>
-        </div>
-        <!-- Adicione mais imagens conforme necessário -->
+
     </div>
 </body>
 </html>
