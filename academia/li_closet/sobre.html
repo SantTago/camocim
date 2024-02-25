@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos de Sex Shop</title>
+  <!-- Adicione o link para o arquivo CSS do Fancybox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <!-- Importe o jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Adicione o link para o arquivo JavaScript do Fancybox -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+  <style>
+    /* Estilos CSS para tornar a página mais bonita e responsiva */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      position: relative; /* Importante para o posicionamento dos botões flutuantes */
+      
+    }
+    header {
+      background-color: #FB5B8F;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .profile-img {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-img img {
+      width: 150px;
+      border-radius: 50%;
+      border: 5px solid #ffffff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex; /* Exibir produtos lado a lado */
+      flex-wrap: wrap; /* Permitir que os produtos quebrem linha conforme necessário */
+      justify-content: space-between; /* Espaço igual entre os produtos */
+    }
+    .product {
+      width: calc(50% - 10px); /* Definir largura de cada produto */
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%; /* Imagem ocupa todo o espaço disponível */
+      height: auto;
+      cursor: pointer; /* Alterar o cursor ao passar por cima da imagem */
+    }
+    .product-info {
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center; /* Centralizar as informações dos produtos */
+    }
+    .product-info h2 {
+      margin-top: 0;
+    }
+    .contact-buttons {
+      position: fixed; /* Torna os botões flutuantes */
+      bottom: 20px; /* Distância do fundo */
+      right: 20px; /* Distância da direita */
+      text-align: center;
+      display: flex; /* Para os botões ficarem lado a lado */
+      justify-content: space-between; /* Distribuir o espaço entre os botões */
+      width: 200px; /* Largura dos botões */
+    }
+    .contact-buttons a {
+      display: inline-block;
+      background-color: #8E0030;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 0; /* Espaçamento vertical dentro do botão */
+      margin: 10px 0; /* Espaçamento vertical entre os botões */
+      border-radius: 5px;
+      width: 45%; /* Largura dos botões */
+      transition: background-color 0.3s ease;
+    }
+    .contact-buttons a:hover {
+      background-color: #b12a57;
+    }
+    .back-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .back-button a {
+      display: inline-block;
+      background-color: #8E0030;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .back-button a:hover {
+      background-color: #b90441;
+    }
+   
+    @media only screen and (max-width: 600px) {
+      .product {
+        width: 100%; /* Full width for products on smaller screens */
+        padding-top: 10px;
+        
+      }
+      .product-info {
+        text-align: center; /* Centralizar as informações dos produtos em telas menores */
+      }
+      .contact-buttons {
+        width: 100%; /* Full width for contact buttons on smaller screens */
+        bottom: 0; /* Align the buttons to the bottom */
+        left: 0; /* Align the buttons to the left */
+        text-align: center;
+        justify-content: center; /* Centralizar os botões */
+      }
+      .contact-buttons a {
+        width: 100%; /* Largura total para botões em telas menores */
+         margin: 20px;
+      }
+    }
+
+    /* Estilo para as miniaturas */
+    .thumbnails {
+      margin-top: 10px;
+      white-space: nowrap; /* Impede que as miniaturas quebrem */
+      overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+      text-align: center; /* Centraliza as miniaturas */
+    }
+    .thumbnails img {
+      max-width: 50px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .titu{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        color: #8E0030;
+    }
+    .para{
+        margin: auto;
+        text-align: justify;
+        padding: 15px;
+        max-width: 600px;
+    }
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+       
+      }
+    }
+    main{
+        max-width: 700px;
+        margin: auto;
+    }
+    .profile-img {
+      margin-bottom: 20px;
+      border-radius: 50%; /* Deixa a imagem redonda */
+      overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a borda */
+      width: 150px; /* Defina o tamanho desejado para a imagem do perfil */
+      height: 150px;
+      margin: 0 auto; /* Centraliza a imagem */
+    }
+    .profile-img {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .profile-img img {
+        width: 140px;
+        border-radius: 50%;
+        border: 5px solid #ffffff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+    .tip {
+      margin-bottom: 30px;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center; /* Centralizar imagens */
+    }
+    .tip img {
+        width: 100%; /* Definir largura total */
+        height: auto; /* Manter proporção */
+      }
+    .tip-info {
+      padding: 20px;
+    }
+    .tip-info h2 {
+      margin-top: 0;
+    }
+    .tip-info p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="profile-img">
+      <img src="li-looks.jpg" alt="Imagem do Perfil">
+    </div>
+  
+    <div class="back-button">
+      <a href="principal.html">Voltar</a>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="tip">
+        <img src="https://uploads.metropoles.com/wp-content/uploads/2022/02/18181144/GettyImages-1195882784-1.jpg" alt="Imagem da Dica 1">
+        <div class="tip-info">
+          <h2>Dica 1: Uso de Vibradores</h2>
+          <p>Os vibradores podem ser usados para estimulação do clitóris e outras zonas erógenas. Experimente diferentes velocidades e padrões de vibração para descobrir o que mais lhe agrada.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <img src="https://www.otempo.com.br/image/contentid/policy:1.3271740:1699563789/saiba-como-os-brinquedos-eroticos-podem-melhorar-a-vida-sexual-jpeg.jpeg?f=3x2&w=1224" alt="Imagem da Dica 2">
+        <div class="tip-info">
+          <h2>Dica 2: Brinquedos para Casais</h2>
+          <p>Brinquedos como anéis penianos vibratórios podem aumentar a sensação de prazer para ambos os parceiros durante a relação sexual. Não tenha medo de experimentar novas formas de intimidade.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <img src="https://portalcantu.com.br/media/k2/items/cache/de80b9184ff37c7a5b5975d292b788ae_XL.jpg" alt="Imagem da Dica 3">
+        <div class="tip-info">
+          <h2>Dica 3: Lubrificantes</h2>
+          <p>O uso de lubrificantes pode tornar a experiência mais confortável e prazerosa. Escolha um lubrificante à base de água para uso com brinquedos sexuais de silicone, pois outros tipos podem danificar o material.</p>
+        </div>
+      </div>
+      <!-- Adicione mais dicas conforme necessário -->
+      <div class="tip">
+        <img src="https://dynamic.cdnlive.com.br/1000x1000/uploads/594/unidade/17024931173263_zoom/jpg/jogo-do-prazer-hot-glow-para-casal-com-2-dados-eroticos-sexy-fantasy.jpg" alt="Imagem da Dica 4">
+        <div class="tip-info">
+          <h2>Dica 4: Jogos Eróticos</h2>
+          <p>Experimente jogos de tabuleiro ou cartas com temática erótica para apimentar a relação. Eles podem incluir desafios, perguntas picantes e até mesmo sugestões de posições sexuais.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <img src="https://down-br.img.susercontent.com/file/da9ec29fc4dd0510c26bdd1afc3eefa3" alt="Imagem da Dica 5">
+        <div class="tip-info">
+          <h2>Dica 5: Uso de Algemas</h2>
+          <p>As algemas podem ser uma ótima adição aos jogos sexuais, mas lembre-se sempre de estabelecer limites claros com o seu parceiro e utilizar algemas que possam ser facilmente destravadas em caso de emergência.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <img src="https://katmahal.com.br/wp-content/uploads/2020/06/katmahal-massagem-003.jpg" alt="Imagem da Dica 6">
+        <div class="tip-info">
+          <h2>Dica 6: Massagem Sensual</h2>
+          <p>Explore o poder das massagens sensuais utilizando óleos ou velas específicas para massagem. Não se esqueça de criar uma atmosfera relaxante, com música suave e iluminação adequada.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <img src="https://m.i.uol.com.br/estilo/2010/04/22/fantasias-sexuais-fortalecem-a-relacao-a-autoestima-e-ate-a-saude-1271948005134_615x300.jpg" alt="Imagem da Dica 7">
+        <div class="tip-info">
+          <h2>Dica 7: Uso de Fantasias</h2>
+          <p>Experimente usar fantasias eróticas para encenar diferentes papéis e fantasias sexuais. Isso pode adicionar uma nova dimensão de diversão e excitação à sua vida sexual.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <img src="https://www.rbsdirect.com.br/imagesrc/24843129.jpg?w=700" alt="Imagem da Dica 8">
+        <div class="tip-info">
+          <h2>Dica 8: Livros e Filmes Eróticos</h2>
+          <p>Explore livros, filmes e literatura erótica para descobrir novas ideias e inspirações para a sua vida sexual. Isso pode ajudar a abrir novos horizontes e a aumentar a intimidade com o seu parceiro.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <img src="https://www.corpuspa.com.br/wp-content/uploads/2022/04/receber-uma-massagem-intima.jpg" alt="Imagem da Dica 9">
+        <div class="tip-info">
+          <h2>Dica 9: Uso de Óleos de Massagem</h2>
+          <p>Os óleos de massagem comestíveis podem ser uma forma deliciosa de explorar a intimidade com o seu parceiro. Experimente diferentes sabores e texturas para uma experiência sensorial única.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <img src="https://i0.statig.com.br/bancodeimagens/4f/5d/ry/4f5dry9nor4px2ywb7k7l1rcd.jpg" alt="Imagem da Dica 10">
+        <div class="tip-info">
+          <h2>Dica 10: Utilize um Espelho</h2>
+          <p>Coloque um espelho estrategicamente no quarto para adicionar uma nova dimensão à sua vida sexual. Ver-se e ver o seu parceiro durante o ato pode aumentar a excitação e a conexão emocional.</p>
+        </div>
+      </div>
+    
+    
+    </div>
+</main>
+</body>
+</html>
