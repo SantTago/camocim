@@ -3,338 +3,285 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registra Camocim</title>
-  <link rel="stylesheet" href="../estilo/style.css">
-  <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <title>Pousada Village Sonhos</title>
   <style>
-    .saiba-mais > h2 {
-      text-align: center;
-      border: 0px solid #ffffff;
-      padding: 0px;
-      font-family: var(--destaque);
-      padding-top: 40px;
-    }
+    /* Estilos CSS para tornar a página mais bonita e responsiva */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-shadow: 0px 0px 15px black;
-      /* Definindo a imagem de fundo */
-      background-image: url('https://img.freepik.com/vetores-gratis/fundo-de-viagem-realista-com-elementos_52683-77784.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-size: 100% 100%;
+      position: relative; /* Importante para o posicionamento dos botões flutuantes */
+      background-color: #ffffff; /* Azul claro */
     }
+
     header {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-    }
-    section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      position: relative;
+      background-color: #87ceeb; /* Azul claro */
+      color: #ffffff;
       padding: 20px;
-      box-sizing: border-box;
-      max-width: 80%px;
-      height: 80%;
-    }
-    .product {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        margin: 10px;
-        margin-top: 0px;
-        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
-        box-sizing: border-box;
-        text-align: center;
-    }
-    main > img {
-      max-width: 100%;
-      height: auto;
-      width: 100%; 
-    }
-    main{
-      max-width: 800px;
-      background-color: rgba(255, 255, 255, 0.589); /* Alterando a cor de fundo para ser mais transparente */
-      padding: 20px; /* Adicionando algum espaço para separar o conteúdo do fundo */
-    }
-    .paragrafo{
-      max-width: 800px;
-      padding: 10px;
-      background-color:rgb(255 255 255 / 14%);;
-    }
-    footer {
-      background-color: #333;
-      color: #fff;
       text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 50%;
+      overflow: hidden; /* Para esconder as partes das imagens que ultrapassam o header */
     }
-    .slick-next {
-      right: 35px;
-        
-    }
-    .slick-prev {
-        left: 35px;
-        
-    }
-    element.style {
-        width: 303px;
-        height: 104%;
-    }
-    .perfil {
-      max-width: 50px;
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-      margin: auto;
-      flex-wrap: wrap;
-    }
-    @media only screen and (max-width: 600px) {
-      /* Estilos específicos para dispositivos móveis aqui */
-      body {
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-      section {
-        max-width: 100%;
-      }
-      .product {
-        flex: 1 0 calc(100% - 20px);
-      }
-    }
-    #fundo{
+
+    .wave {
       position: absolute;
-      z-index: -1; /* Movendo para trás para que fique atrás do conteúdo */
-      top: 0;
+      bottom: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      opacity: 0.3; /* Opacidade para torná-lo mais sutil */
+      height: 150px; /* Altura da onda */
+      background-image: url('https://via.placeholder.com/150'); /* Adicione a imagem da onda aqui */
+      background-size: 100% 100%;
     }
-    
-    #botaoFlutuante {
+
+    .palm-leaf {
+      position: absolute;
+      top: 20px; /* Ajuste a posição vertical conforme necessário */
+      right: 20px; /* Ajuste a posição horizontal conforme necessário */
+      width: 100px; /* Ajuste a largura conforme necessário */
+      height: auto;
+      background-image: url('https://via.placeholder.com/150'); /* Adicione a imagem da folha de coqueiro aqui */
+      background-size: contain;
+    }
+
+    .profile-img {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-img img {
+      width: 150px;
+      border-radius: 50%;
+      border: 5px solid #ffffff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .product {
+      width: calc(50% - 15px); /* 50% width for each product with 15px spacing */
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centralizar o conteúdo verticalmente */
+      align-items: center; /* Centralizar o conteúdo horizontalmente */
+    }
+
+    .product img {
+      width: 100%;
+      height: 234px;
+      object-fit: cover;
+      padding-top: 20px;
+  }
+
+    .product-info {
+      background-color: #ffffff; /* Branco */
+      padding: 20px;
+      text-align: center; /* Centralizar as informações dos produtos */
+    }
+
+    .product-info h2 {
+      margin-top: 0;
+    }
+
+    .contact-buttons {
+      position: fixed; /* Torna os botões flutuantes */
+      bottom: 20px; /* Distância do fundo */
+      right: 20px; /* Distância da direita */
+      text-align: center;
+      display: flex; /* Para os botões ficarem lado a lado */
+      justify-content: space-between; /* Distribuir o espaço entre os botões */
+      width: 200px; /* Largura dos botões */
+    }
+
+    .contact-buttons a {
+      display: inline-block;
+      background-color: #00afe9; /* Azul claro */
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 0; /* Espaçamento vertical dentro do botão */
+      margin: 10px 0; /* Espaçamento vertical entre os botões */
+      border-radius: 5px;
+      width: 45%; /* Largura dos botões */
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-buttons a:hover {
+      background-color: #83e0ff; /* Azul claro mais claro ao passar o mouse */
+    }
+
+    .back-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .back-button a {
+      display: inline-block;
+      background-color: #00afe9; /* Azul claro */
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button a:hover {
+      background-color: #38c3f1; /* Azul claro mais claro ao passar o mouse */
+    }
+    .product-info {
+      text-align: center; /* Centralizar as informações dos produtos em telas menores */
+      text-align: justify;
+    }
+    @media only screen and (max-width: 600px) {
+      .product {
+        width: 100%; /* Full width for products on smaller screens */
+      }
+      .product-info {
+        text-align: center; /* Centralizar as informações dos produtos em telas menores */
+        text-align: justify;
+      }
+      .contact-buttons {
+        width: 100%; /* Full width for contact buttons on smaller screens */
+        bottom: 0; /* Align the buttons to the bottom */
+        left: 0; /* Align the buttons to the left */
+        text-align: center;
+        justify-content: center; /* Centralizar os botões */
+      }
+      .contact-buttons a {
+        width: 100%; /* Largura total para botões em telas menores */
+         margin: 20px;
+      }
+
+    }
+
+    .floating-button {
       position: fixed;
-      top: 20px; 
-      right: -2px; 
-      background-color: #ff3de5;
+      top: 26px;
+      right: -2px;
+      background-color: #00afe9;
       color: #ffffff;
       border: none;
-      border-radius: 5px;
-      font-size: 16px;
+      width: 45px;
+      height: 35px;
+      font-size: 18px;
       cursor: pointer;
+      box-shadow: 0px 0px 10px rgba(116, 199, 255, 0.5);
       transition: background-color 0.3s ease;
-      padding: 11px;
-      padding-right: 16px;
-  }
-  
-  #botaoFlutuante:hover {
-      background-color: #ff00ea;
-  }
+      text-align: center;
+      line-height: 35px;
+      text-decoration: none;
+    }
+
+    .floating-button:hover {
+        background-color: #40cfff; /* Azul claro mais claro ao passar o mouse */
+ 
+    }
+
+    .image-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 200px; /* Altura desejada do espaço reservado */
+      background-color: #f0f0f0; /* Cor de fundo do espaço reservado */
+      color: #666; /* Cor do texto do espaço reservado */
+    }
   </style>
 </head>
 <body>
-  <div id="fundo"></div> <!-- Adicionando a imagem de fundo -->
-  <div class="perfil-bloco">
-     <div>
-      <img src="https://i.ibb.co/R012Wsm/banner.webp" alt="banner">
+
+
+<header>
+  <div class="profile-img">
+    <img src="img_village_sonhos/perfil.jpg" alt="Imagem do Perfil">
+  </div>
+  <h1>Pousada Village Sonhos</h1>
+  <div class="back-button">
+    <a href="../index.html">Voltar</a>
+  </div>
+</header>
+<div class="container">
+  <div class="product">
+    <img src="https://i.ibb.co/WPyqkwz/329314913.webp" alt="Produto 1">
+    <div class="product-info">  
+ 
+      <p>
+        O quarto da Pousada Village Sonhos é um verdadeiro refúgio de luxo, onde uma banheira de hidromassagem cuidadosamente posicionada no centro do espaço cria um ambiente de relaxamento incomparável. Com uma decoração elegante e contemporânea, tons suaves e iluminação sutil, o quarto oferece aos hóspedes uma experiência de indulgência e conforto inigualável. A combinação perfeita entre serenidade interior e beleza natural através da janela panorâmica, este é o destino ideal para aqueles que procuram uma estadia memorável na Pousada Village Sonhos.</p>
     </div>
   </div>
-  <div class="icon">
-     
-    <div class="sorveteria-cor">
-      <abbr title="Voltar"><a href="../hoteis.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
-    </div >   
-    
+  
+  <div class="product">
+    <img src="https://i.ibb.co/LCh4wjG/329314700.webp" alt="Produto 1">
+    <div class="product-info">  
+ 
+      <p>
+        um encantador cantinho espera os hóspedes, oferecendo duas cadeiras confortáveis e uma pequena mesinha. Estrategicamente posicionado para proporcionar uma vista deslumbrante, este espaço convida os visitantes a desfrutarem de momentos de tranquilidade enquanto contemplam a paisagem ao redor. Com uma atmosfera serena e relaxante, é o local perfeito para desfrutar de uma conversa tranquila, ler um livro ou simplesmente apreciar a beleza dos arredores. Ideal para casais em busca de romance ou viajantes solitários em busca de introspecção, este cantinho no segundo andar é um verdadeiro refúgio de paz na Pousada Village Sonhos.</p>
+    </div>
   </div>
 
+  <div class="product">
+    <img src="https://i.ibb.co/pyS9pbv/222099918.webp" alt="Produto 1">
+    <div class="product-info">  
+ 
+      <p>
+        Este quarto deslumbrante não só oferece conforto luxuoso, mas também uma experiência verdadeiramente exclusiva com sua varanda privativa e piscina de borda infinita. Com uma vista deslumbrante que se estende até onde os olhos podem ver, você pode se perder na beleza panorâmica enquanto relaxa na piscina. A varanda espaçosa é o cenário perfeito para refeições ao ar livre, momentos de contemplação ou simplesmente se deixar envolver pela tranquilidade do ambiente. Cada detalhe foi cuidadosamente projetado para oferecer uma experiência de luxo incomparável, combinando o conforto do interior com a beleza natural ao ar livre. Este é o refúgio perfeito para aqueles que buscam uma estadia verdadeiramente inesquecível na Pousada Village Sonhos. </p>
+    </div>
+  </div>
   
+  <div class="product">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipMYaxa0J9DmX9oc_aiM-MXAfp6W_MYnTapczeht=s680-w680-h510" alt="Produto 1">
+    <div class="product-info">  
+ 
+      <p>
+        Uma característica especialmente encantadora é a presença de uma graciosa ponte que atravessa suavemente a superfície cristalina da piscina. Esta ponte não só adiciona um toque de elegância e charme ao ambiente, mas também convida os hóspedes a explorarem o outro lado da piscina com uma sensação de serenidade e tranquilidade. Com águas reluzentes que se estendem até onde os olhos podem ver, esta piscina é mais do que um local para se refrescar; é um cenário deslumbrante que promete momentos inesquecíveis de relaxamento e contemplação para todos os que têm o privilégio de testemunhá-la em frente às suas varandas na Pousada Village Sonhos. </p>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipMinWy3uRIazi5Xn-ftgpyzNHsUDAoTE2xueHf7=s680-w680-h510" alt="Produto 1">
+    <div class="product-info">  
+ 
+      <p>           
+        O café da manhã na Pousada Village Sonhos é uma experiência deliciosa e variada, com uma ampla seleção de itens frescos e saborosos para todos os gostos. Desde pães recém-assados até opções quentes e saudáveis, os hóspedes desfrutam de uma refeição de qualidade em um ambiente acolhedor e com um serviço atencioso.</p>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipPtIrbtI_Qgu4K6tAMNdDcX8FaYk0anX5JUxjDd=s680-w680-h510" alt="Produto 1">
+    <div class="product-info">  
+ 
+      <p>           
+        A limpeza impecável em todos os cantos garante uma sensação de frescor e conforto aos hóspedes, criando um refúgio tranquilo e relaxante. Os majestosos coqueiros, que dançam suavemente ao vento, adicionam um toque de exotismo tropical, enquanto a exuberante natureza ao redor proporciona uma sensação de conexão com o ambiente. Cada vista é um convite à contemplação, com paisagens deslumbrantes que estimulam os sentidos e revitalizam a alma. Neste cenário idílico, os hóspedes são convidados a desfrutar de momentos de paz e harmonia, imersos na beleza intocada da natureza na Pousada Village Sonhos.</p>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipNK4PJOUy2fQdd9p6kqh21gOUQfQ1PeklfXjsXb=s680-w680-h510" alt="Produto 1">
+    <div class="product-info">  
+ 
+      <p>           
+        Os espaços são bem aproveitados, com amenidades modernas que garantem o máximo de comodidade para os hóspedes. Seja para uma escapada romântica ou uma viagem de relaxamento, os quartos na Pousada Village Sonhos são o santuário ideal para recarregar as energias e desfrutar de momentos memoráveis em meio ao conforto e ao aconchego.</p>
+    </div>
+  </div>
+  
+   
+ 
+  
+ 
+</div>
+<!-- Botões de contato flutuantes -->
+<div class="contact-buttons">
+  <a href="https://api.whatsapp.com/send/?phone=5588994215363&text=" target="_blank">WhatsApp</a>
+  <a href="https://www.instagram.com/villagesonhos/" target="_blank">Instagram</a>
   
 </div>
 
-    <!--------------------------------------------------->
-
-    <style>
-      .floating-menu {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .floating-menu a {
-        display: block;
-        margin-bottom: 10px;
-        text-decoration: none;
-        color: #fff;
-        background-color: #007bff;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 50px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-        transition: background-color 0.3s ease;
-    }
-    
-    .floating-menu a:hover {
-        background-color: #0056b3;
-    }
-    
-    .floating-menu i {
-        font-size: 15px;
-    }
-    
-    /* Modal */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.4);
-    }
-    
-    .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        margin-top: 27vh;
-    }
-    
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-    
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    
-    ul li {
-        margin-bottom: 10px;
-    }
-    
-    ul li a {
-        text-decoration: none;
-        color: #000;
-        transition: color 0.3s ease;
-        font-size: larger;
-    }
-    
-    ul li a:hover {
-        color: #007bff;
-        font-size: 25px;
-    }
-    .paragrafo{
-      text-align: center;
-      font-size: larger;
-    }
-    </style>
-
-  
-  <main>
-    
-
-    <section class="slider">
-      <div class="product">
-        <img src="https://i.ibb.co/WPyqkwz/329314913.webp" alt="001">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/dBsPSsd/329314892.webp" alt="002">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/LCh4wjG/329314700.webp" alt="003">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/fr9RnfY/228556345.webp" alt="004">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/LS2ZdWF/228555425.webpp" alt="005">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/pyS9pbv/222099918.webp" alt="006">
-      </div>
-      
-    
-    </section>
-
-    <h2>Retiro Paradisíaco: Descubra um Mundo Distante da Rotina na Pousada Village Sonhos</h2>
-
-    <p class="paragrafo">
-      Desvende a Pousada Village Sonhos, seu refúgio perfeito longe de casa. Localizada em um cenário deslumbrante, nossa hospedaria proporciona uma experiência autêntica para os viajantes em busca de aventura e relaxamento.  <br>
-       <br>
-       Com acomodações encantadoras e uma atmosfera acolhedora, cada momento passado conosco é uma oportunidade para se reconectar com a natureza e descobrir novos horizontes. Deixe-se levar pela magia da nossa vila e embarque em uma jornada de sonhos e descobertas na Pousada Village Sonhos.<br>
-       <br>
-       
-    </p>
-    <!--------------------------------------------------->
-    <script>
-      $(document).ready(function(){
-          $('.slider').slick({
-              slidesToShow: 4, // Mostrar dois produtos por vez
-              slidesToScroll: 1,
-              prevArrow: '<button class="slick-prev">Anterior</button>',
-              nextArrow: '<button class="slick-next">Próximo</button>',
-              responsive: [
-                  {
-                      breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                      settings: {
-                          slidesToShow: 1
-                      }
-                  }
-              ]
-          });
-      });
-    </script>
-    <!-------------------------------------------------->
-  </main>
-  
-  <div class="saiba-mais">
-    <h2>Fale Conosco</h2>
-  </div>
-  <div class="redes-sociais">   
-    <div>
-      <a href="https://api.whatsapp.com/send/?phone=5588994215363&text="><img loading="lazy" src="../icon/zap.png" alt="zap"></a>
-    </div>
-    <div>
-      <a href=" https://www.instagram.com/villagesonhos/ " target="_blank"><img loading="lazy" src="../icon/insta.png" alt="insta"></a>
-    </div>
-    <div>
-      <a href="https://www.google.com/maps/place/Pousada+Village+Sonhos/@-2.8771351,-40.9372079,12z/data=!4m23!1m12!4m11!1m3!2m2!1d-40.856012!2d-2.8762779!1m6!1m2!1s0x7ebd97399244a1b:0xe08e02b940ae0265!2sAvenida+Sonhos+Praia+das+Barreiras,+Camocim+-+CE,+62400-000!2m2!1d-40.8548059!2d-2.877138!3m9!1s0x7ebd97399244a1b:0xe08e02b940ae0265!5m3!1s2023-12-18!4m1!1i2!8m2!3d-2.8771381!4d-40.8548059!16s%2Fg%2F11h5m5rgpg?entry=ttu" target="_blank"><img loading="lazy" src="../icon/local.png" alt="localizaçao"></a>
-    </div>
-  </div>
-  <!-------------------------->
-  <div class="perfil-bloco">
-    <div>
-      <img src="https://i.ibb.co/pnFj5fM/banner-2.webp" alt="banner-2">
-    </div>
-  </div>
-  <!------------------------------->
-
-
-<!--------------------------------------------------->
+<a href="../confeitaria/contruçao/contruçao.html" class="floating-button">Ir</a>
 </body>
 </html>
