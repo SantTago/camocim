@@ -3,329 +3,377 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registra Camocim</title>
-  <link rel="stylesheet" href="../estilo/style.css">
-  <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
   <style>
-    .saiba-mais > h2 {
-      text-align: center;
-      border: 0px solid #ffffff;
-      padding: 0px;
-      font-family: var(--destaque);
-      padding-top: 40px;
-    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-shadow: 0px 0px 15px black;
-      /* Definindo a imagem de fundo */
-      background-image: url('https://i.pinimg.com/564x/0b/6a/bf/0b6abf2622a9e6c270fe2ea3e1db0af7.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-size: 100% 100%;
+      position: relative; 
       
     }
     header {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-    }
-    section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      background-color: red;
+      color: #ffffff;
       padding: 20px;
-      box-sizing: border-box;
-      max-width: 80%px;
-      height: 80%;
+      text-align: center;
+    }
+    .profile-img {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-img img {
+      width: 150px;
+      border-radius: 50%;
+      border: 5px solid #000000;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex; /* Exibir produtos lado a lado */
+      flex-wrap: wrap; /* Permitir que os produtos quebrem linha conforme necessário */
+      justify-content: space-between; /* Espaço igual entre os produtos */
     }
     .product {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        margin: 10px;
-        margin-top: 0px;
-        flex: 1 0 calc(50% - 20px); /* Inicialmente, duas colunas por linha com margens de 10px */
-        box-sizing: border-box;
-        text-align: center;
-    }
-    main > img {
-      max-width: 100%;
-      height: auto;
-      width: 100%; 
-    }
-    main{
-      max-width: 800px;
-      background-color: rgba(255, 255, 255, 0.589); /* Alterando a cor de fundo para ser mais transparente */
-      padding: 20px; /* Adicionando algum espaço para separar o conteúdo do fundo */
-    }
-    .paragrafo{
-      max-width: 800px;
-      padding: 10px;
-      background-color:rgb(255 255 255 / 14%);;
-    }
-    footer {
-      background-color: #333;
-      color: #fff;
+      width: calc(50% - 10px); /* Definir largura de cada produto */
+      margin-bottom: 30px;
       text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 50%;
     }
-    .slick-next {
-      right: 35px;
-        
+    .product img {
+      width: 100%; /* Imagem ocupa todo o espaço disponível */
+      height: auto;
+      cursor: pointer; /* Alterar o cursor ao passar por cima da imagem */
     }
-    .slick-prev {
-        left: 35px;
-        
+    .product-info {
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center; /* Centralizar as informações dos produtos */
     }
-    element.style {
-        width: 303px;
-        height: 104%;
+    .product-info h2 {
+      margin-top: 0;
     }
-    .perfil {
-      max-width: 50px;
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-      margin: auto;
-      flex-wrap: wrap;
+    .contact-buttons {
+      position: fixed; /* Torna os botões flutuantes */
+      bottom: 20px; /* Distância do fundo */
+      right: 20px; /* Distância da direita */
+      text-align: center;
+      display: flex; /* Para os botões ficarem lado a lado */
+      justify-content: space-between; /* Distribuir o espaço entre os botões */
+      width: 200px; /* Largura dos botões */
     }
+    .contact-buttons a {
+      display: inline-block;
+      background-color: black;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 0; /* Espaçamento vertical dentro do botão */
+      margin: 10px 0; /* Espaçamento vertical entre os botões */
+      border-radius: 5px;
+      width: 45%; /* Largura dos botões */
+      transition: background-color 0.3s ease;
+    }
+    .contact-buttons a:hover {
+      background-color: red;
+    }
+    .back-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .back-button a {
+      display: inline-block;
+      background-color: black;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .back-button a:hover {
+      background-color: red;
+    }
+   
     @media only screen and (max-width: 600px) {
-      /* Estilos específicos para dispositivos móveis aqui */
-      body {
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-      section {
-        max-width: 100%;
-      }
       .product {
-        flex: 1 0 calc(100% - 20px);
+        width: 100%; /* Full width for products on smaller screens */
+        padding-top: 10px;
+        
       }
+      .product-info {
+        text-align: center; /* Centralizar as informações dos produtos em telas menores */
+      }
+      .contact-buttons {
+        width: 100%; /* Full width for contact buttons on smaller screens */
+        bottom: 0; /* Align the buttons to the bottom */
+        left: 0; /* Align the buttons to the left */
+        text-align: center;
+        justify-content: center; /* Centralizar os botões */
+      }
+      .contact-buttons a {
+        width: 100%; /* Largura total para botões em telas menores */
+         margin: 20px;
+      }
+      .para{
+        margin: auto;
+        text-align: justify;
+        padding: 15px;
+        max-width: 600px;
     }
-    #fundo{
-      position: absolute;
-      z-index: -1; /* Movendo para trás para que fique atrás do conteúdo */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.3; /* Opacidade para torná-lo mais sutil */
     }
+
+    /* Estilo para as miniaturas */
+    .thumbnails {
+      margin-top: 10px;
+      white-space: nowrap; /* Impede que as miniaturas quebrem */
+      overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+      text-align: center; /* Centraliza as miniaturas */
+    }
+    .thumbnails img {
+      max-width: 50px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .titu{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        color: #000000;
+    }
+    .para{
+      margin: auto;
+      text-align: justify;
+      padding: 15px;
+      max-width: 800px;
+      font-size: 16px;
+  }
     
   </style>
 </head>
 <body>
-  <div id="fundo"></div> <!-- Adicionando a imagem de fundo -->
-  <div class="perfil-bloco">
-     <div>
-      <img src="pimenta_dcheiro/banner.webp" alt="banner">
+
+  <header>
+    <div class="profile-img">
+      <img src="pimenta_dcheiro/perfil.jpg" alt="Imagem do Perfil">
     </div>
-  </div>
-  <div class="icon">
-     
-    <div class="sorveteria-cor">
-      <abbr title="Voltar"><a href="../roupas.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
-    </div >   
-    
-  </div>
-
   
-  
-</div>
+    <div class="back-button">
+      <a href="../roupas.html">Voltar</a>
+    </div>
+  </header>
 
-    <!--------------------------------------------------->
+  <h2 class="titu">Moda Masculina</h2>
 
+  <h2 class="titu" style="color: red;">Pimentad'Cheiro: Em Breve, Novidades na Moda Masculina!</h2>
+  <p class="para">A contagem regressiva começou na Pimentad'Cheiro! Estamos nos preparando para revelar um novo capítulo emocionante na moda masculina. Com a obra prestes a ser concluída, em breve você poderá desfrutar de um ambiente renovado que reflete nossa dedicação ao estilo e à excelência. <br> <br> Fique atento! Em poucos dias, estaremos prontos para apresentar nossa coleção cuidadosamente selecionada, projetada para elevar seu estilo a novas alturas. Prepare-se para descobrir o novo padrão de moda masculina na Pimentad'Cheiro. Estamos ansiosos para recebê-lo em breve!</p>    
+  <hr>
+    <div class="container">
+      <div class="product">
+        <a class="fancybox" data-fancybox="gallery-roupa1" href="pimenta_dcheiro/produto1/1.jpg">
+          <img src="pimenta_dcheiro/produto1/1.jpg" alt="Produto 1">
+        </a>
+        <div class="thumbnails">
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa1" href="pimenta_dcheiro/produto1/2.jpg"><img src="pimenta_dcheiro/produto1/2.jpg" alt="Thumbnail 1"></a>
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa1" href="pimenta_dcheiro/produto1/3.jpg"><img src="pimenta_dcheiro/produto1/3.jpg" alt="Thumbnail 2"></a>
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa1" href="pimenta_dcheiro/produto1/4.jpg"><img src="pimenta_dcheiro/produto1/4.jpg" alt="Thumbnail 1"></a>
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa1" href="pimenta_dcheiro/produto1/5.jpg"><img src="pimenta_dcheiro/produto1/5.jpg" alt="Thumbnail 2"></a>
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa1" href="pimenta_dcheiro/produto1/6.jpg"><img src="pimenta_dcheiro/produto1/6.jpg" alt="Thumbnail 1"></a>
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa1" href="pimenta_dcheiro/produto1/7.jpg"><img src="pimenta_dcheiro/produto1/7.jpg" alt="Thumbnail 2"></a>
+        </div>
+        <div class="product-info">
+          <h2>Bermuda </h2>
+          <p>Short elastano linha premium</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <a class="fancybox" data-fancybox="gallery-roupa2" href="pimenta_dcheiro/produto2/1.jpg">
+          <img src="pimenta_dcheiro/produto2/1.jpg" alt="Produto 1">
+        </a>
+        <div class="thumbnails">
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa2" href="pimenta_dcheiro/produto2/2.jpg"><img src="pimenta_dcheiro/produto2/2.jpg" alt="Thumbnail 1"></a>
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa2" href="pimenta_dcheiro/produto2/3.jpg"><img src="pimenta_dcheiro/produto2/3.jpg" alt="Thumbnail 2"></a>
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa2" href="pimenta_dcheiro/produto2/4.jpg"><img src="pimenta_dcheiro/produto2/4.jpg" alt="Thumbnail 1"></a>
+         
+        </div>
+        <div class="product-info">
+          <h2>Regata</h2>
+
+          <p>laranja - Branca - Preta</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <a class="fancybox" data-fancybox="gallery-roupa3" href="pimenta_dcheiro/produto3/1.jpg">
+          <img src="pimenta_dcheiro/produto3/1.jpg" alt="Produto 1">
+        </a>
+        <div class="thumbnails">
+ 
+        </div>
+        <div class="product-info">
+          <h2>Camiseta</h2>
+          <p>Preta</p>
+        </div>
+      </div>
+
+      
+      <div class="product">
+        <a class="fancybox" data-fancybox="gallery-roupa4" href="pimenta_dcheiro/produto4/1.jpg">
+          <img src="pimenta_dcheiro/produto4/1.jpg" alt="Produto 1">
+        </a>
+        <div class="thumbnails">
+ 
+        </div>
+        <div class="product-info">
+          <h2>Camiseta</h2>
+          <p>Azul</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <a class="fancybox" data-fancybox="gallery-roupa5" href="pimenta_dcheiro/produto5/1.jpg">
+          <img src="pimenta_dcheiro/produto5/1.jpg" alt="Produto 1">
+        </a>
+        <div class="thumbnails">
+ 
+        </div>
+        <div class="product-info">
+          <h2>Camiseta</h2>
+          <p>Ouro</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <a class="fancybox" data-fancybox="gallery-roupa6" href="pimenta_dcheiro/produto6/1.jpg">
+          <img src="pimenta_dcheiro/produto6/1.jpg" alt="Produto 1">
+        </a>
+        <div class="thumbnails">
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa6" href="pimenta_dcheiro/produto6/2.jpg"><img src="pimenta_dcheiro/produto6/2.jpg" alt="Thumbnail 1"></a>
+        </div>
+        <div class="product-info">
+          <h2>Camiseta</h2>
+          <p>Preta - Rose</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <a class="fancybox" data-fancybox="gallery-roupa7" href="pimenta_dcheiro/produto7/1.jpg">
+          <img src="pimenta_dcheiro/produto7/1.jpg" alt="Produto 1">
+        </a>
+        <div class="thumbnails">
+          <a class="thumbnail fancybox" data-fancybox="gallery-roupa7" href="pimenta_dcheiro/produto7/2.jpg"><img src="pimenta_dcheiro/produto7/2.jpg" alt="Thumbnail 1"></a>
+        </div>
+        <div class="product-info">
+          <h2>Camiseta</h2>
+          <p>Bege - Vermelho</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <a class="fancybox" data-fancybox="gallery-roupa8" href="pimenta_dcheiro/produto8/1.jpg">
+          <img src="pimenta_dcheiro/produto8/1.jpg" alt="Produto 1">
+        </a>
+        <div class="thumbnails">
+        </div>
+        <div class="product-info">
+          <h2>Camiseta</h2>
+          <p>Preta</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <a class="fancybox" data-fancybox="gallery-roupa9" href="pimenta_dcheiro/produto9/1.jpg">
+          <img src="pimenta_dcheiro/produto9/1.jpg" alt="Produto 1">
+        </a>
+        <div class="thumbnails">
+        </div>
+        <div class="product-info">
+          <h2>Camiseta</h2>
+          <p>Branca</p>
+        </div>
+      </div>
+
+
+    </div>
+
+<!------------------------------------------------------------>
     <style>
-      .floating-menu {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-    }
+    .instagram-container {
+      position: relative;
+      margin: auto;
+      max-width: 600px; /* Defina o valor máximo desejado para a largura do contêiner */
+      width: 100%;
+      padding-bottom: 75%; /* Ajuste isso conforme necessário para o aspecto desejado */
+      overflow: hidden;
+  }
+
+  .instagram-media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+  @media (max-width: 650px) {
     
-    .floating-menu a {
-        display: block;
-        margin-bottom: 10px;
-        text-decoration: none;
-        color: #fff;
-        background-color: #007bff;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 50px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-        transition: background-color 0.3s ease;
-    }
-    
-    .floating-menu a:hover {
-        background-color: #0056b3;
-    }
-    
-    .floating-menu i {
-        font-size: 15px;
-    }
-    
-    /* Modal */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
+    .video-item {
         width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.4);
+    } 
+    .instagram-container {
+        padding-bottom: 180%;
     }
-    
-    .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        margin-top: 27vh;
-    }
-    
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-    
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    
-    ul li {
-        margin-bottom: 10px;
-    }
-    
-    ul li a {
-        text-decoration: none;
-        color: #000;
-        transition: color 0.3s ease;
-        font-size: larger;
-    }
-    
-    ul li a:hover {
-        color: #007bff;
-        font-size: 25px;
-    }
-    .paragrafo{
-      text-align: center;
-      font-size: larger;
-    }
+   
+}
+
+
     </style>
 
-  
-  <main>
+    <div class="instagram-container">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C0rSLjDrpyP/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="13"></blockquote>
+      <script async src="https://www.instagram.com/embed.js"></script>
+  </div>
+<!------------------------------------------------------------>
+
+
+    <style>
+        @media only screen and (max-width: 600px) {
+            .container {
+              padding: 0 10px; /* Reduzindo o espaço nas bordas para telas menores */
+            }
+            .contact-buttons {
+              position: static; /* Removendo a posição fixa para telas menores */
+              width: auto; /* Largura automática para os botões */
+              margin-top: 20px; /* Margem superior para os botões */
+              flex-direction: column; /* Colocando os botões um abaixo do outro */
+              align-items: center; /* Centralizando os botões */
+            }
+            .contact-buttons a {
+              width: 100%; /* Largura total para os botões */
+              margin: 5px 0; /* Espaçamento vertical entre os botões */
+            }
+        }
+    </style>
+
+
+      <div class="contact-buttons">
+        <a href="https://www.instagram.com/pimentadcheiro_modamasc" target="_blank">Instagram</a>
+        
+      </div>
     
-
-    <section class="slider">
-      <div class="product">
-        <img src="pimenta_dcheiro/001.webp" alt="001">
-      </div>
-      <div class="product">
-        <img src="pimenta_dcheiro/002.webp" alt="002">
-      </div>
-      <div class="product">
-        <img src="pimenta_dcheiro/003.webp" alt="003">
-      </div>
-      <div class="product">
-        <img src="pimenta_dcheiro/004.webp" alt="004">
-      </div>
-      <div class="product">
-        <img src="pimenta_dcheiro/005.webp" alt="005">
-      </div>
-      <div class="product">
-        <img src="pimenta_dcheiro/006.webp" alt="006">
+      <!-- Conteúdo relacionado a "Cuidades com as peças" -->
+      <div id="cuidades-com-as-pecas">
+        <!-- Seu conteúdo aqui -->
       </div>
 
-    </section>
-
-    <h2>bem-vindo à Pimenta D'Cheiro Moda Masculina Premium</h2>
-
-    <p class="paragrafo">
-      Na Pimenta D'Cheiro, não apenas vestimos homens, mas os elevamos a um patamar de estilo superior. Somos mais do que uma simples loja de moda masculina; somos uma experiência exclusiva para aqueles que buscam o melhor em qualidade, elegância e sofisticação.<br>
-       <br>
-       .Nossa coleção premium apresenta uma seleção cuidadosamente curada das últimas tendências da moda masculina, com um toque de exclusividade e refinamento. Desde trajes formais impecáveis até peças casuais-chiques, cada item em nossa loja é escolhido a dedo para garantir que você se destaque em qualquer ocasião.<br>
-       <br>
-       Além disso, nosso serviço personalizado garante que cada cliente receba uma atenção especial e orientação especializada para criar looks que expressem sua personalidade e estilo individual.<br>
-       <br>
-       Na Pimenta D'Cheiro, estamos comprometidos em oferecer uma experiência de compras incomparável, onde luxo, qualidade e atendimento excepcional se encontram. Visite-nos e descubra como podemos ajudá-lo a elevar seu estilo a novas alturas com nossa moda masculina premium.<br>
-       <br>
-       
-    </p>
-    <!--------------------------------------------------->
-    <script>
-      $(document).ready(function(){
-          $('.slider').slick({
-              slidesToShow: 4, // Mostrar dois produtos por vez
-              slidesToScroll: 1,
-              prevArrow: '<button class="slick-prev">Anterior</button>',
-              nextArrow: '<button class="slick-next">Próximo</button>',
-              responsive: [
-                  {
-                      breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                      settings: {
-                          slidesToShow: 1
-                      }
-                  }
-              ]
-          });
+  <script>
+    // Função para inicializar o Fancybox
+    $(document).ready(function() {
+      $(".fancybox").fancybox({
+        loop: true // Ativa o looping entre as imagens
       });
-    </script>
-    <!-------------------------------------------------->
-  </main>
-   
-   <div class="saiba-mais">
-    <h2>Fale Conosco</h2>
-  </div>
-  <div class="redes-sociais">
-    <div>
-      <img loading="lazy" src="../icon/zap.png" alt="zap">
-    </div>
-    <div>
-      <a href="https://www.instagram.com/pimentadcheiro_modamasc/" target="_blank"><img loading="lazy" src="../icon/insta.png" alt="insta"></a>
-    </div>
-    <div>
-      <a href="https://www.google.com/maps/uv?pb=!1s0x7ebdbd1b10ab20f%3A0x7af2f4a949c82482!3m1!7e115!4s%2Fmaps%2Fplace%2Fpimenta%2Bde%2Bcheiro%2Bcamocim%2F%40-2.9016911%2C-40.8445023%2C3a%2C75y%2C292.73h%2C90t%2Fdata%3D*213m4*211e1*213m2*211sSWWnNBfFGhZQtaK_us0C1A*212e0*214m2*213m1*211s0x7ebdbd1b10ab20f%3A0x7af2f4a949c82482%3Fsa%3DX%26ved%3D2ahUKEwjG4dKk_YqDAxWSqpUCHXnCDwoQpx96BAhLEAA!5spimenta%20de%20cheiro%20camocim%20-%20Pesquisa%20Google!15sCgIgAQ&imagekey=!1e2!2sSWWnNBfFGhZQtaK_us0C1A&hl=pt-BR&sa=X&ved=2ahUKEwjG4dKk_YqDAxWSqpUCHXnCDwoQpx96BAhYEAU" target="_blank"><img loading="lazy" src="../icon/local.png" alt="localizaçao"></a>
-    </div>
-  </div>
-  <!-------------------------->
- 
-  <div class="perfil-bloco">
-    <div>
-      <img loading="lazy" src="pimenta_dcheiro/banner-2.webp" alt="banner">
-    </div>
-
-  <!------------------------------->
-
-
-
+    });
+  </script>
 </body>
 </html>
-
-
-
-
