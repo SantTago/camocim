@@ -36,7 +36,7 @@
       
     }
     .container {
-      max-width: 800px;
+      max-width: 500px;
       margin: 0 auto;
       padding: 0 20px;
       display: flex;
@@ -53,7 +53,7 @@
     }
     .product img {
       max-width: 103%;
-      height: 363px;
+      height: 313px;
       object-fit: cover;
       padding: 10px;
     }
@@ -164,11 +164,13 @@
       section{
         display: flex;
       }
+
       
   </style>
+  
 </head>
 <body>
-    <a href="#" id="dicas-button" class="floating-button">Dicas</a>
+   
 
   <header>
     <div class="profile-img">
@@ -179,7 +181,6 @@
     </div>
   </header>
   <div class="container">
-    <h1 style=" margin: auto; text-align: center; color: gold;">Academia Fabio Vasconcelos</h1>
     <section>
         <div class="product">
           <img src="fabio/postes/1.jpg" alt="Produto 1">
@@ -195,19 +196,19 @@
  <hr class="colored">
  <section class="slider">
     <div class="product">
-      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-academia.jpg" alt="roupa">
+      <img loading="lazy" src="fabio/postes/2.jpg" alt="roupa">
     </div>
     <div class="product">
-      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-academia-fitness.jpg" alt="roupa">
+      <img loading="lazy" src="fabio/postes/3.jpg" alt="roupa">
     </div>
     <div class="product">
-      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-de-academia.jpg" alt="roupa">
+      <img loading="lazy" src="fabio/postes/4.jpg" alt="roupa">
     </div>
     <div class="product">
-      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-de-academia-musculacao.jpg" alt="roupa">
+      <img loading="lazy" src="fabio/postes/5.jpg" alt="roupa">
     </div>
     <div class="product">
-      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-de-treino-instagram.jpg" alt="roupa">
+      <img loading="lazy" src="fabio/postes/6.jpg" alt="roupa">
     </div>
   </section>
   <hr class="colored">
@@ -215,7 +216,7 @@
 <div class="container">
     <section>
         <div class="product">
-          <img src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-instagram-de-academia.jpg" alt="Produto 1">
+          <img src="fabio/postes/7.jpg" alt="Produto 1">
           <p style=" color: #ffffff"><strong style="color: #ffbf00;">- <strong>Compromisso com a Saúde e Bem-Estar: </strong></p>
           <p style="text-align: justify; color: #f9f9f9;">Além do treinamento físico, a academia também valoriza a saúde mental e emocional dos alunos. <br>
             <br>
@@ -226,53 +227,51 @@
   </div>
 <!----------------------------------->
 
-  <style>
-    .product {
-        margin-top: 0px;
-        flex: 1 0 calc(50% - 20px);
-        box-sizing: border-box;
-        text-align: center;
+<div class="container">
+  <section>
+      <div class="product">
+        <img src="fabio/postes/8.jpg" alt="Produto 1">
+        <p style=" color: #ffffff"><strong style="color: #ffbf00;">- <strong>Aumento da Autoconfiança e Autoestima: </strong></p>
+        <p style="text-align: justify; color: #f9f9f9;">O progresso alcançado na academia, seja em termos de força, resistência ou aparência física, pode significar uma melhora significativa na autoconfiança e autoestima. <br>
+          <br>
+          Ver resultados tangíveis do seu esforço e dedicação pode aumentar a sensação de realização pessoal e confiança em si mesmo, refletindo positivamente em outras áreas da vida.
 
-      }
-      
-  </style>
+        </p>
 
+      </div>
+  </section>
+</div>
+<!----------------------------------->
+<hr class="colored">
+<section class="slider">
+   <div class="product">
+     <img loading="lazy" src="fabio/postes/10.jpg" alt="roupa">
+   </div>
+   <div class="product">
+     <img loading="lazy" src="fabio/postes/11.jpg" alt="roupa">
+   </div>
+   <div class="product">
+     <img loading="lazy" src="fabio/postes/12.jpg" alt="roupa">
+   </div>
+   <div class="product">
+     <img loading="lazy" src="fabio/postes/13.jpg" alt="roupa">
+   </div>
+   <div class="product">
+     <img loading="lazy" src="fabio/postes/14.jpg" alt="roupa">
+   </div>
+   <div class="product">
+    <img loading="lazy" src="fabio/postes/15.jpg" alt="roupa">
+  </div>
+ </section>
+ <p style=" text-align: center; color: #ffffff"><strong style="color: #ffbf00;">- <strong>Socialização e Senso de Comunidade:  </strong></p>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script>
-    $(document).ready(function(){
-        $('.slider').slick({
-            slidesToShow: 4, // Mostrar 4 produtos por vez
-            slidesToScroll: 1,
-            prevArrow: '<button class="slick-prev" style="background-color: #add8e6; color: #ffffff;">Anterior</button>',
-            nextArrow: '<button class="slick-next" style="background-color: #add8e6; color: #ffffff;">Próximo</button>',
-            responsive: [
-                {
-                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    });
-
-    // Abrir janela modal ao clicar no botão "Dicas"
-    document.getElementById('dicas-button').addEventListener('click', function() {
-      document.getElementById('modal').style.display = 'block';
-    });
-
-    // Fechar janela modal ao clicar fora dela
-    window.onclick = function(event) {
-      var modal = document.getElementById('modal');
-      if (event.target == modal) {
-        modal.style.display = 'none';
-      }
-    }
-  </script>
-
-  <!------------------------------------------------------------>
+ <p style="margin: 10px; text-align: center; color: #f9f9f9;">
+ A academia proporciona oportunidades para socialização e construção de relacionamentos. Ao frequentar a academia regularmente, você tem a chance de conhecer pessoas com interesses semelhantes e estabelecer novas amizades. <br>
+  <br>
+  Isso cria um senso de comunidade e pertencimento, o que pode ser motivador e inspirador em sua jornada de fitness.
+</p>
+ <hr class="colored">
+<!--------------------------------->
   <style>
 
     hr.colored {
@@ -312,9 +311,28 @@
     </style>
 
     <div class="instagram-container">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CydYA0sO2w1/?utm_source=ig_web_copy_link" data-instgrm-version="13"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C32bjjcrM4L/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" data-instgrm-version="13"></blockquote>
       <script async src="https://www.instagram.com/embed.js"></script>
   </div>
+
+  <div class="container">
+    <section>
+        <div class="product">
+          <img src="fabio/postes/16.jpg" alt="Produto 1">
+          <p style=" color: #ffffff"><strong style="color: #ffbf00;">- <strong>Transforme sua Vida na Academia Fábio Vasconcelos!</strong></p>
+          <p style="padding-bottom: 20px; text-align: justify; color: #f9f9f9; ">🌟 Em busca de uma vida mais saudável e ativa? Convidamos você a se juntar à família da Academia Fábio Vasconcelos! Aqui, oferecemos mais do que apenas equipamentos de última geração e treinos personalizados. Na nossa academia, você encontrará uma comunidade acolhedora e motivadora, pronta para apoiá-lo em sua jornada de fitness. <br>
+          <br>
+          Com uma equipe de instrutores altamente qualificados e uma variedade de modalidades, desde musculação até aulas de grupo empolgantes, há algo para todos os gostos e níveis de condicionamento físico. Além disso, nosso compromisso com a sua saúde vai além do treinamento físico, oferecendo orientação nutricional e serviços complementares para garantir seu bem-estar geral. <br>
+          <br>
+          Venha fazer parte da Academia Fábio Vasconcelos e descubra o que é possível alcançar quando você se compromete com sua saúde e felicidade! 💪🏋️‍♀️
+  
+          </p>
+  
+        </div>
+    </section>
+  </div>
+  <!----------------------------------->
+  <!----------------------------------->
 
   <!------------------------------------------------------------>
 
@@ -417,5 +435,57 @@
       document.getElementById('result').innerHTML = 'Seu IMC é: ' + bmi.toFixed(2) + '<br>' + 'Classificação: ' + result;
     });
   </script>
+  <a href="#" id="dicas-button" class="floating-button">IMC</a>
+
+  <!----------------------------------------------------->
+
+
+  <style>
+    .product {
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px);
+        box-sizing: border-box;
+        text-align: center;
+
+      }
+      
+  </style>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar 4 produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '',
+            nextArrow: '',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        }); 
+    });
+
+    // Abrir janela modal ao clicar no botão "Dicas"
+    document.getElementById('dicas-button').addEventListener('click', function() {
+      document.getElementById('modal').style.display = 'block';
+    });
+
+    // Fechar janela modal ao clicar fora dela
+    window.onclick = function(event) {
+      var modal = document.getElementById('modal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+  <!------------------------------------------------------------>
 </body>
 </html>
