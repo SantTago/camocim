@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UP SUPLEMENTOS</title>
+  <title>Academia Fabio Vasconcelos</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <style>
     /* Estilos CSS para tornar a página mais bonita e responsiva */
     body {
+        background-color: #3a3939;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       position: relative; /* Importante para o posicionamento dos botões flutuantes */
     }
     header {
-      background-image: url('https://wx.mlcdn.com.br/ponzi/production/portaldalu/48269.jpg?ims=fit-in/380x'); /* Adicionando a imagem de fundo */
+      background-image: url('https://pratiquefitness.com.br/blog/wp-content/uploads/2023/08/Como-mensurar-os-resultados-da-academia-de-forma-sensata-1.jpg'); /* Adicionando a imagem de fundo */
       background-color: #000000;
-      color: #ffffff;
+      color: #ffbf00;
       padding: 20px;
       text-align: center;
       background-attachment: fixed;
@@ -28,7 +31,7 @@
     .profile-img img {
       width: 150px;
       border-radius: 50%;
-      border: 5px solid gold;
+      border: 5px solid #8A3B96;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
       
     }
@@ -59,9 +62,9 @@
       padding: 20px;
       text-align: center; /* Centralizar as informações dos produtos */
       /* Adicionando sombra dourada */
-      box-shadow: 1px 1px 0 gold,
-                  2px 2px 0 gold,
-                  3px 3px 0 gold;
+      box-shadow: 1px 1px 0 #8A3B96,
+                  2px 2px 0 #8A3B96,
+                  3px 3px 0 #8A3B96;
     }
     .product-info h2 {
       margin-top: 0;
@@ -77,18 +80,19 @@
     }
     .contact-buttons a {
       display: inline-block;
-      background-color: #FFD700; /* Amarelo ouro */
-      color: #000000; /* Texto preto */
+      background-color: #8A3B96; /* Amarelo ouro */
+      color: #ffbf00; /* Texto preto */
       text-decoration: none;
       padding: 10px 0; /* Espaçamento vertical dentro do botão */
       margin: 10px 0; /* Espaçamento vertical entre os botões */
       border-radius: 5px;
       width: 45%; /* Largura dos botões */
       transition: background-color 0.3s ease;
-      color: black;
+      color: #ffbf00
     }
     .contact-buttons a:hover {
       background-color: #ffbf00; /* Amarelo ouro mais escuro ao passar o mouse */
+      color: #8A3B96;
     }
     .back-button {
       text-align: center;
@@ -96,16 +100,17 @@
     }
     .back-button a {
       display: inline-block;
-      background-color: gold;
+      background-color: #8A3B96;
       color: #ffffff;
       text-decoration: none;
       padding: 10px 20px;
       border-radius: 5px;
       transition: background-color 0.3s ease;
-      color: black;
+      color: #ffbf00;
     }
     .back-button a:hover {
       background-color: #ffbf00;
+      color: #8A3B96    ;
     }
    
     @media only screen and (max-width: 600px) {
@@ -126,13 +131,17 @@
         width: 100%; /* Largura total para botões em telas menores */
          margin: 20px;
       }
+      section{
+        flex-direction: column;
+      }
+      
       
     }
     .floating-button {
         position: fixed;
         top: 24px;
         right: -3px;
-        background-color: gold;
+        background-color: #8A3B96;
         color: #ffffff;
         border: none;
         width: 78px;
@@ -144,141 +153,133 @@
         text-align: center;
         line-height: 35px;
         text-decoration: none;
-        color: black;
+        color: #ffbf00;
     }
       
       .floating-button:hover {
         background-color: #ffbf00;
+        color: #8A3B96;
      
+      }
+      section{
+        display: flex;
       }
       
   </style>
 </head>
 <body>
-    <a href="dicas.html" class="floating-button">Dicas</a>
+    <a href="#" id="dicas-button" class="floating-button">Dicas</a>
 
   <header>
     <div class="profile-img">
-      <img src="perfil.jpg" alt="Imagem do Perfil">
+      <img src="fabio/perfil.jpg" alt="Imagem do Perfil">
     </div>
-    <h1 style="color: gold;">UP SUPLEMENTOS</h1>
     <div class="back-button">
       <a href="../../academias.html">Voltar</a>
     </div>
   </header>
   <div class="container">
-    <div class="product">
-      <img src="produtos/1.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>NOVA FÓRMULA</h2>
-        <p>Long Jack é um suplemento conhecido por sua excelente propriedade afrodisíaca e por sua capacidade de estimular a produção e a ação natural de hormônios andrógenos, principalmente a testosterona.</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="produtos/2.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>HIBISCUS E CAFEÍNA 60 CAPS 500MG - UNIÃO VEGETAL</h2>
-        <p>O hibisco é rico em substâncias antioxidantes como flavonoides e ácidos orgânicos. Estes nutrientes proporcionam diversos efeitos benéficos, entre eles, a ação diurética, impedindo a retenção de líquidos, e a capacidade de evitar o acúmulo de gorduras, principalmente na região da barriga e quadris. <br>
-          <br>
-          cafeína atua sobre todos os sistemas do corpo, por um tempo que varia entre 4 e 6 horas, estimulando a concentração e diminuindo a sensação de fadiga física e mental.  
-        </p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="produtos/3.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>BLEND PROTEIN 7 LEADER NUTRITION - 1,8KG</h2>
-        <p>Apresentamos a você o BLEND PROTEIN 7 da Leader Nutrition, o suplemento ideal para você alcançar seus objetivos de condicionamento físico e fortalecimento muscular. Com uma fórmula exclusiva e avançada, essa proteína em pó é perfeita para atletas e entusiastas do fitness que desejam maximizar seus resultados. <br>
-        <br>
-        O BLEND PROTEIN 7 combina sete diferentes fontes de proteína de alta qualidade, proporcionando um perfil completo de aminoácidos essenciais para promover a recuperação muscular e o crescimento. Essa combinação estratégica inclui proteína do soro do leite, proteína da carne, proteína da soja, proteína da clara do ovo, proteína do arroz, proteína da ervilha e proteína do leite. <br>
-        <br>
-        Cada porção de 30g do BLEND PROTEIN 7 fornece uma dose poderosa de 24g de proteína, com baixo teor de gordura e carboidratos. Essa proporção equilibrada de nutrientes ajuda a manter a massa muscular magra e a fornecer energia sustentada para os treinos intensos.
-      </p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="produtos/4.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>Ioimbina com cafeína 60cps um poderoso efeito construtivo </h2>
-        <p>o crescimento muscular é estimulado e a recuperação é mais rápida. Em resumo, esta erva melhora o desempenho, a disposição e a potência. Os efeitos podem incluir aumento da libido, aumento da sensação e da resistência.</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="produtos/5.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>Aumenta os níveis de energia.</h2>
-        <p>Promove sensação de bem-estar. <br>
-          Alivia sintomas de TPM e menopausa. <br>
-          Aumenta a fertilidade. <br>
-          Estimula a produção de hormônios pelo organismo. <br>
-          Controla a osteoporose. <br>
-          Aumenta a resistência física. <br>
-          Melhora a memória e a concentração.</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="produtos/6.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>PRÉ TREINO NUCLEAR RUSH </h2>
-        <p>Seus efeitos geram o aumento de força, foco, vasodilatação, postergação da fadiga muscular, anti-oxidação e liberação de endorfina. SEUS TREINOS NÃO SERÃO OS MESMOS
-          Um dos melhores pré treino nacional</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="produtos/7.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>Um hipercalórico completo best mass bodyshape 3kg</h2>
-        <p>
-          ARGININA <br>
-          CREATINA <br>
-          ZMA <br> 
-          FENO GREGO MAIS BORO <br>
-          Com 15 g de proteínas <br>
-          Além de vitaminas e minerais. <br>
-          hipercalórico é um suplemento que traz uma combinação de carboidratos, vitaminas, aminoácidos, minerais e proteínas de alto valor biológico. Ele é desenvolvido especialmente para quem deseja ganhar massa muscular e aumentar o peso.</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="produtos/8.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>O Pré hormonal Testo-Gh</h2>
-        <p>Aumenta os níveis de testosterona, o que proporciona diversos benefícios, como por exemplo, aumento da força e performance aeróbica, ganho de massa magra, melhora do sono e da imunidade, reduz gordura corporal, além de controlar pressão arterial.</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="produtos/9.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>A fórmula de X7 PRE WORKOUT®</h2>
-        <p>é inteligente e reúne 7 grandes beneficiadores de um excelente pré-treino, auxiliando o desempenho do organismo nas práticas físicas e ajudando na melhora dos resultados dos treinos. Sua composição é perfeita para a rotina do praticante de exercícios ou atletas, porque estimula seu corpo a alcançar seus objetivos.</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="produtos/10.jpg" alt="Produto 1">
-      <div class="product-info">
-        <h2>CREATINE® Vitafor</h2>
-        <p>È um suplemento alimentar, composto por creatina monohidratada de alta qualidade. <br>
-          Um dos suplementos mais pesquisados cientificamente e entre os mais utilizados no esporte <br>
-          Benefícios do consumo: <br>
-          100% Creatina Monohidratada; <br>
-          Auxílio no aumento do desempenho físico durante exercícios repetidos de curta duração e alta intensidade.
-          Alta solubilidade. <br>
-          <hr>
-          Diferenciais: <br>
+    <h1 style=" margin: auto; text-align: center; color: gold;">Academia Fabio Vasconcelos</h1>
+    <section>
+        <div class="product">
+          <img src="fabio/postes/1.jpg" alt="Produto 1">
+          <p style=" color: #ffffff"><strong style="color: #ffbf00;">- <strong>Profissionalismo e Qualidade de Ensino:</strong></p>
+          <p style="text-align: justify; color: #f9f9f9;">A academia é reconhecida por sua equipe altamente qualificada de instrutores e treinadores. <br>
+            <br>
+            Eles não apenas têm um profundo conhecimento técnico, mas também são dedicados a ajudar os alunos a atingir seus objetivos com segurança e eficácia.</p>
 
-          Excelente custo-benefício;
-          Vegano;
-          Versatilidade no consumo, pode ser adicionado à bebida de sua preferência ou diluído em água;
-          Praticidade versão 100g e 300g
-          Selo de Qualidade VLabor.
-                    
-        </p>
-      </div>
-    </div>
-
+        </div>
+    </section>
   </div>
+ <!------------------------------------------------------------>
+ <hr class="colored">
+ <section class="slider">
+    <div class="product">
+      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-academia.jpg" alt="roupa">
+    </div>
+    <div class="product">
+      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-academia-fitness.jpg" alt="roupa">
+    </div>
+    <div class="product">
+      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-de-academia.jpg" alt="roupa">
+    </div>
+    <div class="product">
+      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-de-academia-musculacao.jpg" alt="roupa">
+    </div>
+    <div class="product">
+      <img loading="lazy" src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-de-treino-instagram.jpg" alt="roupa">
+    </div>
+  </section>
+  <hr class="colored">
+<!----------------------------------------------------->
+<div class="container">
+    <section>
+        <div class="product">
+          <img src="https://blog.nextfit.com.br/wp-content/uploads/2023/12/post-instagram-de-academia.jpg" alt="Produto 1">
+          <p style=" color: #ffffff"><strong style="color: #ffbf00;">- <strong>Compromisso com a Saúde e Bem-Estar: </strong></p>
+          <p style="text-align: justify; color: #f9f9f9;">Além do treinamento físico, a academia também valoriza a saúde mental e emocional dos alunos. <br>
+            <br>
+            Eles oferecem workshops, palestras e serviços complementares, como orientação nutricional e aconselhamento psicológico, para garantir que os membros tenham suporte holístico em sua jornada de fitness.</p>
+
+        </div>
+    </section>
+  </div>
+<!----------------------------------->
+
+  <style>
+    .product {
+        margin-top: 0px;
+        flex: 1 0 calc(50% - 20px);
+        box-sizing: border-box;
+        text-align: center;
+
+      }
+      
+  </style>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar 4 produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev" style="background-color: #add8e6; color: #ffffff;">Anterior</button>',
+            nextArrow: '<button class="slick-next" style="background-color: #add8e6; color: #ffffff;">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+
+    // Abrir janela modal ao clicar no botão "Dicas"
+    document.getElementById('dicas-button').addEventListener('click', function() {
+      document.getElementById('modal').style.display = 'block';
+    });
+
+    // Fechar janela modal ao clicar fora dela
+    window.onclick = function(event) {
+      var modal = document.getElementById('modal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
 
   <!------------------------------------------------------------>
   <style>
+
+    hr.colored {
+        border: none; /* Remove a borda padrão */
+        height: 2px; /* Define a altura da linha */
+        background-color:#ffbf00; /* Define a cor de fundo da linha */
+      }
     .instagram-container {
       position: relative;
       margin: auto;
@@ -319,9 +320,102 @@
 
   <!-- Botões de contato flutuantes -->
   <div class="contact-buttons">
-    <a href="https://api.whatsapp.com/send/?phone=5588994435729&text=" target="_blank">WhatsApp</a>
-    <a href="https://www.instagram.com/up1suplementos/" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/academiafabiovasconcelos/reels/" target="_blank">Instagram</a>
   </div>
+
+  <!-- Janela modal para a calculadora de IMC -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Calculadora de IMC</h2>
+      <form id="imc-form">
+        <label for="height">Altura (cm):</label>
+        <input type="number" id="height" name="height" required><br><br>
+        <label for="weight">Peso (kg):</label>
+        <input type="number" id="weight" name="weight" required><br><br>
+        <button type="submit">Calcular</button>
+      </form>
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <style>
+    /* Estilos para a janela modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #imc-form {
+      text-align: center;
+    }
+
+    #result {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    // Fechar janela modal ao clicar no botão "Fechar"
+    document.getElementsByClassName('close')[0].addEventListener('click', function() {
+      document.getElementById('modal').style.display = 'none';
+    });
+
+    // Calcular IMC
+    document.getElementById('imc-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var height = parseInt(document.getElementById('height').value);
+      var weight = parseInt(document.getElementById('weight').value);
+      var bmi = weight / ((height / 100) * (height / 100));
+      var result = '';
+      if (bmi < 18.5) {
+        result = 'Abaixo do peso';
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        result = 'Peso normal';
+      } else if (bmi >= 25 && bmi < 29.9) {
+        result = 'Sobrepeso';
+      } else if (bmi >= 30 && bmi < 34.9) {
+        result = 'Obesidade Grau I';
+      } else if (bmi >= 35 && bmi < 39.9) {
+        result = 'Obesidade Grau II';
+      } else {
+        result = 'Obesidade Grau III';
+      }
+      document.getElementById('result').innerHTML = 'Seu IMC é: ' + bmi.toFixed(2) + '<br>' + 'Classificação: ' + result;
+    });
+  </script>
 </body>
 </html>
-
