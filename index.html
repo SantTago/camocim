@@ -27,7 +27,45 @@
 
      
     <style>
-
+      #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white; /* Cor da tela branca */
+        z-index: 9999; /* Para garantir que a tela branca esteja sempre na parte superior */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      
+      #logo {
+        width: 100px; /* ajuste conforme necessário */
+        height: auto;
+        margin-bottom: 20px;
+      }
+      
+      #loading-bar {
+        width: 80%; /* Largura da barra de carregamento */
+        height: 5px; /* Altura da barra de carregamento */
+        background-color: #f0f0f0; /* Cor de fundo da barra de carregamento */
+      }
+      
+      #loading-progress {
+        height: 100%;
+        background-color: #007bff; /* Cor da barra de progresso */
+        width: 0; /* Inicialmente, a barra de progresso tem largura zero */
+      }
+      
+      #content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
       body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -574,13 +612,6 @@ button:hover {
 }
 
   
-
-
-
-
-
-
-
 </style>
 
 <div class="music-display">
@@ -696,6 +727,15 @@ button:hover {
    
    
   </div>
+  <div id="overlay">
+    <img src="icon/logo da pagina.png" alt="Logo" id="logo">
+    <div id="loading-bar">
+      <div id="loading-progress"></div>
+    </div>
+  </div>
+  <!-- Conteúdo da sua página aqui -->
+
+  <script src="script.js"></script>
   
 
     <div class="slideshow-container">
