@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criador de Currículo</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Criador de Currículo</h1>
+    <form id="resumeForm">
+      <label for="fullName">Nome Completo:</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Telefone:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="experience">Experiência:</label>
+      <textarea id="experience" name="experience" rows="4"></textarea>
+
+      <label for="education">Educação:</label>
+      <textarea id="education" name="education" rows="4"></textarea>
+
+      <button type="submit">Gerar Currículo</button>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.26.1/docxtemplater.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script>
+    document.getElementById('resumeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById('fullName').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const experience = document.getElementById('experience').value;
+      const education = document.getElementById('education').value;
+
+      const content = `
+        Nome: ${fullName}
+        Email: ${email}
+        Telefone: ${phone}
+
+        Experiência:
+        ${experience}
+
+        Educação:
+        ${education}
+      `;
+
+      const zip = new JSZip();
+      zip.loadAsync(loadFile("template.docx"))
+        .then(function (doc) {
+          const templater = new window.docxtemplater();
+          templater.loadZip(doc);
+          templater.setData({
+            content: content
+          });
+          try {
+            templater.render();
+          } catch (error) {
+            console.log(error);
+            return Promise.reject(error);
+          }
+          const generatedDoc = templater.getZip().generate({type: 'blob'});
+          saveAs(generatedDoc, 'meu_curriculo.docx');
+        }).catch(function(error) {
+          console.error('Erro ao carregar o arquivo de modelo:', error);
+        });
+    });
+
+    function loadFile(url, callback) {
+      return new Promise(function (resolve, reject) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            resolve(xhr.response);
+          } else {
+            reject(xhr.statusText);
+          }
+        };
+        xhr.onerror = function() {
+          reject(xhr.statusText);
+        };
+        xhr.send();
+      });
+    }
+  </script>
+</body>
+</html>

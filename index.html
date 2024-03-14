@@ -1,1781 +1,362 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Registra Camocim</title>
-    <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="estilo/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
-  
-    <!-- Meta Tags para SEO -->
-    <meta name="description" content="Registra Camocim">
-    <meta name="keywords" content="Camocim, ceara, noticias, turismo, jericoacoara, passeios, Camocim online, policia 24 horas, Registra Camocim ">
-    <meta name="author" content="Tiago viana da cruz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registra Bolos</title>
+  <link rel="stylesheet" href="../estilo/style.css">
+  <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-    <!--scripto dos anuncios -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1609846937178820"
-     crossorigin="anonymous"></script>
-
-     
-    <style>
-      #overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: white; /* Cor da tela branca */
-        z-index: 9999; /* Para garantir que a tela branca esteja sempre na parte superior */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      
-      #logo {
-        width: 100px; /* ajuste conforme necessário */
-        height: auto;
-        margin-bottom: 20px;
-      }
-      
-      #loading-bar {
-        width: 80%; /* Largura da barra de carregamento */
-        height: 5px; /* Altura da barra de carregamento */
-        background-color: #f0f0f0; /* Cor de fundo da barra de carregamento */
-      }
-      
-      #loading-progress {
-        height: 100%;
-        background-color: #007bff; /* Cor da barra de progresso */
-        width: 0; /* Inicialmente, a barra de progresso tem largura zero */
-      }
-      
-      #content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #0077ff;
-       
-       
-      }
-      
-     
-      
-      section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        
-        box-sizing: border-box;
-        
-        margin: 0 auto;
-      }
-      
-      .product {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        margin-top: 0px;
-        flex: 1 0 calc(50% - 20px);
-        box-sizing: border-box;
-        text-align: center;
-        padding: 36px;
-      }
-      
-      img {
-        max-width: 100%;
-        height: auto;
-        width: 100%;
-      }
-      
-      footer {
+  <style>
+    .saiba-mais > h2 {
+      text-align: center;
+      border: 0px solid #ffffff;
+      padding: 0px;
+      font-family: var(--destaque);
+      padding-top: 40px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1d5d5;
+      box-shadow: 0px 0px 15px black;
+    }
+    header {
         background-color: #333;
         color: #fff;
         text-align: center;
         padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 50%;
-      }
-      
-      .slick-next {
-        right: 4px;
-      }
-      
-      .slick-prev {
-        left: 4px;
-        
-      }
-      
-      .perfil {
-        max-width: 50px;
+    }
+    section {
         display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: auto;
         flex-wrap: wrap;
-        background-image: url();
-      }
-      
-      .logomarca {
-        padding-top: 5px;
-        max-width: 100px;
-        width: 100%;
-        text-align: center;
-        margin-bottom: -55px;
-      }
-
-      .logomarca-flutuante{
-        padding: 9px;
-        padding-top: 4px;
-        max-width: 152px;
-        /* width: 117%; */
-        text-align: center;
-        /* margin-bottom: -95px; */
-        margin: auto;
-      }
-      
-      .logomarca img {
-        max-width: 100%;
-        height: auto;
-      }
-      
-      @media only screen and (max-width: 490px) {
-        .logomarca {
-          padding: 9px;
-          max-width: 212px;
-          margin-bottom: -20px;
-          
-      }
-
-        .menu {
-          text-align: center;
-          
-        }
-        header {
-          background-color: #0077FF;
-          color: #fff;
-          text-align: center;
-          padding: 10px;
-          display: flex;
-          /* justify-items: center; */
-          /* flex-wrap: wrap; */
-          flex-direction: column-reverse;
-          align-items: center;
-      }
-      }
-    
-  
-      #search-box {
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: 15px;
-        flex: 1;
-        outline: none;
-      }
-  
-      #search-button {
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #fff;
-        border-radius: 5px;
-        background-color: #fff;
-        color: #007bff;
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-  
-      #search-button:hover {
-        background-color: #0056b3;
-        color: #fff;
-      }
-  
-      #search-results {
-        padding-right: 17px;
-        text-align: end;
-        max-width: 100%;
-        margin: 0;
-        height: auto;
-        background-color: #007bff;
-        color: white;
-        display: flex;
-        flex-direction: column-reverse;
-        position: absolute;
-        margin-top: 70px;
-        padding-left: 16px;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 80%px;
+        height: 80%;
     }
-
-
-
-.empresas{
-  text-align: center;
-  color: #ffffff;
-  font-family: var(--destaque);
-  font-size: 16px;
-  background-color: var(--cor1);
-  margin: 0px auto 0px auto;
-  max-width: 948px;
-}
-:root {
-  --cor1: #042940;
-  --cor2: #005C53;
-  --cor3: #9FC131;
-  --cor4: #DBF227;
-  --cor5: #D6D58E;
-  --cor6: #0077ff;
-  --cor7: #8bd6f1;
-  --cor8: #00425c;
-
-
-  --normal: "Qureah", Verdana, Helvetica,sans-serif ;
-  --principal: 'GABRWFFR', Verdana, Helvetica,sans-serif ;
-  --destaque: 'KGRedHands', Verdana, Helvetica,sans-serif ;
-}
-  
-      #search-results a {
-        text-decoration: none;
-        color: white;
-        padding: 5px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-  
-      #search-results a:hover {
-        background-color: #0056b3;
-        color: #fff;
-      }
-      @media only screen and (max-width: 600px) {
-      
-        /* Adiciona estilo para exibir os resultados da pesquisa em telas menores que 600px */
-        #search-results {
-          display: block !important;
-        }
-
-       
-
-
-        #search-results {
-          padding-right: 17px;
-          text-align: end;
-          max-width: 100%;
-          margin: 0;
-          height: auto;
-          /* background-color: #007bff; */
-          color: white;
-          display: flex;
-          flex-direction: column-reverse;
-          /* position: absolute; */
-          /* margin-top: 70px; */
-          padding-left: 16px;
-      }
-      
-        /* Esconde a div "icon2" em telas menores que 600px */
-        .icon2 {
-          display: none;
-        }
-      
-        /* Ajusta o estilo do botão "Lojas" em telas menores que 600px */
-        .mobile-only {
-          display: block;
-        }
-      }
-      
-        #search-box {
-          #search-box {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            
-        }
-        }
-  
-        #search-button {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #007bff;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-
-        #search-results a {
-          text-decoration: none;
-          color: white;
-          padding: 0px;
-          transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        
-
-        
-
-    
-
-    .menu{
-      display: flex;
-      text-align: left;
-      justify-content: center;
-      padding-left: 8px;
-      padding-top: 9px;
-  }
-
-  main {
-    max-width: 950px;
-    background-color: white;
-  }
-
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-.pagination button {
-    max-width: 43px;  
-    margin: 0 5px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    margin-bottom: 24px;
-}
-.pagination button.active {
-    background-color: #007bff;
-    color: #fff;
-}
-
-
-
-#to-news-btn {
-  right: -7px;
-  top: 20px;
-  z-index: 1000;
-  transform: scale(0); /* Inicia com escala zero para a animação */
-}
-
-#content {
-  padding: 20px;
-  line-height: 1.6;
-}
-
-#Botao {
-  
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #ffffff;
-  color: #150061;
-  text-decoration: none;
-}
-
-#Botao:hover{
-  color: #ff8800;
-}
-
-#empresas{
-  text-align: center;
-  color: #ffffff;
-  font-family: var(--destaque);
-  font-size: 13px;
-  background-color: var(--cor1);
-  margin: 0px auto 0px auto;
-  max-width: 948px;
-  margin: 10px;
-}
-
-
-  </style>
-  </head>
-<body>
-  
-
-  <header>
-
-
-    <div class="logomarca">
-      <img  id="logomarca-flutuante" src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
-    </div>
-
-
-    
-  </header>
-
-  
-
-  <div class="menu">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="Serviços/moto-taxi.html">serviços</a>
-      <a href="https://forms.gle/p1bZo5Lfj3NJAe1X8" target="_blank" >Cadastrar</a>
-
-    </nav>
-  </div>
-
-
-<!-----------------  hover do lojas-------------------------------------->
-<style>
-  .mobile-only {
-    display: none;
-    background-color: var(--cor1);
-    color: #fff;
-    /* padding-bottom: 10px; */
-  font-size: 16px;
-    border: none;
-    border-radius: 0px 5px 0px 0px;
-    cursor: pointer;
-    margin-bottom: 0px;
-    box-shadow: -15px 15px 20px 18px #ffffff;
-    font-weight: 600;
-    max-width: 100px;
-}
-
-button:hover {
-  background-color: #00ff6a;
-  color: white;
-  transition: 0.1s;
-  box-shadow: 0px 0px 15px rgb(0, 238, 255);
-}
-
-  .mobile-only {
-    display: none;
-  }
-
-  .icon2 {
-    display: none; /* Inicialmente oculta */
-  }
-
-  @media only screen and (max-width: 600px) {
-    .mobile-only {
-      display: block;
+    .product {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin: 10px;
+      margin-top: 0px;
+      flex: 1 0 calc(50% - 20px); 
+      box-sizing: border-box;
+      text-align: center;
     }
-  }
-
-  @media only screen and (min-width: 601px) {
-    .icon2 {
-      display: block;
+    main > img {
+      max-width: 100%;
+      height: auto;
+      width: 100%; 
     }
-  }
-
-
-  
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var lojasBtn = document.getElementById("lojasBtn");
-    var icon2 = document.querySelector(".icon2");
-    var searchResults = document.getElementById("search-results");
-  
-    lojasBtn.addEventListener("click", function () {
-      // Alternar a visibilidade da classe "icon2" ao clicar no botão "Lojas"
-      if (icon2.style.display === "none" || icon2.style.display === "") {
-        icon2.style.display = "block";
-      } else {
-        icon2.style.display = "none";
-      }
-    });
-  
-    function handleResize() {
-      var isMobile = window.innerWidth <= 600;
-  
-      // Exibe ou oculta o botão "Lojas" com base na largura da tela
-      lojasBtn.style.display = isMobile ? "block" : "none";
-  
-      // Ajusta a visibilidade dos resultados da pesquisa com base na largura da tela
-      searchResults.style.display = isMobile ? "block" : "block";
-  
-      // Se a tela for maior que 600px, exibe a div "icon2"
-      icon2.style.display = window.innerWidth > 600 ? "block" : "none";
+    main{
+      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.589); /* Alterando a cor de fundo para ser mais transparente */
+      padding: 20px; /* Adicionando algum espaço para separar o conteúdo do fundo */
     }
-  
-    // Adiciona um ouvinte para lidar com alterações no tamanho da janela
-    window.addEventListener("resize", handleResize);
-  
-    // Inicializa o estado quando a página é carregada
-    handleResize();
-  });
-  
-</script>
-
-<style>
-
-  body {
-    height: 50px;
-}
-
-  .music-display {
-    display: flex;
-    height: 80%;
-    width: 100%;
-    justify-content: center;
-    align-items: flex-end;
-    transition: 0.3s;
-    margin-bottom: -63px;
-  }
-
-  .bar {
-      width: 10px;
-      margin: 0 4px;
-      background: linear-gradient(to top, #ff0000, #f80000,#ff0000);
-      border-radius: 5px 5px 0 0;
-      animation: musicAnimation 0.5s ease-in-out infinite alternate;
-  }
-
-  .bar:nth-child(2n) {
-      animation-delay: 0.1s;
-  }
-
-  .bar:nth-child(3n) {
-      animation-delay: 0.2s;
-  }
-
-  .bar:nth-child(4n) {
-      animation-delay: 0.3s;
-  }
-
-  .bar:nth-child(5n) {
-      animation-delay: 0.4s;
-  }
-
-  @keyframes musicAnimation {
-      0%, 100% {
-          height: 50%;
-      }
-      50% {
-          height: 80%;
-      }
-  }
-
-
-  @media only screen and (max-width: 600px) {
-    
-
-    .music-display {
-      display: flex;
-      height: 80%;
-      width: 100%;
-      justify-content: center;
-      align-items: flex-end;
-      transition: 0.3s;
-      
+    .paragrafo{
+      max-width: 800px;
+      padding: 10px;
+      background-color:rgb(255 255 255 / 14%);;
     }
-    
-  
-    #img-fm{
-      display: block;
-      width: 260px;
-      height: 60px;
-      margin-top: 60px;
-      border-radius: 20px 20px 0px 0px;
-    
-    }
-    
-  }
-
-  #fm {
-    height: 30px;
-    width: 300px;
-    padding-bottom: 10px;
-  }
-  #img-fm{
-    display: block;
-    width: 260px;
-    height: 60px;
-    margin-top: 60px;
-  
-  }
-
-
-  .radio-fm{
-    display: flex;
-    box-sizing: border-box;
-    margin: 0 auto;
-    align-items: center;
-    flex-direction: column;
-    
-}
-
-  
-</style>
-
-<div class="music-display">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-</div>
-
-<section class="radio-fm">
-  <a href="https://www.socialcreator.com/radiowebjesuseavida" target="_blank"><img src="icon/banner-fm.jpg"alt="159615-208318" id="img-fm"></a>
-  <audio controls id="fm">
-    <source src="https://encurtador.com.br/vzIN1" type="audio/mpeg">
-    Seu navegador não suporta o elemento de áudio.
-  </audio>
-
-</section>
- 
-<button id="lojasBtn" class="mobile-only">Lojas</button>
-
-<div class="icon2">
-  <div class="icon">
-    <div class="hoteis-cor">
-      <abbr title="Hotel"><a href="hoteis.html"><img src="https://i.ibb.co/5csDH46/hotel.png" alt="hotel"></a></abbr>
-    </div>
-
-    <div class="passeio-cor">
-      <abbr title="passeios"><a href="passeios.html"><img src="icon/turismo.png" alt="gpasseios"></a></abbr>
-    </div>
-
-    <div class="academia-cor">
-      <abbr title="passeios"><a href="academias.html"><img src="icon/academia.png" alt="gpasseios"></a></abbr>
-    </div>
-    
-    <div class="beleza-cor1">
-      <abbr class="beleza-icon" title="Moda Feminina"><a href="beleza.html"><img src="https://i.ibb.co/GtZGHN3/beleza.png" alt="beleza"></a>
-      </abbr>
-  </div>
-  
-  <div class="roupas-cor">
-      <abbr title="Moda Mascolino"><a href="roupas.html"><img src="https://i.ibb.co/2t4qc02/roupa.png" alt="roupa"></a></abbr>
-    </div>
-    <div class="gasolina-cor">
-      <abbr title="Postos de Gasolina"><a href="gasolina.html"><img src="https://i.ibb.co/kGSMYZS/gasolina.png" alt="gasolina"></a></abbr>
-    </div>
-
-  
-    <div class="mercadinho-cor">
-      <abbr title="Super Mercados"><a href="mercado.html"><img src="https://i.ibb.co/vQZVPf6/mercado.png" alt="mercado"></a></abbr>
-    </div >
-    <div class="grafica-cor">
-      <abbr title="Graficas"><a href="grafica.html"><img src="https://i.ibb.co/YB1nkJB/grafica.png" alt="grafica"></a></abbr>
-    </div >
-    <div class="construçao-cor">
-      <abbr title="Construção"><a href="construçao.html"><img src="https://i.ibb.co/tLM1TSm/constru-ao.png" alt="constru-ao"></a></abbr>
-    </div >
-    <div class="prefeitura-cor">
-      <abbr title="festa"><a href="Festa.html"><img src="icon/festa.png" alt="festa"></a></abbr>
-    </div >
-    <div class="restaurante-cor">
-      <abbr title="restaurantes"><a href="restaurante.html"><img src="https://i.ibb.co/pbSc3bz/restaurante.png" alt="restaurante"></a></abbr>
-    </div >
-  
-    <div class="sorveteria-cor">
-      <abbr title="Confeitaria"><a href="confeitaria.html"><img src="https://i.ibb.co/SNS15Tj/sorveteria.png" alt="sorveteria"></a></abbr>
-    </div >
-
-    <div class="padaria-cor">
-      <abbr title="Padaria"><a href="padaria.html"><img src="https://i.ibb.co/Ct7T6Wh/padaria.png" alt="padaria"></a></abbr>
-    </div >
-    
-    <div class="farmacia-cor">
-      <abbr title="farmacias"><a href="farmacia.html"><img src="https://i.ibb.co/YTZ2NGc/farmacia.png" alt="farmacia"></a></abbr>
-    </div >
-    <div class="banco-cor">
-        <abbr title="Bancos"><a href="bancos.html"><img src="https://i.ibb.co/gD1z4kr/banco.png" alt="banco"></a></abbr>
-    </div >
-    <div class="adulto-cor">
-      <abbr title="Sex Shop"><a href="sex-shop.html"><img src="https://i.ibb.co/VvnCCWy/18.png" alt="18" ></a></abbr>
-  </div >
-</div>
-  
-
-  <style>
-    .icon2 {
-      display: block; /* Ícone visível por padrão */
-    }
-
-    @media only screen and (max-width: 600px) {
-      .icon2 {
-        display: none; /* Oculta o ícone em telas menores que 600 pixels */
-      }
-    }
-
-    #preços{
-      margin: auto;
-      font-size: larger;
-    }
-
-    .conteudo{
-      max-width:100vw ;
-      padding: 15px;
-    }
-    
-  
-  </style>
-
-    <!------------------------------->
-    
-   
-   
-  </div>
-  <div id="overlay">
-    <img src="icon/logo da pagina.png" alt="Logo" id="logo">
-    <div id="loading-bar">
-      <div id="loading-progress"></div>
-    </div>
-  </div>
-  <!-- Conteúdo da sua página aqui -->
-  <div id="content">
-    <p></p>
-  </div>
-  <script src="script.js"></script>
-  
-
-    <div class="slideshow-container">
-      <div class="mySlides">
-        <img src="academia/suplemento/banner.jpg" alt="Suplemento">
-      </div>
-     
-      <div class="mySlides">
-        <img src="https://i.ibb.co/T47vRM9/banner.webp" alt="vilage">
-      </div>
-
-      <div class="mySlides">
-        <img src="https://i.ibb.co/gRwQ6Mw/banner-novo.jpg" alt="banner-novo">
-      </div>
-
-      <div class="mySlides">
-        <img src="academia/li_closet/banner-1.jpg" alt="clost">
-      </div>
-
-      <div class="mySlides">
-        <img src="festa/debora/banner.jpg" alt="vilage">
-      </div>
-      
-      <div class="mySlides">
-        <img src="img_hoteis/Camozen_Resort_&_Spa/banner.webp" alt="camozen">
-      </div>
-
-      <div class="mySlides">
-        <img src="https://i.ibb.co/rcDnfsF/banner.webp" alt="lauge">
-      </div>
-
-
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    
-    <!------------------------------->
-    
-    <script>
-      let slideIndex = 1;
-      showSlides(slideIndex);
-      autoSlide(); // Inicia o slideshow automático
-    
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-    
-      function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("mySlides");
-    
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-    
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-    
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-    
-        slides[slideIndex - 1].style.display = "block";
-      }
-    
-      function autoSlide() {
-        setInterval(function() {
-          plusSlides(1);
-        }, 4000); // Avança para o próximo slide a cada 2 segundos
-      }
-    </script>
-
-    </div>
-    <h2 class="empresas">Home</h2>
-
-    
-    <!--------------------------------------------------->
-    
-  <main>
-
-      
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/banner-2.webp" alt="image png">
-      </div>
-    </div>
-    <section class="slider">
-
-      <div class="product">
-        <img loading="lazy"src="img_hoteis/Camozen_Resort_&_Spa/001.webp" alt="image png">
-    
-    
-      </div>
-
-      <div class="product">
-        <img loading="lazy"src="img_hoteis/Camozen_Resort_&_Spa/002.webp" alt="image png">
-      </div>
-      
-      <div class="product">
-        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/003.webp" alt="image png">
-      </div>
-    
-      <div class="product">
-        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/004.webp" alt="image png">
-      </div>
-    
-      <div class="product">
-        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/005.webp" alt="image png">
-      </div>
-    
-      <div class="product">
-        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/006.webp" alt="image png">
-      </div>
-    
-      
-    </section>  
-  </section>  
-  <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #014205;">Camozen </h1>
-  <p class="conteudo">Resort e Spa Camozen, onde o luxo encontra a excelência em hospitalidade. Localizado no coração da cidade, oferecemos uma experiência única para os viajantes exigentes. Com quartos espaçosos, comodidades de primeira classe e vistas deslumbrantes, sua estadia conosco será inesquecível. Descubra o conforto e o serviço excepcional que fazem do Resort e Spa Camozen a escolha ideal para sua próxima viagem.</p>
-
-    <a id="empresas" href="img_hoteis/Camozen_Resort.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
-    </section>
-
-       <!------------------------------------------->
-    
-       <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-       <div class="perfil-bloco">
-         <div>
-           <img loading="lazy" src="confeitaria/fabia-bolos/banner.webp" alt="image png">
-         </div>
-       </div>
-       <section class="slider">
-   
-         <div class="product">
-           <img loading="lazy" src="confeitaria/fabia-bolos/001.webp" alt="image png">
-       
-       
-         </div>
-   
-         <div class="product">
-           <img loading="lazy" src="confeitaria/fabia-bolos/002.webp" alt="image png">
-         </div>
-         
-         <div class="product">
-           <img loading="lazy" src="confeitaria/fabia-bolos/003.webp" alt="image png">
-         </div>
-       
-         <div class="product">
-           <img loading="lazy" src="confeitaria/fabia-bolos/004.webp" alt="image png">
-         </div>
-       
-         <div class="product">
-           <img loading="lazy" src="confeitaria/fabia-bolos/005.webp" alt="image png">
-         </div>
-       
-         <div class="product">
-           <img loading="lazy" src="confeitaria/fabia-bolos/006.webp" alt="image png">
-         </div>
-       </section>  
-       <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #fca0d9;">Sonho Doces da Faby </h1>
-       <p class="conteudo">Sonho Doces da Faby, onde cada doce é uma obra de arte feita com amor e dedicação. Com uma variedade de bolos e doces deliciosos, nós transformamos seus sonhos em realidade açucarada. De festas de aniversário a eventos especiais, cada criação é uma celebração de sabor e criatividade. Delicie-se com nossas tentações doces e deixe sua próxima ocasião ainda mais especial com Sonho Doces da Faby.</p>
-   
-       <a id="empresas" href="confeitaria/fabia-bolos.html">
-         <h2  id="Botao">Saiba mais</h2>
-       </a>
-   
-   
-
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img loading="lazy" src="academia/academias/fabio/banner.jpg" alt="image png">
-      </div>
-    </div>
-    <section class="slider">
-      <div class="product">
-        <img loading="lazy" src="academia/academias/fabio/postes/1.jpg" alt="roupa">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="academia/academias/fabio/postes/2.jpg" alt="roupa">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="academia/academias/fabio/postes/3.jpg" alt="roupa">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="academia/academias/fabio/postes/4.jpg" alt="roupa">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="academia/academias/fabio/postes/5.jpg" alt="roupa">
-      </div>
-    </section>
-
-    <h1 class="conteudo" id="cor" style="color: #fcff4f; background-color: #a5009d;">Academia Fábio Vasconcelos </h1>
-    <p class="conteudo">Reconhecida por sua excelência no ensino, com professores qualificados e uma abordagem inovadora que integra teoria e prática. Prepara os alunos para os desafios do mercado, destacando-se pelos sucessos alcançados por seus ex-alunos.</p>
-    
-
-    <a id="empresas" href="academia/academias/fabiovasconcelos.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
- 
-  <!--------------------------------------------------->
-
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/banner.webp" alt="image png">
-      </div>
-    </div>
-    <section class="slider">
-      <div class="product">
-        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/004.webp" alt="roupa">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/003.webp" alt="roupa">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/002.webp" alt="roupa">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/001.webp" alt="roupa">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/005.webp" alt="roupa">
-      </div>
-    </section>
-
-    <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #ce0000;">Pimenta d'Cheiro </h1>
-    <p class="conteudo">Pimenta d'Cheiro, sua nova referência em moda masculina. Localizada no coração da cidade, nossa loja oferece uma seleção única de roupas e acessórios para homens modernos e estilosos. Com peças de alta qualidade e estilo exclusivo, estamos aqui para ajudá-lo a expressar sua personalidade e destacar sua confiança. De ternos elegantes a roupas casuais, na Pimenta d'Cheiro você encontrará tudo o que precisa para se destacar em qualquer ocasião.</p>
-
-    <a id="empresas" href="moda_mascolina/pimenta-dcheiro.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
- 
-  <!--------------------------------------------------->
-    
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-      <div class="perfil-bloco">
-        <div>
-          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/banner.webp" alt="image png">
-        </div>
-      </div>
-      <section class="slider">
-
-        <div class="product">
-          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto2/1.jpg" alt="image png">
-      
-      
-        </div>
-
-        <div class="product">
-          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto3/1.jpg" alt="image png">
-        </div>
-        
-        <div class="product">
-          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto4/1.jpg" alt="image png">
-      
-      
-        </div>
-        <div class="product">
-          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto5/1.jpg" alt="image png">
-      
-      
-        </div>
-        <div class="product">
-          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto6/1.jpg" alt="image png">
-      
-      
-        </div>
-
-        <div class="product">
-          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto7/1.jpg" alt="restaurante">
-      
-      
-        </div>
-      </section>  
-      <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #000000;">Cavalcante</h1>
-      <p class="conteudo">Cavalcante, sua boutique de moda masculina. Localizada no coração da cidade, nossa loja oferece uma seleção exclusiva de roupas e acessórios para o homem moderno e elegante. Com peças de alta qualidade e estilo impecável, cada visita à Cavalcante é uma jornada de autodescoberta e sofisticação. De ternos clássicos a roupas casuais chiques, estamos aqui para elevar o seu guarda-roupa para o próximo nível.</p> 
-
-      <a id="empresas" href="moda_mascolina/cavalcante.html">
-        <h2  id="Botao">Saiba mais</h2>
-      </a>
-
-      <!--------------------------------------------------->
-
-
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img loading="lazy" src="academia/suplemento/banner.jpg" alt="image png">
-      </div>
-    </div>
-    <section class="slider">
-
-      <div class="product">
-        <img loading="lazy" src="academia/suplemento/produtos/1.jpg" alt="image png">
-    
-    
-      </div>
-
-      <div class="product">
-        <img loading="lazy" src="academia/suplemento/produtos/2.jpg" alt="image png">
-      </div>
-      
-      <div class="product">
-        <img loading="lazy" src="academia/suplemento/produtos/3.jpg"  alt="image png">
-      </div>
-    
-      <div class="product">
-        <img loading="lazy" src="academia/suplemento/produtos/4.jpg"  alt="image png">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="academia/suplemento/produtos/5.jpg" alt="image png">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="academia/suplemento/produtos/6.jpg" alt="image png">
-      </div>
-    
-      
-    </section>  
-    <h1 class="conteudo" id="cor" style="color: #FFD700; background-color: #000000;">UP SUPLEMENTOS</h1>
-    <p class="conteudo">Up Suplementos é uma loja especializada em oferecer uma ampla variedade de suplementos nutricionais para atletas, entusiastas fitness e indivíduos preocupados com sua saúde e bem-estar. Com uma seleção cuidadosamente de produtos de alta qualidade, o Up Suplementos visa atender às necessidades específicas de cada cliente, fornecendo opções que variam desde proteínas e aminoácidos até vitaminas e minerais essenciais. Além disso, a loja se destaca por seu compromisso com a transparência, fornecendo informações detalhadas sobre os ingredientes e benefícios de cada produto, permitindo que os clientes façam escolhas informadas para alcançar seus objetivos de saúde e fitness.</p>
-
-    <a id="empresas" href="academia/suplemento/UP1SUPLEMENTOS.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
-<!------------------------------------------------------>
-
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img loading="lazy" src="academia/li_closet/banner-1.jpg" alt="image png">
-      </div>
-    </div>
-    <section class="slider">
-
-      <div class="product">
-        <img loading="lazy" src="academia/li_closet/roupa1/1.jpg" alt="image png">
-    
-    
-      </div>
-
-      <div class="product">
-        <img loading="lazy" src="academia/li_closet/roupa8/1.jpg" alt="image png">
-      </div>
-      
-      <div class="product">
-        <img loading="lazy" src="academia/li_closet/roupa7/1.jpg" alt="image png">
-      </div>
-    
-      <div class="product">
-        <img loading="lazy" src="academia/li_closet/roupa4/1.jpg" alt="image png">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="academia/li_closet/roupa5/1.jpg" alt="image png">
-      </div>
-      <div class="product">
-        <img loading="lazy" src="academia/li_closet/roupa6/1.jpg" alt="image png">
-      </div>
-    
-      
-    </section>  
-    <h1 class="conteudo" id="cor" style="color: #8E0030; background-color: #FB5B8F;">Li Closet</h1>
-    <p class="conteudo">Bem-vindo à Li Closet, sua boutique exclusiva de moda fitness. Especializada em roupas para academia, nossa coleção oferece estilo e funcionalidade para elevar seus treinos. Descubra peças confortáveis e estilosas projetadas para garantir seu melhor desempenho durante o exercício. Encontre o equilíbrio perfeito entre moda e fitness na Li Closet.</p>
-
-    <a id="empresas" href="academia/li_closet/principal.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
-<!------------------------------------------------------>
-
-
-      <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-      <div class="perfil-bloco">
-        <div>
-          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/banner.webp" alt="image png">
-        </div>
-      </div>
-      <section class="slider">
-  
-        <div class="product">
-          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/228556345.webp" alt="image png">
-      
-      
-        </div>
-  
-        <div class="product">
-          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/329314913.webp" alt="image png">
-        </div>
-        
-        <div class="product">
-          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/329314892.webp" alt="image png">
-        </div>
-      
-        <div class="product">
-          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/329314700.webp" alt="image png">
-        </div>
-      
-        
-      </section>  
-      <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #a0e2fc;">Pousada Village Sonhos</h1>
-      <p class="conteudo">Pousada Village Sonhos, seu refúgio perfeito longe de casa. Situada em um cenário deslumbrante, nossa pousada oferece uma experiência autêntica para os viajantes em busca de aventura e relaxamento. Com acomodações encantadoras e uma atmosfera acolhedora, cada momento passado conosco é uma oportunidade para se reconectar com a natureza e descobrir novos horizontes. Deixe-se levar pela magia da nossa vila e embarque em uma jornada de sonhos e descobertas na Pousada Village Sonhos</p>
-  
-      <a id="empresas" href="img_hoteis/Pousada_Village_Sonhos.html">
-        <h2  id="Botao">Saiba mais</h2>
-      </a>
-  <!------------------------------------------------------>
-
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img loading="lazy" src="festa/debora/banner.jpg" alt="image png">
-      </div>
-    </div>
-    <section class="slider">
-
-      <div class="product">
-        <img loading="lazy" src="festa/debora/1.jpeg" alt="image png">
-    
-    
-      </div>
-
-      <div class="product">
-        <img loading="lazy" src="festa/debora/2.jpeg" alt="image png">
-      </div>
-      
-      <div class="product">
-        <img loading="lazy" src="festa/debora/3.jpeg" alt="image png">
-    
-    
-      </div>
-      <div class="product">
-        <img loading="lazy" src="festa/debora/4.jpeg" alt="image png">
-    
-    
-      </div>
-      <div class="product">
-        <img loading="lazy" src="festa/debora/5.jpeg" alt="image png">
-    
-    
-      </div>
-      <div class="product">
-        <img loading="lazy" src="festa/debora/6.jpeg" alt="image png">
-    
-    
-      </div>
-      <div class="product">
-        <img loading="lazy" src="festa/debora/7.jpeg" alt="image png">
-    
-    
-      </div>
-
-  
-    </section>  
-    <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #9000d3;">Camarim de tranças</h1>
-    <p class="conteudo">Débora Lia é especializada em criar tranças coloridas em festas e eventos, proporcionando uma experiência única e cheia de estilo para seus clientes. Com habilidade e criatividade, nossa equipe transforma os cabelos em verdadeiras obras de arte, utilizando uma variedade de cores vibrantes e padrões encantadores. Seja para uma festa infantil, um evento temático ou uma ocasião especial, as tranças coloridas da Camarim de Tranças Débora Lia são garantia de diversão e beleza, celebrando a individualidade e a alegria de cada pessoa.</p> 
-
-    <a id="empresas" href="festa/debora/principal.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
-
-    <!--------------------------------------------------->
-  
-
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img src="https://i.ibb.co/K94jxGC/banner.jpg" alt="banner-burno-1">
-      </div>
-    </div>
-    <section class="slider">
-
-      <div class="product">
-        <img src="padarias/gomes de melo/1.jpg" alt="003">
-      </div>
-      <div class="product">
-        <img src="padarias/gomes de melo/2.jpg" alt="005">
-      </div>
-      <div class="product">
-        <img src="padarias/gomes de melo/3.jpg" alt="002">
-      </div>
-      <div class="product">
-        <img src="padarias/gomes de melo/4.jpg" alt="004">
-      </div>
-      <div class="product">
-        <img src="padarias/gomes de melo/5.jpg" alt="001">
-      </div>
-      
-
-    </section>  
-
-    <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #fd3b3b;">Gomes de Melo</h1>
-    <p class="conteudo">Padaria Gomes de Melo é um verdadeiro refúgio para os amantes de pães frescos, doces irresistíveis e um ambiente acolhedor. Mais do que uma simples padaria, é também uma confeitaria que encanta os paladares mais exigentes. Com uma variedade de produtos feitos com ingredientes selecionados e receitas tradicionais, a Padaria Gomes de Melo conquista seus clientes pela qualidade e pelo sabor incomparável. Seja para um café da manhã rápido, um lanche reconfortante ou para celebrar momentos especiais com um doce delicioso, esta é a escolha perfeita para os apreciadores da boa gastronomia.</p> 
-
-    <a id="empresas" href="padarias/gomes de melo.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
-    <!--------------------------------------------------->
-
-
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img src="https://i.ibb.co/wg11jVc/banner-burno-1.jpg" alt="banner-burno-1">
-      </div>
-    </div>
-    <section class="slider">
-
-      <div class="product">
-        <img src="https://i.ibb.co/j3kxGhq/003.jpg" alt="003">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/0Mr7xpR/005.jpg" alt="005">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/pW1pSmN/002.jpg" alt="002">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/nBsyXtS/004.jpg" alt="004">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/4KQDgR0/001.jpg" alt="001">
-      </div>
-      
-
-    </section>  
-
-    <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #3b89fd;">Bruno Buggy</h1>
-    <p class="conteudo">Descubra a emoção de explorar Jericoacoara de uma maneira única com Bruno Buggy! Nossa agência oferece passeios incríveis pelas deslumbrantes dunas e praias desta joia do litoral cearense. Com nossa equipe experiente e veículos seguros, você irá vivenciar momentos inesquecíveis enquanto visitamos os pontos turísticos mais belos e pitorescos da região. Prepare-se para aventuras emocionantes e paisagens de tirar o fôlego com Bruno Buggy!</p> 
-
-    <a id="empresas" href="passeios/bruno/bruno passeios.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
-    <!--------------------------------------------------->
-
-    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
-    <div class="perfil-bloco">
-      <div>
-        <img loading="lazy" src="https://i.ibb.co/W6HXbrX/banner-batista.jpg" alt="image png">
-      </div>
-    </div>
-    <section class="slider">
-
-      <div class="product">
-        <img src="https://i.ibb.co/tsPgN3G/005.webp" alt="01">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/WG4HYyf/004.webp" alt="002">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/0FPM31w/003.webp" alt="003">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/P1DwPW8/006.webp" alt="004">
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/MBFr9n0/001.webp" alt="005">
-      </div>
-
-    </section>  
-
-    <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #3b89fd;">Batista Contruçôes</h1>
-    <p class="conteudo">Bastista Construções, estamos aqui para ajudar você a realizar seus projetos de construção. Somos sua loja local de confiança, oferecendo uma variedade de materiais de alta qualidade e um atendimento personalizado. Seja para uma pequena reforma ou um grande projeto, estamos prontos para te ajudar. Venha nos visitar e vamos construir juntos!</p> 
-
-    <a id="empresas" href="construçao/Batista construções.html">
-      <h2  id="Botao">Saiba mais</h2>
-    </a>
-    <!--------------------------------------------------->
-
-
-
-  
-   
-
-  </main>
-
-
-  <!-- Paginação -->
-<div class="pagination">
-  <button onclick="changePage('index.html')">1</button>
-  <button onclick="changePage('dia2.html')">2</button>
-
-  
-  <!-- Adicione mais botões conforme necessário -->
-</div>
-
-<script>
-  function changePage(pagePath) {
-      // Lógica para redirecionar para a página com o caminho especificado
-      console.log("Redirecionando para a página: " + pagePath);
-      // Substitua essa linha com a lógica real para redirecionar para a página desejada
-      window.location.href = pagePath;
-  }
-</script>
-
-<script>
-  $(document).ready(function(){
-      $('.slider').slick({
-          slidesToShow: 4, // Mostrar 4 produtos por vez
-          slidesToScroll: 1,
-          prevArrow: '<button class="slick-prev" style="background-color: #add8e6; color: #ffffff;">Anterior</button>',
-          nextArrow: '<button class="slick-next" style="background-color: #add8e6; color: #ffffff;">Próximo</button>',
-          responsive: [
-              {
-                  breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                  settings: {
-                      slidesToShow: 1
-                  }
-              }
-          ]
-      });
-  });
-</script>
-
-<a href="cursos/cursos.html" onclick="openPopup()"><button class="loginha">Cursos</button></a>
-<a href="noticias.html"><button id="botaoFlutuante">Noticias</button></a>
-
-
-<div id="janelaLogin">
-  <span id="fecharJanela" onclick="fecharJanelaLogin()">X</span>
-  <div  class="logomarca-flutuante">
-      <img src="https://i.ibb.co/ZmFw9r9/logo-da-pagina.png" alt="logo-da-pagina">
-  </div>
-  <div class="botoes">
-      <button onclick="adicionarNumero(1)">1</button>
-      <button onclick="adicionarNumero(2)">2</button>
-      <button onclick="adicionarNumero(3)">3</button>
-      <button onclick="adicionarNumero(4)">4</button>
-      <button onclick="adicionarNumero(5)">5</button>
-      <button onclick="adicionarNumero(6)">6</button>
-      <button onclick="adicionarNumero(7)">7</button>
-      <button onclick="adicionarNumero(8)">8</button>
-      <button onclick="adicionarNumero(9)">9</button>
-  </div>
-  <div id="senha-container">
-      <input type="password" id="senhaLogin" placeholder="Senha">
-      <input type="checkbox" id="mostrarSenhaCheckbox" onchange="toggleMostrarSenha()"> Mostrar Senha
-  </div>
-  <p id="mensagem"></p>
-  <button id="prosseguir" onclick="verificarSenhaLogin()">Prosseguir</button>
- 
-</div>
-
-<script>
-  var senhaCorreta = "624";
-  var senhaDigitada = "";
-
-  document.getElementById("logomarca-flutuante").addEventListener("click", function(event) {
-      event.stopPropagation();
-      document.getElementById("janelaLogin").style.display = "block";
-  });
-
-  document.addEventListener("click", function(event) {
-      var janelaLogin = document.getElementById("janelaLogin");
-      if (event.target !== janelaLogin && !janelaLogin.contains(event.target)) {
-          janelaLogin.style.display = "none";
-      }
-  });
-
-  function fecharJanelaLogin() {
-      document.getElementById("janelaLogin").style.display = "none";
-  }
-
-  function adicionarNumero(numero) {
-      senhaDigitada += numero;
-      document.getElementById("mensagem").innerText = "";
-      updateSenhaInput();
-  }
-
-  function toggleMostrarSenha() {
-      var mostrarSenhaCheckbox = document.getElementById("mostrarSenhaCheckbox");
-      var senhaInput = document.getElementById("senhaLogin");
-      senhaInput.type = mostrarSenhaCheckbox.checked ? "text" : "password";
-  }
-
-  function updateSenhaInput() {
-      var senhaInput = document.getElementById("senhaLogin");
-      senhaInput.value = senhaDigitada;
-  }
-
-  function verificarSenhaLogin() {
-      if (senhaDigitada === senhaCorreta) {
-          window.location.href = "login/apoiadores.html";
-      } else {
-          document.getElementById("mensagem").innerText = "Senha incorreta. Tente novamente.";
-          resetSenha();
-      }
-  }
-
-  function voltar() {
-      window.history.back();
-  }
-
-  function resetSenha() {
-      senhaDigitada = "";
-      updateSenhaInput();
-  }
-</script>
-
-<style>
-  .loginha{
-    position: fixed;
-    top: 20px; /* ajuste conforme necessário */
-    right: -2px;
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 80px;
-    margin-top: 45px;
-    
-  }
-  .loginha:hover{
-    background-color: #00ff6a;
-  }
-  #botaoFlutuante {
-    position: fixed;
-    top: 20px; 
-    right: -2px; 
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 80px;
-    
-}
-
-#botaoFlutuante:hover {
-    background-color: #00ff6a;
-}
-
-  #janelaLogin {
-      display: none;
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      text-align: center;
-  }
-
-  #fecharJanela {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      cursor: pointer;
-      height: 10px;
-  }
-  
-
-
-.botoes {
-    display: grid;
-    grid-template-columns: repeat(3, 75px);
-    grid-gap: 10px;
-    justify-content: center;
-}
-
-button {
-    width: 100%;
-    height: 37px;
-    background-color: #3463db59;
-    color: #4400ff;
-    border: none;
-    border-radius: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-button:hover {
-    background-color: #00ff6a;
-    color: white;
-    transition: 0.1s;
-    box-shadow: 0px 0px 15px rgb(0, 238, 255);
-}
-
-button:active {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#mensagem {
-    margin-top: 20px;
-    color: #e74c3c;
-}
-
-#senha-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-#senha {
-  
-    border: 1px solid #3498db;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    width: 156px;
-    transition: border-color 0.3s ease;
-}
-
-#mostrarSenha {
-    margin-left: 10px;
-}
-
-#prosseguir {
-    margin-top: 10px;
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#prosseguir:hover {
-    background-color: #00ff6a;
-}
-
-#voltar {
-    margin-top: 10px;
-    background-color: #e74c3c;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.logomarca {
-  padding: 9px;
-  padding-top: 4px;
-  max-width: 152px;
-  /* width: 117%; */
-  text-align: center;
-  margin-bottom: -95px;
-  /* margin: 0px auto;*/
-}
-  
-.logomarca img {
-    
-    max-width: 100%;
-    border-top: 11px;
-    height: auto;
-}
-  
-  @media only screen and (max-width: 830px) {
-    .logomarca {
-      padding: 9px;
-      max-width: 212px;
-      margin-bottom: -59px;
-      margin: 0px auto;
-  }
-
-    .menu {
-      text-align: center;
-     
+      bottom: 0;
+      width: 50%;
     }
-  
-  }
+    .slick-next {
+      right: 4px;
+        
+    }
+    .slick-prev {
+      left: 4px;
+    }
+    element.style {
+      width: 303px;
+      height: 104%;
+    }
+    .perfil {
+      max-width: 50px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      margin: auto;
+      flex-wrap: wrap;
+    
+    }
+    @media only screen and (max-width: 600px) {
+      /* Estilos específicos para dispositivos móveis aqui */
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      section {
+        max-width: 100%;
+      }
+      .product {
+        flex: 1 0 calc(100% - 20px);
+      }
+    }
+    #fundo{
+      background-image: url('https://ae01.alicdn.com/kf/Hd3b3272bf3bc48a39cb8808625b79540V/Avezano-fotografia-fundo-rosa-doce-rosquinhas-rec-m-nascidos-meninas-bolo-de-anivers-rio-quebra-pano.jpg');
+      position: absolute;
+      background-attachment: fixed;
+    }
+    .paragrafo{
+      text-align: center;
+      font-size: larger;
+      
+    }
 
-</style>
-<style>
-  .floating-button-container {
+  </style>
+</head>
+<body id="fundo">
+  <div class="perfil-bloco">
+    <div>
+      <img src="https://i.ibb.co/2Y6fryN/banner.webp" alt="banner">
+    </div>
+  </div>
+  <div class="icon">
+    <div class="sorveteria-cor1">
+      <abbr title="Voltar"><a href="../confeitaria.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
+    </div >
+  </div>  
+  <!--------------------------------------------------->
+  
+  <main>
+    
+    <h2>Sugestões de produtos</h2>
+
+    <section class="slider">
+      <div class="product">
+        <img src="https://i.ibb.co/d6K1GTJ/002.webp" alt="001">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/6mMpBNr/001.webp" alt="002">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/BzHFYmd/004.webp" alt="003">
+      </div>
+      <div class="product">
+        <img src="https://i.ibb.co/SvY2SB9/003.webp" alt="004">
+      </div>
+      
+    </section>
+
+    <h2>
+      Bolos da Tia Gleice: Sabor de Casa</h2>
+
+    <p class="paragrafo">
+      Bolos da Tia Gleice, cada bolo conta uma história de amor e tradição. Com ingredientes selecionados e um toque caseiro, nossas delícias são uma explosão de sabor. Venha experimentar um pedacinho de conforto e aconchego em cada fatia. <br>
+       <br>
+       
+    </p>
+    <!--------------------------------------->
+  <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Mostrar dois produtos por vez
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-prev">Anterior</button>',
+            nextArrow: '<button class="slick-next">Próximo</button>',
+            responsive: [
+                {
+                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+  </main>
+  <!--------------------------------------------------->
+    <div class="saiba-mais">
+      <h2>Fale Conosco</h2>
+    </div>
+    <div class="redes-sociais">
+      <div>
+        <a href="https://api.whatsapp.com/send/?phone=5588988600455&text="><img loading="lazy" src="../icon/zap.png" alt="zap"></a>
+      </div>
+
+      <div>
+        <a href="https://www.instagram.com/bolos_da_tia_gleice/" target="_blank"><img loading="lazy" src="../icon/insta.png" alt="insta"></a>
+      </div>  
+    </div>
+    <!------------------------------->
+    <!------------------------------->
+  <style>
+    #botaoFlutuante {
+      position: fixed;
+      top: 20px; 
+      right: -2px; 
+      background-color: #ff3de5;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      padding: 11px;
+      padding-right: 16px;
+  }
+  
+  #botaoFlutuante:hover {
+      background-color: #ff00ea;
+  }
+  .floating-menu {
     position: fixed;
     bottom: 20px;
-    right: 6px;
+    right: 20px;
+}
+
+.floating-menu a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
     width: 50px;
     height: 50px;
-    font-size: 20px;
+    border-radius: 50%;
     text-align: center;
     line-height: 50px;
-    cursor: pointer;
-    z-index: 9999;
-    
-  }
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
 
-  .floating-button {
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 30px;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.233);
-  }
+.floating-menu a:hover {
+    background-color: #0056b3;
+}
 
-  .floating-button:hover{
-    background-color: #00ff6a;
-    box-shadow: 2px 2px 50px #00ff6a;
-    color: #fff;
-    border-radius: 30px;
-  }
+.floating-menu i {
+    font-size: 15px;
+}
 
-
- 
-  .popup {
+/* Modal */
+.modal {
     display: none;
     position: fixed;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f9f9f9;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
     padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
     border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-    z-index: 9998;
-  }
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-top: 27vh;
+}
 
-  .popup h2 {
-    text-align: center;
-  }
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-  .popup label,
-  .popup button {
-    display: block;
-    margin: 10px auto;
-  }
-
-  .popup input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-
-  .popup button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  .copied-notification {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    background-color: rgba(0, 123, 255, 0.7);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 9999;
-  }
+ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-  @media only screen and (max-width: 600px) {
-    .popup {
-      width: 67%;
-      padding: 47px;
-    }
-   
-  }
-  .floating-button-text{
-    font-size: medium;
-   
-  }
+ul li {
+    margin-bottom: 10px;
+}
 
- 
-</style>
+ul li a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+    font-size: larger;
+}
 
-<div class="floating-button-container">
-  <div class="floating-button" id="floatingButton">
-    <span class="floating-button-text">Doar</span>
+ul li a:hover {
+    color: #007bff;
+    font-size: 25px;
+}
+.paragrafo{
+  text-align: center;
+  font-size: larger;
+}
+  </style>
+  <a id="openModal" href="#"><button id="botaoFlutuante">Menu</button></a>
+  <script src="script.js"></script>
+  
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <p class="paragrafo">Escolha uma categoria:</p>
+      <ul>
+          <li><a href="../confeitaria/contruçao/contruçao.html">Bolos</a></li>
+          <li><a href="../confeitaria/contruçao/contruçao.html">Salgados</a></li>
+          <li><a href="../confeitaria/contruçao/contruçao.html">Doces</a></li>
+      </ul>
   </div>
 </div>
 
-<div id="popup" class="popup">
-  <h2>Apoie um estudante apaixonado por tecnologia - Site em constante atualização</h2>
-  <div class="hino-camocim">
-    <audio src="login/artigo.mp3" controls style="padding-bottom: 20px;"></audio>
-  </div>
-  <div>
-    <p>Chave PIX:</p>
-    <div id="chavePix" contenteditable="true">Registracamocim@gmail.com</div>
-  </div>
-  <button type="button" id="copiarChavePix">Copiar Chave PIX</button>
-  <button class="close-button">Fechar</button>
-</div>
 
-<div id="copiedNotification" class="copied-notification">Chave PIX copiada!</div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const floatingButton = document.getElementById("floatingButton");
-    const popup = document.getElementById("popup");
-    const copiarChavePixButton = document.getElementById("copiarChavePix");
-    const closeButton = document.querySelector('.close-button');
-    const copiedNotification = document.getElementById("copiedNotification");
-  
-    floatingButton.addEventListener('click', function () {
-      popup.style.display = popup.style.display === "block" ? "none" : "block";
-    });
-  
-    document.addEventListener('click', function (event) {
-      if (event.target === popup) {
-        popup.style.display = "none";
-      }
-    });
-  
-    copiarChavePixButton.addEventListener('click', copiarChavePix);
-  
-    closeButton.addEventListener('click', function () {
-      popup.style.display = "none";
-    });
-  
-    function copiarChavePix() {
-      const chavePix = document.getElementById("chavePix");
-      const range = document.createRange();
-      range.selectNode(chavePix);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      document.execCommand("copy");
-      window.getSelection().removeAllRanges();
-      copiedNotification.style.display = "block";
-      setTimeout(function () {
-        copiedNotification.style.display = "none";
-      }, 2000);
-    }
-  });
-  </script>
-  
+  // Get the modal
+  var modal = document.getElementById("myModal");
 
+  // Get the button that opens the modal
+  var btn = document.getElementById("openModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+  modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+  modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+  }
+
+</script>
+
+
+<!--------------------------------------------------->
+    
 </body>
-
 </html>

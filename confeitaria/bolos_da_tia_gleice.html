@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registra Bolos</title>
+  <title>Receitas de Bolos - Confeitaria Tia Gleice</title>
   <link rel="stylesheet" href="../estilo/style.css">
   <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
 
@@ -13,13 +13,6 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
   <style>
-    .saiba-mais > h2 {
-      text-align: center;
-      border: 0px solid #ffffff;
-      padding: 0px;
-      font-family: var(--destaque);
-      padding-top: 40px;
-    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -28,334 +21,188 @@
       box-shadow: 0px 0px 15px black;
     }
     header {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
     }
-    section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 20px;
-        box-sizing: border-box;
-        max-width: 80%px;
-        height: 80%;
+    h1, h2, h3 {
+      margin: 10px 0;
+    }
+    main {
+      max-width: 90%;
+      margin: auto;
+      padding: 20px;
+    }
+    .slider {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
     .product {
       background-color: #fff;
       border: 1px solid #ddd;
       margin: 10px;
-      margin-top: 0px;
-      flex: 1 0 calc(50% - 20px); 
+      flex-basis: calc(33.33% - 20px);
+      padding: 20px;
       box-sizing: border-box;
       text-align: center;
     }
-    main > img {
+    .product img {
       max-width: 100%;
       height: auto;
-      width: 100%; 
-    }
-    main{
-      max-width: 800px;
-      background-color: rgba(255, 255, 255, 0.589); /* Alterando a cor de fundo para ser mais transparente */
-      padding: 20px; /* Adicionando algum espaço para separar o conteúdo do fundo */
-    }
-    .paragrafo{
-      max-width: 800px;
-      padding: 10px;
-      background-color:rgb(255 255 255 / 14%);;
     }
     footer {
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 50%;
-    }
-    .slick-next {
-      right: 4px;
-        
-    }
-    .slick-prev {
-      left: 4px;
-    }
-    element.style {
-      width: 303px;
-      height: 104%;
-    }
-    .perfil {
-      max-width: 50px;
+      padding: 20px 0;
       display: flex;
-      justify-content: center;
-      flex-direction: row;
-      margin: auto;
-      flex-wrap: wrap;
-    
+      flex-direction: column;
+      align-items: center;
     }
-    @media only screen and (max-width: 600px) {
-      /* Estilos específicos para dispositivos móveis aqui */
-      body {
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-      section {
-        max-width: 100%;
-      }
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #fff; /* Defina a cor de fundo desejada para a logo */
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .footer-links {
+      margin-top: 20px;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    @media screen and (max-width: 768px) {
       .product {
-        flex: 1 0 calc(100% - 20px);
+        flex-basis: calc(50% - 20px);
       }
     }
-    #fundo{
-      background-image: url('https://ae01.alicdn.com/kf/Hd3b3272bf3bc48a39cb8808625b79540V/Avezano-fotografia-fundo-rosa-doce-rosquinhas-rec-m-nascidos-meninas-bolo-de-anivers-rio-quebra-pano.jpg');
-      position: absolute;
-      background-attachment: fixed;
-    }
-    .paragrafo{
-      text-align: center;
-      font-size: larger;
-      
+    @media screen and (max-width: 480px) {
+      .product {
+        flex-basis: calc(100% - 20px);
+      }
     }
 
+    /* Estilos para a janela flutuante */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .popup {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+      max-height: 80%;
+      overflow-y: auto;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
   </style>
 </head>
-<body id="fundo">
-  <div class="perfil-bloco">
-    <div>
-      <img src="https://i.ibb.co/2Y6fryN/banner.webp" alt="banner">
-    </div>
-  </div>
-  <div class="icon">
-    <div class="sorveteria-cor1">
-      <abbr title="Voltar"><a href="../confeitaria.html"><img loading="lazy" src="../icon/voltar.png" alt="Voltar"></a></abbr>
-    </div >
-  </div>  
-  <!--------------------------------------------------->
-  
+<body>
+
+  <header>
+    <h1>Confeitaria Tia Gleice</h1>
+    <button id="openPopup">Receitas</button> <!-- Botão Receitas -->
+  </header>
+
   <main>
-    
-    <h2>Sugestões de produtos</h2>
+
+    <h2>Nossas Deliciosas Receitas de Bolos</h2>
 
     <section class="slider">
+      <!-- Receitas de Bolo -->
       <div class="product">
-        <img src="https://i.ibb.co/d6K1GTJ/002.webp" alt="001">
+        <img src="https://i.ibb.co/d6K1GTJ/002.webp" alt="Bolo de Chocolate">
+        <h3>Bolo de Chocolate</h3>
+        <p>Delicioso bolo de chocolate com cobertura cremosa.</p>
+        <a href="#">Ver Receita</a>
       </div>
       <div class="product">
-        <img src="https://i.ibb.co/6mMpBNr/001.webp" alt="002">
+        <img src="https://i.ibb.co/6mMpBNr/001.webp" alt="Bolo de Cenoura">
+        <h3>Bolo de Cenoura</h3>
+        <p>Tradicional bolo de cenoura com cobertura de chocolate.</p>
+        <a href="#">Ver Receita</a>
       </div>
       <div class="product">
-        <img src="https://i.ibb.co/BzHFYmd/004.webp" alt="003">
+        <img src="https://i.ibb.co/BzHFYmd/004.webp" alt="Bolo de Morango">
+        <h3>Bolo de Morango</h3>
+        <p>Delicioso bolo de morango fresco com chantilly.</p>
+        <a href="#">Ver Receita</a>
       </div>
-      <div class="product">
-        <img src="https://i.ibb.co/SvY2SB9/003.webp" alt="004">
-      </div>
-      
+      <!-- Adicione mais receitas conforme necessário -->
     </section>
 
-    <h2>
-      Bolos da Tia Gleice: Sabor de Casa</h2>
-
-    <p class="paragrafo">
-      Bolos da Tia Gleice, cada bolo conta uma história de amor e tradição. Com ingredientes selecionados e um toque caseiro, nossas delícias são uma explosão de sabor. Venha experimentar um pedacinho de conforto e aconchego em cada fatia. <br>
-       <br>
-       
+    <h2>Sobre Nossa Confeitaria</h2>
+    <p>
+      A Confeitaria Tia Gleice é conhecida por seus bolos caseiros feitos com amor e tradição. Nossas receitas são cuidadosamente selecionadas e preparadas para proporcionar uma experiência única de sabor e conforto. Venha nos visitar e desfrute de um pedaço de alegria em cada fatia!
     </p>
-    <!--------------------------------------->
-  <script>
-    $(document).ready(function(){
-        $('.slider').slick({
-            slidesToShow: 4, // Mostrar dois produtos por vez
-            slidesToScroll: 1,
-            prevArrow: '<button class="slick-prev">Anterior</button>',
-            nextArrow: '<button class="slick-next">Próximo</button>',
-            responsive: [
-                {
-                    breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    });
-  </script>
+
   </main>
-  <!--------------------------------------------------->
-    <div class="saiba-mais">
-      <h2>Fale Conosco</h2>
+
+  <footer>
+    <div class="logo">
+      <!-- Coloque a imagem da logo aqui -->
+      <img src="https://via.placeholder.com/100" alt="Logo da Confeitaria Tia Gleice">
     </div>
-    <div class="redes-sociais">
-      <div>
-        <a href="https://api.whatsapp.com/send/?phone=5588988600455&text="><img loading="lazy" src="../icon/zap.png" alt="zap"></a>
-      </div>
-
-      <div>
-        <a href="https://www.instagram.com/bolos_da_tia_gleice/" target="_blank"><img loading="lazy" src="../icon/insta.png" alt="insta"></a>
-      </div>  
+    <div class="footer-links">
+      <a href="#">Termos de Serviço</a>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Contato</a>
     </div>
-    <!------------------------------->
-    <!------------------------------->
-  <style>
-    #botaoFlutuante {
-      position: fixed;
-      top: 20px; 
-      right: -2px; 
-      background-color: #ff3de5;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      padding: 11px;
-      padding-right: 16px;
-  }
-  
-  #botaoFlutuante:hover {
-      background-color: #ff00ea;
-  }
-  .floating-menu {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
+  </footer>
 
-.floating-menu a {
-    display: block;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #007bff;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 50px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-}
-
-.floating-menu a:hover {
-    background-color: #0056b3;
-}
-
-.floating-menu i {
-    font-size: 15px;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    margin-top: 27vh;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #000;
-    transition: color 0.3s ease;
-    font-size: larger;
-}
-
-ul li a:hover {
-    color: #007bff;
-    font-size: 25px;
-}
-.paragrafo{
-  text-align: center;
-  font-size: larger;
-}
-  </style>
-  <a id="openModal" href="#"><button id="botaoFlutuante">Menu</button></a>
-  <script src="script.js"></script>
-  
-<!-- Modal -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-      <span class="close">&times;</span>
-      <p class="paragrafo">Escolha uma categoria:</p>
-      <ul>
-          <li><a href="../confeitaria/contruçao/contruçao.html">Bolos</a></li>
-          <li><a href="../confeitaria/contruçao/contruçao.html">Salgados</a></li>
-          <li><a href="../confeitaria/contruçao/contruçao.html">Doces</a></li>
-      </ul>
+  <!-- Janela flutuante para as receitas -->
+  <div class="overlay" id="overlay">
+    <div class="popup">
+      <span class="close" id="closePopup">&times;</span>
+      <h2>Receitas de Bolos</h2>
+      <!-- Coloque as 10 receitas aqui -->
+      <p>Receita 1</p>
+      <p>Receita 2</p>
+      <p>Receita 3</p>
+      <p>Receita 4</p>
+      <p>Receita 5</p>
+      <p>Receita 6</p>
+      <p>Receita 7</p>
+      <p>Receita 8</p>
+      <p>Receita 9</p>
+      <p>Receita 10</p>
+    </div>
   </div>
-</div>
 
-
-
-<script>
-  // Get the modal
-  var modal = document.getElementById("myModal");
-
-  // Get the button that opens the modal
-  var btn = document.getElementById("openModal");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks the button, open the modal 
-  btn.onclick = function() {
-  modal.style.display = "block";
-  }
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-  modal.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-  }
-
-</script>
-
-
-<!--------------------------------------------------->
-    
+  <script>
+    // Mostrar a janela flutuante quando o botão for clicado
+    document.getElementById('openPopup').onclick = function() {
+      document.getElementById('overlay').style.display = "flex";
+    }
+    // Fechar a janela flutuante quando o botão de fechar for clicado
+    document.getElementById('closePopup').onclick = function() {
+      document.getElementById('overlay').style.display = "none";
+    }
+  </script>
 </body>
 </html>
