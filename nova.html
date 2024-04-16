@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planos da Agência de Mídia Social</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    main {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .plano {
+        width: 30%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Planos da Agência de Mídia Social</h1>
+</header>
+<main>
+    <div class="plano">
+        <h2>Plano Básico</h2>
+        <p>Descrição do plano básico aqui.</p>
+        <p>Preço: R$ XX,XX / mês</p>
+        <button onclick="selecionarPlano('Básico')">Selecionar</button>
+    </div>
+    <div class="plano">
+        <h2>Plano Intermediário</h2>
+        <p>Descrição do plano intermediário aqui.</p>
+        <p>Preço: R$ XX,XX / mês</p>
+        <button onclick="selecionarPlano('Intermediário')">Selecionar</button>
+    </div>
+    <div class="plano">
+        <h2>Plano Avançado</h2>
+        <p>Descrição do plano avançado aqui.</p>
+        <p>Preço: R$ XX,XX / mês</p>
+        <button onclick="selecionarPlano('Avançado')">Selecionar</button>
+    </div>
+</main>
+<footer>
+    <p>Contato: seuemail@agenciademidiasocial.com</p>
+</footer>
+
+<script>
+    function selecionarPlano(plano) {
+        alert('Você selecionou o Plano ' + plano);
+    }
+</script>
+</body>
+</html>
