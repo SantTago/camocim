@@ -440,7 +440,8 @@ main {
  }
 
  main p {
-    max-width: 50%;
+    max-width: 95%;
+    margin: auto;
  }
 
 .sub1 {
@@ -547,7 +548,7 @@ main .torta {
 
 .paragrafo {
   text-align: center;
-  background-color: #d8d6d6;
+  margin: auto;
 }
 
 
