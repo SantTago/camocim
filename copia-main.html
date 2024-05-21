@@ -20,19 +20,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <!-------------------------Site agencia-------------------->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
-  <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> 
-  <link rel="stylesheet" href="css/cssnovo.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 
-<!----------------------------------Site agencia-->
     <!--scripto dos anuncios -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1609846937178820"
      crossorigin="anonymous"></script>
@@ -115,7 +103,15 @@
         width: 100%;
       }
       
-
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 50%;
+      }
       
       .slick-next {
         right: 4px;
@@ -172,7 +168,7 @@
           
         }
         header {
-          background-color: #0077ff;
+          background-color: #0077FF;
           color: #fff;
           text-align: center;
           padding: 10px;
@@ -339,11 +335,11 @@
       text-align: left;
       justify-content: center;
       padding-left: 8px;
-      padding-top: 27px;
-      margin-bottom: 10px;
+      padding-top: 9px;
   }
 
   main {
+    max-width: 950px;
     background-color: white;
   }
 
@@ -413,7 +409,7 @@
 
 
     <div class="logomarca">
-      <img  id="logomarca-flutuante" src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina">
+      <a href="nova.html"><img  src="https://i.ibb.co/TR4cdPy/logo-da-pagina.png" alt="logo-da-pagina"></a>
     </div>
 
 
@@ -530,8 +526,7 @@ button:hover {
     justify-content: center;
     align-items: flex-end;
     transition: 0.3s;
-    margin-bottom: -89px;
-    margin-top: 50px;
+    margin-bottom: -63px;
   }
 
   .bar {
@@ -540,7 +535,6 @@ button:hover {
       background: linear-gradient(to top, #ff0000, #f80000,#ff0000);
       border-radius: 5px 5px 0 0;
       animation: musicAnimation 0.5s ease-in-out infinite alternate;
-      margin-top: 30px;
   }
 
   .bar:nth-child(2n) {
@@ -579,8 +573,6 @@ button:hover {
       justify-content: center;
       align-items: flex-end;
       transition: 0.3s;
-      margin-bottom: -89px;
-      margin-top: 50px;
       
     }
     
@@ -591,7 +583,6 @@ button:hover {
       height: 60px;
       margin-top: 60px;
       border-radius: 20px 20px 0px 0px;
-      margin-top: 30px;
     
     }
     
@@ -606,7 +597,7 @@ button:hover {
     display: block;
     width: 260px;
     height: 60px;
-    margin-top: 86px;
+    margin-top: 60px;
   
   }
 
@@ -617,12 +608,12 @@ button:hover {
     margin: 0 auto;
     align-items: center;
     flex-direction: column;
-  
+    
 }
 
   
 </style>
-<!--
+
 <div class="music-display">
   <div class="bar"></div>
   <div class="bar"></div>
@@ -641,7 +632,7 @@ button:hover {
   </audio>
 
 </section>
--->
+ 
 <button id="lojasBtn" class="mobile-only">Lojas</button>
 
 <div class="icon2">
@@ -827,475 +818,492 @@ button:hover {
     <!--------------------------------------------------->
     
   <main>
-    <style>
 
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-        .somos{
-        text-align: center;
-        }
-
-        .container1 {
-          position: relative;
-          text-align: center;
-          width: 100%;
-          margin-right: auto;
-          margin-left: auto;
-      }
-
-
-      .imagem-topo {
-        position: relative;
-        background-image: url('img/carroussel3.png');
-        background-size: cover;
-        background-position: center;
-        color: white;
-        padding: 100px 0; /* Ajuste conforme necessário */
-        width: 100%;
-        height: auto;
-      }
-
-      .imagem-topo h1 {
-        font-size: 3em;
-      }
-
-      .imagem-topo h2 {
-        font-size: 7em;
-        color: #0077FF; /* Cor amarela */
-      }
-
-      
-      .imagem-topo p {
-        font-size: 1em;
-        color: white;
-      }
-
-      /* Ajuste para dispositivos grandes (PC) */
-      @media only screen and (min-width: 768px) {
-        .imagem-topo {
-          padding: 100px 0; /* Ajuste conforme necessário */
-        }
-        .imagem-topo p {
-          font-size: 2em;
-          color: white;
-          margin-top: -34px;
-        }
-        
-
-      }
-
-      /* Ajuste para dispositivos pequenos (celulares) */
-      @media only screen and (max-width: 768px) {
-        .imagem-topo {
-          padding: 100px 0; /* Ajuste conforme necessário */
-        }
-        .imagem-topo h2 {
-          font-size: 5em;
-          color: #0077FF; /* Cor amarela */
-        }
-       
-      }
-      .titulo{
-        font-family: "Bebas Neue", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 15px;
-      }
-      
-</style>
-
-<div class="container1">
-  <div class="imagem-topo">
-    <h2 class="titulo">Sua Agência Digital</h2>
-    <p class="paragrafo">Saiba o que podemos fazer por você</p>
-  </div>
-</div>
-
-<!-- Qcontatos -->
-<div class="container-fluid top-top">
- 
-  <p>E-mail: Registracamocim@gmail.com</p>
-  <ul style="padding: 0;" class="midias-sociais">
-
-      <li><a href="https://www.instagram.com/registracamocim/"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="https://api.whatsapp.com/send?phone=5588993464285" ><i class="fab fa-whatsapp"></i></a></li>
-  </ul>
-
-</div>
-<!-- QUEM SOMOS -->
-
-<section>
- <div id="quem-somos" class="somos"> 
-        <div class="row">
-                    <div class="col-sm-6">
-                        <div class="container-flex">
-                          <div class="column">
-                          
-                              <img class="w-100 " src="img/apresenta.jpg">
-                              
-                              <img  class="w-100 " src="img/reunião.jpg">
-                              </div>
-                              <div class="column">
-                                <img class="w-100 "  src="img/apple.jpg">
-                                <img class="w-100 " src="img/notebook.jpg">
-                            </div>
-                         
-                        
-                        </div>
-                     </div>
-              
-           
-                     <div class="col-sm-6">
-                            <div class="row">
-                                  <div class="box-mg">
-                                      <h2>Sobre - Registra Camocim</h2>
-                                      <h3>Nossa Missão</h3>
-                                      <p>O Registra Camocim é uma agência focada no gerenciamento e criação de conteúdos para Mídias Sociais. Temos como objetivo criar uma identificação entre sua marca e seu cliente, criando assim um relacionamento e engajamento. Para isso fazemos uso dos canais digitais adequados que vão comunicar da melhor maneira possível com a sua Persona.</p>
-                                    
-                                  </div>
-                             </div>
-                              <div class="row">
-                               
-                                      <div class="col-sm-6">
-                                        
-                                          <h3>Nossos Valores</h3>
-                                          <p>Temos como valores o respeito aos nossos clientes e parceiros. Fazendo assim valer nossos contratos, onde tudo especificado é cumprido a risca. Buscando assim a satisfação máxima de ambas as partes. Nosso compromisso máximo é alcançar os resultados prometidos em contrato.</p>
-
-                                      </div>
-                                      <div class="col-sm-6">
-                                        
-                                          <h3>Nossa Visão</h3>
-                                          <p>Fazer com que mais empresas participem de plataformas digitais de forma inteligente, gerando resultados sólidos e satisfatórios.
-                                            A Registra Camocim foi criada para ajudar as pequenas e médias empresas a fortalecerem a sua marca, posicionamento, gerar mais engajamento e, consequentemtente, vendas.
-                                          </p>
-                                        
-                                      </div>
-                                      
-                                      
-                                </div>
-                  
-         </div>
-  
-</div>
-</section> 
-             
-
- <!-- soluções  -->
-<section id="solucoes">
-<div class="container-fluid text-center  ">
-      <h2 class="mg-bt"> O que podemos fazer por você?</h2>
-
-      <div class="row slideanim">
-            <div class="col-sm-4">
-                <div class="box w-75 ">
-                  <h3 class="text-center"><strong>Inbound Marketing</strong></h3><br>
-                  <a href="#demo" data-toggle="collapse">
-                    <img src="img/icone_marketing.png" class="img-circle person" alt="Random Name" width="250" height="250">
-                  </a>
-                    <div id="demo" class="collapse">
-                      <p>Trace estratégias para atrair seus leads e transformá-los em clientes!</p>
-                      <p>-Elaboração de Estratégia
-                        <br>
-                      -Construção de Fluxos Automatizados
-                      <br>
-                      -Elaboração de Materiais Educativos
-                      </div>
-
-                </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="box w-75">
-                  <h3 class="text-center"><strong> Construção de Websites</strong></h3><br>
-                  <a href="#demo2" data-toggle="collapse">
-                    <img src="img/icone_net.png" class="img-circle person" alt="Random Name" width="255" height="255">
-                  </a>
-                  <div id="demo2" class="collapse">
-                  <p>Sua empresa merece um site profissional , destacando-a sobre seus concorrentes!</p>
-                
-                  <p>-Concepção de Interface do Projeto (design/layout)
-                    <br>
-                    -Estruturação e estilização dos textos
-                    <br>
-                  
-                </div>
-              </div>
-          </div>
-  
-    
-    <div class="col-sm-4">
-      <div class="box w-75">
-                  <h3 class="text-center"><strong>Gestão de Mídias Sociais</strong></h3><br>
-                  <a href="#demo3" data-toggle="collapse">
-                    <img src="img/icone_midias1.png" class="img-circle person" alt="Random Name" width="255" height="255">
-                  </a>
-                  <div id="demo3" class="collapse">
-                    <p>Que tal usar as redes sociais para atrair, educar e engajar sua audiência?</p>
-                 <p>
-                  -Elaboração de Estratégia de Conteúdo
-                  <br>
-                  -Set up de Conteúdo + Scedule de Publicações
-                  <br>
-                  -Estudo de concorrência e página / perfis adjacentes
-                  <br>
-                  -Conteúdo em texto, imagem
-                  <br>
-                  -Gerenciamento completo de perfis ou páginas
-                  <br>
-                  -Estratégia e execução de campanhas patrocinadas
-                 </p>
-                 </div>
-            </div>
-          </div>
-             
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+    <div class="perfil-bloco">
+      <div>
+        <img loading="lazy" src="mercados/batista/banner.webp" alt="image png">
       </div>
     </div>
-</section>                
-               
+    <section class="slider">
 
+      <div class="product">
+        <img loading="lazy" src="mercados/batista/001.webp" alt="Bolo">
+        
+        
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="mercados/batista/002.webp" alt="Bolo">
+        
+        
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="mercados/batista/003.webp" alt="Bolo">
+        
+        
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="mercados/batista/004.webp" alt="Bolo">
+        
+        
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="mercados/batista/005.webp" alt="Bolo">
+        
+        
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="mercados/batista/006.webp" alt="Bolo">
+  
+        
+      </div>
+    </section>  
+    <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #ff0000;">O Batista </h1>
+    <p class="conteudo">Mercadinho O Batista, seu destino conveniente no bairro Jardim das Oliveiras. Com uma variedade de produtos frescos e essenciais, estamos aqui para atender às suas necessidades diárias. Visite-nos hoje e descubra por que somos a escolha preferida dos moradores locais para compras rápidas e amigáveis.</p>
 
+    <a id="empresas" href="mercados/batista.html">
+      <h2  id="Botao">Saiba mais</h2>
+    </a>
 
-<!-- SECTION CLIENTES -->
-<section id="clientes" class="slideanim">
- 
-   
-  <div class="container boxBt02 box ">
-          <h2>O que já fizemos</h2>
-          <h3>Trabalhamos com os mais diferentes nichos de mercado</h3>
-           
-               <div class="row">
-                    <div class="col-sm-6">
-                        <div class="f11">
-                            <button id="btimo" class="btn btn-sm">Imobiliárias</button>
-                            <button id="btbar" class="btn btn-sm">Bares</button>
-                            <button id="btrest"  class="btn btn-sm">Restaurantes</button>
-                            <button id="btrest"  class="btn btn-sm">Pizzarias</button>
-                           
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-6 f12 ">
-                          <div class="boxImg02">
-                            <img src="" class="w-75" />
-                          </div>
-                    </div>  
-          
-             </div> 
-    </div>  
-       
-    <style>
-      /* CSS */
-      .modal {
-          display: none;
-          position: fixed;
-          z-index: 9999;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.8);
-          overflow: auto;
-      }
+      <!--------------------------------------------------->
       
-      .modal-conteudo {
-          margin: auto;
-          display: block;
-          max-width: 100%;
-          max-height: 100%;
-      }
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+    <div class="perfil-bloco">
+      <div>
+        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/banner-2.webp" alt="image png">
+      </div>
+    </div>
+    <section class="slider">
+
+      <div class="product">
+        <img loading="lazy"src="img_hoteis/Camozen_Resort_&_Spa/001.webp" alt="image png">
+    
+    
+      </div>
+
+      <div class="product">
+        <img loading="lazy"src="img_hoteis/Camozen_Resort_&_Spa/002.webp" alt="image png">
+      </div>
       
-      .fechar-modal {
-          color: #aaa;
-          float: right;
-          font-size: 28px;
-          font-weight: bold;
-          cursor: pointer;
-          margin-top: 20px;
-          margin-right: 20px;
-      }
-      
-      .anterior, .proximo {
-          cursor: pointer;
-          position: fixed;
-          bottom: 20px;
-          padding: 16px;
-          color: white;
-          font-weight: bold;
-          font-size: 20px;
-          transition: 0.6s ease;
-          border-radius: 3px;
-      }
-      
-      .anterior {
-          left: 20px;
-      }
-      
-      .proximo {
-          right: 20px;
-      }
-      
-      /* Para esconder a barra de rolagem quando o modal estiver aberto */
-      body.modal-open {
-          overflow: hidden;
-      }
-      
-      /* Estilos para centralizar a imagem no celular */
-      @media only screen and (max-width: 600px) {
-          .modal-conteudo {
-              margin: auto;
-              display: block;
-              max-width: 80%;
-              max-height: 80%;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-          }
-      
-          .fechar-modal {
-              margin-top: 10px;
-              margin-right: 10px;
-          }
-      }
-      </style>
+      <div class="product">
+        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/003.webp" alt="image png">
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/004.webp" alt="image png">
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/005.webp" alt="image png">
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="img_hoteis/Camozen_Resort_&_Spa/006.webp" alt="image png">
+      </div>
     
       
-      <!-- HTML -->
-      <div class="container galeria">
-          <div class="column2">
-              <img src="img/galeria-1.png" class="galeria-imagem" data-index="0">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-2.png" class="galeria-imagem" data-index="1">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-3.png" class="galeria-imagem" data-index="2">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-4.png" class="galeria-imagem" data-index="3">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-5.png" class="galeria-imagem" data-index="4">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-6.png" class="galeria-imagem" data-index="5">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-7.png" class="galeria-imagem" data-index="6">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-8.png" class="galeria-imagem" data-index="7">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-9.png" class="galeria-imagem" data-index="8">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-10.png" class="galeria-imagem" data-index="9">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-11.png" class="galeria-imagem" data-index="10">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-12.png" class="galeria-imagem" data-index="11">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-13.png" class="galeria-imagem" data-index="12">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-14.png" class="galeria-imagem" data-index="13">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-15.png" class="galeria-imagem" data-index="14">
-          </div>
-          <div class="column2">
-              <img src="img/galeria-16.png" class="galeria-imagem" data-index="15">
-          </div>
-      </div>
-      
-      <!-- Modal -->
-      <div id="modal" class="modal">
-          <span class="fechar-modal" onclick="fecharModal()">&times;</span>
-          <img id="modal-imagem" class="modal-conteudo" onclick="fecharModal()">
-          <span class="anterior" onclick="mudarImagem(-1)">&#10094;</span>
-          <span class="proximo" onclick="mudarImagem(1)">&#10095;</span>
-      </div>
-      
-      <script>
-      // JavaScript
-      const imagens = document.querySelectorAll('.galeria-imagem');
-      const modal = document.getElementById('modal');
-      const modalImagem = document.getElementById('modal-imagem');
-      let indiceAtual;
-      
-      imagens.forEach((imagem, indice) => {
-          imagem.addEventListener('click', () => {
-              indiceAtual = indice;
-              modal.style.display = 'block';
-              modalImagem.src = imagem.src;
-              document.body.classList.add('modal-open'); // Adiciona uma classe para esconder a barra de rolagem do corpo
-          });
-      });
-      
-      function fecharModal() {
-          modal.style.display = 'none';
-          document.body.classList.remove('modal-open'); // Remove a classe para permitir a rolagem do corpo novamente
-      }
-      
-      function mudarImagem(direcao) {
-          indiceAtual += direcao;
-          if (indiceAtual >= imagens.length) {
-              indiceAtual = 0;
-          } else if (indiceAtual < 0) {
-              indiceAtual = imagens.length - 1;
-          }
-          modalImagem.src = imagens[indiceAtual].src;
-      }
-      </script>
+    </section>  
   
-          
-            
- </section>
+  <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #014205;">Camozen </h1>
+  <p class="conteudo">Resort e Spa Camozen, onde o luxo encontra a excelência em hospitalidade. Localizado no coração da cidade, oferecemos uma experiência única para os viajantes exigentes. Com quartos espaçosos, comodidades de primeira classe e vistas deslumbrantes, sua estadia conosco será inesquecível. Descubra o conforto e o serviço excepcional que fazem do Resort e Spa Camozen a escolha ideal para sua próxima viagem.</p>
 
-<!-- Footer -->
-<footer class="text-center">
-<div class="container">
-  <div class="row">
-    <h3>Siga-nos nas Mídias Sociais</h3>
-    <ul class="midias-sociais">
+    <a id="empresas" href="img_hoteis/Camozen_Resort.html">
+      <h2  id="Botao">Saiba mais</h2>
+    </a>
+    </section>
 
+       <!------------------------------------------->
+    
+       <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+       <div class="perfil-bloco">
+         <div>
+           <img loading="lazy" src="confeitaria/fabia-bolos/banner.webp" alt="image png">
+         </div>
+       </div>
+       <section class="slider">
+   
+         <div class="product">
+           <img loading="lazy" src="confeitaria/fabia-bolos/001.webp" alt="image png">
+       
+       
+         </div>
+   
+         <div class="product">
+           <img loading="lazy" src="confeitaria/fabia-bolos/002.webp" alt="image png">
+         </div>
+         
+         <div class="product">
+           <img loading="lazy" src="confeitaria/fabia-bolos/003.webp" alt="image png">
+         </div>
+       
+         <div class="product">
+           <img loading="lazy" src="confeitaria/fabia-bolos/004.webp" alt="image png">
+         </div>
+       
+         <div class="product">
+           <img loading="lazy" src="confeitaria/fabia-bolos/005.webp" alt="image png">
+         </div>
+       
+         <div class="product">
+           <img loading="lazy" src="confeitaria/fabia-bolos/006.webp" alt="image png">
+         </div>
+       </section>  
+       <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #fca0d9;">Sonho Doces da Faby </h1>
+       <p class="conteudo">Sonho Doces da Faby, onde cada doce é uma obra de arte feita com amor e dedicação. Com uma variedade de bolos e doces deliciosos, nós transformamos seus sonhos em realidade açucarada. De festas de aniversário a eventos especiais, cada criação é uma celebração de sabor e criatividade. Delicie-se com nossas tentações doces e deixe sua próxima ocasião ainda mais especial com Sonho Doces da Faby.</p>
+   
+       <a id="empresas" href="confeitaria/fabia-bolos.html">
+         <h2  id="Botao">Saiba mais</h2>
+       </a>
+   
+   
+
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+    <div class="perfil-bloco">
+      <div>
+        <img loading="lazy" src="academia/academias/fabio/banner.jpg" alt="image png">
+      </div>
+    </div>
+    <section class="slider">
+      <div class="product">
+        <img loading="lazy" src="academia/academias/fabio/postes/1.jpg" alt="roupa">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="academia/academias/fabio/postes/2.jpg" alt="roupa">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="academia/academias/fabio/postes/3.jpg" alt="roupa">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="academia/academias/fabio/postes/4.jpg" alt="roupa">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="academia/academias/fabio/postes/5.jpg" alt="roupa">
+      </div>
+    </section>
+
+    <h1 class="conteudo" id="cor" style="color: #fcff4f; background-color: #a5009d;">Academia Fábio Vasconcelos </h1>
+    <p class="conteudo">Reconhecida por sua excelência no ensino, com professores qualificados e uma abordagem inovadora que integra teoria e prática. Prepara os alunos para os desafios do mercado, destacando-se pelos sucessos alcançados por seus ex-alunos.</p>
+    
+
+    <a id="empresas" href="academia/academias/fabiovasconcelos.html">
+      <h2  id="Botao">Saiba mais</h2>
+    </a>
+ 
+  <!--------------------------------------------------->
+
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+    <div class="perfil-bloco">
+      <div>
+        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/banner.webp" alt="image png">
+      </div>
+    </div>
+    <section class="slider">
+      <div class="product">
+        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/004.webp" alt="roupa">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/003.webp" alt="roupa">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/002.webp" alt="roupa">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/001.webp" alt="roupa">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="moda_mascolina/pimenta_dcheiro/005.webp" alt="roupa">
+      </div>
+    </section>
+
+    <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #ce0000;">Pimenta d'Cheiro </h1>
+    <p class="conteudo">Pimenta d'Cheiro, sua nova referência em moda masculina. Localizada no coração da cidade, nossa loja oferece uma seleção única de roupas e acessórios para homens modernos e estilosos. Com peças de alta qualidade e estilo exclusivo, estamos aqui para ajudá-lo a expressar sua personalidade e destacar sua confiança. De ternos elegantes a roupas casuais, na Pimenta d'Cheiro você encontrará tudo o que precisa para se destacar em qualquer ocasião.</p>
+
+    <a id="empresas" href="moda_mascolina/pimenta-dcheiro.html">
+      <h2  id="Botao">Saiba mais</h2>
+    </a>
+ 
+  <!--------------------------------------------------->
+    
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+      <div class="perfil-bloco">
+        <div>
+          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/banner.webp" alt="image png">
+        </div>
+      </div>
+      <section class="slider">
+
+        <div class="product">
+          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto2/1.jpg" alt="image png">
       
-      <li><a href="https://www.instagram.com/registracamocim/"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="https://api.whatsapp.com/send?phone=5588993464285" ><i class="fab fa-whatsapp"></i></a></li>
-  </ul>
-  <p>E-mail: registracamocim@gmail.com</p>
-  <p>Tel : 88 99346-4285</p>
-    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </a><br><br>
-    <p><a href="https://www.registracamocim.shop" data-toggle="tooltip" title="Visit Registra midia digital">www.registracamocim.shop</a></p> 
- <p>© 2024 Todos os direitos reservados - Orgulhosamente por tiago viana da cruz.</p>
-  </div>
+      
+        </div>
 
-  </footer>
-<script src="js/script.js"></script>
-<script src="js/anima_pagina.js"></script>
+        <div class="product">
+          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto3/1.jpg" alt="image png">
+        </div>
+        
+        <div class="product">
+          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto4/1.jpg" alt="image png">
+      
+      
+        </div>
+        <div class="product">
+          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto5/1.jpg" alt="image png">
+      
+      
+        </div>
+        <div class="product">
+          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto6/1.jpg" alt="image png">
+      
+      
+        </div>
+
+        <div class="product">
+          <img loading="lazy" src="moda_mascolina/Cavalcante_Brands/produto7/1.jpg" alt="restaurante">
+      
+      
+        </div>
+      </section>  
+      <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #000000;">Cavalcante</h1>
+      <p class="conteudo">Cavalcante, sua boutique de moda masculina. Localizada no coração da cidade, nossa loja oferece uma seleção exclusiva de roupas e acessórios para o homem moderno e elegante. Com peças de alta qualidade e estilo impecável, cada visita à Cavalcante é uma jornada de autodescoberta e sofisticação. De ternos clássicos a roupas casuais chiques, estamos aqui para elevar o seu guarda-roupa para o próximo nível.</p> 
+
+      <a id="empresas" href="moda_mascolina/cavalcante.html">
+        <h2  id="Botao">Saiba mais</h2>
+      </a>
+
+      <!--------------------------------------------------->
 
 
-</body>
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+    <div class="perfil-bloco">
+      <div>
+        <img loading="lazy" src="academia/suplemento/banner.jpg" alt="image png">
+      </div>
+    </div>
+    <section class="slider">
+
+      <div class="product">
+        <img loading="lazy" src="academia/suplemento/produtos/1.jpg" alt="image png">
+    
+    
+      </div>
+
+      <div class="product">
+        <img loading="lazy" src="academia/suplemento/produtos/2.jpg" alt="image png">
+      </div>
+      
+      <div class="product">
+        <img loading="lazy" src="academia/suplemento/produtos/3.jpg"  alt="image png">
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="academia/suplemento/produtos/4.jpg"  alt="image png">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="academia/suplemento/produtos/5.jpg" alt="image png">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="academia/suplemento/produtos/6.jpg" alt="image png">
+      </div>
+    
+      
+    </section>  
+    <h1 class="conteudo" id="cor" style="color: #FFD700; background-color: #000000;">UP SUPLEMENTOS</h1>
+    <p class="conteudo">Up Suplementos é uma loja especializada em oferecer uma ampla variedade de suplementos nutricionais para atletas, entusiastas fitness e indivíduos preocupados com sua saúde e bem-estar. Com uma seleção cuidadosamente de produtos de alta qualidade, o Up Suplementos visa atender às necessidades específicas de cada cliente, fornecendo opções que variam desde proteínas e aminoácidos até vitaminas e minerais essenciais. Além disso, a loja se destaca por seu compromisso com a transparência, fornecendo informações detalhadas sobre os ingredientes e benefícios de cada produto, permitindo que os clientes façam escolhas informadas para alcançar seus objetivos de saúde e fitness.</p>
+
+    <a id="empresas" href="academia/suplemento/UP1SUPLEMENTOS.html">
+      <h2  id="Botao">Saiba mais</h2>
+    </a>
+<!------------------------------------------------------>
+
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+    <div class="perfil-bloco">
+      <div>
+        <img loading="lazy" src="academia/li_closet/banner-1.jpg" alt="image png">
+      </div>
+    </div>
+    <section class="slider">
+
+      <div class="product">
+        <img loading="lazy" src="academia/li_closet/roupa1/1.jpg" alt="image png">
+    
+    
+      </div>
+
+      <div class="product">
+        <img loading="lazy" src="academia/li_closet/roupa8/1.jpg" alt="image png">
+      </div>
+      
+      <div class="product">
+        <img loading="lazy" src="academia/li_closet/roupa7/1.jpg" alt="image png">
+      </div>
+    
+      <div class="product">
+        <img loading="lazy" src="academia/li_closet/roupa4/1.jpg" alt="image png">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="academia/li_closet/roupa5/1.jpg" alt="image png">
+      </div>
+      <div class="product">
+        <img loading="lazy" src="academia/li_closet/roupa6/1.jpg" alt="image png">
+      </div>
+    
+      
+    </section>  
+    <h1 class="conteudo" id="cor" style="color: #8E0030; background-color: #FB5B8F;">Li Closet</h1>
+    <p class="conteudo">Bem-vindo à Li Closet, sua boutique exclusiva de moda fitness. Especializada em roupas para academia, nossa coleção oferece estilo e funcionalidade para elevar seus treinos. Descubra peças confortáveis e estilosas projetadas para garantir seu melhor desempenho durante o exercício. Encontre o equilíbrio perfeito entre moda e fitness na Li Closet.</p>
+
+    <a id="empresas" href="academia/li_closet/principal.html">
+      <h2  id="Botao">Saiba mais</h2>
+    </a>
+<!------------------------------------------------------>
+
+
+      <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+      <div class="perfil-bloco">
+        <div>
+          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/banner.webp" alt="image png">
+        </div>
+      </div>
+      <section class="slider">
+  
+        <div class="product">
+          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/228556345.webp" alt="image png">
+      
+      
+        </div>
+  
+        <div class="product">
+          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/329314913.webp" alt="image png">
+        </div>
+        
+        <div class="product">
+          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/329314892.webp" alt="image png">
+        </div>
+      
+        <div class="product">
+          <img loading="lazy" src="img_hoteis/Pousada_Village_Sonhos_Camocim/329314700.webp" alt="image png">
+        </div>
+      
+        
+      </section>  
+      <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #a0e2fc;">Pousada Village Sonhos</h1>
+      <p class="conteudo">Pousada Village Sonhos, seu refúgio perfeito longe de casa. Situada em um cenário deslumbrante, nossa pousada oferece uma experiência autêntica para os viajantes em busca de aventura e relaxamento. Com acomodações encantadoras e uma atmosfera acolhedora, cada momento passado conosco é uma oportunidade para se reconectar com a natureza e descobrir novos horizontes. Deixe-se levar pela magia da nossa vila e embarque em uma jornada de sonhos e descobertas na Pousada Village Sonhos</p>
+  
+      <a id="empresas" href="img_hoteis/Pousada_Village_Sonhos.html">
+        <h2  id="Botao">Saiba mais</h2>
+      </a>
+  <!------------------------------------------------------>
+
+    <h2 class="empresas">- - - - - - - - - - - - - -</h2>
+    <div class="perfil-bloco">
+      <div>
+        <img loading="lazy" src="festa/debora/banner.jpg" alt="image png">
+      </div>
+    </div>
+    <section class="slider">
+
+      <div class="product">
+        <img loading="lazy" src="festa/debora/1.jpeg" alt="image png">
+    
+    
+      </div>
+
+      <div class="product">
+        <img loading="lazy" src="festa/debora/2.jpeg" alt="image png">
+      </div>
+      
+      <div class="product">
+        <img loading="lazy" src="festa/debora/3.jpeg" alt="image png">
+    
+    
+      </div>
+      <div class="product">
+        <img loading="lazy" src="festa/debora/4.jpeg" alt="image png">
+    
+    
+      </div>
+      <div class="product">
+        <img loading="lazy" src="festa/debora/5.jpeg" alt="image png">
+    
+    
+      </div>
+      <div class="product">
+        <img loading="lazy" src="festa/debora/6.jpeg" alt="image png">
+    
+    
+      </div>
+      <div class="product">
+        <img loading="lazy" src="festa/debora/7.jpeg" alt="image png">
+    
+    
+      </div>
+
+  
+    </section>  
+    <h1 class="conteudo" id="cor" style="color: #ffffff; background-color: #9000d3;">Camarim de tranças</h1>
+    <p class="conteudo">Débora Lia é especializada em criar tranças coloridas em festas e eventos, proporcionando uma experiência única e cheia de estilo para seus clientes. Com habilidade e criatividade, nossa equipe transforma os cabelos em verdadeiras obras de arte, utilizando uma variedade de cores vibrantes e padrões encantadores. Seja para uma festa infantil, um evento temático ou uma ocasião especial, as tranças coloridas da Camarim de Tranças Débora Lia são garantia de diversão e beleza, celebrando a individualidade e a alegria de cada pessoa.</p> 
+
+    <a id="empresas" href="festa/debora/principal.html">
+      <h2  id="Botao">Saiba mais</h2>
+    </a>
+
+    <!--------------------------------------------------->
+  
+
+
+
+
+  
+   
+
+  </main>
+
+
+  <!-- Paginação -->
+<div class="pagination">
+  <button onclick="changePage('index.html')">1</button>
+  <button onclick="changePage('dia2.html')">2</button>
+
+  
+  <!-- Adicione mais botões conforme necessário -->
+</div>
+
 <script>
-$().ready(function(){
-$('.hb').click(function(){
-    $('#navtop').toggle();
-})
-})
+  function changePage(pagePath) {
+      // Lógica para redirecionar para a página com o caminho especificado
+      console.log("Redirecionando para a página: " + pagePath);
+      // Substitua essa linha com a lógica real para redirecionar para a página desejada
+      window.location.href = pagePath;
+  }
 </script>
 
-</main>
+<script>
+  $(document).ready(function(){
+      $('.slider').slick({
+          slidesToShow: 4, // Mostrar 4 produtos por vez
+          slidesToScroll: 1,
+          prevArrow: '<button class="slick-prev" style="background-color: #add8e6; color: #ffffff;">Anterior</button>',
+          nextArrow: '<button class="slick-next" style="background-color: #add8e6; color: #ffffff;">Próximo</button>',
+          responsive: [
+              {
+                  breakpoint: 600, // Mudar para um slide por vez em dispositivos menores
+                  settings: {
+                      slidesToShow: 1
+                  }
+              }
+          ]
+      });
+  });
+</script>
 
-
-<!--
 <a href="cursos/cursos.html" onclick="openPopup()"><button class="loginha">Cursos</button></a>
--->
-<a href="#"><button id="botaoFlutuante">Planos</button></a>
+<a href="noticias.html"><button id="botaoFlutuante">Noticias</button></a>
 
 
 <div id="janelaLogin">
@@ -1322,6 +1330,62 @@ $('.hb').click(function(){
   <button id="prosseguir" onclick="verificarSenhaLogin()">Prosseguir</button>
  
 </div>
+
+<script>
+  var senhaCorreta = "624";
+  var senhaDigitada = "";
+
+  document.getElementById("logomarca-flutuante").addEventListener("click", function(event) {
+      event.stopPropagation();
+      document.getElementById("janelaLogin").style.display = "block";
+  });
+
+  document.addEventListener("click", function(event) {
+      var janelaLogin = document.getElementById("janelaLogin");
+      if (event.target !== janelaLogin && !janelaLogin.contains(event.target)) {
+          janelaLogin.style.display = "none";
+      }
+  });
+
+  function fecharJanelaLogin() {
+      document.getElementById("janelaLogin").style.display = "none";
+  }
+
+  function adicionarNumero(numero) {
+      senhaDigitada += numero;
+      document.getElementById("mensagem").innerText = "";
+      updateSenhaInput();
+  }
+
+  function toggleMostrarSenha() {
+      var mostrarSenhaCheckbox = document.getElementById("mostrarSenhaCheckbox");
+      var senhaInput = document.getElementById("senhaLogin");
+      senhaInput.type = mostrarSenhaCheckbox.checked ? "text" : "password";
+  }
+
+  function updateSenhaInput() {
+      var senhaInput = document.getElementById("senhaLogin");
+      senhaInput.value = senhaDigitada;
+  }
+
+  function verificarSenhaLogin() {
+      if (senhaDigitada === senhaCorreta) {
+          window.location.href = "login/apoiadores.html";
+      } else {
+          document.getElementById("mensagem").innerText = "Senha incorreta. Tente novamente.";
+          resetSenha();
+      }
+  }
+
+  function voltar() {
+      window.history.back();
+  }
+
+  function resetSenha() {
+      senhaDigitada = "";
+      updateSenhaInput();
+  }
+</script>
 
 <style>
   .loginha{
@@ -1597,13 +1661,13 @@ button:active {
 
  
 </style>
-<!--
+
 <div class="floating-button-container">
   <div class="floating-button" id="floatingButton">
     <span class="floating-button-text">Doar</span>
   </div>
 </div>
--->
+
 <div id="popup" class="popup">
   <h2>Apoie um estudante apaixonado por tecnologia - Site em constante atualização</h2>
   <div class="hino-camocim">
