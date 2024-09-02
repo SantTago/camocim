@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="css/cssnovo.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 <!----------------------------------Site agencia-->
     <!--scripto dos anuncios -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1609846937178820"
@@ -448,12 +448,7 @@
     max-width: 100px;
 }
 
-button:hover {
-  background-color: #00ff6a;
-  color: white;
-  transition: 0.1s;
-  box-shadow: 0px 0px 15px rgb(0, 238, 255);
-}
+
 
   .mobile-only {
     display: none;
@@ -915,22 +910,12 @@ button:hover {
 
 <div class="container1">
   <div class="imagem-topo">
-    <h2 class="titulo">Sua Agência Digital</h2>
+    <h2 class="titulo">Social Midia</h2>
     <p class="paragrafo">Saiba o que podemos fazer por você</p>
   </div>
 </div>
 
-<!-- Qcontatos -->
-<div class="container-fluid top-top">
- 
-  <p>E-mail: Registracamocim@gmail.com</p>
-  <ul style="padding: 0;" class="midias-sociais">
 
-      <li><a href="https://www.instagram.com/registracamocim/"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="https://api.whatsapp.com/send?phone=5588993464285" ><i class="fab fa-whatsapp"></i></a></li>
-  </ul>
-
-</div>
 <!-- QUEM SOMOS -->
 
 <section>
@@ -989,77 +974,466 @@ button:hover {
 </section> 
              
 
- <!-- soluções  -->
-<section id="solucoes">
-<div class="container-fluid text-center  ">
-      <h2 class="mg-bt"> O que podemos fazer por você?</h2>
+<!-------------------------------------------------------------->
+<style>
+   .body1 {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50; /* Fundo escuro */
+            margin: 0;
+            padding: 0;
+            color: #ecf0f1; /* Texto claro para contraste */
+        }
+        .header {
+            background-color: #0077ff; /* Azul claro no topo */
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .header img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 34px;
+            margin: 0;
+        }
+        .container5 {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .planos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: -40px;
+        }
+        .plano {
+            background-color: #34495e; /* Plano em tom escuro */
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .plano:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .plano h2 {
+            font-size: 26px;
+            color: #ecf0f1; /* Texto claro */
+        }
+        .plano p {
+            color: #00ffce;
+            margin: 10px 0;
+            font-size: 26px;
+        }
+        .preco {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2ecc71; /* Preço em tom verde intenso */
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #48c9b0;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #1abc9c;
+        }
+        .btn i {
+            margin-right: 8px;
+        }
+        .plano .benefits {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .plano .benefits li {
+            list-style: none;
+            font-size: 15px;
+            padding: 5px 0;
+        }
+        .plano .benefits li i {
+            color: #48c9b0;
+            margin-right: 8px;
+        }
+        .restricted-area {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 16px;
+            color: #ecf0f1;
+        }
+        .restricted-area .btn-restricted {
+            background-color: #1abc9c;
+     
+        }
+        .restricted-area .btn-restricted:hover {
+            background-color: #16a085;
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        .whatsapp-float i {
+            margin-top: 15px;
+        }
+        /* Estilo do Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #ecf0f1;
+        }
+        .modal-content h3 {
+            margin-bottom: 20px;
+        }
+        .number-pad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .number-pad button {
+            padding: 15px;
+            font-size: 18px;
+            background-color: #48c9b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .number-pad button:hover {
+            background-color: #1abc9c;
+        }
+        .close-btn, .submit-btn {
 
-      <div class="row slideanim">
-            <div class="col-sm-4">
-                <div class="box w-75 ">
-                  <h3 class="text-center"><strong>Inbound Marketing</strong></h3><br>
-                  <a href="#demo" data-toggle="collapse">
-                    <img src="img/icone_marketing.png" class="img-circle person" alt="Random Name" width="250" height="250">
-                  </a>
-                    <div id="demo" class="collapse">
-                      <p>Trace estratégias para atrair seus leads e transformá-los em clientes!</p>
-                      <p>-Elaboração de Estratégia
-                        <br>
-                      -Construção de Fluxos Automatizados
-                      <br>
-                      -Elaboração de Materiais Educativos
-                      </div>
+            background-color: #e74c3c;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .close-btn:hover, .submit-btn:hover {
+            background-color: #c0392b;
+        }
+        .confirmation-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .confirmation-content {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #ecf0f1;
+        }
+        .confirmation-content button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #48c9b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .confirmation-content button:hover {
+            background-color: #1abc9c;
+        }
+        .confirmation-content button.cancel-btn {
+            background-color: #e74c3c;
+        }
+        .confirmation-content button.cancel-btn:hover {
+            background-color: #c0392b;
+        }
+        /* Modal de Pagamento */
+        .payment-modal {
+            display: none;
+            position: fixed;
+            z-index: 1002;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .payment-content {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #ecf0f1;
+        }
+        .payment-content img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .payment-content button {
+            background-color: #48c9b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .payment-content button:hover {
+            background-color: #1abc9c;
+        }
 
-                </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="box w-75">
-                  <h3 class="text-center"><strong> Construção de Websites</strong></h3><br>
-                  <a href="#demo2" data-toggle="collapse">
-                    <img src="img/icone_net.png" class="img-circle person" alt="Random Name" width="255" height="255">
-                  </a>
-                  <div id="demo2" class="collapse">
-                  <p>Sua empresa merece um site profissional , destacando-a sobre seus concorrentes!</p>
-                
-                  <p>-Concepção de Interface do Projeto (design/layout)
-                    <br>
-                    -Estruturação e estilização dos textos
-                    <br>
-                  
-                </div>
-              </div>
-          </div>
-  
-    
-    <div class="col-sm-4">
-      <div class="box w-75">
-                  <h3 class="text-center"><strong>Gestão de Mídias Sociais</strong></h3><br>
-                  <a href="#demo3" data-toggle="collapse">
-                    <img src="img/icone_midias1.png" class="img-circle person" alt="Random Name" width="255" height="255">
-                  </a>
-                  <div id="demo3" class="collapse">
-                    <p>Que tal usar as redes sociais para atrair, educar e engajar sua audiência?</p>
-                 <p>
-                  -Elaboração de Estratégia de Conteúdo
-                  <br>
-                  -Set up de Conteúdo + Scedule de Publicações
-                  <br>
-                  -Estudo de concorrência e página / perfis adjacentes
-                  <br>
-                  -Conteúdo em texto, imagem
-                  <br>
-                  -Gerenciamento completo de perfis ou páginas
-                  <br>
-                  -Estratégia e execução de campanhas patrocinadas
-                 </p>
-                 </div>
-            </div>
-          </div>
-             
+        .back-btn {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+        .back-btn:hover {
+            background-color: #c0392b;
+        }
+        .planos5{
+          padding-bottom: 20px;
+          margin: 12px;
+          padding-top: 1px;
+        }
+       
+</style>
+
+
+<script>
+  let inputPassword = '';
+  const validPasswords = ['123', '456', '789']; // Lista de senhas válidas
+
+  function openConfirmationModal() {
+      document.getElementById('confirmation-modal').style.display = 'flex';
+  }
+
+  function closeConfirmationModal() {
+      document.getElementById('confirmation-modal').style.display = 'none';
+  }
+
+  function openPasswordModal() {
+      closeConfirmationModal();
+      document.getElementById('modal').style.display = 'flex';
+  }
+
+  function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+      inputPassword = ''; // Limpa a senha ao fechar o modal
+  }
+
+  function addNumber(num) {
+      inputPassword += num;
+  }
+
+  function submitPassword() {
+      if (inputPassword.length === 3) { // Considera a senha com 3 dígitos
+          if (validPasswords.includes(inputPassword)) { // Verifica se a senha está na lista
+              window.location.href = 'plano.html';
+          } else {
+              alert('Senha incorreta!');
+              closeModal();
+          }
+      } else {
+          alert('Por favor, insira a senha completa.');
+      }
+  }
+
+  function openPaymentModal() {
+      document.getElementById('payment-modal').style.display = 'flex';
+  }
+
+  function closePaymentModal() {
+      document.getElementById('payment-modal').style.display = 'none';
+  }
+
+  function copyPixKey() {
+      const pixKey = "registracamocim@gmail.com";
+      navigator.clipboard.writeText(pixKey).then(() => {
+          alert('Chave Pix copiada para a área de transferência!');
+      });
+  }
+</script>
+
+<div class="body1">
+
+  <div class="planos5">
+    <h1>Nossos Planos de Social Media</h1>
+</div>
+
+<div class="container5">
+  <div class="planos">
+
+      <div class="plano">
+          <h2>Pacote Básico</h2>
+          <ul class="benefits">
+              <li><i class="fas fa-check"></i> 3 posts semanais</li>
+              <li><i class="fas fa-check"></i> 3 stories semanais</li>
+              <li><i class="fas fa-times"></i> Carrosséis não inclusos</li>
+          </ul>
+          <p class="preco">R$ 200,00</p>
+          <button id="button1" class="btn" onclick="openPaymentModal()"><i class="fas fa-shopping-cart"></i> Adquirir Agora</button>
       </div>
-    </div>
-</section>                
-               
+
+      <div class="plano">
+          <h2>Pacote Júnior</h2>
+          <ul class="benefits">
+              <li><i class="fas fa-check"></i> 4 posts semanais</li>
+              <li><i class="fas fa-check"></i> 4 stories semanais</li>
+              <li><i class="fas fa-check"></i> 1 carrossel incluído (substitui um post)</li>
+          </ul>
+          <p class="preco">R$ 250,00</p>
+          <button id="button1" class="btn" onclick="openPaymentModal()"><i class="fas fa-shopping-cart"></i> Adquirir Agora</button>
+      </div>
+
+      <div class="plano">
+          <h2>Plano Master</h2>
+          <ul class="benefits">
+              <li><i class="fas fa-check"></i> 5 posts semanais</li>
+              <li><i class="fas fa-check"></i> 5 stories semanais</li>
+              <li><i class="fas fa-check"></i> 2 carrosséis inclusos (substituem dois posts)</li>
+              <li><i class="fas fa-check"></i> Descrições personalizadas</li>
+          </ul>
+          <p class="preco">R$ 350,00</p>
+          <button id="button1" class="btn" onclick="openPaymentModal()"><i class="fas fa-shopping-cart"></i> Adquirir Agora</button>
+      </div>
+
+      <div class="plano">
+          <h2>Plano Prêmio</h2>
+          <ul class="benefits">
+              <li><i class="fas fa-check"></i> 5 posts semanais</li>
+              <li><i class="fas fa-check"></i> 5 stories semanais</li>
+              <li><i class="fas fa-check"></i> 3 carrosséis inclusos (substituem três posts)</li>
+              <li><i class="fas fa-check"></i> Descrições personalizadas</li>
+              <li><i class="fas fa-check"></i> Criação e publicação automática</li>
+          </ul>
+          <p class="preco">R$ 450,00</p>
+          <button id="button1" class="btn" onclick="openPaymentModal()"><i class="fas fa-shopping-cart"></i> Adquirir Agora</button>
+      </div>
+
+  </div>
+
+
+  <div class="restricted-area">
+     <button class="btn btn-restricted" onclick="openConfirmationModal()"><i class="fas fa-lock"></i> Área Restrita</button>
+     <p>Área restrita apenas para contratantes.</p>
+
+  </div>
+</div>
+
+<!-- Botão flutuante do WhatsApp -->
+<a href="https://wa.me/88993464285" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Modal de Confirmação -->
+<div id="confirmation-modal" class="confirmation-modal">
+  <div class="confirmation-content">
+      <h3>Você é contratante?</h3>
+      <button onclick="openPasswordModal()">Sim</button>
+      <button class="cancel-btn" onclick="closeConfirmationModal()">Não</button>
+  </div>
+</div>
+
+<!-- Modal para senha -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+      <h3>Digite a Senha</h3>
+      <div class="number-pad">
+          <button onclick="addNumber('1')">1</button>
+          <button onclick="addNumber('2')">2</button>
+          <button onclick="addNumber('3')">3</button>
+          <button onclick="addNumber('4')">4</button>
+          <button onclick="addNumber('5')">5</button>
+          <button onclick="addNumber('6')">6</button>
+          <button onclick="addNumber('7')">7</button>
+          <button onclick="addNumber('8')">8</button>
+          <button onclick="addNumber('9')">9</button>
+          <button onclick="addNumber('0')">0</button>
+      </div>
+      <button class="submit-btn" onclick="submitPassword()">Entrar</button>
+      <button class="btn close-btn" onclick="closeModal()">Cancelar</button>
+  </div>
+</div>
+
+<!-- Modal de Pagamento -->
+<div id="payment-modal" class="payment-modal">
+<div class="payment-content">
+  <h3>Efetue o Pagamento</h3>
+  <img src="qr-code/qrcode-pix.png" alt="QR Code do Pix">
+  <button onclick="copyPixKey()">Copiar Chave Pix</button>
+  <p>Nome: Tiago Viana Da Cruz</p>
+  <p>Envie o comprovante para nosso WhatsApp:</p>
+  <!-- Botão para enviar mensagem pelo WhatsApp -->
+  <a href="https://wa.me/88993464285" class="btn" target="_blank">
+      <i class="fab fa-whatsapp"></i> Enviar Comprovante
+  </a>
+  <button class="btn close-btn" onclick="closePaymentModal()">Fechar</button>
+</div>
+</div>
+
+</div>
+<!--------------------------------------------------------------->
 
 
 
@@ -1294,375 +1668,6 @@ $('.hb').click(function(){
 </script>
 
 </main>
-
-
-<!--
-<a href="cursos/cursos.html" onclick="openPopup()"><button class="loginha">Cursos</button></a>
--->
-<a href="pacote.html"><button id="botaoFlutuante">Planos</button></a>
-
-
-<div id="janelaLogin">
-  <span id="fecharJanela" onclick="fecharJanelaLogin()">X</span>
-  <div  class="logomarca-flutuante">
-      <img src="https://i.ibb.co/ZmFw9r9/logo-da-pagina.png" alt="logo-da-pagina">
-  </div>
-  <div class="botoes">
-      <button onclick="adicionarNumero(1)">1</button>
-      <button onclick="adicionarNumero(2)">2</button>
-      <button onclick="adicionarNumero(3)">3</button>
-      <button onclick="adicionarNumero(4)">4</button>
-      <button onclick="adicionarNumero(5)">5</button>
-      <button onclick="adicionarNumero(6)">6</button>
-      <button onclick="adicionarNumero(7)">7</button>
-      <button onclick="adicionarNumero(8)">8</button>
-      <button onclick="adicionarNumero(9)">9</button>
-  </div>
-  <div id="senha-container">
-      <input type="password" id="senhaLogin" placeholder="Senha">
-      <input type="checkbox" id="mostrarSenhaCheckbox" onchange="toggleMostrarSenha()"> Mostrar Senha
-  </div>
-  <p id="mensagem"></p>
-  <button id="prosseguir" onclick="verificarSenhaLogin()">Prosseguir</button>
- 
-</div>
-
-<style>
-  .loginha{
-    position: fixed;
-    top: 20px; /* ajuste conforme necessário */
-    right: -2px;
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 80px;
-    margin-top: 45px;
-    
-  }
-  .loginha:hover{
-    background-color: #00ff6a;
-  }
-  #botaoFlutuante {
-    position: fixed;
-    top: 20px; 
-    right: -2px; 
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 80px;
-    
-}
-
-#botaoFlutuante:hover {
-    background-color: #00ff6a;
-}
-
-  #janelaLogin {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      text-align: center;
-  }
-
-  #fecharJanela {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      cursor: pointer;
-      height: 10px;
-  }
-  
-
-
-.botoes {
-    display: grid;
-    grid-template-columns: repeat(3, 75px);
-    grid-gap: 10px;
-    justify-content: center;
-}
-
-button {
-    width: 100%;
-    height: 37px;
-    background-color: #3463db59;
-    color: #4400ff;
-    border: none;
-    border-radius: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-button:hover {
-    background-color: #00ff6a;
-    color: white;
-    transition: 0.1s;
-    box-shadow: 0px 0px 15px rgb(0, 238, 255);
-}
-
-button:active {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#mensagem {
-    margin-top: 20px;
-    color: #e74c3c;
-}
-
-#senha-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-#senha {
-  
-    border: 1px solid #3498db;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    width: 156px;
-    transition: border-color 0.3s ease;
-}
-
-#mostrarSenha {
-    margin-left: 10px;
-}
-
-#prosseguir {
-    margin-top: 10px;
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#prosseguir:hover {
-    background-color: #00ff6a;
-}
-
-#voltar {
-    margin-top: 10px;
-    background-color: #e74c3c;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.logomarca {
-  padding: 9px;
-  padding-top: 4px;
-  max-width: 152px;
-  /* width: 117%; */
-  text-align: center;
-  margin-bottom: -95px;
-  /* margin: 0px auto;*/
-}
-  
-.logomarca img {
-    
-    max-width: 100%;
-    border-top: 11px;
-    height: auto;
-}
-  
-  @media only screen and (max-width: 830px) {
-    .logomarca {
-      padding: 9px;
-      max-width: 212px;
-      margin-bottom: -59px;
-      margin: 0px auto;
-  }
-
-    .menu {
-      text-align: center;
-     
-    }
-  
-  }
-
-</style>
-<style>
-  .floating-button-container {
-    position: fixed;
-    bottom: 20px;
-    right: 6px;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
-    z-index: 9999;
-    
-  }
-
-  .floating-button {
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 30px;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.233);
-  }
-
-  .floating-button:hover{
-    background-color: #00ff6a;
-    box-shadow: 2px 2px 50px #00ff6a;
-    color: #fff;
-    border-radius: 30px;
-  }
-
-
- 
-  .popup {
-    display: none;
-    position: fixed;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-    z-index: 9998;
-  }
-
-  .popup h2 {
-    text-align: center;
-  }
-
-  .popup label,
-  .popup button {
-    display: block;
-    margin: 10px auto;
-  }
-
-  .popup input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-
-  .popup button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  .copied-notification {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    background-color: rgba(0, 123, 255, 0.7);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 9999;
-  }
-
-  @media only screen and (max-width: 600px) {
-    .popup {
-      width: 67%;
-      padding: 47px;
-    }
-   
-  }
-  .floating-button-text{
-    font-size: medium;
-   
-  }
-
- 
-</style>
-<!--
-<div class="floating-button-container">
-  <div class="floating-button" id="floatingButton">
-    <span class="floating-button-text">Doar</span>
-  </div>
-</div>
--->
-<div id="popup" class="popup">
-  <h2>Apoie um estudante apaixonado por tecnologia - Site em constante atualização</h2>
-  <div class="hino-camocim">
-    <audio src="login/artigo.mp3" controls style="padding-bottom: 20px;"></audio>
-  </div>
-  <div>
-    <p>Chave PIX:</p>
-    <div id="chavePix" contenteditable="true">Registracamocim@gmail.com</div>
-  </div>
-  <button type="button" id="copiarChavePix">Copiar Chave PIX</button>
-  <button class="close-button">Fechar</button>
-</div>
-
-<div id="copiedNotification" class="copied-notification">Chave PIX copiada!</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const floatingButton = document.getElementById("floatingButton");
-    const popup = document.getElementById("popup");
-    const copiarChavePixButton = document.getElementById("copiarChavePix");
-    const closeButton = document.querySelector('.close-button');
-    const copiedNotification = document.getElementById("copiedNotification");
-  
-    floatingButton.addEventListener('click', function () {
-      popup.style.display = popup.style.display === "block" ? "none" : "block";
-    });
-  
-    document.addEventListener('click', function (event) {
-      if (event.target === popup) {
-        popup.style.display = "none";
-      }
-    });
-  
-    copiarChavePixButton.addEventListener('click', copiarChavePix);
-  
-    closeButton.addEventListener('click', function () {
-      popup.style.display = "none";
-    });
-  
-    function copiarChavePix() {
-      const chavePix = document.getElementById("chavePix");
-      const range = document.createRange();
-      range.selectNode(chavePix);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      document.execCommand("copy");
-      window.getSelection().removeAllRanges();
-      copiedNotification.style.display = "block";
-      setTimeout(function () {
-        copiedNotification.style.display = "none";
-      }, 2000);
-    }
-  });
-  </script>
-  
 
 </body>
 

@@ -50,11 +50,8 @@
 }
 .box{
    
-    box-shadow: 10px 10px 6px #99999930;
-    border-radius:0 0 15px 0;
-    padding:1%;
-    margin:5vh auto;
-    text-align: center;
+  width: 100%;
+  box-shadow: 10px 10px 6px #99999930;
 }
 .bg-grey{
   background-color: #f0ebeb;
@@ -388,7 +385,7 @@
   width:150px;
 }
 .boxBt02{
-  background-color: #4b4b4b;
+  background-color: #2c3e50;
  
 }
 .boxBt02 h2{
