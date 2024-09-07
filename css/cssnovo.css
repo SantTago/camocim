@@ -255,10 +255,9 @@
 
   /* QUEM SOMOS */
   #quem-somos{
-  
-
-    margin-top: 10vh;
+    margin-top: -10vh;
     margin-bottom: 10vh;
+    margin-bottom: -46px;
    
   }
 
@@ -370,7 +369,7 @@
  
   }
   .midias-sociais li a{
-    color:#0077FF;
+    color:#1abc9c;
   }
   .midias-sociais li a:hover {
     color:rgb(7, 7, 7);
@@ -410,6 +409,7 @@
   animation-duration: 1s;
   -webkit-animation-duration: 1s;
   visibility: visible;
+  margin-top: -43px;
 }
 @keyframes slide {
   0% {
