@@ -82,7 +82,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #2c3e50;
+        background-color: #0077FF;
        
        
       }
@@ -156,6 +156,7 @@
       .logomarca img {
         max-width: 100%;
         height: auto;
+        margin-bottom: 73px;
       }
       
       @media only screen and (max-width: 490px) {
@@ -171,7 +172,7 @@
           
         }
         header {
-          background-color: #2c3e50;
+          background-color: #0077FF;
           color: #fff;
           text-align: center;
           padding: 10px;
@@ -266,7 +267,7 @@
       
         /* Adiciona estilo para exibir os resultados da pesquisa em telas menores que 600px */
         #search-results {
-          display: block !important;
+          display: contents !important;
         }
 
        
@@ -405,8 +406,123 @@
   </style>
   </head>
 <body>
-  
+<!-------------------------------------->
 
+<style>
+
+  nav {
+      position: relative;
+      background-color: var(--cor1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+  }
+
+  .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #ffffff;
+      transition: transform 0.3s ease;
+      padding: 10px 15px;
+  }
+
+  .menu-toggle:hover {  
+      color: #0077FF;
+    
+  }
+
+  nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+  }
+
+  nav ul li a {
+      display: flex;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+      align-items: center;
+      justify-content: space-between;
+      align-content: space-between;
+      flex-direction: column;
+    }
+
+  nav ul li a:hover {
+      color: #ffffff;
+      background-color: #0077FF;
+      text-decoration: none;
+  }
+  .show {
+  display: contents !important;
+  }
+  @media (max-width: 768px) {
+      nav ul {
+          flex-direction: column;
+          display: none; /* Oculta o menu inicialmente */
+          background-color: #ffffff;
+          position: fixed;
+          top: 60px;
+          left: 0; /* Mantenha o menu à esquerda */
+          width: 250px; /* Largura fixa para o menu lateral */
+          height: calc(100% - 60px); /* Altura total, menos a altura do menu */
+          padding: 20px;
+          border-radius: 0 40px 40px 0; /* Arredondar o canto inferior direito */
+          z-index: 100;
+          box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+          transform: translateX(-100%); /* Inicialmente fora da tela */
+          transition: transform 0.3s ease; /* Transição suave */
+      }
+
+      nav ul.show {
+          display: flex; /* Mostra o menu quando ativo */
+          transform: translateX(0); /* Move para a posição original */
+
+
+      }
+
+      .menu-toggle {
+          display: block; /* Exibe o botão de menu em telas pequenas */
+      }
+  }
+  html {
+    scroll-behavior: smooth; /* Adiciona rolagem suave */
+}
+</style>
+</head>
+<body>
+
+<nav id="menu">
+<div class="menu-toggle" id="menu-toggle">&#9776;</div>
+<ul>
+  <li><a href="#Home">Home</a></li>
+  <li><a href="#sobre">Sobre</a></li>
+  <li><a href="#Planos">Planos</a></li>
+  <li><a href="#Trabalhos">Trabalhos</a></li>
+</ul>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu').querySelector('ul');
+  let isMenuOpen = false;
+
+  toggleButton.addEventListener('click', () => {
+    isMenuOpen = !isMenuOpen;
+    menu.classList.toggle('show', isMenuOpen); // Usa uma classe para exibir o menu
+    toggleButton.classList.toggle('open', isMenuOpen);
+  });
+});
+
+
+</script>
+<!----------------------------------------------------------->
   <header>
 
 
@@ -418,16 +534,6 @@
     
   </header>
 
-  
-
-  <div class="menu">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="https://forms.gle/p1bZo5Lfj3NJAe1X8" target="_blank" >Cadastrar</a>
-
-    </nav>
-  </div>
-
 
 <!-----------------  hover do lojas-------------------------------------->
 <style>
@@ -435,7 +541,22 @@
     display: none;
     background-color: var(--cor1);
     color: #fff;
-    /* padding-bottom: 10px; */
+    padding: 10px 20px;
+  font-size: 16px;
+    border: none;
+    border-radius: 0px 5px 0px 0px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    box-shadow: -15px 15px 20px 18px #ffffff;
+    font-weight: 600;
+    max-width: 100px;
+}
+
+.mobile-only:hover {
+    display: none;
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px 20px;
   font-size: 16px;
     border: none;
     border-radius: 0px 5px 0px 0px;
@@ -921,7 +1042,7 @@
             <!-- Texto Sobre a Empresa -->
             <div class="col-md-12">
                 <div class="box-mg">
-                    <h2>Sobre - Registra Camocim</h2>
+                    <h2 id="sobre">Sobre - Registra Camocim</h2>
                     <h3>Nossa Missão</h3>
                     <p>O Registra Camocim é uma agência especializada em gerenciamento e criação de conteúdos para mídias sociais. Nosso objetivo é construir uma forte conexão entre sua marca e seu público, promovendo um engajamento significativo. Utilizamos canais digitais estratégicos para comunicar sua mensagem da forma mais eficaz com a sua persona.</p>
                     
@@ -1314,7 +1435,7 @@
 
 <div class="body1">
 
-  <div class="planos5">
+  <div class="planos5" id="Planos">
     <h1>Nossos Planos de Social Media</h1>
 </div>
 
@@ -1432,11 +1553,9 @@
 </div>
 <!--------------------------------------------------------------->
 
-
-
 <!-- SECTION CLIENTES -->
-<section id="clientes" >
-  <div class="container boxBt02 box">
+<section id="clientes">
+  <div class="container boxBt02 box" id="Trabalhos">
       <h2>O que já fizemos</h2>
       <h3>Trabalhamos com os mais diferentes nichos de mercado</h3>
 
@@ -1449,142 +1568,137 @@
           <button class="btn btn-sm" data-category="academias">Academias</button>
           <button class="btn btn-sm" data-category="clinicas">Clínicas</button>
           <button class="btn btn-sm" data-category="lojas">Lojas</button>
-          <button class="btn btn-sm" data-category="eventos">Eventos</button>
       </div>
 
       <!-- Carrossel de Imagens -->
       <div class="carousel-container">
           <div class="carousel" id="image-carousel"></div>
           <div class="carousel-controls">
-              <span class="prev">&#10094;</span>
-              <span class="next">&#10095;</span>
+              <div class="prev">&#10094;</div>
+              <div class="next">&#10095;</div>
           </div>
       </div>
-  </div>
 
-  <!-- Estilos -->
-  <style>
-      /* Menu Horizontal */
-      .menu-horizontal {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        /* padding: 10px; */
-        border-bottom: -1px solid #ffffff;
-        scrollbar-width: thin;
-        scrollbar-color: #1abc9c #ffffff;
-      }
+      <!-- Estilos -->
+      <style>
+          /* Menu Horizontal */
+          .menu-horizontal {
+              display: flex;
+              overflow-x: auto;
+              white-space: nowrap;
+              border-bottom: -1px solid #ffffff;
+              scrollbar-width: thin;
+              scrollbar-color: #1abc9c #ffffff;
+          }
 
-      .menu-horizontal::-webkit-scrollbar {
-          height: 8px; /* Altura da barra de rolagem */
-      }
+          .menu-horizontal::-webkit-scrollbar {
+              height: 8px;
+          }
 
-      .menu-horizontal::-webkit-scrollbar-track {
-          background: #ddd;
-      }
+          .menu-horizontal::-webkit-scrollbar-track {
+              background: #ddd;
+          }
 
-      .menu-horizontal::-webkit-scrollbar-thumb {
-          background-color: #333;
-          border-radius: 10px;
-          border: 3px solid transparent;
-      }
+          .menu-horizontal::-webkit-scrollbar-thumb {
+              background-color: #333;
+              border-radius: 10px;
+              border: 3px solid transparent;
+          }
 
-      .menu-horizontal button {
-        margin-right: -2px;
-        background-color: rgb(51, 51, 51);
-        color: #fff;  
-        border: none;
-        /* padding: 10px; */
-        border-radius: 7px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-        margin-bottom: 19px;
-      }
+          .menu-horizontal button {
+              margin-right: -2px;
+              background-color: rgb(51, 51, 51);
+              color: #fff;
+              border: none;
+              border-radius: 7px;
+              cursor: pointer;
+              font-size: 16px;
+              transition: background-color 0.3s ease;
+              margin-bottom: 19px;
+          }
 
-      .menu-horizontal button:hover {
-          background-color: 1abc9c;
-      }
+          .menu-horizontal button:hover {
+              background-color: #1abc9c;
+          }
 
-      /* Container do Carrossel */
-      .carousel-container {
-          position: relative;
-          width: 100%;
-          max-width: 100%;
-          margin: 20px auto;
-          overflow: hidden;
-      }
-
-      /* Carrossel */
-      .carousel {
-          display: flex;
-          transition: transform 0.5s ease-in-out;
-          will-change: transform;
-      }
-
-      .carousel img {
-          width: 100%;
-          max-width: 500px;
-          max-height: 300px;
-          object-fit: cover;
-          border-radius: 10px; /* Adiciona bordas arredondadas às imagens */
-          margin-right: 10px;
-      }
-
-      /* Botões de Navegação */
-      .carousel-controls .prev,
-      .carousel-controls .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          padding: 16px;
-          color: white;
-          font-weight: bold;
-          font-size: 20px;
-          background-color: rgba(0, 0, 0, 0.5);
-          border-radius: 50%;
-          transform: translateY(-50%);
-      }
-
-      .carousel-controls .prev {
-          left: 10px;
-      }
-
-      .carousel-controls .next {
-          right: 10px;
-      }
-
-      .carousel-controls .prev:hover,
-      .carousel-controls .next:hover {
-          background-color: rgba(0, 0, 0, 0.8);
-      }
-
-      /* Estilos responsivos para celular */
-      @media (max-width: 768px) {
-          .carousel img {
+          /* Container do Carrossel */
+          .carousel-container {
+              position: relative;
+              width: 100%;
               max-width: 100%;
-              max-height: 400px;
+              margin: 20px auto;
+              overflow: hidden;
           }
 
-          .carousel-controls {
-              display: none; /* Oculta os controles de carrossel no celular */
+          /* Carrossel */
+          .carousel {
+              display: flex;
+              transition: transform 0.5s ease-in-out;
+              will-change: transform;
           }
-      }
-  </style>
+
+          .carousel img {
+              width: 100%;
+              max-width: 500px;
+              max-height: 300px;
+              object-fit: cover;
+              border-radius: 10px;
+              margin-right: 10px;
+          }
+
+          /* Botões de Navegação */
+          .carousel-controls .prev,
+          .carousel-controls .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              padding: 16px;
+              color: white;
+              font-weight: bold;
+              font-size: 20px;
+              background-color: rgba(0, 0, 0, 0.5);
+              border-radius: 50%;
+              transform: translateY(-50%);
+          }
+
+          .carousel-controls .prev {
+              left: 10px;
+          }
+
+          .carousel-controls .next {
+              right: 10px;
+          }
+
+          .carousel-controls .prev:hover,
+          .carousel-controls .next:hover {
+              background-color: rgba(0, 0, 0, 0.8);
+          }
+
+          /* Estilos responsivos para celular */
+          @media (max-width: 768px) {
+              .carousel img {
+                  max-width: 100%;
+                  max-height: 400px;
+              }
+              .carousel-controls {
+                  display: none; /* Oculta os controles de carrossel no celular */
+              }
+          }
+      </style>
+  </div>
 </section>
 
 <!-- Script -->
 <script>
   const imageCarousel = document.getElementById('image-carousel');
   const categories = {
-      imobiliarias: ['https://via.placeholder.com/500/FF9999', 'https://via.placeholder.com/500/FF9999', 'https://via.placeholder.com/500/FF9999'],
-      bares: ['https://via.placeholder.com/500/99FF99', 'https://via.placeholder.com/500/99FF99', 'https://via.placeholder.com/500/99FF99'],
-      restaurantes: ['https://via.placeholder.com/500/9999FF', 'https://via.placeholder.com/500/9999FF', 'https://via.placeholder.com/500/9999FF'],
-      pizzarias: ['https://via.placeholder.com/500/FFFF99', 'https://via.placeholder.com/500/FFFF99', 'https://via.placeholder.com/500/FFFF99'],
-      academias: ['https://via.placeholder.com/500/FF99FF', 'https://via.placeholder.com/500/FF99FF', 'https://via.placeholder.com/500/FF99FF'],
-      clinicas: ['https://via.placeholder.com/500/99FFFF', 'https://via.placeholder.com/500/99FFFF', 'https://via.placeholder.com/500/99FFFF'],
-      lojas: ['https://via.placeholder.com/500/FFCC99', 'https://via.placeholder.com/500/FFCC99', 'https://via.placeholder.com/500/FFCC99'],
-      eventos: ['https://via.placeholder.com/500/CCCCCC', 'https://via.placeholder.com/500/CCCCCC', 'https://via.placeholder.com/500/CCCCCC']
+      imobiliarias: ['image/Imobiliaria.jpg', 'image/Imobiliaria1.jpg', 'image/Imobiliaria2.jpg'],
+      bares: ['image/bar.jpg', 'image/bar1.jpg', 'image/bar2.jpg'],
+      restaurantes: ['image/restaurante.jpg', 'image/restaurante1.jpg', 'image/restaurante2.jpg'],
+      pizzarias: ['image/pizzaria.jpg', 'image/pizzaria1.jpg', 'image/pizzaria2.jpg'],
+      academias: ['image/academia.jpg', 'image/academia1.jpg', 'image/academia2.jpg'],
+      clinicas: ['image/Clinica1.jpg', 'image/Clinica.jpg', 'image/Clinica2.jpg'],
+      lojas: ['image/Loja.jpg', 'image/Loja1.jpg', 'image/Loja2.jpg']
   };
 
   let currentCategory = 'imobiliarias';
@@ -1639,30 +1753,49 @@
 
   // Atualiza a visualização quando a tela é redimensionada
   window.addEventListener('resize', updateCarousel);
+
+  // Função para auto passar as imagens no celular
+  function autoSlide() {
+      const totalImages = document.querySelectorAll('#image-carousel img').length;
+      if (totalImages > 0) {
+          currentIndex = (currentIndex + 1) % totalImages;
+          updateCarousel();
+      }
+  }
+
+  // Ativa o auto slide a cada 3 segundos apenas para celulares
+  setInterval(() => {
+      if (window.innerWidth <= 768) {
+          autoSlide();
+      }
+  }, 3000);
 </script>
 
 <!-------------------------------------------------------------------->
 <!-- Artigo sobre a importância de ter um parceiro de mídias sociais -->
 <section class="article-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="article">
-                    <h2>Por Que Ter um Parceiro de Mídias Sociais É Essencial para o Sucesso da Sua Marca</h2>
-                    <p>No ambiente competitivo atual, uma presença digital robusta não é apenas desejável, é crucial. Contar com um parceiro especializado em mídias sociais pode ser a chave para transformar sua marca e alcançar o sucesso. Veja como um parceiro estratégico pode fazer a diferença:</p>
-                    <ul>
-                        <li><strong>Especialização e Conhecimento Profundo:</strong> Profissionais dedicados trazem uma combinação de experiência e conhecimento técnico para criar e implementar estratégias de mídia social eficazes. Eles sabem como maximizar o impacto e ajustar campanhas para atender às suas necessidades específicas.</li>
-                        <li><strong>Economia de Tempo e Recursos:</strong> Gerenciar e otimizar campanhas de mídias sociais pode consumir muito tempo e esforço. Um parceiro especializado assume essa responsabilidade, permitindo que você se concentre nas operações principais do seu negócio.</li>
-                        <li><strong>Conteúdo Criativo e Impactante:</strong> Um parceiro de mídias sociais cria conteúdo que não apenas ressoa com seu público-alvo, mas também destaca sua marca de maneira única e atraente. Isso ajuda a capturar a atenção e a fidelizar clientes.</li>
-                        <li><strong>Gerenciamento Proativo de Crises:</strong> Em momentos críticos, a habilidade de um parceiro em gerenciar crises pode proteger e preservar a reputação da sua marca. Eles têm a experiência necessária para lidar com situações delicadas e minimizar danos.</li>
-                        <li><strong>Análise de Desempenho e Relatórios Detalhados:</strong> Acompanhar e interpretar dados é vital para o sucesso contínuo. Um parceiro de mídias sociais fornece análises detalhadas e relatórios que ajudam a entender o desempenho das campanhas e a fazer ajustes estratégicos conforme necessário.</li>
-                    </ul>
-                    <p>Optar por um parceiro de mídias sociais não é apenas uma decisão financeira, mas um investimento estratégico no crescimento e na visibilidade da sua marca. Com a parceria certa, você não apenas melhora sua presença digital, mas também potencializa o sucesso da sua marca em um mercado altamente competitivo.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="article">
+                  <h2>Por Que Ter um Parceiro de Mídias Sociais É Importante para Sua Marca</h2>
+                  <p>Em um mundo digital competitivo, destacar-se é fundamental. Estou aqui para ajudar você a criar uma presença online marcante por meio de **artes exclusivas** que seguem paletas de cores personalizadas, **descrições envolventes** e **publicação automática**. Veja como posso ajudar:</p>
+                  <ul>
+                      <li><strong>Artes Exclusivas:</strong> Desenvolvo peças gráficas únicas que refletem a identidade da sua marca, utilizando paletas de cores que atraem e cativam seu público.</li>
+                      <li><strong>Conteúdo Personalizado:</strong> Crio descrições que capturam a essência da sua mensagem, aumentando o engajamento e a conexão com seu público-alvo.</li>
+                      <li><strong>Publicação Planejada:</strong> Ofereço serviços de automação para garantir que suas postagens sejam publicadas nos momentos ideais, mantendo sua marca ativa e visível.</li>
+                      <li><strong>Identidade Visual Coesa:</strong> Desenvolvo um estilo visual consistente que destaca sua marca e ajuda a fidelizar clientes.</li>
+                      <li><strong>Acompanhamento de Resultados:</strong> Monitoro o desempenho das postagens, oferecendo insights e ajustes estratégicos para maximizar seus resultados.</li>
+                  </ul>
+                  <p>Escolher trabalhar comigo é investir na construção de uma presença digital única e impactante. Deixe que eu cuido da criação das artes e da publicação, enquanto você se concentra no crescimento do seu negócio.</p>
+              </div>
+          </div>
+      </div>
+  </div>
 </section>
+
+
+
 
 <!-- Estilos -->
 <style>
