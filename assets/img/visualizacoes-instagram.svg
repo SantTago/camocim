@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>menu-comprar-visualizacoes-instagram</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="10.2718705%" cy="79.4946652%" fx="10.2718705%" fy="79.4946652%" r="97.5857083%" id="radialGradient-1">
+            <stop stop-color="#E96746" offset="0%"></stop>
+            <stop stop-color="#804EA9" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menu-comprar-visualizacoes-instagram" fill-rule="nonzero">
+            <g id="Group">
+                <circle id="Oval" fill="url(#radialGradient-1)" cx="250" cy="250" r="250"></circle>
+                <circle id="Oval" fill="#FFFFFF" opacity="0.2" cx="250" cy="250" r="201"></circle>
+            </g>
+            <g id="iconfinder_Play_984752" transform="translate(157.000000, 129.000000)" fill="#FFFFFF">
+                <path d="M204.624498,100.03095 L37.1459385,3.31452 C33.3106258,1.09836 29.04296,0 24.7607204,0 C20.4809098,0 16.213244,1.10079 12.3827891,3.31695 C4.71459273,7.73955 0,15.91893 0,24.77628 L0,218.23101 C0,227.08593 4.71216378,235.26045 12.3827891,239.68791 C16.213244,241.90407 20.4809098,243 24.7607204,243 C29.04296,243 33.3106258,241.90407 37.1459385,239.68791 L204.624498,142.94718 C212.282978,138.51972 217,130.3452 217,121.48542 C217,112.63293 212.285408,104.45841 204.624498,100.03095 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

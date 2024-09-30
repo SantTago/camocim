@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>menu-comprar-curtidas-instagram</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="10.2718705%" cy="79.4946652%" fx="10.2718705%" fy="79.4946652%" r="97.5857083%" id="radialGradient-1">
+            <stop stop-color="#E96746" offset="0%"></stop>
+            <stop stop-color="#804EA9" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menu-comprar-curtidas-instagram" fill-rule="nonzero">
+            <g id="Group">
+                <circle id="Oval" fill="url(#radialGradient-1)" cx="250" cy="250" r="250"></circle>
+                <circle id="Oval" fill="#FFFFFF" opacity="0.2" cx="250" cy="250" r="201"></circle>
+            </g>
+            <g id="iconfinder_Like_984762" transform="translate(125.000000, 145.000000)" fill="#FFFFFF">
+                <path d="M250,65.8589359 C250,29.4870395 220.410714,0 183.914683,0 C158.162698,0 135.900794,14.712872 125.001984,36.1366012 C114.095238,14.712872 91.8392857,0.0039545416 66.0853175,0.0039545416 C29.5873016,0 0,29.4870395 0,65.8589359 C0,134.658073 110.871032,210 125.001984,210 C139.134921,210 250,134.988278 250,65.8589359 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

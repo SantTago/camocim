@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>menu-comprar-comentarios-instagram</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="10.2718705%" cy="79.4946652%" fx="10.2718705%" fy="79.4946652%" r="97.5857083%" id="radialGradient-1">
+            <stop stop-color="#E96746" offset="0%"></stop>
+            <stop stop-color="#804EA9" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menu-comprar-comentarios-instagram">
+            <g id="Group" fill-rule="nonzero">
+                <circle id="Oval" fill="url(#radialGradient-1)" cx="250" cy="250" r="250"></circle>
+                <circle id="Oval" fill="#FFFFFF" opacity="0.2" cx="250" cy="250" r="201"></circle>
+            </g>
+            <path d="M250.5,332.863765 C236.140737,332.863765 222.363254,330.948262 209.576108,327.431411 C194.195722,339.07848 169.848898,354 146.058563,354 C158.005919,342.695265 162.131442,321.70882 163.377453,304.55525 C142.101887,287.727121 129,264.75609 129,239.431882 C129,187.830874 183.397401,146 250.5,146 C317.602599,146 372,187.830874 372,239.431882 C372,291.032891 317.602599,332.863765 250.5,332.863765 Z" id="Oval-247-copy-path" fill="#FFFFFF" transform="translate(250.500000, 250.000000) scale(-1, 1) translate(-250.500000, -250.000000) "></path>
+        </g>
+    </g>
+</svg>

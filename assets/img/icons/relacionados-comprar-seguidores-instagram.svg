@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>menu-comprar-seguidores-instagram</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="10.2718705%" cy="79.4946652%" fx="10.2718705%" fy="79.4946652%" r="97.5857083%" id="radialGradient-1">
+            <stop stop-color="#E96746" offset="0%"></stop>
+            <stop stop-color="#804EA9" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menu-comprar-seguidores-instagram" fill-rule="nonzero">
+            <g id="Group">
+                <circle id="Oval" fill="url(#radialGradient-1)" cx="250" cy="250" r="250"></circle>
+                <circle id="Oval" fill="#FFFFFF" opacity="0.2" cx="250" cy="250" r="201"></circle>
+            </g>
+            <path d="M383.733062,276.59375 L361.5625,276.59375 L361.5625,251.285844 C361.5625,242.5625 355.407875,235 347.765938,235 L342.23075,235 C334.592125,235 328.4375,242.5625 328.4375,251.285844 L328.4375,276.59375 L306.263625,276.59375 C298.625,276.59375 292,283.615531 292,292.338875 L292,298.657344 C292,307.376906 298.625,314.40625 306.263625,314.40625 L328.4375,314.40625 L328.4375,339.714156 C328.4375,348.4375 334.592125,356 342.23075,356 L347.765938,356 C355.407875,356 361.5625,348.4375 361.5625,339.714156 L361.5625,314.40625 L383.733062,314.40625 C391.375,314.40625 398,307.376906 398,298.657344 L398,292.338875 C398,283.615531 391.375,276.59375 383.733062,276.59375 Z" id="Path" fill-opacity="0.8" fill="#FFFFFF"></path>
+            <ellipse id="Oval" fill="#FFFFFF" cx="247" cy="189.5" rx="45" ry="45.5"></ellipse>
+            <path d="M304.276255,335.777778 L298.257149,335.777778 C280.025723,335.777778 265.191149,321.922185 265.191149,304.888333 L265.191149,299.256444 C265.191149,282.225963 280.025723,268.37037 298.257149,268.37037 L304.276255,268.37037 L304.276255,265 L201.215936,265 C173.454851,283.321333 151.69866,316.000444 141,356 L308,356 C305.633574,351.655593 304.276255,346.72137 304.276255,341.483815 L304.276255,335.777778 Z" id="Path" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>
