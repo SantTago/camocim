@@ -277,17 +277,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
     /* Estilos globais */
-    body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #f0f4f8;
-        color: #2c3e50;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
+   
     header {
         background-color: #16a085;
         color: #fff;
@@ -304,7 +294,12 @@
     }
 
     main {
-        flex-grow: 1;
+        display: flex;
+    flex-grow: 1;
+    /* margin: auto; */
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: center;
     }
 
     h2 {
@@ -536,69 +531,375 @@
     
 </style>
 
-<!----------------------------------------->
+<!---------------------------------------------------------------------->
+
 <header>
     <h1>Registra Camocim - Ranking de Clientes</h1>
 </header>
 
+<h2>Clientes com Parcerias Ativas</h2>
+
+<!-- Exibição do Mês Atual -->
+<div class="month-display">
+    <span id="current-month" class="current-month-text"></span>
+</div>
+
 <main>
-    <h2>Clientes com Parcerias Ativas</h2>
-    <div class="client-grid">
-        <!-- Cliente 1 -->
-        <div class="client-card" onclick="openPopup('cliente1')">
-            <i class="fas fa-user icon"></i>
-            <h3>@cliente1</h3>
-            <p>Profissão: Advogado</p>
-            <p>Cidade: Camocim</p>
-            <p>Início: <span id="start-date1">01/01/23</span></p>
-            <p>Tempo de Parceria: <span id="duration1"></span></p>
-            <span class="badge badge-12months">12 Meses</span>
+
+      <!-- Cliente 1 -->
+        <div class="client-timeline">
+            <div class="profile" onclick="showProfile('@cliente1', '555-123-4567', 'Camocim')">
+                <img src="perfil_cliente3.jpg" alt="Cliente 1" class="profile-pic">
+                <span class="profile-name">@eulalia_angelim</span>
+            </div>
+            <div class="timeline">
+                <div class="days-container">
+                    
+                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
+                        19
+                        <span class="tooltip">Post: Descrição do post 7</span>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-        <!-- Cliente 2 -->
-        <div class="client-card" onclick="openPopup('cliente2')">
-            <i class="fas fa-user icon"></i>
-            <h3>@cliente2</h3>
-            <p>Profissão: Médico</p>
-            <p>Cidade: Fortaleza</p>
-            <p>Início: <span id="start-date2">01/02/23</span></p>
-            <p>Tempo de Parceria: <span id="duration2"></span></p>
-            <span class="badge badge-6months">6 Meses</span>
-        </div>
 
+      <!-- Cliente 2 -->
+        <div class="client-timeline">
+            <div class="profile" onclick="showProfile('@cliente2', '555-123-4567', 'Camocim')">
+                <img src="perfil_cliente3.jpg" alt="Cliente 2" class="profile-pic">
+                <span class="profile-name">@raquelsiqueira</span>
+            </div>
+            <div class="timeline">
+                <div class="days-container">
+                    
+                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
+                        19
+                        <span class="tooltip">Post: Descrição do post 7</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
         <!-- Cliente 3 -->
-        <div class="client-card" onclick="openPopup('cliente3')">
-            <i class="fas fa-user icon"></i>
-            <h3>@cliente3</h3>
-            <p>Profissão: Empresário</p>
-            <p>Cidade: Sobral</p>
-            <p>Início: <span id="start-date3">01/03/24</span></p>
-            <p>Tempo de Parceria: <span id="duration3"></span></p>
-            <span class="badge badge-24months">24 Meses</span>
+        <div class="client-timeline">
+            <div class="profile" onclick="showProfile('@cliente3', '555-123-4567', 'Camocim')">
+                <img src="perfil_cliente3.jpg" alt="Cliente 3" class="profile-pic">
+                <span class="profile-name">@Jociklejacome</span>
+            </div>
+            <div class="timeline">
+                <div class="days-container">
+                    
+                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
+                        19
+                        <span class="tooltip">Post: Descrição do post 7</span>
+                    </div>
+
+                </div>
+            </div>
         </div>
+
+        
+        <!-- Cliente 4 -->
+        <div class="client-timeline">
+            <div class="profile" onclick="showProfile('@cliente4', '555-123-4567', 'Camocim')">
+                <img src="perfil_cliente3.jpg" alt="Cliente 4" class="profile-pic">
+                <span class="profile-name">@Centromedico</span>
+            </div>
+            <div class="timeline">
+                <div class="days-container">
+                    
+                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
+                        19
+                        <span class="tooltip">Post: Descrição do post 7</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Cliente 5 -->
+        <div class="client-timeline">
+            <div class="profile" onclick="showProfile('@cliente5', '555-123-4567', 'Camocim')">
+                <img src="perfil_cliente3.jpg" alt="Cliente 5" class="profile-pic">
+                <span class="profile-name">@ph_fono</span>
+            </div>
+            <div class="timeline">
+                <div class="days-container">
+                    
+                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
+                        19
+                        <span class="tooltip">Post: Descrição do post 7</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Cliente 6 -->
+        <div class="client-timeline">
+            <div class="profile" onclick="showProfile('@cliente6', '555-123-4567', 'Camocim')">
+                <img src="perfil_cliente3.jpg" alt="Cliente 6" class="profile-pic">
+                <span class="profile-name">@Psi.renataleao</span>
+            </div>
+            <div class="timeline">
+                <div class="days-container">
+                    
+                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
+                        19
+                        <span class="tooltip">Post: Descrição do post 7</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- Janela de Pop-up para mostrar o post do dia -->
+    <div id="post-popup" class="post-popup">
+        <h3 id="popup-client">@cliente</h3>
+        <p id="popup-date">Post de: 01/01/24</p>
+        <p id="popup-description">Descrição do post aqui</p>
+        <p>Link do post: <a id="popup-link" href="#" target="_blank"></a></p>
+        <button onclick="closePostPopup()">Fechar</button>
     </div>
 
-
-    <h2>Clientes com Parcerias Encerradas</h2>
-    <div class="client-grid ex-partners">
-        <!-- Ex-cliente 1 -->
-        <div class="client-card">
-            <i class="fas fa-user icon"></i>
-            <h3>@excliente1</h3>
-            <p>Profissão: Contador</p>
-            <p>Cidade: Camocim</p>
-            <p>Fim dos Trabalhos</p>
-        </div>
-
-        <!-- Ex-cliente 2 -->
-        <div class="client-card">
-            <i class="fas fa-user icon"></i>
-            <h3>@excliente2</h3>
-            <p>Profissão: Arquiteto</p>
-            <p>Cidade: Sobral</p>
-            <p>Fim dos Trabalhos</p>
-        </div>
+    <!-- Janela de Pop-up para mostrar as informações do perfil -->
+    <div id="profile-popup" class="profile-popup">
+        <h3 id="profile-username">@username</h3>
+        <p>Telefone: <span id="profile-phone">123-456-7890</span></p>
+        <p>Cidade: <span id="profile-city">Camocim</span></p>
+        <button onclick="closeProfilePopup()">Fechar</button>
     </div>
+</main>
+
+<style>
+    /* Estilo geral da página */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    header h1 {
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 20px;
+
+    }
+
+    main h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Exibição do Mês Atual */
+    .month-display {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .current-month-text {
+        font-size: 1.5em; /* Aumenta o tamanho da exibição do mês */
+        font-weight: bold;
+        color: #4caf50;
+    }
+
+    .clients-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Linha do tempo do cliente */
+    .client-timeline {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        width: 80%;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        transition: transform 0.3s;
+    }
+
+    .client-timeline:hover {
+        transform: scale(1.02);
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        cursor: pointer; /* Mudando o cursor para indicar que é clicável */
+    }
+
+    .profile-pic {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 2px solid #4caf50;
+    }
+
+    .profile-name {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #4caf50;
+    }
+
+    /* Linha do tempo (dias) */
+    .timeline {
+        display: flex;
+        overflow-x: auto; /* Permite rolagem horizontal */
+        white-space: nowrap; /* Impede quebra de linha */
+        padding: 10px 0;
+    }
+
+    .days-container {
+        display: flex;
+        gap: 15px;
+    }
+
+    .day {
+        width: 50px; /* Aumentando a largura do dia */
+        height: 50px; /* Aumentando a altura do dia */
+        background-color: #e0e0e0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        transition: background-color 0.3s, transform 0.3s;
+        font-size: 1.2em; /* Aumentando o tamanho da fonte */
+    }
+
+    .day:hover {
+        background-color: #4caf50;
+        color: white;
+        transform: scale(1.1);
+    }
+
+    .tooltip {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        display: none;
+        white-space: nowrap;
+        font-size: 0.8em;
+        z-index: 10;
+    }
+
+    .day:hover .tooltip {
+        display: block;
+    }
+
+    /* Pop-up de post */
+    .post-popup, .profile-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        width: 400px;
+        max-width: 90%; /* Responsivo */
+    }
+
+    .post-popup h3, .profile-popup h3 {
+        margin-top: 0;
+    }
+
+    .post-popup p, .profile-popup p {
+        margin: 5px 0;
+    }
+
+    .post-popup button, .profile-popup button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .post-popup button:hover, .profile-popup button:hover {
+        background-color: #388e3c;
+    }
+
+    @media (max-width: 600px) {
+        .client-timeline {
+            flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+            align-items: flex-start; /* Alinha os itens à esquerda */
+        }
+
+        .days-container {
+            justify-content: center; /* Centraliza os dias na tela pequena */
+        }
+
+        .current-month-text {
+            font-size: 1.2em; /* Reduzindo o tamanho do texto em telas pequenas */
+        }
+    }
+</style>
+
+<script>
+    let currentMonth = 'Outubro 2024'; // Definindo o mês de exibição
+    let currentDay = new Date().getDate(); // Obtendo o dia atual
+
+    function updateCurrentMonth() {
+        document.getElementById('current-month').innerText = currentMonth + ' - ' + currentDay; // Atualiza a exibição do mês e dia
+    }
+
+    function showPost(date, client, link, description) {
+        document.getElementById('popup-client').innerText = client;
+        document.getElementById('popup-date').innerText = 'Post de: ' + date;
+        document.getElementById('popup-description').innerText = description; // Atualiza a descrição do post
+        document.getElementById('popup-link').href = link; // Atualiza o link do post
+        document.getElementById('popup-link').innerText = link; // Exibe o link
+        document.getElementById('post-popup').style.display = 'block';
+    }
+
+    function closePostPopup() {
+        document.getElementById('post-popup').style.display = 'none';
+    }
+
+    function showProfile(username, phone, city) {
+        document.getElementById('profile-username').innerText = username;
+        document.getElementById('profile-phone').innerText = phone;
+        document.getElementById('profile-city').innerText = city;
+        document.getElementById('profile-popup').style.display = 'block';
+    }
+
+    function closeProfilePopup() {
+        document.getElementById('profile-popup').style.display = 'none';
+    }
+
+    updateCurrentMonth(); // Chama a função para inicializar a exibição
+</script>
+
+<!---------------------------------------------------------------------->
+
+
 
     <!-- Tabela de Ranking e Descontos para Seguidores -->
     <h2>Tabela de Ranking e Descontos</h2>
@@ -615,7 +916,7 @@
             <tr>
                 <td>1 Mês</td>
                 <td>5%</td>
-                <td>Desconto de 25% na compra de qualquer pacote</td>
+                <td>Desconto de 5% na compra de qualquer pacote</td>
             </tr>
             <tr>
                 <td>3 Meses</td>
@@ -648,7 +949,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr onclick="showPrize('Desconto de 25% na compra de qualquer pacote')" style="cursor: pointer;">
+                <tr onclick="showPrize('Desconto de 5% na compra de qualquer pacote')" style="cursor: pointer;">
                     <td>Mês 1</td>
                     <td style="background-color: #FFDDC1;">Cor 1</td>
                     <td><i class="fas fa-star"></i></td>
@@ -725,7 +1026,6 @@ body {
 .seal-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
 }
 
 .seal-table th, .seal-table td {
@@ -852,7 +1152,7 @@ body {
 </div>
 </div>
 <div class="col-12 col-md-7 order-md-2 col-lg-7">
-<p class="text1"> Compre seguidores com desconto para sua conta no Instagram, <b>seguidores mundial</b> de baixa qualidade (Não Somem). Entrega imediata e garantida.</p>
+<p class="text1"> Compre seguidores com desconto para sua conta no Instagram, <b>seguidores mundial</b> de baixa qualidade.</p>
 </div>
 <div class="col-12 order-md-3 col-lg-12">
 <div id="comprar-seguidores-promocao" style="display: flex;flex-wrap: wrap;justify-content: center;width: 100%;margin-top: 5px;padding-bottom: 25px;">
