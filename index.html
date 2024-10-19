@@ -1215,50 +1215,8 @@ document.addEventListener('DOMContentLoaded', () => {
             margin-top: 15px;
         }
         /* Estilo do Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background-color: #34495e;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 300px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            color: #ecf0f1;
-        }
-        .modal-content h3 {
-            margin-bottom: 20px;
-        }
-        .number-pad {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .number-pad button {
-            padding: 15px;
-            font-size: 18px;
-            background-color: #48c9b0;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .number-pad button:hover {
-            background-color: #1abc9c;
-        }
+        
+        
         .close-btn, .submit-btn {
 
             background-color: #e74c3c;
@@ -1313,20 +1271,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .confirmation-content button.cancel-btn:hover {
             background-color: #c0392b;
         }
-        /* Modal de Pagamento */
-        .payment-modal {
-            display: none;
-            position: fixed;
-            z-index: 1002;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-            justify-content: center;
-            align-items: center;
-        }
+        
         .payment-content {
             background-color: #34495e;
             padding: 20px;
@@ -1514,9 +1459,278 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <!-- Modal para senha -->
+ <style>
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: #ff0000;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#password-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    font-size: 16px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.number-pad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #34495e;
+}
+
+.number-pad button {
+    background-color: #00ffce;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.number-pad button:hover {
+    background-color: #27ae60;
+}
+
+.submit-btn, .close-btn {
+    background-color: #00ffce;
+    border: none;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.close-btn {
+    background-color: #e74c3c;
+}
+
+/* Overlay para mensagem de boas-vindas */
+.welcome-overlay, .loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 1.5s ease, transform 1s ease;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.welcome-message, .loading-message {
+    background-color: #2ecc71;
+    padding: 30px 40px;
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 26px;
+    animation: bounceIn 1s ease forwards;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Keyframes para bounce (rebote) */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Efeito loader (carregando) */
+.loader {
+    border: 5px solid #000000;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+.vali{
+  color: white;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animação fade-out */
+.welcome-overlay.fade-out, .loading-overlay.fade-out {
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 1s ease, transform 0.5s ease;
+}
+
+ </style>
+
+
+ <script>
+let allowedPasswords = {
+    'tiago': 'Tiago',
+    '1234': 'Sr.Tiago - Criador'
+};
+
+function togglePasswordVisibility() {
+    var passwordInput = document.getElementById("password-input");
+    var eyeIcon = document.getElementById("eye-icon");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.textContent = "🙈";  // Ícone muda quando a senha está visível
+    } else {
+        passwordInput.type = "password";
+        eyeIcon.textContent = "👁️";  // Ícone muda quando a senha está oculta
+    }
+}
+
+function addNumber(number) {
+    var passwordInput = document.getElementById("password-input");
+    passwordInput.value += number;
+}
+
+function clearPassword() {
+    document.getElementById("password-input").value = "";
+    clearError();
+}
+
+function submitPassword() {
+    var password = document.getElementById("password-input").value;
+    var userName = allowedPasswords[password];
+    
+    clearError();
+
+    if (userName) {
+        showWelcomeOverlay(userName);
+    } else {
+        showError("Senha incorreta.");
+    }
+}
+
+function showError(message) {
+    var errorMessage = document.getElementById("error-message");
+    errorMessage.textContent = message;
+    errorMessage.style.display = "block";
+
+    document.getElementById("password-input").classList.add("error");
+}
+
+function clearError() {
+    var errorMessage = document.getElementById("error-message");
+    errorMessage.textContent = "";
+    errorMessage.style.display = "none";
+    document.getElementById("password-input").classList.remove("error");
+}
+
+function showWelcomeOverlay(userName) {
+    var welcomeOverlay = document.getElementById("welcome-overlay");
+    var accessText = document.getElementById("access-text");
+    var welcomeText = document.getElementById("welcome-text");
+
+    welcomeOverlay.style.display = "flex";
+    accessText.textContent = "Acesso liberado";
+    welcomeText.textContent = `Bem-vindo, ${userName}!`;
+
+    // Animação fade-in
+    setTimeout(function() {
+        welcomeOverlay.style.opacity = 1;
+    }, 10);
+
+    // Inicia o processo de validação
+    setTimeout(function() {
+        showLoadingOverlay();
+    }, 5000);
+}
+
+function showLoadingOverlay() {
+    var loadingOverlay = document.getElementById("loading-overlay");
+    loadingOverlay.style.display = "flex";
+
+    // Animação fade-in
+    setTimeout(function() {
+        loadingOverlay.style.opacity = 1;
+    }, 10);
+
+    // Redireciona após 4 segundos
+    setTimeout(function() {
+        window.location.href = "plano.html";
+    }, 7000);
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+
+ </script>
+
+
+
+<!-- Modal para Senha -->
 <div id="modal" class="modal">
   <div class="modal-content">
       <h3>Digite a Senha</h3>
+      <div class="input-container">
+          <input type="password" id="password-input" placeholder="Senha" />
+          <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">
+              <span id="eye-icon">👁️</span>
+          </button>
+      </div>
+
+      <!-- Teclado Numérico -->
       <div class="number-pad">
           <button onclick="addNumber('1')">1</button>
           <button onclick="addNumber('2')">2</button>
@@ -1528,29 +1742,34 @@ document.addEventListener('DOMContentLoaded', () => {
           <button onclick="addNumber('8')">8</button>
           <button onclick="addNumber('9')">9</button>
           <button onclick="addNumber('0')">0</button>
+          <button onclick="clearPassword()">Limpar</button>
       </div>
+
+      <div id="error-message" class="error-message"></div>
+
       <button class="submit-btn" onclick="submitPassword()">Entrar</button>
       <button class="btn close-btn" onclick="closeModal()">Cancelar</button>
   </div>
 </div>
 
-<!-- Modal de Pagamento -->
-<div id="payment-modal" class="payment-modal">
-<div class="payment-content">
-  <h3>Efetue o Pagamento</h3>
-  <img src="qr-code/qrcode-pix.png" alt="QR Code do Pix">
-  <button onclick="copyPixKey()">Copiar Chave Pix</button>
-  <p>Nome: Tiago Viana Da Cruz</p>
-  <p>Envie o comprovante para nosso WhatsApp:</p>
-  <!-- Botão para enviar mensagem pelo WhatsApp -->
-  <a href="https://wa.me/88993464285" class="btn" target="_blank">
-      <i class="fab fa-whatsapp"></i> Enviar Comprovante
-  </a>
-  <button class="btn close-btn" onclick="closePaymentModal()">Fechar</button>
-</div>
+<!-- Overlay para a mensagem de boas-vindas -->
+<div id="welcome-overlay" class="welcome-overlay">
+    <div class="welcome-message">
+        <h2 class="vali" id="access-text">Acesso liberado</h2>
+        <h3  class="vali" id="welcome-text"></h3>
+    </div>
 </div>
 
+<!-- Overlay para validação do acesso -->
+<div id="loading-overlay" class="loading-overlay">
+    <div class="loading-message">
+        <h2  class="vali" class="vali">Validando seu acesso exclusivo...</h2>
+        <div class="loader"></div>
+    </div>
 </div>
+
+
+
 <!--------------------------------------------------------------->
 
 <!-- SECTION CLIENTES -->
