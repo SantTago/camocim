@@ -1,1847 +1,738 @@
-<!DOCTYPE html><html lang="pt-br">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head> <title>Registra Camocim</title> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta http-equiv="Cache-control" content="public"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="csrf-token" content="0OclqTq4JFn4KfrKQLuhkyFtsgsT0LqnnZ9pG7l0"> <meta name="description" content="Registra Camocim - Seguidores - Curtidas e Visualizaçoes "> <link rel="canonical" href="index.html" /> <meta name="robots" content="all"> <meta property="og:title" content="Registra Camocim - Seguidores e curtidas no Instagram !"> <meta property="og:description" content="Ganhar seguidores, curtidas e comentários no Instagram de forma rápida e segura. Receba seguidores e curtidas no Registra Camocim. Teste !"> <meta property="og:image" content="assets/images/og.png"> <meta property="og:url" content="index.html"> <meta property="og:site_name" content="Registra Camocim"> <meta property="og:type" content="product"> <meta property="twitter:card" content="summary_large_image"> <meta property="twitter:url" content="index.html"> <meta property="twitter:title" content="Registra Camocim -  Seguidores e curtidas no Instagram!"> <meta property="twitter:description" content="Ganhar seguidores, curtidas e comentários no Instagram de forma rápida e segura. Receba seguidores e curtidas  no Registra Camocim."> <meta property="twitter:image" content="assets/images/og.png"> <meta name="author" content="author"> <meta name="language" content="ID"> <meta name="coverage" content="Worldwide"> <meta name="distribution" content="Global"> <meta name="keywords" content="seguidores instagram, curtidas instagram, comentarios instagram, seguidores, curtidas, comentarios, instagram"> <meta name="apple-mobile-web-app-title" content="Registra Camocim-  Seguidores e curtidas no Instagram!"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-touch-fullscreen" content="yes"> <link rel="icon" href="icon/icon.png" type="image/x-icon"> <link href="assets/css/bootstrap.min.css" rel="stylesheet"> <link rel="stylesheet" href="assets/all/menu.min.css"> <link href="assets/css/main.css" rel="stylesheet"> <link rel="stylesheet" type="text/css" href="assets/lib/slick/slick.css"> <link rel="stylesheet" type="text/css" href="assets/lib/slick/slick-theme.css">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="icon/icon.png" type="image/x-icon">
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Registra Camocim">
+    <meta name="keywords" content="Camocim, ceara, noticias, turismo, jericoacoara, passeios, Camocim online, policia 24 horas, Registra Camocim ">
+    <meta name="author" content="Tiago viana da cruz">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+        }
 
-<style type="text/css">
-    .img-index {
-        max-width: 100px;
-    }
+        header {
+            background-color: #c00;
+            padding: 10px;
+            text-align: center;
+        }
 
-    .bh-widget-page-wrapper {
-        right: 15px !important;
-    }
+        section {
+            max-width: 800px;
+            margin: 5px auto;
+            background-color: #222;
+            
+        }
 
-    .maisvendido:before {
-        font-weight: 500;
-        content: "Mais Vendido";
-        position: absolute;
-        background: #f77737;
-        border-radius: 5px;
-        padding: 3px .5rem;
-        top: -2px;
-        right: 10px;
-        transform: translateY(-50%);
-        font-size: 8px;
-        text-transform: uppercase;
-        color: #fff
-    }
+        article {
+            width: 55%;
+            margin-bottom: 20px;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: height 0.3s ease-in-out;
+            padding: 15px;
+            
+        }
+        article h1 {
+            font-family: var(--normal);
+            padding-top: 30px;
+        }
+        
 
-    .maispopular:before {
-        font-weight: 500;
-        content: "Mais Popular";
-        position: absolute;
-        background: #945ffd;
-        border-radius: 5px;
-        padding: 3px .5rem;
-        top: -2px;
-        right: 10px;
-        transform: translateY(-50%);
-        font-size: 8px;
-        text-transform: uppercase;
-        color: #fff
-    }
+        article img {
+            width: 100%;
+            height: auto;
+        }
 
-    .maisinfluencer:before {
-        font-weight: 500;
-        content: "Influencer";
-        position: absolute;
-        background: #ed4a64;
-        border-radius: 5px;
-        padding: 3px .5rem;
-        top: -2px;
-        right: 16px;
-        transform: translateY(-50%);
-        font-size: 8px;
-        text-transform: uppercase;
-        color: #fff
-    }
+        article div {
+            
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
 
-    .maisarrasta:before {
-        font-weight: 500;
-        content: "Arrasta pra cima";
-        position: absolute;
-        background: #5851db;
-        border-radius: 5px;
-        padding: 3px .5rem;
-        top: -2px;
-        right: 5px;
-        transform: translateY(-50%);
-        font-size: 7px;
-        text-transform: uppercase;
-        color: #fff;
-        width: 85px;
-    }
-  
-    body.home .section-7 .countdown .heading {
-        line-height: 40px;
-        background: #2c3e50;
-        color: #ffffff;
-        margin-bottom: 10px;
-        box-shadow: 0 4px 10px 0 rgb(0 0 0 / 30%);
-        font-size: 16px;
-    }
+        .read-more {
+            display: block;
+            color: #e60000;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+        }
 
-    .botao-index {
-        border-radius: 12px;
-        background: linear-gradient(to right, #2f145a5e, #13054854) !important;
-        width: -webkit-fill-available;
-        font-size: 14px;
-        color: #ffffff;
-    }
+        .read-more:hover {
+            text-decoration: underline;
+        }
 
-    .botao-index:hover {
-        color: #ffffff;
-        font-weight: 500;
-    }
+        .expanded {
+            max-height: none !important;
+        }
 
-    section.services-list .social-item {
-        margin-top: 50px;
-        border-radius: 20px;
-        background: linear-gradient(to right, #3718e7a1 0%, #b252ef 100%), linear-gradient(to right, #c8e8f7 0%, #f9f9f9 100%);
-        padding-top: 3%;
-        padding-bottom: 3%;
-        margin-left: 4%;
-        margin-right: 4%;
-        box-shadow: 0 0 10px 6px rgb(0 0 0 / 18%), 0 0 20px 0 rgb(3 1 14 / 12%);
-        max-width: -webkit-fill-available;
-    }
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /*---------------------------*/
+        .video-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+        .video-item {
+            scroll-snap-align: start;
+            width: 280px;
+            
+        }
 
-    .icon-check-blue {
-        width: 14px;
-        height: 14px;
-        background-image: url(assets/img/check-icon-blue.svg);
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: contain;
-        display: inline-block;
-        margin-right: px;
-        position: relative;
-        vertical-align: text-top;
-    }
+        .video-item iframe {
+            width: 100%;
+            height: 476px;
+            border: none;
+            overflow: hidden;
+        }
 
-    .custom-social-proof {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 9999999999999 !important;
-        font-family: "Nunito", sans-serif;
-        display: none;
-    }
+        /*--------------------------*/
 
-    .custom-notification {
-        border: 0;
-        text-align: left;
-        z-index: 99999;
-        box-sizing: border-box;
-        font-weight: 400;
-        border-radius: 6px;
-        box-shadow: 2px 2px 10px 2px hsla(0, 4%, 4%, 0.2);
-        background-color: #fff !important;
-        position: relative;
-        cursor: pointer;
-    }
+        .video {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Adicionado para centralizar verticalmente */
+            flex-wrap: wrap;
+            padding-bottom: 56%;
+            position: relative;
+        }
+        
+        .video > iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Alterado para 100% para ocupar a largura do contêiner pai */
+            height: 100%; /* Alterado para 100% para ocupar a altura do contêiner pai */
+            border-radius: 15px;
+        }
+        
+        /*---------------------*/
 
-    .custom-notification-container {
-        display: flex !important;
-        align-items: center;
-        height: 80px;
-    }
+        footer {
+            background-color: #e60000;
+            color: #fff;
+            text-align: center;
+            padding: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            bottom: 0px;
+            width: 100%;
+            border-bottom: 15px;
+        }
 
-    .custom-notification-image-wrapper img {
-        max-height: 75px;
-        width: 90px;
-        overflow: hidden;
-        border-radius: 6px 0 0 6px;
-        object-fit: cover;
-        float: left;
-        border-radius: 50%;
-        margin-left: 15px;
-    }
 
-    .custom-notification {
-        background: #fff !important;
-    }
-
-    .custom-notification-content-wrapper {
-        margin: 0;
-        height: 100%;
-        color: gray;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-radius: 0 6px 6px 0;
-        flex: 1;
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 0px;
-    }
-
-    .custom-notification-content {
-        font-family: inherit !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        font-size: 14px;
-        line-height: 16px;
-    }
-
-    .custom-notification-content small {
-        margin-top: 6px !important;
-        display: block !important;
-        font-size: 12px !important;
-        opacity: 0.8;
-    }
-
-   
+    
     
 
-    .poweredby {
-        font-weight: 600;
-        text-decoration: none;
-        margin-left: 3px;
-        color: #3498db;
+    header > h1 {
+        text-align: center;
+        padding-top: 45px;
+        font-family: var(--destaque);
+        color: white;
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.356);
+
+    }
+    .paragrafo {
+    text-align: center;
     }
 
-    .navik-header {
-        position: inherit;
-    }
+    
 
-    .navik-header.sticky {
-        display: none;
-    }
-
-    .navik-header .logo {
-        padding: 18px 0px;
-        text-align: inherit;
-    }
-
-    .navik-header {
-        background: transparent;
-        margin-top: -8px;
-    }
-
-    .line-menu {
-        background-color: #1d1d1d;
-    }
-
-    @media (min-width: 1200px) {
-        .header-opacity-on .navik-menu>ul>li>a,
-        .header-transparent-on .navik-menu>ul>li>a {
-            color: #945ffd;
+    @media (max-width: 650px) {
+        article {
+            width: 100%;
         }
-        .header-opacity-on .navik-menu>ul>li.current-menu>a,
-        .header-opacity-on .navik-menu>ul>li:hover>a,
-        .header-transparent-on .navik-menu>ul>li.current-menu>a,
-        .header-transparent-on .navik-menu>ul>li:hover>a {
-            color: #945ffd;
-        }
-    }
-
-    @media (max-width: 900px) {
-        .menu-open .line-menu.line-half {
-            width: 50%
-        }
-        .navik-menu {
-            background: #ffffff;
-            -webkit-box-shadow: 0 12px 24px rgb(0 0 0 / 7%) !important;
-            box-shadow: 0 12px 24px rgb(0 0 0 / 7%) !important;
-        }
-        .btnmobile {
-            width: 88% !important;
-            margin: 0 auto;
-            display: block;
-            margin-top: 20px;
-        }
-        .navik-header .logo img {
-            margin-left: inherit;
-        }
-        .burger-menu {
-            right: 15px;
-        }
-       
-    }
-    .header {
-            background-color: #5dade2; /* Azul claro no topo */
-            color: white;
+        
+        article  h2{
+            width: 100%;
+            font-size: 20px;
             text-align: center;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
+        
         }
-</style>
+        article  p{
+            width: 100%;
+            font-size: 13px;
+        }
+        .video-item {
+            width: 100%;
+        } 
+        .instagram-container {
+            padding-bottom: 180%;
+        }
+        main {
+            padding: 1em;
+        }
 
+        .store, .motel {
+            width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
+            max-width: none;
+        }
+    }
 
-
-
-<!------------------------------------------------->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-    /* Estilos globais */
-   
-    header {
-        background-color: #16a085;
-        color: #fff;
-        padding: 20px;
+    nav {
         text-align: center;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        background-color: #444; /* Tom mais escuro para os blocos */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        display: flex; /* Adicionado o estilo flexível */
+        justify-content: center; /* Alinha os itens horizontalmente no centro */
+        align-items: center; /* Alinha os itens verticalmente no centro */
     }
 
-    header h1 {
-        margin: 0;
-        font-size: 28px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 10px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
     }
 
-    main {
+    nav a:hover {
+        background-color: #555;
+    }
+
+
+    /* Estilo para o botão de voltar */
+    .back-button {
+        max-width: 68px;
+        display: block;
+        justify-content: center;
+        margin: 1em;
+        padding: 0.5em;
+        text-align: center;
+        text-decoration: none;
+        background-color: #970000; /* Vermelho escuro */
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Efeito de hover para o botão de voltar */
+    .back-button:hover {
+        background-color: #970000; /* Vermelho mais escuro no hover */
+    }
+
+    .voltar {
         display: flex;
-    flex-grow: 1;
-    /* margin: auto; */
-    justify-content: space-between;
-    flex-direction: column-reverse;
-    align-items: center;
+        justify-content: center;
+        align-items: center;
     }
 
-    h2 {
-        font-size: 24px;
-        color: #34495e;
-        margin-bottom: 20px;
-        text-align: center;
-        text-transform: uppercase;
+    /* Oculta a seção de Moteis inicialmente */
+    .motel {
+        display: none;
+        
     }
 
-    /* Grid de Clientes */
-    .client-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        padding-bottom: 20px;
-    }
-
-    .client-card {
-        background-color: #fff;
+    /* Estilo para o menu de moteis */
+    .moteis-menu {
+        display: none;
+        position: absolute;
+        background-color: #444; /* Tom mais escuro para os blocos */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
         border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        text-align: center;
-        border-top: 5px solid #16a085;
+        padding: 1em;
+        margin-top: 5px;
+        left: 50%; /* Posiciona o menu no centro */
+        transform: translateX(-50%); /* Corrige a posição no centro */
     }
 
-    .client-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-    }
-
-    .client-card h3 {
-        margin: 10px 0;
-        font-size: 22px;
-    }
-
-    .client-card p {
-        margin: 0;
-        font-size: 16px;
-        color: #7f8c8d;
-    }
-
-    .client-card .icon {
-        font-size: 60px;
-        color: #48c9b0;
-        margin-bottom: 10px;
-        transition: color 0.3s ease;
-    }
-
-    .client-card:hover .icon {
-        color: #16a085;
-    }
-
-    .badge {
-        display: inline-block;
-        padding: 6px 12px;
-        border-radius: 50px;
+    /* Estilo para os itens do menu de moteis */
+    .moteis-menu a {
+        display: block;
+        text-decoration: none;
         color: #fff;
-        font-weight: bold;
-        font-size: 14px;
-        margin-top: 10px;
+        padding: 8px;
+        transition: background-color 0.3s ease-in-out;
     }
 
-    .badge-1month {
-        background-color: #1abc9c;
+    /* Efeito de hover para os itens do menu de moteis */
+    .moteis-menu a:hover {
+        background-color: #555;
+    }
+      
+   
+  
+    .logomarca {
+        padding: 9px;
+        padding-top: 4px;
+        max-width: 109px;
+        width: 107%;
+        text-align: center;
+        margin-bottom: -1px;
+        margin: 10px auto;
+    }
+      
+      .logomarca img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      @media only screen and (max-width: 490px) {
+        .logomarca {
+          padding: 9px;
+          max-width: 212px;
+          margin-bottom: -1px;
+          
+      }
+        .menu {
+          text-align: center;
+        }
+        header {
+          background-color: red;
+          color: #fff;
+          text-align: center;
+          padding: 10px;
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+      }
+      }
+      #floating-btn {
+        display: none;
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+        background-color: rgb(158, 4, 4);
+        color: #fff;
+        padding: 7px;
+        border-radius: 25%;
+        cursor: pointer;
+        z-index: 1000;
+        
     }
 
-    .badge-6months {
-        background-color: #3498db;
+    #content {
+        padding: 20px;
+        line-height: 1.6;
+    }
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .pagination button {
+        margin: 0 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        margin-bottom: 57px;
+    }
+    .pagination button.active {
+        background-color: red;
+        color: #fff;
+    }
+    .titulo{
+      text-align: center;
     }
 
-    .badge-12months {
-        background-color: #9b59b6;
+    
+</style>
+<style>
+    .video-container {
+      display: none; /* Oculta o contêiner de vídeo por padrão */
+      margin-bottom: 20px;
     }
-
-    .badge-24months {
-        background-color: #e67e22;
-    }
-
-    /* Ex-Parceiros */
-    .ex-partners {
-        margin-top: 40px;
-    }
-
-    .ex-partners .client-card {
-        background-color: #ecf0f1;
-        border-top: 5px solid #95a5a6;
-        color: #7f8c8d;
-        cursor: default;
-    }
-
-    .ex-partners .client-card h3, .ex-partners .client-card p {
-        color: #95a5a6;
-    }
-
-    .ex-partners .client-card:hover {
-        transform: none;
-        box-shadow: none;
-    }
-
-    /* Estilo da tabela */
-    .seal-table {
-        margin-top: 40px;
-        border-collapse: collapse;
+  
+    @media only screen and (max-width: 768px) {
+      .video-container {
+        display: block; /* Exibe o contêiner de vídeo para dispositivos móveis */
         width: 100%;
         max-width: 800px;
         margin: 0 auto;
-        background-color: #fff;
-        border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .seal-table th, .seal-table td {
-        padding: 15px;
-        text-align: center;
-        border-bottom: 1px solid #ecf0f1;
-    }
-
-    .seal-table th {
-        background-color: #34495e;
-        color: #fff;
-        font-weight: 500;
-        text-transform: uppercase;
-        font-size: 16px;
-    }
-
-    .seal-table td {
-        font-size: 14px;
-        color: #2c3e50;
-        transition: background-color 0.3s ease;
-    }
-
-    .seal-table tr:hover td {
-        background-color: #ecf0f1;
-    }
-
-    /* Pop-up */
-    .popup {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease;
-    }
-
-    .popup-content {
-        background-color: #fff;
-        padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        position: relative;
-        width: 90%;
-        max-width: 500px;
-    }
-
-    .popup .close-popup {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 18px;
-        color: #2c3e50;
-        cursor: pointer;
-    }
-
-    .popup .close-popup:hover {
-        color: #16a085;
-    }
-
-    /* Animação do pop-up */
-    .popup.show {
-        display: flex;
-        animation: fadeIn 0.4s ease;
-    }
-
-    .button{
-        display: flex;
-        margin: auto;
-        justify-content: center;
-        background-color: #1abc9c;
-        padding: 15px;
-        font-family: cursive;
-        margin-bottom: 15px;
-        }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: scale(0.8);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    /* Ícones de Selo */
-    .seal-icon {
-        font-size: 24px;
-        color: #3498db;
-    }
-
-    .seal-1month .seal-icon {
-        color: #1abc9c;
-    }
-
-    .seal-6months .seal-icon {
-        color: #3498db;
-    }
-
-    .seal-12months .seal-icon {
-        color: #9b59b6;
-    }
-
-    .seal-24months .seal-icon {
-        color: #e67e22;
-    }
-
-    
-</style>
-
-<!---------------------------------------------------------------------->
-
-<header>
-    <h1>Registra Camocim - Ranking de Clientes</h1>
-</header>
-
-<h2>Clientes com Parcerias Ativas</h2>
-
-<!-- Exibição do Mês Atual -->
-<div class="month-display">
-    <span id="current-month" class="current-month-text"></span>
-</div>
-
-<main>
-
-      <!-- Cliente 1 -->
-        <div class="client-timeline">
-            <div class="profile" onclick="showProfile('@cliente1', '555-123-4567', 'Camocim')">
-                <img src="perfil_cliente3.jpg" alt="Cliente 1" class="profile-pic">
-                <span class="profile-name">@eulalia_angelim</span>
-            </div>
-            <div class="timeline">
-                <div class="days-container">
-                    
-                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
-                        19
-                        <span class="tooltip">Post: Descrição do post 7</span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
-      <!-- Cliente 2 -->
-        <div class="client-timeline">
-            <div class="profile" onclick="showProfile('@cliente2', '555-123-4567', 'Camocim')">
-                <img src="perfil_cliente3.jpg" alt="Cliente 2" class="profile-pic">
-                <span class="profile-name">@raquelsiqueira</span>
-            </div>
-            <div class="timeline">
-                <div class="days-container">
-                    
-                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
-                        19
-                        <span class="tooltip">Post: Descrição do post 7</span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        
-        <!-- Cliente 3 -->
-        <div class="client-timeline">
-            <div class="profile" onclick="showProfile('@cliente3', '555-123-4567', 'Camocim')">
-                <img src="perfil_cliente3.jpg" alt="Cliente 3" class="profile-pic">
-                <span class="profile-name">@Jociklejacome</span>
-            </div>
-            <div class="timeline">
-                <div class="days-container">
-                    
-                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
-                        19
-                        <span class="tooltip">Post: Descrição do post 7</span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- Cliente 4 -->
-        <div class="client-timeline">
-            <div class="profile" onclick="showProfile('@cliente4', '555-123-4567', 'Camocim')">
-                <img src="perfil_cliente3.jpg" alt="Cliente 4" class="profile-pic">
-                <span class="profile-name">@Centromedico</span>
-            </div>
-            <div class="timeline">
-                <div class="days-container">
-                    
-                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
-                        19
-                        <span class="tooltip">Post: Descrição do post 7</span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- Cliente 5 -->
-        <div class="client-timeline">
-            <div class="profile" onclick="showProfile('@cliente5', '555-123-4567', 'Camocim')">
-                <img src="perfil_cliente3.jpg" alt="Cliente 5" class="profile-pic">
-                <span class="profile-name">@ph_fono</span>
-            </div>
-            <div class="timeline">
-                <div class="days-container">
-                    
-                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
-                        19
-                        <span class="tooltip">Post: Descrição do post 7</span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- Cliente 6 -->
-        <div class="client-timeline">
-            <div class="profile" onclick="showProfile('@cliente6', '555-123-4567', 'Camocim')">
-                <img src="perfil_cliente3.jpg" alt="Cliente 6" class="profile-pic">
-                <span class="profile-name">@Psi.renataleao</span>
-            </div>
-            <div class="timeline">
-                <div class="days-container">
-                    
-                    <div class="day" onclick="showPost('2024-10-14', '@cliente3', 'https://link_do_post7', 'Descrição do post 7')">
-                        19
-                        <span class="tooltip">Post: Descrição do post 7</span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-    
-    <!-- Janela de Pop-up para mostrar o post do dia -->
-    <div id="post-popup" class="post-popup">
-        <h3 id="popup-client">@cliente</h3>
-        <p id="popup-date">Post de: 01/01/24</p>
-        <p id="popup-description">Descrição do post aqui</p>
-        <p>Link do post: <a id="popup-link" href="#" target="_blank"></a></p>
-        <button onclick="closePostPopup()">Fechar</button>
-    </div>
-
-    <!-- Janela de Pop-up para mostrar as informações do perfil -->
-    <div id="profile-popup" class="profile-popup">
-        <h3 id="profile-username">@username</h3>
-        <p>Telefone: <span id="profile-phone">123-456-7890</span></p>
-        <p>Cidade: <span id="profile-city">Camocim</span></p>
-        <button onclick="closeProfilePopup()">Fechar</button>
-    </div>
-</main>
-
-<style>
-    /* Estilo geral da página */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        color: #333;
-    }
-
-    header h1 {
-        text-align: center;
-        color: #ffffff;
-        margin-bottom: 20px;
-
-    }
-
-    main h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    /* Exibição do Mês Atual */
-    .month-display {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .current-month-text {
-        font-size: 1.5em; /* Aumenta o tamanho da exibição do mês */
-        font-weight: bold;
-        color: #4caf50;
-    }
-
-    .clients-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    /* Linha do tempo do cliente */
-    .client-timeline {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        width: 80%;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 15px;
-        transition: transform 0.3s;
-    }
-
-    .client-timeline:hover {
-        transform: scale(1.02);
-    }
-
-    .profile {
-        display: flex;
-        align-items: center;
-        margin-right: 20px;
-        cursor: pointer; /* Mudando o cursor para indicar que é clicável */
-    }
-
-    .profile-pic {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 10px;
-        border: 2px solid #4caf50;
-    }
-
-    .profile-name {
-        font-weight: bold;
-        font-size: 1.2em;
-        color: #4caf50;
-    }
-
-    /* Linha do tempo (dias) */
-    .timeline {
-        display: flex;
-        overflow-x: auto; /* Permite rolagem horizontal */
-        white-space: nowrap; /* Impede quebra de linha */
-        padding: 10px 0;
-    }
-
-    .days-container {
-        display: flex;
-        gap: 15px;
-    }
-
-    .day {
-        width: 50px; /* Aumentando a largura do dia */
-        height: 50px; /* Aumentando a altura do dia */
-        background-color: #e0e0e0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        cursor: pointer;
-        position: relative;
-        transition: background-color 0.3s, transform 0.3s;
-        font-size: 1.2em; /* Aumentando o tamanho da fonte */
-    }
-
-    .day:hover {
-        background-color: #4caf50;
-        color: white;
-        transform: scale(1.1);
-    }
-
-    .tooltip {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #333;
-        color: #fff;
-        padding: 5px;
-        border-radius: 5px;
-        display: none;
-        white-space: nowrap;
-        font-size: 0.8em;
-        z-index: 10;
-    }
-
-    .day:hover .tooltip {
-        display: block;
-    }
-
-    /* Pop-up de post */
-    .post-popup, .profile-popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        width: 400px;
-        max-width: 90%; /* Responsivo */
-    }
-
-    .post-popup h3, .profile-popup h3 {
-        margin-top: 0;
-    }
-
-    .post-popup p, .profile-popup p {
-        margin: 5px 0;
-    }
-
-    .post-popup button, .profile-popup button {
-        margin-top: 10px;
-        padding: 10px 20px;
-        background-color: #4caf50;
-        color: white;
+      }
+  
+      .video-container iframe {
+        width: 99%;
+        height: 578px;
         border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+        border-radius: 10px;
+      }
     }
+  </style>
+</head>
 
-    .post-popup button:hover, .profile-popup button:hover {
-        background-color: #388e3c;
-    }
-
-    @media (max-width: 600px) {
-        .client-timeline {
-            flex-direction: column; /* Muda a direção para coluna em telas pequenas */
-            align-items: flex-start; /* Alinha os itens à esquerda */
-        }
-
-        .days-container {
-            justify-content: center; /* Centraliza os dias na tela pequena */
-        }
-
-        .current-month-text {
-            font-size: 1.2em; /* Reduzindo o tamanho do texto em telas pequenas */
-        }
-    }
-</style>
-
-<script>
-    let currentMonth = 'Outubro 2024'; // Definindo o mês de exibição
-    let currentDay = new Date().getDate(); // Obtendo o dia atual
-
-    function updateCurrentMonth() {
-        document.getElementById('current-month').innerText = currentMonth + ' - ' + currentDay; // Atualiza a exibição do mês e dia
-    }
-
-    function showPost(date, client, link, description) {
-        document.getElementById('popup-client').innerText = client;
-        document.getElementById('popup-date').innerText = 'Post de: ' + date;
-        document.getElementById('popup-description').innerText = description; // Atualiza a descrição do post
-        document.getElementById('popup-link').href = link; // Atualiza o link do post
-        document.getElementById('popup-link').innerText = link; // Exibe o link
-        document.getElementById('post-popup').style.display = 'block';
-    }
-
-    function closePostPopup() {
-        document.getElementById('post-popup').style.display = 'none';
-    }
-
-    function showProfile(username, phone, city) {
-        document.getElementById('profile-username').innerText = username;
-        document.getElementById('profile-phone').innerText = phone;
-        document.getElementById('profile-city').innerText = city;
-        document.getElementById('profile-popup').style.display = 'block';
-    }
-
-    function closeProfilePopup() {
-        document.getElementById('profile-popup').style.display = 'none';
-    }
-
-    updateCurrentMonth(); // Chama a função para inicializar a exibição
-</script>
-
-<!---------------------------------------------------------------------->
-
-
-
-    <!-- Tabela de Ranking e Descontos para Seguidores -->
-    <h2>Tabela de Ranking e Descontos</h2>
-    <table class="seal-table">
-        <thead>
-            <tr>
-                <th>Tempo</th>
-                <th>Beneficio</th>
-                <th>Percentual de Desconto</th>
-        
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1 Mês</td>
-                <td>5%</td>
-                <td>Desconto de 5% na compra de qualquer pacote</td>
-            </tr>
-            <tr>
-                <td>3 Meses</td>
-                <td>8%</td>
-                <td>Desconto de 8% na compra de qualquer pacote</td>
-            </tr>
-            <tr>
-                <td>6 Meses</td>
-                <td>10%</td>
-                <td>Desconto de 10% na compra de qualquer pacote</td>
-            </tr>
-            <tr>
-                <td>12 Meses</td>
-                <td>25%</td>
-                <td>Desconto de 25% na compra de qualquer pacote + Landpage</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- Tabela de Meses com Prêmio de 1 Ano -->
-    <h2>Tabela de Meses</h2>
-    <button class="button" id="show-months-button" onclick="toggleMonths()">Mostrar Tabela de Meses</button>
-    <div id="months-table" style="display: none;">
-        <table class="month-table">
-            <thead>
-                <tr>
-                    <th>Mês</th>
-                    <th>Cor</th>
-                    <th>Ícone</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr onclick="showPrize('Desconto de 5% na compra de qualquer pacote')" style="cursor: pointer;">
-                    <td>Mês 1</td>
-                    <td style="background-color: #FFDDC1;">Cor 1</td>
-                    <td><i class="fas fa-star"></i></td>
-                </tr>
-                <tr onclick="showPrize('Desconto de 8% na compra de qualquer pacote')" style="cursor: pointer;">
-                    <td>Mês 3</td>
-                    <td style="background-color: #FFABAB;">Cor 2</td>
-                    <td><i class="fas fa-heart"></i></td>
-                </tr>
-                <tr onclick="showPrize('Desconto de 10% na compra de qualquer pacote')" style="cursor: pointer;">
-                    <td>Mês 6</td>
-                    <td style="background-color: #FFC3A0;">Cor 3</td>
-                    <td><i class="fas fa-trophy"></i></td>
-                </tr>
-                <tr onclick="showPrize('Desconto de 25% na compra de qualquer pacote + Landpage')" style="cursor: pointer;">
-                    <td>Mês 12</td>
-                    <td style="background-color: #FF677D;">Cor 4</td>
-                    <td><i class="fas fa-gift"></i></td>
-                </tr>
-              
-                <!-- Continue até Mês 24 -->
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Roleta de Sorteio -->
-    <h2>Roleta de Sorteio de 1.000 Seguidores</h2>
-    <div class="raffle-section">
-        <h3 class="ganhador" >Ganhador do Mês: <span id="raffle-winner" class="winner-text"></span></h3>
-        <p class="ganhador" > Último Ganhador: <span id="last-winner"></span></p>
-        <p class="ganhador" >Mês Atual: <span id="current-month">Outubro</span></p>
-    </div>
-</main>
-
-<script>
-let lastWinner = '';
-
-function toggleMonths() {
-    const monthsTable = document.getElementById("months-table");
-    if (monthsTable.style.display === "none") {
-        monthsTable.style.display = "block";
-    } else {
-        monthsTable.style.display = "none";
-    }
-}
-
-function showPrize(prize) {
-    alert(prize);
-}
-
-function updateRaffleWinner() {
-    const names = ["Nome 1", "Nome 2", "Nome 3", "Nome 4", "Nome 5", "Nome 6"];
-    const winner = names[Math.floor(Math.random() * names.length)];
-    lastWinner = winner;
-    document.getElementById('raffle-winner').innerHTML = `❄️ ${winner} ❄️`;
-    document.getElementById('last-winner').innerText = lastWinner;
-}
-
-// Chama a função no início do mês
-setInterval(updateRaffleWinner, 30 * 24 * 60 * 60 * 1000); // Atualiza o ganhador automaticamente a cada mês
-updateRaffleWinner(); // Atualiza imediatamente ao carregar a página
-</script>
-
-
-<style>
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f8f9fa;
-}
-
-/* Estilos para a tabela de rankings */
-.seal-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.seal-table th, .seal-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.seal-table th {
-    background-color: #34495e;
-}
-
-/* Estilos para a tabela de meses */
-.month-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-.month-table th, .month-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.month-table th {
-    background-color: #f2f2f2;
-}
-
-/* Estilos para as badges de meses */
-.badge {
-    padding: 4px 8px;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-}
-
-.badge-12months {
-    background-color: #FFABAB; /* Cor para 12 meses */
-}
-
-.badge-6months {
-    background-color: #FFDDC1; /* Cor para 6 meses */
-}
-
-.badge-24months {
-    background-color: #FFE156; /* Cor para 24 meses */
-}
-
-/* Estilo das cartas de clientes */
-.client-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 8px;
-    text-align: center;
-    cursor: pointer;
-    flex: 1 1 30%;
-}
-
-.client-card:hover {
-    background-color: #f0f0f0;
-}
-
-.client-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-/* Estilos para a seção de sorteio */
-.raffle-section {
-    margin: 20px 0;
-}
-
-.winner-text {
-    font-weight: bold;
-    color: #28a745;
-    font-size: 1.5em;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-}
-
-/* Estilos do botão de sorteio */
-#raffle-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#raffle-button:hover {
-    background-color: #0056b3;
-}
-.ganhador{
-        font-size: 17px;
-        font-family: cursive;
-        margin: 15px
-    }
-</style>
-<!----------------------------------------->
-<style>
-    .text1{
-        color: white;
-    }
-    .heading{
-        color: white;
-        padding-top: 15px;
-    }
+<body>
     
-</style>
 
+    <header>
 
+        <div class="logomarca">
+          <img src="icon/logo da pagina.png" alt="logo da pagina">
+        </div>
+        
+      </header>
 
-
-<section class="section-7" id="seguidores-promocao" style="background: #005e09;">
-<div class="container">
-<div class="row align-items-lg-center">
-<div class="col-12 col-md-5 order-md-1 col-lg-4">
-<div class="countdown text-center">
-<h2 class="heading">Comprar seguidores</h2>
-
-</div>
-</div>
-<div class="col-12 col-md-7 order-md-2 col-lg-7">
-<p class="text1"> Compre seguidores com desconto para sua conta no Instagram, <b>seguidores mundial</b> de baixa qualidade.</p>
-</div>
-<div class="col-12 order-md-3 col-lg-12">
-<div id="comprar-seguidores-promocao" style="display: flex;flex-wrap: wrap;justify-content: center;width: 100%;margin-top: 5px;padding-bottom: 25px;">
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="172" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">500</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$19,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="173" />
-<div class="maisvendido"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">1000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$33,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="174" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">2000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$48,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="175" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">3000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$88,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="176" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">4000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$113,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="177" />
-<div class="maispopular"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">5000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$139,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="178" />
-<div class="maisarrasta"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">10k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px; width: 74px;letter-spacing: -0px;">R$253,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="179" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">20k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px; width: 74px;">R$493,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="181" />
-<div class="maisinfluencer"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">100k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores</p><p class="texthover" style="margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;width: 82px;margin-left: -9px;">1999,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-
-
-
-<section class="section-7" id="seguidores-brasileiros" style="background: #40b94c;">
-<div class="container">
-<div class="row align-items-lg-center">
-<div class="col-12 col-md-5 order-md-1 col-lg-4">
-<div class="countdown text-center">
-<h2 class="heading">Comprar seguidores brasileiros:</h2>
-</div>
-</div>
-
-<div class="col-12 col-md-7 order-md-2 col-lg-7">
-<p class="text1"> Compre seguidores brasileiros no Instagram (100% de público brasileiros). Receba seguidores premium de alta qualidade. </p>
-</div>
-<div class="col-12 order-md-3 col-lg-12">
-<div id="comprar-seguidores-promocao" style="display: flex;flex-wrap: wrap;justify-content: center;width: 100%;margin-top: 5px;padding-bottom: 25px;">
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="165" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">100</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores Brasileiros</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$11,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="166" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">300</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores Brasileiros</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$29,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="6" />
-<div class="maisvendido"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">500</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores Brasileiros</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$51,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="10" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">1000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores Brasileiros</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$91,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="15" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">2000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores Brasileiros</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$179,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="16" />
-<div class="maispopular"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">5000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores Brasileiros</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$439,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="51" />
-<div class="maisarrasta"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">10k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores Brasileiros</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263; width: 70px;letter-spacing: -1px;">R$799,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="59" /> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">15k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores Brasileiros</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: -1px; width: 74px;">R$1199,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205" /> <input type="hidden" name="item_id" value="60" />
-<div class="maisinfluencer"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">20k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Seguidores Brasileiros</p><p class="texthover" style="margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;width: 82px;margin-left: -9px;">R$1599,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <nav>
+    <div class="voltar">
+        <a href="index.html" class="back-button" onclick="showSection('lojas')">Voltar</a>
+    </div>
+</nav>
 
 
 
 
 
 
+    <main>
+       
+        <style>
+            /* Paleta de cores */
+            :root {
+                --azul-bebe: #A7D8FF;
+                --azul-escuro: #004F7C;
+                --amarelo: #3ba0ff;
+                --branco: #FFFFFF;
+            }
+    
+    
+            h1 {
+                text-align: center;
+                margin-top: 30px;
+                color: azure;
+            }
+    
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 50px;
+            }
+    
+            .card {
+                width: 200px;
+                padding: 20px;
+                margin: 10px;
+                background-color: red;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                color: rgb(255, 255, 255);
+            }
+    
+            .card:hover {
+                background-color: #797979;
+                color: #272727;
+            }
+    
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.5);
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .modal-content {
+                background-color: var(--branco);
+                padding: 20px;
+                border-radius: 8px;
+                text-align: center;
+                width: 300px;
+                color: brown;
+            }
+    
+            input[type="password"] {
+                width: 80%;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 5px;
+                border: 1px solid var(--azul-escuro);
+            }
+    
+            button {
+                padding: 10px 20px;
+                cursor: pointer;
+                background-color: var(--azul-escuro);
+                color: var(--branco);
+                border: none;
+                border-radius: 5px;
+            }
+    
+            button:hover {
+                background-color: var(--amarelo);
+            }
+    
+            .welcome-message, .loading-message {
+                font-size: 18px;
+                color: var(--azul-escuro);
+                margin-top: 20px;
+            }
+    
+            .loading {
+                display: none;
+                text-align: center;
+            }
+    
+            .loading span {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                margin: 0 5px;
+                background-color: var(--azul-escuro);
+                border-radius: 50%;
+                animation: loadingAnimation 1s infinite alternate;
+            }
+    
+            .loading span:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+    
+            .loading span:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+    
+            @keyframes loadingAnimation {
+                0% {
+                    opacity: 0.2;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+    
+            .access-granted {
+                display: none;
+                font-size: 20px;
+                color: green;
+                margin-top: 20px;
+            }
+       
+        </style>
+   
+    
+        <h1>Profissionais</h1>
+        <div class="container">
+            <!-- Lista de profissionais -->
+            <div class="card" onclick="openLoginModal('Dra. Eulalia')">
+                <h3>Dra. Eulalia</h3>
+                <p>Fisioterapeuta Infantil</p>
+            </div>
+            <div class="card" onclick="openLoginModal('Dr. Pedro')">
+                <h3>Dr. Pedro</h3>
+                <p>Fonoaudiólogo</p>
+            </div>
+            <div class="card" onclick="openLoginModal('Dra. Raquel Siqueira')">
+                <h3>Dra. Raquel Siqueira</h3>
+                <p>Nutricionista Materno-Infantil</p>
+            </div>
+            <div class="card" onclick="openLoginModal('Jociklê Jácome')">
+                <h3>Jociklê Jácome</h3>
+                <p>Psicóloga Clínica</p>
+            </div>
+            <div class="card" onclick="openLoginModal('Clínica Centro Médico de Camocim')">
+                <h3>Clínica Centro Médico</h3>
+                <p>Centro Médico de Camocim</p>
+            </div>
+            <div class="card" onclick="openLoginModal('Psicocenter Clínica')">
+                <h3>Psicocenter Clínica</h3>
+                <p>Psicologia</p>
+            </div>
+            <div class="card" onclick="openLoginModal('Escola Cobrao')">
+                <h3>Escola Cobrao</h3>
+                <p>Educação</p>
+            </div>
+            <div class="card" onclick="openLoginModal('Andreia')">
+                <h3>Andreia</h3>
+                <p>Enfermeira (Furinho Humanizado)</p>
+            </div>
+            <div class="card" onclick="openLoginModal('Renata')">
+                <h3>Renata</h3>
+                <p>Psicóloga de Relacionamentos</p>
+            </div>
+        </div>
+    
+        <!-- Modal de login -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <h2 id="modalTitle">Login</h2>
+                <p>Bem-vindo! Digite a senha para acessar a área de <span id="modalProfessionalName"></span></p>
+                <input type="password" id="passwordInput" placeholder="Senha">
+                <button onclick="validateLogin()">Entrar</button>
+                <p id="welcomeMessage" class="welcome-message"></p>
+                <div class="loading">
+                    <span></span><span></span><span></span>
+                </div>
+                <p id="accessGranted" class="access-granted">Acesso liberado!</p>
+            </div>
+        </div>
+    
+        <script>
+            // Função para abrir a modal de login com o nome do profissional
+            function openLoginModal(professionalName) {
+                const modal = document.getElementById('loginModal');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalProfessionalName = document.getElementById('modalProfessionalName');
+                const welcomeMessage = document.getElementById('welcomeMessage');
+                const loadingMessage = document.querySelector('.loading');
+                const accessGranted = document.getElementById('accessGranted');
+                const passwordInput = document.getElementById('passwordInput');
+    
+                modal.style.display = "flex";
+                modalProfessionalName.innerText = professionalName;
+                modalTitle.innerText = 'Login para ' + professionalName;
+                welcomeMessage.innerText = '';
+                accessGranted.style.display = 'none';
+                loadingMessage.style.display = 'none';
+                passwordInput.value = ''; // Limpar o campo de senha
+            }
+    
+            // Função para validar o login
+            function validateLogin() {
+                const password = document.getElementById('passwordInput').value;
+                const professionalName = document.getElementById('modalProfessionalName').innerText;
+                const welcomeMessage = document.getElementById('welcomeMessage');
+                const loadingMessage = document.querySelector('.loading');
+                const accessGranted = document.getElementById('accessGranted');
+    
+                const correctPasswords = {
+                    'Dra. Eulalia': '1234',
+                    'Dr. Pedro': '1234',
+                    'Dra. Raquel Siqueira': '1234',
+                    'Jociklê Jácome': '1234',
+                    'Clínica Centro Médico de Camocim': '1234',
+                    'Psicocenter Clínica': '1234',
+                    'Escola Cobrao': '1234',
+                    'Andreia': '1234',
+                    'Renata': '1234',
+                };
+    
+                // Mostrar animação de carregamento
+                loadingMessage.style.display = 'block';
+    
+                setTimeout(() => {
+                    if (password === correctPasswords[professionalName]) {
+                        welcomeMessage.innerText = 'Bem-vindo, ' + professionalName + '!';
+                        loadingMessage.style.display = 'none';
+                        accessGranted.style.display = 'block';
+                        setTimeout(() => {
+                            // Redirecionar para outra página após login bem-sucedido
+                            window.location.href = 'dra_raquel.html'; // Substitua pelo link real
+                        }, 3000);
+                    } else {
+                        welcomeMessage.innerText = 'Senha incorreta! Tente novamente.';
+                        loadingMessage.style.display = 'none';
+                    }
+                }, 5000); // Tempo de animação de carregamento (1,5 segundos)
+            }
+    
+            // Fechar a modal quando clicar fora dela
+            window.onclick = function(event) {
+                const modal = document.getElementById('loginModal');
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </main>
 
-<section class="section-7" id="curtidas-brasileiras-promocao" style="background: #5851db;">
-<div class="container">
-<div class="row align-items-lg-center">
-<div class="col-12 col-md-5 order-md-1 col-lg-4">
-<div class="countdown text-center">
-<h2 class="heading">Comprar Curtidas </h2>
-</div>
-</div>
 
-<div class="col-12 col-md-7 order-md-2 col-lg-7">
-<p class="text1"> Compre curtidas brasileiras no Instagram com entrega imediata e garantida. Você recebe em até 5 minutos após aprovação do pagamento. </p>
-</div>
-<div class="col-12 order-md-3 col-lg-12">
-<div id="comprar-seguidores-promocao" style="display: flex;flex-wrap: wrap;justify-content: center;width: 100%;margin-top: 5px;padding-bottom: 25px;">
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="11"> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">100</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Curtidas</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$11,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="182">
-<div class="maisvendido"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">200</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Curtidas</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$13,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="183"> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">300</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Curtidas</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$15,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="184"> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">400</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Curtidas</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$17,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="14"> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">500</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Curtidas</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$18,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="12">
-<div class="maispopular"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">1000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Curtidas</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$39,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="18">
-<div class="maisarrasta"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">2000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Curtidas</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px; width: 70px;letter-spacing: -0px;">R$79,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="13"> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">5000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Curtidas</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px; width: 74px;">R$199,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="58">
-<div class="maisinfluencer"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">10k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Curtidas</p><p class="texthover" style="margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;width: 82px;margin-left: -9px;">R$399,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <!-- Botão flutuante -->
+    <div id="floating-btn" onclick="scrollToTop()">
+        &#9650; <!-- Triângulo para cima (pode ser substituído por um ícone ou texto) -->
+    </div>
 
+    <script>
+        window.addEventListener('scroll', function () {
+            var floatingBtn = document.getElementById('floating-btn');
 
+            // Verifica se a largura da tela é menor que 768 pixels (dispositivo móvel)
+            if (window.innerWidth < 768) {
+                // Verifica se a posição de rolagem é maior que 200 pixels do topo
+                if (window.scrollY > 200) {
+                    floatingBtn.style.display = 'block';
+                } else {
+                    floatingBtn.style.display = 'none';
+                }
+            } else {
+                floatingBtn.style.display = 'none';
+            }
+        });
 
-
-
-<section class="section-7" id="visualizacoes-instagram-promocao" style="background: #945ffd;">
-<div class="container">
-<div class="row align-items-lg-center">
-<div class="col-12 col-md-5 order-md-1 col-lg-4">
-<div class="countdown text-center">
-<h2 class="heading">Comprar visualizações</h2>
-</div>
-
-<div class="col-12 col-md-7 order-md-2 col-lg-7">
-<p class="text1"> Compre visualizações para seus vídeos no Instagram. Funciona em Reels, IGTV e não leva 5 minutos para você começar a receber. </p>
-</div>
-<div class="col-12 order-md-3 col-lg-12">
-<div id="comprar-seguidores-promocao" style="display: flex;flex-wrap: wrap;justify-content: center;width: 100%;margin-top: 5px;padding-bottom: 25px;">
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="52"> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">500</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$7,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="53">
-<div class="maisvendido"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">1000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$11,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="54"> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">2000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$18,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="55"> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">5000</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$39,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="56"> <button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">10k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;">R$59,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="57">
-<div class="maispopular"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">20k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style=" margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px; width: 74px;">R$79,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="63">
-<div class="maisinfluencer"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">30k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style="margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;width: 82px;margin-left: -9px;">R$99,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="64">
-<div class="maisinfluencer"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">40k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style="margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;width: 82px;margin-left: -9px;">R$119,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action="# " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="65">
-<div class="maisinfluencer"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">50k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style="margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;width: 82px;margin-left: -9px;">R$139,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-<div class="comprar-seguidores-barato" style="cursor:pointer;background: none;width:31%;border-radius:8px;padding-bottom:25px;text-align:center;font-weight:bold;margin: -15px 5px;margin-top:0.5rem;color:#61656C;width:96px;">
-<form action=" " method="POST">
-<div class="item">
-<div class="card" style="border-radius: 5px;box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);">
-<div class="text-center">
-<div class="text-center order_button">
-<div class> <input type="hidden" name="token" value="69ca5702a75af1b78b8528f13af62205"> <input type="hidden" name="item_id" value="66">
-<div class="maisinfluencer"></div><button class="btn btn-color" type="submit"> <p style="font-size: 21px;font-weight: bolder;margin-bottom: 25px;">100k</p><p style="font-size: 10px; margin-bottom: 0px; margin-top: -31px;">Visualizações</p><p class="texthover" style="margin-bottom: 0em;font-weight: 600;color: #27a263;letter-spacing: 0px;width: 82px;margin-left: -9px;">R$199,80</p></button> </div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-</section>
-<section class="section-6">
-<div class="container">
-<div class="sf-content text-center">
-<div class="sf-highlights"> <span>A melhor maneira de crescer sua conta no Instagram</span> </div>
-<h2 class="sf-heading"> Por que você deve ter seguidores no Instagram? </h2>
-<p class="sf-text"> Existem diversas razões mas vamos falar sobre as duas principais. A primeira é a percepção de um usuário do Instagram de que perfis com muitos seguidores são confiáveis e passam maior credibilidade. A segunda é que você só consegue liberar
-algumas funções do Instagram quando o perfil atingir <b>10k seguidores</b>, como inserir links nos Stories e o famoso arrasta pra cima. </p>
-</div>
-<div class="cards">
-<div class="row">
-<div class="col-12 col-sm-6 col-md-4">
-<div class="sf-card text-center">
-<div class="icon"> <img src="assets/img/icons/check-badge.svg" alt="Check Badge Icone"> </div>
-<h6 class="heading">Fortaleça sua prova social</h6>
-<p class="text"> Você já deve ter ouvido falar que influenciadores compram seguidores no Instagram como forma de se tornar mais reconhecido e poder divulgar seu trabalho para muito mais pessoas, ou seja, quanto mais seguidores você tem, maior
-é sua prova social. </p>
-</div>
-</div>
-<div class="col-12 col-sm-6 col-md-4">
-<div class="sf-card text-center">
-<div class="icon"> <img src="assets/img/icons/arrow-path.svg" alt="Arrow Path Icone"> </div>
-<h6 class="heading">Promova seu perfil</h6>
-<p class="text"> Quando os usuários do Instagram visitam o perfil de alguém com muitos seguidores, existe 37% de chance dessa pessoa seguir o perfil, por isso, é muito importante que você mantenha o aumento de seguidores para aparecer para
-muitos mais pessoas. </p>
-</div>
-</div>
-<div class="col-12 col-sm-6 offset-sm-3 col-md-4 offset-md-0">
-<div class="sf-card text-center">
-<div class="icon"> <img src="assets/img/icons/free.svg" alt="Free Icone"> </div>
-<h6 class="heading">Teste </h6>
-<p class="text"> É fácil e rápido. Você não perde 1 minuto para seguidores no Instagram. Obtenha seus seguidores no Instagram agora mesmo. </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 
 
 
+    
 
+    <script>
+        function toggleContent(button) {
+            const content = button.parentElement;
+            const fullText = content.querySelector(".full-text");
 
+            if (content.classList.contains("expanded")) {
+                content.classList.remove("expanded");
+                fullText.style.display = "none";
+                button.innerText = "Mostrar Mais";
+            } else {
+                content.classList.add("expanded");
+                fullText.style.display = "block";
+                button.innerText = "Mostrar Menos";
+            }
+        }
+    </script>
 
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById("menu");
+          menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+          menu.style.opacity = (menu.style.opacity === "1") ? "0" : "1";
+          menu.style.transform = (menu.style.transform === "translateY(0px)") ? "translateY(-20px)" : "translateY(0px)";
+        }
+      </script>
 
-<section class="section-10">
-<div class="container">
-<div class="sf-content text-center">
-<div class="sf-highlights"> <span>Perguntas Frequentes</span> </div>
-<h2 class="sf-heading">Como funciona?</h2>
-<p class="sf-text"> Veja o passo a passo para ganhar seguidores, curtidas  e leia as principais dúvidas dos nossos clientes. Qualquer dúvida basta entrar em contato conosco. </p>
-</div>
+      
 
-<div class="cards">
-<div class="row">
-<div class="col-12 col-sm-6">
-<div class="sf-card text-center">
-<div class="icon"> <img src="assets/img/icons/question-mark.svg" alt="Question Mark Icone"> </div>
-<h6 class="heading">Como ganhar seguidores no Instagram?</h6>
-<p class="text"> Nunca foi tão fácil ganhar seguidores no Instagram, são apenas 2 passos: clique no botão "Ganhar Seguidores" para receber até 10 seguidores e informe seu usuário do Instagram e e-mail. Simples assim! </p>
-</div>
-</div>
+      <script>
+        function changePage(pagePath) {
+            // Lógica para redirecionar para a página com o caminho especificado
+            console.log("Redirecionando para a página: " + pagePath);
+            // Substitua essa linha com a lógica real para redirecionar para a página desejada
+            window.location.href = pagePath;
+        }
+      </script>
 
-<div class="col-12 col-sm-6">
-<div class="sf-card text-center">
-<div class="icon"> <img src="assets/img/icons/question-mark.svg" alt="Question Mark Icone"> </div>
-<h6 class="heading">Como ganhar curtidas no Instagram?</h6>
-<p class="text"> Não existe método mais rápido e fácil. Escolha a foto para ganhar curtidas no Instagram e informe o link para ganhar até 20 curtidas no Instagram. É moleza! </p>
-</div>
-</div>
-
-<div class="col-12 col-sm-6">
-<div class="sf-card text-center">
-<div class="icon"> <img src="assets/img/icons/question-mark.svg" alt="Question Mark Icone"> </div>
-<h6 class="heading">Como ganhar comentários no Instagram?</h6>
-<p class="text"> Já pensou em receber o comentário que quiser? É possível. Ganhe comentários no Instagram bem rápido. Basta clicar em "Ganhar Comentários" para receber até 10 comentários no Instagram. </p>
-</div>
-</div>
-
-<div class="col-12 col-sm-6">
-<div class="sf-card text-center">
-<div class="icon"> <img src="assets/img/icons/question-mark.svg" alt="Question Mark Icone"> </div>
-<h6 class="heading">Quais os benefícios do Likes for Insta?</h6>
-<p class="text"> Os benefícios de ganhar likes for insta são muitos, principalmente porque a ferramenta do instagram é desenvolvida para colocar em evidência perfis que tem muitas curtidas nos posts. Por isso é muito importante o seu número
-de likes no Instagram. </p>
-</div>
-</div>
-
-<div class="col-12 col-sm-6">
-<div class="sf-card text-center">
-<div class="icon"> <img src="assets/img/icons/hash-tag.svg" alt="Hash Tag Icone"> </div>
-<h6 class="heading">Os seguidores, curtidas são reais e brasileiros?</h6>
-<p class="text"> Sim, os usuários são perfis que precisam ser conectados diretamente no Instagram, por esse motivo, todo processo é feito por brasileiros, reais e ativos, a grande maioria são pessoas como eu e você. Nossa base
-é feita com a maioria de seguidores brasileiros e ativos que poderão se tornar futuros clientes e interagir com suas publicações. </p>
-</div>
-</div>
-
-<div class="col-12 col-sm-6">
-<div class="sf-card text-center">
-<div class="icon"> <img src="assets/img/icons/blocked-account.svg" alt="Blocked Account Icone"> </div>
-<h6 class="heading">Minha conta pode ser banida?</h6>
-<p class="text"> Absolutamente não. Obter seguidores não prejudicará sua conta do Instagram e nem seu engajamento. Você não terá problemas e conta com um sistema 100% seguro. Nós nem precisamos da sua senha. </p>
-</div>
-</div>
-
-
-</div>
-
-</section>
-
+      <footer>
+        <p>&copy; 2025 Area Restrita</p>
+    </footer>
 </body>
 </html>
+
+
+
+
+
+
+
