@@ -409,6 +409,10 @@
 <!-------------------------------------->
 
 <style>
+  ol, ul {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
 
   nav {
       position: relative;
@@ -435,7 +439,7 @@
       list-style: none;
       display: flex;
       gap: 20px;
-      padding: 10px 20px;
+     
       transition: all 0.3s ease;
   }
 
@@ -471,7 +475,7 @@
           left: 0; /* Mantenha o menu à esquerda */
           width: 250px; /* Largura fixa para o menu lateral */
           height: calc(100% - 60px); /* Altura total, menos a altura do menu */
-          padding: 20px;
+         
           border-radius: 0 40px 40px 0; /* Arredondar o canto inferior direito */
           z-index: 100;
           box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
@@ -497,32 +501,7 @@
 </head>
 <body>
 
-<!---------------------------------------------------------------------->
-<nav id="menu">
-<div class="menu-toggle" id="menu-toggle">&#9776;</div>
-<ul>
-  <li><a href="#Home">Home</a></li>
-  <li><a href="#sobre">Sobre</a></li>
-  <li><a href="#Planos">Planos</a></li>
-  <li><a href="#Trabalhos">Trabalhos</a></li>
-</ul>
-</nav>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleButton = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu').querySelector('ul');
-  let isMenuOpen = false;
-
-  toggleButton.addEventListener('click', () => {
-    isMenuOpen = !isMenuOpen;
-    menu.classList.toggle('show', isMenuOpen); // Usa uma classe para exibir o menu
-    toggleButton.classList.toggle('open', isMenuOpen);
-  });
-});
-
-
-</script>
 
 
   <header>
@@ -535,7 +514,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
   </header>
-
+<!---------------------------------------------------------------------->
+<nav id="menu">
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <ul>
+    <li><a href="#Home">Home</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#Planos">Planos</a></li>
+    <li><a href="#Trabalhos">Trabalhos</a></li>
+  </ul>
+  </nav>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu').querySelector('ul');
+    let isMenuOpen = false;
+  
+    toggleButton.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      menu.classList.toggle('show', isMenuOpen); // Usa uma classe para exibir o menu
+      toggleButton.classList.toggle('open', isMenuOpen);
+    });
+  });
+  
+  
+  </script>
 
 <!-----------------  hover do lojas-------------------------------------->
 <style>
@@ -754,7 +758,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </audio>
 
 </section>
--->
+
 <button id="lojasBtn" class="mobile-only">Lojas</button>
 
 <div class="icon2">
@@ -843,7 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
   
   </style>
-
+-->
     <!------------------------------->
     
    
@@ -876,32 +880,13 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="mySlides">
-        <img src="academia/suplemento/banner.jpg" alt="Suplemento">
+        <img src="img/bannar 4.jpg" alt="Suplemento">
       </div>
      
       <div class="mySlides">
-        <img src="https://i.ibb.co/T47vRM9/banner.webp" alt="vilage">
+        <img src="img/bannar 5.jpg" alt="Suplemento">
       </div>
-
-      <div class="mySlides">
-        <img src="https://i.ibb.co/gRwQ6Mw/banner-novo.jpg" alt="banner-novo">
-      </div>
-
-      <div class="mySlides">
-        <img src="academia/li_closet/banner-1.jpg" alt="clost">
-      </div>
-
-      <div class="mySlides">
-        <img src="festa/debora/banner.jpg" alt="vilage">
-      </div>
-      
-      <div class="mySlides">
-        <img src="img_hoteis/Camozen_Resort_&_Spa/banner.webp" alt="camozen">
-      </div>
-
-      <div class="mySlides">
-        <img src="https://i.ibb.co/rcDnfsF/banner.webp" alt="lauge">
-      </div>
+     
 
 
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
